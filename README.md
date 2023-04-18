@@ -1,2 +1,3 @@
 # PsychWikiSite-Rewrite
-A rewrite of the old PsychWikiSite; to improve the code duh!
+
+This is only to test my epic HTML, CSS, and Javascript skills.
