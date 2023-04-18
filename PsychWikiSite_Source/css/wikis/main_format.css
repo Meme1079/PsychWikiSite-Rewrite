@@ -1,0 +1,186 @@
+:root {
+     /* * Margin top & bottom */
+
+     --tag-h1-margin-top: calc(10px + 4px);
+     --tag-h3-margin-top: calc(15px + 4px);
+     --tag-h4-margin-top: calc(10px + 4px);
+
+     --tag-h1-margin-bottom: 20px;
+     --tag-h3-margin-bottom: 15px;
+     --tag-h4-margin-bottom: 10px;
+
+     /* * Color Code Texts */
+
+     --color-code-keyword1:  hsl(1, 100%, 79%);
+     --color-code-keyword2:  hsl(208, 100%, 78%);
+     --color-code-operator:  hsl(1, 100%, 79%);
+     --color-code-number:    hsl(208, 100%, 78%);
+     --color-code-string:    hsl(208, 100%, 78%);
+     --color-code-comment:   hsl(212, 13%, 77%);
+     --color-code-function:  hsl(270, 100%, 86%);
+     --color-code-customfunc:hsl(208, 100%, 78%);
+     --color-code-parameter: hsl(34, 100%, 65%);
+     --color-code-parainfi:  hsl(208, 100%, 78%);
+     --color-code-datatype:  hsl(168, 55%, 54%);
+     --color-code-variable:  hsl(0, 0%, 100%);
+     --color-code-escapechar:hsl(1, 100%, 79%);
+     --color-code-table-key: hsl(208, 100%, 78%);
+     --color-code-tale-value:hsl(208, 100%, 78%);
+
+     --color-codeblock-bg:   hsl(216, 8%, 52%);
+     --color-headerline:     hsl(214, 12%, 66%);
+
+     /* * Globals & Locals */
+
+     --global-border-radius: 5px;
+     --global-width-html: 26.6cm;
+
+     --local-font-html: BlinkMacSystemFont;
+     --local-font-codeblocks: Menlo;
+}
+
+html {
+     font-family: var(--local-font-html);
+     scroll-behavior: smooth;
+}
+
+main {
+     position: relative;
+     left: 8.7cm;
+     width: var(--global-width-html);
+}
+
+main :is(p, a, ul, td, th) { line-height: 1.5; }
+main :is(p, a, ul)         { display: block; word-wrap: break-word; }
+main li                    { margin: 6px 0px; }
+
+main a       { text-decoration: none; color: hsl(210, 100%, 72%); }
+main a:hover { text-decoration: underline; }
+
+/* Other or Something */
+
+main .head-hr-thick {
+     background-color: var(--color-headerline); 
+     width: var(--global-width-html); height: 3px;
+     margin-top: 20px;
+}
+
+/* Headers */
+
+main h1 {
+     font-size: 32px;
+     font-weight: 600;
+     border-bottom: 1px solid var(--color-codeblock-bg);
+     padding-bottom: 10px;
+     margin-top: var(--tag-h1-margin-top); margin-bottom: var(--tag-h1-margin-bottom);
+}
+
+main h3 { 
+     font-size: 20px; 
+     font-weight: 550;
+     margin-top: var(--tag-h3-margin-top); margin-bottom: var(--tag-h3-margin-bottom);
+}
+
+main h4 { 
+     font-size: 16px;
+     font-weight: 530;
+     margin-top: var(--tag-h4-margin-top); margin-bottom: var(--tag-h4-margin-bottom);
+}
+
+/* Tables */
+/* TODO: Orginazed */
+
+main table {
+     display: block;
+     overflow: auto;
+     border-collapse: collapse !important;
+}
+
+main table td {
+     border-top: 1px solid var(--color-codeblock-bg);
+}
+
+main table :is(td, th) {
+     padding: calc(6px * 2) calc((12px * 2) / 1); 
+}
+
+main #guh table thead tr {
+     text-align: center !important;
+}
+
+/* Code Blocks */
+
+main :is(code, pre) {
+     font-family: var(--local-font-codeblocks);
+     color: white;
+     border-radius: var(--global-border-radius);
+}
+
+main code {
+     font-size: 13px;
+     background-color: rgba(158, 167, 179, 0.4);
+     padding: .2em .4em;
+}
+
+main pre {
+     tab-size: 8;
+     white-space: pre;
+     font-size: 13px;
+     line-height: 20px !important;
+     outline: 1px solid var(--color-codeblock-bg);
+     background-color: rgb(0, 0, 0);
+     border-radius: 0px 0px var(--global-border-radius) var(--global-border-radius) !important;
+     margin-top: 12px !important;
+     padding: 16px 16px 16px 50px;
+}
+
+main .code-border {
+     outline: 1px solid var(--color-codeblock-bg);
+     background-color: rgb(39, 43, 51);
+     border-radius: var(--global-border-radius);
+     margin-top: 20px; margin-bottom: 20px;
+}
+
+main .code-newlines {
+     font-family: var(--local-font-codeblocks);
+     font-size: 14px; 
+     text-align: center;
+     line-height: 20px !important; 
+     color: rgb(170, 170, 170);
+     position: absolute !important; 
+     transform: translateY(27.99px) translateX(18px); /* * don't ask */
+
+     -webkit-user-select: none; /* Safari */
+     -ms-user-select: none; /* IE 10 and IE 11 */
+     user-select: none; /* Standard syntax */
+}
+
+main .code-tagbg {
+     font-family: var(--local-font-codeblocks);
+     font-weight: 550;
+     font-size: 13px;
+     outline: 1px solid var(--color-codeblock-bg);
+     background-color: black;
+     border-radius: var(--global-border-radius);
+     box-shadow: 10px 5px 11px 2px rgba(0,0,0,0.5) !important;
+     padding: 7px 10px;
+     width: fit-content;
+     transform: translateY(5px) translateX(5px); /* * don't ask */
+}
+
+/* Code Colors */
+
+.code-kyw1   { color: var(--color-code-keyword1); }
+.code-kyw2   { color: var(--color-code-keyword2); }
+.code-ope    { color: var(--color-code-operator); }
+.code-num    { color: var(--color-code-number); }
+.code-str    { color: var(--color-code-string); }
+.code-com    { color: var(--color-code-comment); }
+.code-funcD  { color: var(--color-code-function); }   /* declared */
+.code-funcC  { color: var(--color-code-customfunc); } /* called */
+.code-paraS  { color: var(--color-code-parameter); }  /* single parameter */
+.code-paraI  { color: var(--color-code-parainfi); }   /* infinite parameter */
+.code-data   { color: var(--color-code-datatype); }
+.code-var    { color: var(--color-code-variable); }
+.code-escr   { color: var(--color-code-escapechar); }
+.code-tabkey { color: var(--color-code-key); }

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <title> PsychWikiSite - Lua Coding Docs: Basics Of Coding </title>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="color-scheme" content="dark">
+          <meta charset="utf-8">
+          <link rel="icon" href="/images/Psych.ico">
+          <link rel="stylesheet" type="text/css" href="/css/wikis/main_format.css">
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <script defer type="module" src="/javascript/CodeLines.js"></script>
+          <script defer type="module" src="/javascript/CodeTableDatas.js"></script>
+          <script defer type="module" src="/javascript/Main.js"></script>
+     </head>
+     <body>
+          <!-- TODO: Make code the colorized the code block texts -->
+          <!-- TODO: Add an epic sidebar and topbar!!!! -->
+          <main>
+               <h1> Introduction </h1>
+                    <section>
+                         <p>
+                              Lua is a lightweight, high-level, multi-paradigm scripting language used in Psych Engine modding. Which is a better alternative to Haxe, the 
+                              main language that Friday Night Funkin' uses. Becuase you have to manually download the source code, modify the specific Haxe file, and then 
+                              compile it. As for Lua just insert a Lua into any script folders to modify something that's it. The current version of Lua that Haxe is using 
+                              is (5.1).
+                         </p>
+                         <p>
+                              To create your own Lua file I recommend you download VSCode it's available in Windows, Mac, and Linux. Now after you download VSCode open it, 
+                              press [Command + N] this will create a untitled file. Click the hyperlink that says [Select a language] after that type or search lua on the 
+                              Select language mode. Click Lua and boom you're done. If you want to save the Lua file press [Commans + S] choose the file path to be saved 
+                              and click [Ok].
+                         </p>
+                         <h3> Differences </h2>
+                         <sub-section>
+                              <p>
+                                   Lua in Psych Engine is different compared to the original Lua. Mainly when coding the code should nested inside the Callback templates 
+                                   except for variables, functions, operators, and predefined functions these can work outside the Callback templates. Printing a value is 
+                                   also different instead of using <code>print()</code> you should use <code>debugPrint()</code>, it works the same as the <code>print()</code> 
+                                   function.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                        <div class="code-tagbg" style="margin-left: 0.3cm;"><span style="color: rgb(46, 46, 255);">Lua</span> (Original)</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">vary1</span> <span class="code-kyw1">=</span> <span class="code-str">'hamburgers are cool'</span>
+<span class="code-kyw1">local</span> <span class="code-var">vary2</span> <span class="code-kyw1">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
+
+<span class="code-funcC">print</span>(<span class="code-var">vary1</span>) <span class="code-com">-- will return 'hamburgers are cool'</span>
+<span class="code-funcC">print</span>(<span class="code-var">vary2</span>) <span class="code-com">-- will return 'potatoes are also cool, i think'</span>
+</pre>
+                              </div>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                        <div class="code-tagbg" style="margin-left: 0.3cm;"><span style="color: rgb(46, 46, 255);">Lua</span> (Psych Engine)</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">vary1</span> <span class="code-kyw1">=</span> <span class="code-str">'hamburgers are cool'</span>
+<span class="code-kyw1">local</span> <span class="code-var">vary2</span> <span class="code-kyw1">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
+
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">vary1</span>) <span class="code-com">-- will return 'hamburgers are cool'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">vary2</span>) <span class="code-com">-- will return 'potatoes are also cool, i think'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
+                         </sub-section>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Variables </h1>
+                    <section>
+                         <p>
+                              Variables are an abstract manipulable storage space used for storing the variable's assigned value. It can be utilized at any location in the 
+                              Lua file. The variable's value can be updated based on the condition or new value given by the variable.
+                         </p>
+                         <h3> Declaring & Calling </h3>
+                         <sub-section>
+                              <p>
+                                   To declare a variable assign the <code>scope</code> attribute of the variable this is optional to add, you can set to <code>global</code>
+                                   or <code>local</code>; Defualt value: <code>global</code>. With the chosen <code>name</code> of your variable, name it what-ever you want. Followed
+                                   by the equal <code>=</code> character with the specified value of the variable.
+                              </p>
+                              <p>
+                                   Multi-line variables can also be declared, each <code>name</code> and <code>value</code> attributes of the variable must be seperated with
+                                   comma <code>,</code> character. They must be equal to each-other if not it will return a <code>nil</code> value or an error.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Syntax:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">?scope</span> <span class="code-var">name</span> <span class="code-kyw1">=</span> <span class="code-data">value</span>                <span class="code-com">-- single-line variables</span>
+<span class="code-kyw1">?scope</span> <span class="code-var">names</span>, <span class="code-paramI">...</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>, <span class="code-paramI">...</span>    <span class="code-com">-- multi-line variables</span>
+</pre>
+                              </div>
+                              <p>
+                                   To call a variable assign the chosen <code>name</code> of the variable to get the current <code>value</code> of the variable. If you want to set
+                                   the variable value with a new one, assign the <code>name</code>, equal <code>=</code> character, and with the new <code>value</code>.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">foo</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>                      <span class="code-com">-- single-line</span>
+<span class="code-kyw1">local</span> <span class="code-var">bar1</span>, <span class="code-var">bar2</span>, <span class="code-var">bar3</span> <span class="code-kyw1">=</span> <span class="code-num">1</span>, <span class="code-num">2</span>, <span class="code-num">3</span>   <span class="code-com">-- multi-line</span>
+<span class="code-kyw1">local</span> <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw1">=</span> <span class="code-num">4</span>, <span class="code-num">5</span>      <span class="code-com">-- multi-line (missing)</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">foo</span>)               <span class="code-com">-- will return '0'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">bar1</span>, <span class="code-var">bar2</span>, <span class="code-var">bar3</span>)  <span class="code-com">-- will return '1 2 3'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will return '4 5 nil'</span>
+
+     <span class="code-var">foo</span> <span class="code-kyw1">=</span> <span class="code-num">12</span>                           <span class="code-com">-- setting single variable</span>
+     <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw1">=</span> <span class="code-num">543</span>, <span class="code-num">872</span>, <span class="code-num">923</span>   <span class="code-com">-- setting mutiple variables</span>
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">foo</span>)               <span class="code-com">-- will return '12'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will return '543 872 923'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
+                         </sub-section>
+                         <h3> Naming Variable Rules </h3>
+                         <sub-section>
+                              <ul>
+                                   <li> 
+                                        Variable names can have alphanumeric <code>Aa12</code> and underscore <code>_</code> characters. Note that digital characters can't be
+                                        placed at the start of the name only at the middle or at the end.
+                                   </li>
+                                   <li> Variable names are case-sensative so variable <code>a</code> and <code>A</code> are completely different to each-other. </li>
+                                   <li> Variable names can't be named after keywords, operators, control structures, etc. </li>
+                              </ul>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                        <div class="code-tagbg" style="margin-left: 0.3cm;"><span style="color: lime;">Correct</span></div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-var">myVar</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
+<span class="code-var">my_Var</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>
+<span class="code-var">_myVar</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>
+<span class="code-var">myVar1</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>
+<span class="code-var">Myvar</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
+</pre>
+                              </div>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                        <div class="code-tagbg" style="margin-left: 0.3cm;"><span style="color: red;">Incorrect</span></div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-var">1varmy</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
+<span class="code-var">my-var</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
+<span class="code-var">my var</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
+<span class="code-var">var ==</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
+<span class="code-var">..myvar</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>
+</pre>
+                              </div>
+                         </sub-section>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Data Types </h1>
+                    <section>
+                         <h3> Strings </h3>
+                         <sub-section>
+                              <p>
+                                   Strings are a sequence of characters it can represent an alphabetical, digital, punctuation, etc. They are usually surrounded by 
+                                   single-quote <code>''</code> and double-quote <code>""</code> which are commonly used when creating a string. You can also surround 
+                                   it by double-brackets <code>[[]]</code>, this is only used for multi-line strings for longer texts.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">textString1</span> <span class="code-kyw1">=</span> <span class="code-str">'Hello'</span> <span class="code-com">-- a single quote</span>
+<span class="code-kyw1">local</span> <span class="code-var">textString2</span> <span class="code-kyw1">=</span> <span class="code-str">"World"</span> <span class="code-com">-- a double quote, this is optional to use</span>
+<span class="code-kyw1">local</span> <span class="code-var">textString3</span> <span class="code-kyw1">=</span> <span class="code-str">[[Culturae organicae te
+capiet ad loca quae numquam
+expectata non visere!]]</span>     <span class="code-com">-- a double bracket, used this for longer strings</span>
+     
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>) <span class="code-com">--   will return 'Hello'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>) <span class="code-com">--   will return 'World'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString3</span>) <span class="code-com">--[[ will return
+     'Culturae organicae te capiet ad loca quae numquam
+     expectata non visere!' --]]</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
+                         </sub-section>
+                         <h3> Numbers </h3>
+                         <sub-section>
+                              <p>
+                                   Numbers are arithmetic values that represent the quantity or amount of something. It can have positive or negative values, and numbers 
+                                   can be expressed as Float or Int; Float numbers support decimal numbers, whilst Int numbers only uses whole numbers.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">intNumber1</span> <span class="code-kyw1">=</span> <span class="code-num">81</span>        <span class="code-com">-- an int number</span>
+<span class="code-kyw1">local</span> <span class="code-var">floatNumber1</span> <span class="code-kyw1">=</span> <span class="code-num">23.42</span>   <span class="code-com">-- a float number</span>
+     
+<span class="code-kyw1">local</span> <span class="code-var">floatAltNumber1</span> <span class="code-kyw1">=</span> <span class="code-num">12.</span>  <span class="code-com">-- a float number in whole numbers</span>
+<span class="code-kyw1">local</span> <span class="code-var">floatAltNumber2</span> <span class="code-kyw1">=</span> <span class="code-num">.56</span>  <span class="code-com">-- a float number in decimal numbers</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">intNumber1</span>)      <span class="code-com">-- will return '81'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">floatNumber1</span>)    <span class="code-com">-- will return '23.42'</span>
+     
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">floatAltNumber1</span>) <span class="code-com">-- will return '12.0'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">floatAltNumber2</span>) <span class="code-com">-- will return '0.56'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
+                         </sub-section>
+                         <h3> Booleans </h3>
+                         <sub-section>
+                              <p>
+                                   Booleans, often shortened to Bools, are data types that can have two possible values: <code>true</code> or <code>false</code>. This is commonly used for conditional statements,
+                                   which allow for different actions by modifying control flow based on whether the condition is <code>true</code> or <code>false</code>.
+                              </p>
+                         </sub-section>
+                         <h3> Nil </h3>
+                         <sub-section>
+                              <p>
+                                   Nil represents nothingness or non-existence of a value. This can be used for destroying a variable or table values if not used anymore. Or use conditional statements to check if 
+                                   the value is a <code>nil</code> or not.
+                              </p>
+                         </sub-section>
+                         <h3> Tables </h3>
+                         <sub-section>
+                              <p>
+                                   Tables are a data structuring mechanism in Lua the only one in fact. They are associative arrays, which means they hold a collection of key or value pairs. Tables can be used for 
+                                   to store multiple values of any kind except for <code>nil</code> values. To construct a table, use curly-braces <code>{}</code> characters rather than bracket <code>[]</code> 
+                                   characters like most programming languages use. Tables can be structed as an Array or a Dictionary.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">tableGroup1</span> <span class="code-kyw1">=</span> {<span class="code-str">'string'</span>, <span class="code-kyw2">true</span>, <span class="code-kyw2">nil</span>} <span class="code-com">-- a table with string, boolean, and nil values</span>
+<span class="code-kyw1">local</span> <span class="code-var">tableGroup2</span> <span class="code-kyw1">=</span> {{<span class="code-num">45</span>, <span class="code-num">13</span>}, {<span class="code-num">34</span>, <span class="code-num">76</span>}}  <span class="code-com">-- a table inside with nested tables</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableGroup1</span>[<span class="code-num">1</span>])    <span class="code-com">-- will return 'string'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableGroup2</span>[<span class="code-num">1</span>][<span class="code-num">2</span>]) <span class="code-com">-- will return '45'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
+                              <h4> Array </h4>
+                              <hypo-section>
+                                   <p>
+                                        Arrays are the default table syntax; each value within an Array must be separated by a comma <code>,</code> character. To read an Array, put a pair of brackets <code>[]</code> 
+                                        around the index position of a table. Lua uses 1-based index rather than 0-based index like other programming languages. In other words, the first index position always start at <code>1</code>.
+                                   </p>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">tableArray</span> <span class="code-kyw1">=</span> {<span class="code-str">'Correct'</span>, <span class="code-str">'Incorrect'</span>, <span class="code-str">'Maybe'</span>, <span class="code-str">'Invalid'</span>} <span class="code-com">-- a table with string values</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableArray</span>[<span class="code-num">1</span>]) <span class="code-com">-- will return 'Correct'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableArray</span>[<span class="code-num">3</span>]) <span class="code-com">-- will return 'Maybe'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                                   </div>
+                              </hypo-section>
+                              <h4> Dictionary </h4>
+                              <hypo-section>
+                                   <p>
+                                        Dictionaries are ordered by key-value pairs; each value in a Dictionary must be defined by a key, which is the value's name followed by an equal <code>=</code> character with the given value at the end. 
+                                        With the key-value pair separated by a comma <code>,</code> character. To read a dictionary, add a dot <code>.</code> character followed by the key name; Example: tableName.keyName. Or add a pair of brackets 
+                                        <code>[]</code> and quote <code>''</code> / <code>""</code> characters around the name of the key; Example: <code>tableName['keyName']</code> or <code>tableName["keyName"]</code>.
+                                   </p>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">tableDict1</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">isFatherless</span> <span class="code-kyw1">=</span> <span class="code-kyw2">false</span>, <span class="code-tabkey">hasTouchGrass</span> <span class="code-kyw1">=</span> <span class="code-kyw2">true</span>}
+<span class="code-kyw1">local</span> <span class="code-var">tableDict2</span> <span class="code-kyw1">=</span> {[<span class="code-str">'air'</span>] <span class="code-kyw1">=</span> <span class="code-str">'Oxygen'</span>, [<span class="code-str">"food"</span>] <span class="code-kyw1">=</span> <span class="code-str">'potato'</span>, [<span class="code-str">"love"</span>] <span class="code-kyw1">=</span> <span class="code-str">'carbon monoxide'</span>}
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1.isFatherless</span>)      <span class="code-com">-- will return 'false' (recommended syntax)</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>[<span class="code-str">'hasTouchGrass'</span>])  <span class="code-com">-- will return 'true'  (not recommended syntax)</span>
+     
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1.air</span>)               <span class="code-com">-- will return 'Oxygen'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">'food'</span>])           <span class="code-com">-- will return 'potato'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">"love"</span>])           <span class="code-com">-- will return 'carbon monoxide'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                                   </div>
+                              </hypo-section>
+                         </sub-section>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Function </h1>
+                    <section>
+                         <p>
+                              Functions are a collection of code to peform a specific task. This is used the same functions multiple times to make the code reusable. 
+                              Functions are defined with the <code>function</code> keyword followed by the name of your custom function. With the pair of parenthesis 
+                              <code>()</code> characters. To call a function get the name of your custom function followed by a pair of parenthesis <code>()</code> 
+                              characters.
+                         </p>
+                         <div class="code-border">
+                              <div style="display: flex;">
+                                   <div class="code-tagbg">Example:</div>
+                              </div>
+                              <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">hello</span>() <span class="code-com">-- a 'hello' function</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-str">'Hello Function'</span>)
+<span class="code-kyw1">end</span>
+
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-funcC">hello</span>()     <span class="code-com">-- calls the 'hello' function and will return 'Hello Function'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                         </div>
+                         <h3> Parameters </h3>
+                         <sub-section>
+                              <p>
+                                   Parameters are a special type of variable declared inside the parenthesis <code>()</code> character. You can add more parameters by typing the name 
+                                   of parameter and each seperating them with a comma <code>,</code> character. They can add more functionality to the function. If any of the arguments 
+                                   are left blank then it will cause an error. So uhh double check when calling functions.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-com">-- function created by Mayo78</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>)  <span class="code-com">-- Concatenates setProperty x and y</span>
+     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-kyw1">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
+          <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.x'</span>, <span class="code-paraS">pos</span>[<span class="code-num">1</span>])
+     <span class="code-kyw1">end</span>
+     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-kyw1">then</span>
+          <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.y'</span>, <span class="code-paraS">pos</span>[<span class="code-num">2</span>]) 
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+     
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreatePost</span>()
+     <span class="code-funcC">setPos</span>(<span class="code-str">'boyfriend'</span>, {<span class="code-num">100</span>, <span class="code-num">500</span>}) <span class="code-com">-- Changes the position to x = 100 and y = 500</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
+                              <p>
+                                   You can also declare an infinite parameter, just assign the ellepsis <code>...</code> character inside the parenthesis characters of the function.
+                                   Note that if there are non-infinite parameters declared it at the end to prevent errors.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">Array</span>(<span class="code-paraS">tab</span>, <span class="code-paraI">...</span>)
+     <span class="code-kyw1">local</span> <span class="code-var">convert</span> <span class="code-kyw1">=</span> {<span class="code-paraI">...</span>} <span class="code-com">-- converts it into a table</span>
+     <span class="code-kyw1">for</span> <span class="code-var">i</span> <span class="code-kyw1">=</span> <span class="code-num">1</span>, <span class="code-ope">#</span><span class="code-var">convert</span> <span class="code-kyw1">do</span> <span class="code-com">-- alternative to read evey value of a table</span>
+          <span class="code-data">table</span>.<span class="code-funcC">insert</span>(<span class="code-paraS">tab</span>, <span class="code-var">convert</span>[<span class="code-var">i</span>]) <span class="code-com">-- inserts the value</span>
+     <span class="code-kyw1">end</span>
+     <span class="code-kyw1">return</span> <span class="code-paraS">tab</span> <span class="code-com">-- returns the result</span>
+<span class="code-kyw1">end</span>
+
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw1">in</span> <span class="code-funcC">pairs</span>(<span class="code-funcC">Array</span>({}, <span class="code-num">231</span>, <span class="code-num">234</span>, <span class="code-num">456</span>)) <span class="code-kyw1">do</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">v</span>) <span class="code-com">-- will return '231, 234, 456'</span>
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
+                         </sub-section>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Comments </h1>
+                    <section>
+                         <p>
+                              Comments are used to explain the context of code and prevent the execution on a specific code; Lua will ignore them. Comments starts 
+                              with a double minus <code>--</code> characters as the syntax for single-line comment. And for multi-line comment add double brackets 
+                              <code>[[]]</code> characters.
+                         </p>
+                         <div class="code-border">
+                              <div style="display: flex;">
+                                   <div class="code-tagbg">Example:</div>
+                              </div>
+                              <div class="code-newlines"></div>
+<pre>
+<span class="code-com">-- Here's a single-line comment nothing special</span>
+
+<span class="code-com">--[[
+     Here's a multi-line comment for really
+     long unnecessary comments, also cheese.
+]]</span>
+</pre>
+                         </div>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Operators </h1>
+                    <section>
+                         <p>
+                              Operators are unique symbols that are used to carry out operations on operands. For the conditional statements to use to determine if the 
+                              value is <code>true</code> or <code>false</code> before executing the code block. They can be represented as Arithmetic, Relational, 
+                              Logical, and Miscellaneous.
+                         </p>
+                         <h3> Arithmetic </h3>
+                         <sub-section>
+                              <p> Arithmetic operators are mathematical operators used to perform calculations to numeric values. </p>
+                              <table>
+                                   <thead>
+                                        <tr>
+                                             <th>Operators</th>
+                                             <th>Desciption</th>
+                                             <th>Example</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody id="tab-arit"></tbody>
+                              </table>
+                         </sub-section>
+                         <h3> Relational </h3>
+                         <sub-section>
+                              <p> Relational operators are used to compare multiple operands inside a condition in order for the code block to execute. </p>
+                              <table>
+                                   <thead>
+                                        <tr>
+                                             <th>Operators</th>
+                                             <th>Desciption</th>
+                                             <th>Example</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody id="tab-rela"></tbody>
+                              </table>
+                         </sub-section>
+                         <h3> Logical </h3>
+                         <sub-section>
+                              <p> Logical operators are used to combine multiple conditions and to specify on what conditions needs to be <code>true</code>. </p>
+                              <table>
+                                   <thead>
+                                        <tr>
+                                             <th>Operators</th>
+                                             <th>Desciption</th>
+                                             <th>Example</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody id="tab-logi"></tbody>
+                              </table>
+                         </sub-section>
+                         <h3> Miscellaneous </h3>
+                         <sub-section>
+                              <p> Miscellaneous operators only features two operators the Length and Concatonate operators. </p>
+                              <table>
+                                   <thead>
+                                        <tr>
+                                             <th>Operators</th>
+                                             <th>Desciption</th>
+                                             <th>Example</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody id="tab-misc"></tbody>
+                              </table>
+                         </sub-section>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Control Structures </h1>
+                    <section>
+                         <h3> If Else Statements </h3>
+                         <p>
+                              Control Structures are a block code which analyzes values and decide whether to execute the code or not. Also i'm only 
+                              mentioning the <code>for</code> loop statement and not <code>while</code>, <code>repeat</code> loop statements becuase no one ever uses these 2 loops.
+                         </p>
+                         <sub-section>
+                              <h4> If Statement </h4>
+                              <hypo-section>
+                                   <p>
+                                        If statement checks if the condition of the statement is <code>true</code>. It's define with the <code>if</code> keyword and the specified 
+                                        condition to execute the code block followed by the <code>then</code> keyword.
+                                   </p>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'friday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is friday my dudes time to get funky'</span>)
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+</pre>
+                                   </div>
+                              </hypo-section>
+                              <h4> Else Statement </h4>
+                              <hypo-section>
+                                   <p>
+                                        Else statement checks if the condition of the statement fails then this function will be called. It's defined with <code>else</code> keyword that's it 
+                                        nothing else to say about. This statement should be placed under the <code>if</code> or <code>elseif</code> statements, example shown below.
+                                   </p>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'friday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is friday my dudes time to get funky'</span>)
+     <span class="code-kyw1">else</span>                        <span class="code-com">-- checks if the day is not 'friday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is not friday my dudes :('</span>)
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+</pre>
+                                   </div>
+                              </hypo-section>
+                              <h4> ElseIf Statement </h4>
+                              <hypo-section>
+                                   <p>
+                                        ElseIf statement checks is an alternative condition for the <code>if</code> statement, if the <code>if</code> or another <code>elseif</code> condition 
+                                        fails then this statement will be called. It's define with the <code>elseif</code> keyword with the same syntax for the <code>if</code> statement.
+                                   </p>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">2</span> <span class="code-kyw1">then</span>     <span class="code-com">-- checks if the day is 'monday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is monday, i hate school'</span>)
+     <span class="code-kyw1">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">4</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'wednesday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is wednesday my dudes'</span>)
+     <span class="code-kyw1">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'friday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is friday my dudes time to get funky'</span>)
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+</pre>
+                                   </div>
+                              </hypo-section>
+                         </sub-section>
+                         <h3> For Loop Statements </h3>
+                         <sub-section>
+                              <p>
+                                   For loop statement allows you to loop a specific number of times. This loop is commonly used for <code>setPropertyFromGroup()</code> and 
+                                   <code>getPropertyFromGroup()</code> functions for note modification, modcharts, or something. And used for reading a table values or 
+                                   performing on numeric values. There are 2 types of loops Generic loop or Numeric Loop.
+                              </p>
+                              <h4> Numeric Loop </h4>
+                              <hypo-section>
+                                   <p>
+                                        Numeric Loop are a type of loop that use numeric values to increment or to decrement the value. This loop is usually the most common 
+                                        loop to use for <code>setPropertyFromGroup()</code> and <code>getPropertyFromGroup()</code> functions. There are 3 attributes when 
+                                        declaring a Numeric loop <code>exp1</code>, <code>exp2</code>, and an optional <code>exp3</code> attributes.
+                                   </p>
+                                   <ul>
+                                        <li><code>exp1</code> - The local variable for the numeric loop with the minimum number value to start.</li>
+                                        <li><code>exp2</code> - The maximum number value of numeric loop to stop at.</li>
+                                        <li><code>exp3</code> - An optional attribute, How much the value will be incremented <code>1</code> or decremented <code>-1</code>; Defualt value: <code>1</code>.</li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">for</span> <span class="code-var">index</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">5</span>, <span class="code-num">1</span> <span class="code-kyw1">do</span>  <span class="code-com">-- Increment loop</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)  <span class="code-com">-- will return '0, 1, 2, 3, 4, 5'</span>
+     <span class="code-kyw1">end</span>
+     <span class="code-kyw1">for</span> <span class="code-var">index</span> <span class="code-kyw1">=</span> <span class="code-num">5</span>, <span class="code-num">0</span>, <span class="code-ope">-</span><span class="code-num">1</span> <span class="code-kyw1">do</span> <span class="code-com">-- Decrement loop</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)  <span class="code-com">-- will return '5, 4, 3, 2, 1, 0'</span>
+     <span class="code-kyw1">end</span>
+
+     <span class="code-kyw1">for</span> <span class="code-var">index</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">300</span>, <span class="code-num">50</span> <span class="code-kyw1">do</span> <span class="code-com">-- Increment Loop with each value incremented by 50 </span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)    <span class="code-com">-- will return '0, 50, 100, 150, 200, 250, 300'</span>
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+</pre>
+                                   </div>
+                              </hypo-section>
+                              <h4> Generic Loop </h4>
+                              <hypo-section>
+                                   <p>
+                                        Generic Loop are a type of loop that uses <code>pair</code> functions to read all the table values. This is just an alternative loop 
+                                        for reading every table values. There are 3 attributes when declaring a Generic loop <code>exp1</code>, <code>exp2</code>, and 
+                                        <code>iterate</code> attributes.
+                                   </p>
+                                   <ul>
+                                        <li><code>exp1</code> - The key name of the table, you can name how you want; Example: <code>key</code>.</li>
+                                        <li><code>exp2</code> - The value name of the table, you can name how you want; Example: <code>value</code>.</li>
+                                        <li><code>iterate</code> - The values to iterate from the loop can either the <code>pair</code> functions or other.
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">local</span> <span class="code-var">tableThingy</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">num1</span> <span class="code-kyw1">=</span> <span class="code-num">231</span>, <span class="code-tabkey">num2</span> <span class="code-kyw1">=</span> <span class="code-num">345</span>, <span class="code-tabkey">num3</span> <span class="code-kyw1">=</span> <span class="code-num">234</span>}
+     <span class="code-kyw1">for</span> <span class="code-var">key</span>, <span class="code-var">value</span> <span class="code-kyw1">in</span> <span class="code-funcC">pairs</span>(<span class="code-var">tableThingy</span>) <span class="code-kyw1">do</span>
+          <span class="code-funcC">debugPrint</span>(key, <span class="code-var">value</span>)  <span class="code-com">-- will return 'num1 = 231, num2 = 345, num3 = 234'</span>
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+</pre>
+                                   </div>
+                              </hypo-section>
+                         </sub-section>
+                         <h3> Return Statement </h3>
+                         <sub-section>
+                              <p>
+                                   Return statement as the name suggests returns the results from the function. And stops the execution of the function. It must be relative 
+                                   at the end of the function or conditional statement.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">getMidpointNum</span>(<span class="code-paraS">ope1</span>, <span class="code-paraS">ope2</span>)
+     <span class="code-kyw1">return</span> (<span class="code-paraS">ope1</span> <span class="code-ope">+</span> <span class="code-paraS">ope2</span>) <span class="code-ope">/</span> <span class="code-num">2</span>  <span class="code-com">-- returns the middle value between 'ope1' and 'ope2'</span>
+<span class="code-kyw1">end</span> 
+
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">getMidpointNum</span>(<span class="code-num">9</span> <span class="code-ope">+</span> <span class="code-num">10</span>))   <span class="code-com">-- will return '9.5'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
+                         </sub-section>
+                         <h3> Break Statement </h3>
+                         <sub-section>
+                              <p>
+                                   Break statement stops the loop statements from looping. You can use this for specific conditions for the loop to ends. It must be relative 
+                                   at the end of the function or conditional statement.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">for</span> <span class="code-var">index</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">10</span> <span class="code-kyw1">do</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>) <span class="code-com">-- will return '0, 1, 2, 3, 4, 5'</span>
+
+          <span class="code-kyw1">if</span> <span class="code-var">index</span> <span class="code-ope">==</span> <span class="code-num">10</span> <span class="code-ope">/</span> <span class="code-num">2</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the 'index' value is '5'</span>
+               <span class="code-kyw1">break</span> <span class="code-com">-- ends the loop</span>
+          <span class="code-kyw1">end</span>
+     <span class="code-kyw1">end</span> 
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
+                         </sub-section>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Scope </h1>
+                    <section>
+                         <p>
+                              Scope in programming determines whether the function or variable is available within the code block of the conditional statement or function. 
+                              They can be set to <code>global</code> or <code>local</code> types, although they all start as <code>global</code> type by default. But it's 
+                              recommended they should be set into a <code>local</code> type because Lua accesses them faster than <code>global</code> types.
+                         </p>
+                         <ul>
+                              <li><code>global</code> - Makes the function or variable available anywhere at any scope.</li>
+                              <li><code>local</code> - Makes the function or variable available only to that specific scope and script, if called outside the scope returns a nil value; Declared with the <code>local</code> keyword.</li>
+                         </ul>
+                         <div class="code-border">
+                              <div style="display: flex;">
+                                   <div class="code-tagbg">Syntax:</div>
+                              </div>
+                              <div class="code-newlines"></div>
+<pre>
+<span class="code-var">name</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>        <span class="code-com">-- global variable</span>
+<span class="code-kyw1">local</span> <span class="code-var">name</span> <span class="code-kyw1">=</span> <span class="code-data">value</span>   <span class="code-com">-- local variable</span>
+
+<span class="code-kyw1">function</span> <span class="code-funcD">localName</span>()          <span class="code-com">-- global function</span>
+     <span class="code-data">code block</span>
+<span class="code-kyw1">end</span>
+<span class="code-kyw1">local</span> <span class="code-kyw1">function</span> <span class="code-funcD">globalName</span>()   <span class="code-com">-- local function</span>
+     <span class="code-data">code block</span>
+<span class="code-kyw1">end</span>
+</pre>
+                         </div>
+                         <div class="code-border">
+                              <div style="display: flex;">
+                                   <div class="code-tagbg">Example:</div>
+                              </div>
+                              <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreatePost</span>()
+     <span class="code-kyw1">do</span>      <span class="code-com">-- Do statement</span>
+          <span class="code-kyw1">do</span> <span class="code-com">-- Nested Do statement (Don't over nest statements it's a bad habit)</span>
+               <span class="code-var">isAvailable</span>     <span class="code-kyw1">=</span> <span class="code-kyw2">true</span>  <span class="code-com">-- global</span>
+               <span class="code-kyw1">local</span> <span class="code-var">isUnfunny</span> <span class="code-kyw1">=</span> <span class="code-kyw2">false</span> <span class="code-com">-- local</span>
+               <span class="code-kyw1">local</span> <span class="code-var">folders</span>   <span class="code-kyw1">=</span> {<span class="code-str">'homework'</span>, <span class="code-str">'images'</span>, <span class="code-str">'downloads'</span>}
+               <span class="code-funcC">debugPrint</span>(<span class="code-var">folders</span>[<span class="code-num">1</span>]) <span class="code-com">-- will return 'homework'</span>
+               <span class="code-funcC">debugPrint</span>(<span class="code-var">folders</span>[<span class="code-num">2</span>]) <span class="code-com">-- will return 'images'</span>
+          <span class="code-kyw1">end</span>
+          <span class="code-var">getUserName</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">getenv</span>(<span class="code-str">"USERNAME"</span>)
+          <span class="code-kyw1">local</span> <span class="code-var">fish</span>  <span class="code-kyw1">=</span> <span class="code-str">'hate'</span>    <span class="code-com">-- local keyword is used</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">fish</span>)        <span class="code-com">-- will return 'hate'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">folders</span>[<span class="code-num">3</span>])  <span class="code-com">-- will return 'downloads'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">getUserName</span>) <span class="code-com">-- will return the username</span>
+     <span class="code-kyw1">end</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">fish</span>)        <span class="code-com">-- will return 'nil'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">isAvailable</span>) <span class="code-com">-- will return 'true'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">getUserName</span>) <span class="code-com">-- will return the username</span>
+<span class="code-kyw1">end</span>
+</pre>
+                         </div>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Global Variable </h1>
+                    <section>
+                         <p>
+                              Global variable is a special variable table dictionary specificly, that stores every global variable and saved inside there. Calling it, is defined with the <code>_G</code> variable not a function, 
+                              be careful when calling it becuase it can cause a crash. Changing its value does not affect any environment, nor vice versa. You can use this for getting multiple global variables from a loop and 
+                              modify the values easily.
+                         </p>
+                         <p> The orginal intended purpose of the global variable is get other global variables from other scripts. But it's broken when using it for some reason. </p>
+                         <div class="code-border">
+                              <div style="display: flex;">
+                                   <div class="code-tagbg">Example:</div>
+                              </div>
+                              <div class="code-newlines"></div>
+<pre>
+<span class="code-var">var1</span>, <span class="code-var">var2</span>, <span class="code-var">var3</span> <span class="code-kyw1">=</span> <span class="code-num">342</span>, <span class="code-num">864</span>, <span class="code-num">913</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreatePost</span>()
+     <span class="code-kyw1">for</span> <span class="code-var">i</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">3</span> <span class="code-kyw1">do</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-paraS">_G</span>[<span class="code-str">'var'</span><span class="code-ope">..</span><span class="code-var">i</span>])                 <span class="code-com">-- will return '342, 864, 913'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-paraS">_G</span>[<span class="code-str">'defaultPlayerStrumX'</span><span class="code-ope">..</span><span class="code-var">i</span>]) <span class="code-com">-- will return '732, 844, 956, 1068'</span>
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+</pre>
+                         </div>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Modules </h1>
+                    <section>
+                         <h3> require(moduleName:String) </h3>
+                         <sub-section>
+                              
+                         </sub-section>
+                    </section>
+               <div class="head-hr-thick"></div>
+               <h1> Predefined Functions </h1>
+                    <section>
+                         <h3> dofile(path:String) </h3>
+                         <sub-section>
+
+                         </sub-section>
+                         <h3> type(value:Dynamic) </h3>
+                         <sub-section>
+                              
+                         </sub-section>
+                         <h3> tostring(num:String) </h3>
+                         <sub-section>
+                              
+                         </sub-section>
+                         <h3> tonumber(num:Float) </h3>
+                         <sub-section>
+                              
+                         </sub-section>
+                         <h3> load(chunk:String) </h3>
+                         <sub-section>
+                              
+                         </sub-section>
+                         <h3> pairs(tab:Table) </h3>
+                         <sub-section>
+                              
+                         </sub-section>
+                         <h3> ipairs(tab:Table) </h3>
+                         <sub-section>
+                              
+                         </sub-section>
+                    </section>
+          </main>
+     </body>
+</html>

@@ -1,0 +1,60 @@
+{
+     "character_classes": [
+          [
+               "<code>%a</code>",
+               "Any Alphabetical Characters",
+               "<code>AaBbCcDd</code>"
+          ],
+          [
+               "<code>%l</code>",
+               "Any Lower-case Characters",
+               "<code>aabbccdd</code>"
+          ],
+          [
+               "<code>%u</code>",
+               "Any Upper-case Characters",
+               "<code>AABBCCDD</code>"
+          ],
+          [
+               "<code>%d</code>",
+               "Any Digit Characters",
+               "<code>01234567</code>"
+          ],
+          [
+               "<code>%w</code>",
+               "Any Alphanumeric Characters",
+               "<code>0123AaBb</code>"
+          ],
+          [
+               "<code>%p</code>",
+               "Any Punctuation Characters",
+               "<code>!@#$%;,.</code>"
+          ],
+          [
+               "<code>%x</code>",
+               "Any Hexadecimal Characters",
+               "<code>0123456789AaBbCcDdEeFf</code>"
+          ],
+          [
+               "<code>%s</code>",
+               "Any Space Characters",
+               "<code>Space</code>"
+          ],
+          [
+               "<code>%c</code>",
+               "Any Control Characters",
+               "<code>Carriage Return, Escape, Delete, etc</code>"
+          ],
+          [
+               "<code>%z</code>",
+               "Any Chracters representing zero",
+               "<code>0</code>"
+          ]
+     ],
+     "magic_characters": [
+
+     ],
+     "escape_characters": [
+
+     ]
+}
