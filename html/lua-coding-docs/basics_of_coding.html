@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
      <head>
-          <title> PsychWikiSite - Lua Coding Docs: Basics Of Coding </title>
+          <title>PsychWikiSite - Lua Coding Docs: Basics Of Coding</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="color-scheme" content="dark">
@@ -12,9 +12,8 @@
           <link rel="stylesheet" type="text/css" href="/css/wikis/sidebar_format.css">
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-          <script defer type="module" src="/javascript/CodeLines.js"></script>
-          <script defer type="module" src="/javascript/CodeTableDatas.js"></script>
           <script defer type="module" src="/javascript/Main.js"></script>
+          <script defer type="module" src="/javascript/Wiki.js"></script>
      </head>
      <body>
           <!-- TODO: Make code the colorized the code block texts -->
@@ -39,24 +38,24 @@
                <h1> Introduction </h1>
                     <section>
                          <p>
-                              Lua is a lightweight, high-level, multi-paradigm scripting language used in Psych Engine modding. Which is a better alternative to Haxe, the 
-                              main language that Friday Night Funkin' uses. Becuase you have to manually download the source code, modify the specific Haxe file, and then 
-                              compile it. As for Lua just insert a Lua into any script folders to modify something that's it. The current version of Lua that Haxe is using 
-                              is (5.1).
+                              Lua is a lightweight, high-level, multi-paradigm scripting language used in Psych Engine modding. Which is a better 
+                              alternative to Haxe, the main language that Friday Night Funkin' uses. Because you have to manually download the 
+                              source code, modify the specific Haxe file, and then compile it. As for Lua just insert a Lua into any script 
+                              folders to modify something that's it. The current version of Lua that Haxe is using is (5.1).
                          </p>
                          <p>
-                              To create your own Lua file I recommend you download VSCode it's available in Windows, Mac, and Linux. Now after you download VSCode open it, 
-                              press [Command + N] this will create a untitled file. Click the hyperlink that says [Select a language] after that type or search lua on the 
-                              Select language mode. Click Lua and boom you're done. If you want to save the Lua file press [Commans + S] choose the file path to be saved 
-                              and click [Ok].
+                              To create your own Lua file I recommend you download VSCode it's available in Windows, Mac, and Linux. Now after 
+                              you download VSCode open it, press [Command + N] this will create an untitled file. Click the hyperlink that says 
+                              [Select a language] after that type or search Lua on the Select language mode. Click Lua and boom your done. If 
+                              you want to save the Lua file press [Command + S] choose the file path to be saved and click [Ok].
                          </p>
                          <h3> Differences </h2>
                          <sub-section>
                               <p>
-                                   Lua in Psych Engine is different compared to the original Lua. Mainly when coding the code should nested inside the Callback templates 
-                                   except for variables, functions, operators, and predefined functions these can work outside the Callback templates. Printing a value is 
-                                   also different instead of using <code>print()</code> you should use <code>debugPrint()</code>, it works the same as the <code>print()</code> 
-                                   function.
+                                   Lua in Psych Engine is different compared to the original Lua. Mainly when coding the code should nested 
+                                   inside the Callback templates except for variables, functions, operators, and predefined functions these 
+                                   can work outside the Callback templates. Printing a value is also different instead of using <code>print()</code> 
+                                   you should use <code>debugPrint()</code>, it works the same as the <code>print()</code> function.
                               </p>
                               <div class="code-border">
                                    <div style="display: flex;">
@@ -100,13 +99,13 @@
                          <h3> Declaring & Calling </h3>
                          <sub-section>
                               <p>
-                                   To declare a variable assign the <code>scope</code> attribute of the variable this is optional to add, you can set to <code>global</code>
-                                   or <code>local</code>; Defualt value: <code>global</code>. With the chosen <code>name</code> of your variable, name it what-ever you want. Followed
-                                   by the equal <code>=</code> character with the specified value of the variable.
+                                   To declare a variable assign the scope attribute of the variable this is optional to add, you can set to <code>global</code> or 
+                                   <code>local</code>; Default value: <code>global</code>. With the chosen <code>name</code> of your variable, name it what-ever 
+                                   you want. Followed by an equal <code>=</code> character with the specified value of the chosen variable.
                               </p>
                               <p>
-                                   Multi-line variables can also be declared, each <code>name</code> and <code>value</code> attributes of the variable must be seperated with
-                                   comma <code>,</code> character. They must be equal to each-other if not it will return a <code>nil</code> value or an error.
+                                   Multi-line variables can also be declared, each name and value attributes of the variable must be separated with comma <code>,</code> 
+                                   character. They must be equal to each-other if not it will return a <code>nil</code> value or an error.
                               </p>
                               <div class="code-border">
                                    <div style="display: flex;">
@@ -137,7 +136,7 @@
      <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will return '4 5 nil'</span>
 
      <span class="code-var">foo</span> <span class="code-kyw1">=</span> <span class="code-num">12</span>                           <span class="code-com">-- setting single variable</span>
-     <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw1">=</span> <span class="code-num">543</span>, <span class="code-num">872</span>, <span class="code-num">923</span>   <span class="code-com">-- setting mutiple variables</span>
+     <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw1">=</span> <span class="code-num">543</span>, <span class="code-num">872</span>, <span class="code-num">923</span>   <span class="code-com">-- setting multiple variables</span>
 
      <span class="code-funcC">debugPrint</span>(<span class="code-var">foo</span>)               <span class="code-com">-- will return '12'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will return '543 872 923'</span>
@@ -148,12 +147,12 @@
                          <h3> Naming Variable Rules </h3>
                          <sub-section>
                               <ul>
-                                   <li> 
-                                        Variable names can have alphanumeric <code>Aa12</code> and underscore <code>_</code> characters. Note that digital characters can't be
+                                   <li>
+                                        Variable names can have alphanumeric <code>Aa12</code> and underscore <code>_</code> characters. Note that digital characters can't be 
                                         placed at the start of the name only at the middle or at the end.
                                    </li>
-                                   <li> Variable names are case-sensative so variable <code>a</code> and <code>A</code> are completely different to each-other. </li>
-                                   <li> Variable names can't be named after keywords, operators, control structures, etc. </li>
+                                   <li> Variable names are case-sensitive so variable <code>a</code> and <code>A</code> are completely different to each-other. </li>
+                                   <li> Variable names can't be named after <code>keywords</code>, <code>operators</code>, <code>control structures</code>, etc. </li>
                               </ul>
                               <div class="code-border">
                                    <div style="display: flex;">
@@ -263,7 +262,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                               <p>
                                    Tables are a data structuring mechanism in Lua the only one in fact. They are associative arrays, which means they hold a collection of key or value pairs. Tables can be used for 
                                    to store multiple values of any kind except for <code>nil</code> values. To construct a table, use curly-braces <code>{}</code> characters rather than bracket <code>[]</code> 
-                                   characters like most programming languages use. Tables can be structed as an Array or a Dictionary.
+                                   characters like most programming languages use. Tables can be constructed as an Array or a Dictionary.
                               </p>
                               <div class="code-border">
                                    <div style="display: flex;">
@@ -331,7 +330,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                <h1> Function </h1>
                     <section>
                          <p>
-                              Functions are a collection of code to peform a specific task. This is used the same functions multiple times to make the code reusable. 
+                              Functions are a collection of code to perform a specific task. This is used the same functions multiple times to make the code reusable. 
                               Functions are defined with the <code>function</code> keyword followed by the name of your custom function. With the pair of parenthesis 
                               <code>()</code> characters. To call a function get the name of your custom function followed by a pair of parenthesis <code>()</code> 
                               characters.
@@ -355,7 +354,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                          <sub-section>
                               <p>
                                    Parameters are a special type of variable declared inside the parenthesis <code>()</code> character. You can add more parameters by typing the name 
-                                   of parameter and each seperating them with a comma <code>,</code> character. They can add more functionality to the function. If any of the arguments 
+                                   of parameter and each separating them with a comma <code>,</code> character. They can add more functionality to the function. If any of the arguments 
                                    are left blank then it will cause an error. So uhh double check when calling functions.
                               </p>
                               <div class="code-border">
@@ -391,7 +390,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
 <pre>
 <span class="code-kyw1">function</span> <span class="code-funcD">Array</span>(<span class="code-paraS">tab</span>, <span class="code-paraI">...</span>)
      <span class="code-kyw1">local</span> <span class="code-var">convert</span> <span class="code-kyw1">=</span> {<span class="code-paraI">...</span>} <span class="code-com">-- converts it into a table</span>
-     <span class="code-kyw1">for</span> <span class="code-var">i</span> <span class="code-kyw1">=</span> <span class="code-num">1</span>, <span class="code-ope">#</span><span class="code-var">convert</span> <span class="code-kyw1">do</span> <span class="code-com">-- alternative to read evey value of a table</span>
+     <span class="code-kyw1">for</span> <span class="code-var">i</span> <span class="code-kyw1">=</span> <span class="code-num">1</span>, <span class="code-ope">#</span><span class="code-var">convert</span> <span class="code-kyw1">do</span> <span class="code-com">-- alternative to read every value of a table</span>
           <span class="code-data">table</span>.<span class="code-funcC">insert</span>(<span class="code-paraS">tab</span>, <span class="code-var">convert</span>[<span class="code-var">i</span>]) <span class="code-com">-- inserts the value</span>
      <span class="code-kyw1">end</span>
      <span class="code-kyw1">return</span> <span class="code-paraS">tab</span> <span class="code-com">-- returns the result</span>
@@ -481,7 +480,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                          </sub-section>
                          <h3> Miscellaneous </h3>
                          <sub-section>
-                              <p> Miscellaneous operators only features two operators the Length and Concatonate operators. </p>
+                              <p> Miscellaneous operators only features two operators the Length and Concatenate operators. </p>
                               <table>
                                    <thead>
                                         <tr>
@@ -499,14 +498,14 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                     <section>
                          <h3> If Else Statements </h3>
                          <p>
-                              Control Structures are a block code which analyzes values and decide whether to execute the code or not. Also i'm only 
-                              mentioning the <code>for</code> loop statement and not <code>while</code>, <code>repeat</code> loop statements becuase no one ever uses these 2 loops.
+                              These are a type of control structures that specifies whether or not to execute the block code. They are the most common control structures to use. 
+                              There are only 3 if else statements the <code>if</code>, <code>else</code>, <code>elseif</code> statements.
                          </p>
                          <sub-section>
                               <h4> If Statement </h4>
                               <hypo-section>
                                    <p>
-                                        If statement checks if the condition of the statement is <code>true</code>. It's define with the <code>if</code> keyword and the specified 
+                                        If statement checks if the condition of the statement is <code>true</code>. It's define with the <code>if</code> keyword and the specifies 
                                         condition to execute the code block followed by the <code>then</code> keyword.
                                    </p>
                                    <div class="code-border">
@@ -517,8 +516,8 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
 <pre>
 <span class="code-kyw1">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
 <span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'friday'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is friday my dudes time to get funky'</span>)
+     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'Friday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Friday'</span>)
      <span class="code-kyw1">end</span>
 <span class="code-kyw1">end</span>
 </pre>
@@ -538,10 +537,10 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
 <pre>
 <span class="code-kyw1">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
 <span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'friday'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is friday my dudes time to get funky'</span>)
-     <span class="code-kyw1">else</span>                        <span class="code-com">-- checks if the day is not 'friday'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is not friday my dudes :('</span>)
+     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'Friday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Friday'</span>)
+     <span class="code-kyw1">else</span>                        <span class="code-com">-- checks if the day is not 'Friday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'Not Friday'</span>)
      <span class="code-kyw1">end</span>
 <span class="code-kyw1">end</span>
 </pre>
@@ -561,12 +560,12 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
 <pre>
 <span class="code-kyw1">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
 <span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">2</span> <span class="code-kyw1">then</span>     <span class="code-com">-- checks if the day is 'monday'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is monday, i hate school'</span>)
-     <span class="code-kyw1">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">4</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'wednesday'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is wednesday my dudes'</span>)
-     <span class="code-kyw1">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'friday'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-str">'it is friday my dudes time to get funky'</span>)
+     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">2</span> <span class="code-kyw1">then</span>     <span class="code-com">-- checks if the day is 'Monday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Monday'</span>)
+     <span class="code-kyw1">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">4</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'Wednesday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Wednesday'</span>)
+     <span class="code-kyw1">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'Friday'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Friday'</span>)
      <span class="code-kyw1">end</span>
 <span class="code-kyw1">end</span>
 </pre>
@@ -590,7 +589,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    <ul>
                                         <li><code>exp1</code> - The local variable for the numeric loop with the minimum number value to start.</li>
                                         <li><code>exp2</code> - The maximum number value of numeric loop to stop at.</li>
-                                        <li><code>exp3</code> - An optional attribute, How much the value will be incremented <code>1</code> or decremented <code>-1</code>; Defualt value: <code>1</code>.</li>
+                                        <li><code>exp3</code> - An optional attribute, How much the value will be incremented <code>1</code> or decremented <code>-1</code>; Default value: <code>1</code>.</li>
                                    </ul>
                                    <div class="code-border">
                                         <div style="display: flex;">
@@ -666,7 +665,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                          <h3> Break Statement </h3>
                          <sub-section>
                               <p>
-                                   Break statement stops the loop statements from looping. You can use this for specific conditions for the loop to ends. It must be relative 
+                                   Break statement stops the loop statements from looping. You can use this for specific conditions for the loop to end. It must be relative 
                                    at the end of the function or conditional statement.
                               </p>
                               <div class="code-border">
@@ -749,11 +748,11 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                <h1> Global Variable </h1>
                     <section>
                          <p>
-                              Global variable is a special variable table dictionary specificly, that stores every global variable and saved inside there. Calling it, is defined with the <code>_G</code> variable not a function, 
-                              be careful when calling it becuase it can cause a crash. Changing its value does not affect any environment, nor vice versa. You can use this for getting multiple global variables from a loop and 
+                              Global variable is a special variable table dictionary specifically, that stores every global variable and saved inside there. Calling it, is defined with the <code>_G</code> variable not a function, 
+                              be careful when calling it because it can cause a crash. Changing its value does not affect any environment, nor vice versa. You can use this for getting multiple global variables from a loop and 
                               modify the values easily.
                          </p>
-                         <p> The orginal intended purpose of the global variable is get other global variables from other scripts. But it's broken when using it for some reason. </p>
+                         <p> The original intended purpose of the global variable is get other global variables from other scripts. But it's broken when using it for some reason. </p>
                          <div class="code-border">
                               <div style="display: flex;">
                                    <div class="code-tagbg">Example:</div>
