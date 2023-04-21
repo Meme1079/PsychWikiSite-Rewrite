@@ -81,7 +81,7 @@
           ],
           [
                "<code>not</code>",
-               "Reverses the condition; if the value is equivalent to false, then the operator will set it to <code>true</code>, and vice versa.",
+               "Reverses the condition; if the value is equivalent to false, then the operator will set it into <code>true</code>, and vice versa.",
                "<code>not true</code>; returns <code>false</code>"
           ]
      ],
@@ -93,7 +93,7 @@
           ],
           [
                "<code>..</code>",
-               "Concatonate operator, Merges multiple <code>string</code> together.",
+               "Concatenate operator, Merges multiple <code>string</code> together.",
                "<code>'snow'..'ball'</code>; returns <code>snowball</code>"
           ]
      ]
