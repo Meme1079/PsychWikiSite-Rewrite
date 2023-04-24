@@ -691,122 +691,236 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                <h1> Scope </h1>
                     <section>
                          <p>
-                              Scope in programming determines whether the function or variable is available within the code block of the conditional statement or function. 
-                              They can be set to <code>global</code> or <code>local</code> types, although they all start as <code>global</code> type by default. But it's 
-                              recommended they should be set into a <code>local</code> type because Lua accesses them faster than <code>global</code> types.
+                              Scope in programming determines whether a variable or function can be accessible outside that code block. They can be determine by either setting 
+                              them into <code>global</code> or <code>local</code> scope. Declare them behind the name of the variable or the <code>function</code> keyword for 
+                              functions.
                          </p>
-                         <ul>
-                              <li><code>global</code> - Makes the function or variable available anywhere at any scope.</li>
-                              <li><code>local</code> - Makes the function or variable available only to that specific scope and script, if called outside the scope returns a nil value; Declared with the <code>local</code> keyword.</li>
-                         </ul>
-                         <div class="code-border">
-                              <div style="display: flex;">
-                                   <div class="code-tagbg">Syntax:</div>
-                              </div>
-                              <div class="code-newlines"></div>
-<pre>
-<span class="code-var">name</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>        <span class="code-com">-- global variable</span>
-<span class="code-kyw1">local</span> <span class="code-var">name</span> <span class="code-kyw1">=</span> <span class="code-data">value</span>   <span class="code-com">-- local variable</span>
-
-<span class="code-kyw1">function</span> <span class="code-funcD">localName</span>()          <span class="code-com">-- global function</span>
-     <span class="code-data">code block</span>
-<span class="code-kyw1">end</span>
-<span class="code-kyw1">local</span> <span class="code-kyw1">function</span> <span class="code-funcD">globalName</span>()   <span class="code-com">-- local function</span>
-     <span class="code-data">code block</span>
-<span class="code-kyw1">end</span>
-</pre>
-                         </div>
-                         <div class="code-border">
-                              <div style="display: flex;">
-                                   <div class="code-tagbg">Example:</div>
-                              </div>
-                              <div class="code-newlines"></div>
-<pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreatePost</span>()
-     <span class="code-kyw1">do</span>      <span class="code-com">-- Do statement</span>
-          <span class="code-kyw1">do</span> <span class="code-com">-- Nested Do statement (Don't over nest statements it's a bad habit)</span>
-               <span class="code-var">isAvailable</span>     <span class="code-kyw1">=</span> <span class="code-kyw2">true</span>  <span class="code-com">-- global</span>
-               <span class="code-kyw1">local</span> <span class="code-var">isUnfunny</span> <span class="code-kyw1">=</span> <span class="code-kyw2">false</span> <span class="code-com">-- local</span>
-               <span class="code-kyw1">local</span> <span class="code-var">folders</span>   <span class="code-kyw1">=</span> {<span class="code-str">'homework'</span>, <span class="code-str">'images'</span>, <span class="code-str">'downloads'</span>}
-               <span class="code-funcC">debugPrint</span>(<span class="code-var">folders</span>[<span class="code-num">1</span>]) <span class="code-com">-- will return 'homework'</span>
-               <span class="code-funcC">debugPrint</span>(<span class="code-var">folders</span>[<span class="code-num">2</span>]) <span class="code-com">-- will return 'images'</span>
-          <span class="code-kyw1">end</span>
-          <span class="code-var">getUserName</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">getenv</span>(<span class="code-str">"USERNAME"</span>)
-          <span class="code-kyw1">local</span> <span class="code-var">fish</span>  <span class="code-kyw1">=</span> <span class="code-str">'hate'</span>    <span class="code-com">-- local keyword is used</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">fish</span>)        <span class="code-com">-- will return 'hate'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">folders</span>[<span class="code-num">3</span>])  <span class="code-com">-- will return 'downloads'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">getUserName</span>) <span class="code-com">-- will return the username</span>
-     <span class="code-kyw1">end</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">fish</span>)        <span class="code-com">-- will return 'nil'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">isAvailable</span>) <span class="code-com">-- will return 'true'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">getUserName</span>) <span class="code-com">-- will return the username</span>
-<span class="code-kyw1">end</span>
-</pre>
-                         </div>
-                    </section>
-               <div class="head-hr-thick"></div>
-               <h1> Global Variable </h1>
-                    <section>
                          <p>
-                              Global variable is a special variable table dictionary specifically, that stores every global variable and saved inside there. Calling it, is defined with the <code>_G</code> variable not a function, 
-                              be careful when calling it because it can cause a crash. Changing its value does not affect any environment, nor vice versa. You can use this for getting multiple global variables from a loop and 
-                              modify the values easily.
+                              Global scope are the most common and the defualt scope for variables and functions. They can be called anywhere inside the Lua script or outside 
+                              the Lua script with functions. Local scope are more faster to call than Global scope, they can be only call inside the specific scope of the code 
+                              block. You can declare them with the <code>local</code> keyword behind the <code>name</code> of the variable or the <code>function</code> keyword 
+                              of the function.
                          </p>
-                         <p> The original intended purpose of the global variable is get other global variables from other scripts. But it's broken when using it for some reason. </p>
                          <div class="code-border">
                               <div style="display: flex;">
                                    <div class="code-tagbg">Example:</div>
                               </div>
                               <div class="code-newlines"></div>
 <pre>
-<span class="code-var">var1</span>, <span class="code-var">var2</span>, <span class="code-var">var3</span> <span class="code-kyw1">=</span> <span class="code-num">342</span>, <span class="code-num">864</span>, <span class="code-num">913</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreatePost</span>()
-     <span class="code-kyw1">for</span> <span class="code-var">i</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">3</span> <span class="code-kyw1">do</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-paraS">_G</span>[<span class="code-str">'var'</span><span class="code-ope">..</span><span class="code-var">i</span>])                 <span class="code-com">-- will return '342, 864, 913'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-paraS">_G</span>[<span class="code-str">'defaultPlayerStrumX'</span><span class="code-ope">..</span><span class="code-var">i</span>]) <span class="code-com">-- will return '732, 844, 956, 1068'</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">do</span>   <span class="code-com">-- do block</span>
+          <span class="code-var">myGlobalVar</span> <span class="code-kyw1">=</span> <span class="code-kyw2">false</span>      <span class="code-com">-- global</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">myGlobalVar</span>)  <span class="code-com">-- will return 'false'</span>
      <span class="code-kyw1">end</span>
+     <span class="code-kyw1">do</span>   <span class="code-com">-- do block</span>
+          <span class="code-kyw1">local</span> <span class="code-var">myLocalVar</span> <span class="code-kyw1">=</span> <span class="code-kyw2">true</span>  <span class="code-com">-- local</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">myLocalVar</span>)   <span class="code-com">-- will return 'true'</span>
+     <span class="code-kyw1">end</span>
+     
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">myGlobalVar</span>) <span class="code-com">-- will return 'false'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">myLocalVar</span>)  <span class="code-com">-- will return 'nil'</span>
 <span class="code-kyw1">end</span>
 </pre>
                          </div>
                     </section>
-               <div class="head-hr-thick"></div>
                <h1> Modules </h1>
                     <section>
+                         <p>
+                              Modules are a code library these mostly contain functions or variables. They can help you maintain a code-base and break your code into different 
+                              Lua files. If you're using them frequently when coding your weird Lua scripts.
+                         </p>
+                         <h3> Creating </h3>
+                         <sub-section>
+                              <p>
+                                   To create your own custom module make a separate Lua script and placed the location of the script. Let's just say you placed them inside 
+                                   <code>mods/scripts/modules</code> folder and you named it <code>myGamingModules.lua</code>. Now inside of it declare a <code>local</code> 
+                                   table variable with the exact name of the Lua script module with no value(s) inside of it; Example: <code>local myGamingModules = {}</code>.
+                              </p>
+                              <p>
+                                   Before you declare your functions or variables each name should have the <code>local</code> table variable name followed by the dot <code>.</code> 
+                                   character. And at the end of the Lua script module should have the <code>return</code> statement on the <code>local</code> table variable name to 
+                                   export the modules to other Lua script; Example: <code>return myGamingModules</code>. <em>(I Think)</em>
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-modul">myGamingModules</span> <span class="code-kyw1">=</span> {}
+
+<span class="code-modul">myGamingModules</span>.<span class="code-var">red</span>   <span class="code-kyw1">=</span> <span class="code-str">'ff0000'</span>
+<span class="code-modul">myGamingModules</span>.<span class="code-var">green</span> <span class="code-kyw1">=</span> <span class="code-str">'00ff00'</span>
+<span class="code-modul">myGamingModules</span>.<span class="code-var">blue</span>  <span class="code-kyw1">=</span> <span class="code-str">'0000ff'</span>
+
+<span class="code-kyw1">function</span> <span class="code-funcM">myGamingModules</span>.<span class="code-funcD">switch</span>(<span class="code-paraS">case</span>, <span class="code-paraS">statement</span>)
+     <span class="code-kyw1">if</span> <span class="code-paraS">statement</span>[<span class="code-paraS">case</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-ope">or</span> <span class="code-ope">not</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>] <span class="code-kyw1">then</span>
+          <span class="code-kyw1">return</span> <span class="code-paraS">statement</span>[<span class="code-paraS">case</span>]()
+     <span class="code-kyw1">else</span>
+          <span class="code-kyw1">return</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>]()
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+
+<span class="code-kyw1">function</span> <span class="code-funcM">myGamingModules</span>.<span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>) <span class="code-com">-- Concatenates setProperty x and y</span>
+     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-kyw1">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
+          <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.x'</span>, <span class="code-paraS">pos</span>[<span class="code-num">1</span>])
+     <span class="code-kyw1">end</span>
+     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-kyw1">then</span>
+          <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.y'</span>, <span class="code-paraS">pos</span>[<span class="code-num">2</span>]) 
+     <span class="code-kyw1">end</span>
+<span class="code-kyw1">end</span>
+
+<span class="code-kyw1">return</span> <span class="code-modul">myGamingModules</span>
+</pre>
+                              </div>
+                         </sub-section>
                          <h3> require(moduleName:String) </h3>
                          <sub-section>
-                              
+                              <p>
+                                   Requires the module name and <ins>imports the functions or variables</ins>. To declare the <code>require</code> function either 
+                                   use the <ins>function itself or use it inside the value of the variable</ins>. This is the only few functions that you can 
+                                   <ins>add without the parenthesis</ins> <code>()</code> character.
+                              </p>
+                              <ul>
+                                   <li><code>moduleName</code> - The location of the Lua script module file to be used; Starts outside the <code>mods</code> folder.</li>
+                              </ul>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Declarations:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-funcC">require</span> <span class="code-str">'mods/scripts/modules/myGamingModules'</span>                      <span class="code-com">-- uses the default name</span>
+<span class="code-kyw1">local</span> <span class="code-var">moduleName</span> <span class="code-kyw1">=</span> <span class="code-funcC">require</span>(<span class="code-str">'mods/scripts/modules/myGamingModules'</span>)  <span class="code-com">-- uses a custom name</span>
+</pre>
+                              </div>
+                              <p>
+                                   To call the <code>require</code> function, <ins>get the specified module name to use</ins>; if it's contained inside a variable, 
+                                   <ins>get the variable name; if not get the module name</ins>. Add a dot <code>.</code> character followed by the function or 
+                                   variable name inside the Lua module file.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Declarations:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-modul">moduleName</span> <span class="code-kyw1">=</span> <span class="code-funcC">require</span>(<span class="code-str">'mods/scripts/modules/myGamingModules'</span>) <span class="code-com">-- gets the module</span>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreatePost</span>()
+     <span class="code-modul">moduleName</span>.<span class="code-funcC">setPos</span>(<span class="code-str">'boyfriend'</span>, {<span class="code-num">500</span>, <span class="code-num">1200</span>}) <span class="code-com">-- sets the boyfriend positions</span>
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">red</span>)   <span class="code-com">-- will return 'ff0000'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">green</span>) <span class="code-com">-- will return '00ff00'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">blue</span>)  <span class="code-com">-- will return '0000ff'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
                          </sub-section>
                     </section>
                <div class="head-hr-thick"></div>
-               <h1> Predefined Functions </h1>
+               <h1> Predefined Functions/Variables </h1>
                     <section>
                          <h3> dofile(path:String) </h3>
                          <sub-section>
-
+                              <p> Gets the <ins><code>global</code> functions or variables</ins> on other Lua files. </p>
+                              <ul>
+                                   <li><code>path</code> - The location of the Lua script module file to be used</li>
+                              </ul>
                          </sub-section>
                          <h3> type(value:Dynamic) </h3>
                          <sub-section>
-                              
+                              <p> 
+                                   Gets the <ins>specific value type of the value</ins>. Can be used to check the value type inside 
+                                   the conditional statements; Returns either: <code>string</code>, <code>boolean</code>, 
+                                   <code>number</code>, <code>table</code>, <code>function</code>. 
+                              </p>
+                              <ul>
+                                   <li><code>value</code> - The value to be used.</li>
+                              </ul>
                          </sub-section>
                          <h3> tostring(num:String) </h3>
                          <sub-section>
-                              
+                              <p> Converts any <ins><code>number</code> or <code>boolean</code> into a <code>string</code></ins> to prevent errors. </p>
+                              <ul>
+                                   <li><code>num</code> - The real number to be converted. </li>
+                              </ul>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">local</span> <span class="code-var">intoStr1</span> <span class="code-kyw1">=</span> <span class="code-str">'This goes from '</span><span class="code-ope">..</span><span class="code-funcC">tostring</span>(<span class="code-num">0</span>)<span class="code-ope">..</span><span class="code-str">'-'</span><span class="code-ope">..</span><span class="code-funcC">tostring</span>(<span class="code-num">10</span>) <span class="code-com">-- Numbers</span>
+     <span class="code-kyw1">local</span> <span class="code-var">intoStr2</span> <span class="code-kyw1">=</span> <span class="code-str">'Doubt it, it<span class="code-escr">\'</span>s '</span><span class="code-ope">..</span><span class="code-funcC">tostring</span>(<span class="code-kyw2">false</span>)               <span class="code-com">-- Booleans</span>
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">intoStr1</span>) <span class="code-com">-- will return 'This goes from 0-10'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">intoStr2</span>) <span class="code-com">-- will return 'Doubt it, it's false'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
                          </sub-section>
                          <h3> tonumber(num:Float) </h3>
                          <sub-section>
-                              
+                              <p>
+                                   Converts a <ins><code>number</code> inside a string into a real <code>number</code></ins>. If the value 
+                                   <ins>contains any characters other than digit characters</ins>, it will return a <code>nil</code> value.
+                              </p>
+                              <ul>
+                                   <li><code>num</code> - The string number to be converted.</li>
+                              </ul>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">local</span> <span class="code-var">intoNum1</span> <span class="code-kyw1">=</span> <span class="code-funcC">tonumber</span>(<span class="code-str">'10'</span><span class="code-ope">..</span><span class="code-str">'10'</span><span class="code-ope">..</span><span class="code-str">'50'</span>)                      <span class="code-com">-- Basic</span>
+     <span class="code-kyw1">local</span> <span class="code-var">intoNum2</span> <span class="code-kyw1">=</span> <span class="code-funcC">tonumber</span>((<span class="code-str">'ieurfie987bci173vf'</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'%D'</span>, <span class="code-str">''</span>)) <span class="code-com">-- A bit too advanced</span>
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">intoNum1</span>) <span class="code-com">-- will return '101050'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">intoNum2</span>) <span class="code-com">-- will return '987173'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
                          </sub-section>
                          <h3> load(chunk:String) </h3>
                          <sub-section>
-                              
+                              <p> 
+                                   Loads a chunk from the string, basically <ins>converts the string into real code</ins>; Calling should be 
+                                   followed by a pair of parenthesis <code>()</code> character. 
+                              </p>
+                              <ul>
+                                   <li><code>chunk</code> - The code to be executed.</li>
+                              </ul>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">local</span> <span class="code-var">intoCode1</span> <span class="code-kyw1">=</span> <span class="code-funcC">load</span>(<span class="code-str">'return 7 * 5'</span>)()         <span class="code-com">-- Basic math</span>
+     <span class="code-kyw1">local</span> <span class="code-var">intoCode2</span> <span class="code-kyw1">=</span> <span class="code-funcC">load</span>(<span class="code-str">'return {42, 23, 94}'</span>)()  <span class="code-com">-- Table</span>
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">intoCode1</span>)    <span class="code-com">-- will return '35'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">intoCode2</span>[<span class="code-num">1</span>]) <span class="code-com">-- will return '42'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
                          </sub-section>
                          <h3> pairs(tab:Table) </h3>
                          <sub-section>
-                              
                          </sub-section>
                          <h3> ipairs(tab:Table) </h3>
                          <sub-section>
                               
+                         </sub-section>
+                         <div class="head-hr-thick"></div>
+                         <h3> _G </h3>
+                         <sub-section>
+
                          </sub-section>
                     </section>
           </main>

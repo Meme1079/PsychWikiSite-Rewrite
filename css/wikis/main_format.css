@@ -19,8 +19,10 @@
      --color-code-comment:   hsl(212, 13%, 77%);
      --color-code-function:  hsl(270, 100%, 86%);
      --color-code-customfunc:hsl(208, 100%, 78%);
+     --color-code-custommodu:hsl(168, 55%, 54%);
      --color-code-parameter: hsl(34, 100%, 65%);
      --color-code-parainfi:  hsl(208, 100%, 78%);
+     --color-code-modules:   hsl(34, 100%, 65%);
      --color-code-datatype:  hsl(168, 55%, 54%);
      --color-code-variable:  hsl(0, 0%, 100%);
      --color-code-escapechar:hsl(1, 100%, 79%);
@@ -50,9 +52,9 @@ main {
      width: var(--global-width-html);
 }
 
-main :is(p, a, ul, td, th) { line-height: 1.5; }
-main :is(p, a, ul)         { display: block; word-wrap: break-word; }
-main li                    { margin: 6px 0px; }
+main :is(p, a, ul, td, th, blockquote) { line-height: 1.5; }
+main :is(p, a, ul)  { display: block; word-wrap: break-word; }
+main li             { margin: 6px 0px; }
 
 main a       { text-decoration: none; color: hsl(210, 100%, 72%); }
 main a:hover { text-decoration: underline; }
@@ -178,8 +180,10 @@ main .code-tagbg {
 .code-com    { color: var(--color-code-comment); }
 .code-funcD  { color: var(--color-code-function); }   /* declared */
 .code-funcC  { color: var(--color-code-customfunc); } /* called */
+.code-funcM  { color: var(--color-code-custommodu); } /* module */
 .code-paraS  { color: var(--color-code-parameter); }  /* single parameter */
 .code-paraI  { color: var(--color-code-parainfi); }   /* infinite parameter */
+.code-modul  { color: var(--color-code-modules); }
 .code-data   { color: var(--color-code-datatype); }
 .code-var    { color: var(--color-code-variable); }
 .code-escr   { color: var(--color-code-escapechar); }
