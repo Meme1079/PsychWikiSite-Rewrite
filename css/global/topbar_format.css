@@ -51,6 +51,8 @@ img {
 
 /* List Bar */
 
+#global-topbar #active { color: hsl(0, 0%, 70%); }
+
 #global-topbar a {
      color: white;
      font-weight: 550;

@@ -1,0 +1,72 @@
+$global-border-radius: 5px;
+
+body { margin: 0; } /* Delete this or you'll get neutered */
+
+#global-topbar {
+     z-index: 5 !important;
+     background-color: hsl(216, 8%, 15%);
+     width: 100%; height: 90px; /* 90px */
+     overflow-x: auto; overflow-y: hidden;
+     transform: translateY(-15px);
+
+     img {
+          display: inline-block;
+          position: absolute;
+          top: 23px; left: 18px;
+     }
+
+     #logo {
+          font-size: 25px;
+          font-weight: 550;
+          border-right: 1px solid white;
+          width: fit-content; /* Cringe solved */
+          position: relative;
+          top: 14px; left: 80px;
+          padding: 8px 10px 8px 0px;
+          margin-top: 16.5px;
+     }
+
+     /* Search Bar */
+
+     #searchBar {
+          border: 1px solid hsl(216, 8%, 52%);
+          border-radius: $global-border-radius;
+          background-color: hsl(216, 8%, 15%);
+          position: relative;
+          width: 6.5cm; height: fit-content;
+          top: -1.3cm; left: 29cm;
+          padding: 5px 10px;
+     
+          button {
+               font-size: 16px;
+               font-weight: 200;
+               border: none;
+               background: none;
+          }
+
+          :is(&, button)       { color: hsl(211, 37%, 88%); }
+          :is(&, button):hover { background-color: black; }
+     }
+
+     /* List Bar */
+
+     #active { color: hsl(0, 0%, 70%); }
+
+     a {
+          color: white;
+          font-weight: 550;
+          text-decoration: none;
+     }
+
+     ul {
+          float: right;
+          position: relative;
+          top: -2.45cm; right: 10cm;
+          
+          li {
+               display: inline-block;
+               font-size: 18px;
+               margin-left: 20px;
+          }
+     }
+}
