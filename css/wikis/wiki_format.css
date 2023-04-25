@@ -46,22 +46,22 @@ html {
      scroll-behavior: smooth;
 }
 
-main {
+#wiki {
      position: relative;
      left: 8.7cm;
      width: var(--global-width-html);
 }
 
-main :is(p, a, ul, td, th, blockquote) { line-height: 1.5; }
-main :is(p, a, ul)  { display: block; word-wrap: break-word; }
-main li             { margin: 6px 0px; }
+#wiki :is(p, a, ul, td, th, blockquote) { line-height: 1.5; }
+#wiki :is(p, a, ul)  { display: block; word-wrap: break-word; }
+#wiki li             { margin: 6px 0px; }
 
-main a       { text-decoration: none; color: hsl(210, 100%, 72%); }
-main a:hover { text-decoration: underline; }
+#wiki a       { text-decoration: none; color: hsl(210, 100%, 72%); }
+#wiki a:hover { text-decoration: underline; }
 
 /* Other or Something */
 
-main .head-hr-thick {
+#wiki .head-hr-thick {
      background-color: var(--color-headerline); 
      width: var(--global-width-html); height: 3px;
      margin-top: 20px;
@@ -69,7 +69,7 @@ main .head-hr-thick {
 
 /* Headers */
 
-main h1 {
+#wiki h1 {
      font-size: 32px;
      font-weight: 600;
      border-bottom: 1px solid var(--color-codeblock-bg);
@@ -77,54 +77,75 @@ main h1 {
      margin-top: var(--tag-h1-margin-top); margin-bottom: var(--tag-h1-margin-bottom);
 }
 
-main h3 { 
+#wiki h3 { 
      font-size: 20px; 
      font-weight: 550;
      margin-top: var(--tag-h3-margin-top); margin-bottom: var(--tag-h3-margin-bottom);
 }
 
-main h4 { 
+#wiki h4 { 
      font-size: 16px;
      font-weight: 530;
      margin-top: var(--tag-h4-margin-top); margin-bottom: var(--tag-h4-margin-bottom);
 }
 
+/* BlockQuotes */
+
+#wiki blockquote {
+     width: calc(var(--global-width-html) - 1.6em); 
+     margin-left: 0px; 
+     padding-left: 20px;
+     padding-top: 5px; padding-bottom: 5px;
+
+     -webkit-user-select: none; /* Safari */
+     -ms-user-select: none; /* IE 10 and IE 11 */
+     user-select: none; /* Standard syntax */
+}
+
+#wiki blockquote i { margin-right: 5px; }
+
+#wiki blockquote[class="warning"] { border-left: 0.15cm solid hsl(42, 87%, 56%); }
+#wiki blockquote[class="note"]    { border-left: 0.15cm solid hsl(210, 100%, 72%); }
+
+#wiki blockquote[class="warning"] span { color: hsl(42, 87%, 56%); }
+#wiki blockquote[class="note"] span    { color: hsl(210, 100%, 72%); }
+
 /* Tables */
 /* TODO: Orginazed */
 
-main table {
+#wiki table {
      display: block;
      overflow: auto;
      border-collapse: collapse !important;
 }
 
-main table td {
+#wiki table td {
      border-top: 1px solid var(--color-codeblock-bg);
 }
 
-main table :is(td, th) {
+#wiki table :is(td, th) {
      padding: calc(6px * 2) calc((12px * 2) / 1); 
 }
 
-main #guh table thead tr {
+#wiki #guh table thead tr {
      text-align: center !important;
 }
 
 /* Code Blocks */
 
-main :is(code, pre) {
+#wiki :is(code, pre) {
      font-family: var(--local-font-codeblocks);
      color: white;
      border-radius: var(--global-border-radius);
 }
 
-main code {
+#wiki code {
      font-size: 13px;
      background-color: rgba(158, 167, 179, 0.4);
      padding: .2em .4em;
 }
 
-main pre {
+#wiki pre {
      tab-size: 8;
      white-space: pre;
      font-size: 13px;
@@ -136,14 +157,14 @@ main pre {
      padding: 16px 16px 16px 50px;
 }
 
-main .code-border {
+#wiki .code-border {
      outline: 1px solid var(--color-codeblock-bg);
      background-color: rgb(39, 43, 51);
      border-radius: var(--global-border-radius);
      margin-top: 20px; margin-bottom: 20px;
 }
 
-main .code-newlines {
+#wiki .code-newlines {
      font-family: var(--local-font-codeblocks);
      font-size: 14px; 
      text-align: center;
@@ -157,7 +178,7 @@ main .code-newlines {
      user-select: none; /* Standard syntax */
 }
 
-main .code-tagbg {
+#wiki .code-tagbg {
      font-family: var(--local-font-codeblocks);
      font-weight: 550;
      font-size: 13px;

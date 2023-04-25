@@ -3,19 +3,36 @@
      <head>
           <title>PsychWikiSite - Lua Coding Docs: Library Methods</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="color-scheme" content="dark">
           <meta charset="utf-8">
           <link rel="icon" href="/images/Psych.ico">
-          <link rel="stylesheet" type="text/css" href="/css/wikis/main_format.css">
+          <link rel="stylesheet" type="text/css" href="/css/wikis/wiki_format.css">
+          <link rel="stylesheet" type="text/css" href="/css/wikis/sidebar_format.css">
+          <link rel="stylesheet" type="text/css" href="/css/global/topbar_format.css">
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <script defer type="module" src="/javascript/CodeLines.js"></script>
-          <script defer type="module" src="/javascript/CodeTableDatas.js"></script>
+          <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
           <script defer type="module" src="/javascript/Main.js"></script>
+          <script defer type="module" src="/javascript/Wiki.js"></script>
      </head>
      <body>
-          <!-- TODO: Make code the colorized the code block texts -->
-          <!-- TODO: Add an epic sidebar and topbar!!!! -->
-          <main>
+          <div id="global-topbar">
+               <img src="/images/Psych.ico" width="60" height="60">
+               <p id="logo"> PsychWikiSite Docs </p>
+               <div id="searchBar">
+                    <i class="uil uil-search" aria-hidden="true"></i>
+                    <button type="button" onclick="alert('homo')">Search pages...</button>
+                    <input type="hidden">
+               </div>
+               <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Docs</a></li>
+                    <li><a href="#">GitHub</a></li>
+               </ul>
+          </div>
+          <div id="global-sidebar">
+          </div>
+          <main id="wiki">
                <h1> String Methods </h1>
                <section>
                     <h3> string.upper(str:String) </h3>

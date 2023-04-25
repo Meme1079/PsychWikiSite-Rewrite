@@ -7,17 +7,15 @@
           <meta name="color-scheme" content="dark">
           <meta charset="utf-8">
           <link rel="icon" href="/images/Psych.ico">
-          <link rel="stylesheet" type="text/css" href="/css/wikis/main_format.css">
-          <link rel="stylesheet" type="text/css" href="/css/wikis/topbar_format.css">
+          <link rel="stylesheet" type="text/css" href="/css/wikis/wiki_format.css">
           <link rel="stylesheet" type="text/css" href="/css/wikis/sidebar_format.css">
+          <link rel="stylesheet" type="text/css" href="/css/global/topbar_format.css">
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
           <script defer type="module" src="/javascript/Main.js"></script>
           <script defer type="module" src="/javascript/Wiki.js"></script>
      </head>
      <body>
-          <!-- TODO: Make code the colorized the code block texts -->
-          <!-- TODO: Add an epic sidebar and topbar!!!! -->
           <div id="global-topbar">
                <img src="/images/Psych.ico" width="60" height="60">
                <p id="logo"> PsychWikiSite Docs </p>
@@ -34,7 +32,7 @@
           </div>
           <div id="global-sidebar">
           </div>
-          <main>
+          <main id="wiki">
                <h1> Introduction </h1>
                     <section>
                          <p>
@@ -741,6 +739,13 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    character. And at the end of the Lua script module should have the <code>return</code> statement on the <code>local</code> table variable name to 
                                    export the modules to other Lua script; Example: <code>return myGamingModules</code>. <em>(I Think)</em>
                               </p>
+                              <blockquote class="warning">
+                                   <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Warning</span>: 
+                                   <em>
+                                        DO NOT DECLARE <code>LOCAL</code> FUNCTIONS OR VARIABLES INSIDE
+                                        THE MODULES BECUASE IT WILL NOT EXPORT THEM AND MIGHT CAUSE AN ERROR, IT MUST BE A <code>GLOBAL</code> ONE OKAY!?
+                                   </em>
+                              </blockquote>
                               <div class="code-border">
                                    <div style="display: flex;">
                                         <div class="code-tagbg">Example:</div>
@@ -912,15 +917,98 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                          </sub-section>
                          <h3> pairs(tab:Table) </h3>
                          <sub-section>
+                              <p>
+                                   Returns every key-value pairs inside a table and is <ins>typically used in table dictionaries</ins>. It can 
+                                   return as an <ins>unorganized table sort</ins>; Not to be confused with <code>ipairs()</code> functions.
+                              </p>
+                              <ul>
+                                   <li><code>tab</code> - The table to be used.</li>
+                              </ul>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-kyw1">function</span> <span class="code-funcD">read</span>(<span class="code-paraS">tab</span>) <span class="code-com">-- read through a table</span>
+     <span class="code-kyw1">local</span> <span class="code-var">results</span> <span class="code-kyw1">=</span> <span class="code-str">''</span>
+     <span class="code-kyw1">for</span> <span class="code-var">key</span>, <span class="code-var">values</span> <span class="code-kyw1">in</span> <span class="code-funcC">pairs</span>(<span class="code-paraS">tab</span>) <span class="code-kyw1">do</span> <span class="code-com">-- pair function</span>
+          <span class="code-var">results</span> <span class="code-kyw1">=</span> <span class="code-var">results</span> <span class="code-ope">..</span> <span class="code-var">key</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\t</span>'</span><span class="code-ope">..</span><span class="code-var">values</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\n</span>'</span>
+     <span class="code-kyw1">end</span>
+     <span class="code-kyw1">return</span> <span class="code-var">results</span>
+<span class="code-kyw1">end</span>
+
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">local</span> <span class="code-var">tableArry</span> <span class="code-kyw1">=</span> {<span class="code-num">123</span>, <span class="code-num">567</span>, <span class="code-num">134</span>}
+     <span class="code-kyw1">local</span> <span class="code-var">tableDict</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">a</span> <span class="code-kyw1">=</span> <span class="code-num">123</span>, <span class="code-tabkey">b</span> <span class="code-kyw1">=</span> <span class="code-num">567</span>, <span class="code-tabkey">c</span> <span class="code-kyw1">=</span> <span class="code-num">134</span>}
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableArry</span>)) <span class="code-com">-- will return '123, 567, 123'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableDict</span>)) <span class="code-com">-- will return 'c = 134, a = 123, b = 567'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
                          </sub-section>
                          <h3> ipairs(tab:Table) </h3>
                          <sub-section>
-                              
+                              <p>
+                                   Returns every index-value pairs inside a table and is <ins>typically used in table arrays or with numeric keys within
+                                   a table dictionary</ins>. If the table value has <code>nil</code> it will <ins>stop executing the loop there</ins>.
+                              </p>
+                              <ul>
+                                   <li><code>tab</code> - The table to be used.</li>
+                              </ul>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">local</span> <span class="code-kyw1">function</span> <span class="code-funcD">read</span>(<span class="code-paraS">tab</span>) <span class="code-com">-- read through a table</span>
+     <span class="code-kyw1">local</span> <span class="code-var">results</span> <span class="code-kyw1">=</span> <span class="code-str">''</span>
+     <span class="code-kyw1">for</span> <span class="code-var">key</span>, <span class="code-var">values</span> <span class="code-kyw1">in</span> <span class="code-funcC">ipairs</span>(<span class="code-paraS">tab</span>) <span class="code-kyw1">do</span> <span class="code-com">-- pair function</span>
+          <span class="code-var">results</span> <span class="code-kyw1">=</span> <span class="code-var">results</span> <span class="code-ope">..</span> <span class="code-var">key</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\t</span>'</span><span class="code-ope">..</span><span class="code-var">values</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\n</span>'</span>
+     <span class="code-kyw1">end</span>
+     <span class="code-kyw1">return</span> <span class="code-var">results</span>
+<span class="code-kyw1">end</span>
+
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw1">local</span> <span class="code-var">tableArry</span> <span class="code-kyw1">=</span> {<span class="code-num">123</span>, <span class="code-num">567</span>, <span class="code-num">134</span>}
+     <span class="code-kyw1">local</span> <span class="code-var">tableDict</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">a</span> <span class="code-kyw1">=</span> <span class="code-num">123</span>, <span class="code-tabkey">b</span> <span class="code-kyw1">=</span> <span class="code-num">567</span>, <span class="code-tabkey">c</span> <span class="code-kyw1">=</span> <span class="code-num">134</span>}
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableArry</span>)) <span class="code-com">-- will return '123, 567, 123'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableDict</span>)) <span class="code-com">-- will return 'c = 134, a = 123, b = 567'</span>
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
                          </sub-section>
                          <div class="head-hr-thick"></div>
                          <h3> _G </h3>
                          <sub-section>
-
+                              <p>
+                                   The Global Variable is a special type of variable specifically a table dictionary. That gets every <code>global</code> variable and are saved inside the variable, 
+                                   it's defined with the <code>_G</code> keyword. Be careful when calling it because it can cause a crash. Changing its value does not affect any environment, nor 
+                                   vice versa.
+                              </p>
+                              <p>
+                                   You can use this for getting multiple global variables from a loop and modify the values easily. The original intended purpose of the global variable is get other 
+                                   global variables from other scripts. But it's broken when using it for some reason.
+                              </p>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-var">myGlobalVar0</span>, <span class="code-var">myGlobalVar1</span> <span class="code-kyw1">=</span> <span class="code-num">183</span>, <span class="code-num">231</span>
+     <span class="code-var">myGlobalVar2</span>, <span class="code-var">myGlobalVar3</span> <span class="code-kyw1">=</span> <span class="code-num">963</span>, <span class="code-num">263</span>
+     <span class="code-kyw1">for</span> <span class="code-var">nummys</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">3</span> <span class="code-kyw1">do</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-kyw2">_G</span>[<span class="code-str">'myGlobalVar'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>])         <span class="code-com">-- will return '183, 231, 963, 263'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-kyw2">_G</span>[<span class="code-str">'defaultPlayerStrumX'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>]) <span class="code-com">-- will return '732, 844, 956, 1068'</span>
+     <span class="code-kyw1">end</span> 
+<span class="code-kyw1">end</span>
+</pre>
+                              </div>
                          </sub-section>
                     </section>
           </main>
