@@ -1,70 +1,75 @@
-body { margin: 0; } /* Delete this or you'll get neutered */
-
-/* Le Logo */
-
-img {
+/* Global Club :cool: */
+/* Cringe solved */
+body {
+     margin: 0;
+} /* Delete this or you'll get neutered */
+#global-topbar {
+     z-index: 5 !important;
+     background-color: hsl(216deg, 8%, 15%);
+     width: 100%;
+     height: 90px; /* 90px */
+     overflow-x: auto;
+     overflow-y: hidden;
+     transform: translateY(-15px);
+     /* Search Bar */
+     /* List Bar */
+}
+#global-topbar img {
      display: inline-block;
      position: absolute;
-     top: 23px; left: 18px;
+     top: 23px;
+     left: 18px;
 }
-
-#global-topbar {
-     z-index: 5;
-     background-color: hsl(216, 8%, 15%);
-     width: 100%; height: 90px; /* 90px */
-     overflow-x: auto; overflow-y: hidden;
-     transform: translateY(-15px);
-}
-
 #global-topbar #logo {
      font-size: 25px;
      font-weight: 550;
-     border-right: 1px solid #ffffff;
+     border-right: 1px solid white;
+     width: -moz-fit-content;
+     width: fit-content;
      position: relative;
-     top: 14px; left: 80px;
-     width: fit-content; /* Cringe solved */
+     top: 14px;
+     left: 80px;
      padding: 8px 10px 8px 0px;
      margin-top: 16.5px;
 }
-
-/* Search Bar */
-
 #global-topbar #searchBar {
-     border: 1px solid hsl(216, 8%, 52%);
+     border: 1px solid hsl(216deg, 8%, 52%);
      border-radius: 5px;
-     background-color: hsl(216, 8%, 15%);
+     background-color: hsl(216deg, 8%, 15%);
      position: relative;
-     top: -1.3cm; left: 29cm;
+     width: 6.5cm;
+     height: -moz-fit-content;
+     height: fit-content;
+     top: -1.3cm;
+     left: 29cm;
      padding: 5px 10px;
-     width: 6.5cm; height: fit-content;
 }
-
 #global-topbar #searchBar button {
      font-size: 16px;
      font-weight: 200;
      border: none;
      background: none;
 }
-
-#global-topbar :is(#searchBar, #searchBar button)       { color: hsl(211, 37%, 88%); }
-#global-topbar :is(#searchBar, #searchBar button):hover { background-color: black; }
-
-/* List Bar */
-
-#global-topbar #active { color: hsl(0, 0%, 70%); }
-
+:is(#global-topbar #searchBar, button) {
+     color: hsl(211deg, 37%, 88%);
+}
+:is(#global-topbar #searchBar, button):hover {
+     background-color: black;
+}
+#global-topbar #active {
+     color: hsl(0deg, 0%, 70%);
+}
 #global-topbar a {
      color: white;
      font-weight: 550;
      text-decoration: none;
 }
-
 #global-topbar ul {
      float: right;
      position: relative;
-     top: -2.45cm; right: 10cm;
+     top: -2.45cm;
+     right: 10cm;
 }
-
 #global-topbar ul li {
      display: inline-block;
      font-size: 18px;

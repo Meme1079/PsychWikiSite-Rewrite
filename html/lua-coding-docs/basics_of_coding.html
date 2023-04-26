@@ -254,7 +254,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">tableGroup1</span> <span class="code-kyw1">=</span> {<span class="code-str">'string'</span>, <span class="code-kyw2">true</span>, <span class="code-kyw2">nil</span>} <span class="code-com">-- a table with string, boolean, and nil values</span>
+<span class="code-kyw1">local</span> <span class="code-var">tableGroup1</span> <span class="code-kyw1">=</span> {<span class="code-str">'string'</span>, <span class="code-boo">true</span>, <span class="code-nil">nil</span>} <span class="code-com">-- a table with string, boolean, and nil values</span>
 <span class="code-kyw1">local</span> <span class="code-var">tableGroup2</span> <span class="code-kyw1">=</span> {{<span class="code-num">45</span>, <span class="code-num">13</span>}, {<span class="code-num">34</span>, <span class="code-num">76</span>}}  <span class="code-com">-- a table inside with nested tables</span>
 <span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableGroup1</span>[<span class="code-num">1</span>])    <span class="code-com">-- will return 'string'</span>
@@ -295,7 +295,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         </div>
                                         <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">tableDict1</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">isFatherless</span> <span class="code-kyw1">=</span> <span class="code-kyw2">false</span>, <span class="code-tabkey">hasTouchGrass</span> <span class="code-kyw1">=</span> <span class="code-kyw2">true</span>}
+<span class="code-kyw1">local</span> <span class="code-var">tableDict1</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">isFatherless</span> <span class="code-kyw1">=</span> <span class="code-boo">false</span>, <span class="code-tabkey">hasTouchGrass</span> <span class="code-kyw1">=</span> <span class="code-boo">true</span>}
 <span class="code-kyw1">local</span> <span class="code-var">tableDict2</span> <span class="code-kyw1">=</span> {[<span class="code-str">'air'</span>] <span class="code-kyw1">=</span> <span class="code-str">'Oxygen'</span>, [<span class="code-str">"food"</span>] <span class="code-kyw1">=</span> <span class="code-str">'potato'</span>, [<span class="code-str">"love"</span>] <span class="code-kyw1">=</span> <span class="code-str">'carbon monoxide'</span>}
 <span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1.isFatherless</span>)      <span class="code-com">-- will return 'false' (recommended syntax)</span>
@@ -349,10 +349,10 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
 <pre>
 <span class="code-com">-- function created by Mayo78</span>
 <span class="code-kyw1">function</span> <span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>)  <span class="code-com">-- Concatenates setProperty x and y</span>
-     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-kyw1">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
+     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw1">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
           <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.x'</span>, <span class="code-paraS">pos</span>[<span class="code-num">1</span>])
      <span class="code-kyw1">end</span>
-     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-kyw1">then</span>
+     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw1">then</span>
           <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.y'</span>, <span class="code-paraS">pos</span>[<span class="code-num">2</span>]) 
      <span class="code-kyw1">end</span>
 <span class="code-kyw1">end</span>
@@ -693,11 +693,11 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
 <pre>
 <span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw1">do</span>   <span class="code-com">-- do block</span>
-          <span class="code-var">myGlobalVar</span> <span class="code-kyw1">=</span> <span class="code-kyw2">false</span>      <span class="code-com">-- global</span>
+          <span class="code-var">myGlobalVar</span> <span class="code-kyw1">=</span> <span class="code-boo">false</span>      <span class="code-com">-- global</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-var">myGlobalVar</span>)  <span class="code-com">-- will return 'false'</span>
      <span class="code-kyw1">end</span>
      <span class="code-kyw1">do</span>   <span class="code-com">-- do block</span>
-          <span class="code-kyw1">local</span> <span class="code-var">myLocalVar</span> <span class="code-kyw1">=</span> <span class="code-kyw2">true</span>  <span class="code-com">-- local</span>
+          <span class="code-kyw1">local</span> <span class="code-var">myLocalVar</span> <span class="code-kyw1">=</span> <span class="code-boo">true</span>  <span class="code-com">-- local</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-var">myLocalVar</span>)   <span class="code-com">-- will return 'true'</span>
      <span class="code-kyw1">end</span>
      
@@ -745,7 +745,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
 <span class="code-modul">myGamingModules</span>.<span class="code-var">blue</span>  <span class="code-kyw1">=</span> <span class="code-str">'0000ff'</span>
 
 <span class="code-kyw1">function</span> <span class="code-funcM">myGamingModules</span>.<span class="code-funcD">switch</span>(<span class="code-paraS">case</span>, <span class="code-paraS">statement</span>)
-     <span class="code-kyw1">if</span> <span class="code-paraS">statement</span>[<span class="code-paraS">case</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-ope">or</span> <span class="code-ope">not</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>] <span class="code-kyw1">then</span>
+     <span class="code-kyw1">if</span> <span class="code-paraS">statement</span>[<span class="code-paraS">case</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-ope">or</span> <span class="code-ope">not</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>] <span class="code-kyw1">then</span>
           <span class="code-kyw1">return</span> <span class="code-paraS">statement</span>[<span class="code-paraS">case</span>]()
      <span class="code-kyw1">else</span>
           <span class="code-kyw1">return</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>]()
@@ -753,10 +753,10 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
 <span class="code-kyw1">end</span>
 
 <span class="code-kyw1">function</span> <span class="code-funcM">myGamingModules</span>.<span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>) <span class="code-com">-- Concatenates setProperty x and y</span>
-     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-kyw1">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
+     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw1">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
           <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.x'</span>, <span class="code-paraS">pos</span>[<span class="code-num">1</span>])
      <span class="code-kyw1">end</span>
-     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-kyw2">nil</span> <span class="code-kyw1">then</span>
+     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw1">then</span>
           <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.y'</span>, <span class="code-paraS">pos</span>[<span class="code-num">2</span>]) 
      <span class="code-kyw1">end</span>
 <span class="code-kyw1">end</span>

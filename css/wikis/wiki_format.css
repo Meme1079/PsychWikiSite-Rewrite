@@ -1,209 +1,198 @@
-:root {
-     /* * Margin top & bottom */
-
-     --tag-h1-margin-top: calc(10px + 4px);
-     --tag-h3-margin-top: calc(15px + 4px);
-     --tag-h4-margin-top: calc(10px + 4px);
-
-     --tag-h1-margin-bottom: 20px;
-     --tag-h3-margin-bottom: 15px;
-     --tag-h4-margin-bottom: 10px;
-
-     /* * Color Code Texts */
-
-     --color-code-keyword1:  hsl(1, 100%, 79%);
-     --color-code-keyword2:  hsl(208, 100%, 78%);
-     --color-code-operator:  hsl(1, 100%, 79%);
-     --color-code-number:    hsl(208, 100%, 78%);
-     --color-code-string:    hsl(208, 100%, 78%);
-     --color-code-comment:   hsl(212, 13%, 77%);
-     --color-code-function:  hsl(270, 100%, 86%);
-     --color-code-customfunc:hsl(208, 100%, 78%);
-     --color-code-custommodu:hsl(168, 55%, 54%);
-     --color-code-parameter: hsl(34, 100%, 65%);
-     --color-code-parainfi:  hsl(208, 100%, 78%);
-     --color-code-modules:   hsl(34, 100%, 65%);
-     --color-code-datatype:  hsl(168, 55%, 54%);
-     --color-code-variable:  hsl(0, 0%, 100%);
-     --color-code-escapechar:hsl(1, 100%, 79%);
-     --color-code-table-key: hsl(208, 100%, 78%);
-     --color-code-tale-value:hsl(208, 100%, 78%);
-
-     --color-codeblock-bg:   hsl(216, 8%, 52%);
-     --color-headerline:     hsl(214, 12%, 66%);
-
-     /* * Globals & Locals */
-
-     --global-border-radius: 5px;
-     --global-width-html: 26.6cm;
-
-     --local-font-html: BlinkMacSystemFont;
-     --local-font-codeblocks: Menlo;
-}
-
+/* Global Club :cool: */
 html {
-     font-family: var(--local-font-html);
+     font-family: BlinkMacSystemFont;
      scroll-behavior: smooth;
 }
 
 #wiki {
      position: relative;
      left: 8.7cm;
-     width: var(--global-width-html);
+     width: 26.6cm;
+     /* Headers */
+     /* BlockQuotes */
+     /* Tables */
+     /* Code Blocks */
+     /* Code Colors */
 }
-
-#wiki :is(p, a, ul, td, th, blockquote) { line-height: 1.5; }
-#wiki :is(p, a, ul)  { display: block; word-wrap: break-word; }
-#wiki li             { margin: 6px 0px; }
-
-#wiki a       { text-decoration: none; color: hsl(210, 100%, 72%); }
-#wiki a:hover { text-decoration: underline; }
-
 #wiki .head-hr-thick {
-     background-color: var(--color-headerline); 
-     width: var(--global-width-html); height: 3px;
+     background-color: hsl(214deg, 12%, 66%);
+     width: 26.6cm;
+     height: 3px;
      margin-top: 20px;
 }
-
-/* Headers */
-
+#wiki :is(p, a, ul, td, th, blockquote) {
+     line-height: 1.5;
+}
+#wiki :is(p, a, ul) {
+     display: block;
+     word-wrap: break-word;
+}
+#wiki li {
+     margin: 6px 0px;
+}
+#wiki a {
+     text-decoration: none;
+     color: hsl(210deg, 100%, 72%);
+}
+#wiki a:hover {
+     text-decoration: underline;
+}
 #wiki h1 {
      font-size: 32px;
      font-weight: 600;
-     border-bottom: 1px solid var(--color-codeblock-bg);
+     margin-top: 14px;
+     margin-bottom: 20px;
+     border-bottom: 1px solid hsl(216deg, 8%, 52%);
      padding-bottom: 10px;
-     margin-top: var(--tag-h1-margin-top); margin-bottom: var(--tag-h1-margin-bottom);
 }
-
-#wiki h3 { 
-     font-size: 20px; 
+#wiki h3 {
+     font-size: 20px;
      font-weight: 550;
-     margin-top: var(--tag-h3-margin-top); margin-bottom: var(--tag-h3-margin-bottom);
+     margin-top: 19px;
+     margin-bottom: 15px;
 }
-
-#wiki h4 { 
+#wiki h4 {
      font-size: 16px;
      font-weight: 530;
-     margin-top: var(--tag-h4-margin-top); margin-bottom: var(--tag-h4-margin-bottom);
+     margin-top: 14px;
+     margin-bottom: 10px;
 }
-
-/* BlockQuotes */
-
 #wiki blockquote {
-     width: calc(var(--global-width-html) - 1.6em); 
-     margin-left: 0px; 
-     padding-left: 20px;
-     padding-top: 5px; padding-bottom: 5px;
-
-     -webkit-user-select: none; /* Safari */
-     -ms-user-select: none; /* IE 10 and IE 11 */
-     user-select: none; /* Standard syntax */
+     -webkit-user-select: none; /* Safari */ /* IE 10 and IE 11 */
+     -moz-user-select: none;
+          user-select: none; /* Standard syntax */
+     width: 25.925197184cm;
+     margin-left: 0px;
+     padding: 5px 0px 5px 20px;
 }
-
-#wiki blockquote i { margin-right: 5px; }
-
-#wiki blockquote[class="warning"] { border-left: 0.15cm solid hsl(42, 87%, 56%); }
-#wiki blockquote[class="note"]    { border-left: 0.15cm solid hsl(210, 100%, 72%); }
-
-#wiki blockquote[class="warning"] span { color: hsl(42, 87%, 56%); }
-#wiki blockquote[class="note"] span    { color: hsl(210, 100%, 72%); }
-
-/* Tables */
-/* TODO: Orginazed */
-
+#wiki blockquote i {
+     margin-right: 5px;
+}
+#wiki blockquote.warning {
+     border-left: 0.15cm solid hsl(42deg, 87%, 56%);
+}
+#wiki blockquote.warning span {
+     color: hsl(42deg, 87%, 56%);
+}
+#wiki blockquote.note {
+     border-left: 0.15cm solid hsl(210deg, 100%, 72%);
+}
+#wiki blockquote.note span {
+     color: hsl(210deg, 100%, 72%);
+}
 #wiki table {
      display: block;
      overflow: auto;
      border-collapse: collapse !important;
 }
-
-#wiki table td {
-     border-top: 1px solid var(--color-codeblock-bg);
-}
-
 #wiki table :is(td, th) {
-     padding: calc(6px * 2) calc((12px * 2) / 1); 
+     padding: 12px 24px;
 }
-
-#wiki #guh table thead tr {
+#wiki table td {
+     border-top: 1px solid hsl(216deg, 8%, 52%);
+}
+#wiki table thead tr {
      text-align: center !important;
 }
-
-/* Code Blocks */
-
 #wiki :is(code, pre) {
-     font-family: var(--local-font-codeblocks);
+     font-family: BlinkMacSystemFont;
+     border-radius: 5px;
      color: white;
-     border-radius: var(--global-border-radius);
 }
-
 #wiki code {
      font-size: 13px;
      background-color: rgba(158, 167, 179, 0.4);
-     padding: .2em .4em;
+     padding: 0.2em 0.4em;
 }
-
 #wiki pre {
-     tab-size: 8;
+     -moz-tab-size: 8;
+       -o-tab-size: 8;
+          tab-size: 8;
      white-space: pre;
      font-size: 13px;
+     outline: 1px solid hsl(216deg, 8%, 52%);
      line-height: 20px !important;
-     outline: 1px solid var(--color-codeblock-bg);
-     background-color: rgb(0, 0, 0);
-     border-radius: 0px 0px var(--global-border-radius) var(--global-border-radius) !important;
+     border-radius: 0px 0px 5px 5px !important;
+     background-color: black;
      margin-top: 12px !important;
      padding: 16px 16px 16px 50px;
 }
-
 #wiki .code-border {
-     outline: 1px solid var(--color-codeblock-bg);
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
      background-color: rgb(39, 43, 51);
-     border-radius: var(--global-border-radius);
-     margin-top: 20px; margin-bottom: 20px;
+     margin: 20px 0px;
 }
-
 #wiki .code-newlines {
-     font-family: var(--local-font-codeblocks);
-     font-size: 14px; 
+     -webkit-user-select: none; /* Safari */ /* IE 10 and IE 11 */
+     -moz-user-select: none;
+          user-select: none; /* Standard syntax */
+     font-size: 14px;
+     font-family: Menlo;
      text-align: center;
-     line-height: 20px !important; 
-     color: rgb(170, 170, 170);
-     position: absolute !important; 
+     line-height: 20px !important;
+     color: hsl(0deg, 0%, 67%);
+     position: absolute !important;
      transform: translateY(27.99px) translateX(18px); /* * don't ask */
-
-     -webkit-user-select: none; /* Safari */
-     -ms-user-select: none; /* IE 10 and IE 11 */
-     user-select: none; /* Standard syntax */
 }
-
 #wiki .code-tagbg {
-     font-family: var(--local-font-codeblocks);
-     font-weight: 550;
      font-size: 13px;
-     outline: 1px solid var(--color-codeblock-bg);
+     font-family: Menlo;
+     font-weight: 550;
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
      background-color: black;
-     border-radius: var(--global-border-radius);
-     box-shadow: 10px 5px 11px 2px rgba(0,0,0,0.5) !important;
+     box-shadow: 10px 5px 11px 2px rgba(0, 0, 0, 0.5) !important;
      padding: 7px 10px;
+     width: -moz-fit-content;
      width: fit-content;
      transform: translateY(5px) translateX(5px); /* * don't ask */
 }
-
-/* Code Colors */
-
-.code-kyw1   { color: var(--color-code-keyword1); }
-.code-kyw2   { color: var(--color-code-keyword2); }
-.code-ope    { color: var(--color-code-operator); }
-.code-num    { color: var(--color-code-number); }
-.code-str    { color: var(--color-code-string); }
-.code-com    { color: var(--color-code-comment); }
-.code-funcD  { color: var(--color-code-function); }   /* declared */
-.code-funcC  { color: var(--color-code-customfunc); } /* called */
-.code-funcM  { color: var(--color-code-custommodu); } /* module */
-.code-paraS  { color: var(--color-code-parameter); }  /* single parameter */
-.code-paraI  { color: var(--color-code-parainfi); }   /* infinite parameter */
-.code-modul  { color: var(--color-code-modules); }
-.code-data   { color: var(--color-code-datatype); }
-.code-var    { color: var(--color-code-variable); }
-.code-escr   { color: var(--color-code-escapechar); }
-.code-tabkey { color: var(--color-code-key); }
+#wiki pre span .code-kyw {
+     color: hsl(1deg, 100%, 79%);
+}
+#wiki pre span .code-ope {
+     color: hsl(1deg, 100%, 79%);
+}
+#wiki pre span .code-str {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki pre span .code-num {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki pre span .code-boo {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki pre span .code-nil {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki pre span .code-com {
+     color: hsl(212deg, 13%, 77%);
+}
+#wiki pre span .code-esc {
+     color: hsl(1deg, 100%, 79%);
+}
+#wiki pre span .code-data {
+     color: hsl(168deg, 55%, 54%);
+}
+#wiki pre span .code-tabkey {
+     color: hsl(0deg, 0%, 100%);
+}
+#wiki pre span .code-modul {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki pre span .code-funcD {
+     color: hsl(270deg, 100%, 86%);
+}
+#wiki pre span .code-funcC {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki pre span .code-funcM {
+     color: hsl(168deg, 55%, 54%);
+}
+#wiki pre span .code-paraS {
+     color: hsl(34deg, 100%, 65%);
+}
+#wiki pre span .code-paraI {
+     color: hsl(208deg, 100%, 78%);
+}
