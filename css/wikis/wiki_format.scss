@@ -8,8 +8,8 @@ $global-color-codeblock-bg: hsl(216, 8%, 52%);
 
 @mixin antiSelector {
      -webkit-user-select: none; /* Safari */
-     -ms-user-select: none; /* IE 10 and IE 11 */
-     user-select: none; /* Standard syntax */
+     -ms-user-select:     none; /* IE 10 and IE 11 */
+     user-select:         none; /* Standard syntax */
 }
 
 html {
@@ -27,9 +27,11 @@ html {
           width: $global-max-width; height: 3px;
           margin-top: 20px;
      }
+     
 
      :is(p, a, ul, td, th, blockquote) { line-height: 1.5; }
      :is(p, a, ul) { display: block; word-wrap: break-word; }
+     
      li            { margin: 6px 0px; }
 
      a { 
@@ -66,7 +68,7 @@ html {
 
      blockquote {
           @include antiSelector;
-          width: $global-max-width - 0.674802816cm; 
+          width: calc($global-max-width - 1.5em); 
           margin-left: 0px; 
           padding: 5px 0px 5px 20px;
 
@@ -145,6 +147,11 @@ html {
           transform: translateY(27.99px) translateX(18px); /* * don't ask */
      }
 
+     $tagbg-posi: 10px 5px;
+     $tagbg-blur-radius: 11px 2px;
+     $tagbg-color-shadow: rgba(0, 0, 0, 0.5);
+     $tagbg-box-shadow: $tagbg-posi $tagbg-blur-radius $tagbg-color-shadow;
+
      .code-tagbg {
           font-size: 13px;
           font-family: $code-font-family;
@@ -152,10 +159,13 @@ html {
           outline: 1px solid $global-color-codeblock-bg;
           border-radius: $global-border-radius;
           background-color: black;
-          box-shadow: 10px 5px 11px 2px rgba(0, 0, 0, 0.5) !important;
           padding: 7px 10px;
           width: fit-content;
           transform: translateY(5px) translateX(5px); /* * don't ask */
+
+          -webkit-box-shadow: $tagbg-box-shadow;
+          -moz-box-shadow:    $tagbg-box-shadow;
+          box-shadow:         $tagbg-box-shadow;
      }
 
      /* Code Colors */

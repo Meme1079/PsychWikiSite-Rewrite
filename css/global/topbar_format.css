@@ -14,7 +14,7 @@ body {
      /* Search Bar */
      /* List Bar */
 }
-#global-topbar img {
+#global-topbar > img {
      display: inline-block;
      position: absolute;
      top: 23px;
@@ -36,6 +36,7 @@ body {
      border: 1px solid hsl(216deg, 8%, 52%);
      border-radius: 5px;
      background-color: hsl(216deg, 8%, 15%);
+     transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
      position: relative;
      width: 6.5cm;
      height: -moz-fit-content;
@@ -43,6 +44,9 @@ body {
      top: -1.3cm;
      left: 29cm;
      padding: 5px 10px;
+}
+#global-topbar #searchBar:hover {
+     transform: translateY(1px);
 }
 #global-topbar #searchBar button {
      font-size: 16px;
@@ -56,13 +60,13 @@ body {
 :is(#global-topbar #searchBar, button):hover {
      background-color: black;
 }
-#global-topbar #active {
-     color: hsl(0deg, 0%, 70%);
-}
 #global-topbar a {
      color: white;
      font-weight: 550;
      text-decoration: none;
+}
+#global-topbar a:is(#active, #global-topbar a:hover) {
+     color: hsl(0deg, 0%, 70%);
 }
 #global-topbar ul {
      float: right;
