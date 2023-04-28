@@ -37,6 +37,7 @@ body { margin: 0; } /* Delete this or you'll get neutered */
           border: 1px solid hsl(216, 8%, 52%);
           border-radius: $global-border-radius;
           background-color: hsl(216, 8%, 15%);
+          box-shadow: 8px 5px 10px 1px rgba(0,0,0,0.5);
           transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
           position: relative;
           width: 6.5cm; height: $global-cringe-solver;
