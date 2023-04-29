@@ -8,7 +8,7 @@ body { margin: 0; } /* Delete this or you'll get neutered */
 #global-topbar {
      z-index: 5 !important;
      background-color: hsl(216, 8%, 15%);
-     width: 100%; height: 90px; /* 90px */
+     width: 100%; height: 100px; /* 90px */
      overflow-x: auto; overflow-y: hidden;
      transform: translateY(-15px);
 
@@ -34,6 +34,7 @@ body { margin: 0; } /* Delete this or you'll get neutered */
      /* Search Bar */
 
      #searchBar {
+          float: right;
           border: 1px solid hsl(216, 8%, 52%);
           border-radius: $global-border-radius;
           background-color: hsl(216, 8%, 15%);
@@ -41,11 +42,13 @@ body { margin: 0; } /* Delete this or you'll get neutered */
           transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
           position: relative;
           width: 6.5cm; height: $global-cringe-solver;
-          top: -1.3cm; left: 29cm;
+          top: -1.3cm;
           padding: 5px 10px;
+          margin-right: 1cm;
 
           &:hover { transform: translateY(1px); }
      
+          button::before { content: 'Search stuff...'; }
           button {
                font-size: 16px;
                font-weight: 200;
@@ -59,23 +62,28 @@ body { margin: 0; } /* Delete this or you'll get neutered */
 
      /* List Bar */
 
-     a {
-          color: white;
-          font-weight: 550;
-          text-decoration: none;
-
-          &:is(#active, &:hover) { color: hsl(0, 0%, 70%); }
-     }
+     #active { color: hsl(0, 0%, 70%); }
 
      ul {
           float: right;
           position: relative;
-          top: -2.45cm; right: 10cm;
+          top: calc(-2cm + .45cm);
+          margin-right: 1cm;
+          //top: -2.45cm; right: 10cm;
           
           li {
                display: inline-block;
                font-size: 18px;
                margin-left: 20px;
+
+               a {
+                    color: white;
+                    font-weight: 550;
+                    text-decoration: none;
+                    margin-left: 5px;
+                    
+                    &:hover { color: hsl(0, 0%, 70%); }
+               }
           }
      }
 }

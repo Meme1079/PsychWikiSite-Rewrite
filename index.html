@@ -14,19 +14,19 @@
           <script defer type="module" src="/javascript/Main.js"></script>
           <script defer type="module" src="/javascript/Home.js"></script>
      </head>
-     <body>
+     <body onload="console.log('loaded')">
           <div id="global-topbar">
                <img src="/images/Psych.ico" alt="Le logo" width="60" height="60">
                <p id="logo"> PsychWikiSite Docs </p>
                <div id="searchBar">
                     <i class="uil uil-search" aria-hidden="true"></i>
-                    <button type="button" onclick="alert('homo')">Search pages...</button>
+                    <button type="button" onclick="alert('homo')"></button>
                     <input type="hidden">
                </div>
                <ul>
-                    <li><a href="#" id="active" onclick="alert('You\'re already here dummy')">Home</a></li>
-                    <li><a href="#">Docs</a></li>
-                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#" id="active"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="uil uil-book-open"></i> Docs</a></li>
+                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="fa fa-github"></i> GitHub</a></li>
                </ul>
           </div>
           <main id="home">
@@ -37,49 +37,49 @@
                     <button type="button" id="game-random"> Visit Random Docs! </button>
                </div>
                <section id="main-pages">
-                    <h1> Recommended Wiki Pages </h1>
+                    <h1 style="right: 11.15cm;"> Recommended Wiki Pages </h1>
                     <div class="recommended-lists">
                          <div class="list-boxes" onclick="window.location.href = 'html/lua-coding-docs/basics_of_coding.html'">
                               <div class="gradient-thing"></div>
-                              <h3> Lua Coding Docs </h3>
+                              <h3> Lua Coding Docs <i class="uil uil-bookmark"></i></h3>
                               <p> Basics of Coding </p>
                          </div>
                          <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/callback_templates.html'">
                               <div class="gradient-thing"></div>
-                              <h3> Lua Script API </h3>
+                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
                               <p> Callback Templates </p>
                          </div>
                          <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/custom_sprites_&_texts_functions.html'">
                               <div class="gradient-thing"></div>
-                              <h3> Lua Script API </h3>
+                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
                               <p> Custom Sprites & Texts Functions </p>
                          </div>
                          <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/value_setting_&_getting_functions.html'">
                               <div class="gradient-thing"></div>
-                              <h3> Lua Script API </h3>
+                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
                               <p> Value Setting & Getting Functions </p>
                          </div>
                     </div>
-                    <h1> Advanced Wiki Pages </h1>
+                    <h1 style="right: 12.25cm;"> Advanced Wiki Pages </h1>
                     <div class="advanced-lists">
                          <div class="list-boxes" onclick="window.location.href = 'html/lua-coding-docs/library_methods.html'">
                               <div class="gradient-thing"></div>
-                              <h3> Lua Coding Docs </h3>
+                              <h3> Lua Coding Docs <i class="uil uil-bookmark"></i></h3>
                               <p> Library Methods </p>
                          </div>
                          <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/scripting_&_file_functions.html'">
                               <div class="gradient-thing"></div>
-                              <h3> Lua Script API </h3>
+                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
                               <p> Scripting & File Functions </p>
                          </div>
                          <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/shader_functions.html'">
                               <div class="gradient-thing"></div>
-                              <h3> Lua Script API </h3>
+                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
                               <p> Shader Functions </p>
                          </div>
                          <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/variables.html'">
                               <div class="gradient-thing"></div>
-                              <h3> Lua Script API </h3>
+                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
                               <p> Variables </p>
                          </div>
                     </div>

@@ -104,7 +104,7 @@ html {
      /* Code Blocks */
 
      :is(code, pre) {
-          font-family: $global-font-family;
+          font-family: Menlo;
           border-radius: $global-border-radius;
           color: white;
      }
@@ -188,22 +188,22 @@ html {
      $color-code-table-keys:         hsl(0, 0%, 100%);
      $color-code-modules:            hsl(208, 100%, 78%);
 
-     pre span {
-          .code-kyw    { color: $color-code-keywords; }
-          .code-ope    { color: $color-code-operators; }
-          .code-str    { color: $color-code-string; }
-          .code-num    { color: $color-code-number; }
-          .code-boo    { color: $color-code-boolean; }
-          .code-nil    { color: $color-code-nil; }
-          .code-com    { color: $color-code-comments; }
-          .code-esc    { color: $color-code-escape-characters; }
-          .code-data   { color: $color-code-data; }
-          .code-tabkey { color: $color-code-table-keys; }
-          .code-modul  { color: $color-code-modules; }
-          .code-funcD  { color: $color-code-function-declared; }
-          .code-funcC  { color: $color-code-function-called; }
-          .code-funcM  { color: $color-code-function-modules; }
-          .code-paraS  { color: $color-code-parameter-single; }
-          .code-paraI  { color: $color-code-parameter-infinite; }
+     pre {
+          span.code-kyw    { color: $color-code-keywords; }
+          span.code-ope    { color: $color-code-operators; }
+          span.code-str    { color: $color-code-string; }
+          span.code-num    { color: $color-code-number; }
+          span.code-boo    { color: $color-code-boolean; }
+          span.code-nil    { color: $color-code-nil; }
+          span.code-com    { color: $color-code-comments; }
+          span.code-esc    { color: $color-code-escape-characters; }
+          span.code-data   { color: $color-code-data; }
+          span.code-tabkey { color: $color-code-table-keys; }
+          span.code-modul  { color: $color-code-modules; }
+          span.code-funcD  { color: $color-code-function-declared; }
+          span.code-funcC  { color: $color-code-function-called; }
+          span.code-funcM  { color: $color-code-function-modules; }
+          span.code-paraS  { color: $color-code-parameter-single; }
+          span.code-paraI  { color: $color-code-parameter-infinite; }
      }
 }

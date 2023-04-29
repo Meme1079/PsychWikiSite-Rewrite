@@ -7,7 +7,7 @@ body {
      z-index: 5 !important;
      background-color: hsl(216deg, 8%, 15%);
      width: 100%;
-     height: 90px; /* 90px */
+     height: 100px; /* 90px */
      overflow-x: auto;
      overflow-y: hidden;
      transform: translateY(-15px);
@@ -33,6 +33,7 @@ body {
      margin-top: 16.5px;
 }
 #global-topbar #searchBar {
+     float: right;
      border: 1px solid hsl(216deg, 8%, 52%);
      border-radius: 5px;
      background-color: hsl(216deg, 8%, 15%);
@@ -43,11 +44,14 @@ body {
      height: -moz-fit-content;
      height: fit-content;
      top: -1.3cm;
-     left: 29cm;
      padding: 5px 10px;
+     margin-right: 1cm;
 }
 #global-topbar #searchBar:hover {
      transform: translateY(1px);
+}
+#global-topbar #searchBar button::before {
+     content: "Search stuff...";
 }
 #global-topbar #searchBar button {
      font-size: 16px;
@@ -61,22 +65,26 @@ body {
 :is(#global-topbar #searchBar, button):hover {
      background-color: black;
 }
-#global-topbar a {
-     color: white;
-     font-weight: 550;
-     text-decoration: none;
-}
-#global-topbar a:is(#active, #global-topbar a:hover) {
+#global-topbar #active {
      color: hsl(0deg, 0%, 70%);
 }
 #global-topbar ul {
      float: right;
      position: relative;
-     top: -2.45cm;
-     right: 10cm;
+     top: -1.55cm;
+     margin-right: 1cm;
 }
 #global-topbar ul li {
      display: inline-block;
      font-size: 18px;
      margin-left: 20px;
+}
+#global-topbar ul li a {
+     color: white;
+     font-weight: 550;
+     text-decoration: none;
+     margin-left: 5px;
+}
+#global-topbar ul li a:hover {
+     color: hsl(0deg, 0%, 70%);
 }

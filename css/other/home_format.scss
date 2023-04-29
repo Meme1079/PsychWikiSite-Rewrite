@@ -34,7 +34,7 @@ html {
           width: 100%; height: 8cm;
           position: relative;
           top: -0.4cm;
-          margin-bottom: 1.5cm;
+          margin-bottom: 1.8cm;
 
           $gradient-button1: hsl(272, 100%, 50%) $global-gradientDS;
           $gradient-button2: hsl(242, 100%, 60%) $global-gradientDE;
@@ -89,6 +89,7 @@ html {
           h1 {
                font-size: 1cm;
                font-weight: 510;
+               position: relative;
           }
 
           :is(.recommended-lists, .advanced-lists) {
@@ -101,7 +102,7 @@ html {
                h3 { 
                     font-size: calc(1cm / 2);
                     font-weight: 550;
-                    margin-bottom: 5px; 
+                    margin-bottom: 5px;
                }
 
                p { margin-top: 0px; }
@@ -132,13 +133,13 @@ html {
                }
           }
 
+          $gradient-div1: hsl(0, 100%, 50%)   $global-gradientDS, hsl(29, 100%, 50%)  $global-gradientDE;
+          $gradient-div2: hsl(272, 100%, 50%) $global-gradientDS, hsl(242, 100%, 60%) $global-gradientDE;
+          $gradient-div3: hsl(246, 100%, 50%) $global-gradientDS, hsl(206, 100%, 50%) $global-gradientDE;
+          $gradient-div4: hsl(152, 100%, 50%) $global-gradientDS, hsl(177, 100%, 50%) $global-gradientDE;
+
           .recommended-lists {
                .list-boxes {
-                    $gradient-div1: hsl(0, 100%, 50%)   $global-gradientDS, hsl(29, 100%, 50%)  $global-gradientDE;
-                    $gradient-div2: hsl(272, 100%, 50%) $global-gradientDS, hsl(242, 100%, 60%) $global-gradientDE;
-                    $gradient-div3: hsl(246, 100%, 50%) $global-gradientDS, hsl(206, 100%, 50%) $global-gradientDE;
-                    $gradient-div4: hsl(152, 100%, 50%) $global-gradientDS, hsl(177, 100%, 50%) $global-gradientDE;
-
                     &:nth-child(1) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div1); }
                     &:nth-child(2) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div2); }
                     &:nth-child(3) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div3); }
@@ -146,13 +147,13 @@ html {
                }
           }
 
+          $gradient-div1: hsl(184, 100%, 50%) $global-gradientDS, hsl(219, 100%, 50%) $global-gradientDE;
+          $gradient-div2: hsl(135, 100%, 50%) $global-gradientDS, hsl(71, 100%, 50%)  $global-gradientDE;
+          $gradient-div3: hsl(300, 100%, 50%) $global-gradientDS, hsl(268, 100%, 50%) $global-gradientDE;
+          $gradient-div4: hsl(34, 100%, 65%)  $global-gradientDS, hsl(27, 100%, 50%)  $global-gradientDE;
+
           .advanced-lists {
                .list-boxes {
-                    $gradient-div1: hsl(184, 100%, 50%) $global-gradientDS, hsl(219, 100%, 50%) $global-gradientDE;
-                    $gradient-div2: hsl(135, 100%, 50%) $global-gradientDS, hsl(71, 100%, 50%)  $global-gradientDE;
-                    $gradient-div3: hsl(300, 100%, 50%) $global-gradientDS, hsl(268, 100%, 50%) $global-gradientDE;
-                    $gradient-div4: hsl(34, 100%, 65%)  $global-gradientDS, hsl(27, 100%, 50%)  $global-gradientDE;
-
                     &:nth-child(1) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div1); }
                     &:nth-child(2) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div2); }
                     &:nth-child(3) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div3); }
@@ -161,24 +162,3 @@ html {
           }
      }
 }
-
-.custom-shape-divider-bottom-1682675551 {
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-     overflow: hidden;
-     line-height: 0;
-     transform: rotate(180deg);
- }
- 
- .custom-shape-divider-bottom-1682675551 svg {
-     position: relative;
-     display: block;
-     width: calc(162% + 1.3px);
-     height: 126px;
- }
- 
- .custom-shape-divider-bottom-1682675551 .shape-fill {
-     fill: #FFFFFF;
- }

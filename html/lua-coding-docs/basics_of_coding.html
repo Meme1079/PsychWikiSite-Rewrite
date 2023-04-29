@@ -21,13 +21,13 @@
                <p id="logo"> PsychWikiSite Docs </p>
                <div id="searchBar">
                     <i class="uil uil-search" aria-hidden="true"></i>
-                    <button type="button" onclick="alert('homo')">Search pages...</button>
+                    <button type="button" onclick="alert('homo')"></button>
                     <input type="hidden">
                </div>
                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Docs</a></li>
-                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite">GitHub</a></li>
+                    <li><a href="../../index.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="uil uil-book-open"></i> Docs</a></li>
+                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="fa fa-github"></i> GitHub</a></li>
                </ul>
           </div>
           <div id="global-sidebar">
@@ -62,8 +62,8 @@
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">vary1</span> <span class="code-kyw1">=</span> <span class="code-str">'hamburgers are cool'</span>
-<span class="code-kyw1">local</span> <span class="code-var">vary2</span> <span class="code-kyw1">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
+<span class="code-kyw">local</span> <span class="code-var">vary1</span> <span class="code-kyw">=</span> <span class="code-str">'hamburgers are cool'</span>
+<span class="code-kyw">local</span> <span class="code-var">vary2</span> <span class="code-kyw">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
 
 <span class="code-funcC">print</span>(<span class="code-var">vary1</span>) <span class="code-com">-- will return 'hamburgers are cool'</span>
 <span class="code-funcC">print</span>(<span class="code-var">vary2</span>) <span class="code-com">-- will return 'potatoes are also cool, i think'</span>
@@ -76,13 +76,13 @@
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">vary1</span> <span class="code-kyw1">=</span> <span class="code-str">'hamburgers are cool'</span>
-<span class="code-kyw1">local</span> <span class="code-var">vary2</span> <span class="code-kyw1">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
+<span class="code-kyw">local</span> <span class="code-var">vary1</span> <span class="code-kyw">=</span> <span class="code-str">'hamburgers are cool'</span>
+<span class="code-kyw">local</span> <span class="code-var">vary2</span> <span class="code-kyw">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
 
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">vary1</span>) <span class="code-com">-- will return 'hamburgers are cool'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">vary2</span>) <span class="code-com">-- will return 'potatoes are also cool, i think'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -111,8 +111,8 @@
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">?scope</span> <span class="code-var">name</span> <span class="code-kyw1">=</span> <span class="code-data">value</span>                <span class="code-com">-- single-line variables</span>
-<span class="code-kyw1">?scope</span> <span class="code-var">names</span>, <span class="code-paramI">...</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>, <span class="code-paramI">...</span>    <span class="code-com">-- multi-line variables</span>
+<span class="code-kyw">?scope</span> <span class="code-var">name</span> <span class="code-kyw">=</span> <span class="code-data">value</span>                <span class="code-com">-- single-line variables</span>
+<span class="code-kyw">?scope</span> <span class="code-var">names</span>, <span class="code-paramI">...</span> <span class="code-kyw">=</span> <span class="code-data">values</span>, <span class="code-paramI">...</span>    <span class="code-com">-- multi-line variables</span>
 </pre>
                               </div>
                               <p>
@@ -125,20 +125,20 @@
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">foo</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>                      <span class="code-com">-- single-line</span>
-<span class="code-kyw1">local</span> <span class="code-var">bar1</span>, <span class="code-var">bar2</span>, <span class="code-var">bar3</span> <span class="code-kyw1">=</span> <span class="code-num">1</span>, <span class="code-num">2</span>, <span class="code-num">3</span>   <span class="code-com">-- multi-line</span>
-<span class="code-kyw1">local</span> <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw1">=</span> <span class="code-num">4</span>, <span class="code-num">5</span>      <span class="code-com">-- multi-line (missing)</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+<span class="code-kyw">local</span> <span class="code-var">foo</span> <span class="code-kyw">=</span> <span class="code-num">0</span>                      <span class="code-com">-- single-line</span>
+<span class="code-kyw">local</span> <span class="code-var">bar1</span>, <span class="code-var">bar2</span>, <span class="code-var">bar3</span> <span class="code-kyw">=</span> <span class="code-num">1</span>, <span class="code-num">2</span>, <span class="code-num">3</span>   <span class="code-com">-- multi-line</span>
+<span class="code-kyw">local</span> <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw">=</span> <span class="code-num">4</span>, <span class="code-num">5</span>      <span class="code-com">-- multi-line (missing)</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">foo</span>)               <span class="code-com">-- will return '0'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">bar1</span>, <span class="code-var">bar2</span>, <span class="code-var">bar3</span>)  <span class="code-com">-- will return '1 2 3'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will return '4 5 nil'</span>
 
-     <span class="code-var">foo</span> <span class="code-kyw1">=</span> <span class="code-num">12</span>                           <span class="code-com">-- setting single variable</span>
-     <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw1">=</span> <span class="code-num">543</span>, <span class="code-num">872</span>, <span class="code-num">923</span>   <span class="code-com">-- setting multiple variables</span>
+     <span class="code-var">foo</span> <span class="code-kyw">=</span> <span class="code-num">12</span>                           <span class="code-com">-- setting single variable</span>
+     <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw">=</span> <span class="code-num">543</span>, <span class="code-num">872</span>, <span class="code-num">923</span>   <span class="code-com">-- setting multiple variables</span>
 
      <span class="code-funcC">debugPrint</span>(<span class="code-var">foo</span>)               <span class="code-com">-- will return '12'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will return '543 872 923'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -159,11 +159,11 @@
                                    <div class="code-newlines"></div>
 <pre>
   <span class="code-com">-- Valid --</span>                 <span class="code-com">-- Invalid --</span>
-<span class="code-var">myVar</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>;            <span class="code-var">1varmy</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
-<span class="code-var">my_Var</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>;            <span class="code-var">my-var</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
-<span class="code-var">_myVar</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>;            <span class="code-var">my var</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
-<span class="code-var">myVar1</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>;            <span class="code-var">var ==</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>
-<span class="code-var">Myvar</span>  <span class="code-kyw1">=</span> <span class="code-data">values</span>;            <span class="code-var">..myvar</span> <span class="code-kyw1">=</span> <span class="code-data">values</span>
+<span class="code-var">myVar</span>  <span class="code-kyw">=</span> <span class="code-data">values</span>;            <span class="code-var">1varmy</span>  <span class="code-kyw">=</span> <span class="code-data">values</span>
+<span class="code-var">my_Var</span> <span class="code-kyw">=</span> <span class="code-data">values</span>;            <span class="code-var">my-var</span>  <span class="code-kyw">=</span> <span class="code-data">values</span>
+<span class="code-var">_myVar</span> <span class="code-kyw">=</span> <span class="code-data">values</span>;            <span class="code-var">my var</span>  <span class="code-kyw">=</span> <span class="code-data">values</span>
+<span class="code-var">myVar1</span> <span class="code-kyw">=</span> <span class="code-data">values</span>;            <span class="code-var">var ==</span>  <span class="code-kyw">=</span> <span class="code-data">values</span>
+<span class="code-var">Myvar</span>  <span class="code-kyw">=</span> <span class="code-data">values</span>;            <span class="code-var">..myvar</span> <span class="code-kyw">=</span> <span class="code-data">values</span>
 </pre>
                               </div>
                          </sub-section>
@@ -184,19 +184,19 @@
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">textString1</span> <span class="code-kyw1">=</span> <span class="code-str">'Hello'</span> <span class="code-com">-- a single quote</span>
-<span class="code-kyw1">local</span> <span class="code-var">textString2</span> <span class="code-kyw1">=</span> <span class="code-str">"World"</span> <span class="code-com">-- a double quote, this is optional to use</span>
-<span class="code-kyw1">local</span> <span class="code-var">textString3</span> <span class="code-kyw1">=</span> <span class="code-str">[[Culturae organicae te
+<span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'Hello'</span> <span class="code-com">-- a single quote</span>
+<span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">"World"</span> <span class="code-com">-- a double quote, this is optional to use</span>
+<span class="code-kyw">local</span> <span class="code-var">textString3</span> <span class="code-kyw">=</span> <span class="code-str">[[Culturae organicae te
 capiet ad loca quae numquam
 expectata non visere!]]</span>     <span class="code-com">-- a double bracket, used this for longer strings</span>
      
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>) <span class="code-com">--   will return 'Hello'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>) <span class="code-com">--   will return 'World'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">textString3</span>) <span class="code-com">--[[ will return
      'Culturae organicae te capiet ad loca quae numquam
      expectata non visere!' --]]</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -212,18 +212,18 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">intNumber1</span> <span class="code-kyw1">=</span> <span class="code-num">81</span>        <span class="code-com">-- an int number</span>
-<span class="code-kyw1">local</span> <span class="code-var">floatNumber1</span> <span class="code-kyw1">=</span> <span class="code-num">23.42</span>   <span class="code-com">-- a float number</span>
+<span class="code-kyw">local</span> <span class="code-var">intNumber1</span> <span class="code-kyw">=</span> <span class="code-num">81</span>        <span class="code-com">-- an int number</span>
+<span class="code-kyw">local</span> <span class="code-var">floatNumber1</span> <span class="code-kyw">=</span> <span class="code-num">23.42</span>   <span class="code-com">-- a float number</span>
      
-<span class="code-kyw1">local</span> <span class="code-var">floatAltNumber1</span> <span class="code-kyw1">=</span> <span class="code-num">12.</span>  <span class="code-com">-- a float number in whole numbers</span>
-<span class="code-kyw1">local</span> <span class="code-var">floatAltNumber2</span> <span class="code-kyw1">=</span> <span class="code-num">.56</span>  <span class="code-com">-- a float number in decimal numbers</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+<span class="code-kyw">local</span> <span class="code-var">floatAltNumber1</span> <span class="code-kyw">=</span> <span class="code-num">12.</span>  <span class="code-com">-- a float number in whole numbers</span>
+<span class="code-kyw">local</span> <span class="code-var">floatAltNumber2</span> <span class="code-kyw">=</span> <span class="code-num">.56</span>  <span class="code-com">-- a float number in decimal numbers</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">intNumber1</span>)      <span class="code-com">-- will return '81'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">floatNumber1</span>)    <span class="code-com">-- will return '23.42'</span>
      
      <span class="code-funcC">debugPrint</span>(<span class="code-var">floatAltNumber1</span>) <span class="code-com">-- will return '12.0'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">floatAltNumber2</span>) <span class="code-com">-- will return '0.56'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -254,12 +254,12 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">tableGroup1</span> <span class="code-kyw1">=</span> {<span class="code-str">'string'</span>, <span class="code-boo">true</span>, <span class="code-nil">nil</span>} <span class="code-com">-- a table with string, boolean, and nil values</span>
-<span class="code-kyw1">local</span> <span class="code-var">tableGroup2</span> <span class="code-kyw1">=</span> {{<span class="code-num">45</span>, <span class="code-num">13</span>}, {<span class="code-num">34</span>, <span class="code-num">76</span>}}  <span class="code-com">-- a table inside with nested tables</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+<span class="code-kyw">local</span> <span class="code-var">tableGroup1</span> <span class="code-kyw">=</span> {<span class="code-str">'string'</span>, <span class="code-boo">true</span>, <span class="code-nil">nil</span>} <span class="code-com">-- a table with string, boolean, and nil values</span>
+<span class="code-kyw">local</span> <span class="code-var">tableGroup2</span> <span class="code-kyw">=</span> {{<span class="code-num">45</span>, <span class="code-num">13</span>}, {<span class="code-num">34</span>, <span class="code-num">76</span>}}  <span class="code-com">-- a table inside with nested tables</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableGroup1</span>[<span class="code-num">1</span>])    <span class="code-com">-- will return 'string'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableGroup2</span>[<span class="code-num">1</span>][<span class="code-num">2</span>]) <span class="code-com">-- will return '45'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                               <h4> Array </h4>
@@ -274,11 +274,11 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         </div>
                                         <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">tableArray</span> <span class="code-kyw1">=</span> {<span class="code-str">'Correct'</span>, <span class="code-str">'Incorrect'</span>, <span class="code-str">'Maybe'</span>, <span class="code-str">'Invalid'</span>} <span class="code-com">-- a table with string values</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+<span class="code-kyw">local</span> <span class="code-var">tableArray</span> <span class="code-kyw">=</span> {<span class="code-str">'Correct'</span>, <span class="code-str">'Incorrect'</span>, <span class="code-str">'Maybe'</span>, <span class="code-str">'Invalid'</span>} <span class="code-com">-- a table with string values</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableArray</span>[<span class="code-num">1</span>]) <span class="code-com">-- will return 'Correct'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableArray</span>[<span class="code-num">3</span>]) <span class="code-com">-- will return 'Maybe'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                                    </div>
                               </hypo-section>
@@ -295,16 +295,16 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         </div>
                                         <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">tableDict1</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">isFatherless</span> <span class="code-kyw1">=</span> <span class="code-boo">false</span>, <span class="code-tabkey">hasTouchGrass</span> <span class="code-kyw1">=</span> <span class="code-boo">true</span>}
-<span class="code-kyw1">local</span> <span class="code-var">tableDict2</span> <span class="code-kyw1">=</span> {[<span class="code-str">'air'</span>] <span class="code-kyw1">=</span> <span class="code-str">'Oxygen'</span>, [<span class="code-str">"food"</span>] <span class="code-kyw1">=</span> <span class="code-str">'potato'</span>, [<span class="code-str">"love"</span>] <span class="code-kyw1">=</span> <span class="code-str">'carbon monoxide'</span>}
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+<span class="code-kyw">local</span> <span class="code-var">tableDict1</span> <span class="code-kyw">=</span> {<span class="code-tabkey">isFatherless</span> <span class="code-kyw">=</span> <span class="code-boo">false</span>, <span class="code-tabkey">hasTouchGrass</span> <span class="code-kyw">=</span> <span class="code-boo">true</span>}
+<span class="code-kyw">local</span> <span class="code-var">tableDict2</span> <span class="code-kyw">=</span> {[<span class="code-str">'air'</span>] <span class="code-kyw">=</span> <span class="code-str">'Oxygen'</span>, [<span class="code-str">"food"</span>] <span class="code-kyw">=</span> <span class="code-str">'potato'</span>, [<span class="code-str">"love"</span>] <span class="code-kyw">=</span> <span class="code-str">'carbon monoxide'</span>}
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1.isFatherless</span>)      <span class="code-com">-- will return 'false' (recommended syntax)</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>[<span class="code-str">'hasTouchGrass'</span>])  <span class="code-com">-- will return 'true'  (not recommended syntax)</span>
      
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1.air</span>)               <span class="code-com">-- will return 'Oxygen'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">'food'</span>])           <span class="code-com">-- will return 'potato'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">"love"</span>])           <span class="code-com">-- will return 'carbon monoxide'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                                    </div>
                               </hypo-section>
@@ -325,13 +325,13 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                               </div>
                               <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">hello</span>() <span class="code-com">-- a 'hello' function</span>
+<span class="code-kyw">function</span> <span class="code-funcD">hello</span>() <span class="code-com">-- a 'hello' function</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-str">'Hello Function'</span>)
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">hello</span>()     <span class="code-com">-- calls the 'hello' function and will return 'Hello Function'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                          </div>
                          <h3> Parameters </h3>
@@ -348,18 +348,18 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    <div class="code-newlines"></div>
 <pre>
 <span class="code-com">-- function created by Mayo78</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>)  <span class="code-com">-- Concatenates setProperty x and y</span>
-     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw1">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
+<span class="code-kyw">function</span> <span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>)  <span class="code-com">-- Concatenates setProperty x and y</span>
+     <span class="code-kyw">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
           <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.x'</span>, <span class="code-paraS">pos</span>[<span class="code-num">1</span>])
-     <span class="code-kyw1">end</span>
-     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw1">then</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw">then</span>
           <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.y'</span>, <span class="code-paraS">pos</span>[<span class="code-num">2</span>]) 
-     <span class="code-kyw1">end</span>
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
      
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreatePost</span>()
+<span class="code-kyw">function</span> <span class="code-funcD">onCreatePost</span>()
      <span class="code-funcC">setPos</span>(<span class="code-str">'boyfriend'</span>, {<span class="code-num">100</span>, <span class="code-num">500</span>}) <span class="code-com">-- Changes the position to x = 100 and y = 500</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                               <p>
@@ -372,19 +372,19 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">Array</span>(<span class="code-paraS">tab</span>, <span class="code-paraI">...</span>)
-     <span class="code-kyw1">local</span> <span class="code-var">convert</span> <span class="code-kyw1">=</span> {<span class="code-paraI">...</span>} <span class="code-com">-- converts it into a table</span>
-     <span class="code-kyw1">for</span> <span class="code-var">i</span> <span class="code-kyw1">=</span> <span class="code-num">1</span>, <span class="code-ope">#</span><span class="code-var">convert</span> <span class="code-kyw1">do</span> <span class="code-com">-- alternative to read every value of a table</span>
+<span class="code-kyw">function</span> <span class="code-funcD">Array</span>(<span class="code-paraS">tab</span>, <span class="code-paraI">...</span>)
+     <span class="code-kyw">local</span> <span class="code-var">convert</span> <span class="code-kyw">=</span> {<span class="code-paraI">...</span>} <span class="code-com">-- converts it into a table</span>
+     <span class="code-kyw">for</span> <span class="code-var">i</span> <span class="code-kyw">=</span> <span class="code-num">1</span>, <span class="code-ope">#</span><span class="code-var">convert</span> <span class="code-kyw">do</span> <span class="code-com">-- alternative to read every value of a table</span>
           <span class="code-data">table</span>.<span class="code-funcC">insert</span>(<span class="code-paraS">tab</span>, <span class="code-var">convert</span>[<span class="code-var">i</span>]) <span class="code-com">-- inserts the value</span>
-     <span class="code-kyw1">end</span>
-     <span class="code-kyw1">return</span> <span class="code-paraS">tab</span> <span class="code-com">-- returns the result</span>
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">return</span> <span class="code-paraS">tab</span> <span class="code-com">-- returns the result</span>
+<span class="code-kyw">end</span>
 
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw1">in</span> <span class="code-funcC">pairs</span>(<span class="code-funcC">Array</span>({}, <span class="code-num">231</span>, <span class="code-num">234</span>, <span class="code-num">456</span>)) <span class="code-kyw1">do</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-funcC">Array</span>({}, <span class="code-num">231</span>, <span class="code-num">234</span>, <span class="code-num">456</span>)) <span class="code-kyw">do</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-var">v</span>) <span class="code-com">-- will return '231, 234, 456'</span>
-     <span class="code-kyw1">end</span>
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -498,12 +498,12 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         </div>
                                         <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'Friday'</span>
+<span class="code-kyw">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the day is 'Friday'</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Friday'</span>)
-     <span class="code-kyw1">end</span>
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
 </pre>
                                    </div>
                               </hypo-section>
@@ -519,14 +519,14 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         </div>
                                         <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'Friday'</span>
+<span class="code-kyw">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the day is 'Friday'</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Friday'</span>)
-     <span class="code-kyw1">else</span>                        <span class="code-com">-- checks if the day is not 'Friday'</span>
+     <span class="code-kyw">else</span>                        <span class="code-com">-- checks if the day is not 'Friday'</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-str">'Not Friday'</span>)
-     <span class="code-kyw1">end</span>
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
 </pre>
                                    </div>
                               </hypo-section>
@@ -542,16 +542,16 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         </div>
                                         <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw1">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">2</span> <span class="code-kyw1">then</span>     <span class="code-com">-- checks if the day is 'Monday'</span>
+<span class="code-kyw">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">if</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">2</span> <span class="code-kyw">then</span>     <span class="code-com">-- checks if the day is 'Monday'</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Monday'</span>)
-     <span class="code-kyw1">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">4</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'Wednesday'</span>
+     <span class="code-kyw">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">4</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the day is 'Wednesday'</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Wednesday'</span>)
-     <span class="code-kyw1">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the day is 'Friday'</span>
+     <span class="code-kyw">elseif</span> <span class="code-var">getDateWeekDay</span> <span class="code-ope">==</span> <span class="code-num">6</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the day is 'Friday'</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-str">'Day: Friday'</span>)
-     <span class="code-kyw1">end</span>
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
 </pre>
                                    </div>
                               </hypo-section>
@@ -581,18 +581,18 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         </div>
                                         <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">for</span> <span class="code-var">index</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">5</span>, <span class="code-num">1</span> <span class="code-kyw1">do</span>  <span class="code-com">-- Increment loop</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">5</span>, <span class="code-num">1</span> <span class="code-kyw">do</span>  <span class="code-com">-- Increment loop</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)  <span class="code-com">-- will return '0, 1, 2, 3, 4, 5'</span>
-     <span class="code-kyw1">end</span>
-     <span class="code-kyw1">for</span> <span class="code-var">index</span> <span class="code-kyw1">=</span> <span class="code-num">5</span>, <span class="code-num">0</span>, <span class="code-ope">-</span><span class="code-num">1</span> <span class="code-kyw1">do</span> <span class="code-com">-- Decrement loop</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">5</span>, <span class="code-num">0</span>, <span class="code-ope">-</span><span class="code-num">1</span> <span class="code-kyw">do</span> <span class="code-com">-- Decrement loop</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)  <span class="code-com">-- will return '5, 4, 3, 2, 1, 0'</span>
-     <span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
 
-     <span class="code-kyw1">for</span> <span class="code-var">index</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">300</span>, <span class="code-num">50</span> <span class="code-kyw1">do</span> <span class="code-com">-- Increment Loop with each value incremented by 50 </span>
+     <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">300</span>, <span class="code-num">50</span> <span class="code-kyw">do</span> <span class="code-com">-- Increment Loop with each value incremented by 50 </span>
           <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)    <span class="code-com">-- will return '0, 50, 100, 150, 200, 250, 300'</span>
-     <span class="code-kyw1">end</span>
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
 </pre>
                                    </div>
                               </hypo-section>
@@ -614,12 +614,12 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         </div>
                                         <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">local</span> <span class="code-var">tableThingy</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">num1</span> <span class="code-kyw1">=</span> <span class="code-num">231</span>, <span class="code-tabkey">num2</span> <span class="code-kyw1">=</span> <span class="code-num">345</span>, <span class="code-tabkey">num3</span> <span class="code-kyw1">=</span> <span class="code-num">234</span>}
-     <span class="code-kyw1">for</span> <span class="code-var">key</span>, <span class="code-var">value</span> <span class="code-kyw1">in</span> <span class="code-funcC">pairs</span>(<span class="code-var">tableThingy</span>) <span class="code-kyw1">do</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">tableThingy</span> <span class="code-kyw">=</span> {<span class="code-tabkey">num1</span> <span class="code-kyw">=</span> <span class="code-num">231</span>, <span class="code-tabkey">num2</span> <span class="code-kyw">=</span> <span class="code-num">345</span>, <span class="code-tabkey">num3</span> <span class="code-kyw">=</span> <span class="code-num">234</span>}
+     <span class="code-kyw">for</span> <span class="code-var">key</span>, <span class="code-var">value</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-var">tableThingy</span>) <span class="code-kyw">do</span>
           <span class="code-funcC">debugPrint</span>(key, <span class="code-var">value</span>)  <span class="code-com">-- will return 'num1 = 231, num2 = 345, num3 = 234'</span>
-     <span class="code-kyw1">end</span>
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
 </pre>
                                    </div>
                               </hypo-section>
@@ -636,13 +636,13 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">getMidpointNum</span>(<span class="code-paraS">ope1</span>, <span class="code-paraS">ope2</span>)
-     <span class="code-kyw1">return</span> (<span class="code-paraS">ope1</span> <span class="code-ope">+</span> <span class="code-paraS">ope2</span>) <span class="code-ope">/</span> <span class="code-num">2</span>  <span class="code-com">-- returns the middle value between 'ope1' and 'ope2'</span>
-<span class="code-kyw1">end</span> 
+<span class="code-kyw">function</span> <span class="code-funcD">getMidpointNum</span>(<span class="code-paraS">ope1</span>, <span class="code-paraS">ope2</span>)
+     <span class="code-kyw">return</span> (<span class="code-paraS">ope1</span> <span class="code-ope">+</span> <span class="code-paraS">ope2</span>) <span class="code-ope">/</span> <span class="code-num">2</span>  <span class="code-com">-- returns the middle value between 'ope1' and 'ope2'</span>
+<span class="code-kyw">end</span> 
 
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-funcC">getMidpointNum</span>(<span class="code-num">9</span> <span class="code-ope">+</span> <span class="code-num">10</span>))   <span class="code-com">-- will return '9.5'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -658,15 +658,15 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">for</span> <span class="code-var">index</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">10</span> <span class="code-kyw1">do</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">10</span> <span class="code-kyw">do</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>) <span class="code-com">-- will return '0, 1, 2, 3, 4, 5'</span>
 
-          <span class="code-kyw1">if</span> <span class="code-var">index</span> <span class="code-ope">==</span> <span class="code-num">10</span> <span class="code-ope">/</span> <span class="code-num">2</span> <span class="code-kyw1">then</span> <span class="code-com">-- checks if the 'index' value is '5'</span>
-               <span class="code-kyw1">break</span> <span class="code-com">-- ends the loop</span>
-          <span class="code-kyw1">end</span>
-     <span class="code-kyw1">end</span> 
-<span class="code-kyw1">end</span>
+          <span class="code-kyw">if</span> <span class="code-var">index</span> <span class="code-ope">==</span> <span class="code-num">10</span> <span class="code-ope">/</span> <span class="code-num">2</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the 'index' value is '5'</span>
+               <span class="code-kyw">break</span> <span class="code-com">-- ends the loop</span>
+          <span class="code-kyw">end</span>
+     <span class="code-kyw">end</span> 
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -691,19 +691,19 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                               </div>
                               <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">do</span>   <span class="code-com">-- do block</span>
-          <span class="code-var">myGlobalVar</span> <span class="code-kyw1">=</span> <span class="code-boo">false</span>      <span class="code-com">-- global</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">do</span>   <span class="code-com">-- do block</span>
+          <span class="code-var">myGlobalVar</span> <span class="code-kyw">=</span> <span class="code-boo">false</span>      <span class="code-com">-- global</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-var">myGlobalVar</span>)  <span class="code-com">-- will return 'false'</span>
-     <span class="code-kyw1">end</span>
-     <span class="code-kyw1">do</span>   <span class="code-com">-- do block</span>
-          <span class="code-kyw1">local</span> <span class="code-var">myLocalVar</span> <span class="code-kyw1">=</span> <span class="code-boo">true</span>  <span class="code-com">-- local</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">do</span>   <span class="code-com">-- do block</span>
+          <span class="code-kyw">local</span> <span class="code-var">myLocalVar</span> <span class="code-kyw">=</span> <span class="code-boo">true</span>  <span class="code-com">-- local</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-var">myLocalVar</span>)   <span class="code-com">-- will return 'true'</span>
-     <span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
      
      <span class="code-funcC">debugPrint</span>(<span class="code-var">myGlobalVar</span>) <span class="code-com">-- will return 'false'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">myLocalVar</span>)  <span class="code-com">-- will return 'nil'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                          </div>
                     </section>
@@ -738,30 +738,30 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-modul">myGamingModules</span> <span class="code-kyw1">=</span> {}
+<span class="code-kyw">local</span> <span class="code-modul">myGamingModules</span> <span class="code-kyw">=</span> {}
 
-<span class="code-modul">myGamingModules</span>.<span class="code-var">red</span>   <span class="code-kyw1">=</span> <span class="code-str">'ff0000'</span>
-<span class="code-modul">myGamingModules</span>.<span class="code-var">green</span> <span class="code-kyw1">=</span> <span class="code-str">'00ff00'</span>
-<span class="code-modul">myGamingModules</span>.<span class="code-var">blue</span>  <span class="code-kyw1">=</span> <span class="code-str">'0000ff'</span>
+<span class="code-modul">myGamingModules</span>.<span class="code-var">red</span>   <span class="code-kyw">=</span> <span class="code-str">'ff0000'</span>
+<span class="code-modul">myGamingModules</span>.<span class="code-var">green</span> <span class="code-kyw">=</span> <span class="code-str">'00ff00'</span>
+<span class="code-modul">myGamingModules</span>.<span class="code-var">blue</span>  <span class="code-kyw">=</span> <span class="code-str">'0000ff'</span>
 
-<span class="code-kyw1">function</span> <span class="code-funcM">myGamingModules</span>.<span class="code-funcD">switch</span>(<span class="code-paraS">case</span>, <span class="code-paraS">statement</span>)
-     <span class="code-kyw1">if</span> <span class="code-paraS">statement</span>[<span class="code-paraS">case</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-ope">or</span> <span class="code-ope">not</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>] <span class="code-kyw1">then</span>
-          <span class="code-kyw1">return</span> <span class="code-paraS">statement</span>[<span class="code-paraS">case</span>]()
-     <span class="code-kyw1">else</span>
-          <span class="code-kyw1">return</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>]()
-     <span class="code-kyw1">end</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">function</span> <span class="code-funcM">myGamingModules</span>.<span class="code-funcD">switch</span>(<span class="code-paraS">case</span>, <span class="code-paraS">statement</span>)
+     <span class="code-kyw">if</span> <span class="code-paraS">statement</span>[<span class="code-paraS">case</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-ope">or</span> <span class="code-ope">not</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>] <span class="code-kyw">then</span>
+          <span class="code-kyw">return</span> <span class="code-paraS">statement</span>[<span class="code-paraS">case</span>]()
+     <span class="code-kyw">else</span>
+          <span class="code-kyw">return</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>]()
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
 
-<span class="code-kyw1">function</span> <span class="code-funcM">myGamingModules</span>.<span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>) <span class="code-com">-- Concatenates setProperty x and y</span>
-     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw1">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
+<span class="code-kyw">function</span> <span class="code-funcM">myGamingModules</span>.<span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>) <span class="code-com">-- Concatenates setProperty x and y</span>
+     <span class="code-kyw">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
           <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.x'</span>, <span class="code-paraS">pos</span>[<span class="code-num">1</span>])
-     <span class="code-kyw1">end</span>
-     <span class="code-kyw1">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw1">then</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">if</span> <span class="code-paraS">pos</span>[<span class="code-num">2</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw">then</span>
           <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.y'</span>, <span class="code-paraS">pos</span>[<span class="code-num">2</span>]) 
-     <span class="code-kyw1">end</span>
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
 
-<span class="code-kyw1">return</span> <span class="code-modul">myGamingModules</span>
+<span class="code-kyw">return</span> <span class="code-modul">myGamingModules</span>
 </pre>
                               </div>
                          </sub-section>
@@ -782,7 +782,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    <div class="code-newlines"></div>
 <pre>
 <span class="code-funcC">require</span> <span class="code-str">'mods/scripts/modules/myGamingModules'</span>                      <span class="code-com">-- uses the default name</span>
-<span class="code-kyw1">local</span> <span class="code-var">moduleName</span> <span class="code-kyw1">=</span> <span class="code-funcC">require</span>(<span class="code-str">'mods/scripts/modules/myGamingModules'</span>)  <span class="code-com">-- uses a custom name</span>
+<span class="code-kyw">local</span> <span class="code-var">moduleName</span> <span class="code-kyw">=</span> <span class="code-funcC">require</span>(<span class="code-str">'mods/scripts/modules/myGamingModules'</span>)  <span class="code-com">-- uses a custom name</span>
 </pre>
                               </div>
                               <p>
@@ -796,14 +796,14 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-modul">moduleName</span> <span class="code-kyw1">=</span> <span class="code-funcC">require</span>(<span class="code-str">'mods/scripts/modules/myGamingModules'</span>) <span class="code-com">-- gets the module</span>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreatePost</span>()
+<span class="code-kyw">local</span> <span class="code-modul">moduleName</span> <span class="code-kyw">=</span> <span class="code-funcC">require</span>(<span class="code-str">'mods/scripts/modules/myGamingModules'</span>) <span class="code-com">-- gets the module</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreatePost</span>()
      <span class="code-modul">moduleName</span>.<span class="code-funcC">setPos</span>(<span class="code-str">'boyfriend'</span>, {<span class="code-num">500</span>, <span class="code-num">1200</span>}) <span class="code-com">-- sets the boyfriend positions</span>
 
      <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">red</span>)   <span class="code-com">-- will return 'ff0000'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">green</span>) <span class="code-com">-- will return '00ff00'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">blue</span>)  <span class="code-com">-- will return '0000ff'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -841,13 +841,13 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">local</span> <span class="code-var">intoStr1</span> <span class="code-kyw1">=</span> <span class="code-str">'This goes from '</span><span class="code-ope">..</span><span class="code-funcC">tostring</span>(<span class="code-num">0</span>)<span class="code-ope">..</span><span class="code-str">'-'</span><span class="code-ope">..</span><span class="code-funcC">tostring</span>(<span class="code-num">10</span>) <span class="code-com">-- Numbers</span>
-     <span class="code-kyw1">local</span> <span class="code-var">intoStr2</span> <span class="code-kyw1">=</span> <span class="code-str">'Doubt it, it<span class="code-escr">\'</span>s '</span><span class="code-ope">..</span><span class="code-funcC">tostring</span>(<span class="code-kyw2">false</span>)               <span class="code-com">-- Booleans</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">intoStr1</span> <span class="code-kyw">=</span> <span class="code-str">'This goes from '</span><span class="code-ope">..</span><span class="code-funcC">tostring</span>(<span class="code-num">0</span>)<span class="code-ope">..</span><span class="code-str">'-'</span><span class="code-ope">..</span><span class="code-funcC">tostring</span>(<span class="code-num">10</span>) <span class="code-com">-- Numbers</span>
+     <span class="code-kyw">local</span> <span class="code-var">intoStr2</span> <span class="code-kyw">=</span> <span class="code-str">'Doubt it, it<span class="code-escr">\'</span>s '</span><span class="code-ope">..</span><span class="code-funcC">tostring</span>(<span class="code-kyw2">false</span>)               <span class="code-com">-- Booleans</span>
 
      <span class="code-funcC">debugPrint</span>(<span class="code-var">intoStr1</span>) <span class="code-com">-- will return 'This goes from 0-10'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">intoStr2</span>) <span class="code-com">-- will return 'Doubt it, it's false'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -866,13 +866,13 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">local</span> <span class="code-var">intoNum1</span> <span class="code-kyw1">=</span> <span class="code-funcC">tonumber</span>(<span class="code-str">'10'</span><span class="code-ope">..</span><span class="code-str">'10'</span><span class="code-ope">..</span><span class="code-str">'50'</span>)                      <span class="code-com">-- Basic</span>
-     <span class="code-kyw1">local</span> <span class="code-var">intoNum2</span> <span class="code-kyw1">=</span> <span class="code-funcC">tonumber</span>((<span class="code-str">'ieurfie987bci173vf'</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'%D'</span>, <span class="code-str">''</span>)) <span class="code-com">-- A bit too advanced</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">intoNum1</span> <span class="code-kyw">=</span> <span class="code-funcC">tonumber</span>(<span class="code-str">'10'</span><span class="code-ope">..</span><span class="code-str">'10'</span><span class="code-ope">..</span><span class="code-str">'50'</span>)                      <span class="code-com">-- Basic</span>
+     <span class="code-kyw">local</span> <span class="code-var">intoNum2</span> <span class="code-kyw">=</span> <span class="code-funcC">tonumber</span>((<span class="code-str">'ieurfie987bci173vf'</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'%D'</span>, <span class="code-str">''</span>)) <span class="code-com">-- A bit too advanced</span>
 
      <span class="code-funcC">debugPrint</span>(<span class="code-var">intoNum1</span>) <span class="code-com">-- will return '101050'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">intoNum2</span>) <span class="code-com">-- will return '987173'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -891,13 +891,13 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">local</span> <span class="code-var">intoCode1</span> <span class="code-kyw1">=</span> <span class="code-funcC">load</span>(<span class="code-str">'return 7 * 5'</span>)()         <span class="code-com">-- Basic math</span>
-     <span class="code-kyw1">local</span> <span class="code-var">intoCode2</span> <span class="code-kyw1">=</span> <span class="code-funcC">load</span>(<span class="code-str">'return {42, 23, 94}'</span>)()  <span class="code-com">-- Table</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">intoCode1</span> <span class="code-kyw">=</span> <span class="code-funcC">load</span>(<span class="code-str">'return 7 * 5'</span>)()         <span class="code-com">-- Basic math</span>
+     <span class="code-kyw">local</span> <span class="code-var">intoCode2</span> <span class="code-kyw">=</span> <span class="code-funcC">load</span>(<span class="code-str">'return {42, 23, 94}'</span>)()  <span class="code-com">-- Table</span>
 
      <span class="code-funcC">debugPrint</span>(<span class="code-var">intoCode1</span>)    <span class="code-com">-- will return '35'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">intoCode2</span>[<span class="code-num">1</span>]) <span class="code-com">-- will return '42'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -916,21 +916,21 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-kyw1">function</span> <span class="code-funcD">read</span>(<span class="code-paraS">tab</span>) <span class="code-com">-- read through a table</span>
-     <span class="code-kyw1">local</span> <span class="code-var">results</span> <span class="code-kyw1">=</span> <span class="code-str">''</span>
-     <span class="code-kyw1">for</span> <span class="code-var">key</span>, <span class="code-var">values</span> <span class="code-kyw1">in</span> <span class="code-funcC">pairs</span>(<span class="code-paraS">tab</span>) <span class="code-kyw1">do</span> <span class="code-com">-- pair function</span>
-          <span class="code-var">results</span> <span class="code-kyw1">=</span> <span class="code-var">results</span> <span class="code-ope">..</span> <span class="code-var">key</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\t</span>'</span><span class="code-ope">..</span><span class="code-var">values</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\n</span>'</span>
-     <span class="code-kyw1">end</span>
-     <span class="code-kyw1">return</span> <span class="code-var">results</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">local</span> <span class="code-kyw">function</span> <span class="code-funcD">read</span>(<span class="code-paraS">tab</span>) <span class="code-com">-- read through a table</span>
+     <span class="code-kyw">local</span> <span class="code-var">results</span> <span class="code-kyw">=</span> <span class="code-str">''</span>
+     <span class="code-kyw">for</span> <span class="code-var">key</span>, <span class="code-var">values</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-paraS">tab</span>) <span class="code-kyw">do</span> <span class="code-com">-- pair function</span>
+          <span class="code-var">results</span> <span class="code-kyw">=</span> <span class="code-var">results</span> <span class="code-ope">..</span> <span class="code-var">key</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\t</span>'</span><span class="code-ope">..</span><span class="code-var">values</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\n</span>'</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">return</span> <span class="code-var">results</span>
+<span class="code-kyw">end</span>
 
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">local</span> <span class="code-var">tableArry</span> <span class="code-kyw1">=</span> {<span class="code-num">123</span>, <span class="code-num">567</span>, <span class="code-num">134</span>}
-     <span class="code-kyw1">local</span> <span class="code-var">tableDict</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">a</span> <span class="code-kyw1">=</span> <span class="code-num">123</span>, <span class="code-tabkey">b</span> <span class="code-kyw1">=</span> <span class="code-num">567</span>, <span class="code-tabkey">c</span> <span class="code-kyw1">=</span> <span class="code-num">134</span>}
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">tableArry</span> <span class="code-kyw">=</span> {<span class="code-num">123</span>, <span class="code-num">567</span>, <span class="code-num">134</span>}
+     <span class="code-kyw">local</span> <span class="code-var">tableDict</span> <span class="code-kyw">=</span> {<span class="code-tabkey">a</span> <span class="code-kyw">=</span> <span class="code-num">123</span>, <span class="code-tabkey">b</span> <span class="code-kyw">=</span> <span class="code-num">567</span>, <span class="code-tabkey">c</span> <span class="code-kyw">=</span> <span class="code-num">134</span>}
 
      <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableArry</span>)) <span class="code-com">-- will return '123, 567, 123'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableDict</span>)) <span class="code-com">-- will return 'c = 134, a = 123, b = 567'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -949,21 +949,21 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">local</span> <span class="code-kyw1">function</span> <span class="code-funcD">read</span>(<span class="code-paraS">tab</span>) <span class="code-com">-- read through a table</span>
-     <span class="code-kyw1">local</span> <span class="code-var">results</span> <span class="code-kyw1">=</span> <span class="code-str">''</span>
-     <span class="code-kyw1">for</span> <span class="code-var">key</span>, <span class="code-var">values</span> <span class="code-kyw1">in</span> <span class="code-funcC">ipairs</span>(<span class="code-paraS">tab</span>) <span class="code-kyw1">do</span> <span class="code-com">-- pair function</span>
-          <span class="code-var">results</span> <span class="code-kyw1">=</span> <span class="code-var">results</span> <span class="code-ope">..</span> <span class="code-var">key</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\t</span>'</span><span class="code-ope">..</span><span class="code-var">values</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\n</span>'</span>
-     <span class="code-kyw1">end</span>
-     <span class="code-kyw1">return</span> <span class="code-var">results</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">local</span> <span class="code-kyw">function</span> <span class="code-funcD">read</span>(<span class="code-paraS">tab</span>) <span class="code-com">-- read through a table</span>
+     <span class="code-kyw">local</span> <span class="code-var">results</span> <span class="code-kyw">=</span> <span class="code-str">''</span>
+     <span class="code-kyw">for</span> <span class="code-var">key</span>, <span class="code-var">values</span> <span class="code-kyw">in</span> <span class="code-funcC">ipairs</span>(<span class="code-paraS">tab</span>) <span class="code-kyw">do</span> <span class="code-com">-- pair function</span>
+          <span class="code-var">results</span> <span class="code-kyw">=</span> <span class="code-var">results</span> <span class="code-ope">..</span> <span class="code-var">key</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\t</span>'</span><span class="code-ope">..</span><span class="code-var">values</span><span class="code-ope">..</span><span class="code-str">'<span class="code-escr">\n</span>'</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">return</span> <span class="code-var">results</span>
+<span class="code-kyw">end</span>
 
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw1">local</span> <span class="code-var">tableArry</span> <span class="code-kyw1">=</span> {<span class="code-num">123</span>, <span class="code-num">567</span>, <span class="code-num">134</span>}
-     <span class="code-kyw1">local</span> <span class="code-var">tableDict</span> <span class="code-kyw1">=</span> {<span class="code-tabkey">a</span> <span class="code-kyw1">=</span> <span class="code-num">123</span>, <span class="code-tabkey">b</span> <span class="code-kyw1">=</span> <span class="code-num">567</span>, <span class="code-tabkey">c</span> <span class="code-kyw1">=</span> <span class="code-num">134</span>}
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">tableArry</span> <span class="code-kyw">=</span> {<span class="code-num">123</span>, <span class="code-num">567</span>, <span class="code-num">134</span>}
+     <span class="code-kyw">local</span> <span class="code-var">tableDict</span> <span class="code-kyw">=</span> {<span class="code-tabkey">a</span> <span class="code-kyw">=</span> <span class="code-num">123</span>, <span class="code-tabkey">b</span> <span class="code-kyw">=</span> <span class="code-num">567</span>, <span class="code-tabkey">c</span> <span class="code-kyw">=</span> <span class="code-num">134</span>}
 
      <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableArry</span>)) <span class="code-com">-- will return '123, 567, 123'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableDict</span>)) <span class="code-com">-- will return 'c = 134, a = 123, b = 567'</span>
-<span class="code-kyw1">end</span>
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>
@@ -985,14 +985,14 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                    </div>
                                    <div class="code-newlines"></div>
 <pre>
-<span class="code-kyw1">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-var">myGlobalVar0</span>, <span class="code-var">myGlobalVar1</span> <span class="code-kyw1">=</span> <span class="code-num">183</span>, <span class="code-num">231</span>
-     <span class="code-var">myGlobalVar2</span>, <span class="code-var">myGlobalVar3</span> <span class="code-kyw1">=</span> <span class="code-num">963</span>, <span class="code-num">263</span>
-     <span class="code-kyw1">for</span> <span class="code-var">nummys</span> <span class="code-kyw1">=</span> <span class="code-num">0</span>, <span class="code-num">3</span> <span class="code-kyw1">do</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-var">myGlobalVar0</span>, <span class="code-var">myGlobalVar1</span> <span class="code-kyw">=</span> <span class="code-num">183</span>, <span class="code-num">231</span>
+     <span class="code-var">myGlobalVar2</span>, <span class="code-var">myGlobalVar3</span> <span class="code-kyw">=</span> <span class="code-num">963</span>, <span class="code-num">263</span>
+     <span class="code-kyw">for</span> <span class="code-var">nummys</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">3</span> <span class="code-kyw">do</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-kyw2">_G</span>[<span class="code-str">'myGlobalVar'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>])         <span class="code-com">-- will return '183, 231, 963, 263'</span>
           <span class="code-funcC">debugPrint</span>(<span class="code-kyw2">_G</span>[<span class="code-str">'defaultPlayerStrumX'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>]) <span class="code-com">-- will return '732, 844, 956, 1068'</span>
-     <span class="code-kyw1">end</span> 
-<span class="code-kyw1">end</span>
+     <span class="code-kyw">end</span> 
+<span class="code-kyw">end</span>
 </pre>
                               </div>
                          </sub-section>

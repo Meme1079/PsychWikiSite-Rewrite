@@ -28,6 +28,7 @@ html {
      height: 8cm;
      position: relative;
      top: -0.4cm;
+     margin-bottom: 1.8cm;
 }
 #home #gaming-background button {
      font-size: 18px;
@@ -77,6 +78,7 @@ html {
 #home #main-pages h1 {
      font-size: 1cm;
      font-weight: 510;
+     position: relative;
 }
 #home #main-pages :is(.recommended-lists, .advanced-lists) {
      display: flex;
@@ -145,25 +147,4 @@ html {
 }
 #home #main-pages .advanced-lists .list-boxes:nth-child(4) > .gradient-thing {
      background: linear-gradient(90deg, hsl(34deg, 100%, 65%) 0%, hsl(27deg, 100%, 50%) 100%);
-}
-
-.custom-shape-divider-bottom-1682675551 {
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-     overflow: hidden;
-     line-height: 0;
-     transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1682675551 svg {
-     position: relative;
-     display: block;
-     width: calc(162% + 1.3px);
-     height: 126px;
-}
-
-.custom-shape-divider-bottom-1682675551 .shape-fill {
-     fill: #FFFFFF;
 }

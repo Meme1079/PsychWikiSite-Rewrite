@@ -95,7 +95,7 @@ html {
      text-align: center !important;
 }
 #wiki :is(code, pre) {
-     font-family: BlinkMacSystemFont;
+     font-family: Menlo;
      border-radius: 5px;
      color: white;
 }
@@ -148,51 +148,51 @@ html {
      transform: translateY(5px) translateX(5px); /* * don't ask */
      box-shadow: 10px 5px 11px 2px rgba(0, 0, 0, 0.5);
 }
-#wiki pre span .code-kyw {
+#wiki pre span.code-kyw {
      color: hsl(1deg, 100%, 79%);
 }
-#wiki pre span .code-ope {
+#wiki pre span.code-ope {
      color: hsl(1deg, 100%, 79%);
 }
-#wiki pre span .code-str {
+#wiki pre span.code-str {
      color: hsl(208deg, 100%, 78%);
 }
-#wiki pre span .code-num {
+#wiki pre span.code-num {
      color: hsl(208deg, 100%, 78%);
 }
-#wiki pre span .code-boo {
+#wiki pre span.code-boo {
      color: hsl(208deg, 100%, 78%);
 }
-#wiki pre span .code-nil {
+#wiki pre span.code-nil {
      color: hsl(208deg, 100%, 78%);
 }
-#wiki pre span .code-com {
+#wiki pre span.code-com {
      color: hsl(212deg, 13%, 77%);
 }
-#wiki pre span .code-esc {
+#wiki pre span.code-esc {
      color: hsl(1deg, 100%, 79%);
 }
-#wiki pre span .code-data {
+#wiki pre span.code-data {
      color: hsl(168deg, 55%, 54%);
 }
-#wiki pre span .code-tabkey {
+#wiki pre span.code-tabkey {
      color: hsl(0deg, 0%, 100%);
 }
-#wiki pre span .code-modul {
+#wiki pre span.code-modul {
      color: hsl(208deg, 100%, 78%);
 }
-#wiki pre span .code-funcD {
+#wiki pre span.code-funcD {
      color: hsl(270deg, 100%, 86%);
 }
-#wiki pre span .code-funcC {
+#wiki pre span.code-funcC {
      color: hsl(208deg, 100%, 78%);
 }
-#wiki pre span .code-funcM {
+#wiki pre span.code-funcM {
      color: hsl(168deg, 55%, 54%);
 }
-#wiki pre span .code-paraS {
+#wiki pre span.code-paraS {
      color: hsl(34deg, 100%, 65%);
 }
-#wiki pre span .code-paraI {
+#wiki pre span.code-paraI {
      color: hsl(208deg, 100%, 78%);
 }
