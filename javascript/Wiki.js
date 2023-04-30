@@ -35,6 +35,7 @@ switch (shortCutAll('title')[0].textContent.split(': ')[1]) {
           importTableDatas(operators.relational, '#tab-rela')
           importTableDatas(operators.logical, '#tab-logi', ['width: 11.105cm;', ''])
           importTableDatas(operators.miscellaneous, '#tab-misc', ['width: 11.105cm;', ''])
+          
           break;
      case 'Library Methods':
           break;

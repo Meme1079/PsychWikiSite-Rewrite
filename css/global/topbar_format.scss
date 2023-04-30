@@ -1,18 +1,15 @@
-/* Global Club :cool: */
+@use '../modules/global';
 
-$global-border-radius: 5px;
-$global-cringe-solver: fit-content; /* Cringe solved */
+/* The Code */
 
 body { margin: 0; } /* Delete this or you'll get neutered */
 
 #global-topbar {
-     z-index: 5 !important;
-     background-color: hsl(216, 8%, 15%);
-     width: 100%; height: 100px; /* 90px */
+     z-index: 5;
      overflow-x: auto; overflow-y: hidden;
+     background-color: hsl(216, 8%, 15%);
      transform: translateY(-15px);
-
-     $logo-padding-top-bottom: 8px;
+     width: 100%; height: 100px; /* 90px */
 
      & > img {
           display: inline-block;
@@ -24,30 +21,35 @@ body { margin: 0; } /* Delete this or you'll get neutered */
           font-size: 25px;
           font-weight: 550;
           border-right: 1px solid white;
-          width: $global-cringe-solver; 
+          width: global.$global-cringe-solver; 
           position: relative;
           top: 14px; left: 80px;
-          padding: $logo-padding-top-bottom 10px $logo-padding-top-bottom 0px;
+          padding: 8px 10px 8px 0px;
           margin-top: 16.5px;
      }
+
+     #active { color: hsl(0, 0%, 70%); }
 
      /* Search Bar */
 
      #searchBar {
           float: right;
           border: 1px solid hsl(216, 8%, 52%);
-          border-radius: $global-border-radius;
-          background-color: hsl(216, 8%, 15%);
+          border-radius: global.$global-border-radius;
           box-shadow: 8px 5px 10px 1px rgba(0,0,0,0.5);
-          transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+          background-color: hsl(216, 8%, 15%);
+          width: 6.5cm; height: global.$global-cringe-solver;
           position: relative;
-          width: 6.5cm; height: $global-cringe-solver;
+          transform: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
           top: -1.3cm;
           padding: 5px 10px;
           margin-right: 1cm;
 
-          &:hover { transform: translateY(1px); }
-     
+          &:hover { transform: translateY(1.5px); }
+
+          :is(&, button)       { color: hsl(211, 37%, 88%); }
+          :is(&, button):hover { background-color: black; }
+
           button::before { content: 'Search stuff...'; }
           button {
                font-size: 16px;
@@ -55,14 +57,9 @@ body { margin: 0; } /* Delete this or you'll get neutered */
                border: none;
                background: none;
           }
-
-          :is(&, button)       { color: hsl(211, 37%, 88%); }
-          :is(&, button):hover { background-color: black; }
      }
 
      /* List Bar */
-
-     #active { color: hsl(0, 0%, 70%); }
 
      ul {
           float: right;

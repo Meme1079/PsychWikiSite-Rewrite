@@ -1,0 +1,77 @@
+/* Global Variables */
+/* Cringe solved */
+/* Global Mixin's */
+/* Local Club :cool: */
+@font-face {
+     font-family: "VCR";
+     src: url(/fonts/VCR/VCR_OSD_MONO.woff) format("woff"), url(/fonts/VCR/VCR_OSD_MONO.otf) format("opentype"), url(/fonts/VCR/VCR_OSD_MONO.ttf) format("truetype");
+}
+#global-no-javascript {
+     z-index: 6;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-family: "VCR";
+     background: hsl(249deg, 100%, 50%);
+     position: fixed;
+     width: 100%;
+     height: 100%;
+}
+#global-no-javascript #no-javascript-window {
+     outline: 2px solid black;
+     border: 3px solid white;
+     border-style: outset;
+     color: black;
+     background-color: silver;
+     width: 12cm;
+     height: 6cm;
+}
+#global-no-javascript #no-javascript-window #no-javascript-NOTE {
+     position: absolute;
+     transform: translateX(-2.2cm) translateY(1.45cm);
+}
+#global-no-javascript #no-javascript-window #no-javascript-topbar {
+     color: white !important;
+     background-color: blue;
+     width: 12cm;
+     height: 1cm;
+}
+#global-no-javascript #no-javascript-window #no-javascript-topbar ~ p {
+     margin: 0px 0px 12px 0px;
+     position: relative;
+     bottom: 2.4cm;
+     left: 3cm;
+}
+#global-no-javascript #no-javascript-window #no-javascript-topbar p {
+     font-family: "VCR";
+     font-size: 23px;
+     transform: translateY(5px) translateX(8px);
+     margin: 0;
+}
+#global-no-javascript #no-javascript-window img {
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     user-select: none;
+     position: relative;
+     bottom: 0.15cm;
+}
+#global-no-javascript #no-javascript-window button {
+     outline: 2px solid black;
+     border: 2px solid white;
+     border-style: outset;
+     font-family: "VCR";
+     color: black;
+     background-color: silver;
+     padding: 2px 15px;
+     position: relative;
+     bottom: 1.5cm;
+     left: 5.35cm;
+}
+#global-no-javascript #no-javascript-window button:hover {
+     background-color: silver;
+}
+#global-no-javascript #no-javascript-window button:active {
+     border: 2px solid rgb(231, 231, 231);
+     border-style: outset;
+     background-color: rgb(173, 173, 173);
+}

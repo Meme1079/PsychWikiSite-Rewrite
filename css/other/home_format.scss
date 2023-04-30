@@ -1,15 +1,13 @@
-/* Global Club :cool: */
+@use '../modules/global';
 
-$global-border-radius: 5px;
-$global-cringe-solver: fit-content; /* Cringe solved */
-$global-gaming-color-background: hsl(0, 0%, 20%);
+/* Local Club :cool: */
 
-$global-gradientRO: 90deg; // Rotation
-$global-gradientDS: 0%;    // Defualt start
-$global-gradientDE: 100%;  // Defualt end
+$local-gaming-color-background: hsl(0, 0%, 20%);
 
-$global-ease-easeOutCubic:   cubic-bezier(0.33, 1, 0.68, 1);
-$global-ease-easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
+$local-ease-easeOutCubic:   cubic-bezier(0.33, 1, 0.68, 1);
+$local-ease-easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
+
+/* Key Frames */
 
 @keyframes squishy-image {
      0%   { transform: scaleX(inherit); }
@@ -17,36 +15,39 @@ $global-ease-easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
      100% { transform: scaleX(inherit); }
 }
 
-body { 
-     margin: 0px; 
-}
+/* The Code */
 
-html {
-     font-family: BlinkMacSystemFont;
+html { 
+     font-family: global.$global-font-family; 
      scroll-behavior: smooth;
+
+     body { margin: 0px; }
 }
 
-#home {     
+/* The Home Page */
+
+#home {
      #gaming-background {
           overflow: hidden;
-          box-shadow: 0px 20px 50px 5px $global-gaming-color-background;
-          background-color: $global-gaming-color-background;
+          box-shadow: 0px 20px 50px 5px $local-gaming-color-background;
+          background-color: $local-gaming-color-background;
           width: 100%; height: 8cm;
           position: relative;
           top: -0.4cm;
           margin-bottom: 1.8cm;
 
-          $gradient-button1: hsl(272, 100%, 50%) $global-gradientDS;
-          $gradient-button2: hsl(242, 100%, 60%) $global-gradientDE;
+          $button-gradient-start: hsl(272, 100%, 50%) global.$global-gradientDS;
+          $button-gradient-end:   hsl(242, 100%, 60%) global.$global-gradientDE;
+          $button-gradientBG: $button-gradient-start, $button-gradient-end;
 
           button {
                font-size: 18px;
                font-weight: 550;
-               border-radius: calc($global-border-radius - 2px);
+               border-radius: calc(global.$global-border-radius - 2px);
                border: none;
-               background: linear-gradient($global-gradientRO, $gradient-button1, $gradient-button2);
-               transition: transform 0.2s $global-ease-easeOutCubic;
+               background: linear-gradient(global.$global-gradientRO, $button-gradientBG);
                position: absolute;
+               transition: transform 0.2s $local-ease-easeOutCubic;
                padding: 8px 10px;
 
                &:hover { transform: scale(1.05); }
@@ -65,15 +66,15 @@ html {
           }
 
           #gaming-image {
+               animation: squishy-image 3s $local-ease-easeInOutCubic infinite;
                position: absolute;
                top: 0px; right: 8cm;
-               animation: squishy-image 3s $global-ease-easeInOutCubic infinite;
           }
 
           :is(#gaming-logo, #gaming-slogan, button) {
                z-index: 3;
-               background-color: $global-gaming-color-background;
-               width: $global-cringe-solver;
+               background-color: $local-gaming-color-background;
+               width: global.$global-cringe-solver;
                position: relative;
                top: 0cm; left: 3cm;
           }
@@ -85,7 +86,7 @@ html {
           align-items: center;
           position: relative;
           top: -1cm;
-          
+
           h1 {
                font-size: 1cm;
                font-weight: 510;
@@ -110,22 +111,26 @@ html {
                .list-boxes {
                     box-shadow: 10px 10px 20px 1px hsl(0, 0%, 40%, 0.5);
                     background-color: black !important;
-                    border-radius: $global-border-radius;
+                    border-radius: global.$global-border-radius;
                     border: 1.5px solid white;
                     width: 250px; height: 100px;
+                    transition: transform 0.15s $local-ease-easeOutCubic;
                     padding: 10px 15px 5px 15px;
-                    transition: transform 0.15s $global-ease-easeOutCubic;
 
                     &:hover { 
-                         transform: scale(1.1) rotate(1deg); cursor: pointer; 
+                         transform: scale(1.1) rotate(1deg); 
+                         cursor: pointer;
                          :is(h3, p) { color: hsl(210, 100%, 72%); }
                     }
+
                     &:active { transform: scale(0.95); }
-                    
+
+                    $gradient-thing-border-radius: calc(global.$global-border-radius - 2px);
+
                     .gradient-thing {
-                         z-index: -3;
-                         border-radius: calc($global-border-radius - 2px) calc($global-border-radius - 2px) 0px 0px;
                          transform: translateX(-15px) translateY(-10px);
+                         z-index: -3;
+                         border-radius: $gradient-thing-border-radius $gradient-thing-border-radius 0px 0px;
                          width: 250px; height: 10px;
                          padding: 10px 15px 5px 15px;
                          margin-bottom: -11px;
@@ -133,31 +138,31 @@ html {
                }
           }
 
-          $gradient-div1: hsl(0, 100%, 50%)   $global-gradientDS, hsl(29, 100%, 50%)  $global-gradientDE;
-          $gradient-div2: hsl(272, 100%, 50%) $global-gradientDS, hsl(242, 100%, 60%) $global-gradientDE;
-          $gradient-div3: hsl(246, 100%, 50%) $global-gradientDS, hsl(206, 100%, 50%) $global-gradientDE;
-          $gradient-div4: hsl(152, 100%, 50%) $global-gradientDS, hsl(177, 100%, 50%) $global-gradientDE;
+          $gradient-div1: hsl(0, 100%, 50%)   global.$global-gradientDS, hsl(29, 100%, 50%)  global.$global-gradientDE;
+          $gradient-div2: hsl(272, 100%, 50%) global.$global-gradientDS, hsl(242, 100%, 60%) global.$global-gradientDE;
+          $gradient-div3: hsl(246, 100%, 50%) global.$global-gradientDS, hsl(206, 100%, 50%) global.$global-gradientDE;
+          $gradient-div4: hsl(152, 100%, 50%) global.$global-gradientDS, hsl(177, 100%, 50%) global.$global-gradientDE;
 
           .recommended-lists {
                .list-boxes {
-                    &:nth-child(1) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div1); }
-                    &:nth-child(2) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div2); }
-                    &:nth-child(3) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div3); }
-                    &:nth-child(4) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div4); }
+                    &:nth-child(1) > .gradient-thing { background: linear-gradient(global.$global-gradientRO, $gradient-div1); }
+                    &:nth-child(2) > .gradient-thing { background: linear-gradient(global.$global-gradientRO, $gradient-div2); }
+                    &:nth-child(3) > .gradient-thing { background: linear-gradient(global.$global-gradientRO, $gradient-div3); }
+                    &:nth-child(4) > .gradient-thing { background: linear-gradient(global.$global-gradientRO, $gradient-div4); }
                }
           }
 
-          $gradient-div1: hsl(184, 100%, 50%) $global-gradientDS, hsl(219, 100%, 50%) $global-gradientDE;
-          $gradient-div2: hsl(135, 100%, 50%) $global-gradientDS, hsl(71, 100%, 50%)  $global-gradientDE;
-          $gradient-div3: hsl(300, 100%, 50%) $global-gradientDS, hsl(268, 100%, 50%) $global-gradientDE;
-          $gradient-div4: hsl(34, 100%, 65%)  $global-gradientDS, hsl(27, 100%, 50%)  $global-gradientDE;
+          $gradient-div1: hsl(184, 100%, 50%) global.$global-gradientDS, hsl(219, 100%, 50%) global.$global-gradientDE;
+          $gradient-div2: hsl(135, 100%, 50%) global.$global-gradientDS, hsl(71, 100%, 50%)  global.$global-gradientDE;
+          $gradient-div3: hsl(300, 100%, 50%) global.$global-gradientDS, hsl(268, 100%, 50%) global.$global-gradientDE;
+          $gradient-div4: hsl(34, 100%, 65%)  global.$global-gradientDS, hsl(27, 100%, 50%)  global.$global-gradientDE;
 
           .advanced-lists {
                .list-boxes {
-                    &:nth-child(1) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div1); }
-                    &:nth-child(2) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div2); }
-                    &:nth-child(3) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div3); }
-                    &:nth-child(4) > .gradient-thing { background: linear-gradient($global-gradientRO, $gradient-div4); }
+                    &:nth-child(1) > .gradient-thing { background: linear-gradient(global.$global-gradientRO, $gradient-div1); }
+                    &:nth-child(2) > .gradient-thing { background: linear-gradient(global.$global-gradientRO, $gradient-div2); }
+                    &:nth-child(3) > .gradient-thing { background: linear-gradient(global.$global-gradientRO, $gradient-div3); }
+                    &:nth-child(4) > .gradient-thing { background: linear-gradient(global.$global-gradientRO, $gradient-div4); }
                }
           }
      }

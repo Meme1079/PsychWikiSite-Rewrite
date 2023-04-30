@@ -1,42 +1,35 @@
-/* Global Club :cool: */
+@use '../modules/global';
 
-$global-font-family: BlinkMacSystemFont;
-$global-border-radius: 5px;
-$global-max-width: 26.6cm;
+/* Local Club :cool: */
 
-$global-color-codeblock-bg: hsl(216, 8%, 52%);
+$local-color-codeblock-bg: hsl(216, 8%, 52%);
+$local-html-max-width: 26.6cm;
 
-@mixin antiSelector {
-     -webkit-user-select: none; /* Safari */
-     -ms-user-select:     none; /* IE 10 and IE 11 */
-     user-select:         none; /* Standard syntax */
-}
+/* The Code */
 
-html {
-     font-family: $global-font-family;
-     scroll-behavior: smooth;
+html { 
+     font-family: global.$global-font-family; 
+     scroll-behavior: smooth; 
 }
 
 #wiki {
      position: relative;
      left: 8.7cm;
-     width: $global-max-width;
-
-     .head-hr-thick {
-          background-color: hsl(214, 12%, 66%); 
-          width: $global-max-width; height: 3px;
-          margin-top: 20px;
-     }
-     
+     width: $local-html-max-width;
 
      :is(p, a, ul, td, th, blockquote) { line-height: 1.5; }
      :is(p, a, ul) { display: block; word-wrap: break-word; }
-     
      li            { margin: 6px 0px; }
 
      a { 
           text-decoration: none; color: hsl(210, 100%, 72%);
           &:hover { text-decoration: underline; }
+     }
+
+     .head-hr-thick {
+          background-color: hsl(214, 12%, 66%); 
+          width: $local-html-max-width; height: 3px;
+          margin-top: 20px;
      }
 
      /* Headers */
@@ -49,44 +42,38 @@ html {
      $tag-h3-margin-bottom: 15px;
      $tag-h4-margin-bottom: 10px;
 
-     @mixin headerAttr($fontSize, $fontWeight, $marginTop, $marginBottom) {
+     @mixin defualtHeaderAttr($fontSize, $fontWeight, $marginTopBottom) {
           font-size: $fontSize;
           font-weight: $fontWeight;
-          margin-top: $marginTop; margin-bottom: $marginBottom;
+          margin: $marginTopBottom 0px $marginTopBottom 0px;
      }
 
-     h1 { 
-          @include headerAttr(32px, 600, $tag-h1-margin-top, $tag-h1-margin-bottom); 
-          border-bottom: 1px solid $global-color-codeblock-bg;
+     h1 {
+          @include defualtHeaderAttr(32px, 600, $tag-h1-margin-top $tag-h1-margin-bottom);
+          border-bottom: 1px solid $local-color-codeblock-bg;
           padding-bottom: 10px;
      }
 
-     h3 { @include headerAttr(20px, 550, $tag-h3-margin-top, $tag-h3-margin-bottom); }
-     h4 { @include headerAttr(16px, 530, $tag-h4-margin-top, $tag-h4-margin-bottom); }
+     h3 { @include defualtHeaderAttr(20px, 550, $tag-h3-margin-top $tag-h3-margin-bottom); }
+     h4 { @include defualtHeaderAttr(16px, 530, $tag-h4-margin-top $tag-h4-margin-bottom); }
 
      /* BlockQuotes */
 
      blockquote {
-          @include antiSelector;
-          width: calc($global-max-width - 1.5em); 
-          margin-left: 0px; 
+          @include global.noSelector;
+          width: calc($local-html-max-width - 1.5em);
           padding: 5px 0px 5px 20px;
+          margin-left: 0px;
+
+          @mixin blockquoteColorAdd($color) {
+               border-left: 0.15cm solid $color;
+               span { color: $color; }
+          }
 
           i { margin-right: 5px; }
 
-          $border-left-width: 0.15cm;
-          $color-warning: hsl(42, 87%, 56%);
-          $color-note:    hsl(210, 100%, 72%);
-
-          &.warning {
-               border-left: $border-left-width solid $color-warning;
-               span { color: $color-warning; }
-          }
-
-          &.note {
-               border-left: $border-left-width solid $color-note;
-               span { color: $color-note; }
-          }
+          &.warning { @include blockquoteColorAdd(hsl(42, 87%, 56%));   }
+          &.note    { @include blockquoteColorAdd(hsl(210, 100%, 72%)); }
      }
 
      /* Tables */
@@ -96,16 +83,18 @@ html {
           overflow: auto;
           border-collapse: collapse !important;
 
-          :is(td, th) { padding: (6px * 2) ((12px * 2) / 1); }
-          td          { border-top: 1px solid $global-color-codeblock-bg; }
+          :is(td, th) { padding: calc(6px * 2) calc(calc(12px * 2) / 1); }
+          td          { border-top: 1px solid $local-color-codeblock-bg; }
           thead tr    { text-align: center !important; }
      }
 
      /* Code Blocks */
 
+     $defualt-code-font: Menlo;
+
      :is(code, pre) {
-          font-family: Menlo;
-          border-radius: $global-border-radius;
+          font-family: $defualt-code-font;
+          border-radius: global.$global-border-radius;
           color: white;
      }
 
@@ -119,53 +108,43 @@ html {
           tab-size: 8;
           white-space: pre;
           font-size: 13px;
-          outline: 1px solid $global-color-codeblock-bg;
+          outline: 1px solid $local-color-codeblock-bg;
           line-height: 20px !important;
-          border-radius: 0px 0px $global-border-radius $global-border-radius !important;
+          border-radius: 0px 0px global.$global-border-radius global.$global-border-radius !important;
           background-color: black;
           margin-top: 12px !important;
           padding: 16px 16px 16px 50px;
      }
 
      .code-border {
-          outline: 1px solid $global-color-codeblock-bg;
-          border-radius: $global-border-radius;
+          outline: 1px solid $local-color-codeblock-bg;
+          border-radius: global.$global-border-radius;
           background-color: rgb(39, 43, 51);
           margin: 20px 0px;
      }
 
-     $code-font-family: Menlo;
-
      .code-newlines {
-          @include antiSelector;
+          @include global.noSelector;
           font-size: 14px; 
-          font-family: $code-font-family;
+          font-family: $defualt-code-font;
           text-align: center;
           line-height: 20px !important; 
           color: hsl(0, 0%, 67%);
           position: absolute !important; 
-          transform: translateY(27.99px) translateX(18px); /* * don't ask */
+          transform: translateY(27.99px) translateX(18px);
      }
-
-     $tagbg-posi: 10px 5px;
-     $tagbg-blur-radius: 11px 2px;
-     $tagbg-color-shadow: rgba(0, 0, 0, 0.5);
-     $tagbg-box-shadow: $tagbg-posi $tagbg-blur-radius $tagbg-color-shadow;
 
      .code-tagbg {
           font-size: 13px;
-          font-family: $code-font-family;
+          font-family: $defualt-code-font;
           font-weight: 550;
-          outline: 1px solid $global-color-codeblock-bg;
-          border-radius: $global-border-radius;
+          outline: 1px solid $local-color-codeblock-bg;
+          box-shadow: 10px 5px 11px 2px rgba(0, 0, 0, 0.5);
+          border-radius: global.$global-border-radius;
           background-color: black;
           padding: 7px 10px;
-          width: fit-content;
-          transform: translateY(5px) translateX(5px); /* * don't ask */
-
-          -webkit-box-shadow: $tagbg-box-shadow;
-          -moz-box-shadow:    $tagbg-box-shadow;
-          box-shadow:         $tagbg-box-shadow;
+          width: global.$global-cringe-solver;
+          transform: translateY(5px) translateX(5px);
      }
 
      /* Code Colors */
@@ -187,7 +166,7 @@ html {
      $color-code-escape-characters:  hsl(1, 100%, 79%);
      $color-code-table-keys:         hsl(0, 0%, 100%);
      $color-code-modules:            hsl(208, 100%, 78%);
-
+     
      pre {
           span.code-kyw    { color: $color-code-keywords; }
           span.code-ope    { color: $color-code-operators; }
