@@ -65,13 +65,13 @@ const HeaderMainPath = '#sidebar-headerlists ul'
 for (let i = 0; i < shortCutAll('#wiki .header').length; i++) {
      let HeaderGetClass    = shortCutAll('#wiki .header')[i].getAttribute('class')
      let HeaderSliceNum    = HeaderGetClass.slice(HeaderGetClass.length - 1, HeaderGetClass.length)
-     let HeaderTextFilter  = shortCutAll('#wiki .header')[i].innerText.split('(')[0]
+     let HeaderTextFilter  = shortCutAll('#wiki .header')[i].innerText.replaceAll(/\(.+\)/g, '()')
      let HeaderTextDisplay = `<li><span class="list-h${HeaderSliceNum}">${HeaderTextFilter}</span></li>`
 
      shortCut(`${HeaderMainPath}`).innerHTML += HeaderTextDisplay
 }
 
-let HeadNumIncre = 0
+let HeadNumIncre = 1
 for (let getHeads = 0; getHeads < shortCutAll('#wiki .header').length; getHeads++) {
      let HeadIdValue = shortCutAll('#wiki .header')[getHeads].textContent.split('(')[0].trim() + HeadNumIncre++
      shortCutAll('#wiki .header')[getHeads].setAttribute('id', HeadIdValue)

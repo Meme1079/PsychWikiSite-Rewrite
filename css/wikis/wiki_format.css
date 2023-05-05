@@ -94,12 +94,12 @@ main {
 }
 
 #wiki a:hover { 
-     text-decoration: none; 
+     text-decoration: underline; 
 }
 
 #wiki a {
-     text-decoration: underline;
-     color: dodgerblue;
+     text-decoration: none;
+     color: hsl(210, 100%, 72%);
 }
 
 #wiki li {
@@ -156,7 +156,7 @@ main {
      margin-left: 0px;
 }
 
-#wiki blockquote i { margin-right: 5px; }
+#wiki blockquote i { font-size: 1em; margin-right: 5px; }
 
 #wiki blockquote.warning { border-left: var(--tag-blockquote-border-left-warning) !important; }
 #wiki blockquote.note    { border-left: var(--tag-blockquote-border-left-note)    !important; }
