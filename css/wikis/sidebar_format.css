@@ -1,0 +1,151 @@
+:root {
+     --global-font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
+     --global-cringe-solver: fit-content; /* Cringe solved */
+     --global-border-radius: 5px;
+
+     /* Local club :cool: */
+
+     --local-color-codeblock-bg: hsl(216, 8%, 52%);
+     --local-color-searchbar-active: hsl(42, 87%, 56%);
+
+     /* Ease Types */
+
+     --transform-easeType-easeOutQuad: cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+#global-sidebar {
+     outline: 1px solid var(--local-color-codeblock-bg);
+     background-color: hsl(0deg, 0%, 10%);
+     width: 8.465cm; height: 100%;
+     position: absolute;
+     top: 2.25cm;
+}
+
+/* Search */
+
+#global-sidebar h3 {
+     font-size: 1.8em;
+     font-weight: 550;
+     position: relative;
+     bottom: 10px; left: 20px;
+}
+
+#global-sidebar hr {
+     border: none;
+     background-color: var(--local-color-codeblock-bg);
+     width: 7.4cm; height: 1px;
+}
+
+#global-sidebar #sidebar-arrow-top {
+     z-index: 6;
+     cursor: pointer;
+     font-size: 2.2em; 
+     color: #71b7ff;
+     position: absolute;
+     transition: transform 0.1s var(--transform-easeType-easeOutQuad);
+     top: 15px; left: 7cm;
+}
+
+#global-sidebar #sidebar-arrow-top:hover {
+     color: var(--local-color-searchbar-active);
+}
+
+#global-sidebar #sidebar-arrow-top:active {
+     transform: scaleX(0.8) scaleY(0.8);
+}
+
+#global-sidebar #sidebar-search {
+     position: relative;
+     bottom: 0.3cm; left: 20px;
+}
+
+#global-sidebar #sidebar-search input[type=text] {
+     display: flex;
+     cursor: pointer;
+     font-size: 0.95em;
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     border-style: none;
+     border-radius: var(--global-border-radius);
+     box-shadow: 8px 5px 10px 1px rgba(0, 0, 0, 0.5);
+     color: hsl(211deg, 37%, 88%);
+     background-color: hsl(216deg, 8%, 15%);
+     width: 7.4cm; height: 0.8cm;
+     padding: 15px 30px 15px 30px;
+}
+
+#global-sidebar #sidebar-search input:focus {
+     cursor: auto;
+     outline: 2px solid var(--local-color-searchbar-active);
+     background-color: black;
+}
+
+#global-sidebar #sidebar-search :is(#sidebar-searchIcon, #sidebar-clearIcon):before {
+     position: relative;
+     top: 7px; left: 8px;
+}
+
+#global-sidebar #sidebar-search :is(#sidebar-searchIcon, #sidebar-clearIcon) {
+     z-index: 5;
+     display: flex;
+     font-size: 1.1em;
+     position: absolute;
+}
+
+#global-sidebar #sidebar-search #sidebar-clearIcon {
+     font-size: 1.3em;
+     bottom: 10.5px; left: 6.5cm;
+}
+
+#global-sidebar #sidebar-search #sidebar-clearIcon:hover {
+     color: #71b7ff;
+}
+
+#global-sidebar #sidebar-search #sidebar-clearIcon:active {
+     transition: color 0.1s var(--transform-easeType-easeOutQuad);
+     color: var(--local-color-searchbar-active);
+}
+
+/* Header Lists */
+
+#global-sidebar #sidebar-headerlists {
+     overflow-x: hidden; overflow-y: auto;
+     height: 15.5cm;
+     position: relative;
+     right: 0.5cm;
+}
+
+#global-sidebar #sidebar-headerlists::-webkit-scrollbar {
+     width: 9px;
+     height: 10px;
+}
+
+#global-sidebar #sidebar-headerlists::-webkit-scrollbar-thumb {
+     border-radius: var(--global-border-radius);
+     background: #6b6b6b;
+}
+
+#global-sidebar #sidebar-headerlists::-webkit-scrollbar-track {
+     background: rgba(0, 0, 0, 0);
+}
+
+#global-sidebar #sidebar-headerlists li {
+     list-style-type: none;
+     cursor: pointer;
+     border-radius: var(--global-border-radius);
+     width: 7cm; height: var(--global-cringe-solver);
+     padding: 8px;
+}
+
+#global-sidebar #sidebar-headerlists li:hover {
+     background-color: hsl(0deg, 0%, calc(calc(12% + 18%) / 2));
+}
+
+#global-sidebar #sidebar-headerlists li:active {
+     outline: 1px solid var(--local-color-searchbar-active);
+     background-color: black;
+}
+
+#global-sidebar #sidebar-headerlists li span.list-h1 { font-weight: 550; }
+#global-sidebar #sidebar-headerlists li span.list-h2 { margin-left: 10px; }
+#global-sidebar #sidebar-headerlists li span.list-h3 { margin-left: 20px; }
+#global-sidebar #sidebar-headerlists li span.list-h4 { margin-left: 30px; }

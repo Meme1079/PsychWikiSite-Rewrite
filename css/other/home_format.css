@@ -19,7 +19,8 @@ html {
      font-family: BlinkMacSystemFont;
      scroll-behavior: smooth;
 }
-html body {
+
+body {
      margin: 0px;
 }
 
