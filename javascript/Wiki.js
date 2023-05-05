@@ -75,7 +75,9 @@ let HeadNumIncre = 1
 for (let getHeads = 0; getHeads < shortCutAll('#wiki .header').length; getHeads++) {
      let HeadIdValue = shortCutAll('#wiki .header')[getHeads].textContent.split('(')[0].trim() + HeadNumIncre++
      shortCutAll('#wiki .header')[getHeads].setAttribute('id', HeadIdValue)
-     shortCutAll(`${HeaderMainPath} li`)[getHeads].setAttribute('onclick', `window.location.href = '#${HeadIdValue}'`)
+
+     let windowLinkCode = `window.location.href = '#${HeadIdValue}'`
+     shortCutAll(`${HeaderMainPath} li`)[getHeads].setAttribute('onclick', windowLinkCode)
 }
 
 function searchInputHeading() {

@@ -62,6 +62,34 @@
                     <article id="wiki">
                          <h1> String Methods </h1>
                          <section>
+                              <p>
+                                   There are 2 types of syntaxes for string method you can use. Either <code>string.func()</code> or <code>(string):func()</code> but im just gonna use the 
+                                   second syntax in examples. Because it makes me look smarter and makes it easier to read for instance.
+                              </p>
+                              <blockquote class="note">
+                                   <span><i class="fa fa-info-circle" aria-hidden="true"></i>Note</span>: 
+                                   <em> The second syntax is only local to <code>string methods</code> and not for <code>table method</code> or <code>math methods</code>.</em>
+                              </blockquote>
+                              <div class="code-border">
+                                   <div style="display: flex;">
+                                        <div class="code-tagbg">Example:</div>
+                                   </div>
+                                   <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">textString</span> <span class="code-kyw">=</span> <span class="code-str">'IJBIOGEJBOUIEKWIWBLCUYQOWYGV'</span>
+     <span class="code-kyw">local</span> <span class="code-var">stringSyntax1</span> <span class="code-kyw">=</span> <span class="code-data">string</span>.<span class="code-funcC">lower</span>(<span class="code-data">string</span>.<span class="code-funcC">gsub</span>(<span class="code-data">string</span>.<span class="code-funcC">gsub</span>(<span class="code-var">textString</span>, <span class="code-str">'W'</span>, <span class="code-str">''</span>), <span class="code-str">'I'</span>, <span class="code-str">''</span>))
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">stringSyntax1</span>) <span class="code-com">-- will print 'jbogejbouekblcuyqoygv'</span>
+     <span class="code-com">-- The functions being nested makes it not understandable, sure you can use this syntax</span>
+     <span class="code-com">-- just use this only ones or twice when nesting tho</span>
+
+     <span class="code-kyw">local</span> <span class="code-var">stringSyntax2</span> <span class="code-kyw">=</span> <span class="code-varD">textString</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'W'</span>, <span class="code-str">''</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'I'</span>, <span class="code-str">''</span>):<span class="code-funcC">lower</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">stringSyntax1</span>) <span class="code-com">-- will print 'jbogejbouekblcuyqoygv'</span>
+     <span class="code-com">-- This syntax pretty much solves the problem and makes it more understandable</span>
+<span class="code-kyw">end</span>
+</pre>
+                              </div>
+                              <hr>
                               <h3> string.upper(str:String) </h3>
                               <sub-section>
                               </sub-section>

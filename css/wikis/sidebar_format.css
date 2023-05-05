@@ -8,7 +8,6 @@
      --color-codeblock:  hsl(216, 8%, 52%);
      --color-searchbar:  hsl(42, 87%, 56%);
      --color-link-text:  hsl(210, 100%, 72%);
-     --color-input-text: hsl(211deg, 37%, 88%);
 
      /* Ease Types */
 
@@ -68,8 +67,8 @@
      outline: 1px solid hsl(216deg, 8%, 52%);
      border-style: none;
      border-radius: var(--global-border-radius);
-     box-shadow: 8px 5px 10px 1px rgba(0, 0, 0, 0.5);
-     color: var(--color-input-text);
+     box-shadow: 5px 5px 10px 1px hsla(0deg, 0%, 0%, 0.6);
+     color: white;
      background-color: hsl(216deg, 8%, 15%);
      width: 7.4cm; height: 0.8cm;
      padding: 15px 30px;
