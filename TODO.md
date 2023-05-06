@@ -1,4 +1,4 @@
 - [x] Finish the Home Page
 - [ ] Finish the Library Methods
-- [ ] Polish some sample code in Basics of Coding
+- [x] Polish some sample code in Basics of Coding
 - [ ] Make the Search Bar actual working

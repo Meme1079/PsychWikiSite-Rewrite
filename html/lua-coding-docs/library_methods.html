@@ -31,7 +31,7 @@
                     </div>
                </div>
           </noscript>
-          <div id="global-topbar">
+          <nav id="global-topbar">
                <img src="/images/Psych.ico" alt="Le logo" width="60" height="60">
                <p id="logo"> PsychWikiSite Docs </p>
                <div id="searchBar">
@@ -43,8 +43,8 @@
                     <li><a href="#"><i class="uil uil-book-open"></i> Docs</a></li>
                     <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="fa fa-github"></i> GitHub</a></li>
                </ul>
-          </div>
-          <div id="global-sidebar">
+          </nav>
+          <nav id="global-sidebar">
                <h3>Headings<i class="uil uil-cube" style="margin-left: 10px;"></i></h3>
                <i id="sidebar-arrow-top" class="uil uil-arrow-up" onclick="window.scrollTo(0, 0)"></i>
                <div id="sidebar-search">
@@ -56,7 +56,7 @@
                <div id="sidebar-headerlists">
                     <ul></ul>
                </div>
-          </div>
+          </nav>
           <main>
                <article id="wiki-bg">
                     <article id="wiki">
@@ -83,7 +83,7 @@
      <span class="code-com">-- The functions being nested makes it not understandable, sure you can use this syntax</span>
      <span class="code-com">-- just use this only ones or twice when nesting tho</span>
 
-     <span class="code-kyw">local</span> <span class="code-var">stringSyntax2</span> <span class="code-kyw">=</span> <span class="code-varD">textString</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'W'</span>, <span class="code-str">''</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'I'</span>, <span class="code-str">''</span>):<span class="code-funcC">lower</span>()
+     <span class="code-kyw">local</span> <span class="code-var">stringSyntax2</span> <span class="code-kyw">=</span> <span class="code-var">textString</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'W'</span>, <span class="code-str">''</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'I'</span>, <span class="code-str">''</span>):<span class="code-funcC">lower</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">stringSyntax1</span>) <span class="code-com">-- will print 'jbogejbouekblcuyqoygv'</span>
      <span class="code-com">-- This syntax pretty much solves the problem and makes it more understandable</span>
 <span class="code-kyw">end</span>
@@ -92,18 +92,58 @@
                               <hr>
                               <h3> string.upper(str:String) </h3>
                               <sub-section>
+                                   <p> Converts any <ins>upper-case characters</ins> into lower-case characters. </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be converted. </li>
+                                   </ul>
+                                   <p> Example: <code>('CHEeeEeEEEeeSe'):upper()</code>; Will return <code>CHEEEEEEEEEESE</code>. </p>
                               </sub-section>
                               <h3> string.lower(str:String) </h3>
                               <sub-section>
+                                   <p> Converts any <ins>lower-case characters</ins> into upper-case characters. </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be converted. </li>
+                                   </ul>
+                                   <p> Example: <code>('CHEeeEeEEEeeSe'):lower()</code>; Will return <code>cheeeeeeeeeese</code>. </p>
                               </sub-section>
                               <h3> string.byte(str:String, ?startPos:Int = 1, ?endPos:Int = 1) </h3>
                               <sub-section>
+                                   <p> Converts any <ins>alphabetical characters</ins> into ASCII characters; Returns an <code>int</code> number. </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be converted.</li>
+                                        <li><code>startPos</code> - An optional parameter, The specified starting position to be chosen; Defualt value: <code>1</code>.</li>
+                                        <li><code>endPos</code> - An optional parameter, The specified ending position to be chosen; Defualt value: <code>1</code>.</li>
+                                   </ul>
+                                   <p> Example: <code>('a'):byte()</code>; Will return <code>97</code>. </p>
                               </sub-section>
                               <h3> string.char(#byte:Int) </h3>
                               <sub-section>
+                                   <p> Converts any <ins>ASCII characters</ins> into alphabetical characters; Returns a <code>string</code>. </p>
+                                   <ul>
+                                        <li><code>byte</code> - An infinite parameter, The ASCII character to be converted.</li>
+                                   </ul>
+                                   <p> Example: <code>string.byte(97)</code>; Will return <code>a</code>. <em>(This function doesn't support a string shortcut!)</em></p>
                               </sub-section>
                               <h3> string.format(pattern:String, #str:String) </h3>
                               <sub-section>
+                                   <p> Formats the string from the <ins>specified pattern type</ins>. </p>
+                                   <ul>
+                                        <li><code>pattern</code> - The specified string pattern for the string to be formatted. </li>
+                                        <li><code>str</code> - An infinite parameter, The string variable to be formatted. </li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">curDate</span> <span class="code-kyw">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>) <span class="code-com">-- the '*t' makes it return a table dictionary</span>
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Date: %d/%d/%d'</span>):<span class="code-funcC">format</span>(<span class="code-var">curDate</span>.<span class="code-funcC">month</span>, <span class="code-var">curDate</span>.<span class="code-funcC">day</span>, <span class="code-var">curDate</span>.<span class="code-funcC">year</span>))
+     <span class="code-com">-- as of currently writing, it printed '3/23/2023'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                               <h3> string.find(str:String, pattern:String, ?startPos:Int = 1) </h3>
                               <sub-section>

@@ -102,9 +102,13 @@
 }
 
 #global-sidebar #sidebar-search #sidebar-clearIcon:active {
+     --scaleVal: 0.9;
+     --insetVal: 1px;
+     --shrink: scaleX(var(--scaleVal)) scaleY(var(--scaleVal)) translateX(var(--insetVal)) translateY(var(--insetVal));
+
      color: var(--color-searchbar);
      transition: transform 0.1s var(--ease-type-easeOutQuad);
-     transform: scaleX(0.9) scaleY(0.9) translateX(1px) translateY(1px);
+     transform: var(--shrink);
 }
 
 /* Header Lists */

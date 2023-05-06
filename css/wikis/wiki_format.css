@@ -46,7 +46,7 @@
      --color-code-data:               hsl(168, 55%, 54%);
      --color-code-escape-characters:  hsl(1, 100%, 79%);
      --color-code-table-keys:         hsl(0, 0%, 100%);
-     --color-code-modules:            hsl(208, 100%, 78%);
+     --color-code-modules:            hsl(168, 55%, 54%);
 }
 
 * {
@@ -152,7 +152,7 @@ main {
 /* BlockQuotes */
 
 #wiki blockquote {
-     width: calc(26.6cm - 24px);
+     width: calc(var(--local-tag-html-width) - 24px);
      padding: 5px 0px 5px 20px;
      margin-left: 0px;
 }
@@ -213,9 +213,19 @@ main {
      outline: 1px solid var(--local-color-codeblock-outline);
      border-radius: calc(var(--global-border-radius) * 1.2);
      background-color: black;
-     padding: 7px 10px;
      width: var(--global-cringe-solver);
+     margin-right: 13px;
+     padding: 7px 10px;
      transform: translateX(5px) translateY(5px);
+}
+
+#wiki .code-locationFile {
+     color: hsl(1, 100%, 79%);
+     font-family: var(--local-code-font-family);
+     font-size: 13px !important;
+     position: relative;
+     top: 13px;
+     padding: 2 !important;
 }
 
 #wiki :is(code, pre, kbd) {
@@ -245,6 +255,7 @@ main {
 #wiki .code-border pre {
      tab-size: 8;
      white-space: pre;
+     overflow-x: auto;
      color: white;
      outline: 1px solid var(--local-color-codeblock-bg);
      line-height: 20px !important;
@@ -263,7 +274,6 @@ main {
 #wiki pre span.code-kyw    { color: var(--color-code-keywords);           }
 #wiki pre span.code-ope    { color: var(--color-code-operators);          }
 #wiki pre span.code-var    { color: var(--color-code-variables);          }
-#wiki pre span.code-varD   { color: var(--color-code-variables-data);     }
 #wiki pre span.code-str    { color: var(--color-code-string);             }
 #wiki pre span.code-num    { color: var(--color-code-number);             }
 #wiki pre span.code-boo    { color: var(--color-code-boolean);            }

@@ -93,7 +93,7 @@
           ],
           [
                "<code>..</code>",
-               "Concatenate operator, Merges multiple <code>string</code> together.",
+               "Concatenate operator, Merges multiple <code>string</code> or <code>numbers</code> together.",
                "<code>'snow'..'ball'</code>; returns <code>snowball</code>"
           ]
      ]

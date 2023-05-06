@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <title>PsychWikiSite - Lua Coding Docs: Basics Of Coding</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="color-scheme" content="dark">
+          <meta charset="utf-8">
+          <link rel="icon" href="/images/Psych.ico">
+          <link rel="stylesheet" type="text/css" href="/css/wikis/wiki_format.css">
+          <link rel="stylesheet" type="text/css" href="/css/wikis/sidebar_format.css">
+          <link rel="stylesheet" type="text/css" href="/css/global/topbar_format.css">
+          <link rel="stylesheet" type="text/css" href="/css/global/no_javascript.css">
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+          <script defer type="module" src="/javascript/Main.js"></script>
+          <script defer type="module" src="/javascript/Wiki.js"></script>
+     </head>
+     <body>
+          <noscript>
+               <div id="global-no-javascript">
+                    <div id="no-javascript-window">
+                         <div id="no-javascript-topbar">
+                              <p>Javascript Disable Detected!</p>
+                         </div>
+                         <img src="/images/popup_warning.png" alt="Warning Image" width="120" height="120">
+                         <p> Enable Javascript for this website </p>
+                         <p> Becuase it really relies on it </p>
+                         <button type="button"> Ok </button>
+                         <p id="no-javascript-NOTE"> NOTE: There is no bad script, trust me bro </p>
+                    </div>
+               </div>
+          </noscript>
+          <nav id="global-topbar">
+               <img src="/images/Psych.ico" alt="Le logo" width="60" height="60">
+               <p id="logo"> PsychWikiSite Docs </p>
+               <div id="searchBar">
+                    <i id="search-icon" class="uil uil-search" aria-hidden="true"></i>
+                    <button type="button" onclick="alert('homo')"></button>
+               </div>
+               <ul>
+                    <li><a href="../../index.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="uil uil-book-open"></i> Docs</a></li>
+                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="fa fa-github"></i> GitHub</a></li>
+               </ul>
+          </nav>
+          <nav id="global-sidebar">
+               <h3>Headings<i class="uil uil-cube" style="margin-left: 10px;"></i></h3>
+               <i id="sidebar-arrow-top" class="uil uil-arrow-up" onclick="window.scrollTo(0, 0)"></i>
+               <div id="sidebar-search">
+                    <i id="sidebar-searchIcon" class="uil uil-search"></i>
+                    <input type="text" spellcheck="true" placeholder="Search Headings...">
+                    <i id="sidebar-clearIcon" class="uil uil-times-circle"></i>
+               </div>
+               <hr>
+               <div id="sidebar-headerlists">
+                    <ul></ul>
+               </div>
+          </nav>
+          <main>
+               <article id="wiki-bg">
+                    <article id="wiki">
+                         <h1> Start/End functions </h1>
+                         <section>
+                              <h3> onCreate() </h3>
+                              <sub-section></sub-section>
+                              <h3> onCreatePost() </h3>
+                              <sub-section></sub-section>
+                              <h3> onDestroy() </h3>
+                              <sub-section></sub-section>
+                         </section>
+                         <hr>
+                         <h1> Gameplay/Song Functions </h1>
+                         <section>
+                              <h3> onBeatHit() </h3>
+                              <sub-section></sub-section>
+                              <h3> onStepHit() </h3>
+                              <sub-section></sub-section>
+                              <h3> onSectionHit() </h3>
+                              <sub-section></sub-section>
+                              <h3> onUpdate(elapsed) </h3>
+                              <sub-section></sub-section>
+                              <h3> onUpdatePost(elapsed) </h3>
+                              <sub-section></sub-section>
+                              <h3> onUpdateScore(miss) </h3>
+                              <sub-section></sub-section>
+                              <h3> onSongStart() </h3>
+                              <sub-section></sub-section>
+                              <h3> onEndSong() </h3>
+                              <sub-section></sub-section>
+                              <h3> onMoveCamera(focus) </h3>
+                              <sub-section></sub-section>
+                              <h3> onRecalculateRating() </h3>
+                              <sub-section></sub-section>
+                              <h3> onEvent(eventName, value1, value2) </h3>
+                              <sub-section></sub-section>
+                              <h3> eventEarlyTrigger(eventName) </h3>
+                              <sub-section></sub-section>
+                         </section>
+                         <hr>
+                         <h1> Countdown Functions </h1>
+                         <section>
+                              <h3> onStartCountdown() </h3>
+                              <sub-section></sub-section>
+                              <h3> onCountdownStarted() </h3>
+                              <sub-section></sub-section>
+                              <h3> onCountdownTick(counter) </h3>
+                              <sub-section></sub-section>
+                         </section>
+                         <hr>
+                         <h1> Dialogue Functions </h1>
+                         <section>
+                              <h3> onNextDialogue(dialogueCount) </h3>
+                              <sub-section></sub-section>
+                              <h3> onSkipDialogue(dialogueCount) </h3>
+                              <sub-section></sub-section>
+                         </section>
+                         <hr>
+                         <h1> Substate Functions </h1>
+                         <section>
+                              <h3> onPause() </h3>
+                              <sub-section></sub-section>
+                              <h3> onResume() </h3>
+                              <sub-section></sub-section>
+                              <h3> onGameOver() </h3>
+                              <sub-section></sub-section>
+                              <h3> onGameOverStart() </h3>
+                              <sub-section></sub-section>
+                              <h3> onGameOverConfirm(retry) </h3>
+                              <sub-section></sub-section>
+                         </section>
+                         <hr>
+                         <h1> Custom Substate Functions </h1>
+                         <section>
+                              <h3> onCustomSubstateCreate(name) </h3>
+                              <sub-section></sub-section>
+                              <h3> onCustomSubstateCreatePost(name) </h3>
+                              <sub-section></sub-section>
+                              <h3> onCustomSubstateUpdate(name, elapsed) </h3>
+                              <sub-section></sub-section>
+                              <h3> onCustomSubstateUpdatePost(name, elapsed) </h3>
+                              <sub-section></sub-section>
+                              <h3> onCustomSubstateDestroy(name) </h3>
+                              <sub-section></sub-section>
+                         </section>
+                         <hr>
+                         <h1> Note/Key Functions </h1>
+                         <section>
+                              <h3> goodNoteHit(membersIndex, noteDirect, noteType, isSustainNote) </h3>
+                              <sub-section></sub-section>
+                              <h3> opponentNoteHit(membersIndex, noteDirect, noteType, isSustainNote) </h3>
+                              <sub-section></sub-section>
+                              <h3> onSpawnNote(membersIndex, noteData, noteType, isSustainNote) </h3>
+                              <sub-section></sub-section>
+                              <h3> noteMiss(membersIndex, noteDirect, noteType, isSustainNote) </h3>
+                              <sub-section></sub-section>
+                              <h3> noteMissPress(noteDirect) </h3>
+                              <sub-section></sub-section>
+                              <hr>
+                              <h3> onKeyPress(key) </h3>
+                              <sub-section></sub-section>
+                              <h3> onKeyRelease(key) </h3>
+                              <sub-section></sub-section>
+                              <h3> onGhostTap(key) </h3>
+                              <sub-section></sub-section>
+                         </section>
+                         <hr>
+                         <h1> Complete Functions </h1>
+                         <section>
+                              <h3> onTimerCompleted(tag, loops, loopsLeft) </h3>
+                              <sub-section></sub-section>
+                              <h3> onTweenCompleted(tag) </h3>
+                              <sub-section></sub-section>
+                              <h3> onSoundFinished(tag) </h3>
+                              <sub-section></sub-section>
+                         </section>
+                    </article>
+               </article>
+          </main>
+     </body>
+</html>
