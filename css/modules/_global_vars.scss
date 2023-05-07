@@ -1,3 +1,10 @@
 $global-font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
 $global-cringe-solver: fit-content; /* Cringe solved */
 $global-border-radius: 5px;
+$global-color-link-text: hsl(210, 100%, 72%);
+
+@mixin noSelecting {
+     -webkit-user-select: none;
+     -moz-user-select:    none;
+     user-select:         none;
+}

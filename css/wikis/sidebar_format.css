@@ -1,156 +1,136 @@
-:root {
-     --global-font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
-     --global-cringe-solver: fit-content; /* Cringe solved */
-     --global-border-radius: 5px;
-
-     /* Colors */
-
-     --color-codeblock:  hsl(216, 8%, 52%);
-     --color-searchbar:  hsl(42, 87%, 56%);
-     --color-link-text:  hsl(210, 100%, 72%);
-
-     /* Ease Types */
-
-     --ease-type-easeOutQuad: cubic-bezier(0.5, 1, 0.89, 1);
-}
-
+/* Cringe solved */
+/* Local Club :cool: */
+/* Goofy aaaahhhhh code */
 #global-sidebar {
-     outline: 1px solid var(--color-codeblock);
+     outline: 1px solid hsl(216deg, 8%, 52%);
      background-color: hsl(0deg, 0%, 10%);
-     width: 8.465cm; height: 100%;
+     width: 8.465cm;
+     height: 100%;
      position: absolute;
      top: 2.25cm;
+     /* Search Top */
+     /* Search Header Lists */
 }
-
-/* Search */
-
 #global-sidebar h3 {
      font-size: 1.8em;
      font-weight: 550;
      position: relative;
-     bottom: 10px; left: 20px;
+     bottom: 10px;
+     left: 20px;
 }
-
 #global-sidebar hr {
      border: none;
-     background-color: var(--color-codeblock);
-     width: 7.4cm; height: 1px;
+     background-color: hsl(216deg, 8%, 52%);
+     width: 7.4cm;
+     height: 1px;
 }
-
 #global-sidebar #sidebar-arrow-top {
      z-index: 6;
      cursor: pointer;
-     font-size: 2.2em; 
-     color: var(--color-link-text);
+     font-size: 2.2em;
+     color: hsl(210deg, 100%, 72%);
      position: absolute;
-     transition: transform 0.1s var(--ease-type-easeOutQuad);
-     top: 15px; left: 7.04cm;
+     transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+     top: 15px;
+     left: 7.04cm;
 }
-
 #global-sidebar #sidebar-arrow-top:hover {
-     color: var(--color-searchbar);
+     color: hsl(42deg, 87%, 56%);
 }
-
 #global-sidebar #sidebar-arrow-top:active {
      transform: scaleX(0.8) scaleY(0.8);
 }
-
 #global-sidebar #sidebar-search {
      position: relative;
-     bottom: 0.3cm; left: 20px;
+     bottom: 0.3cm;
+     left: 20px;
 }
-
 #global-sidebar #sidebar-search input[type=text] {
-     display: flex;
      cursor: pointer;
+     display: flex;
      font-size: 0.95em;
      outline: 1px solid hsl(216deg, 8%, 52%);
      border-style: none;
-     border-radius: var(--global-border-radius);
+     border-radius: 5px;
      box-shadow: 5px 5px 10px 1px hsla(0deg, 0%, 0%, 0.6);
      color: white;
      background-color: hsl(216deg, 8%, 15%);
-     width: 7.4cm; height: 0.8cm;
+     width: 7.4cm;
+     height: 0.8cm;
      padding: 15px 30px;
 }
-
-#global-sidebar #sidebar-search input:focus {
+#global-sidebar #sidebar-search input[type=text]:focus {
      cursor: auto;
-     outline: 2px solid var(--color-searchbar);
+     outline: 2px solid hsl(42deg, 87%, 56%);
      background-color: black;
 }
-
-#global-sidebar #sidebar-search :is(#sidebar-searchIcon, #sidebar-clearIcon):before {
-     position: relative;
-     top: 7px; left: 8px;
-}
-
 #global-sidebar #sidebar-search :is(#sidebar-searchIcon, #sidebar-clearIcon) {
      z-index: 5;
      display: flex;
      font-size: 1.1em;
      position: absolute;
 }
-
+#global-sidebar #sidebar-search :is(#sidebar-searchIcon, #sidebar-clearIcon):before {
+     position: relative;
+     top: 7px;
+     left: 8px;
+}
 #global-sidebar #sidebar-search #sidebar-clearIcon {
      font-size: 1.3em;
-     bottom: 10.5px; left: 6.5cm;
+     bottom: 10.5px;
+     left: 6.5cm;
 }
-
 #global-sidebar #sidebar-search #sidebar-clearIcon:hover {
-     color: var(--color-link-text);
+     color: hsl(210deg, 100%, 72%);
 }
-
 #global-sidebar #sidebar-search #sidebar-clearIcon:active {
-     --scaleVal: 0.9;
-     --insetVal: 1px;
-     --shrink: scaleX(var(--scaleVal)) scaleY(var(--scaleVal)) translateX(var(--insetVal)) translateY(var(--insetVal));
-
-     color: var(--color-searchbar);
-     transition: transform 0.1s var(--ease-type-easeOutQuad);
-     transform: var(--shrink);
+     color: hsl(42deg, 87%, 56%);
+     transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+     transform: scaleX(0.9) scaleY(0.9) translateX(1px) translateY(1px);
 }
-
-/* Header Lists */
-
 #global-sidebar #sidebar-headerlists {
-     overflow-x: hidden; overflow-y: auto;
+     overflow-x: hidden;
+     overflow-y: auto;
      height: 15.5cm;
      position: relative;
      right: 0.5cm;
 }
-
-#global-sidebar #sidebar-headerlists::-webkit-scrollbar {
-     width: 9px; height: 10px;
+#global-sidebar #sidebar-headerlists li {
+     cursor: pointer;
+     list-style-type: none;
+     border-radius: 5px;
+     width: 7cm;
+     height: -moz-fit-content;
+     height: fit-content;
+     padding: 8px;
 }
-
+#global-sidebar #sidebar-headerlists li:hover {
+     background-color: hsl(0deg, 0%, 15%);
+}
+#global-sidebar #sidebar-headerlists li:active {
+     outline: 1px solid hsl(42deg, 87%, 56%);
+     background-color: black;
+}
+#global-sidebar #sidebar-headerlists li span.list-h1 {
+     font-weight: 550;
+}
+#global-sidebar #sidebar-headerlists li span.list-h2 {
+     margin-left: 10px;
+}
+#global-sidebar #sidebar-headerlists li span.list-h3 {
+     margin-left: 20px;
+}
+#global-sidebar #sidebar-headerlists li span.list-h4 {
+     margin-left: 30px;
+}
+#global-sidebar #sidebar-headerlists::-webkit-scrollbar {
+     width: 9px;
+     height: 10px;
+}
 #global-sidebar #sidebar-headerlists::-webkit-scrollbar-thumb {
-     border-radius: var(--global-border-radius);
+     border-radius: 5px;
      background: #6b6b6b;
 }
-
 #global-sidebar #sidebar-headerlists::-webkit-scrollbar-track {
      background: rgba(0, 0, 0, 0);
 }
-
-#global-sidebar #sidebar-headerlists li {
-     list-style-type: none;
-     cursor: pointer;
-     border-radius: var(--global-border-radius);
-     width: 7cm; height: var(--global-cringe-solver);
-     padding: 8px;
-}
-
-#global-sidebar #sidebar-headerlists li:hover {
-     background-color: hsl(0deg, 0%, calc(calc(12% + 18%) / 2));
-}
-
-#global-sidebar #sidebar-headerlists li:active {
-     outline: 1px solid var(--color-searchbar);
-     background-color: black;
-}
-
-#global-sidebar #sidebar-headerlists li span.list-h1 { font-weight: 550; }
-#global-sidebar #sidebar-headerlists li span.list-h2 { margin-left: 10px; }
-#global-sidebar #sidebar-headerlists li span.list-h3 { margin-left: 20px; }
-#global-sidebar #sidebar-headerlists li span.list-h4 { margin-left: 30px; }

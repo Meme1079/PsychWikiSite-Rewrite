@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
      <head>
-          <title>PsychWikiSite - Lua Coding Docs: Basics Of Coding</title>
+          <title>PsychWikiSite - Lua Coding Docs: Library Methods</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="color-scheme" content="dark">
@@ -12,7 +12,7 @@
           <link rel="stylesheet" type="text/css" href="/css/global/topbar_format.css">
           <link rel="stylesheet" type="text/css" href="/css/global/no_javascript.css">
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+          <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
           <script defer type="module" src="/javascript/Main.js"></script>
           <script defer type="module" src="/javascript/Wiki.js"></script>
      </head>
@@ -41,7 +41,7 @@
                <ul>
                     <li><a href="../../index.html"><i class="fa fa-home"></i> Home</a></li>
                     <li><a href="#"><i class="uil uil-book-open"></i> Docs</a></li>
-                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="fa fa-github"></i> GitHub</a></li>
+                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="uil uil-github"></i> GitHub</a></li>
                </ul>
           </nav>
           <nav id="global-sidebar">
@@ -67,7 +67,7 @@
                                    second syntax in examples. Because it makes me look smarter and makes it easier to read for instance.
                               </p>
                               <blockquote class="note">
-                                   <span><i class="fa fa-info-circle" aria-hidden="true"></i>Note</span>: 
+                                   <span><i class="uil uil-info-circle" aria-hidden="true"></i>Note</span>: 
                                    <em> The second syntax is only local to <code>string methods</code> and not for <code>table method</code> or <code>math methods</code>.</em>
                               </blockquote>
                               <div class="code-border">
@@ -96,7 +96,7 @@
                                    <ul>
                                         <li><code>str</code> - The string variable to be converted. </li>
                                    </ul>
-                                   <p> Example: <code>('CHEeeEeEEEeeSe'):upper()</code>; Will return <code>CHEEEEEEEEEESE</code>. </p>
+                                   <p> Example: <code>('CHEeeEeEEEeeSe'):upper()</code>; Will print <code>CHEEEEEEEEEESE</code>. </p>
                               </sub-section>
                               <h3> string.lower(str:String) </h3>
                               <sub-section>
@@ -104,7 +104,7 @@
                                    <ul>
                                         <li><code>str</code> - The string variable to be converted. </li>
                                    </ul>
-                                   <p> Example: <code>('CHEeeEeEEEeeSe'):lower()</code>; Will return <code>cheeeeeeeeeese</code>. </p>
+                                   <p> Example: <code>('CHEeeEeEEEeeSe'):lower()</code>; Will print <code>cheeeeeeeeeese</code>. </p>
                               </sub-section>
                               <h3> string.byte(str:String, ?startPos:Int = 1, ?endPos:Int = 1) </h3>
                               <sub-section>
@@ -114,7 +114,7 @@
                                         <li><code>startPos</code> - An optional parameter, The specified starting position to be chosen; Defualt value: <code>1</code>.</li>
                                         <li><code>endPos</code> - An optional parameter, The specified ending position to be chosen; Defualt value: <code>1</code>.</li>
                                    </ul>
-                                   <p> Example: <code>('a'):byte()</code>; Will return <code>97</code>. </p>
+                                   <p> Example: <code>('a'):byte()</code>; Will print <code>97</code>. </p>
                               </sub-section>
                               <h3> string.char(#byte:Int) </h3>
                               <sub-section>
@@ -122,7 +122,7 @@
                                    <ul>
                                         <li><code>byte</code> - An infinite parameter, The ASCII character to be converted.</li>
                                    </ul>
-                                   <p> Example: <code>string.byte(97)</code>; Will return <code>a</code>. <em>(This function doesn't support a string shortcut!)</em></p>
+                                   <p> Example: <code>string.byte(97)</code>; Will print <code>a</code>. <em>(This function doesn't support a string shortcut!)</em></p>
                               </sub-section>
                               <h3> string.format(pattern:String, #str:String) </h3>
                               <sub-section>
@@ -147,38 +147,289 @@
                               </sub-section>
                               <h3> string.find(str:String, pattern:String, ?startPos:Int = 1) </h3>
                               <sub-section>
+                                   <p> Finds the <ins>match from the <code>pattern</code> parameter</ins> from the string; Returns the <code>start</code> and <code>end</code> position of the pattern. </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be used. </li>
+                                        <li><code>pattern</code> - The specified string pattern to find. </li>
+                                        <li><code>startPos</code> - An optional parameter, The string position on where to start the search; Defualt value: <code>1</code>. </li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'Find the position of this <span class="code-esc">\'</span>string<span class="code-esc">\'</span>'</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString1_Find</span> <span class="code-kyw">=</span> ({ <span class="code-var">textString1</span>:<span class="code-funcC">find</span>(<span class="code-str">'<span class="code-esc">\'</span>string<span class="code-esc">\'</span>'</span>) }) <span class="code-com">-- converts it into a table</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1_Find</span>[<span class="code-num">1</span>]) <span class="code-com">-- will print '27'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1_Find</span>[<span class="code-num">2</span>]) <span class="code-com">-- will print '34'</span>
+
+     <span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">'Repeat Repeat Repeat'</span>
+     <span class="code-kyw">local</span> <span class="code-var">TextString2_Find</span> <span class="code-kyw">=</span> ({ <span class="code-var">textString2</span>:<span class="code-funcC">find</span>(<span class="code-str">'Repeat'</span>, <span class="code-num">13</span>) })
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2_Find</span>[<span class="code-num">1</span>]) <span class="code-com">-- will print '15'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2_Find</span>[<span class="code-num">2</span>]) <span class="code-com">-- will print '20'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                               <h3> string.sub(str:String, startPos:Int, ?endPos:Int = #str) </h3>
                               <sub-section>
+                                   <p> Extracts the <ins>specific portion of a string</ins> from the <ins>starting to ending position</ins>; Removes any characters that isn't selected. </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be extracted. </li>
+                                        <li><code>startPos</code> - The starting position of the string. </li>
+                                        <li><code>endPos</code> - An optional parameter, The ending position of the string; Defualt value: <code>maximum length of the string</code>. </li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'Cut this on half!'</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString1_Sub</span> <span class="code-kyw">=</span> <span class="code-var">textString1</span>:<span class="code-funcC">sub</span>( ({<span class="code-data">math</span>.<span class="code-funcC">modf</span>(<span class="code-ope">#</span><span class="code-var">textString1</span> <span class="code-ope">/</span> <span class="code-num">2</span>)})[<span class="code-num">1</span>] )
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1_Sub</span>) <span class="code-com">-- will print 's on half!'</span>
+     
+     <span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">'Specify the selection of the string'</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString2_Find</span> <span class="code-kyw">=</span> ({<span class="code-var">textString2</span>:<span class="code-funcC">find</span>(<span class="code-str">'selection'</span>)}) <span class="code-com">-- will print '{13, 27}'</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString2_Sub</span>  <span class="code-kyw">=</span> <span class="code-var">textString2</span>:<span class="code-funcC">sub</span>(<span class="code-var">textString2_Find</span>[<span class="code-num">1</span>], <span class="code-var">textString2_Find</span>[<span class="code-num">2</span>])
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2_Sub</span>) <span class="code-com">-- will print 'selection'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                               <h3> string.gsub(str:String, pattern:String, replace:String, ?repeat:Int = 1) </h3>
                               <sub-section>
+                                   <p> Extracts the <ins>specific portion of the string globally</ins> and replaces the contents of it. </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be extracted. </li>
+                                        <li><code>pattern</code> - The specified string pattern for the string to be replace. </li>
+                                        <li><code>replace</code> - The new content of the string to be used. </li>
+                                        <li><code>repeat</code> - An optional parameter, How many times will the pattern be replaced; Defualt value: <code>1</code>.</li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'PsychEngine is a bad engine [in my opinion]'</span>       <span class="code-com">-- opinions are scary</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'bad'</span>, <span class="code-str">'good'</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'[in my opinion]'</span>, <span class="code-str">''</span>)) <span class="code-com">-- no more opinion guys!</span>
+     <span class="code-com">-- will print 'PsychEngine is a good engine'</span>
+
+     <span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">'Hello World World World!'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'World World'</span>, <span class="code-str">''</span>, <span class="code-num">2</span>))
+     <span class="code-com">-- will print 'Hello World!'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                               <h3> string.match(str:String, pattern:String, ?startPos:Int = 1) </h3>
                               <sub-section>
+                                   <p> Checks if the <ins>specific portion of the string matches the pattern</ins>; Returns the captured match pattern. </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be matched. </li>
+                                        <li><code>pattern</code> - The specified string pattern for the string to be match. </li>
+                                        <li><code>startPos</code> - An optional parameter, The starting position on where to start the search; Defualt value: <code>1</code>. </li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreatePost</span>()
+     <span class="code-funcC">setTextString</span>(<span class="code-str">'scoreTxt'</span>, <span class="code-str">'Score: 0 | Misses: 0 | Accuracy: ?'</span>)
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">local</span> <span class="code-var">scorePattern1</span> <span class="code-kyw">=</span> <span class="code-str">'<span class="code-ptr">%d+%p+%d+%%</span>'</span>  <span class="code-com">-- Checks the accuracy is a float | '%d+%p+%d+%%' > '99.45%'</span>
+<span class="code-kyw">local</span> <span class="code-var">scorePattern2</span> <span class="code-kyw">=</span> <span class="code-str">'<span class="code-ptr">%d+%%</span>'</span>        <span class="code-com">-- Checks the accuracy is a int   | '%d+%%' > '100%'</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onUpdateScore</span>(<span class="code-paraS">miss</span>)
+     <span class="code-kyw">local</span> <span class="code-var">scoreTxt</span> <span class="code-kyw">=</span> <span class="code-funcC">getTextString</span>(<span class="code-str">'scoreTxt'</span>)
+     <span class="code-kyw">local</span> <span class="code-var">scoreTxtDisplay1</span> <span class="code-kyw">=</span> <span class="code-str">'Score: '</span><span class="code-ope">..</span><span class="code-funcC">getScore</span>()<span class="code-ope">..</span><span class="code-str">' | Misses: '</span><span class="code-ope">..</span><span class="code-paraS">miss</span><span class="code-ope">..</span><span class="code-str">' | Accuracy: '</span>
+     <span class="code-kyw">local</span> <span class="code-var">scoreTxtDisplay2</span> <span class="code-kyw">=</span> (<span class="code-var">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern1</span>) <span class="code-ope">or</span> <span class="code-var">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern2</span>))
+     <span class="code-funcC">setTextString</span>(<span class="code-str">'scoreTxt'</span>, <span class="code-var">scoreTxtDisplay1</span><span class="code-ope">..</span><span class="code-var">scoreTxtDisplay2</span><span class="code-ope">..</span><span class="code-str">' ['</span><span class="code-ope">..</span><span class="code-var">ratingFC</span><span class="code-ope">..</span><span class="code-str"></span>']'</span>)
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                               <h3> string.gmatch(str:String, pattern:String) </h3>
                               <sub-section>
+                                   <p>
+                                        Works exactly the same as <code>string.match()</code> function, but it <ins>returns several matching patterns</ins> that it could find in a generic <code>for</code> loop. If 
+                                        not used inside of that loop, it will print a <ins>function with the first matching pattern value</ins>.
+                                   </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be matched. </li>
+                                        <li><code>pattern</code> - The specified string pattern for the string to be match. </li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">local</span> <span class="code-kyw">function</span> <span class="code-funcD">dictionarySplit</span>(<span class="code-paraS">str</span>)
+     <span class="code-kyw">local</span> <span class="code-var">result</span> <span class="code-kyw">=</span> {}
+     <span class="code-kyw">local</span> <span class="code-var">pattern</span> <span class="code-kyw">=</span> <span class="code-str">'<span class="code-ptr">(%w+)%s*=%s*(%w+)</span>'</span> <span class="code-com">-- Checks the dictionary syntax of the string</span>
+     <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> (<span class="code-paraS">str</span>):<span class="code-funcC">gmatch</span>(<span class="code-var">pattern</span>) <span class="code-kyw">do</span> <span class="code-com">-- '(%w+)%s*=%s*(%w+)' > '(key) = (value)'</span>
+          <span class="code-var">result</span>[<span class="code-var">k</span>] <span class="code-kyw">=</span> <span class="code-var">v</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">return</span> <span class="code-var">result</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">dictionaryString</span> <span class="code-kyw">=</span> <span class="code-str">'isGood = true, isBad = false'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">dictionarySplit</span>(<span class="code-var">dictionaryString</span>).<span class="code-tabkey">isGood</span>) <span class="code-com">-- will print 'true'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">dictionarySplit</span>(<span class="code-var">dictionaryString</span>).<span class="code-tabkey">isBad</span>)  <span class="code-com">-- will print 'false'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                               <h3> string.rep(str:String, repeat:Int) </h3>
                               <sub-section>
+                                   <p> Repeats the string depending on <ins>how many times you set it</ins>. </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be repeated. </li>
+                                        <li><code>repeat</code> - How many times the string will be repeated. </li>
+                                   </ul>
+                                   <p> Example: <code>('repated '):rep(3)</code>; Will print <code>repated repated repated </code>. </p>
                               </sub-section>
                               <h3> string.reverse(str:String) </h3>
                               <sub-section>
+                                   <p> Reverses the string, <ins>that's it</ins>. </p>
+                                   <ul>
+                                        <li><code>str</code> - The string variable to be reverse. </li>
+                                   </ul>
+                                   <p> Example: <code>('based'):reverse()</code>; Will print <code>desab</code>. </p>
                               </sub-section>
                          </section>
+                         <hr>
                          <h1> String Patterns </h1>
                          <section>
                               <h3> Character Classes </h3>
                               <sub-section>
+                                   <p>
+                                        Character classes is used to represent a group of specific characters that can be used by the pattern to match the desired character. For 
+                                        example, the character class <code>%p</code> matches any punctuation characters so we can use this for. To manipulate the punctuation 
+                                        characters to whatever we want.
+                                   </p>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">textString</span> <span class="code-kyw">=</span> <span class="code-str">'!oe[uiq]er/vfqw.lufv>iuhdv^n@q#erf;qerckqebkj'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'<span class="code-ptr">%p</span>'</span>, <span class="code-str">''</span>)) <span class="code-com">-- will print 'oeuiqervfqwlufviuhdvnqerfqerckqebkj'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
+                                   <blockquote class="warning">
+                                        <span><i class="uil uil-exclamation-triangle" aria-hidden="true"></i>Warning</span>:
+                                        <em>
+                                             Character classes are case-sensitive, therefore if any of the characters are upper-case, it will behave in the opposite 
+                                             manner; Example: <code>%D</code> will only matches non-digit characters.
+                                        </em>
+                                   </blockquote>
+                                   <table>
+                                        <thead>
+                                             <tr>
+                                                  <th>Character</th>
+                                                  <th style="text-align: left;">Desciption</th>
+                                                  <th style="text-align: left;">Match Pattern</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody id="tab-pattern"></tbody>
+                                   </table>
                               </sub-section>
                               <h3> Magic Characters </h3>
                               <sub-section>
+                                   <p>
+                                        Magic Characters are modifiers for character classes or patterns that expand their meaning. For instance, the character <code>+</code> will be 
+                                        assigned the character class with the longest chain it can discover. Another example is the characters <code>^</code> and <code>$</code>;
+                                        <code>^</code> will receive the beginning pattern while <code>$</code> will receive the ending pattern.
+                                   </p>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">textPattern1</span> <span class="code-kyw">=</span> <span class="code-str">'<span class="code-ptr">%d+</span>'</span>         <span class="code-com">-- will get the longest chain of digit characters</span>
+     <span class="code-kyw">local</span> <span class="code-var">textPattern2</span> <span class="code-kyw">=</span> <span class="code-str">'<span class="code-ptr">^</span>Matches'</span>    <span class="code-com">-- will get 'Matches' pattern at the start</span>
+     <span class="code-kyw">loca\</span> <span class="code-var">textPattern3</span> <span class="code-kyw">=</span> <span class="code-str">'doin<span class="code-ptr">%?%</span>'</span>     <span class="code-com">-- will get 'doin?' pattern at the end</span>
+     <span class="code-kyw">local</span> <span class="code-var">textPattern4</span> <span class="code-kyw">=</span> <span class="code-str">'exam<span class="code-ptr">[ples]+</span>'</span> <span class="code-com">-- will get each set inside of 'ples' in each characters</span>
+
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Score: 18242'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern1</span>))          <span class="code-com">-- will print '18242'</span>
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Matches some potatoes'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern2</span>)) <span class="code-com">-- will print 'Matches'</span>
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Watcha doin?'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern3</span>))          <span class="code-com">-- will print 'doin?'</span>
+
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'examp'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern4</span>)) <span class="code-com">-- will print 'examp'</span>
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'exam'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern4</span>))  <span class="code-com">-- will print 'nil'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
+                                   <table>
+                                        <thead>
+                                             <tr>
+                                                  <th>Character</th>
+                                                  <th style="text-align: left;">Desciption</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody id="tab-magic"></tbody>
+                                   </table>
                               </sub-section>
                               <h3> Escape Characters </h3>
                               <sub-section>
+                                   <p>
+                                        Escape characters are special characters used inside a string. They are an alternate interpretation of the characters in the following
+                                        character sequence. It can be interpreted as a single <kbd>''</kbd>, double <kbd>""</kbd> quotes, or backslash <kbd>\</kbd> character, they are 
+                                        constructed by backslash <kbd>\</kbd> character with the specified character to use after that; Example: <kbd>\'</kbd>. And there is a reason 
+                                        for their existence, it's to avoid an error from occurring.
+                                   </p>
+                                   <p>
+                                        So, assume you constructed a string that is surrounded by double-quote <kbd>""</kbd> characters and you want to add a double-quote inside the string, so you inserted 
+                                        the double-quote <kbd>""</kbd> and it resulted in an error. Because Lua thinks the string would finish there due to the inserted double-quote <kbd>""</kbd> 
+                                        character, it created an error. As a result, escape characters exist to solve this issue.
+                                   </p>
+                                   <blockquote class="note">
+                                        <span><i class="uil uil-info-circle" aria-hidden="true"></i>Note</span>:
+                                        <em>
+                                             You can use quotes inside of the string, as long as they don't match the quotes around the string.
+                                        </em>
+                                   </blockquote>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+                                        <div class="code-newlines"></div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'i can smell the "bitch" on you!!'</span> <!-- HOLY SHIT BAD WORD!!!!!!!!!!!!! -->
+     <span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">"that's racist i feel like"</span>
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>) <span class="code-com">-- will print 'i can smell the "bitch" on you!!'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>) <span class="code-com">-- will print 'that's racist i feel like'</span>
+
+     <span class="code-kyw">local</span> <span class="code-var">textString3</span> <span class="code-kyw">=</span> <span class="code-str">'Don\'t press <span class="code-esc">\'</span>Alt + F4<span class="code-esc">\'</span>'</span> <span class="code-com">-- single quote</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString4</span> <span class="code-kyw">=</span> <span class="code-str">"dead <span class="code-esc">\"</span>(in a cool way)<span class="code-esc">\"</span>"</span>  <span class="code-com">-- double quote</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString5</span> <span class="code-kyw">=</span> <span class="code-str">'C:<span class="code-esc">\\</span>Windows<span class="code-esc">\\</span>System32'</span>     <span class="code-com">-- backslash</span>
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString3</span>) <span class="code-com">-- will print 'Don't press 'Alt + F4''</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString4</span>) <span class="code-com">-- will print "dead "(in a cool way)""</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString5</span>) <span class="code-com">-- will print 'C:\Windows\System32'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                          </section>
+                         <hr>
                          <h1> Table Methods </h1>
                          <section>
                               <h3> table.insert(tab:Table, ?pos:Int, value:Dynamic) </h3>
@@ -194,6 +445,7 @@
                               <sub-section>
                               </sub-section>
                          </section>
+                         <hr>
                          <h1> Mathematical Basic Methods </h1>
                          <section>
                               <h3> math.max(#num:Float) </h3>
@@ -239,6 +491,7 @@
                               <sub-section>
                               </sub-section>
                          </section>
+                         <hr>
                          <h1> Mathematical Trigonometry Methods </h1>
                          <section>
                               <h3> math.sin(num:Float) </h3>

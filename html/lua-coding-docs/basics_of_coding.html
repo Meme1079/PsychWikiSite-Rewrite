@@ -41,7 +41,7 @@
                <ul>
                     <li><a href="../../index.html"><i class="fa fa-home"></i> Home</a></li>
                     <li><a href="#"><i class="uil uil-book-open"></i> Docs</a></li>
-                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="fa fa-github"></i> GitHub</a></li>
+                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="uil uil-github"></i> GitHub</a></li>
                </ul>
           </nav>
           <nav id="global-sidebar">
@@ -345,10 +345,10 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
 <span class="code-kyw">local</span> <span class="code-var">tableDict1</span> <span class="code-kyw">=</span> {<span class="code-tabkey">isFatherless</span> <span class="code-kyw">=</span> <span class="code-boo">false</span>, <span class="code-tabkey">hasTouchGrass</span> <span class="code-kyw">=</span> <span class="code-boo">true</span>}
 <span class="code-kyw">local</span> <span class="code-var">tableDict2</span> <span class="code-kyw">=</span> {[<span class="code-str">'air'</span>] <span class="code-kyw">=</span> <span class="code-str">'Oxygen'</span>, [<span class="code-str">"food"</span>] <span class="code-kyw">=</span> <span class="code-str">'potato'</span>, [<span class="code-str">"love"</span>] <span class="code-kyw">=</span> <span class="code-str">'carbon monoxide'</span>}
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1.isFatherless</span>)      <span class="code-com">-- will print 'false' (recommended syntax)</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>.<span class="code-tabkey">isFatherless</span>)      <span class="code-com">-- will print 'false' (recommended syntax)</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>[<span class="code-str">'hasTouchGrass'</span>])  <span class="code-com">-- will print 'true'  (not recommended syntax)</span>
           
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1.air</span>)               <span class="code-com">-- will print 'Oxygen'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>.<span class="code-tabkey">air</span>)               <span class="code-com">-- will print 'Oxygen'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">'food'</span>])           <span class="code-com">-- will print 'potato'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">"love"</span>])           <span class="code-com">-- will print 'carbon monoxide'</span>
 <span class="code-kyw">end</span>
@@ -774,7 +774,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         to export the modules to other Lua script; Example: <code>return myGamingModules</code>. <em>(I Think)</em>
                                    </p>
                                    <blockquote class="warning">
-                                        <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Warning</span>: 
+                                        <span><i class="uil uil-exclamation-triangle" aria-hidden="true"></i>Warning</span>: 
                                         <em>
                                              DO NOT DECLARE <code>LOCAL</code> FUNCTIONS OR VARIABLES INSIDE
                                              THE MODULES BECUASE IT WILL NOT EXPORT THEM AND MIGHT CAUSE AN ERROR, IT MUST BE A <code>GLOBAL</code> ONE OKAY!?
@@ -872,14 +872,14 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                               </sub-section>
                               <h3> tostring(value:String) </h3>
                               <sub-section>
-                                   <p> Converts any <ins><code>number</code> or <code>booleans</code></ins> into a real <code>string</code> value. </p>
+                                   <p> Converts any <ins>number or booleans</ins> into a real <code>string</code> value. </p>
                                    <ul>
                                         <li><code>value</code> - The specified value to be converted. </li>
                                    </ul>
                               </sub-section>
                               <h3> tonumber(num:Float) </h3>
                               <sub-section>
-                                   <p> Converts any <ins><code>number</code> inside of a <code>string</code></ins> into a real <code>number</code>. </p>
+                                   <p> Converts any <ins>number inside of a string</ins> into a real <code>number</code>. </p>
                                    <ul>
                                         <li><code>num</code> - The <code>number</code> to be converted. </li>
                                    </ul>
@@ -1022,8 +1022,8 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
      <span class="code-var">myGlobalVar0</span>, <span class="code-var">myGlobalVar1</span> <span class="code-kyw">=</span> <span class="code-num">183</span>, <span class="code-num">231</span>
      <span class="code-var">myGlobalVar2</span>, <span class="code-var">myGlobalVar3</span> <span class="code-kyw">=</span> <span class="code-num">963</span>, <span class="code-num">263</span>
      <span class="code-kyw">for</span> <span class="code-var">nummys</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">3</span> <span class="code-kyw">do</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-kyw2">_G</span>[<span class="code-str">'myGlobalVar'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>])         <span class="code-com">-- will print '183, 231, 963, 263'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-kyw2">_G</span>[<span class="code-str">'defaultPlayerStrumX'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>]) <span class="code-com">-- will print '732, 844, 956, 1068'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-kyw">_G</span>[<span class="code-str">'myGlobalVar'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>])         <span class="code-com">-- will print '183, 231, 963, 263'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-kyw">_G</span>[<span class="code-str">'defaultPlayerStrumX'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>]) <span class="code-com">-- will print '732, 844, 956, 1068'</span>
      <span class="code-kyw">end</span> 
 <span class="code-kyw">end</span>
 </pre>

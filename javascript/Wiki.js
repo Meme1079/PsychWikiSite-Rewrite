@@ -1,4 +1,6 @@
 import operators from '../json/operators.json' assert {type: 'json'};
+import library_methods from "../json/library-methods.json" assert {type: 'json'};
+
 import { shortCut, shortCutAll } from "./Main.js";
 
 function getNewLineCode(preInd = 0) {
@@ -15,12 +17,20 @@ function getNewLineCode(preInd = 0) {
 function importTableDatas(jsonData, tag, styleVal = ['']) {
      let tableDataResult = ``
      for (let datas = 0; datas < jsonData.length; datas++) {
-          tableDataResult += `
-          <tr>
-               <td style="text-align: center;">${jsonData[datas][0]}</td>
-               <td style="${styleVal[0]}">${jsonData[datas][1]}</td>
-               <td style="${styleVal[1]}">${jsonData[datas][2]}</td>
-          </tr>`
+          if (jsonData[datas][2] != null || jsonData[datas][2] != undefined) {
+               tableDataResult += `
+               <tr>
+                    <td style="text-align: center;">${jsonData[datas][0]}</td>
+                    <td style="${styleVal[0]}">${jsonData[datas][1]}</td>
+                    <td style="${styleVal[1]}">${jsonData[datas][2]}</td>
+               </tr>`
+          } else {
+               tableDataResult += `
+               <tr>
+                    <td style="text-align: center;">${jsonData[datas][0]}</td>
+                    <td style="${styleVal[0]}">${jsonData[datas][1]}</td>
+               </tr>`
+          }
      }
      try {
           return shortCut(tag).innerHTML = tableDataResult
@@ -42,6 +52,9 @@ switch (shortCutAll('title')[0].textContent.split(': ')[1]) {
           
           break;
      case 'Library Methods':
+          importTableDatas(library_methods.character_classes, '#tab-pattern')
+          importTableDatas(library_methods.magic_characters, '#tab-magic')
+
           break;
      case 'Variables':
           break;

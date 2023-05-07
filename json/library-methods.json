@@ -38,12 +38,12 @@
           [
                "<code>%s</code>",
                "Any Space Characters",
-               "<code>Space</code>"
+               "Space"
           ],
           [
                "<code>%c</code>",
                "Any Control Characters",
-               "<code>Carriage Return, Escape, Delete, etc</code>"
+               "Carriage Return, Escape, Delete, etc"
           ],
           [
                "<code>%z</code>",
@@ -52,7 +52,46 @@
           ]
      ],
      "magic_characters": [
-
+          [
+               "<code>.</code>",
+               "Any type of characters"
+          ],
+          [
+               "<code>%</code>",
+               "Escape Characters for magic characters."
+          ],
+          [
+               "<code>*</code>",
+               "Matches the repetitions of characters <ins>zero or more times</ins> and will match the <ins>longest possible chain</ins>."
+          ],
+          [
+               "<code>+</code>",
+               "Matches the repetitions of characters <ins>one or more times</ins> and will match the <ins>longest possible chain</ins>."
+          ],
+          [
+               "<code>-</code>",
+               "Matches the repetitions of characters <ins>zero or more times</ins> and will match the <ins>shortest possible chain</ins>."
+          ],
+          [
+               "<code>?</code>",
+               "Matches zero or one occurrences of a character inside the class."
+          ],
+          [
+               "<code>^</code>",
+               "The starting of the pattern, will forces the pattern to match it at the start of the string."
+          ],
+          [
+               "<code>$</code>",
+               "The ending of the pattern, will forces the pattern to match it at the end of the string."
+          ],
+          [
+               "<code>()</code>",
+               "Captures the specific string pattern to match."
+          ],
+          [
+               "<code>[]</code>",
+               "The specific set of character classes to match."
+          ]
      ],
      "escape_characters": [
 

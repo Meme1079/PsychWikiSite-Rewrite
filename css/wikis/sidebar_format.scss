@@ -1,0 +1,143 @@
+@use '../modules/global_vars' as glob;
+
+/* Local Club :cool: */
+
+$local-color-codeblock-bg:     hsl(216, 8%, 52%);
+$local-color-searchbar-active: hsl(42, 87%, 56%);
+$local-color-link-text:        hsl(210, 100%, 72%);
+
+$local-ease-type-easeOutQuad: cubic-bezier(0.5, 1, 0.89, 1);
+
+/* Goofy aaaahhhhh code */
+
+#global-sidebar {
+     outline: 1px solid $local-color-codeblock-bg;
+     background-color: hsl(0deg, 0%, 10%);
+     width: 8.465cm; height: 100%;
+     position: absolute;
+     top: 2.25cm;
+
+     /* Search Top */
+
+     h3 {
+          font-size: 1.8em;
+          font-weight: 550;
+          position: relative;
+          bottom: 10px; left: 20px;
+     }
+
+     hr {
+          border: none;
+          background-color: $local-color-codeblock-bg;
+          width: 7.4cm; height: 1px;
+     }
+
+     #sidebar-arrow-top {
+          z-index: 6;
+          cursor: pointer;
+          font-size: 2.2em; 
+          color: $local-color-link-text;
+          position: absolute;
+          transition: transform 0.1s $local-ease-type-easeOutQuad;
+          top: 15px; left: 7.04cm;
+
+          &:hover {
+               color: $local-color-searchbar-active;
+          }
+          &:active {
+               transform: scaleX(0.8) scaleY(0.8);
+          }
+     }
+
+     #sidebar-search {
+          position: relative;
+          bottom: 0.3cm; left: 20px;
+
+          input[type=text] {
+               cursor: pointer;
+               display: flex;
+               font-size: 0.95em;
+               outline: 1px solid hsl(216deg, 8%, 52%);
+               border-style: none;
+               border-radius: glob.$global-border-radius;
+               box-shadow: 5px 5px 10px 1px hsla(0deg, 0%, 0%, 0.6);
+               color: white;
+               background-color: hsl(216deg, 8%, 15%);
+               width: 7.4cm; height: 0.8cm;
+               padding: 15px 30px;
+
+               &:focus {
+                    cursor: auto;
+                    outline: 2px solid $local-color-searchbar-active;
+                    background-color: black;
+               }
+          }
+
+          :is(#sidebar-searchIcon, #sidebar-clearIcon) {
+               z-index: 5;
+               display: flex;
+               font-size: 1.1em;
+               position: absolute;
+
+               &:before {
+                    position: relative;
+                    top: 7px; left: 8px;
+               }
+          }
+
+          #sidebar-clearIcon {
+               font-size: 1.3em;
+               bottom: 10.5px; left: 6.5cm;
+
+               &:hover {
+                    color: $local-color-link-text;
+               }
+               &:active {               
+                    color: $local-color-searchbar-active;
+                    transition: transform 0.1s $local-ease-type-easeOutQuad;
+                    transform: scaleX(0.9) scaleY(0.9) translateX(1px) translateY(1px);
+               }
+          }
+     }
+
+     /* Search Header Lists */
+
+     #sidebar-headerlists {
+          overflow-x: hidden; overflow-y: auto;
+          height: 15.5cm;
+          position: relative;
+          right: 0.5cm;
+
+          li {
+               cursor: pointer;
+               list-style-type: none;
+               border-radius: glob.$global-border-radius;
+               width: 7cm; height: glob.$global-cringe-solver;
+               padding: 8px;
+
+               &:hover {
+                    background-color: hsl(0deg, 0%, calc(calc(12% + 18%) / 2));
+               }
+               &:active {
+                    outline: 1px solid $local-color-searchbar-active;
+                    background-color: black;
+               }
+
+               span.list-h1 { font-weight: 550;  }
+               span.list-h2 { margin-left: 10px; }
+               span.list-h3 { margin-left: 20px; }
+               span.list-h4 { margin-left: 30px; }
+          }
+
+          &::-webkit-scrollbar {
+               width: 9px; height: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+               border-radius: glob.$global-border-radius;
+               background: #6b6b6b;
+          }
+          &::-webkit-scrollbar-track {
+               background: rgba(0, 0, 0, 0);
+          }
+     }
+}
