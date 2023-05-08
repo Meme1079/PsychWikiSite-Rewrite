@@ -5,7 +5,7 @@ const rand = (num) => { return Math.floor(Math.random() * num) }
 const gamingSlogans = ['The Unofficial Wiki!', 'The Most Gaming Wiki!', 'The Weirdest Wiki!', 'The Sussiest Wiki!']
 shortCut('#gaming-slogan').textContent = gamingSlogans[rand(4)]
 
-const pathImages = '/images/stupid_club/'
+const pathImages = './images/stupid_club/'
 const gamingImages = [pathImages + 'Nails.png', pathImages + 'Yuh_uh.gif', pathImages + 'Needy.png', pathImages + 'OMG.png']
 shortCut('#gaming-image').setAttribute('src', gamingImages[rand(4)])
 
