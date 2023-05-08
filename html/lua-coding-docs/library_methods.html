@@ -355,7 +355,7 @@
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">textPattern1</span> <span class="code-kyw">=</span> <span class="code-str">'<span class="code-ptr">%d+</span>'</span>         <span class="code-com">-- will get the longest chain of digit characters</span>
      <span class="code-kyw">local</span> <span class="code-var">textPattern2</span> <span class="code-kyw">=</span> <span class="code-str">'<span class="code-ptr">^</span>Matches'</span>    <span class="code-com">-- will get 'Matches' pattern at the start</span>
-     <span class="code-kyw">loca\</span> <span class="code-var">textPattern3</span> <span class="code-kyw">=</span> <span class="code-str">'doin<span class="code-ptr">%?%</span>'</span>     <span class="code-com">-- will get 'doin?' pattern at the end</span>
+     <span class="code-kyw">local</span> <span class="code-var">textPattern3</span> <span class="code-kyw">=</span> <span class="code-str">'doin<span class="code-ptr">%?%</span>'</span>     <span class="code-com">-- will get 'doin?' pattern at the end</span>
      <span class="code-kyw">local</span> <span class="code-var">textPattern4</span> <span class="code-kyw">=</span> <span class="code-str">'exam<span class="code-ptr">[ples]+</span>'</span> <span class="code-com">-- will get each set inside of 'ples' in each characters</span>
 
      <span class="code-funcC">debugPrint</span>((<span class="code-str">'Score: 18242'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern1</span>))          <span class="code-com">-- will print '18242'</span>
