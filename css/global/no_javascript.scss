@@ -1,0 +1,83 @@
+/* Local Club :cool: */
+
+$local-defualt-width-solid: 2px solid;
+$local-color-noJavascript-bg: hsl(249deg, 100%, 50%);
+
+/* Goofy aaaahhhhh code */
+
+@font-face {
+     font-family: "VCR";
+     src: url(/fonts/VCR/VCR_OSD_MONO.woff) format("woff"), 
+          url(/fonts/VCR/VCR_OSD_MONO.otf) format("opentype"), 
+          url(/fonts/VCR/VCR_OSD_MONO.ttf) format("truetype");
+}
+
+#global-no-javascript {
+     z-index: 20;
+     display: flex;
+     font-family: "VCR";
+     justify-content: center;
+     align-items: center;
+     background: $local-color-noJavascript-bg;
+     width: 100%; height: 100%;
+     position: fixed;
+
+     #no-javascript-window {
+          outline: $local-defualt-width-solid black;
+          border: 3px solid white;
+          border-style: outset;
+          color: black;
+          background-color: silver;
+          width: 12cm; height: 6cm;
+
+          img {
+               position: relative;
+               bottom: 0.2cm;
+          }
+
+          #no-javascript-NOTE {
+               position: absolute;
+               transform: translateX(-2.2cm) translateY(1.45cm);
+          }
+
+          #no-javascript-topbar {
+               color: white !important;
+               background-color: $local-color-noJavascript-bg;
+               width: 11.85cm; height: 1cm;
+
+               & ~ p {
+                    position: relative;
+                    bottom: 2.4cm; left: 3cm;
+                    margin: 0px 0px 12px 0px;
+               }
+
+               p {
+                    font-family: "VCR";
+                    font-size: 23px;
+                    margin: 0;
+                    transform: translateY(5px) translateX(8px);
+               }
+          }
+
+          button {
+               outline: $local-defualt-width-solid black;
+               font-family: "VCR";
+               border: $local-defualt-width-solid white;
+               border-style: outset;
+               color: black;
+               background-color: silver;
+               position: relative;
+               bottom: 1.5cm; left: 5.35cm;
+               padding: 2px 15px;
+
+               &:hover {
+                    background-color: silver;
+               }
+               &:active {
+                    border: $local-defualt-width-solid rgb(231, 231, 231);
+                    border-style: outset;
+                    background-color: rgb(173, 173, 173);
+               }
+          }
+     }
+}

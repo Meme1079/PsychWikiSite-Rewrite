@@ -63,7 +63,7 @@
                          <h1> Introduction </h1>
                          <section>
                               <p>
-                                   Lua is a lightweight, high-level, multi-paradigm scripting language that is mainly used in Psych Engine modding. Which is a betteralternative to Haxe, 
+                                   Lua is a lightweight, high-level, multi-paradigm scripting language that is mainly used in Psych Engine modding. Which is a better alternative to Haxe, 
                                    the main language that FNF is built-in. Because you have to manually download the source code, modify the specific Haxe file, and then compile it. As 
                                    for Lua just insert a Lua into any script folders to modify something and pressed "Restart Song" that's it; that's how simple it is. The current version 
                                    of Lua that Haxe is using is <kbd>5.1</kbd>.
@@ -93,8 +93,7 @@
                                    <div class="code-border">
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
-                                        </div>
-                                        <div class="code-newlines"></div>                                   
+                                        </div>                             
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">vary1</span> <span class="code-kyw">=</span> <span class="code-str">'hamburgers are cool'</span>
 <span class="code-kyw">local</span> <span class="code-var">vary2</span> <span class="code-kyw">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
@@ -106,8 +105,7 @@
                                    <div class="code-border">
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
-                                        </div>
-                                        <div class="code-newlines"></div>                                   
+                                        </div>                                   
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">vary1</span> <span class="code-kyw">=</span> <span class="code-str">'hamburgers are cool'</span>
 <span class="code-kyw">local</span> <span class="code-var">vary2</span> <span class="code-kyw">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
@@ -141,8 +139,7 @@
                                    <div class="code-border">
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Syntax:</div>
-                                        </div>
-                                        <div class="code-newlines"></div> 
+                                        </div> 
 <pre>
 <span class="code-kyw">?scope</span> <span class="code-var">name</span> <span class="code-kyw">=</span> <span class="code-var">value</span>                <span class="code-com">-- single-line variables</span>
 <span class="code-kyw">?scope</span> <span class="code-var">names</span>, <span class="code-paraI">...</span> <span class="code-kyw">=</span> <span class="code-var">values</span>, <span class="code-paraI">...</span>    <span class="code-com">-- multi-line variables</span>
@@ -156,7 +153,6 @@
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">foo</span> <span class="code-kyw">=</span> <span class="code-num">0</span>                      <span class="code-com">-- single-line</span>
 <span class="code-kyw">local</span> <span class="code-var">bar1</span>, <span class="code-var">bar2</span>, <span class="code-var">bar3</span> <span class="code-kyw">=</span> <span class="code-num">1</span>, <span class="code-num">2</span>, <span class="code-num">3</span>   <span class="code-com">-- multi-line</span>
@@ -190,7 +186,6 @@
                                              <div class="code-tagbg">Example:</div>
                                              <div class="code-tagbg" style="margin-left: 10px;">Valid:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-var">var</span> <span class="code-kyw">=</span> <span class="code-str">'string1'</span>        <span class="code-com">-- a variable</span>
 <span class="code-var">var1</span> <span class="code-kyw">=</span> <span class="code-str">'string2'</span>       <span class="code-com">-- a variable with a number behind it</span>
@@ -204,7 +199,6 @@
                                              <div class="code-tagbg">Example:</div>
                                              <div class="code-tagbg" style="margin-left: 10px;">Invalid:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">if</span> <span class="code-kyw">=</span> <span class="code-str">'string3'</span>         <span class="code-com">-- a variable named with a keyword</span>
 <span class="code-ope">>=</span> <span class="code-kyw">=</span> <span class="code-boo">false</span>             <span class="code-com">-- a variable named with a operator</span>
@@ -229,20 +223,19 @@
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'Hello'</span> <span class="code-com">-- a single quote</span>
 <span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">"World"</span> <span class="code-com">-- a double quote, this is optional to use</span>
-<span class="code-kyw">local</span> <span class="code-var">textString3</span> <span class="code-kyw">=</span> <span class="code-str">[[Culturae organicae te
-capiet ad loca quae numquam
-expectata non visere!]]</span>     <span class="code-com">-- a double bracket, used this for longer strings</span>
+<span class="code-kyw">local</span> <span class="code-var">textString3</span> <span class="code-kyw">=</span> <span class="code-str">[[Culturae organicae te</span>
+<span class="code-str">capiet ad loca quae numquam</span>
+<span class="code-str">expectata non visere!]]</span>     <span class="code-com">-- a double bracket, used this for longer strings</span>
           
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>) <span class="code-com">--   will print 'Hello'</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>) <span class="code-com">--   will print 'World'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString3</span>) <span class="code-com">--[[ will print
-     'Culturae organicae te capiet ad loca quae numquam
-     expectata non visere!' --]]</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString3</span>) <span class="code-com">--[[ will print</span>
+     <span class="code-com">'Culturae organicae te capiet ad loca quae numquam</span>
+     <span class="code-com">expectata non visere!' --]]</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -257,7 +250,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">intNumber1</span> <span class="code-kyw">=</span> <span class="code-num">81</span>        <span class="code-com">-- an int number</span>
 <span class="code-kyw">local</span> <span class="code-var">floatNumber1</span> <span class="code-kyw">=</span> <span class="code-num">23.42</span>   <span class="code-com">-- a float number</span>
@@ -299,7 +291,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">tableGroup1</span> <span class="code-kyw">=</span> {<span class="code-str">'string'</span>, <span class="code-boo">true</span>, <span class="code-nil">nil</span>} <span class="code-com">-- a table with string, boolean, and nil values</span>
 <span class="code-kyw">local</span> <span class="code-var">tableGroup2</span> <span class="code-kyw">=</span> {{<span class="code-num">45</span>, <span class="code-num">13</span>}, {<span class="code-num">34</span>, <span class="code-num">76</span>}}  <span class="code-com">-- a table inside with nested tables</span>
@@ -319,7 +310,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                              <div style="display: flex;">
                                                   <div class="code-tagbg">Example:</div>
                                              </div>
-                                             <div class="code-newlines"></div>
+
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">tableArray</span> <span class="code-kyw">=</span> {<span class="code-str">'Correct'</span>, <span class="code-str">'Incorrect'</span>, <span class="code-str">'Maybe'</span>, <span class="code-str">'Invalid'</span>} <span class="code-com">-- a table with string values</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
@@ -340,7 +331,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                              <div style="display: flex;">
                                                   <div class="code-tagbg">Example:</div>
                                              </div>
-                                             <div class="code-newlines"></div>
+
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">tableDict1</span> <span class="code-kyw">=</span> {<span class="code-tabkey">isFatherless</span> <span class="code-kyw">=</span> <span class="code-boo">false</span>, <span class="code-tabkey">hasTouchGrass</span> <span class="code-kyw">=</span> <span class="code-boo">true</span>}
 <span class="code-kyw">local</span> <span class="code-var">tableDict2</span> <span class="code-kyw">=</span> {[<span class="code-str">'air'</span>] <span class="code-kyw">=</span> <span class="code-str">'Oxygen'</span>, [<span class="code-str">"food"</span>] <span class="code-kyw">=</span> <span class="code-str">'potato'</span>, [<span class="code-str">"love"</span>] <span class="code-kyw">=</span> <span class="code-str">'carbon monoxide'</span>}
@@ -369,8 +360,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                               <div class="code-border">
                                    <div style="display: flex;">
                                         <div class="code-tagbg">Example:</div>
-                                   </div>
-                                   <div class="code-newlines"></div>
+                                   </div
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">hello</span>() <span class="code-com">-- a 'hello' function</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-str">'Hello Function'</span>)
@@ -392,7 +382,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-com">-- function created by Mayo78</span>
 <span class="code-kyw">function</span> <span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>)  <span class="code-com">-- concatenates setProperty x and y</span>
@@ -417,7 +406,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">Array</span>(<span class="code-paraS">tab</span>, <span class="code-paraI">...</span>)
      <span class="code-kyw">local</span> <span class="code-var">convert</span> <span class="code-kyw">=</span> {<span class="code-paraI">...</span>}  <span class="code-com">-- converts it into a table</span>
@@ -447,15 +435,14 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                               <div class="code-border">
                                    <div style="display: flex;">
                                         <div class="code-tagbg">Example:</div>
-                                   </div>
-                                   <div class="code-newlines"></div>
+                                   </div
 <pre>
 <span class="code-com">-- Here's a single-line comment nothing special</span>
      
-<span class="code-com">--[[
-     Here's a multi-line comment for really
-     long unnecessary comments, also cheese.
-]]</span>
+<span class="code-com">--[[</span>
+     <span class="code-com">Here's a multi-line comment for really</span>
+     <span class="code-com">long unnecessary comments, also cheese.</span>
+<span class="code-com">]]</span>
 </pre>
                               </div>
                          </section>
@@ -543,7 +530,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                              <div style="display: flex;">
                                                   <div class="code-tagbg">Example:</div>
                                              </div>
-                                             <div class="code-newlines"></div>
+
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
@@ -564,7 +551,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                              <div style="display: flex;">
                                                   <div class="code-tagbg">Example:</div>
                                              </div>
-                                             <div class="code-newlines"></div>
+
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
@@ -587,7 +574,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                              <div style="display: flex;">
                                                   <div class="code-tagbg">Example:</div>
                                              </div>
-                                             <div class="code-newlines"></div>
+
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">getDateWeekDay</span> <span class="code-kyw">=</span> <span class="code-data">os</span>.<span class="code-funcC">date</span>(<span class="code-str">'*t'</span>).<span class="code-var">wday</span> <span class="code-com">-- checks the current day of week</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
@@ -626,7 +613,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                              <div style="display: flex;">
                                                   <div class="code-tagbg">Example:</div>
                                              </div>
-                                             <div class="code-newlines"></div>
+
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">5</span>, <span class="code-num">1</span> <span class="code-kyw">do</span>  <span class="code-com">-- Increment loop</span>
@@ -659,7 +646,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                              <div style="display: flex;">
                                                   <div class="code-tagbg">Example:</div>
                                              </div>
-                                             <div class="code-newlines"></div>
+
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">tableThingy</span> <span class="code-kyw">=</span> {<span class="code-tabkey">num1</span> <span class="code-kyw">=</span> <span class="code-num">231</span>, <span class="code-tabkey">num2</span> <span class="code-kyw">=</span> <span class="code-num">345</span>, <span class="code-tabkey">num3</span> <span class="code-kyw">=</span> <span class="code-num">234</span>}
@@ -681,7 +668,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">getMidpointNum</span>(<span class="code-paraS">ope1</span>, <span class="code-paraS">ope2</span>)
      <span class="code-kyw">return</span> (<span class="code-paraS">ope1</span> <span class="code-ope">+</span> <span class="code-paraS">ope2</span>) <span class="code-ope">/</span> <span class="code-num">2</span>  <span class="code-com">-- returns the middle value between 'ope1' and 'ope2'</span>
@@ -703,7 +689,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">10</span> <span class="code-kyw">do</span>
@@ -735,8 +720,7 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                               <div class="code-border">
                                    <div style="display: flex;">
                                         <div class="code-tagbg">Example:</div>
-                                   </div>
-                                   <div class="code-newlines"></div>
+                                   </div
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">do</span>   <span class="code-com">-- do block</span>
@@ -784,7 +768,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-modul">myGamingModules</span> <span class="code-kyw">=</span> {}
      
@@ -827,7 +810,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Declarations:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-funcC">require</span> <span class="code-str">'mods/scripts/modules/myGamingModules'</span>                      <span class="code-com">-- uses the default name</span>
 <span class="code-kyw">local</span> <span class="code-modul">moduleName</span> <span class="code-kyw">=</span> <span class="code-funcC">require</span>(<span class="code-str">'mods/scripts/modules/myGamingModules'</span>)  <span class="code-com">-- uses a custom name</span>
@@ -842,7 +824,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-modul">moduleName</span> <span class="code-kyw">=</span> <span class="code-funcC">require</span>(<span class="code-str">'mods/scripts/modules/myGamingModules'</span>) <span class="code-com">-- gets the module</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreatePost</span>()
@@ -894,7 +875,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">loadChunk1</span> <span class="code-kyw">=</span> <span class="code-funcC">load</span>(<span class="code-str">'return 4 * 6'</span>)()
@@ -917,7 +897,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                              <div class="code-tagbg">Example:</div>
                                              <div class="code-locationFile"> PsychEngine/mods/scripts/modules/scriptFile.lua </div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">myVar0</span> <span class="code-kyw">=</span> <span class="code-nil">nil</span>  <span class="code-com">-- THIS WILL NOT WORK IF IT'S LOCAL!!!!!</span>
 <span class="code-var">myVar1</span> <span class="code-kyw">=</span> <span class="code-num">163</span>        <span class="code-com">-- Will work</span>
@@ -929,7 +908,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                              <div class="code-tagbg">Example:</div>
                                              <div class="code-locationFile"> PsychEngine/mods/scripts/myGamingFile.lua </div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-funcC">dofile</span>(<span class="code-str">'PsychEngine/mods/scripts/modules/scriptFile.lua'</span>)
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
@@ -950,7 +928,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-kyw">function</span> <span class="code-funcD">read</span>(<span class="code-paraS">tab</span>) <span class="code-com">-- read through a table</span>
      <span class="code-kyw">local</span> <span class="code-var">results</span> <span class="code-kyw">=</span> <span class="code-str">''</span>
@@ -980,7 +957,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-kyw">function</span> <span class="code-funcD">read</span>(<span class="code-paraS">tab</span>) <span class="code-com">-- read through a table</span>
      <span class="code-kyw">local</span> <span class="code-var">results</span> <span class="code-kyw">=</span> <span class="code-str">''</span>
@@ -1016,7 +992,6 @@ expectata non visere!]]</span>     <span class="code-com">-- a double bracket, u
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
                                         </div>
-                                        <div class="code-newlines"></div>
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-var">myGlobalVar0</span>, <span class="code-var">myGlobalVar1</span> <span class="code-kyw">=</span> <span class="code-num">183</span>, <span class="code-num">231</span>

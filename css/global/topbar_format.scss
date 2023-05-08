@@ -1,0 +1,104 @@
+@use '../modules/global_vars' as glob;
+
+/* Local Club :cool: */
+
+$local-color-topbar-bg: hsl(216deg, 8%, 15%);
+$local-defualt-font-weight: 550;
+
+/* Goofy aaaahhhhh code */
+
+body { /* Delete this or you'll get neutered */
+     margin: 0px;
+}
+
+#global-topbar {
+     z-index: 5;
+     overflow-x: auto; overflow-y: hidden;
+     background-color: $local-color-topbar-bg;
+     transform: translateY(-15px);
+     width: 100%; height: 100px;
+
+     img {
+          display: inline-block;
+          position: absolute;
+          top: 23px; left: 18px;
+     }
+
+     #logo {
+          font-size: 1.5625em;
+          font-weight: $local-defualt-font-weight;
+          border-right: 1px solid white;
+          width: glob.$global-cringe-solver;
+          position: relative;
+          top: 14px; left: 80px;
+          padding: 8px 10px 8px 0px;
+          margin-top: 16.5px;
+     }
+
+     /* The Topbar Buttons */
+
+     #active {
+          color: hsl(0deg, 0%, 70%);
+     }
+
+     #searchBar {
+          float: right;
+          border: 1px solid hsl(216deg, 8%, 52%);
+          border-radius: glob.$global-border-radius;
+          box-shadow: 8px 5px 10px 1px rgba(0, 0, 0, 0.5);
+          background-color: $local-color-topbar-bg;
+          transform: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+          width: 6.5cm; height: glob.$global-cringe-solver;
+          position: relative;
+          top: -1.3cm;
+          padding: 5px 10px;
+          margin-right: 1cm;
+
+          button {
+               font-size: 16px;
+               font-weight: 200;
+               border: none;
+               background: none;
+
+               &::before {
+                    content: "Search stuff...";
+               }
+          }
+
+          &:hover {
+               transform: translateY(1.5px);
+          }
+     }
+
+     :is(#global-topbar #searchBar, button) {
+          color: hsl(211deg, 37%, 88%);
+
+          &:hover {
+               background-color: black;
+          }
+     }
+
+     ul {
+          float: right;
+          position: relative;
+          top: -1.55cm;
+          margin-right: 1cm;
+
+          li {
+               display: inline-block;
+               font-size: 18px;
+               margin-left: 20px;
+
+               a {
+                    color: white;
+                    font-weight: $local-defualt-font-weight;
+                    text-decoration: none;
+                    margin-left: 5px;
+
+                    &:hover {
+                         color: hsl(0deg, 0%, 70%);
+                    }
+               }
+          }
+     }
+}

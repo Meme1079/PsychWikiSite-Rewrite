@@ -3,21 +3,18 @@ import library_methods from "../json/library-methods.json" assert {type: 'json'}
 
 import { shortCut, shortCutAll } from "./Main.js";
 
-function getNewLineCode(preInd = 0) {
-     let results = 1
-     for (let dumbyLines in shortCutAll('pre')[preInd].textContent.match(/\n/g)) {
-          results = Number(dumbyLines) + 1
+for (let preInd = 0; preInd < shortCutAll('pre').length; preInd++) {
+     let result = ``
+     for (let dumbyLines of shortCutAll('pre')[preInd].innerHTML.split('\n')) {
+          result += `<span class="code-line">${dumbyLines}</span>\n`
      }
-     for (let limit = 1; limit <= results; limit++) {
-          let insertElement = `<span>${limit.toString()}</span>`
-          shortCutAll('.code-newlines')[preInd].innerHTML += insertElement
-     }
+     shortCutAll('pre')[preInd].innerHTML = result.slice(0, result.length - 10)  
 }
 
 function importTableDatas(jsonData, tag, styleVal = ['']) {
      let tableDataResult = ``
      for (let datas = 0; datas < jsonData.length; datas++) {
-          if (jsonData[datas][2] != null || jsonData[datas][2] != undefined) {
+          if (jsonData[datas][2] != undefined) {
                tableDataResult += `
                <tr>
                     <td style="text-align: center;">${jsonData[datas][0]}</td>
@@ -39,10 +36,6 @@ function importTableDatas(jsonData, tag, styleVal = ['']) {
      }
 }
 
-for (let preLength = 0; preLength < shortCutAll('pre').length; preLength++) {
-     getNewLineCode(preLength)
-}
-
 switch (shortCutAll('title')[0].textContent.split(': ')[1]) {
      case 'Basics Of Coding':
           importTableDatas(operators.arithmetic, '#tab-arit')
@@ -54,6 +47,7 @@ switch (shortCutAll('title')[0].textContent.split(': ')[1]) {
      case 'Library Methods':
           importTableDatas(library_methods.character_classes, '#tab-pattern')
           importTableDatas(library_methods.magic_characters, '#tab-magic')
+          importTableDatas(library_methods.escape_characters, '#tab-escape', ['text-align: center; width: 3.8cm;'])
 
           break;
      case 'Variables':

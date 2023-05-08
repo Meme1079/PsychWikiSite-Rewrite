@@ -11,6 +11,8 @@ $local-ease-type-easeOutQuad: cubic-bezier(0.5, 1, 0.89, 1);
 /* Goofy aaaahhhhh code */
 
 #global-sidebar {
+     z-index: 1;
+     display: block;
      outline: 1px solid $local-color-codeblock-bg;
      background-color: hsl(0deg, 0%, 10%);
      width: 8.465cm; height: 100%;

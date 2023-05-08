@@ -2,6 +2,8 @@
 /* Local Club :cool: */
 /* Goofy aaaahhhhh code */
 #global-sidebar {
+     z-index: 1;
+     display: block;
      outline: 1px solid hsl(216deg, 8%, 52%);
      background-color: hsl(0deg, 0%, 10%);
      width: 8.465cm;

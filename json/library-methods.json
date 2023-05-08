@@ -94,6 +94,50 @@
           ]
      ],
      "escape_characters": [
-
+          [
+               "<code>\\'</code>",
+               "<code>'</code>",
+               "Single-quote Character"
+          ],
+          [
+               "<code>\\\"</code>",
+               "<code>\"</code>",
+               "Double-quote Character"
+          ],
+          [
+               "<code>\\\\</code>",
+               "<code>\\</code>",
+               "Backslash Character"
+          ],
+          [
+               "<code>\\[</code>",
+               "<code>[</code>",
+               "Left Bracket Character"
+          ],
+          [
+               "<code>\\]</code>",
+               "<code>]</code>",
+               "Right Bracket Character"
+          ],
+          [
+               "<code>\\n</code>",
+               "",
+               "New Line"
+          ],
+          [
+               "<code>\\r</code>",
+               "",
+               "Carriage Return"
+          ],
+          [
+               "<code>\\t</code>",
+               "",
+               "Horizontal Tab"
+          ],
+          [
+               "<code>\\v</code>",
+               "",
+               "Vertical tab"
+          ]
      ]
 }
