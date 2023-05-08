@@ -40,61 +40,61 @@
           [
                "<code>==</code>",
                "Checks if the condition is <ins>equal to</ins> the right.",
-               "<code>a == b</code>; returns <code>false</code>"
+               "<code>a == b</code>; Returns <code>false</code>"
           ],
           [
                "<code>~=</code>",
                "Checks if the condition is <ins>not equal to</ins> the right.",
-               "<code>a ~= b</code>; returns <code>false</code>"
+               "<code>a ~= b</code>; Returns <code>false</code>"
           ],
           [
                "<code>></code>",
                "Checks if the condition is <ins>greater than</ins> the right.",
-               "<code>2 > 1</code>; returns <code>true</code>"
+               "<code>2 > 1</code>; Returns <code>true</code>"
           ],
           [
                "<code><</code>",
                "Checks if the condition is <ins>lesser than</ins> the right.",
-               "<code>4 < 2</code>; returns <code>false</code>"
+               "<code>4 < 2</code>; Returns <code>false</code>"
           ],
           [
                "<code>>=</code>",
                "Checks if the condition is <ins>greater or equal to</ins> the right.",
-               "<code>3 >= 3</code>; returns <code>true</code>"
+               "<code>3 >= 3</code>; Returns <code>true</code>"
           ],
           [
                "<code><=</code>",
                "Checks if the condition is <ins>lesser or equal to</ins> the right.",
-               "<code>2 <= 23</code>; returns <code>false</code>"
+               "<code>2 <= 23</code>; Returns <code>false</code>"
           ]
      ],
      "logical": [
           [
                "<code>and</code>",
-               "Combines multiple conditions together; will return <code>true</code>, if <ins>all the statements</ins> are <code>true</code>.",
-               "<code>a == true and b == true</code>; returns <code>false</code>"
+               "Combines multiple conditions together; will print <code>true</code>, if <ins>all the statements</ins> are <code>true</code>.",
+               "<code>a == true and b == true</code>; Returns <code>false</code>"
           ],
           [
                "<code>or</code>",
-               "Combines multiple conditions together; will return <code>true</code>, if <ins>any of the statements</ins> are <code>true</code>.",
-               "<code>a == true or b == true</code>; returns <code>true</code>"
+               "Combines multiple conditions together; will print <code>true</code>, if <ins>any of the statements</ins> are <code>true</code>.",
+               "<code>a == true or b == true</code>; Returns <code>true</code>"
           ],
           [
                "<code>not</code>",
                "Reverses the condition; if the value is equivalent to false, then the operator will set it into <code>true</code>, and vice versa.",
-               "<code>not true</code>; returns <code>false</code>"
+               "<code>not true</code>; Returns <code>false</code>"
           ]
      ],
      "miscellaneous": [
           [
                "<code>#</code>",
                "Length operator, Checks the maximim length size of a <code>string</code> or <code>table</code>.",
-               "<code>#('sussy')</code>; returns <code>5</code>"
+               "<code>#('sussy')</code>; Returns <code>5</code>"
           ],
           [
                "<code>..</code>",
                "Concatenate operator, Merges multiple <code>string</code> or <code>numbers</code> together.",
-               "<code>'snow'..'ball'</code>; returns <code>snowball</code>"
+               "<code>'snow'..'ball'</code>; Returns <code>snowball</code>"
           ]
      ]
 }

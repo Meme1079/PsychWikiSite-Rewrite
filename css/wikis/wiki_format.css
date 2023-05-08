@@ -16,7 +16,7 @@
 
 html {
      font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
-     /* scroll-behavior: smooth; */
+     scroll-behavior: smooth;
      scroll-margin-top: 1.5cm;
 }
 

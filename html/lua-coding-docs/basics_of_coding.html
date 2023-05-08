@@ -352,20 +352,17 @@
                          <h1> Function </h1>
                          <section>
                               <p>
-                                   Functions are a collection of code to perform a specific task. This is used the same functions multiple times to make the code reusable. 
-                                   Functions are defined with the <code>function</code> keyword followed by the name of your custom function. With the pair of parenthesis 
-                                   <code>()</code> characters. To call a function get the name of your custom function followed by a pair of parenthesis <code>()</code> 
-                                   characters.
+                                   Functions are a collection of code to perform a specific task. This is used the same functions multiple times to make the code reusable. Functions are defined with the `function` keyword followed by the name of 
+                                   your custom function. With the pair of parenthesis <kbd>()</kbd> characters. To call a function get the name of your custom function followed by a pair of parenthesis <kbd>()</kbd> characters.
                               </p>
                               <div class="code-border">
                                    <div style="display: flex;">
                                         <div class="code-tagbg">Example:</div>
                                    </div>
 <pre>
-<span class="code-kyw">function</span> <span class="code-funcD">hello</span>() <span class="code-com">-- a 'hello' function</span>
+<span class="code-kyw">function</span> <span class="code-funcD">hello</span>()<span class="code-com"> -- a 'hello' function</span>
      <span class="code-funcC">debugPrint</span>(<span class="code-str">'Hello Function'</span>)
 <span class="code-kyw">end</span>
-     
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-funcC">hello</span>()     <span class="code-com">-- calls the 'hello' function and will print 'Hello Function'</span>
 <span class="code-kyw">end</span>
@@ -374,10 +371,10 @@
                               <h3> Parameters </h3>
                               <sub-section>
                                    <p>
-                                        Parameters are a special type of variable declared inside the parenthesis <kbd>()</kbd> character. You can add more parameters by typing the name 
-                                        of parameter and each separating them with a comma <kbd>,</kbd> character. They can add more functionality to the function. If any of the arguments 
-                                        are left blank then it will cause an error. So uhh double check when calling functions.
+                                        Parameters are a special type of variable declared inside the parenthesis <kbd>()</kbd> character. Their purpose is to add more functionality to the function when their is an <code>arguement</code> value. 
+                                        Which will be passed at the parameter that they're order in.
                                    </p>
+                                   <p> To add your own parameter just the any <code>name</code> you want like a <code>variable</code>. If you want to add more of them separate each of them with a comma <kbd>,</kbd> character. </p>
                                    <div class="code-border">
                                         <div style="display: flex;">
                                              <div class="code-tagbg">Example:</div>
@@ -428,7 +425,7 @@
                          <h1> Comments </h1>
                          <section>
                               <p>
-                                   Comments are used to explain the context of code and prevent the execution on a specific code; Lua will ignore them. Comments starts 
+                                   Comments are used to explain the context of code and prevent the execution on a specific code; Lua will just ignore them. Comments starts 
                                    with a double minus <kbd>--</kbd> characters as the syntax for single-line comment. And for multi-line comment add double brackets 
                                    <kbd>[[]]</kbd> characters.
                               </p>
@@ -851,11 +848,11 @@
                                         <li><code>value</code> - The argument value to be check. </li>
                                    </ul>
                               </sub-section>
-                              <h3> tostring(value:String) </h3>
+                              <h3> tostring(numboo:Dynamic) </h3>
                               <sub-section>
                                    <p> Converts any <ins>number or booleans</ins> into a real <code>string</code> value. </p>
                                    <ul>
-                                        <li><code>value</code> - The specified value to be converted. </li>
+                                        <li><code>numboo</code> - The specified value to be converted. </li>
                                    </ul>
                               </sub-section>
                               <h3> tonumber(num:Float) </h3>
@@ -921,7 +918,7 @@
                               <h3> pairs(tab:Table) </h3>
                               <sub-section>
                                    <p>
-                                        Returns every key-value pairs inside a table and is <ins>typically used in table dictionaries</ins>. It can 
+                                        Returns every <ins>key-value pairs</ins> inside a table and is <ins>typically used in table dictionaries</ins>. It can 
                                         return as an <ins>unorganized table sort</ins>; Not to be confused with <code>ipairs()</code> functions.
                                    </p>
                                    <div class="code-border">
@@ -950,7 +947,7 @@
                               <h3> ipairs(tab:Table) </h3>
                               <sub-section>
                                    <p>
-                                        Returns every index-value pairs inside a table and is <ins>typically used in table arrays or with numeric keys within
+                                        Returns every <ins>index-value pairs</ins> inside a table and is <ins>typically used in table arrays or with numeric keys within
                                         a table dictionary</ins>. If the table value has <code>nil</code> it will <ins>stop executing the loop there</ins>.
                                    </p>
                                    <div class="code-border">
