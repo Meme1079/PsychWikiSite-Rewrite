@@ -201,6 +201,20 @@ html {
                     background-color: white;
                }
           }
+
+          .code-file-path {
+               @media only screen and (min-width: 0px), (max-width: 890px) {
+                    .code-tags {
+                         display: flex;
+                         overflow-x: auto; overflow-y: hidden;
+                         padding-bottom: 10px; padding-right: 10px;
+                    }
+     
+                    pre {
+                         margin-top: 0px !important;
+                    }
+               }
+          }
           
           .code-tagbg {
                font-family: glob.$global-font-family !important;
@@ -218,7 +232,8 @@ html {
           .code-locationFile {
                color: hsl(1, 100%, 79%);
                font-family: $local-code-font-family;
-               font-size: 13px !important;
+               font-size: 13px;
+               width: glob.$global-cringe-solver;
                position: relative;
                top: 13px;
                padding: 2 !important;

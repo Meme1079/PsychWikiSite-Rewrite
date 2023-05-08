@@ -16,7 +16,7 @@
 
 html {
      font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
-     scroll-behavior: smooth;
+     /* scroll-behavior: smooth; */
      scroll-margin-top: 1.5cm;
 }
 
@@ -190,6 +190,18 @@ html {
      color: black;
      background-color: white;
 }
+@media only screen and (min-width: 0px), (max-width: 890px) {
+     #wiki-bg #wiki .code-file-path .code-tags {
+          display: flex;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding-bottom: 10px;
+          padding-right: 10px;
+     }
+     #wiki-bg #wiki .code-file-path pre {
+          margin-top: 0px !important;
+     }
+}
 #wiki-bg #wiki .code-tagbg {
      font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman" !important;
      font-size: 15px;
@@ -206,7 +218,9 @@ html {
 #wiki-bg #wiki .code-locationFile {
      color: hsl(1deg, 100%, 79%);
      font-family: Menlo, "Lucida Console", "Monaco", "monospace";
-     font-size: 13px !important;
+     font-size: 13px;
+     width: -moz-fit-content;
+     width: fit-content;
      position: relative;
      top: 13px;
      padding: 2 !important;
