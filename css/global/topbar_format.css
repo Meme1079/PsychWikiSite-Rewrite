@@ -89,6 +89,9 @@ body { /* Delete this or you'll get neutered */
 #global-topbar #topbar-list-max ul li a span {
      font-weight: 500;
 }
+#global-topbar #topbar-list-max ul li a:hover {
+     color: hsl(0deg, 0%, 80%);
+}
 #global-topbar #topbar-list-min {
      display: none;
 }
