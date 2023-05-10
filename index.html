@@ -8,12 +8,14 @@
           <meta charset="utf-8">
           <link rel="icon" href="./images/Psych.ico">
           <link rel="stylesheet" type="text/css" href="./css/global/topbar_format.css">
-          <link rel="stylesheet" type="text/css" href="./css/other/home_format.css">
           <link rel="stylesheet" type="text/css" href="./css/global/no_javascript.css">
+          <link rel="stylesheet" type="text/css" href="./css/other/home_format.css">
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+          <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
           <script defer type="module" src="./javascript/Main.js"></script>
           <script defer type="module" src="./javascript/Home.js"></script>
+          <script defer type="module" src="./javascript/SideBarMedia.js"></script>
+          
      </head>
      <body onload="console.log('loaded')">
           <noscript>
@@ -30,20 +32,33 @@
                     </div>
                </div>
           </noscript>
-          <div id="global-topbar">
-               <img src="/images/Psych.ico" alt="Le logo" width="60" height="60">
-               <p id="logo"> PsychWikiSite Docs </p>
-               <div id="searchBar">
-                    <i class="uil uil-search" aria-hidden="true"></i>
-                    <button type="button" onclick="alert('homo')"></button>
-                    <input type="hidden">
+          <nav id="global-topbar">
+               <div id="topbar-logo">
+                    <img src="../../images/Psych.ico" alt="The Stupid Logo">
+                    <p> PsychWikiSite-Rewrite </p>
                </div>
-               <ul>
-                    <li><a href="#" id="active"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="uil uil-book-open"></i> Docs</a></li>
-                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="fa fa-github"></i> GitHub</a></li>
-               </ul>
-          </div>
+               <section id="topbar-list-max">
+                    <div id="topbar-list-searchBar">
+                         <i class="uil uil-search" aria-hidden="true"></i>
+                         <button type="button" onclick="alert('homo')"></button>
+                    </div>
+                    <ul>
+                         <li> <a href="../../index.html"><i class="fa fa-home"></i><span>Home</span></a> </li>
+                         <li> <a href="#"><i class="uil uil-book-open"></i><span>Docs</span></a> </li>
+                         <li> <a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="uil uil-github"></i><span>GitHub</span> </a> </li>
+                    </ul>
+               </section>
+               <section id="topbar-list-min">
+                    <button type="button" class="uil uil-bars"></button>
+                    <ul>
+                         <li class="fa fa-home"        onclick="window.location.href = '../../index.html'"></li>
+                         <li class="uil uil-book-open" onclick="window.location.href = '#'"></li>
+                         <li class="uil uil-github"    onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"></li>
+                         <li class="uil uil-search"    onclick="alert('homo')"></li>
+                         <li class="uil uil-cube"      onclick="alert('WIP')"></li>
+                    </ul>
+               </section>
+          </nav>
           <main id="home">
                <div id="gaming-background">
                     <p id="gaming-logo"> PsychWikiSite </p>

@@ -12,37 +12,52 @@
           <link rel="stylesheet" type="text/css" href="../../css/global/topbar_format.css">
           <link rel="stylesheet" type="text/css" href="../../css/global/no_javascript.css">
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+          <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
           <script defer type="module" src="../../javascript/Main.js"></script>
           <script defer type="module" src="../../javascript/Wiki.js"></script>
+          <script defer type="module" src="../../javascript/SideBarMedia.js"></script>
      </head>
      <body>
-          <noscript>
-               <div id="global-no-javascript">
-                    <div id="no-javascript-window">
-                         <div id="no-javascript-topbar">
-                              <p>Javascript Disable Detected!</p>
-                         </div>
-                         <img src="../../images/popup_warning.png" alt="Warning Image" width="120" height="120">
-                         <p> Enable Javascript for this website </p>
-                         <p> Becuase it really relies on it </p>
-                         <button type="button"> Ok </button>
-                         <p id="no-javascript-NOTE"> NOTE: There is no bad script, trust me bro </p>
+          <noscript> <!-- Better -->
+               <div id="windows-error-javascript">
+                    <div id="windows-error-javascript-topbar">
+                         <span id="windows-error-javascript-topbar-title">Sorry! [Website Error]</span>
+                         <img id="only-wiki" src="../../images/error/popup_close_icon.png" alt="Window Close Icon">
                     </div>
+                    <img id="windows-error-icon-warning" src="../../images/error/popup_warning.png" alt="Window Error Icon">
+                    <div id="windows-error-javascript-text">
+                         <p style="margin-bottom: 0px;">Oh no! You've disable Javascript you idiot</p>
+                         <p style="margin-top: 10px;">Enable it Javascript to remove this error!</p>
+                    </div>
+                    <img id="windows-error-button-ok" src="../../images/error/popup_ok_button.png" alt="Window Ok Button">
                </div>
           </noscript>
           <nav id="global-topbar">
-               <img src="../../images/Psych.ico" alt="Le logo" width="60" height="60">
-               <p id="logo"> PsychWikiSite Docs </p>
-               <div id="searchBar">
-                    <i id="search-icon" class="uil uil-search" aria-hidden="true"></i>
-                    <button type="button" onclick="alert('homo')"></button>
+               <div id="topbar-logo">
+                    <img src="../../images/Psych.ico" alt="The Stupid Logo">
+                    <p> PsychWikiSite-Rewrite </p>
                </div>
-               <ul>
-                    <li><a href="../../index.html"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="uil uil-book-open"></i> Docs</a></li>
-                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="uil uil-github"></i> GitHub</a></li>
-               </ul>
+               <section id="topbar-list-max">
+                    <div id="topbar-list-searchBar">
+                         <i class="uil uil-search" aria-hidden="true"></i>
+                         <button type="button" onclick="alert('homo')"></button>
+                    </div>
+                    <ul>
+                         <li> <a href="../../index.html"><i class="fa fa-home"></i><span>Home</span></a> </li>
+                         <li> <a href="#"><i class="uil uil-book-open"></i><span>Docs</span></a> </li>
+                         <li> <a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="uil uil-github"></i><span>GitHub</span> </a> </li>
+                    </ul>
+               </section>
+               <section id="topbar-list-min">
+                    <button type="button" class="uil uil-bars"></button>
+                    <ul>
+                         <li class="fa fa-home"        onclick="window.location.href = '../../index.html'"></li>
+                         <li class="uil uil-book-open" onclick="window.location.href = '#'"></li>
+                         <li class="uil uil-github"    onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"></li>
+                         <li class="uil uil-search"    onclick="alert('homo')"></li>
+                         <li class="uil uil-cube"      onclick="alert('WIP')"></li>
+                    </ul>
+               </section>
           </nav>
           <nav id="global-sidebar">
                <h3>Headings<i class="uil uil-cube" style="margin-left: 10px;"></i></h3>
@@ -98,8 +113,8 @@
 <span class="code-kyw">local</span> <span class="code-var">vary1</span> <span class="code-kyw">=</span> <span class="code-str">'hamburgers are cool'</span>
 <span class="code-kyw">local</span> <span class="code-var">vary2</span> <span class="code-kyw">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
      
-<span class="code-funcC">print</span>(<span class="code-var">vary1</span>) <span class="code-com">-- will print 'hamburgers are cool'</span>
-<span class="code-funcC">print</span>(<span class="code-var">vary2</span>) <span class="code-com">-- will print 'potatoes are also cool, i think'</span>
+<span class="code-funcC">print</span>(<span class="code-var">vary1</span>) <span class="code-com">-- will print => 'hamburgers are cool'</span>
+<span class="code-funcC">print</span>(<span class="code-var">vary2</span>) <span class="code-com">-- will print => 'potatoes are also cool, i think'</span>
 </pre>
                                    </div>
                                    <div class="code-border">
@@ -111,8 +126,8 @@
 <span class="code-kyw">local</span> <span class="code-var">vary2</span> <span class="code-kyw">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
      
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">vary1</span>) <span class="code-com">-- will print 'hamburgers are cool'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">vary2</span>) <span class="code-com">-- will print 'potatoes are also cool, i think'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">vary1</span>) <span class="code-com">-- will print => 'hamburgers are cool'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">vary2</span>) <span class="code-com">-- will print => 'potatoes are also cool, i think'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -134,7 +149,7 @@
                                    </p>
                                    <p>
                                         Multi-line variables can also be declared, each name and value attributes of the variable must be separated with comma <kbd>,</kbd> character. 
-                                        They must be equal to each-other if not it will print a <code>nil</code> value or an error.
+                                        They must be equal to each-other if not it will print => a <code>nil</code> value or an error.
                                    </p>
                                    <div class="code-border">
                                         <div style="display: flex;">
@@ -158,15 +173,15 @@
 <span class="code-kyw">local</span> <span class="code-var">bar1</span>, <span class="code-var">bar2</span>, <span class="code-var">bar3</span> <span class="code-kyw">=</span> <span class="code-num">1</span>, <span class="code-num">2</span>, <span class="code-num">3</span>   <span class="code-com">-- multi-line</span>
 <span class="code-kyw">local</span> <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw">=</span> <span class="code-num">4</span>, <span class="code-num">5</span>      <span class="code-com">-- multi-line (missing)</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">foo</span>)               <span class="code-com">-- will print '0'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">bar1</span>, <span class="code-var">bar2</span>, <span class="code-var">bar3</span>)  <span class="code-com">-- will print '1 2 3'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will print '4 5 nil'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">foo</span>)               <span class="code-com">-- will print => '0'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">bar1</span>, <span class="code-var">bar2</span>, <span class="code-var">bar3</span>)  <span class="code-com">-- will print => '1 2 3'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will print => '4 5 nil'</span>
      
      <span class="code-var">foo</span> <span class="code-kyw">=</span> <span class="code-num">12</span>                           <span class="code-com">-- setting single variable</span>
      <span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span> <span class="code-kyw">=</span> <span class="code-num">543</span>, <span class="code-num">872</span>, <span class="code-num">923</span>   <span class="code-com">-- setting multiple variables</span>
      
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">foo</span>)               <span class="code-com">-- will print '12'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will print '543 872 923'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">foo</span>)               <span class="code-com">-- will print => '12'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">bar4</span>, <span class="code-var">bar5</span>, <span class="code-var">bar6</span>)  <span class="code-com">-- will print => '543 872 923'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -231,9 +246,9 @@
 <span class="code-str">expectata non visere!]]</span>     <span class="code-com">-- a double bracket, used this for longer strings</span>
           
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>) <span class="code-com">--   will print 'Hello'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>) <span class="code-com">--   will print 'World'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString3</span>) <span class="code-com">--[[ will print</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>) <span class="code-com">--   will print => 'Hello'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>) <span class="code-com">--   will print => 'World'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString3</span>) <span class="code-com">--[[ will print =></span>
      <span class="code-com">'Culturae organicae te capiet ad loca quae numquam</span>
      <span class="code-com">expectata non visere!' --]]</span>
 <span class="code-kyw">end</span>
@@ -257,11 +272,11 @@
 <span class="code-kyw">local</span> <span class="code-var">floatAltNumber1</span> <span class="code-kyw">=</span> <span class="code-num">12.</span>  <span class="code-com">-- a float number in whole numbers</span>
 <span class="code-kyw">local</span> <span class="code-var">floatAltNumber2</span> <span class="code-kyw">=</span> <span class="code-num">.56</span>  <span class="code-com">-- a float number in decimal numbers</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">intNumber1</span>)      <span class="code-com">-- will print '81'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">floatNumber1</span>)    <span class="code-com">-- will print '23.42'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">intNumber1</span>)      <span class="code-com">-- will print => '81'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">floatNumber1</span>)    <span class="code-com">-- will print => '23.42'</span>
           
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">floatAltNumber1</span>) <span class="code-com">-- will print '12.0'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">floatAltNumber2</span>) <span class="code-com">-- will print '0.56'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">floatAltNumber1</span>) <span class="code-com">-- will print => '12.0'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">floatAltNumber2</span>) <span class="code-com">-- will print => '0.56'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -295,8 +310,8 @@
 <span class="code-kyw">local</span> <span class="code-var">tableGroup1</span> <span class="code-kyw">=</span> {<span class="code-str">'string'</span>, <span class="code-boo">true</span>, <span class="code-nil">nil</span>} <span class="code-com">-- a table with string, boolean, and nil values</span>
 <span class="code-kyw">local</span> <span class="code-var">tableGroup2</span> <span class="code-kyw">=</span> {{<span class="code-num">45</span>, <span class="code-num">13</span>}, {<span class="code-num">34</span>, <span class="code-num">76</span>}}  <span class="code-com">-- a table inside with nested tables</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableGroup1</span>[<span class="code-num">1</span>])    <span class="code-com">-- will print 'string'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableGroup2</span>[<span class="code-num">1</span>][<span class="code-num">2</span>]) <span class="code-com">-- will print '45'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableGroup1</span>[<span class="code-num">1</span>])    <span class="code-com">-- will print => 'string'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableGroup2</span>[<span class="code-num">1</span>][<span class="code-num">2</span>]) <span class="code-com">-- will print => '45'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -314,8 +329,8 @@
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">tableArray</span> <span class="code-kyw">=</span> {<span class="code-str">'Correct'</span>, <span class="code-str">'Incorrect'</span>, <span class="code-str">'Maybe'</span>, <span class="code-str">'Invalid'</span>} <span class="code-com">-- a table with string values</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableArray</span>[<span class="code-num">1</span>]) <span class="code-com">-- will print 'Correct'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableArray</span>[<span class="code-num">3</span>]) <span class="code-com">-- will print 'Maybe'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableArray</span>[<span class="code-num">1</span>]) <span class="code-com">-- will print => 'Correct'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableArray</span>[<span class="code-num">3</span>]) <span class="code-com">-- will print => 'Maybe'</span>
 <span class="code-kyw">end</span>
 </pre>
                                         </div>
@@ -336,12 +351,12 @@
 <span class="code-kyw">local</span> <span class="code-var">tableDict1</span> <span class="code-kyw">=</span> {<span class="code-tabkey">isFatherless</span> <span class="code-kyw">=</span> <span class="code-boo">false</span>, <span class="code-tabkey">hasTouchGrass</span> <span class="code-kyw">=</span> <span class="code-boo">true</span>}
 <span class="code-kyw">local</span> <span class="code-var">tableDict2</span> <span class="code-kyw">=</span> {[<span class="code-str">'air'</span>] <span class="code-kyw">=</span> <span class="code-str">'Oxygen'</span>, [<span class="code-str">"food"</span>] <span class="code-kyw">=</span> <span class="code-str">'potato'</span>, [<span class="code-str">"love"</span>] <span class="code-kyw">=</span> <span class="code-str">'carbon monoxide'</span>}
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>.<span class="code-tabkey">isFatherless</span>)      <span class="code-com">-- will print 'false' (recommended syntax)</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>[<span class="code-str">'hasTouchGrass'</span>])  <span class="code-com">-- will print 'true'  (not recommended syntax)</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>.<span class="code-tabkey">isFatherless</span>)      <span class="code-com">-- will print => 'false' (recommended syntax)</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>[<span class="code-str">'hasTouchGrass'</span>])  <span class="code-com">-- will print => 'true'  (not recommended syntax)</span>
           
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>.<span class="code-tabkey">air</span>)               <span class="code-com">-- will print 'Oxygen'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">'food'</span>])           <span class="code-com">-- will print 'potato'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">"love"</span>])           <span class="code-com">-- will print 'carbon monoxide'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict1</span>.<span class="code-tabkey">air</span>)               <span class="code-com">-- will print => 'Oxygen'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">'food'</span>])           <span class="code-com">-- will print => 'potato'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">tableDict2</span>[<span class="code-str">"love"</span>])           <span class="code-com">-- will print => 'carbon monoxide'</span>
 <span class="code-kyw">end</span>
 </pre>
                                         </div>
@@ -364,7 +379,7 @@
      <span class="code-funcC">debugPrint</span>(<span class="code-str">'Hello Function'</span>)
 <span class="code-kyw">end</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">hello</span>()     <span class="code-com">-- calls the 'hello' function and will print 'Hello Function'</span>
+     <span class="code-funcC">hello</span>()     <span class="code-com">-- calls the 'hello' function and will print => 'Hello Function'</span>
 <span class="code-kyw">end</span>
 </pre>
                               </div>
@@ -414,7 +429,7 @@
      
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-funcC">Array</span>({}, <span class="code-num">231</span>, <span class="code-num">234</span>, <span class="code-num">456</span>)) <span class="code-kyw">do</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">v</span>) <span class="code-com">-- will print '231, 234, 456'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">v</span>) <span class="code-com">-- will print => '231, 234, 456'</span>
      <span class="code-kyw">end</span>
 <span class="code-kyw">end</span>
 </pre>
@@ -454,58 +469,66 @@
                               <h3> Arithmetic </h3>
                               <sub-section>
                                    <p> Arithmetic operators are mathematical operators used to perform calculations to numeric values. </p>
-                                   <table>
-                                        <thead>
-                                             <tr>
-                                                  <th>Operators</th>
-                                                  <th>Desciption</th>
-                                                  <th>Example</th>
-                                             </tr>
-                                        </thead>
-                                        <tbody id="tab-arit"></tbody>
-                                   </table>
+                                   <div class="table-antiflow">
+                                        <table style="min-width: 11.5cm !important;">
+                                             <thead>
+                                                  <tr>
+                                                       <th>Operators</th>
+                                                       <th>Desciption</th>
+                                                       <th>Example</th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody id="tab-arit"></tbody>
+                                        </table>
+                                   </div>
                               </sub-section>
                               <h3> Relational </h3>
                               <sub-section>
                                    <p> Relational operators are used to compare multiple operands inside a condition in order for the code block to execute. </p>
-                                   <table>
-                                        <thead>
-                                             <tr>
-                                                  <th>Operators</th>
-                                                  <th>Desciption</th>
-                                                  <th>Example</th>
-                                             </tr>
-                                        </thead>
-                                        <tbody id="tab-rela"></tbody>
-                                   </table>
+                                   <div class="table-antiflow">
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th>Operators</th>
+                                                       <th>Desciption</th>
+                                                       <th>Example</th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody id="tab-rela"></tbody>
+                                        </table>
+                                   </div>
                               </sub-section>
                               <h3> Logical </h3>
                               <sub-section>
                                    <p> Logical operators are used to combine multiple conditions and to specify on what conditions needs to be <code>true</code>. </p>
-                                   <table>
-                                        <thead>
-                                             <tr>
-                                                  <th>Operators</th>
-                                                  <th>Desciption</th>
-                                                  <th>Example</th>
-                                             </tr>
-                                        </thead>
-                                        <tbody id="tab-logi"></tbody>
-                                   </table>
+                                   <div class="table-antiflow">
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th>Operators</th>
+                                                       <th>Desciption</th>
+                                                       <th>Example</th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody id="tab-logi"></tbody>
+                                        </table>
+                                   </div>
                               </sub-section>
                               <h3> Miscellaneous </h3>
                               <sub-section>
                                    <p> Miscellaneous operators only features two operators the Length and Concatenate operators. </p>
-                                   <table>
-                                        <thead>
-                                             <tr>
-                                                  <th>Operators</th>
-                                                  <th>Desciption</th>
-                                                  <th>Example</th>
-                                             </tr>
-                                        </thead>
-                                        <tbody id="tab-misc"></tbody>
-                                   </table>
+                                   <div class="table-antiflow">
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th>Operators</th>
+                                                       <th>Desciption</th>
+                                                       <th>Example</th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody id="tab-misc"></tbody>
+                                        </table>
+                                   </div>
                               </sub-section>
                          </section>
                          <hr class="head-hr-thick"></hr>
@@ -614,14 +637,14 @@
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">5</span>, <span class="code-num">1</span> <span class="code-kyw">do</span>  <span class="code-com">-- Increment loop</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)  <span class="code-com">-- will print '0, 1, 2, 3, 4, 5'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)  <span class="code-com">-- will print => '0, 1, 2, 3, 4, 5'</span>
      <span class="code-kyw">end</span>
      <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">5</span>, <span class="code-num">0</span>, <span class="code-ope">-</span><span class="code-num">1</span> <span class="code-kyw">do</span> <span class="code-com">-- Decrement loop</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)  <span class="code-com">-- will print '5, 4, 3, 2, 1, 0'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)  <span class="code-com">-- will print => '5, 4, 3, 2, 1, 0'</span>
      <span class="code-kyw">end</span>
      
      <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">300</span>, <span class="code-num">50</span> <span class="code-kyw">do</span> <span class="code-com">-- Increment Loop with each value incremented by 50 </span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)    <span class="code-com">-- will print '0, 50, 100, 150, 200, 250, 300'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>)    <span class="code-com">-- will print => '0, 50, 100, 150, 200, 250, 300'</span>
      <span class="code-kyw">end</span>
 <span class="code-kyw">end</span>
 </pre>
@@ -648,7 +671,7 @@
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">tableThingy</span> <span class="code-kyw">=</span> {<span class="code-tabkey">num1</span> <span class="code-kyw">=</span> <span class="code-num">231</span>, <span class="code-tabkey">num2</span> <span class="code-kyw">=</span> <span class="code-num">345</span>, <span class="code-tabkey">num3</span> <span class="code-kyw">=</span> <span class="code-num">234</span>}
      <span class="code-kyw">for</span> <span class="code-var">key</span>, <span class="code-var">value</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-var">tableThingy</span>) <span class="code-kyw">do</span>
-          <span class="code-funcC">debugPrint</span>(key, <span class="code-var">value</span>)  <span class="code-com">-- will print 'num1 = 231, num2 = 345, num3 = 234'</span>
+          <span class="code-funcC">debugPrint</span>(key, <span class="code-var">value</span>)  <span class="code-com">-- will print => 'num1 = 231, num2 = 345, num3 = 234'</span>
      <span class="code-kyw">end</span>
 <span class="code-kyw">end</span>
 </pre>
@@ -667,11 +690,11 @@
                                         </div>
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">getMidpointNum</span>(<span class="code-paraS">ope1</span>, <span class="code-paraS">ope2</span>)
-     <span class="code-kyw">return</span> (<span class="code-paraS">ope1</span> <span class="code-ope">+</span> <span class="code-paraS">ope2</span>) <span class="code-ope">/</span> <span class="code-num">2</span>  <span class="code-com">-- returns the middle value between 'ope1' and 'ope2'</span>
+     <span class="code-kyw">return</span> ((<span class="code-paraS">ope1</span> <span class="code-ope">+</span> <span class="code-paraS">ope2</span>) <span class="code-ope">/</span> <span class="code-num">2</span>) <span class="code-com">-- returns the middle value between 'ope1' and 'ope2'</span>
 <span class="code-kyw">end</span> 
      
-<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">getMidpointNum</span>(<span class="code-num">9</span> <span class="code-ope">+</span> <span class="code-num">10</span>))   <span class="code-com">-- will print '9.5'</span>
+<span class="code-kyw">function</span> <span class="code-funcC">onCreate</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">getMidpointNum</span>(<span class="code-num">9</span> <span class="code-ope">+</span> <span class="code-num">10</span>)) <span class="code-com">-- will print => '9.5'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -689,7 +712,7 @@
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">10</span> <span class="code-kyw">do</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>) <span class="code-com">-- will print '0, 1, 2, 3, 4, 5'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">index</span>) <span class="code-com">-- will print => '0, 1, 2, 3, 4, 5'</span>
      
           <span class="code-kyw">if</span> <span class="code-var">index</span> <span class="code-ope">==</span> <span class="code-num">10</span> <span class="code-ope">/</span> <span class="code-num">2</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the 'index' value is '5'</span>
                <span class="code-kyw">break</span> <span class="code-com">-- ends the loop</span>
@@ -722,15 +745,15 @@
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">do</span>   <span class="code-com">-- do block</span>
           <span class="code-var">myGlobalVar</span> <span class="code-kyw">=</span> <span class="code-boo">false</span>      <span class="code-com">-- Global</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">myGlobalVar</span>)  <span class="code-com">-- will print 'false'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">myGlobalVar</span>)  <span class="code-com">-- will print => 'false'</span>
      <span class="code-kyw">end</span>
      <span class="code-kyw">do</span>   <span class="code-com">-- do block</span>
           <span class="code-kyw">local</span> <span class="code-var">myLocalVar</span> <span class="code-kyw">=</span> <span class="code-boo">true</span>  <span class="code-com">-- Local</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">myLocalVar</span>)   <span class="code-com">-- will print 'true'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">myLocalVar</span>)   <span class="code-com">-- will print => 'true'</span>
      <span class="code-kyw">end</span>
      
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">myGlobalVar</span>) <span class="code-com">-- will print 'false'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">myLocalVar</span>)  <span class="code-com">-- will print 'nil'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">myGlobalVar</span>) <span class="code-com">-- will print => 'false'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">myLocalVar</span>)  <span class="code-com">-- will print => 'nil'</span>
 <span class="code-kyw">end</span>
 </pre>
                               </div>
@@ -826,9 +849,9 @@
 <span class="code-kyw">function</span> <span class="code-funcD">onCreatePost</span>()
      <span class="code-modul">moduleName</span>.<span class="code-funcC">setPos</span>(<span class="code-str">'boyfriend'</span>, {<span class="code-num">500</span>, <span class="code-num">1200</span>}) <span class="code-com">-- sets the boyfriend positions</span>
      
-     <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">red</span>)   <span class="code-com">-- will print 'ff0000'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">green</span>) <span class="code-com">-- will print '00ff00'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">blue</span>)  <span class="code-com">-- will print '0000ff'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">red</span>)   <span class="code-com">-- will print => 'ff0000'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">green</span>) <span class="code-com">-- will print => '00ff00'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-modul">moduleName</span>.<span class="code-var">blue</span>)  <span class="code-com">-- will print => '0000ff'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -877,8 +900,8 @@
      <span class="code-kyw">local</span> <span class="code-var">loadChunk1</span> <span class="code-kyw">=</span> <span class="code-funcC">load</span>(<span class="code-str">'return 4 * 6'</span>)()
      <span class="code-kyw">local</span> <span class="code-var">loadChunk2</span> <span class="code-kyw">=</span> <span class="code-funcC">load</span>(<span class="code-str">'return 9 / 4'</span>)()
 
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">loadChunk1</span>) <span class="code-com">-- will print '24'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">loadChunk2</span>) <span class="code-com">-- will print '2.25'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">loadChunk1</span>) <span class="code-com">-- will print => '24'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">loadChunk2</span>) <span class="code-com">-- will print => '2.25'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -896,8 +919,8 @@
                                         </div>
 <pre>
 <span class="code-kyw">local</span> <span class="code-var">myVar0</span> <span class="code-kyw">=</span> <span class="code-nil">nil</span>  <span class="code-com">-- THIS WILL NOT WORK IF IT'S LOCAL!!!!!</span>
-<span class="code-var">myVar1</span> <span class="code-kyw">=</span> <span class="code-num">163</span>        <span class="code-com">-- Will work</span>
-<span class="code-var">myVar2</span> <span class="code-kyw">=</span> <span class="code-boo">true</span>       <span class="code-com">-- Will also work</span>
+<span class="code-var">myVar1</span> <span class="code-kyw">=</span> <span class="code-num">163</span>        <span class="code-com">-- will work</span>
+<span class="code-var">myVar2</span> <span class="code-kyw">=</span> <span class="code-boo">true</span>       <span class="code-com">-- will also work</span>
 </pre>
                                    </div>
                                    <div class="code-border code-file-path">
@@ -908,9 +931,9 @@
 <pre>
 <span class="code-funcC">dofile</span>(<span class="code-str">'PsychEngine/mods/scripts/modules/scriptFile.lua'</span>)
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">myVar0</span>)  <span class="code-com">-- Will print 'nil'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">myVar1</span>)  <span class="code-com">-- Will print '163'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">myVar2</span>)  <span class="code-com">-- Will print 'true'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">myVar0</span>)  <span class="code-com">-- will print => 'nil'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">myVar1</span>)  <span class="code-com">-- will print => '163'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">myVar2</span>)  <span class="code-com">-- will print => 'true'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -938,8 +961,8 @@
      <span class="code-kyw">local</span> <span class="code-var">tableArry</span> <span class="code-kyw">=</span> {<span class="code-num">123</span>, <span class="code-num">567</span>, <span class="code-num">134</span>}
      <span class="code-kyw">local</span> <span class="code-var">tableDict</span> <span class="code-kyw">=</span> {<span class="code-tabkey">a</span> <span class="code-kyw">=</span> <span class="code-num">123</span>, <span class="code-tabkey">b</span> <span class="code-kyw">=</span> <span class="code-num">567</span>, <span class="code-tabkey">c</span> <span class="code-kyw">=</span> <span class="code-num">134</span>}
 
-     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableArry</span>)) <span class="code-com">-- will return '123, 567, 123'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableDict</span>)) <span class="code-com">-- will return 'c = 134, a = 123, b = 567'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableArry</span>)) <span class="code-com">-- will print => '123, 567, 123'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableDict</span>)) <span class="code-com">-- will print => 'c = 134, a = 123, b = 567'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -967,8 +990,8 @@
      <span class="code-kyw">local</span> <span class="code-var">tableArry</span> <span class="code-kyw">=</span> {<span class="code-num">123</span>, <span class="code-num">567</span>, <span class="code-num">134</span>}
      <span class="code-kyw">local</span> <span class="code-var">tableDict</span> <span class="code-kyw">=</span> {<span class="code-tabkey">a</span> <span class="code-kyw">=</span> <span class="code-num">123</span>, <span class="code-tabkey">b</span> <span class="code-kyw">=</span> <span class="code-num">567</span>, <span class="code-tabkey">c</span> <span class="code-kyw">=</span> <span class="code-num">134</span>}
      
-     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableArry</span>)) <span class="code-com">-- will print '123, 567, 123'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableDict</span>)) <span class="code-com">-- will print 'c = 134, a = 123, b = 567'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableArry</span>)) <span class="code-com">-- will print => '123, 567, 123'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">read</span>(<span class="code-var">tableDict</span>)) <span class="code-com">-- will print => 'c = 134, a = 123, b = 567'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -994,8 +1017,8 @@
      <span class="code-var">myGlobalVar0</span>, <span class="code-var">myGlobalVar1</span> <span class="code-kyw">=</span> <span class="code-num">183</span>, <span class="code-num">231</span>
      <span class="code-var">myGlobalVar2</span>, <span class="code-var">myGlobalVar3</span> <span class="code-kyw">=</span> <span class="code-num">963</span>, <span class="code-num">263</span>
      <span class="code-kyw">for</span> <span class="code-var">nummys</span> <span class="code-kyw">=</span> <span class="code-num">0</span>, <span class="code-num">3</span> <span class="code-kyw">do</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-kyw">_G</span>[<span class="code-str">'myGlobalVar'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>])         <span class="code-com">-- will print '183, 231, 963, 263'</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-kyw">_G</span>[<span class="code-str">'defaultPlayerStrumX'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>]) <span class="code-com">-- will print '732, 844, 956, 1068'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-varD">_G</span>[<span class="code-str">'myGlobalVar'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>])         <span class="code-com">-- will print => '183, 231, 963, 263'</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-varD">_G</span>[<span class="code-str">'defaultPlayerStrumX'</span> <span class="code-ope">..</span> <span class="code-var">nummys</span>]) <span class="code-com">-- will print => '732, 844, 956, 1068'</span>
      <span class="code-kyw">end</span> 
 <span class="code-kyw">end</span>
 </pre>

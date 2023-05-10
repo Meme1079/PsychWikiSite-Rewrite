@@ -5,98 +5,159 @@
 $local-color-topbar-bg: hsl(216deg, 8%, 15%);
 $local-defualt-font-weight: 550;
 
+$local-color-codeblock-bg:      hsl(216, 8%, 52%);
+$local-color-codeblock-outline: hsl(216deg, 8%, 52%);
+$local-color-codeblock-border:  hsla(214, 12%, 66%, 0.4);
+
 /* Goofy aaaahhhhh code */
 
 body { /* Delete this or you'll get neutered */
-     margin: 0px;
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
 }
 
 #global-topbar {
      z-index: 5;
-     overflow-x: auto; overflow-y: hidden;
-     background-color: $local-color-topbar-bg;
-     transform: translateY(-15px);
+     font-family: glob.$global-font-family;
+     background: $local-color-topbar-bg;
      width: 100%; height: 100px;
+     position: relative;
+     bottom: 15px;
 
-     img {
-          display: inline-block;
-          position: absolute;
-          top: 23px; left: 18px;
-     }
-
-     #logo {
-          font-size: 1.5625em;
-          font-weight: $local-defualt-font-weight;
-          border-right: 1px solid white;
-          width: glob.$global-cringe-solver;
+     #topbar-logo {
+          display: flex;
           position: relative;
-          top: 14px; left: 80px;
-          padding: 8px 10px 8px 0px;
-          margin-top: 16.5px;
+          top: 23px;
+          margin-left: 5px;
+
+          img {
+               width: 70px; height: 70px;
+               margin-right: 5px;
+          }
+
+          p {
+               font-size: 1.5em;
+               font-weight: $local-defualt-font-weight;
+               position: relative;
+               bottom: 5px;
+          }
      }
 
-     /* The Topbar Buttons */
-
-     #active {
-          color: hsl(0deg, 0%, 70%);
-     }
-
-     #searchBar {
+     :is(#topbar-list-max, #topbar-list-min) {
           float: right;
-          border: 1px solid hsl(216deg, 8%, 52%);
-          border-radius: glob.$global-border-radius;
-          box-shadow: 8px 5px 10px 1px rgba(0, 0, 0, 0.5);
-          background-color: $local-color-topbar-bg;
-          transform: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
-          width: 6.5cm; height: glob.$global-cringe-solver;
           position: relative;
-          top: -1.3cm;
-          padding: 5px 10px;
-          margin-right: 1cm;
+          bottom: 53px;
+     }
 
-          button {
-               font-size: 16px;
-               font-weight: 200;
-               border: none;
-               background: none;
+     #topbar-list-max {
+          display: block;
 
-               &::before {
-                    content: "Search stuff...";
+          @media only screen and (max-width: 950px) {
+               display: none;
+          }
+          
+          #topbar-list-searchBar {
+               cursor: pointer;
+               float: right;
+               border: 1px solid hsl(216deg, 8%, 52%);
+               border-radius: glob.$global-border-radius;
+               box-shadow: 8px 5px 10px 1px rgba(0, 0, 0, 0.5);
+               background-color: $local-color-topbar-bg;
+               width: 6.5cm; height: glob.$global-cringe-solver;
+               position: relative;
+               top: .45cm;
+               padding: 5px 10px;
+               margin-right: 0.28cm;
+     
+               button {
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: 200;
+                    border: none;
+                    background: none;
+     
+                    &::before {
+                         content: "Search stuff...";
+                    }
                }
           }
+          
+          ul {
+               display: flex;
+               list-style-type: none;
+               font-size: 1.3em;
 
-          &:hover {
-               transform: translateY(1.5px);
+               li {
+                    margin-right: 25px;
+
+                    a {
+                         text-decoration: none;
+                         color: white;
+
+                         i {
+                              margin-right: 5px;
+                         }
+     
+                         span {
+                              font-weight: 500;
+                         }
+                    }
+               }
           }
      }
 
-     :is(#global-topbar #searchBar, button) {
-          color: hsl(211deg, 37%, 88%);
-
-          &:hover {
-               background-color: black;
+     #topbar-list-min {
+          display: none;
+          
+          @media only screen and (max-width: 950px) {
+               display: block;
           }
-     }
 
-     ul {
-          float: right;
-          position: relative;
-          top: -1.55cm;
-          margin-right: 1cm;
+          button {
+               cursor: pointer;
+               font-size: 1.8em;
+               border: none;
+               background: none;
+               position: relative;
+               top: 0.45cm;
+               margin-right: 0.55cm;
+          }
 
-          li {
-               display: inline-block;
-               font-size: 18px;
-               margin-left: 20px;
+          ul {
+               float: right;
+               display: flexbox;
+               justify-content: center;
+               border: 1px solid $local-color-codeblock-outline;
+               border-radius: glob.$global-border-radius;
+               box-shadow: 8px 5px 10px 1px rgba(0, 0, 0, 0.5);
+               transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+               background-color: hsl(0deg, 0%, 10%);
+               position: fixed;
+               right: -1.8cm; top: 2.2cm; // right: 0.28cm; top: -4.4cm; // 1.99cm => top
+               padding: 0;
+               
+               li {
+                    cursor: pointer;
+                    display: block;
+                    font-size: 20px;
+                    padding: 15px 20px;
 
-               a {
-                    color: white;
-                    font-weight: $local-defualt-font-weight;
-                    text-decoration: none;
-                    margin-left: 5px;
+                    a {
+                         color: white !important;
+                         text-decoration: none;
+                    }
 
                     &:hover {
-                         color: hsl(0deg, 0%, 70%);
+                         background-color: hsl(0deg, 0%, 13%);
+
+                         $top-bottom-radius: calc(glob.$global-border-radius - .5px);
+                         &:nth-child(1) {
+                              border-radius: $top-bottom-radius $top-bottom-radius 0px 0px;
+                         }
+                         &:nth-child(5) {
+                              border-radius: 0px 0px $top-bottom-radius $top-bottom-radius;
+                         }
                     }
                }
           }

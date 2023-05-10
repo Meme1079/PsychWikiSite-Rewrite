@@ -13,6 +13,11 @@
      /* Search Top */
      /* Search Header Lists */
 }
+@media only screen and (max-width: 860px) {
+     #global-sidebar {
+          display: none;
+     }
+}
 #global-sidebar h3 {
      font-size: 1.8em;
      font-weight: 550;

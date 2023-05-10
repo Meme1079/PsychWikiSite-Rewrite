@@ -3,81 +3,86 @@
 $local-defualt-width-solid: 2px solid;
 $local-color-noJavascript-bg: hsl(249deg, 100%, 50%);
 
+$local-window-image-size-xButton:  60px;
+$local-window-image-size-okButton: 60px;
+$local-window-image-size-warning:  120px;
+
 /* Goofy aaaahhhhh code */
 
 @font-face {
-     font-family: "VCR";
-     src: url(/fonts/VCR/VCR_OSD_MONO.woff) format("woff"), 
-          url(/fonts/VCR/VCR_OSD_MONO.otf) format("opentype"), 
-          url(/fonts/VCR/VCR_OSD_MONO.ttf) format("truetype");
+     font-family: "Dina";
+     src: url(../../fonts/Dina/dina10px.woff) format("woff"), 
+          url(../../fonts/Dina/dina10px.otf)  format("opentype"), 
+          url(../../fonts/Dina/dina10px.ttf)  format("truetype");
 }
 
-#global-no-javascript {
+noscript {
      z-index: 20;
      display: flex;
-     font-family: "VCR";
      justify-content: center;
      align-items: center;
+     font-family: "Dina";
      background: $local-color-noJavascript-bg;
      width: 100%; height: 100%;
      position: fixed;
 
-     #no-javascript-window {
+     #windows-error-javascript {
           outline: $local-defualt-width-solid black;
           border: 3px solid white;
           border-style: outset;
           color: black;
           background-color: silver;
-          width: 12cm; height: 6cm;
+          width: 14cm; height: 6cm;
 
-          img {
-               position: relative;
-               bottom: 0.2cm;
-          }
-
-          #no-javascript-NOTE {
-               position: absolute;
-               transform: translateX(-2.2cm) translateY(1.45cm);
-          }
-
-          #no-javascript-topbar {
+          #windows-error-javascript-topbar {
                color: white !important;
                background-color: $local-color-noJavascript-bg;
-               width: 11.85cm; height: 1cm;
+               height: 1cm;
 
-               & ~ p {
+               #windows-error-javascript-topbar-title {
+                    font-size: 2em;
+                    font-weight: 660;
                     position: relative;
-                    bottom: 2.4cm; left: 3cm;
-                    margin: 0px 0px 12px 0px;
+                    top: 6px; left: 5px;
                }
 
-               p {
-                    font-family: "VCR";
-                    font-size: 23px;
-                    margin: 0;
-                    transform: translateY(5px) translateX(8px);
+               img {
+                    cursor: not-allowed;
+                    width: $local-window-image-size-xButton; 
+                    height: $local-window-image-size-xButton;
+                    position: absolute;
+                    
+                    /* Different Posistions cuz of a bug!!!1!  */
+
+                    &#only-wiki {
+                         transform: translateY(-11.5px) translateX(3.2cm);
+                    }
+
+                    &#only-home {
+                         transform: translateY(-11.5px) translateX(3.35cm);
+                    }
                }
           }
 
-          button {
-               outline: $local-defualt-width-solid black;
-               font-family: "VCR";
-               border: $local-defualt-width-solid white;
-               border-style: outset;
-               color: black;
-               background-color: silver;
+          #windows-error-icon-warning {
+               width: $local-window-image-size-warning; 
+               height: $local-window-image-size-warning;
                position: relative;
-               bottom: 1.5cm; left: 5.35cm;
-               padding: 2px 15px;
+               bottom: 8px;
+          }
 
-               &:hover {
-                    background-color: silver;
-               }
-               &:active {
-                    border: $local-defualt-width-solid rgb(231, 231, 231);
-                    border-style: outset;
-                    background-color: rgb(173, 173, 173);
-               }
+          #windows-error-javascript-text {
+               font-size: 1.2em;
+               position: relative;
+               bottom: 3cm; left: 2.8cm;
+          }
+
+          #windows-error-button-ok {
+               cursor: not-allowed;
+               width: calc($local-window-image-size-okButton * 2 + 20px); 
+               height: $local-window-image-size-okButton;
+               position: relative;
+               bottom: 2.6cm; left: 5cm;
           }
      }
 }

@@ -1,5 +1,5 @@
 import pages from '../json/html-lua-pages.json' assert {type: 'json'};
-import { shortCut, shortCutAll } from "./Main.js";
+import { shortCut } from "./Main.js";
 
 const rand = (num) => { return Math.floor(Math.random() * num) }
 const gamingSlogans = ['The Unofficial Wiki!', 'The Most Gaming Wiki!', 'The Weirdest Wiki!', 'The Sussiest Wiki!']

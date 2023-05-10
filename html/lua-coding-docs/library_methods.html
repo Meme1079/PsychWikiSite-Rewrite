@@ -12,37 +12,52 @@
           <link rel="stylesheet" type="text/css" href="../../css/global/topbar_format.css">
           <link rel="stylesheet" type="text/css" href="../../css/global/no_javascript.css">
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+          <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
           <script defer type="module" src="../../javascript/Main.js"></script>
           <script defer type="module" src="../../javascript/Wiki.js"></script>
+          <script defer type="module" src="../../javascript/SideBarMedia.js"></script>
      </head>
      <body>
-          <noscript>
-               <div id="global-no-javascript">
-                    <div id="no-javascript-window">
-                         <div id="no-javascript-topbar">
-                              <p>Javascript Disable Detected!</p>
-                         </div>
-                         <img src="../../images/popup_warning.png" alt="Warning Image" width="120" height="120">
-                         <p> Enable Javascript for this website </p>
-                         <p> Becuase it really relies on it </p>
-                         <button type="button"> Ok </button>
-                         <p id="no-javascript-NOTE"> NOTE: There is no bad script, trust me bro </p>
+          <noscript> <!-- Better -->
+               <div id="windows-error-javascript">
+                    <div id="windows-error-javascript-topbar">
+                         <span id="windows-error-javascript-topbar-title">Sorry! [Website Error]</span>
+                         <img src="../../images/error/popup_close_icon.png" alt="Window Close Icon">
                     </div>
+                    <img id="windows-error-icon-warning" src="../../images/error/popup_warning.png" alt="Window Error Icon">
+                    <div id="windows-error-javascript-text">
+                         <p style="margin-bottom: 0px;">Oh no! You've disable Javascript you idiot</p>
+                         <p style="margin-top: 10px;">Enable it Javascript to remove this error!</p>
+                    </div>
+                    <img id="windows-error-button-ok" src="../../images/error/popup_ok_button.png" alt="Window Ok Button">
                </div>
           </noscript>
           <nav id="global-topbar">
-               <img src="../../images/Psych.ico" alt="Le logo" width="60" height="60">
-               <p id="logo"> PsychWikiSite Docs </p>
-               <div id="searchBar">
-                    <i id="search-icon" class="uil uil-search" aria-hidden="true"></i>
-                    <button type="button" onclick="alert('homo')"></button>
+               <div id="topbar-logo">
+                    <img src="../../images/Psych.ico" alt="The Stupid Logo">
+                    <p> PsychWikiSite-Rewrite </p>
                </div>
-               <ul>
-                    <li><a href="../../index.html"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="uil uil-book-open"></i> Docs</a></li>
-                    <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="uil uil-github"></i> GitHub</a></li>
-               </ul>
+               <section id="topbar-list-max">
+                    <div id="topbar-list-searchBar">
+                         <i class="uil uil-search" aria-hidden="true"></i>
+                         <button type="button" onclick="alert('homo')"></button>
+                    </div>
+                    <ul>
+                         <li> <a href="../../index.html"><i class="fa fa-home"></i><span>Home</span></a> </li>
+                         <li> <a href="#"><i class="uil uil-book-open"></i><span>Docs</span></a> </li>
+                         <li> <a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="uil uil-github"></i><span>GitHub</span> </a> </li>
+                    </ul>
+               </section>
+               <section id="topbar-list-min">
+                    <button type="button" class="uil uil-bars"></button>
+                    <ul>
+                         <li class="fa fa-home"        onclick="window.location.href = '../../index.html'"></li>
+                         <li class="uil uil-book-open" onclick="window.location.href = '#'"></li>
+                         <li class="uil uil-github"    onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"></li>
+                         <li class="uil uil-search"    onclick="alert('homo')"></li>
+                         <li class="uil uil-cube"      onclick="alert('WIP')"></li>
+                    </ul>
+               </section>
           </nav>
           <nav id="global-sidebar">
                <h3>Headings<i class="uil uil-cube" style="margin-left: 10px;"></i></h3>
@@ -79,12 +94,12 @@
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">textString</span> <span class="code-kyw">=</span> <span class="code-str">'IJBIOGEJBOUIEKWIWBLCUYQOWYGV'</span>
      <span class="code-kyw">local</span> <span class="code-var">stringSyntax1</span> <span class="code-kyw">=</span> <span class="code-data">string</span>.<span class="code-funcC">lower</span>(<span class="code-data">string</span>.<span class="code-funcC">gsub</span>(<span class="code-data">string</span>.<span class="code-funcC">gsub</span>(<span class="code-var">textString</span>, <span class="code-str">'W'</span>, <span class="code-str">''</span>), <span class="code-str">'I'</span>, <span class="code-str">''</span>))
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">stringSyntax1</span>) <span class="code-com">-- will print 'jbogejbouekblcuyqoygv'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">stringSyntax1</span>) <span class="code-com">-- will print => 'jbogejbouekblcuyqoygv'</span>
      <span class="code-com">-- The functions being nested makes it not understandable, sure you can use this syntax</span>
      <span class="code-com">-- just use this only ones or twice when nesting tho</span>
 
-     <span class="code-kyw">local</span> <span class="code-var">stringSyntax2</span> <span class="code-kyw">=</span> <span class="code-var">textString</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'W'</span>, <span class="code-str">''</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'I'</span>, <span class="code-str">''</span>):<span class="code-funcC">lower</span>()
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">stringSyntax1</span>) <span class="code-com">-- will print 'jbogejbouekblcuyqoygv'</span>
+     <span class="code-kyw">local</span> <span class="code-var">stringSyntax2</span> <span class="code-kyw">=</span> <span class="code-varD">textString</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'W'</span>, <span class="code-str">''</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'I'</span>, <span class="code-str">''</span>):<span class="code-funcC">lower</span>()
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">stringSyntax1</span>) <span class="code-com">-- will print => 'jbogejbouekblcuyqoygv'</span>
      <span class="code-com">-- This syntax pretty much solves the problem and makes it more understandable</span>
 <span class="code-kyw">end</span>
 </pre>
@@ -159,14 +174,14 @@
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'Find the position of this <span class="code-esc">\'</span>string<span class="code-esc">\'</span>'</span>
-     <span class="code-kyw">local</span> <span class="code-var">textString1_Find</span> <span class="code-kyw">=</span> ({ <span class="code-var">textString1</span>:<span class="code-funcC">find</span>(<span class="code-str">'<span class="code-esc">\'</span>string<span class="code-esc">\'</span>'</span>) }) <span class="code-com">-- converts it into a table</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1_Find</span>[<span class="code-num">1</span>]) <span class="code-com">-- will print '27'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1_Find</span>[<span class="code-num">2</span>]) <span class="code-com">-- will print '34'</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString1_Find</span> <span class="code-kyw">=</span> ({ <span class="code-varD">textString1</span>:<span class="code-funcC">find</span>(<span class="code-str">'<span class="code-esc">\'</span>string<span class="code-esc">\'</span>'</span>) }) <span class="code-com">-- converts it into a table</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1_Find</span>[<span class="code-num">1</span>]) <span class="code-com">-- will print => '27'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1_Find</span>[<span class="code-num">2</span>]) <span class="code-com">-- will print => '34'</span>
 
      <span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">'Repeat Repeat Repeat'</span>
-     <span class="code-kyw">local</span> <span class="code-var">TextString2_Find</span> <span class="code-kyw">=</span> ({ <span class="code-var">textString2</span>:<span class="code-funcC">find</span>(<span class="code-str">'Repeat'</span>, <span class="code-num">13</span>) })
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2_Find</span>[<span class="code-num">1</span>]) <span class="code-com">-- will print '15'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2_Find</span>[<span class="code-num">2</span>]) <span class="code-com">-- will print '20'</span>
+     <span class="code-kyw">local</span> <span class="code-var">TextString2_Find</span> <span class="code-kyw">=</span> ({ <span class="code-varD">textString2</span>:<span class="code-funcC">find</span>(<span class="code-str">'Repeat'</span>, <span class="code-num">13</span>) })
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2_Find</span>[<span class="code-num">1</span>]) <span class="code-com">-- will print => '15'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2_Find</span>[<span class="code-num">2</span>]) <span class="code-com">-- will print => '20'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -186,13 +201,13 @@
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'Cut this on half!'</span>
-     <span class="code-kyw">local</span> <span class="code-var">textString1_Sub</span> <span class="code-kyw">=</span> <span class="code-var">textString1</span>:<span class="code-funcC">sub</span>( ({<span class="code-data">math</span>.<span class="code-funcC">modf</span>(<span class="code-ope">#</span><span class="code-var">textString1</span> <span class="code-ope">/</span> <span class="code-num">2</span>)})[<span class="code-num">1</span>] )
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1_Sub</span>) <span class="code-com">-- will print 's on half!'</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString1_Sub</span> <span class="code-kyw">=</span> <span class="code-varD">textString1</span>:<span class="code-funcC">sub</span>( ({<span class="code-data">math</span>.<span class="code-funcC">modf</span>(<span class="code-ope">#</span><span class="code-var">textString1</span> <span class="code-ope">/</span> <span class="code-num">2</span>)})[<span class="code-num">1</span>] )
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1_Sub</span>) <span class="code-com">-- will print => 's on half!'</span>
      
      <span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">'Specify the selection of the string'</span>
-     <span class="code-kyw">local</span> <span class="code-var">textString2_Find</span> <span class="code-kyw">=</span> ({<span class="code-var">textString2</span>:<span class="code-funcC">find</span>(<span class="code-str">'selection'</span>)}) <span class="code-com">-- will print '{13, 27}'</span>
-     <span class="code-kyw">local</span> <span class="code-var">textString2_Sub</span>  <span class="code-kyw">=</span> <span class="code-var">textString2</span>:<span class="code-funcC">sub</span>(<span class="code-var">textString2_Find</span>[<span class="code-num">1</span>], <span class="code-var">textString2_Find</span>[<span class="code-num">2</span>])
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2_Sub</span>) <span class="code-com">-- will print 'selection'</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString2_Find</span> <span class="code-kyw">=</span> ({<span class="code-varD">textString2</span>:<span class="code-funcC">find</span>(<span class="code-str">'selection'</span>)}) <span class="code-com">-- will print => '{13, 27}'</span>
+     <span class="code-kyw">local</span> <span class="code-var">textString2_Sub</span>  <span class="code-kyw">=</span> <span class="code-varD">textString2</span>:<span class="code-funcC">sub</span>(<span class="code-var">textString2_Find</span>[<span class="code-num">1</span>], <span class="code-var">textString2_Find</span>[<span class="code-num">2</span>])
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2_Sub</span>) <span class="code-com">-- will print => 'selection'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -213,12 +228,12 @@
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'PsychEngine is a bad engine [in my opinion]'</span>       <span class="code-com">-- opinions are scary</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'bad'</span>, <span class="code-str">'good'</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'[in my opinion]'</span>, <span class="code-str">''</span>)) <span class="code-com">-- no more opinion guys!</span>
-     <span class="code-com">-- will print 'PsychEngine is a good engine'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-varD">textString1</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'bad'</span>, <span class="code-str">'good'</span>):<span class="code-funcC">gsub</span>(<span class="code-str">'[in my opinion]'</span>, <span class="code-str">''</span>)) <span class="code-com">-- no more opinion guys!</span>
+     <span class="code-com">-- will print => 'PsychEngine is a good engine'</span>
 
      <span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">'Hello World World World!'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'World World'</span>, <span class="code-str">''</span>, <span class="code-num">2</span>))
-     <span class="code-com">-- will print 'Hello World!'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-varD">textString2</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'World World'</span>, <span class="code-str">''</span>, <span class="code-num">2</span>))
+     <span class="code-com">-- will print => 'Hello World!'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -245,7 +260,7 @@
 <span class="code-kyw">function</span> <span class="code-funcD">onUpdateScore</span>(<span class="code-paraS">miss</span>)
      <span class="code-kyw">local</span> <span class="code-var">scoreTxt</span> <span class="code-kyw">=</span> <span class="code-funcC">getTextString</span>(<span class="code-str">'scoreTxt'</span>)
      <span class="code-kyw">local</span> <span class="code-var">scoreTxtDisplay1</span> <span class="code-kyw">=</span> <span class="code-str">'Score: '</span><span class="code-ope">..</span><span class="code-funcC">getScore</span>()<span class="code-ope">..</span><span class="code-str">' | Misses: '</span><span class="code-ope">..</span><span class="code-paraS">miss</span><span class="code-ope">..</span><span class="code-str">' | Accuracy: '</span>
-     <span class="code-kyw">local</span> <span class="code-var">scoreTxtDisplay2</span> <span class="code-kyw">=</span> (<span class="code-var">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern1</span>) <span class="code-ope">or</span> <span class="code-var">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern2</span>))
+     <span class="code-kyw">local</span> <span class="code-var">scoreTxtDisplay2</span> <span class="code-kyw">=</span> (<span class="code-varD">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern1</span>) <span class="code-ope">or</span> <span class="code-varD">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern2</span>))
      <span class="code-funcC">setTextString</span>(<span class="code-str">'scoreTxt'</span>, <span class="code-var">scoreTxtDisplay1</span><span class="code-ope">..</span><span class="code-var">scoreTxtDisplay2</span><span class="code-ope">..</span><span class="code-str">' ['</span><span class="code-ope">..</span><span class="code-var">ratingFC</span><span class="code-ope">..</span><span class="code-str"></span>']'</span>)
 <span class="code-kyw">end</span>
 </pre>
@@ -269,7 +284,7 @@
 <span class="code-kyw">local</span> <span class="code-kyw">function</span> <span class="code-funcD">dictionarySplit</span>(<span class="code-paraS">str</span>)
      <span class="code-kyw">local</span> <span class="code-var">result</span> <span class="code-kyw">=</span> {}
      <span class="code-kyw">local</span> <span class="code-var">pattern</span> <span class="code-kyw">=</span> <span class="code-str">'<span class="code-ptr">(%w+)%s*=%s*(%w+)</span>'</span> <span class="code-com">-- Checks the dictionary syntax of the string</span>
-     <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> (<span class="code-paraS">str</span>):<span class="code-funcC">gmatch</span>(<span class="code-var">pattern</span>) <span class="code-kyw">do</span> <span class="code-com">-- '(%w+)%s*=%s*(%w+)' > '(key) = (value)'</span>
+     <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> (<span class="code-paraS">str</span>):<span class="code-funcC">gmatch</span>(<span class="code-var">pattern</span>) <span class="code-kyw">do</span> <span class="code-com">-- '(%w+)%s*=%s*(%w+)' => '(key) = (value)'</span>
           <span class="code-var">result</span>[<span class="code-var">k</span>] <span class="code-kyw">=</span> <span class="code-var">v</span>
      <span class="code-kyw">end</span>
      <span class="code-kyw">return</span> <span class="code-var">result</span>
@@ -277,8 +292,8 @@
 
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">dictionaryString</span> <span class="code-kyw">=</span> <span class="code-str">'isGood = true, isBad = false'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">dictionarySplit</span>(<span class="code-var">dictionaryString</span>).<span class="code-tabkey">isGood</span>) <span class="code-com">-- will print 'true'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">dictionarySplit</span>(<span class="code-var">dictionaryString</span>).<span class="code-tabkey">isBad</span>)  <span class="code-com">-- will print 'false'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">dictionarySplit</span>(<span class="code-var">dictionaryString</span>).<span class="code-tabkey">isGood</span>) <span class="code-com">-- will print => 'true'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">dictionarySplit</span>(<span class="code-var">dictionaryString</span>).<span class="code-tabkey">isBad</span>)  <span class="code-com">-- will print => 'false'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -318,7 +333,7 @@
 <pre>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
      <span class="code-kyw">local</span> <span class="code-var">textString</span> <span class="code-kyw">=</span> <span class="code-str">'!oe[uiq]er/vfqw.lufv>iuhdv^n@q#erf;qerckqebkj'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'<span class="code-ptr">%p</span>'</span>, <span class="code-str">''</span>)) <span class="code-com">-- will print 'oeuiqervfqwlufviuhdvnqerfqerckqebkj'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-varD">textString</span>:<span class="code-funcC">gsub</span>(<span class="code-str">'<span class="code-ptr">%p</span>'</span>, <span class="code-str">''</span>)) <span class="code-com">-- will print => 'oeuiqervfqwlufviuhdvnqerfqerckqebkj'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -329,16 +344,18 @@
                                              manner; Example: <code>%D</code> will only matches non-digit characters.
                                         </em>
                                    </blockquote>
-                                   <table>
-                                        <thead>
-                                             <tr>
-                                                  <th>Character</th>
-                                                  <th style="text-align: left;">Desciption</th>
-                                                  <th style="text-align: left;">Match Pattern</th>
-                                             </tr>
-                                        </thead>
-                                        <tbody id="tab-pattern"></tbody>
-                                   </table>
+                                   <div class="table-antiflow">
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th>Character</th>
+                                                       <th style="text-align: left;">Desciption</th>
+                                                       <th style="text-align: left;">Match Pattern</th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody id="tab-pattern"></tbody>
+                                        </table>
+                                   </div>
                               </sub-section>
                               <h3> Magic Characters </h3>
                               <sub-section>
@@ -358,24 +375,26 @@
      <span class="code-kyw">local</span> <span class="code-var">textPattern3</span> <span class="code-kyw">=</span> <span class="code-str">'doin<span class="code-ptr">%?%</span>'</span>     <span class="code-com">-- will get 'doin?' pattern at the end</span>
      <span class="code-kyw">local</span> <span class="code-var">textPattern4</span> <span class="code-kyw">=</span> <span class="code-str">'exam<span class="code-ptr">[ples]+</span>'</span> <span class="code-com">-- will get each set inside of 'ples' in each characters</span>
 
-     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Score: 18242'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern1</span>))          <span class="code-com">-- will print '18242'</span>
-     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Matches some potatoes'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern2</span>)) <span class="code-com">-- will print 'Matches'</span>
-     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Watcha doin?'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern3</span>))          <span class="code-com">-- will print 'doin?'</span>
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Score: 18242'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern1</span>))          <span class="code-com">-- will print => '18242'</span>
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Matches some potatoes'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern2</span>)) <span class="code-com">-- will print => 'Matches'</span>
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'Watcha doin?'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern3</span>))          <span class="code-com">-- will print => 'doin?'</span>
 
-     <span class="code-funcC">debugPrint</span>((<span class="code-str">'examp'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern4</span>)) <span class="code-com">-- will print 'examp'</span>
-     <span class="code-funcC">debugPrint</span>((<span class="code-str">'exam'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern4</span>))  <span class="code-com">-- will print 'nil'</span>
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'examp'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern4</span>)) <span class="code-com">-- will print => 'examp'</span>
+     <span class="code-funcC">debugPrint</span>((<span class="code-str">'exam'</span>):<span class="code-funcC">match</span>(<span class="code-var">textPattern4</span>))  <span class="code-com">-- will print => 'nil'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
-                                   <table>
-                                        <thead>
-                                             <tr>
-                                                  <th>Character</th>
-                                                  <th style="text-align: left;">Desciption</th>
-                                             </tr>
-                                        </thead>
-                                        <tbody id="tab-magic"></tbody>
-                                   </table>
+                                   <div class="table-antiflow">
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th>Character</th>
+                                                       <th style="text-align: left;">Desciption</th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody id="tab-magic"></tbody>
+                                        </table>
+                                   </div>
                               </sub-section>
                               <h3> Escape Characters </h3>
                               <sub-section>
@@ -405,29 +424,31 @@
      <span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">=</span> <span class="code-str">'i can smell the "bitch" on you!!'</span> <!-- HOLY SHIT BAD WORD!!!!!!!!!!!!! -->
      <span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">=</span> <span class="code-str">"that's racist i feel like"</span>
 
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>) <span class="code-com">-- will print 'i can smell the "bitch" on you!!'</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>) <span class="code-com">-- will print 'that's racist i feel like'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString1</span>) <span class="code-com">-- will print => 'i can smell the "bitch" on you!!'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString2</span>) <span class="code-com">-- will print => 'that's racist i feel like'</span>
 
      <span class="code-kyw">local</span> <span class="code-var">textString3</span> <span class="code-kyw">=</span> <span class="code-str">'Don\'t press <span class="code-esc">\'</span>Alt + F4<span class="code-esc">\'</span>'</span> <span class="code-com">-- single quote</span>
      <span class="code-kyw">local</span> <span class="code-var">textString4</span> <span class="code-kyw">=</span> <span class="code-str">"dead <span class="code-esc">\"</span>(in a cool way)<span class="code-esc">\"</span>"</span>  <span class="code-com">-- double quote</span>
      <span class="code-kyw">local</span> <span class="code-var">textString5</span> <span class="code-kyw">=</span> <span class="code-str">'C:<span class="code-esc">\\</span>Windows<span class="code-esc">\\</span>System32'</span>     <span class="code-com">-- backslash</span>
 
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString3</span>) <span class="code-com">-- will print 'Don't press 'Alt + F4''</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString4</span>) <span class="code-com">-- will print "dead "(in a cool way)""</span>
-     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString5</span>) <span class="code-com">-- will print 'C:\Windows\System32'</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString3</span>) <span class="code-com">-- will print => 'Don't press 'Alt + F4''</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString4</span>) <span class="code-com">-- will print => "dead "(in a cool way)""</span>
+     <span class="code-funcC">debugPrint</span>(<span class="code-var">textString5</span>) <span class="code-com">-- will print => 'C:\Windows\System32'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
-                                   <table>
-                                        <thead>
-                                             <tr>
-                                                  <th>Character</th>
-                                                  <th>Result</th>
-                                                  <th style="text-align: left;">Desciption</th>
-                                             </tr>
-                                        </thead>
-                                        <tbody id="tab-escape"></tbody>
-                                   </table>
+                                   <div class="table-antiflow">
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th>Character</th>
+                                                       <th>Result</th>
+                                                       <th style="text-align: left;">Desciption</th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody id="tab-escape"></tbody>
+                                        </table>
+                                   </div>
                               </sub-section>
                          </section>
                          <hr>
