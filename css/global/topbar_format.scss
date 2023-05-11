@@ -126,6 +126,11 @@ body { /* Delete this or you'll get neutered */
                position: relative;
                top: 0.45cm;
                margin-right: 0.55cm;
+               transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+               
+               &:active {
+                    transform: scaleX(0.8) scaleY(0.8);
+               }
           }
 
           ul {
@@ -146,14 +151,24 @@ body { /* Delete this or you'll get neutered */
                     display: block;
                     font-size: 20px;
                     padding: 15px 20px;
-
-                    a {
-                         color: white !important;
+                    
+                    span {
+                         color: white;
                          text-decoration: none;
-                    }
 
+                         @media only screen and (min-width: 860px) {
+                              &#last-thing {
+                                   color: hsl(0deg, 0%, 30%) !important;
+                              } 
+                         }
+                    }
+                    
                     &:hover {
                          background-color: hsl(0deg, 0%, 13%);
+
+                         span {
+                              color: hsl(210, 100%, 72%);
+                         }
 
                          $top-bottom-radius: calc(glob.$global-border-radius - .5px);
                          &:nth-child(1) {
@@ -162,6 +177,10 @@ body { /* Delete this or you'll get neutered */
                          &:nth-child(5) {
                               border-radius: 0px 0px $top-bottom-radius $top-bottom-radius;
                          }
+                    }
+
+                    &:active span {
+                         color: hsl(42, 87%, 56%);
                     }
                }
           }

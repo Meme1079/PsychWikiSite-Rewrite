@@ -108,6 +108,10 @@ body { /* Delete this or you'll get neutered */
      position: relative;
      top: 0.45cm;
      margin-right: 0.55cm;
+     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+#global-topbar #topbar-list-min button:active {
+     transform: scaleX(0.8) scaleY(0.8);
 }
 #global-topbar #topbar-list-min ul {
      float: right;
@@ -129,16 +133,27 @@ body { /* Delete this or you'll get neutered */
      font-size: 20px;
      padding: 15px 20px;
 }
-#global-topbar #topbar-list-min ul li a {
-     color: white !important;
+#global-topbar #topbar-list-min ul li span {
+     color: white;
      text-decoration: none;
+}
+@media only screen and (min-width: 860px) {
+     #global-topbar #topbar-list-min ul li span#last-thing {
+          color: hsl(0deg, 0%, 30%) !important;
+     }
 }
 #global-topbar #topbar-list-min ul li:hover {
      background-color: hsl(0deg, 0%, 13%);
+}
+#global-topbar #topbar-list-min ul li:hover span {
+     color: hsl(210deg, 100%, 72%);
 }
 #global-topbar #topbar-list-min ul li:hover:nth-child(1) {
      border-radius: 4.5px 4.5px 0px 0px;
 }
 #global-topbar #topbar-list-min ul li:hover:nth-child(5) {
      border-radius: 0px 0px 4.5px 4.5px;
+}
+#global-topbar #topbar-list-min ul li:active span {
+     color: hsl(42deg, 87%, 56%);
 }

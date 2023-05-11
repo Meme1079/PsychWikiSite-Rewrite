@@ -2,10 +2,14 @@
 <html lang="en">
      <head>
           <title>PsychWikiSite - Home</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <meta name="color-scheme" content="dark">
           <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="description"  content="A rewrite of the old PsychWikiSite; to improve the code duh!">
+          <meta name="keywords"     content="PsychEngine, PsychEngine Wiki, PsychWiki, PsychWikiSite-Rewrite">
+          <meta name="author"       content="Meme1079">
+          <meta name="language"     content="EN">
+          <meta name="viewport"     content="width=device-width, initial-scale=1">
+          <meta name="color-scheme" content="dark">
           <link rel="icon" href="./images/Psych.ico">
           <link rel="stylesheet" type="text/css" href="./css/global/topbar_format.css">
           <link rel="stylesheet" type="text/css" href="./css/global/no_javascript.css">
@@ -14,8 +18,7 @@
           <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
           <script defer type="module" src="./javascript/Main.js"></script>
           <script defer type="module" src="./javascript/Home.js"></script>
-          <script defer type="module" src="./javascript/SideBarMedia.js"></script>
-          
+          <script defer type="module" src="../../javascript/Media.js"></script>
      </head>
      <body onload="console.log('loaded')">
           <noscript>
@@ -34,7 +37,7 @@
           </noscript>
           <nav id="global-topbar">
                <div id="topbar-logo">
-                    <img src="./images/Psych.ico" alt="The Stupid Logo">
+                    <img src="../../images/Psych.ico" alt="The Stupid Logo">
                     <p> PsychWikiSite-Rewrite </p>
                </div>
                <section id="topbar-list-max">
@@ -43,7 +46,7 @@
                          <button type="button" onclick="alert('homo')"></button>
                     </div>
                     <ul>
-                         <li> <a style="color: hsl(0deg, 0%, 80%);"><i class="fa fa-home"></i><span>Home</span></a> </li>
+                         <li> <a href="../../index.html"><i class="fa fa-home"></i><span>Home</span></a> </li>
                          <li> <a href="#"><i class="uil uil-book-open"></i><span>Docs</span></a> </li>
                          <li> <a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="uil uil-github"></i><span>GitHub</span> </a> </li>
                     </ul>
@@ -51,11 +54,11 @@
                <section id="topbar-list-min">
                     <button type="button" class="uil uil-bars"></button>
                     <ul>
-                         <li class="fa fa-home"        onclick="window.location.href = '../../index.html'"></li>
-                         <li class="uil uil-book-open" onclick="window.location.href = '#'"></li>
-                         <li class="uil uil-github"    onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"></li>
-                         <li class="uil uil-search"    onclick="alert('homo')"></li>
-                         <li class="uil uil-cube"      onclick="alert('WIP')"></li>
+                         <li onclick="window.location.href = '../../index.html'"><span class="fa fa-home"></span></li>
+                         <li onclick="window.location.href = '#'" ><span class="uil uil-book-open"></span></li>
+                         <li onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"><span class="uil uil-github"></span></li>
+                         <li onclick="alert('homo')"><span class="uil uil-search"></span></li>
+                         <li onclick="alert('WIP')"><span class="uil uil-cube" id="last-thing"></span></li>
                     </ul>
                </section>
           </nav>

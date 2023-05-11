@@ -2,10 +2,12 @@
 <html lang="en">
      <head>
           <title>PsychWikiSite - Lua Coding Docs: Library Methods</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <meta name="color-scheme" content="dark">
           <meta charset="utf-8">
+          <meta name="author"       content="Meme1079">
+          <meta name="language"     content="EN">
+          <meta name="viewport"     content="width=device-width, initial-scale=1">
+          <meta name="color-scheme" content="dark">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <link rel="icon" href="../../images/Psych.ico">
           <link rel="stylesheet" type="text/css" href="../../css/wikis/wiki_format.css">
           <link rel="stylesheet" type="text/css" href="../../css/wikis/sidebar_format.css">
@@ -15,7 +17,7 @@
           <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
           <script defer type="module" src="../../javascript/Main.js"></script>
           <script defer type="module" src="../../javascript/Wiki.js"></script>
-          <script defer type="module" src="../../javascript/SideBarMedia.js"></script>
+          <script defer type="module" src="../../javascript/Media.js"></script>
      </head>
      <body>
           <noscript> <!-- Better -->
@@ -51,11 +53,11 @@
                <section id="topbar-list-min">
                     <button type="button" class="uil uil-bars"></button>
                     <ul>
-                         <li class="fa fa-home"        onclick="window.location.href = '../../index.html'"></li>
-                         <li class="uil uil-book-open" onclick="window.location.href = '#'"></li>
-                         <li class="uil uil-github"    onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"></li>
-                         <li class="uil uil-search"    onclick="alert('homo')"></li>
-                         <li class="uil uil-cube"      onclick="alert('WIP')"></li>
+                         <li onclick="window.location.href = '../../index.html'"><span class="fa fa-home"></span></li>
+                         <li onclick="window.location.href = '#'" ><span class="uil uil-book-open"></span></li>
+                         <li onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"><span class="uil uil-github"></span></li>
+                         <li onclick="alert('homo')"><span class="uil uil-search"></span></li>
+                         <li onclick="alert('WIP')"><span class="uil uil-cube" id="last-thing"></span></li>
                     </ul>
                </section>
           </nav>
@@ -261,7 +263,7 @@
      <span class="code-kyw">local</span> <span class="code-var">scoreTxt</span> <span class="code-kyw">=</span> <span class="code-funcC">getTextString</span>(<span class="code-str">'scoreTxt'</span>)
      <span class="code-kyw">local</span> <span class="code-var">scoreTxtDisplay1</span> <span class="code-kyw">=</span> <span class="code-str">'Score: '</span><span class="code-ope">..</span><span class="code-funcC">getScore</span>()<span class="code-ope">..</span><span class="code-str">' | Misses: '</span><span class="code-ope">..</span><span class="code-paraS">miss</span><span class="code-ope">..</span><span class="code-str">' | Accuracy: '</span>
      <span class="code-kyw">local</span> <span class="code-var">scoreTxtDisplay2</span> <span class="code-kyw">=</span> (<span class="code-varD">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern1</span>) <span class="code-ope">or</span> <span class="code-varD">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern2</span>))
-     <span class="code-funcC">setTextString</span>(<span class="code-str">'scoreTxt'</span>, <span class="code-var">scoreTxtDisplay1</span><span class="code-ope">..</span><span class="code-var">scoreTxtDisplay2</span><span class="code-ope">..</span><span class="code-str">' ['</span><span class="code-ope">..</span><span class="code-var">ratingFC</span><span class="code-ope">..</span><span class="code-str"></span>']'</span>)
+     <span class="code-funcC">setTextString</span>(<span class="code-str">'scoreTxt'</span>, <span class="code-var">scoreTxtDisplay1</span><span class="code-ope">..</span><span class="code-var">scoreTxtDisplay2</span><span class="code-ope">..</span><span class="code-str">' ['</span><span class="code-ope">..</span><span class="code-var">ratingFC</span><span class="code-ope">..</span><span class="code-str"></span><span class="code-str">']'</span></span>)
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
