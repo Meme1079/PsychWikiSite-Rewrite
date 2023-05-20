@@ -80,7 +80,7 @@ for (let i = 0; i < shortCutAll('#wiki .header').length; i++) {
 
 let HeadNumIncre = 1
 for (let getHeads = 0; getHeads < shortCutAll('#wiki .header').length; getHeads++) {
-     let HeadIdValue = shortCutAll('#wiki .header')[getHeads].textContent.split('(')[0].trim() + HeadNumIncre++
+     let HeadIdValue = shortCutAll('#wiki .header')[getHeads].textContent.split('(')[0].trim() + (HeadNumIncre++).toString()
      shortCutAll('#wiki .header')[getHeads].setAttribute('id', HeadIdValue)
 
      let windowLinkCode = `window.location.href = '#${HeadIdValue}'`

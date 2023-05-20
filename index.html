@@ -18,16 +18,15 @@
           <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
           <script defer type="module" src="./javascript/Main.js"></script>
           <script defer type="module" src="./javascript/Home.js"></script>
-          <script defer type="module" src="../../javascript/Media.js"></script>
      </head>
-     <body onload="console.log('loaded')">
+     <body>
           <noscript>
                <div id="global-no-javascript">
                     <div id="no-javascript-window">
                          <div id="no-javascript-topbar">
                               <p>Javascript Disable Detected!</p>
                          </div>
-                         <img src="/images/popup_warning.png" alt="Warning Image" width="120" height="120">
+                         <img src="./images/popup_warning.png" alt="Warning Image" width="120" height="120">
                          <p> Enable Javascript for this website </p>
                          <p> Becuase it really relies on it </p>
                          <button type="button"> Ok </button>
@@ -35,88 +34,65 @@
                     </div>
                </div>
           </noscript>
-          <nav id="global-topbar">
-               <div id="topbar-logo">
-                    <img src="./images/Psych.ico" alt="The Stupid Logo">
-                    <p> PsychWikiSite-Rewrite </p>
-               </div>
-               <section id="topbar-list-max">
-                    <div id="topbar-list-searchBar">
-                         <i class="uil uil-search" aria-hidden="true"></i>
-                         <button type="button" onclick="alert('homo')"></button>
-                    </div>
-                    <ul>
-                         <li> <a href="./index.html"><i class="fa fa-home"></i><span>Home</span></a> </li>
-                         <li> <a href="#"><i class="uil uil-book-open"></i><span>Docs</span></a> </li>
-                         <li> <a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i class="uil uil-github"></i><span>GitHub</span> </a> </li>
-                    </ul>
-               </section>
-               <section id="topbar-list-min">
-                    <button type="button" class="uil uil-bars"></button>
-                    <ul>
-                         <li onclick="window.location.href = '../../index.html'"><span class="fa fa-home"></span></li>
-                         <li onclick="window.location.href = '#'" ><span class="uil uil-book-open"></span></li>
-                         <li onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"><span class="uil uil-github"></span></li>
-                         <li onclick="alert('homo')"><span class="uil uil-search"></span></li>
-                         <li onclick="alert('WIP')"><span class="uil uil-cube" id="last-thing"></span></li>
-                    </ul>
-               </section>
-          </nav>
-          <main id="home">
-               <div id="gaming-background">
-                    <p id="gaming-logo"> PsychWikiSite </p>
-                    <p id="gaming-slogan"> ... </p>
-                    <img id="gaming-image" src="images/stupid_club/Nails.png" alt="Unrelated Images" width="300" height="300">
-                    <button type="button" id="game-random"> Visit Random Docs! </button>
-               </div>
-               <section id="main-pages">
-                    <h1 style="right: 11.15cm;"> Recommended Wiki Pages </h1>
-                    <div class="recommended-lists">
-                         <div class="list-boxes" onclick="window.location.href = 'html/lua-coding-docs/basics_of_coding.html'">
-                              <div class="gradient-thing"></div>
-                              <h3> Lua Coding Docs <i class="uil uil-bookmark"></i></h3>
-                              <p> Basics of Coding </p>
+          <main>
+               <article id="home-hero">
+                    <section id="home-hero-media">
+                         <div id="home-hero-media-trypophobia"></div>
+                         <img src="./images/stupid_club/Nails.png" alt="[Insert goofy ahhhh image here]">
+                    </section>
+                    <section id="home-hero-about">
+                         <h1 id="home-hero-about-title"> PsychWikiSite <span>Rewrite</span> </h1>
+                         <p  id="home-hero-about-slogan">...</p>
+                         <p  id="home-hero-about-description"> This is a website that is basically a website version of PsychWiki from my Github. </p>
+                         <div id="home-hero-media-trypophobia"></div>
+                         <div style="display: flex;">
+                              <button type="button">Random Page<i class="uil uil-shuffle"></i></button>
+                              <button type="button">Source Code<i class="uil uil-github"></i></button>
                          </div>
-                         <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/callback_templates.html'">
-                              <div class="gradient-thing"></div>
-                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
-                              <p> Callback Templates </p>
+                    </section>
+                    <section id="home-main-search">
+                         <div style="display: flex; justify-content: center;">
+                              <h1>Search Stuff</h1>
                          </div>
-                         <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/custom_sprites_&_texts_functions.html'">
-                              <div class="gradient-thing"></div>
-                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
-                              <p> Custom Sprites & Texts Functions </p>
+                         <div style="display: flex; justify-content: center;">
+                              <div id="home-main-search-bar">
+                                   <i id="search-bar-icon-search" class="uil uil-search" aria-hidden="true"></i>
+                                   <input type="text" placeholder="Search Anything in PsychWiki!"></input>
+                                   <i id="search-bar-icon-delete" class="uil uil-times-circle"></i>
+                              </div>
                          </div>
-                         <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/value_setting_&_getting_functions.html'">
-                              <div class="gradient-thing"></div>
-                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
-                              <p> Value Setting & Getting Functions </p>
-                         </div>
-                    </div>
-                    <h1 style="right: 12.25cm;"> Advanced Wiki Pages </h1>
-                    <div class="advanced-lists">
-                         <div class="list-boxes" onclick="window.location.href = 'html/lua-coding-docs/library_methods.html'">
-                              <div class="gradient-thing"></div>
-                              <h3> Lua Coding Docs <i class="uil uil-bookmark"></i></h3>
-                              <p> Library Methods </p>
-                         </div>
-                         <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/scripting_&_file_functions.html'">
-                              <div class="gradient-thing"></div>
-                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
-                              <p> Scripting & File Functions </p>
-                         </div>
-                         <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/shader_functions.html'">
-                              <div class="gradient-thing"></div>
-                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
-                              <p> Shader Functions </p>
-                         </div>
-                         <div class="list-boxes" onclick="window.location.href = 'html/lua-script-api/variables.html'">
-                              <div class="gradient-thing"></div>
-                              <h3> Lua Script API <i class="uil uil-bookmark"></i></h3>
-                              <p> Variables </p>
-                         </div>
-                    </div>
-               </section>
+                    </section>
+               </article>
           </main>
      </body>
 </html>
+
+<!-- 
+<nav id="global-topbar">
+     <div id="topbar-logo">
+          <img src="./images/Psych.ico" alt="The Stupid Logo">
+          <p> PsychWikiSite-Rewrite </p>
+     </div>
+     <section id="topbar-list-max">
+          <div id="topbar-list-searchBar">
+               <i class="uil uil-search" aria-hidden="true"></i>
+               <button type="button" onclick="alert('homo')"></button>
+          </div>
+          <ul>
+               <li> <a href="../../index.html"><i class="fa fa-home"></i><span>Home</span></a> </li>
+               <li> <a href="#"><i class="uil uil-book-open"></i><span>Docs</span></a> </li>
+               <li> <a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i
+                              class="uil uil-github"></i><span>GitHub</span> </a> </li>
+          </ul>
+     </section>
+     <section id="topbar-list-min">
+          <button type="button" class="uil uil-bars"></button>
+          <ul>
+               <li onclick="window.location.href = '../../index.html'"><span class="fa fa-home"></span></li>
+               <li onclick="window.location.href = '#'"><span class="uil uil-book-open"></span></li>
+               <li onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"><span class="uil uil-github"></span></li>
+               <li onclick="alert('homo')" style="border-radius: 0px 0px 4.5px 4.5px;"><span class="uil uil-search"></span></li>
+          </ul>
+     </section>
+</nav>
+-->

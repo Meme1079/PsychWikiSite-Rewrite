@@ -1,6 +1,6 @@
 import { shortCut } from "./Main.js";
 
-let windowMatchMedia1 = window.matchMedia("(max-width: 950px)")
+let windowMatchMediaMax = window.matchMedia("(max-width: 950px)")
 let hideBar = true
 const [sideBarShow, sideBarHide] = ['0.28cm', '-1.8cm']
 shortCut('#topbar-list-min button').addEventListener('click', function() {
@@ -19,10 +19,10 @@ shortCut('#topbar-list-min button').addEventListener('click', function() {
           } else {
                shortCut('#topbar-list-min ul').style.display = 'none'
                hideBar = true
-          }          
+          }
      }
      
-     windowMatchMedia1.addEventListener('change', hideWhenSizing)
+     windowMatchMediaMax.addEventListener('change', hideWhenSizing)
 })
 
 window.addEventListener('scroll', function() {
@@ -32,7 +32,7 @@ window.addEventListener('scroll', function() {
 
 /* TopBar */
 
-let windowMatchMedia2 = window.matchMedia("(min-width: 860px)")
+let windowMatchMediaMin = window.matchMedia("(min-width: 860px)")
 function hideWhenScrolling(switchy) {
      if (switchy === true) {
           if (window.scrollY >= 84.5) {
@@ -47,7 +47,7 @@ function hideWhenScrolling(switchy) {
                shortCut('#global-topbar').style.position = 'relative'
                shortCut('#global-topbar').style.bottom   = '15px'
           }
-     }         
+     }
 }
 
 function changeTopBarProperty(switchy) {
@@ -60,5 +60,5 @@ function changeTopBarProperty(switchy) {
      }
 }
 
-changeTopBarProperty(windowMatchMedia2)
-windowMatchMedia2.addEventListener('change', changeTopBarProperty)
+changeTopBarProperty(windowMatchMediaMin)
+windowMatchMediaMin.addEventListener('change', changeTopBarProperty)

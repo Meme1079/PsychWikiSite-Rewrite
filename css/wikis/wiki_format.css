@@ -236,6 +236,12 @@ html {
      top: 13px;
      padding: 2 !important;
 }
+#wiki-bg #wiki pre span.code-var {
+     color: hsl(0deg, 0%, 100%);
+}
+#wiki-bg #wiki pre span.code-varD {
+     color: hsl(34deg, 100%, 65%);
+}
 #wiki-bg #wiki pre span.code-kyw {
      color: hsl(1deg, 100%, 79%);
 }
@@ -263,12 +269,6 @@ html {
 }
 #wiki-bg #wiki pre span.code-ptr {
      color: hsl(168deg, 55%, 54%);
-}
-#wiki-bg #wiki pre span.code-var {
-     color: hsl(0deg, 0%, 100%);
-}
-#wiki-bg #wiki pre span.code-varD {
-     color: hsl(34deg, 100%, 65%);
 }
 #wiki-bg #wiki pre span.code-data {
      color: hsl(168deg, 55%, 54%);

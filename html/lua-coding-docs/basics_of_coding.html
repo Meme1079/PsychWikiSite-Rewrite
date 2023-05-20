@@ -151,7 +151,7 @@
                                    </p>
                                    <p>
                                         Multi-line variables can also be declared, each name and value attributes of the variable must be separated with comma <kbd>,</kbd> character. 
-                                        They must be equal to each-other if not it will print => a <code>nil</code> value or an error.
+                                        They must be equal to each-other if not it will return a <code>nil</code> value or an error in some-cases.
                                    </p>
                                    <div class="code-border">
                                         <div style="display: flex;">
@@ -421,18 +421,18 @@
                                              <div class="code-tagbg">Example:</div>
                                         </div>
 <pre>
-<span class="code-kyw">function</span> <span class="code-funcD">Array</span>(<span class="code-paraS">tab</span>, <span class="code-paraI">...</span>)
-     <span class="code-kyw">local</span> <span class="code-var">convert</span> <span class="code-kyw">=</span> {<span class="code-paraI">...</span>}  <span class="code-com">-- converts it into a table</span>
-     <span class="code-kyw">for</span> <span class="code-var">i</span> <span class="code-kyw">=</span> <span class="code-num">1</span>, <span class="code-ope">#</span><span class="code-var">convert</span> <span class="code-kyw">do</span> <span class="code-com">-- alternative to read every value of a table</span>
-          <span class="code-data">table</span>.<span class="code-funcC">insert</span>(<span class="code-paraS">tab</span>, <span class="code-var">convert</span>[<span class="code-var">i</span>]) <span class="code-com">-- inserts the value</span>
+<span class="code-kyw">function</span> <span class="code-funcD">weirdMath</span>(<span class="code-paraS">mathStuff</span>, <span class="code-paraI">...</span>)
+     <span class="code-kyw">local</span> <span class="code-var">results</span> <span class="code-kyw">=</span> <span class="code-num">0</span>      <span class="code-com">-- the results</span>
+     <span class="code-kyw">local</span> <span class="code-var">convert</span> <span class="code-kyw">=</span> {<span class="code-paraI">...</span>}  <span class="code-com">-- converts the infinite parameter into a table</span>
+     <span class="code-kyw">for</span> <span class="code-var">i</span> <span class="code-kyw">=</span> <span class="code-num">1</span>, <span class="code-ope">#</span><span class="code-var">convert</span> <span class="code-kyw">do</span> <span class="code-com">-- alternative for loop through a table</span>
+         <span class="code-var">results</span> <span class="code-kyw">=</span> <span class="code-var">results</span> <span class="code-ope">+</span> <span class="code-paraS">mathStuff</span> <span class="code-ope">+</span> <span class="code-var">convert</span>[<span class="code-var">i</span>]
      <span class="code-kyw">end</span>
-     <span class="code-kyw">return</span> <span class="code-paraS">tab</span> <span class="code-com">-- returns the result</span>
+     <span class="code-kyw">return</span> <span class="code-var">results</span>
 <span class="code-kyw">end</span>
-     
+
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
-     <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-funcC">Array</span>({}, <span class="code-num">231</span>, <span class="code-num">234</span>, <span class="code-num">456</span>)) <span class="code-kyw">do</span>
-          <span class="code-funcC">debugPrint</span>(<span class="code-var">v</span>) <span class="code-com">-- will print => '231, 234, 456'</span>
-     <span class="code-kyw">end</span>
+     <span class="code-kyw">local</span> <span class="code-var">mainMath</span> <span class="code-kyw">=</span> ((<span class="code-num">5</span> <span class="code-ope">%</span> <span class="code-num">6</span><span class="code-ope">^</span><span class="code-num">2</span>) <span class="code-ope">/</span> <span class="code-num">2</span>) <span class="code-ope">*</span> (<span class="code-num">5</span> <span class="code-ope">%</span> <span class="code-num">23</span>)
+     <span class="code-funcC">debugPrint</span>(<span class="code-funcC">weirdMath</span>(<span class="code-var">mainMath</span>, <span class="code-num">3</span>, <span class="code-num">54</span>, <span class="code-num">64</span>, <span class="code-num">12</span>, <span class="code-num">94</span>, <span class="code-num">23</span>, <span class="code-num">56</span>)) <span class="code-com">-- will print => '393.5'</span>
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -804,7 +804,7 @@
           <span class="code-kyw">return</span> <span class="code-paraS">statement</span>[<span class="code-str">"default"</span>]()
      <span class="code-kyw">end</span>
 <span class="code-kyw">end</span>
-     
+
 <span class="code-kyw">function</span> <span class="code-funcM">myGamingModules</span>.<span class="code-funcD">setPos</span>(<span class="code-paraS">obj</span>, <span class="code-paraS">pos</span>) <span class="code-com">-- Concatenates setProperty x and y</span>
      <span class="code-kyw">if</span> <span class="code-paraS">pos</span>[<span class="code-num">1</span>] <span class="code-ope">~=</span> <span class="code-nil">nil</span> <span class="code-kyw">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
           <span class="code-funcC">setProperty</span>(<span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.x'</span>, <span class="code-paraS">pos</span>[<span class="code-num">1</span>])

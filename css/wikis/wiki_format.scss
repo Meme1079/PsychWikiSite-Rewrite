@@ -275,6 +275,8 @@ html {
           $color-code-modules:            hsl(168, 55%, 54%);
 
           pre span {
+               &.code-var    { color: $color-code-variables;          }
+               &.code-varD   { color: $color-code-variables-data;     }
                &.code-kyw    { color: $color-code-keywords;           }
                &.code-ope    { color: $color-code-operators;          }
                &.code-str    { color: $color-code-string;             }
@@ -284,8 +286,6 @@ html {
                &.code-com    { color: $color-code-comments; font-style: italic; }
                &.code-esc    { color: $color-code-escape-characters;  }
                &.code-ptr    { color: $color-code-pattern-characters; }
-               &.code-var    { color: $color-code-variables;          }
-               &.code-varD   { color: $color-code-variables-data;     }
                &.code-data   { color: $color-code-data;               }
                &.code-tabkey { color: $color-code-table-keys;         }
                &.code-modul  { color: $color-code-modules;            }

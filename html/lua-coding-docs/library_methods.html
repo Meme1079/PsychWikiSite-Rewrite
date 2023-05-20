@@ -263,7 +263,7 @@
      <span class="code-kyw">local</span> <span class="code-var">scoreTxt</span> <span class="code-kyw">=</span> <span class="code-funcC">getTextString</span>(<span class="code-str">'scoreTxt'</span>)
      <span class="code-kyw">local</span> <span class="code-var">scoreTxtDisplay1</span> <span class="code-kyw">=</span> <span class="code-str">'Score: '</span><span class="code-ope">..</span><span class="code-funcC">getScore</span>()<span class="code-ope">..</span><span class="code-str">' | Misses: '</span><span class="code-ope">..</span><span class="code-paraS">miss</span><span class="code-ope">..</span><span class="code-str">' | Accuracy: '</span>
      <span class="code-kyw">local</span> <span class="code-var">scoreTxtDisplay2</span> <span class="code-kyw">=</span> (<span class="code-varD">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern1</span>) <span class="code-ope">or</span> <span class="code-varD">scoreTxt</span>:<span class="code-funcC">match</span>(<span class="code-var">scorePattern2</span>))
-     <span class="code-funcC">setTextString</span>(<span class="code-str">'scoreTxt'</span>, <span class="code-var">scoreTxtDisplay1</span><span class="code-ope">..</span><span class="code-var">scoreTxtDisplay2</span><span class="code-ope">..</span><span class="code-str">' ['</span><span class="code-ope">..</span><span class="code-var">ratingFC</span><span class="code-ope">..</span><span class="code-str"></span><span class="code-str">']'</span></span>)
+     <span class="code-funcC">setTextString</span>(<span class="code-str">'scoreTxt'</span>, <span class="code-var">scoreTxtDisplay1</span><span cass="code-ope">..</span><span class="code-var">scoreTxtDisplay2</span><span class="code-ope">..</span><span class="code-str">' ['</span><span class="code-ope">..</span><span class="code-var">ratingFC</span><span class="code-ope">..</span><span class="code-str"></span><span class="code-str">']'</span></span>)
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
@@ -273,7 +273,7 @@
                                    <p>
                                         Works exactly the same as <code>string.match()</code> function, but it <ins>returns several matching patterns</ins> that it could find in a generic <code>for</code> loop. If 
                                         not used inside of that loop, it will print a <ins>function with the first matching pattern value</ins>.
-                                   </p>
+                                   </p>l
                                    <ul>
                                         <li><code>str</code> - The string variable to be matched. </li>
                                         <li><code>pattern</code> - The specified string pattern for the string to be match. </li>
@@ -458,15 +458,108 @@
                          <section>
                               <h3> table.insert(tab:Table, ?pos:Int, value:Dynamic) </h3>
                               <sub-section>
+                                   <p> <ins>Inserts a value</ins> inside of a table. </p>
+                                   <ul>
+                                        <li><code>tab</code> - The table variable to be used. </li>
+                                        <li><code>pos</code> - An optional parameter, The specified index position for the value to be inserted. </li>
+                                        <li><code>value</code> - The value to be inserted. </li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">arrayTable</span> <span class="code-kyw">=</span> {<span class="code-str">'apple'</span>, <span class="code-str">'banana'</span>, <span class="code-str">'orange'</span>}
+     <span class="code-data">table</span>.<span class="code-funcC">insert</span>(<span class="code-var">arrayTable</span>, <span class="code-str">'grape'</span>)
+     <span class="code-data">table</span>.<span class="code-funcC">insert</span>(<span class="code-var">arrayTable</span>, <span class="code-num">2</span>, <span class="code-str">'watermelon'</span>)
+
+     <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-var">arrayTable</span>) <span class="code-kyw">do</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">k</span><span class="code-ope">..</span><span class="code-str">': '</span><span class="code-ope">..</span><span class="code-var">v</span>) 
+          <span class="code-com">-- will print => '1: apple 2: watermelon 3: banana 4: orange 5: grape'</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                               <h3> table.remove(tab:Table, ?pos:Int) </h3>
                               <sub-section>
+                                   <p> <ins>Removes a value</ins> inside of a table. </p>
+                                   <ul>
+                                        <li><code>tab</code> - The table variable to be used. </li>
+                                        <li><code>pos</code> - An optional parameter, The specified index position for the value to be removed. </li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">arrayTable</span> <span class="code-kyw">=</span> {<span class="code-str">'apple'</span>, <span class="code-str">'banana'</span>, <span class="code-str">'tomato'</span>, <span class="code-str">'orange'</span>, <span class="code-str">'broccoli'</span>}
+     <span class="code-data">table</span>.<span class="code-funcC">remove</span>(<span class="code-var">arrayTable</span>)    <span class="code-com">-- removes 'broccoli'</span>
+     <span class="code-data">table</span>.<span class="code-funcC">remove</span>(<span class="code-var">arrayTable</span>, <span class="code-num">3</span>) <span class="code-com">-- removes 'tomato'</span>
+
+     <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-var">arrayTable</span>) <span class="code-kyw">do</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">k</span><span class="code-ope">..</span><span class="code-str">': '</span><span class="code-ope">..</span><span class="code-var">v</span>) <span class="code-com">-- will print => '1: apple 2: banana 3: orange'</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                               <h3> table.concat(tab:Table, sep:String, ?minPos:Int, ?maxPos:Int) </h3>
                               <sub-section>
+                                   <p> Concatenates every value inside of a table with the <ins>seperation pattern on each value</ins>; Returns a <code>string</code>. </p>
+                                   <ul>
+                                        <li><code>tab</code> - The table variable to be concatenated. </li>
+                                        <li><code>sep</code> - The speration pattern on each table value. </li>
+                                        <li><code>minPos</code> - An optional parameter, The starting index position of the table to be concatenate. </li>
+                                        <li><code>maxPos</code> - An optional parameter, The ending index position of the table for the concatenation to stop. </li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">arrayTable1</span> <span class="code-kyw">=</span> {<span class="code-str">'apple'</span>, <span class="code-str">'banana'</span>, <span class="code-str">'orange'</span>}
+     <span class="code-kyw">local</span> <span class="code-var">arrayTable2</span> <span class="code-kyw">=</span> {<span class="code-str">'tomato'</span>, <span class="code-str">'broccoli'</span>, <span class="code-str">'onion'</span>, <span class="code-str">'beetroot'</span>, <span class="code-str">'turnip'</span>}
+
+     <span class="code-funcC">debugPrint</span>(<span class="code-data">table</span>.<span class="code-funcC">concat</span>(<span class="code-var">arrayTable1</span>, <span class="code-str">', '</span>))       <span class="code-com">-- will print => 'apple, banana, orange'</span> 
+     <span class="code-funcC">debugPrint</span>(<span class="code-data">table</span>.<span class="code-funcC">concat</span>(<span class="code-var">arrayTable2</span>, <span class="code-str">', '</span>, <span class="code-num">3</span>, <span class="code-num">5</span>)) <span class="code-com">-- will print => 'onion, beetroot, turnip'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                               <h3> table.sort(tab:Table, ?compType:Function) </h3>
                               <sub-section>
+                                   <p> Sorts the table in a <ins>given order</ins>. </p>
+                                   <ul>
+                                        <li><code>tab</code> - The table variable to be sorted. </li>
+                                        <li><code>compType</code> - An optional parameter, The sorting type for the table variable to be used. </li>
+                                   </ul>
+                                   <div class="code-border">
+                                        <div style="display: flex;">
+                                             <div class="code-tagbg">Example:</div>
+                                        </div>
+<pre>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span>()
+     <span class="code-kyw">local</span> <span class="code-var">arrayTable1</span> <span class="code-kyw">=</span> {<span class="code-str">'grape'</span>, <span class="code-str">'apple'</span>, <span class="code-str">'banana'</span>, <span class="code-str">'orange'</span>, <span class="code-str">'kiwifruit'</span>}
+     <span class="code-kyw">local</span> <span class="code-var">arrayTable2</span> <span class="code-kyw">=</span> {<span class="code-str">'tomato'</span>, <span class="code-str">'broccoli'</span>, <span class="code-str">'onion'</span>, <span class="code-str">'beetroot'</span>, <span class="code-str">'turnip'</span>}
+
+     <span class="code-data">table</span>.<span class="code-funcC">sort</span>(<span class="code-var">arrayTable1</span>)
+     <span class="code-data">table</span>.<span class="code-funcC">sort</span>(<span class="code-var">arrayTable2</span>, <span class="code-kyw">function</span>(<span class="code-paraS">val1</span>, <span class="code-paraS">val2</span>)
+          <span class="code-kyw">return</span> <span class="code-paraS">val2</span>:<span class="code-funcC">byte</span>(<span class="code-num">3</span>, <span class="code-num">3</span>) <span class="code-ope">></span> <span class="code-paraS">val2</span>:<span class="code-funcC">byte</span>(<span class="code-num">3</span>, <span class="code-num">3</span>) 
+     <span class="code-kyw">end</span>)
+
+     <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-var">arrayTable1</span>) <span class="code-kyw">do</span> 
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">v</span>) <span class="code-com">-- will print => 'apple, banana, grape, kiwifruit, orange'</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">for</span> <span class="code-var">k</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span>(<span class="code-var">arrayTable2</span>) <span class="code-kyw">do</span>
+          <span class="code-funcC">debugPrint</span>(<span class="code-var">v</span>) <span class="code-com">-- will print => 'turnip, broccoli, tomato, onion, beetroot'</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </sub-section>
                          </section>
                          <hr>
