@@ -35,6 +35,45 @@
                </div>
           </noscript>
           <main>
+               <article id="home-search">
+                    <div id="home-search-backdrop"></div>
+                    <div id="home-search-main">
+                         <div id="home-search-main-searchbar">
+                              <i id="search-bar-icon-search" class="uil uil-search" aria-hidden="true"></i>
+                              <input type="text" maxlength="35" placeholder="Search Anything in PsychWiki!"></input>
+                              <i id="search-bar-icon-clear"  class="uil uil-times-circle" aria-hidden="true"></i>
+                         </div>
+                         <div id="home-search-main-suggestion">
+                              <h3>Popular <i class="uil uil-arrow-growth"></i> <em>(Based on Github Insight Traffic)</em></h3>
+                              <ul id="popular">
+                                   <li class="lua-coding-docs">Basics of Coding</li>
+                                   <li class="lua-script-api">Callback Templates</li>
+                                   <li class="lua-script-api">Object Functions</li>
+                                   <li class="lua-script-api">Value Setting & Getting Functions</li>
+                                   <li class="lua-script-api">Variables</li>
+                              </ul>
+                              <h3 style="margin-top: 0.15cm">Suggested <i class="uil uil-cube"></i></h3>
+                              <ul id="suggested">
+                                   <li class="lua-coding-docs">Basics of Coding</li>
+                                   <li class="lua-coding-docs">Library Methods</li>
+                                   <li class="lua-script-api">Callback Templates</li>
+                                   <li class="lua-script-api">Control Functions</li>
+                                   <li class="lua-script-api">Custom Sprites & Texts Functions</li>
+                                   <li class="lua-script-api">Deprecated Lua Functions</li>
+                                   <li class="lua-script-api">Dialogue & Cutscene Functions</li>
+                                   <li class="lua-script-api">General Functions</li>
+                                   <li class="lua-script-api">Object Functions</li>
+                                   <li class="lua-script-api">Precaching Functions</li>
+                                   <li class="lua-script-api">Scripting & File Functions</li>
+                                   <li class="lua-script-api">Shader Functions</li>
+                                   <li class="lua-script-api">Sound & Music Functions</li>
+                                   <li class="lua-script-api">Tween & Timer Functions</li>
+                                   <li class="lua-script-api">Value Setting & Getting Functions</li>
+                                   <li class="lua-script-api">Variables</li>
+                              </ul>
+                         </div>
+                    </div>
+               </article>
                <article id="home-hero">
                     <section id="home-hero-media">
                          <div id="home-hero-media-trypophobia"></div>
@@ -46,19 +85,18 @@
                          <p  id="home-hero-about-description"> This is a website that is basically a website version of PsychWiki from my Github. </p>
                          <div id="home-hero-media-trypophobia"></div>
                          <div style="display: flex;">
-                              <button type="button">Random Page<i class="uil uil-shuffle"></i></button>
-                              <button type="button">Source Code<i class="uil uil-github"></i></button>
+                              <button type="button" id="home-hero-button-random">Random Page<i class="uil uil-shuffle"></i></button>
+                              <button type="button" id="home-hero-button-github">Source Code<i class="uil uil-github"></i></button>
                          </div>
                     </section>
-                    <section id="home-main-search">
+                    <section id="home-fake-search">
                          <div style="display: flex; justify-content: center;">
-                              <h1>Search Stuff</h1>
+                              <h1 id="home-fake-search-dumbTitle">Search Stuff</h1>
                          </div>
                          <div style="display: flex; justify-content: center;">
-                              <div id="home-main-search-bar">
+                              <div id="home-fake-search-bar">
                                    <i id="search-bar-icon-search" class="uil uil-search" aria-hidden="true"></i>
-                                   <input type="text" placeholder="Search Anything in PsychWiki!"></input>
-                                   <i id="search-bar-icon-delete" class="uil uil-times-circle"></i>
+                                   <button type="button">Search Anything in PsychWiki!</button>
                               </div>
                          </div>
                     </section>
@@ -66,33 +104,3 @@
           </main>
      </body>
 </html>
-
-<!-- 
-<nav id="global-topbar">
-     <div id="topbar-logo">
-          <img src="./images/Psych.ico" alt="The Stupid Logo">
-          <p> PsychWikiSite-Rewrite </p>
-     </div>
-     <section id="topbar-list-max">
-          <div id="topbar-list-searchBar">
-               <i class="uil uil-search" aria-hidden="true"></i>
-               <button type="button" onclick="alert('homo')"></button>
-          </div>
-          <ul>
-               <li> <a href="../../index.html"><i class="fa fa-home"></i><span>Home</span></a> </li>
-               <li> <a href="#"><i class="uil uil-book-open"></i><span>Docs</span></a> </li>
-               <li> <a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i
-                              class="uil uil-github"></i><span>GitHub</span> </a> </li>
-          </ul>
-     </section>
-     <section id="topbar-list-min">
-          <button type="button" class="uil uil-bars"></button>
-          <ul>
-               <li onclick="window.location.href = '../../index.html'"><span class="fa fa-home"></span></li>
-               <li onclick="window.location.href = '#'"><span class="uil uil-book-open"></span></li>
-               <li onclick="window.location.href = 'https://github.com/Meme1079/PsychWikiSite-Rewrite'"><span class="uil uil-github"></span></li>
-               <li onclick="alert('homo')" style="border-radius: 0px 0px 4.5px 4.5px;"><span class="uil uil-search"></span></li>
-          </ul>
-     </section>
-</nav>
--->

@@ -123,7 +123,7 @@ $corn: #70ffcf;
                padding: 8px;
 
                &:hover {
-                    background-color: hsl(0deg, 0%, calc(calc(12% + 18%) / 2));
+                    background-color: hsl(0deg, 0%, glob.middle(12%, 18%));
                }
                &:active {
                     outline: 1px solid $local-color-searchbar-active;

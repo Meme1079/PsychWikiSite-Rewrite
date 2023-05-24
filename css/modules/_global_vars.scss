@@ -1,10 +1,23 @@
 $global-font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
 $global-cringe-solver: fit-content; /* Cringe solved */
 $global-border-radius: 5px;
+
 $global-color-link-text: hsl(210, 100%, 72%);
+
+$global-color-lightBlue: hsl(210, 100%, 72%);
+$global-color-gold:      hsl(42, 87%, 56%);
+$global-color-grey:      hsl(216, 8%, 52%);
+
+/* Mixins */
 
 @mixin noSelecting {
      -webkit-user-select: none;
      -moz-user-select:    none;
      user-select:         none;
+}
+
+/* Functions */
+
+@function middle($min, $max) {
+     @return (($min + $max) / 2)
 }
