@@ -1,4 +1,4 @@
-import pages from '../json/hi.json' assert {type: 'json'};
+import pages from '../json/lua-pages.json' assert {type: 'json'};
 import { shortCut, shortCutAll } from "./Main.js";
 
 const rand = (num) => { return Math.floor(Math.random() * num) }
@@ -63,50 +63,37 @@ shortCut('#home-search-main-searchbar #search-bar-icon-clear').addEventListener(
      searchInputHeading()
 })
 
-const luaSugCodingDocs = shortCutAll('#suggested .lua-coding-docs')
-const luaSugScriptAPI  = shortCutAll('#suggested .lua-script-api')
-const link_IconDocument = '<i class="uil uil-document-layout-left"></i>'
-for (let luaCodingInd = 0; luaCodingInd < luaSugCodingDocs.length; luaCodingInd++) {
-     const loopCodingDocs = luaSugCodingDocs[luaCodingInd]
-     const filterTag = (`<span class="tag-coding-docs">Lua Coding Docs</span>`).split('Lua Coding Docs')[0]
-     loopCodingDocs.innerHTML = `${link_IconDocument}${loopCodingDocs.textContent}${filterTag}`
+function createSectionLists(listCategory, iconCategory, tagType, jsonData) {
+     const searchSectionType = shortCutAll(listCategory)
+     const searchSectionIcon = `<i class="uil uil-${iconCategory}"></i>`
+     for (let luaSectionInd = 0; luaSectionInd < searchSectionType.length; luaSectionInd++) {
+          const loopLuaSection = searchSectionType[luaSectionInd]
+          const tagTypeConvert = tagType.replaceAll(' ', '-').replaceAll('Lua', 'tag').toLowerCase()
+          const tagInsert      = (`<span class="${tagTypeConvert}">${tagType}</span>`).split(tagType)[0]
+          loopLuaSection.innerHTML = searchSectionIcon + loopLuaSection.textContent + tagInsert
 
-     loopCodingDocs.addEventListener('click', () => {
-          window.location.href = `html/lua-coding-docs/${pages.lua_coding_docs[luaCodingInd]}.html`
-     })
+          loopLuaSection.addEventListener('click', () => {
+               const tagTypePath = tagType.replaceAll(' ', '-').toLowerCase()
+               switch (listCategory.match(/#\w+/)[0].toLowerCase()) {
+                    case '#suggested':
+                         window.location.href = `html/${tagTypePath}/${jsonData[luaSectionInd]}.html`
+                         break;
+                    case '#popular':
+                         let filterDict = loopLuaSection.textContent.replaceAll(' ', '_').toLowerCase()
+                         window.location.href = `html/${tagTypePath}/${jsonData[filterDict]}.html`
+                         break;
+                    default:
+                         console.error('Erm not a real case ewwww')
+                         break;
+               }
+          })
+     }
 }
-for (let luaScriptInd = 0; luaScriptInd < luaSugScriptAPI.length; luaScriptInd++) {
-     const loopScriptAPI = luaSugScriptAPI[luaScriptInd]
-     const filterTag = (`<span class="tag-script-api">Lua Script API</span>`).split('Lua Script API')[0]
-     loopScriptAPI.innerHTML = `${link_IconDocument}${loopScriptAPI.textContent}${filterTag}`
 
-     loopScriptAPI.addEventListener('click', () => {
-          window.location.href = `html/lua-script-api/${pages.lua_script_api[luaScriptInd]}.html`
-     })
-}
-
-const luaPopCodingDocs = shortCutAll('#popular .lua-coding-docs')
-const luaPopScriptAPI  = shortCutAll('#popular .lua-script-api')
-const link_IconGraph = '<i class="uil uil-analytics"></i>' 
-for (let luaCodingInd = 0; luaCodingInd < luaPopCodingDocs.length; luaCodingInd++) {
-     const loopCodingDocs = luaPopCodingDocs[luaCodingInd]
-     const filterTag = (`<span class="tag-coding-docs">Lua Coding Docs</span>`).split('Lua Coding Docs')[0]
-     loopCodingDocs.innerHTML = `${link_IconGraph}${loopCodingDocs.textContent}${filterTag}`
-
-     loopCodingDocs.addEventListener('click', () => {
-          window.location.href = `html/lua-coding-docs/${pages.lua_coding_docs[luaCodingInd]}.html`
-     })
-}
-for (let luaScriptInd = 0; luaScriptInd < luaPopScriptAPI.length; luaScriptInd++) {
-     const loopScriptAPI = luaPopScriptAPI[luaScriptInd]
-     const filterTag = (`<span class="tag-script-api">Lua Script API</span>`).split('Lua Script API')[0]
-     loopScriptAPI.innerHTML = `${link_IconGraph}${loopScriptAPI.textContent}${filterTag}`
-
-     loopScriptAPI.addEventListener('click', () => {
-          let filterDict = (loopScriptAPI.textContent.replaceAll(' ', '_').toLowerCase()).toString()
-          window.location.href = `html/lua-script-api/${pages.lua_script_api_dict[filterDict]}.html`
-     })
-}
+createSectionLists('#suggested .lua-coding-docs', 'document-layout-left', 'Lua Coding Docs', pages.lua_coding_docs)
+createSectionLists('#suggested .lua-script-api', 'document-layout-left', 'Lua Script API', pages.lua_script_api)
+createSectionLists('#popular .lua-coding-docs', 'analytics', 'Lua Coding Docs', pages.lua_coding_docs_dict)
+createSectionLists('#popular .lua-script-api', 'analytics', 'Lua Script API', pages.lua_script_api_dict)
 
 const searchLocalPath = '#home-search #home-search-main-searchbar'
 const searchInputPath = `${searchLocalPath} input`

@@ -331,11 +331,3 @@ html body {
 #home-search #home-search-main-suggestion::-webkit-scrollbar-track {
      background: hidden;
 }
-
-.not-finish {
-     color: red !important;
-}
-
-.work-in-progress {
-     color: hsl(42deg, 87%, 56%) !important;
-}

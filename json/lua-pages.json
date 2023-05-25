@@ -19,6 +19,10 @@
           "value_setting_&_getting_functions",
           "variables"
      ],
+     "lua_coding_docs_dict": {
+          "basics_of_coding": "basics_of_coding",
+          "library_methods":  "library_methods"
+     },
      "lua_script_api_dict": {
           "callback_templates":                "callback_templates",
           "control_functions":                 "control_functions",
