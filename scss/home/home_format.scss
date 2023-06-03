@@ -1,0 +1,264 @@
+@use '../modules/global_stuff' as glob-stuff;
+
+
+/* Goofy aaaahhhhh animations */
+
+@keyframes image-squishy {
+     0%   { transform: scaleX(inherit) }
+     50%  { transform: scaleX(2.3)     }
+     100% { transform: scaleX(inherit) }
+}
+
+$background-rotation-degree: 360deg;
+@keyframes background-rotate1 {
+     from { transform: rotateZ(calc($background-rotation-degree * -2)) }
+     to   { transform: rotateZ($background-rotation-degree) }
+}
+
+@keyframes background-rotate2 {
+     from { transform: rotateZ($background-rotation-degree) }
+     to   { transform: rotateZ(calc($background-rotation-degree * -2)) }
+}
+
+/* Goody aaaahhhhh mixin */
+
+@mixin trypophobia-attrs($BGimage, $BGanim, $size, $BGsize: 20px 20px, $BGpos: 0px) {
+     background: none;
+     background-image: $BGimage;
+     background-size: $BGsize;
+     background-position: $BGpos;
+     animation: $BGanim;
+     width: $size; height: $size;
+}
+
+/* Goofy aaaahhhhh code */
+
+* {
+     padding: 0px; margin: 0px;
+}
+
+html {
+     overflow-x: hidden;
+}
+
+body {
+     font-family: glob-stuff.$global-font-family;
+}
+
+#home-hero {
+     width: auto;
+     margin: { top: 4cm; left: 3cm };
+
+     #home-hero-about-title {
+          font-size: 3.3em;
+          font-weight: 600;
+          margin-bottom: 0px;
+
+          $rewrite-text-gradient1: hsla(294, 75%, 64%, 1);
+          $rewrite-text-gradient2: hsla(277, 63%, 44%, 1);
+          span {
+               text-shadow: none !important;
+               background: linear-gradient(90deg, $rewrite-text-gradient1 0%, $rewrite-text-gradient2 100%);
+               background-clip: text;
+               -webkit-text-fill-color: transparent;
+          }
+     }
+
+     #home-hero-about-slogan {
+          font-size: 2em;
+          font-weight: 450;
+          margin-top: 0px;
+     }
+
+     #home-hero-about-description {
+          font-size: 24px;
+          line-height: 150%;
+          min-width: auto;
+          max-width: 14cm;
+          margin-top: 1cm;
+     }
+
+     $trypophobia2-BGRed: radial-gradient(#f8003f 30%, transparent 0);
+     $trypophobia2-Anim-Rotate2: background-rotate2 120s linear infinite;
+     $trypophobia2-Size: 3.4cm;
+     #home-hero-media-trypophobia {
+          @include trypophobia-attrs($trypophobia2-BGRed, $trypophobia2-Anim-Rotate2, $trypophobia2-Size, 18px 18px);
+          z-index: -5;
+          position: absolute;
+          top: 9cm; left: 0.7cm;
+     }
+
+     #home-hero-about-buttons {
+          display: flex;
+
+          button[type=button] {
+               cursor: pointer;
+               font-size: 1.2em;
+               font-weight: 550;
+               border: none;
+               border-radius: glob-stuff.$global-border-radius;
+               color: black;
+               padding: 10px 17px;
+               margin-top: 1.5cm;
+               transition: transform 0.1s cubic-bezier(0.33, 1, 0.68, 1);
+     
+               i {
+                    font-size: 1.05em;
+                    margin-left: 10px;
+               }
+     
+               @mixin button-attr($BGColor, $marginType, $marginValue) {
+                    background: $BGColor;
+                    margin-#{$marginType}: $marginValue;
+               }
+     
+               &#home-hero-button-random {
+                    @include button-attr(hsl(294, 75%, 64%), 'right', 15px);
+               }
+               &#home-hero-button-github {
+                    @include button-attr(hsl(42, 87%, 56%), 'left', 0px);
+               }
+     
+               $local-button-scale-hover: 1.05;
+               $local-button-scale-active: .95;
+               &:hover  { transform: scale($local-button-scale-hover, $local-button-scale-hover);   }
+               &:active { transform: scale($local-button-scale-active, $local-button-scale-active); }
+          }
+     }
+
+     #home-hero-media {
+          z-index: -5;
+          float: right;
+          position: absolute;
+          bottom: 8.2cm; right: 0;
+          
+          $trypophobia1-BGDodgerblue: radial-gradient(dodgerblue 30%, transparent 0);
+          $trypophobia1-Anim-Rotate1: background-rotate1 60s linear infinite;
+          $trypophobia1-Size: 5.9cm;
+          #home-hero-media-trypophobia {
+               @include trypophobia-attrs($trypophobia1-BGDodgerblue, $trypophobia1-Anim-Rotate1, $trypophobia1-Size);
+               position: relative;
+               bottom: 0cm; right: 3.5cm;
+          }
+
+          $local-image-size: 300px;
+          img {
+               z-index: 5;
+               overflow: hidden;
+               border-radius: calc(glob-stuff.$global-border-radius + 3px);
+               animation: image-squishy 3s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+               width: calc($local-image-size + 50px); height: $local-image-size;
+               position: relative;
+               top: 0.6cm; right: 5.5cm;
+          }
+     }
+
+     #home-fake-search {
+          position: relative;
+          top: 3cm; right: 1.3cm;
+
+          #home-fake-search-dumbTitle {
+               text-align: center;
+               font-size: 3em;
+               font-weight: 550;
+               margin-bottom: 20px;
+               position: relative;
+               right: 8px;
+          }
+
+          #home-fake-search-bar {
+               cursor: pointer;
+               float: right;
+               display: block;
+               border-radius: glob-stuff.$global-border-radius;
+               border: 1.5px solid glob-stuff.$global-color-grey;
+               background-color: black;
+               width: 12cm; height: glob-stuff.$global-cringe-solver;
+               position: relative;
+               top: 0.45cm;
+               padding: 5px 7px;
+               margin-right: calc(15px * 1);
+
+               $local-tag-icon-size: 1.35em !global;
+               i {
+                    font-size: $local-tag-icon-size;
+                    padding: 0;
+
+                    &#sidebar-searchIcon {
+                         margin: 0 0 0 5px;
+                    }
+               }
+
+               button[type=button] {
+                    cursor: pointer;
+                    text-align: left;
+                    font-size: 1em;
+                    color: grey;
+                    border: none !important;
+                    outline: none !important;
+                    background: none;
+                    width: 10cm;
+                    position: relative;
+                    bottom: 2px;
+               }
+
+               kbd {
+                    font-size: 0.8em;
+                    font-family: glob-stuff.$global-font-family !important;
+                    border: 1px solid hsl(0deg, 0%, 20%);
+                    border-radius: calc(glob-stuff.$global-border-radius - 2px);
+                    background-color: hsl(0deg, 0%, 15%);
+                    position: relative;
+                    bottom: 3px;
+                    padding: 1px 3px;
+
+                    &#the-k {
+                         margin-left: 2px;
+                         padding: { left: 4px; right: 4px; };
+                    }
+               }
+               
+               &:hover {
+                    border: 1.5px solid glob-stuff.$global-color-lightBlue;
+                    background-color: hsl(0deg, 0%, 10%);
+               }
+               &:active {
+                    border: 1.5px solid glob-stuff.$global-color-gold;
+               }
+          }
+     }
+}
+
+/* 
+cursor: pointer;
+               border-radius: glob-stuff.$global-border-radius;
+               border: 1.5px solid glob-stuff.$global-color-grey;
+               background-color: black;
+               width: 11.8cm;
+               padding: 5px 7px;
+
+               $local-tag-icon-size: 1.35em !global;
+               i {
+                    font-size: $local-tag-icon-size;
+                    padding: 0;
+
+                    &#search-bar-icon-search {
+                         margin: 0 0 0 5px;
+                    }
+               }
+
+               button[type=button] {
+                    cursor: pointer;
+                    text-align: left;
+                    font-size: 1em;
+                    color: grey;
+                    border: none !important;
+                    outline: none !important;
+                    background: none;
+                    width: 10cm;
+                    position: relative;
+               }
+
+               &:hover {
+                    border: 1.5px solid hsl(210, 100%, 72%);
+               } */

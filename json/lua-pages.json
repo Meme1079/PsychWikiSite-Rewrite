@@ -1,7 +1,8 @@
 {
      "lua_coding_docs": [
           "basics_of_coding",
-          "library_methods"
+          "library_methods",
+          "matching_patterns"
      ],
      "lua_script_api": [
           "callback_templates",
@@ -14,7 +15,7 @@
           "precaching_functions",
           "scripting_&_file_functions",
           "shader_functions",
-          "sound_&_Music_functions",
+          "sound_&_music_functions",
           "tweens_&_timers_functions",
           "value_setting_&_getting_functions",
           "variables"

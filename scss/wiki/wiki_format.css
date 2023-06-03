@@ -1,0 +1,270 @@
+/* Cringe solved */
+/* Mixins */
+/* Functions */
+/* Local Club :cool: */
+@font-face {
+     font-family: "Fira Code";
+     src: url(../../fonts/Fira_Code/FiraCode-Regular.woff) format("woff"), url(../../fonts/Fira_Code/FiraCode-Regular.ttf) format("truetype");
+}
+/* Goofy aaaahhhhh code */
+html {
+     font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
+     scroll-behavior: smooth;
+}
+html ::-moz-selection {
+     background-color: dodgerblue;
+}
+html ::selection {
+     background-color: dodgerblue;
+}
+
+#wiki-bg {
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
+     background-color: rgb(39, 43, 51);
+     width: minmax(10cm, 28.3cm);
+     padding-top: 1.1cm;
+     margin: 3cm 0.4cm 25px 8.9cm;
+}
+@media only screen and (max-width: 1130px) {
+     #wiki-bg {
+          margin-left: 0.4cm;
+     }
+}
+#wiki-bg #wiki {
+     font-size: 1em;
+     word-wrap: break-word;
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     border-radius: 0px 0px 5px 5px;
+     background-color: hsl(0deg, 0%, 10%);
+     padding: 20px 25px;
+     /* Headers */
+     /* Tables */
+     /* BlockQuotes */
+     /* Code Blocks */
+     /* Code Colors */
+     /* Code Nest */
+}
+#wiki-bg #wiki :is(p, a, ul, td, th, blockquote) {
+     font-size: 1em;
+     line-height: 1.5;
+     margin-top: 0px 0px 10px 0px;
+}
+#wiki-bg #wiki li {
+     margin-top: 5px;
+     margin-bottom: 5px;
+}
+#wiki-bg #wiki a {
+     text-decoration: none;
+     color: hsl(210deg, 100%, 72%);
+}
+#wiki-bg #wiki a:hover {
+     text-decoration: underline;
+}
+#wiki-bg #wiki hr {
+     border: none;
+     background-color: hsl(214deg, 12%, 66%);
+     height: 3px;
+     margin-top: 20px;
+}
+#wiki-bg #wiki :is(h1, h2, h3, h4) {
+     scroll-margin-top: 2.5cm;
+}
+#wiki-bg #wiki :is(h1, h2) {
+     border-bottom: 1px solid hsl(216deg, 8%, 52%);
+     padding-bottom: 10px;
+}
+#wiki-bg #wiki h1 {
+     font-size: 2em;
+     font-weight: 600;
+     margin: 15px 0px 25px 0px;
+}
+#wiki-bg #wiki h2 {
+     font-size: 1.5em;
+     font-weight: 580;
+     margin: 15px 0px 20px 0px;
+}
+#wiki-bg #wiki h3 {
+     font-size: 1.25em;
+     font-weight: 550;
+     margin: 15px 0px 15px 0px;
+}
+#wiki-bg #wiki h4 {
+     font-size: 1em;
+     font-weight: 530;
+     margin: 15px 0px 10px 0px;
+}
+#wiki-bg #wiki :is(code, pre, kbd) {
+     font-size: calc(1em - 3px);
+     font-family: "Fira Code", Menlo, "Lucida Console", "Monaco", "monospace";
+     border-radius: 5px;
+     color: white;
+}
+#wiki-bg #wiki code {
+     background-color: hsla(214deg, 12%, 66%, 0.4);
+     padding: 0.2em 0.4em;
+}
+#wiki-bg #wiki kbd {
+     font-size: calc(1em - 4px) !important;
+     border: 1px solid hsla(214deg, 12%, 66%, 0.4);
+     border-bottom: 2px solid hsla(214deg, 12%, 66%, 0.4);
+     background-color: hsl(0deg, 0%, 16%);
+     padding: 2px 5px;
+}
+#wiki-bg #wiki .code-border {
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
+     background-color: rgb(39, 43, 51);
+     margin: 20px 0px;
+}
+#wiki-bg #wiki .code-border pre {
+     -moz-tab-size: 8;
+       -o-tab-size: 8;
+          tab-size: 8;
+     white-space: pre;
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     overflow-x: auto;
+     line-height: 20px !important;
+     color: white;
+     border-radius: 0px 0px 5px 5px;
+     background-color: black;
+     margin-top: 12px;
+     padding: 16px;
+}
+#wiki-bg #wiki .code-border pre::before {
+     counter-reset: listing;
+}
+#wiki-bg #wiki .code-border pre span.code-line {
+     counter-increment: listing;
+}
+#wiki-bg #wiki .code-border pre span.code-line::before {
+     content: counter(listing) "  ";
+     display: inline-block;
+     color: hsl(0deg, 0%, 67%);
+     width: 3em;
+     padding-left: auto;
+     margin-left: auto;
+     text-align: center;
+}
+#wiki-bg #wiki .code-border :is(pre, pre span)::-moz-selection {
+     color: black;
+     background-color: white;
+}
+#wiki-bg #wiki .code-border :is(pre, pre span)::selection {
+     color: black;
+     background-color: white;
+}
+@media only screen and (min-width: 0px), (max-width: 890px) {
+     #wiki-bg #wiki .code-file-path .code-tags {
+          display: flex;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding-bottom: 10px;
+          padding-right: 10px;
+     }
+     #wiki-bg #wiki .code-file-path pre {
+          margin-top: 0px !important;
+     }
+}
+#wiki-bg #wiki .code-tagbg {
+     font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman" !important;
+     font-size: 15px;
+     font-weight: 630;
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     border-radius: 6px;
+     background-color: black;
+     transform: translateX(5px) translateY(5px);
+     width: -moz-fit-content;
+     width: fit-content;
+     margin-right: 13px;
+     padding: 7px 10px;
+}
+#wiki-bg #wiki .code-locationFile {
+     color: hsl(1deg, 100%, 79%);
+     font-family: "Fira Code", Menlo, "Lucida Console", "Monaco", "monospace";
+     font-size: 13px;
+     width: -moz-fit-content;
+     width: fit-content;
+     position: relative;
+     top: 13px;
+     padding: 2 !important;
+}
+#wiki-bg #wiki pre span.code-var {
+     color: hsl(0deg, 0%, 100%);
+}
+#wiki-bg #wiki pre span.code-varD {
+     color: hsl(34deg, 100%, 65%);
+}
+#wiki-bg #wiki pre span.code-kyw {
+     color: hsl(1deg, 100%, 79%);
+}
+#wiki-bg #wiki pre span.code-ope {
+     color: hsl(1deg, 100%, 79%);
+}
+#wiki-bg #wiki pre span.code-str {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki-bg #wiki pre span.code-num {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki-bg #wiki pre span.code-boo {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki-bg #wiki pre span.code-nil {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki-bg #wiki pre span.code-com {
+     color: hsl(212deg, 13%, 77%);
+     font-style: italic;
+}
+#wiki-bg #wiki pre span.code-esc {
+     color: hsl(1deg, 100%, 79%);
+}
+#wiki-bg #wiki pre span.code-ptr {
+     color: hsl(168deg, 55%, 54%);
+}
+#wiki-bg #wiki pre span.code-data {
+     color: hsl(168deg, 55%, 54%);
+}
+#wiki-bg #wiki pre span.code-tabkey {
+     color: hsl(0deg, 0%, 100%);
+}
+#wiki-bg #wiki pre span.code-modul {
+     color: hsl(168deg, 55%, 54%);
+}
+#wiki-bg #wiki pre span.code-funcD {
+     color: hsl(270deg, 100%, 86%);
+}
+#wiki-bg #wiki pre span.code-funcC {
+     color: hsl(270deg, 100%, 86%);
+}
+#wiki-bg #wiki pre span.code-funcM {
+     color: hsl(168deg, 55%, 54%);
+}
+#wiki-bg #wiki pre span.code-paraS {
+     color: hsl(34deg, 100%, 65%);
+}
+#wiki-bg #wiki pre span.code-paraI {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki-bg #wiki pre span.code-error {
+     background-color: rgba(255, 0, 0, 0.8);
+}
+#wiki-bg #wiki pre span.code-nest1 {
+     color: hsl(208deg, 100%, 78%);
+}
+#wiki-bg #wiki pre span.code-nest2 {
+     color: hsl(132deg, 73%, 57%);
+}
+#wiki-bg #wiki pre span.code-nest3 {
+     color: hsl(46deg, 93%, 58%);
+}
+#wiki-bg #wiki pre span.code-nest4 {
+     color: hsl(2deg, 62%, 76%);
+}
+#wiki-bg #wiki pre span.code-nest5 {
+     color: hsl(331deg, 80%, 80%);
+}
+#wiki-bg #wiki pre span.code-nest6 {
+     color: hsl(271deg, 88%, 84%);
+}

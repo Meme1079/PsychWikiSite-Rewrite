@@ -11,92 +11,68 @@
           <meta name="viewport"     content="width=device-width, initial-scale=1">
           <meta name="color-scheme" content="dark">
           <link rel="icon" href="./images/Psych.ico">
-          <link rel="stylesheet" type="text/css" href="./css/global/topbar_format.css">
-          <link rel="stylesheet" type="text/css" href="./css/global/no_javascript.css">
-          <link rel="stylesheet" type="text/css" href="./css/other/home_format.css">
-          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+          <link rel="stylesheet" type="text/css" href="./scss/global/no_javascript_format.css">
+          <link rel="stylesheet" type="text/css" href="./scss/global/search_format.css">
+          <link rel="stylesheet" type="text/css" href="./scss/home/home_format.css">
+          <script defer type="module" src="./javascript/Search.js"></script>
           <script defer type="module" src="./javascript/Main.js"></script>
           <script defer type="module" src="./javascript/Home.js"></script>
      </head>
      <body>
-          <noscript>
-               <div id="global-no-javascript">
-                    <div id="no-javascript-window">
-                         <div id="no-javascript-topbar">
-                              <p>Javascript Disable Detected!</p>
-                         </div>
-                         <img src="./images/popup_warning.png" alt="Warning Image" width="120" height="120">
-                         <p> Enable Javascript for this website </p>
-                         <p> Becuase it really relies on it </p>
-                         <button type="button"> Ok </button>
-                         <p id="no-javascript-NOTE"> NOTE: There is no bad script, trust me bro </p>
+          <noscript> <!-- Better -->
+               <div id="windows-error-javascript">
+                    <div id="windows-error-javascript-topbar">
+                         <span id="windows-error-javascript-topbar-title">Sorry! [Website Error]</span>
+                         <img src="../../images/error/popup_close_icon.png" alt="Window Close Icon">
                     </div>
+                    <img id="windows-error-icon-warning" src="../../images/error/popup_warning.png" alt="Window Error Icon">
+                    <div id="windows-error-javascript-text">
+                         <p style="margin-bottom: 0px;">Oh no! You've disable Javascript you idiot</p>
+                         <p style="margin-top: 10px;">Enable it Javascript to remove this error!</p>
+                    </div>
+                    <img id="windows-error-button-ok" src="../../images/error/popup_ok_button.png" alt="Window Ok Button">
                </div>
           </noscript>
-          <main>
-               <article id="home-search">
-                    <div id="home-search-backdrop"></div>
-                    <div id="home-search-main">
-                         <div id="home-search-main-searchbar">
-                              <i id="search-bar-icon-search" class="uil uil-search" aria-hidden="true"></i>
-                              <input type="text" maxlength="35" placeholder="Search Anything in PsychWiki!"></input>
-                              <i id="search-bar-icon-clear"  class="uil uil-times-circle" aria-hidden="true"></i>
-                         </div>
-                         <div id="home-search-main-suggestion">
-                              <h3>Popular <i class="uil uil-arrow-growth"></i> <em>(Based on Github Insight Traffic)</em></h3>
-                              <ul id="popular">
-                                   <li class="lua-coding-docs">Basics of Coding</li>
-                                   <li class="lua-script-api">Callback Templates</li>
-                                   <li class="lua-script-api">Object Functions</li>
-                                   <li class="lua-script-api">Value Setting & Getting Functions</li>
-                                   <li class="lua-script-api">Variables</li>
-                              </ul>
-                              <h3 style="margin-top: 0.15cm">Suggested <i class="uil uil-cube"></i></h3>
-                              <ul id="suggested">
-                                   <li class="lua-coding-docs">Basics of Coding</li>
-                                   <li class="lua-coding-docs">Library Methods</li>
-                                   <li class="lua-script-api">Callback Templates</li>
-                                   <li class="lua-script-api">Control Functions</li>
-                                   <li class="lua-script-api">Custom Sprites & Texts Functions</li>
-                                   <li class="lua-script-api">Deprecated Lua Functions</li>
-                                   <li class="lua-script-api">Dialogue & Cutscene Functions</li>
-                                   <li class="lua-script-api">General Functions</li>
-                                   <li class="lua-script-api">Object Functions</li>
-                                   <li class="lua-script-api">Precaching Functions</li>
-                                   <li class="lua-script-api">Scripting & File Functions</li>
-                                   <li class="lua-script-api">Shader Functions</li>
-                                   <li class="lua-script-api">Sound & Music Functions</li>
-                                   <li class="lua-script-api">Tween & Timer Functions</li>
-                                   <li class="lua-script-api">Value Setting & Getting Functions</li>
-                                   <li class="lua-script-api">Variables</li>
-                              </ul>
-                         </div>
+          <nav id="global-search">
+               <div id="global-search-backdrop"></div>
+               <div id="global-search-main">
+                    <div id="search-main-searchbar">
+                         <i id="search-bar-icon-search" class="uil uil-search" ></i>
+                         <input type="text" maxlength="35" placeholder="Search Anything in PsychWiki!"></input>
+                         <i id="search-bar-icon-clear"  class="uil uil-backspace" ></i>
                     </div>
-               </article>
+                    <div id="search-main-lists">
+                         <h3> Lua Coding Docs </h3>
+                         <ul id="list-lua-coding-docs"></ul>
+                         <h3> Lua Script API </h3>
+                         <ul id="list-lua-script-api"></ul>
+                    </div>
+               </div>
+          </nav>
+          <main>
                <article id="home-hero">
-                    <section id="home-hero-media">
-                         <div id="home-hero-media-trypophobia"></div>
-                         <img src="./images/stupid_club/Nails.png" alt="[Insert goofy ahhhh image here]">
-                    </section>
                     <section id="home-hero-about">
                          <h1 id="home-hero-about-title"> PsychWikiSite <span>Rewrite</span> </h1>
                          <p  id="home-hero-about-slogan">...</p>
                          <p  id="home-hero-about-description"> This is a website that is basically a website version of PsychWiki from my Github. </p>
                          <div id="home-hero-media-trypophobia"></div>
-                         <div style="display: flex;">
+                         <div id="home-hero-about-buttons">
                               <button type="button" id="home-hero-button-random">Random Page<i class="uil uil-shuffle"></i></button>
                               <button type="button" id="home-hero-button-github">Source Code<i class="uil uil-github"></i></button>
                          </div>
                     </section>
+                    <section id="home-hero-media">
+                         <div id="home-hero-media-trypophobia"></div>
+                         <img src="./images/stupid_club/Nails.png" alt="[Insert goofy ahhhh image here]">
+                    </section>
                     <section id="home-fake-search">
-                         <div style="display: flex; justify-content: center;">
-                              <h1 id="home-fake-search-dumbTitle">Search Stuff</h1>
-                         </div>
+                         <h1 id="home-fake-search-dumbTitle">Search Stuff</h1>
                          <div style="display: flex; justify-content: center;">
                               <div id="home-fake-search-bar">
-                                   <i id="search-bar-icon-search" class="uil uil-search" aria-hidden="true"></i>
-                                   <button type="button">Search Anything in PsychWiki!</button>
+                                   <i id="sidebar-searchIcon" class="uil uil-search"></i>
+                                   <button type="button" spellcheck="true">Search The PsychWiki!</button>
+                                   <kbd aria-hidden="true">⌘</kbd><kbd id="the-k" aria-hidden="true">K</kbd>
                               </div>
                          </div>
                     </section>

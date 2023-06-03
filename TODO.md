@@ -9,5 +9,5 @@
 - [ ] Finish the Library Methods _(High priority)_
 - [ ] Finish all the Pages _(High priority)_
 - [ ] Revamp the Topbar _(High priority)_
-- [ ] Media Support on Home Page **(Hell)**
+- [ ] Media Support on Home Page _(High priority)_ **(Hell)**
 - [ ] Make the dark and light mode _(Low priority)_
