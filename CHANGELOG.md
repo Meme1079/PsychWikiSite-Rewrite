@@ -1,4 +1,8 @@
 # Beta
+### Version 1.1.0
+- Added some metadata inside the `head` tags
+- Fixed a bug "Lua Coding Docs" Pages when accessing any pages _(It was the `base` tag)_
+
 ### Version 1.0.0
 - Added a functional search bar in every page
 - Added "Matching Patterns" page
