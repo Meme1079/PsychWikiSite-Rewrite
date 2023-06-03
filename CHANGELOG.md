@@ -1,7 +1,10 @@
 # Beta
+### Version 1.1.1
+- Fixed a bug when going to a new page
+
 ### Version 1.1.0
 - Added some metadata inside the `head` tags
-- Fixed a bug "Lua Coding Docs" Pages when accessing any pages _(It was the `base` tag)_
+- Removed any `base` tags due to bugs
 
 ### Version 1.0.0
 - Added a functional search bar in every page

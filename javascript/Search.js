@@ -122,13 +122,13 @@ shortCut(searchInputPath).addEventListener('keyup', (event) => {
           for (let i of pages.lua_coding_docs) {
                if (filterInputValue === i) {
                     shortCut(searchInputPath).value = ''
-                    window.location.href = `/html/lua-coding-docs/${filterInputValue}.html`
+                    window.location.href = `html/lua-coding-docs/${filterInputValue}.html`
                }
           }
           for (let i of pages.lua_script_api) {
                if (filterInputValue === i) {
                     shortCut(searchInputPath).value = ''
-                    window.location.href = `/html/lua-script-api/${filterInputValue}.html`
+                    window.location.href = `html/lua-script-api/${filterInputValue}.html`
                }
           }
      }
