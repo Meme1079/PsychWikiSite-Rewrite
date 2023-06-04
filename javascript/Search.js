@@ -84,10 +84,10 @@ function toFirstUpperWord(str) {
 function createSectionLists(luaWikiPath, pageJSON) {
      const sectionIconBook = '<i aria-hidden="true" class="uil uil-notebooks"></i>'
      for (let page of pageJSON) {
-          let sectionList_A  = `<a href="/html/${luaWikiPath}/${page.toLowerCase()}.html">`
+          let sectionList_A  = `<a href="html/${luaWikiPath}/${page.toLowerCase()}.html">`
           let sectionList_LI = `<li class="${luaWikiPath}">${sectionIconBook}${toFirstUpperWord(page)}</li></a>`
-
-          shortCut(`#search-main-lists #list-${luaWikiPath}`).innerHTML += sectionList_A + sectionList_LI
+          let sectionList    = sectionList_A + sectionList_LI
+          shortCut(`#search-main-lists #list-${luaWikiPath}`).innerHTML += sectionList
      }
 }
 
