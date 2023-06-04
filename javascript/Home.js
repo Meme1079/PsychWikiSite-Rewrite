@@ -8,16 +8,15 @@ shortCut('#home-hero-about #home-hero-about-slogan').textContent = homeSlogans[r
 const homeImages = ['Nails.png', 'Yuh_uh.gif', 'Needy.png', 'OMG.png', 'prideMungus.png']
 shortCut('#home-hero-media img').setAttribute('src', `./images/stupid_club/${homeImages[rand(5)]}`)
 
-let allWiki = ''
 shortCutAll('#home-hero-about button')[0].addEventListener('click', function() {
-     let allWikiCreate = (pageJSON, luaWikiPath) => {
-          for (let pagesWiki of pageJSON) { 
-               allWiki += `html/${luaWikiPath}/${pagesWiki.toString().toLowerCase()}.html, ` 
-          }
+     let allWiki = ''
+     for (let pagesWiki of pages.lua_coding_docs) { 
+          allWiki += `html/lua-coding-docs/${pagesWiki.toString().toLowerCase()}.html, ` 
+     }
+     for (let pagesWiki of pages.lua_script_api) { 
+          allWiki += `html/lua-script-api/${pagesWiki.toString().toLowerCase()}.html, ` 
      }
 
-     allWikiCreate(pages.lua_coding_docs, 'lua-coding-docs')
-     allWikiCreate(pages.lua_script_api, 'lua-script-api')
      window.location.href = allWiki.split(', ')[rand(allWiki.split(', ').length - 2)]
 })
 
