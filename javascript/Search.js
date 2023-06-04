@@ -81,10 +81,14 @@ function toFirstUpperWord(str) {
      return results.substring(0, results.length - 1)
 }
 
+const wikiMetaPageCheck = shortCutAll('meta')[0].getAttribute('wikipage') == 'true'
 function createSectionLists(luaWikiPath, pageJSON) {
      const sectionIconBook = '<i aria-hidden="true" class="uil uil-notebooks"></i>'
      for (let page of pageJSON) {
-          let sectionList_A  = `<a href="html/${luaWikiPath}/${page.toLowerCase()}.html">`
+          let sectionList_AInside    = `<a href="${page.toLowerCase()}.html">`
+          let sectionList_AOutside   = `<a href="html/${luaWikiPath}/${page.toLowerCase()}.html">`
+
+          let sectionList_A  = wikiMetaPageCheck ? sectionList_AInside : sectionList_AOutside
           let sectionList_LI = `<li class="${luaWikiPath}">${sectionIconBook}${toFirstUpperWord(page)}</li></a>`
           let sectionList    = sectionList_A + sectionList_LI
           shortCut(`#search-main-lists #list-${luaWikiPath}`).innerHTML += sectionList
@@ -119,16 +123,22 @@ const searchInputPath = `${searchPath} #search-main-searchbar input`
 shortCut(searchInputPath).addEventListener('keyup', (event) => {
      let filterInputValue = shortCut(searchInputPath).value.toLowerCase().replaceAll(' ', '_')
      if (event.key == 'Enter') {
-          for (let i of pages.lua_coding_docs) {
-               if (filterInputValue === i) {
+          for (let page of pages.lua_coding_docs) {
+               if (filterInputValue === page) {
+                    let linkSearch_Inside  = `${filterInputValue}.html`
+                    let linkSearch_Outside = `html/lua-coding-docs/${filterInputValue}.html`
+
                     shortCut(searchInputPath).value = ''
-                    window.location.href = `html/lua-coding-docs/${filterInputValue}.html`
+                    window.location.href = wikiMetaPageCheck ? linkSearch_Inside : linkSearch_Outside
                }
           }
-          for (let i of pages.lua_script_api) {
-               if (filterInputValue === i) {
+          for (let page of pages.lua_script_api) {
+               if (filterInputValue === page) {
+                    let linkSearch_Inside  = `${filterInputValue}.html`
+                    let linkSearch_Outside = `html/lua-script-api/${filterInputValue}.html`
+
                     shortCut(searchInputPath).value = ''
-                    window.location.href = `html/lua-script-api/${filterInputValue}.html`
+                    window.location.href = wikiMetaPageCheck ? linkSearch_Inside : linkSearch_Outside
                }
           }
      }

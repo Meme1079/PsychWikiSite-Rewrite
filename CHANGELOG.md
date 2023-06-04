@@ -1,4 +1,7 @@
 # Beta
+### version 1.1.2
+- Fixed a bug where pressing the random button doesn't go to any random page
+
 ### Version 1.1.1
 - Fixed a bug when going to a new page
 
