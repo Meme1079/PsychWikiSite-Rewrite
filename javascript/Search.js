@@ -81,10 +81,14 @@ function toFirstUpperWord(str) {
      return results.substring(0, results.length - 1)
 }
 
+const wikiMetaPageCheck = shortCutAll('meta')[0].getAttribute('wikipage') == 'true'
 function createSectionLists(luaWikiPath, pageJSON) {
      const sectionIconBook = '<i aria-hidden="true" class="uil uil-notebooks"></i>'
      for (let page of pageJSON) {
-          let sectionList_A  = `<a href="../../html/${luaWikiPath}/${page.toLowerCase()}.html">`
+          let sectionList_AWikiTrue  = `<a href="../../html/${luaWikiPath}/${page.toLowerCase()}.html">`
+          let sectionList_AWikiFalse = `<a href="/html/${luaWikiPath}/${page.toLowerCase()}.html">`
+          let sectionList_A  = wikiMetaPageCheck ? sectionList_AWikiTrue : sectionList_AWikiFalse
+
           let sectionList_LI = `<li class="${luaWikiPath}">${sectionIconBook}${toFirstUpperWord(page)}</li></a>`
           let sectionList    = sectionList_A + sectionList_LI
           shortCut(`#search-main-lists #list-${luaWikiPath}`).innerHTML += sectionList
@@ -122,18 +126,20 @@ shortCut(searchInputPath).addEventListener('keyup', (event) => {
           for (let page of pages.lua_coding_docs) {
                if (filterInputValue === page) {
                     shortCut(searchInputPath).value = ''
-                    window.location.href = `../../html/lua-coding-docs/${filterInputValue}.html`
+
+                    let windowURlWikiTrue  = `../../html/lua-coding-docs/${filterInputValue}.html`
+                    let windowURlWikiFalse = `/html/lua-coding-docs/${filterInputValue}.html`
+                    window.location.href = wikiMetaPageCheck ? windowURlWikiTrue : windowURlWikiFalse
                }
           }
           for (let page of pages.lua_script_api) {
                if (filterInputValue === page) {
                     shortCut(searchInputPath).value = ''
-                    window.location.href = `../../html/lua-script-api/${filterInputValue}.html`
-               }
-          }
 
-          if (filterInputValue == 'test') {
-               window.location.href = '../../testing/test.html'
+                    let windowURlWikiTrue  = `../../html/lua-script-api/${filterInputValue}.html`
+                    let windowURlWikiFalse = `/html/lua-script-api/${filterInputValue}.html`
+                    window.location.href = wikiMetaPageCheck ? windowURlWikiTrue : windowURlWikiFalse
+               }
           }
      }
 })
