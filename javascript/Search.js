@@ -81,16 +81,15 @@ function toFirstUpperWord(str) {
      return results.substring(0, results.length - 1)
 }
 
-const wikiMetaPageCheck = shortCutAll('meta')[0].getAttribute('wikipage') == 'true'
+const wikiMetaPageCheck = shortCutAll('meta')[0].getAttribute('data-wikipage') == 'true'
 function createSectionLists(luaWikiPath, pageJSON) {
      const sectionIconBook = '<i aria-hidden="true" class="uil uil-notebooks"></i>'
      for (let page of pageJSON) {
-          let sectionList_AWikiTrue  = `<a href="../../html/${luaWikiPath}/${page.toLowerCase()}.html">`
-          let sectionList_AWikiFalse = `<a href="/html/${luaWikiPath}/${page.toLowerCase()}.html">`
-          let sectionList_A  = wikiMetaPageCheck ? sectionList_AWikiTrue : sectionList_AWikiFalse
+          let sectionList_AWikiTrue     = `<a href="../../html/${luaWikiPath}/${page.toLowerCase()}.html">`
+          let sectionList_AWikiFalse    = `<a href="html/${luaWikiPath}/${page.toLowerCase()}.html">`
 
           let sectionList_LI = `<li class="${luaWikiPath}">${sectionIconBook}${toFirstUpperWord(page)}</li></a>`
-          let sectionList    = sectionList_A + sectionList_LI
+          let sectionList    = (wikiMetaPageCheck ? sectionList_AWikiTrue : sectionList_AWikiFalse) + sectionList_LI
           shortCut(`#search-main-lists #list-${luaWikiPath}`).innerHTML += sectionList
      }
 }

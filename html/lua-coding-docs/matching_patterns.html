@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <title>PsychWikiSite - Lua Coding Docs: Matching Patterns</title>
+          <meta data-wikipage="true">
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="description"  content="A rewrite of the old PsychWikiSite; to improve the code duh!">
+          <meta name="keywords"     content="PsychEngine, PsychEngine Wiki, PsychWiki, PsychWikiSite-Rewrite">
+          <meta name="author"       content="Meme1079">
+          <meta name="language"     content="EN">
+          <meta name="viewport"     content="width=device-width, initial-scale=1">
+          <meta name="color-scheme" content="dark">
+          <link rel="icon" href="../../images/Psych.ico">
+          <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+          <link rel="stylesheet" type="text/css" href="../../scss/global/no_javascript_format.css">
+          <link rel="stylesheet" type="text/css" href="../../scss/global/search_format.css">
+          <link rel="stylesheet" type="text/css" href="../../scss/wiki/topbar_format.css">
+          <link rel="stylesheet" type="text/css" href="../../scss/wiki/sidebar_format.css">
+          <link rel="stylesheet" type="text/css" href="../../scss/wiki/wiki_format.css">
+          <script defer type="module" src="../../javascript/Search.js"></script>
+          <script defer type="module" src="../../javascript/wiki/Top.js"></script>
+          <script defer type="module" src="../../javascript/wiki/Side.js"></script>
+          <script defer type="module" src="../../javascript/wiki/Wiki.js"></script>
+     </head>
+     <body>
+          <noscript> <!-- Better -->
+               <div id="windows-error-javascript">
+                    <div id="windows-error-javascript-topbar">
+                         <span id="windows-error-javascript-topbar-title">Sorry! [Website Error]</span>
+                         <img src="../../images/error/popup_close_icon.png" alt="Window Close Icon">
+                    </div>
+                    <img id="windows-error-icon-warning" src="../../images/error/popup_warning.png" alt="Window Error Icon">
+                    <div id="windows-error-javascript-text">
+                         <p style="margin-bottom: 0px;">Oh no! You've disable Javascript you idiot</p>
+                         <p style="margin-top: 10px;">Enable it Javascript to remove this error!</p>
+                    </div>
+                    <img id="windows-error-button-ok" src="../../images/error/popup_ok_button.png" alt="Window Ok Button">
+               </div>
+          </noscript>
+          <nav id="global-topbar">
+               <div id="global-topbar-logo">
+                    <a href="https://github.com/ShadowMario/FNF-PsychEngine"><img src="../../images/Psych.ico" alt="Psych Engine Icon Duh" ></a>
+                    <p> PsychWikiSite <span>Rewrite</span> </p>
+               </div>
+               <div id="global-topbar-list">
+                    <section id="list-max">
+                         <ul>
+                              <li><a href="../../index.html"><i  class="uil uil-location-point"></i>Home</a></li>
+                              <li><a><i  class="uil uil-setting"></i>Settings</a></li>
+                              <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i  class="uil uil-github"></i>Github</a></li>
+                         </ul>
+                    </section>
+                    <section id="list-min">
+                         <div id="topbar-list-menu"><i  class="uil uil-bars"></i></div>
+                         <ul>
+                              <li><a href="../../index.html"><i  class="uil uil-location-point"></i></a></li>
+                              <li><a><i  class="uil uil-search"></i></a></li>
+                              <li><a><i  class="uil uil-setting"></i></a></li>
+                              <li><a href="https://github.com/Meme1079/PsychWikiSite-Rewrite"><i  class="uil uil-github"></i></a></li>
+                              <li><a><i  class="uil uil-cube"></i></a></li>
+                         </ul>
+                    </section>
+                    <div id="topbar-list-search">
+                         <i  id="sidebar-searchIcon" class="uil uil-search"></i>
+                         <button type="button" spellcheck="true">Search The PsychWiki!</button>
+                         <kbd aria-hidden="true">⌘</kbd><kbd id="the-k" aria-hidden="true">K</kbd>
+                    </div>
+                    <div id="topbar-list-other">
+                         <i  onclick=" window.scrollTo(0, 0) " id="sidebar-arrow-top"     class="uil uil-arrow-circle-up"></i>
+                         <i  id="sidebar-website-theme" class="uil uil-moon"></i>
+                    </div>
+               </div>
+          </nav>
+          <nav id="global-sidebar">
+               <h3>Headings<i class="uil uil-cube" style="margin-left: 10px;"></i></h3>
+               <div id="sidebar-search">
+                    <i id="sidebar-searchIcon" class="uil uil-search"></i>
+                    <input type="text" spellcheck="true" maxlength="35" placeholder="Search Headings...">
+                    <i id="sidebar-clearIcon" class="uil uil-backspace"></i>
+               </div>
+               <hr>
+               <div id="sidebar-headerlists">
+                    <ul></ul>
+               </div>
+          </nav>
+          <nav id="global-search">
+               <div id="global-search-backdrop"></div>
+               <div id="global-search-main">
+                    <div id="search-main-searchbar">
+                         <i id="search-bar-icon-search" class="uil uil-search" ></i>
+                         <input type="text" maxlength="35" placeholder="Search Anything in PsychWiki!"></input>
+                         <i id="search-bar-icon-clear"  class="uil uil-backspace" ></i>
+                    </div>
+                    <div id="search-main-lists">
+                         <h3> Lua Coding Docs </h3>
+                         <ul id="list-lua-coding-docs"></ul>
+                         <h3> Lua Script API </h3>
+                         <ul id="list-lua-script-api"></ul>
+                    </div>
+               </div>
+          </nav>
+          <main>
+               <article id="wiki-bg">
+                    <article id="wiki">
+                    </article>
+               </article>
+          </main>
+     </body>
+     </body>
+</html>
