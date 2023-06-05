@@ -127,7 +127,7 @@ shortCut(searchInputPath).addEventListener('keyup', (event) => {
                     shortCut(searchInputPath).value = ''
 
                     let windowURlWikiTrue  = `../../html/lua-coding-docs/${filterInputValue}.html`
-                    let windowURlWikiFalse = `/html/lua-coding-docs/${filterInputValue}.html`
+                    let windowURlWikiFalse = `html/lua-coding-docs/${filterInputValue}.html`
                     window.location.href = wikiMetaPageCheck ? windowURlWikiTrue : windowURlWikiFalse
                }
           }
@@ -136,7 +136,7 @@ shortCut(searchInputPath).addEventListener('keyup', (event) => {
                     shortCut(searchInputPath).value = ''
 
                     let windowURlWikiTrue  = `../../html/lua-script-api/${filterInputValue}.html`
-                    let windowURlWikiFalse = `/html/lua-script-api/${filterInputValue}.html`
+                    let windowURlWikiFalse = `html/lua-script-api/${filterInputValue}.html`
                     window.location.href = wikiMetaPageCheck ? windowURlWikiTrue : windowURlWikiFalse
                }
           }
