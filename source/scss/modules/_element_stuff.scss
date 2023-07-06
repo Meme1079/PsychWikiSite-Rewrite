@@ -1,0 +1,26 @@
+@use "./global_stuff" as gs;
+
+@mixin kbd($font: gs.$global-font-family) {
+     font-family: $font;
+     font-size: 0.8em;
+     border: 1px solid hsl(0deg, 0%, 20%);
+     border-radius: 3px;
+     background-color: hsl(0deg, 0%, 15%);
+     position: relative; bottom: 2px;
+     padding: 1px 3px;
+}
+
+@mixin square_button($color, $pad, $mar, $withShadow: true) {
+     @if $withShadow == true {
+          box-shadow: 3px 3px 5px 0px hsl(0, 0%, 15%);
+     }
+
+     cursor: pointer;
+     font-size: 1.35em;
+     border: 1.5px solid gs.$global-color-grey;
+     border-radius: gs.$global-border-radius;
+     background-color: $color;
+     width: fit-content; height: fit-content;
+     position: relative; top: 0px;
+     padding: $pad; margin: $mar;
+}

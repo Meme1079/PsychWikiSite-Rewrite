@@ -1,0 +1,59 @@
+$global-font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
+$global-border-radius: 5px;
+
+/* Colors Globals */
+
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+     --global-color-lightblue: hsl(210, 100%, 72%);
+     --global-color-gold:      hsl(42, 87%, 56%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+}
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --global-color-lightblue: hsl(210, 100%, 52%);
+     --global-color-gold:      hsl(42, 87%, 36%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+}
+
+$global-color-lightblue: var(--global-color-lightblue);
+$global-color-gold:      var(--global-color-gold);
+$global-color-grey:      var(--global-color-grey);
+
+/* Mixins */
+
+@mixin no_selector {
+     user-select:         none;
+     -moz-user-select:    none;
+     -webkit-user-select: none;
+}
+
+@mixin center-element {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+@mixin button_hover($second: 'active') {
+     &:hover {
+          border-color: $global-color-lightblue;
+     }
+     &:#{$second} {
+          border-color: $global-color-gold;
+     }
+}
+
+/* Functions */
+
+@function pow($base, $exponent) {
+     $result: 1;
+     @for $_ from 1 through $exponent {
+          $result: $result * $base;
+     }
+     @return $result;
+}
+   
+@function median($min, $max) {
+     @if ($min >= $max) or ($max <= $min) {
+          @return false;
+     }
+     @return ($min + $max) / 2;
+}

@@ -1,15 +1,17 @@
-# Beta
-### version 1.1.2
+### Version 2.0.0-Beta
+
+
+### Version 1.1.2-Beta
 - Fixed a bug where pressing the random button doesn't go to any random page
 
-### Version 1.1.1
+### Version 1.1.1-Beta
 - Fixed a bug when going to a new page
 
-### Version 1.1.0
+### Version 1.1.0-Beta
 - Added some metadata inside the `head` tags
 - Removed any `base` tags due to bugs
 
-### Version 1.0.0
+### Version 1.0.0-Beta
 - Added a functional search bar in every page
 - Added "Matching Patterns" page
 - Every `i` tags will have the attribute `aria-hidden` set to `true`

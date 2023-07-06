@@ -4,10 +4,10 @@
 - [x] Make the website more media supported
 - [x] Revamp the Home Page _(High priority)_ _[Cuz it sucks!!!!!]_
 - [x] Make the Search Bar actual working
+- [x] Media Support on Home Page _(High priority)_ **(Hell)**
+- [x] Revamp the Topbar _(High priority)_
 
 # To Do
 - [ ] Finish the Library Methods _(High priority)_
 - [ ] Finish all the Pages _(High priority)_
-- [ ] Revamp the Topbar _(High priority)_
-- [ ] Media Support on Home Page _(High priority)_ **(Hell)**
 - [ ] Make the dark and light mode _(Low priority)_
