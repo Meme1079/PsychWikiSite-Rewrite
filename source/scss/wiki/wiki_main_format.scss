@@ -1,4 +1,5 @@
 @use "../modules/global_stuff" as gs;
+@use "sass:list";
 
 /* Local Club :cool: */
 
@@ -222,6 +223,12 @@ html {
                     --color-wiki-highlight-warn-outline: hsl(42deg, 87%, 56%);
                     --color-wiki-highlight-warn-bg: hsla(42deg, 87%, 56%, 0.1);
                     --color-wiki-highlight-warn-title: hsl(42deg, 87%, 66%);
+                    --color-wiki-highlight-vald-outline: hsl(125deg, 100%, 63%);
+                    --color-wiki-highlight-vald-bg: hsla(125deg, 100%, 63%, 0.1);
+                    --color-wiki-highlight-vald-title: hsl(125deg, 100%, 60%);
+                    --color-wiki-highlight-erro-outline: hsl(0deg, 100%, 63%);
+                    --color-wiki-highlight-erro-bg: hsla(0deg, 100%, 63%, 0.1);
+                    --color-wiki-highlight-erro-title: hsl(0deg, 100%, 60%);
                }
                
                :root[data-color-theme=light], meta[name=color-scheme][content=light] {
@@ -233,13 +240,6 @@ html {
                     --color-wiki-highlight-warn-title: hsl(42deg, 100%, 55%);
                }
           }
-
-          $local-note-outline: var(--color-wiki-highlight-note-outline);
-          $local-note-bg:      var(--color-wiki-highlight-note-bg);
-          $local-note-title:   var(--color-wiki-highlight-note-title);
-          $local-warn-outline: var(--color-wiki-highlight-warn-outline);
-          $local-warn-bg:      var(--color-wiki-highlight-warn-bg);
-          $local-warn-title:   var(--color-wiki-highlight-warn-title);
 
           blockquote {
                &[class^=highlight-] {
@@ -265,6 +265,10 @@ html {
                     }
                }
 
+               .code-border {
+                    margin: 15px 0px 0px 0px;
+               }
+
                @mixin highlight-types($border, $background, $color) {
                     border: 1px solid $border !important;
                     background-color: $background;
@@ -272,8 +276,15 @@ html {
                     span :is(i, strong) { color: $color; }
                }
 
-               &[class$=note] { @include highlight-types($local-note-outline, $local-note-bg, $local-note-title) }
-               &[class$=warn] { @include highlight-types($local-warn-outline, $local-warn-bg, $local-warn-title) }
+               $local-note-attrs: var(--color-wiki-highlight-note-outline), var(--color-wiki-highlight-note-bg), var(--color-wiki-highlight-note-title);
+               $local-warn-attrs: var(--color-wiki-highlight-warn-outline), var(--color-wiki-highlight-warn-bg), var(--color-wiki-highlight-warn-title);
+               $local-vald-attrs: var(--color-wiki-highlight-vald-outline), var(--color-wiki-highlight-vald-bg), var(--color-wiki-highlight-vald-title);
+               $local-erro-attrs: var(--color-wiki-highlight-erro-outline), var(--color-wiki-highlight-erro-bg), var(--color-wiki-highlight-erro-title);
+
+               &[class$=note] { @include highlight-types(list.nth($local-note-attrs, 1), list.nth($local-note-attrs, 2), list.nth($local-note-attrs, 3)) }
+               &[class$=warn] { @include highlight-types(list.nth($local-warn-attrs, 1), list.nth($local-warn-attrs, 2), list.nth($local-warn-attrs, 3)) }
+               &[class$=vald] { @include highlight-types(list.nth($local-vald-attrs, 1), list.nth($local-vald-attrs, 2), list.nth($local-vald-attrs, 3)) }
+               &[class$=erro] { @include highlight-types(list.nth($local-erro-attrs, 1), list.nth($local-erro-attrs, 2), list.nth($local-erro-attrs, 3)) }
           }
 
           /* Tables */      // TODO: Finish this
@@ -409,9 +420,9 @@ html {
                          --color-code-keywords:           hsl(1, 100%, 79%);
                          --color-code-operators:          hsl(1, 100%, 79%);
                          --color-code-string:             hsl(208, 100%, 78%);
-                         --color-code-number:             hsl(208, 100%, 78%);
+                         --color-code-number:             hsl(118, 100%, 78%);
                          --color-code-boolean:            hsl(208, 100%, 78%);
-                         --color-code-nil:                hsl(208, 100%, 78%);
+                         --color-code-nil:                hsl(1, 100%, 79%);
                          --color-code-comments:           hsl(212, 13%, 77%);
                          --color-code-function-declared:  hsl(270, 100%, 86%);
                          --color-code-function-called:    hsl(270, 100%, 86%);
@@ -441,9 +452,9 @@ html {
                          --color-code-keywords:           hsl(355, 85%, 34%);
                          --color-code-operators:          hsl(355, 85%, 34%);
                          --color-code-string:             hsl(220, 98%, 20%);
-                         --color-code-number:             hsl(220, 98%, 20%);
+                         --color-code-number:             hsl(118, 100%, 23%);
                          --color-code-boolean:            hsl(220, 98%, 20%);
-                         --color-code-nil:                hsl(220, 98%, 20%);
+                         --color-code-nil:                hsl(355, 85%, 34%);
                          --color-code-comments:           hsl(210, 7%, 56%);
                          --color-code-function-declared:  hsl(264, 66%, 45%);
                          --color-code-function-called:    hsl(264, 66%, 45%);

@@ -133,9 +133,9 @@
                               </blockquote>
                               <p>
                                    Lua is a lightweight, high-level, dynamically typed, multi-paradigm scripting language that is mainly used in Psych Engine. This allows you to 
-                                   execute Lua code without compiling the game over and over again. And its a simple and easy scripting language that an 8 year old can 
-                                   understand easily. The only cons that Lua has are, global scopes are always in defualt, limited error handling, limited pattern matching, no 
-                                   unicode support, no defualt parameter values just to name a few.
+                                   execute Lua code without compiling the game over and over again. And it's simple and easy scripting language that an 8 year old can 
+                                   understand easily. The only cons that Lua has are, global scopes are always in default, limited error handling, limited pattern matching, no 
+                                   unicode support, no default parameter values just to name a few.
                               </p>
                               <h2> Source-Code Editors </h2>
                               <section>
@@ -161,10 +161,10 @@
                                         </li>
                                         <li>
                                              Printing is also different instead of using the <code>print()</code> function it's replaced by the <code>debugPrint()</code> function. The
-                                             arguements passed on the <code>debugPrint()</code> function will appear at the top-left of the screen. And will fade out in a couple of seconds.
+                                             arguments passed on the <code>debugPrint()</code> function will appear at the top-left of the screen. And will fade out in a couple of seconds.
                                         </li>
                                         <li>
-                                             Psych Engine uses Lua version <kbd>5.1</kbd> which there're missing features that Lua <kbd>5.1</kbd> doesn't has; Examples: Floor division,
+                                             Psych Engine uses Lua version <kbd>5.1</kbd> which there are missing features that Lua <kbd>5.1</kbd> doesn't has; Examples: Floor division,
                                              Bitwise operators, basic utf-8 library, support for both 64-bit and 32-bit platforms, and new functions.
                                         </li>
                                    </ol>
@@ -173,8 +173,8 @@
                                              <div>Example:</div>
                                         </div>
 <pre data-prolanguage="lua">
-<span class="code-kyw">local</span> <span class="code-var">vary1</span> <span class="code-kyw">=</span> <span class="code-str">'hamburgers are cool'</span>
-<span class="code-kyw">local</span> <span class="code-var">vary2</span> <span class="code-kyw">=</span> <span class="code-str">'potatoes are also cool, i think'</span>
+<span class="code-kyw">local</span> <span class="code-var">vary1</span> <span class="code-kyw">&equals;</span> <span class="code-str">'hamburgers are cool'</span>
+<span class="code-kyw">local</span> <span class="code-var">vary2</span> <span class="code-kyw">&equals;</span> <span class="code-str">'potatoes are also cool, i think'</span>
      
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
      <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">vary1</span><span class="code-nest1">)</span> <span class="code-print">'hamburgers are cool'</span>
@@ -187,19 +187,157 @@
                          <hr>
                          <h1> Variables </h1>
                          <section>
-                              Variables 
+                              <p>
+                                   Variables are an abstract manipulable containers for storing data values they can be used throughout the Lua program. They're paired with an associated name
+                                   which contains the data value of the variable to be used. The data from the variable can be updated when you assigned a new value from it.
+                              </p>
                               <h2> Declaring </h2>
-                              <section></section>
-                              <h2> Naming Rules </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        To declare the variable, you must specify the variable's <code>type</code>, <code>name</code>, and <code>data</code> value. The type determines what scope 
+                                        the variable should have. It could be <code>global</code> type by default in Lua or <code>local</code> type by using the <code>local</code> keyword. Followed 
+                                        by the <code>name</code> of your variable name it what-ever you want it, but there are some rules to follow when declaring them. The variable's specified 
+                                        <code>data</code> value is then assigned using an equal <kbd>&equals;</kbd> character.
+                                   </p>
+                                   <div class="code-border">
+                                        <div class="code-tagbg">
+                                             <div>Example:</div>
+                                        </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">local</span> <span class="code-var">foo</span> <span class="code-kyw">&equals;</span> <span class="code-num">73</span>
+<span class="code-kyw">local</span> <span class="code-var">bar</span> <span class="code-kyw">&equals;</span> <span class="code-num">29</span>
+<span class="code-kyw">local</span> <span class="code-var">baz</span> <span class="code-kyw">&equals;</span> <span class="code-var">foo</span> <span class="code-ope">-</span> <span class="code-var">bar</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">baz</span><span class="code-nest1">)</span> <span class="code-print">44</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
+                                   <p>
+                                        You can also assign multiple variables in one line, if you want to reduce the lines of code for some reason. Each variable's <code>names</code> and <code>values</code> 
+                                        should be separated by a comma <kbd>,</kbd> character. But if the <code>names</code> list is not equal to the <code>values</code> list then the other <code>values</code> 
+                                        will be asign into <code>nil</code> value. If the opposite happens then the other extra <code>values</code> will be ignore, making them impossible to call them.
+                                   </p>
+                                   <div class="code-border">
+                                        <div class="code-tagbg">
+                                             <div>Example:</div>
+                                        </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">local</span> <span class="code-var">foo</span>, <span class="code-var">bar</span>, <span class="code-var">baz</span> <span class="code-kyw">&equals;</span> <span class="code-num">134</span>, <span class="code-num">72</span>, <span class="code-num">722</span>    <span class="code-com">-- 'name and value lists' are equal</span>
+<span class="code-kyw">local</span> <span class="code-var">plu</span>, <span class="code-var">clu</span>, <span class="code-var">zur</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Hello'</span>, <span class="code-str">'Bye'</span>  <span class="code-com">-- 'value list' is greater than 'name list'</span>
+<span class="code-kyw">local</span> <span class="code-var">qux</span>, <span class="code-var">quy</span> <span class="code-kyw">&equals;</span> <span class="code-boo">true</span>, <span class="code-boo">true</span>, <span class="code-boo">false</span>    <span class="code-com">-- 'name list' is greater than 'value list'</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">foo</span>, <span class="code-var">bar</span>, <span class="code-var">baz</span><span class="code-nest1">)</span> <span class="code-print">134, 72, 722</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">plu</span>, <span class="code-var">clu</span>, <span class="code-var">zur</span><span class="code-nest1">)</span> <span class="code-print">'Hello', 'Bye', nil</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">qux</span>, <span class="code-var">quy</span><span class="code-nest1">)</span>      <span class="code-print">true, true</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
+                                   <h3> Naming Rules </h3>
+                                   <section>
+                                        <ul>
+                                             <li> Variable names can only have alphanumeric <code>Ab12</code> and underscore <kbd>_</kbd> characters. </li>
+                                             <li> Variable names cannot have numbers at the start of the name. </li>
+                                             <li> Variable names are case-sensitive so variable <code>a</code> and <code>A</code> are completely different to each-other. </li>
+                                             <li> Variable names are recommended to have descriptive name like (<code>health</code>, <code>misses</code>, <code>alpha</code>) to make the code more readable. </li>
+                                             <li> Variable names cannot be named after <a href="https://www.lua.org/manual/5.1/manual.html#:~:text=2.1%20%E2%80%93-,Lexical%20Conventions,-Names%20(also%20called">Lua keywords</a>. </li>
+                                        </ul>
+                                        <blockquote class="highlight-vald">
+                                             <span><i class="uil uil-check-circle"></i><strong>Valid: </strong></span>
+                                             <div class="code-border">
+                                                  <div class="code-tagbg">
+                                                       <div>Example:</div>
+                                                  </div>
+<pre data-prolanguage="lua">
+<span class="code-var">varname</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span>   <span class="code-com">-- a variable (lower case)</span>
+<span class="code-var">varName</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span>   <span class="code-com">-- a variable with a capitalize letter (camel case)</span>
+<span class="code-var">var_name</span>  <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span>   <span class="code-com">-- a variable with an underscore '_' character (snake case)</span>
+<span class="code-var">_var_name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span>   <span class="code-com">-- a variable with an underscore '_' character at the start </span>
+<span class="code-var">VARNAME</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span>   <span class="code-com">-- a variable that is all capitalize letters (upper case)</span>
+<span class="code-var">varname2</span>  <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span>   <span class="code-com">-- a variable with a number</span>
+<span class="code-var">_______</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span>   <span class="code-com">-- what the hell is this variable???</span>
+</pre>
+                                             </div>
+                                        </blockquote>
+                                        <blockquote class="highlight-erro">
+                                             <span><i class="uil uil-times-circle"></i><strong>Error: </strong></span>
+                                             <div class="code-border">
+                                                  <div class="code-tagbg">
+                                                       <div>Example:</div>
+                                                  </div>
+<pre data-prolanguage="lua">
+<span class="code-var"><span class="code-num">1</span>varName</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a number at the start</span>
+<span class="code-var">var<span class="code-ope">-</span>name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a minus '-' character (kebab case)</span>
+<span class="code-var">var name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a space ' ' character</span>
+<span class="code-var">var$name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a special '$' character</span>
+</pre>
+                                             </div>
+                                        </blockquote>
+                                   </section>
+                              </section>
                               <h2> Types </h2>
-                              <section></section>
+                              <section>
+                                   <h3> Global </h3>
+                                   <section>
+                                        <p>
+                                             Global variables allows you to call them outside a Callback Templates or block, at any time throughout the program. But it's only recommended if you're getting a variable on 
+                                             another Callback Templates or block for data checking or something.
+                                        </p>
+                                        <div class="code-border">
+                                             <div class="code-tagbg">
+                                                  <div>Example:</div>
+                                             </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-var">globalTextTag</span> <span class="code-kyw">&equals;</span> <span class="code-str">'myText'</span> <span class="code-com">-- global variable</span>
+
+     <span class="code-funcC">makeLuaText</span><span class="code-nest1">(</span><span class="code-var">globalTextTag</span>, <span class="code-str">'This is a dumb text!'</span>, <span class="code-nil">nil</span>, <span class="code-num">0</span>, <span class="code-num">0</span><span class="code-nest1">)</span> <span class="code-com">-- initialize the text</span>
+     <span class="code-funcC">setTextSize</span><span class="code-nest1">(</span><span class="code-var">globalTextTag</span>, <span class="code-num">30</span><span class="code-nest1">)</span>  <span class="code-com">-- sets the text size</span>
+     <span class="code-funcC">addLuaText</span><span class="code-nest1">(</span><span class="code-var">globalTextTag</span><span class="code-nest1">)</span>       <span class="code-com">-- adds the text in the game</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onBeatHit</span><span class="code-nest1">()</span>      <span class="code-com">-- checks every beat hit</span>
+     <span class="code-kyw">if</span> <span class="code-var">curBeat</span> <span class="code-ope">&equals;&equals;</span> <span class="code-num">5</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the 'curBeat' is equal to '5'</span>
+          <span class="code-funcC">setProperty</span><span class="code-nest1">(</span><span class="code-var">globalTextTag</span><span class="code-ope">..</span><span class="code-str">'.alpha'</span>, <span class="code-num">0.5</span><span class="code-nest1">)</span> <span class="code-com">-- sets the text opacity into '0.5'</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+                                        </div>
+                                   </section>
+                                   <h3> Local </h3>
+                                   <section>
+                                        <p>
+                                             Local variables can only be called within a function or block; if you attempted to call them outside it will return a <code>nil</code> value because there only local within 
+                                             that function block. They're more faster to call because they're integrated into the environment in which they are created.
+                                        </p>
+                                        <div class="code-border">
+                                             <div class="code-tagbg">
+                                                  <div>Example:</div>
+                                             </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">function</span> <span class="code-funcD">onCreatePost</span><span class="code-nest1">()</span>
+     <span class="code-kyw">local</span> <span class="code-var">localOpacity</span> <span class="code-kyw">&equals;</span> <span class="code-num">0</span>
+     <span class="code-funcC">setProperty</span><span class="code-nest1">(</span><span class="code-str">'camHUD.alpha'</span>, <span class="code-var">localOpacity</span><span class="code-nest1">)</span> <span class="code-com">-- sets the camera HUD elements opacity into '0'</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onSongStart</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">localOpacity</span><span class="code-nest1">)</span> <span class="code-print">nil</span>
+     <span class="code-funcC">doTweenAlpha</span><span class="code-nest1">(</span><span class="code-str">'HUDTween'</span>, <span class="code-str">'camHUD'</span>, <span class="code-num">1</span>, <span class="code-num">3</span>, <span class="code-str">'linear'</span><span class="code-nest1">)</span><span class="code-com"> -- will tween the camera HUD elements to '1'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                        </div>
+                                   </section>
+                              </section>
                          </section>
                          <hr>
                          <h1> Data Types </h1>
                          <section>
                               <h2> Strings </h2>
                               <section>
+                                   <p>
+                                        
+                                   </p>
                               </section>
                               <h2> Numbers </h2>
                               <section></section>

@@ -231,6 +231,12 @@ html ::selection {
      --color-wiki-highlight-warn-outline: hsl(42deg, 87%, 56%);
      --color-wiki-highlight-warn-bg: hsla(42deg, 87%, 56%, 0.1);
      --color-wiki-highlight-warn-title: hsl(42deg, 87%, 66%);
+     --color-wiki-highlight-vald-outline: hsl(125deg, 100%, 63%);
+     --color-wiki-highlight-vald-bg: hsla(125deg, 100%, 63%, 0.1);
+     --color-wiki-highlight-vald-title: hsl(125deg, 100%, 60%);
+     --color-wiki-highlight-erro-outline: hsl(0deg, 100%, 63%);
+     --color-wiki-highlight-erro-bg: hsla(0deg, 100%, 63%, 0.1);
+     --color-wiki-highlight-erro-title: hsl(0deg, 100%, 60%);
 }
 
 :root[data-color-theme=light], meta[name=color-scheme][content=light] {
@@ -261,6 +267,9 @@ html ::selection {
 #wiki-bg #wiki-main blockquote[class^=highlight-] span p {
      margin-top: 8px;
 }
+#wiki-bg #wiki-main blockquote .code-border {
+     margin: 15px 0px 0px 0px;
+}
 #wiki-bg #wiki-main blockquote[class$=note] {
      border: 1px solid var(--color-wiki-highlight-note-outline) !important;
      background-color: var(--color-wiki-highlight-note-bg);
@@ -274,6 +283,20 @@ html ::selection {
 }
 #wiki-bg #wiki-main blockquote[class$=warn] span :is(i, strong) {
      color: var(--color-wiki-highlight-warn-title);
+}
+#wiki-bg #wiki-main blockquote[class$=vald] {
+     border: 1px solid var(--color-wiki-highlight-vald-outline) !important;
+     background-color: var(--color-wiki-highlight-vald-bg);
+}
+#wiki-bg #wiki-main blockquote[class$=vald] span :is(i, strong) {
+     color: var(--color-wiki-highlight-vald-title);
+}
+#wiki-bg #wiki-main blockquote[class$=erro] {
+     border: 1px solid var(--color-wiki-highlight-erro-outline) !important;
+     background-color: var(--color-wiki-highlight-erro-bg);
+}
+#wiki-bg #wiki-main blockquote[class$=erro] span :is(i, strong) {
+     color: var(--color-wiki-highlight-erro-title);
 }
 :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
      --color-wiki-codeblock-all-bg: hsl(216deg, 8%, 52%);
@@ -384,9 +407,9 @@ html ::selection {
      --color-code-keywords: hsl(1, 100%, 79%);
      --color-code-operators: hsl(1, 100%, 79%);
      --color-code-string: hsl(208, 100%, 78%);
-     --color-code-number: hsl(208, 100%, 78%);
+     --color-code-number: hsl(118, 100%, 78%);
      --color-code-boolean: hsl(208, 100%, 78%);
-     --color-code-nil: hsl(208, 100%, 78%);
+     --color-code-nil: hsl(1, 100%, 79%);
      --color-code-comments: hsl(212, 13%, 77%);
      --color-code-function-declared: hsl(270, 100%, 86%);
      --color-code-function-called: hsl(270, 100%, 86%);
@@ -413,9 +436,9 @@ html ::selection {
      --color-code-keywords: hsl(355, 85%, 34%);
      --color-code-operators: hsl(355, 85%, 34%);
      --color-code-string: hsl(220, 98%, 20%);
-     --color-code-number: hsl(220, 98%, 20%);
+     --color-code-number: hsl(118, 100%, 23%);
      --color-code-boolean: hsl(220, 98%, 20%);
-     --color-code-nil: hsl(220, 98%, 20%);
+     --color-code-nil: hsl(355, 85%, 34%);
      --color-code-comments: hsl(210, 7%, 56%);
      --color-code-function-declared: hsl(264, 66%, 45%);
      --color-code-function-called: hsl(264, 66%, 45%);
