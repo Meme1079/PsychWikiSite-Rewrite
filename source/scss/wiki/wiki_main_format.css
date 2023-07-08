@@ -137,10 +137,10 @@ html ::selection {
      text-decoration: underline;
 }
 #wiki-bg #wiki-main a::-moz-selection {
-     color: var(--global-color-gold);
+     color: #FFB770;
 }
 #wiki-bg #wiki-main a::selection {
-     color: var(--global-color-gold);
+     color: #FFB770;
 }
 #wiki-bg #wiki-main dfn {
      font-style: normal;
@@ -419,7 +419,7 @@ html ::selection {
      --color-code-data: hsl(168, 55%, 54%);
      --color-code-escape-characters: hsl(1, 100%, 79%);
      --color-code-pattern-characters: hsl(168, 55%, 54%);
-     --color-code-table-keys: hsl(0, 0%, 100);
+     --color-code-table-keys: hsl(34, 100%, 65%);
      --color-code-modules: hsl(168, 55%, 54%);
      --color-code-print: hsl(212, 64%, 55%);
      --color-code-nestLevel1: hsl(208, 100%, 78%);

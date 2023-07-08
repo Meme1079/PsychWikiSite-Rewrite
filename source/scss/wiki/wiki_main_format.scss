@@ -127,7 +127,7 @@ html {
                }
 
                &::selection {
-                    color: gs.$global-color-gold;
+                    color: #FFB770;
                }
           }
 
@@ -432,7 +432,7 @@ html {
                          --color-code-data:               hsl(168, 55%, 54%);
                          --color-code-escape-characters:  hsl(1, 100%, 79%);
                          --color-code-pattern-characters: hsl(168, 55%, 54%);
-                         --color-code-table-keys:         hsl(0, 0%, 100);
+                         --color-code-table-keys:         hsl(34, 100%, 65%);
                          --color-code-modules:            hsl(168, 55%, 54%);
                          --color-code-print:              hsl(212, 64%, 55%);
      

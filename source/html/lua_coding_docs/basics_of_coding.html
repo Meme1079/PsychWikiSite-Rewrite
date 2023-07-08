@@ -336,24 +336,150 @@
                               <h2> Strings </h2>
                               <section>
                                    <p>
-                                        
+                                        Strings are a sequence of characters it can either represent an alphabetical, digital, punctuation, or all of them. Their main purpose
+                                        is to store human-readable text, like words and sentences. They're commonly surrounded by single-quotes <kbd>''</kbd>, double-quotes
+                                        <kbd>""</kbd>, or double-brackets <kbd>[[]]</kbd> for multi-line strings.
                                    </p>
+                                   <p><em>More Information About Them: <a href="./lua_strings.html">Click Here</a></em></p>
+                                   <div class="code-border">
+                                        <div class="code-tagbg">
+                                             <div>Example:</div>
+                                        </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Hello'</span> <span class="code-com">-- a single quote</span>
+<span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">&equals;</span> <span class="code-str">"World"</span> <span class="code-com">-- a double quote, this is optional to use</span>
+<span class="code-kyw">local</span> <span class="code-var">textString3</span> <span class="code-kyw">&equals;</span> <span class="code-str">[[</span>
+     <span class="code-str">Culturae organicae te capiet ad loca quae numquam</span> 
+     <span class="code-str">expectata non visere!</span>
+<span class="code-str">]]</span>                          <span class="code-com">-- a double bracket, used this for longer texts</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">textString1</span><span class="code-nest1">)</span> <span class="code-print">'Hello'</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">textString2</span><span class="code-nest1">)</span> <span class="code-print">"World"</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">textString3</span><span class="code-nest1">)</span> <span class="code-print">[[Culturae organicae te capiet ad loca quae numquam</span> 
+<span class="code-kyw">end</span>                          <span class="code-print">expectata non visere!]]</span>
+</pre>
+                                   </div>
                               </section>
                               <h2> Numbers </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Numbers are arithmetic values that represent the quantity or amount of something. It can have positive or negative values, and numbers can be 
+                                        expressed as Float or Int; Float numbers support decimal numbers, whilst Int numbers only uses whole numbers.
+                                   </p>
+                                   <div class="code-border">
+                                        <div class="code-tagbg">
+                                             <div>Example:</div>
+                                        </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">local</span> <span class="code-var">numInt</span> <span class="code-kyw">&equals;</span> <span class="code-num">81</span>       <span class="code-com">-- integer number</span>
+<span class="code-kyw">local</span> <span class="code-var">numFlt</span> <span class="code-kyw">&equals;</span> <span class="code-num">23.42</span>    <span class="code-com">-- floating-point number</span>
+
+<span class="code-kyw">local</span> <span class="code-var">numAltFlt1</span> <span class="code-kyw">&equals;</span> <span class="code-num">12.</span>
+<span class="code-kyw">local</span> <span class="code-var">numAltFlt2</span> <span class="code-kyw">&equals;</span> <span class="code-num">.56</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">numInt</span>, <span class="code-var">numFlt</span><span class="code-nest1">)</span>          <span class="code-print">81, 23.42</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">numAltFlt1</span>, <span class="code-var">numAltFlt2</span><span class="code-nest1">)</span>  <span class="code-print">12.0, 0.56</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
+                                   <p>
+                                        Numbers can also be represented in Scientific (Exponent) Notation. They are a way to expressing numbers that are too large or too small to be 
+                                        conveniently written in float form.
+                                   </p>
+                                   <div class="code-border">
+                                        <div class="code-tagbg">
+                                             <div>Example:</div>
+                                        </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-num">263e+4</span><span class="code-nest1">)</span> <span class="code-print">2630000.0</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-num">326e-5</span><span class="code-nest1">)</span> <span class="code-print">0.00326</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
+                              </section>
                               <h2> Booleans </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Booleans, often shortened to Bools, are data types that can have two possible values: <code>true</code> or <code>false</code>. This is commonly 
+                                        used for conditional statements, which allow for different actions by modifying control flow based on whether the condition is <code>true</code> or 
+                                        <code>false</code>.
+                                   </p>
+                              </section>
                               <h2> Nil </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Nil represents nothingness or non-existence of a value. This can be used for destroying a variable or table values if not used anymore. Or use 
+                                        conditional statements to check if the value is a <code>nil</code> or not.
+                                   </p>
+                              </section>
                               <h2> Tables </h2>
                               <section>
-                                   <blockquote class="highlight-warn">
-                                        <span><i class="uil uil-exclamation-triangle"></i><strong>Warning: </strong></span>
-                                   </blockquote>
+                                   <p>
+                                        Tables are a data structuring mechanism in Lua the only one in fact. They can store multiple types values like strings, numbers, booleans, even
+                                        its self. This is a better alternative than listing them in each variables and makes it easy to access each element of the Table. Tables can be
+                                        represented as an Array or Dictionary
+                                   </p>
                                    <h3> Array </h3>
-                                   <section></section>
+                                   <section>
+                                        <p>
+                                             Array are the most common way to declare a Table, they're are always listed in ordered. To declare a Table Array add a pair of curcly-brackets 
+                                             <kbd>{}</kbd> characters with the elements each separated by a comma <kbd>,</kbd> character. 
+                                        </p>
+                                        <p>
+                                             To read a Table Array element get the name of it followed by a pair of bracket <kbd>[]</kbd> characters. With the referring to the index number
+                                             inside the pair of bracket <kbd>[]</kbd> characters for specified element to get.
+                                        </p>
+                                        <blockquote class="highlight-warn">
+                                             <span><i class="uil uil-exclamation-triangle"></i><strong>Warning: </strong></span>
+                                             Lua uses 1-based index rather than 0-based index like other programming languages. In other words, the first index position always start at <code>1</code>.
+                                        </blockquote>
+                                        <div class="code-border">
+                                             <div class="code-tagbg">
+                                                  <div>Example:</div>
+                                             </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">local</span> <span class="code-var">tableGroup1</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-str">'string'</span>, <span class="code-boo">true</span>, <span class="code-nil">nil</span><span class="code-nest1">}</span> <span class="code-com">-- a table with string, boolean, and nil values</span>
+<span class="code-kyw">local</span> <span class="code-var">tableGroup2</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-nest2">{</span><span class="code-num">45</span>, <span class="code-num">13</span><span class="code-nest2">}</span>, <span class="code-nest2">{</span><span class="code-num">34</span>, <span class="code-num">76</span><span class="code-nest2">}</span><span class="code-nest1">}</span>  <span class="code-com">-- a table with nested tables</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableGroup1</span><span class="code-nest1">)</span>       <span class="code-print">['string', true, nil]</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableGroup1</span><span class="code-nest2">[</span><span class="code-num">1</span><span class="code-nest2">]</span><span class="code-nest1">)</span>    <span class="code-print">'string'</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableGroup2</span><span class="code-nest2">[</span><span class="code-num">1</span><span class="code-nest2">][</span><span class="code-num">2</span><span class="code-nest2">]</span><span class="code-nest1">)</span> <span class="code-print">45</span>
+<span class="code-kyw">end</span>
+</pre>
+                                        </div>
+                                   </section>
                                    <h3> Dictionary </h3>
-                                   <section></section>
+                                   <section>
+                                        <p>
+                                             Dictionaries uses key-value pairs for storing elements instead of index-value pairs that Table Arrays uses. It basically uses names for reffering the elements
+                                             inside the Table Dictionary. The key from the Table Dictionary can be surrounded by bracket <kbd>[]</kbd> characters with single-quoted <kbd>''</kbd> or 
+                                             double-quoted <kbd>""</kbd>. This is only used if the key name has a special character inside of it.
+                                        </p>
+                                        <p>
+                                             To read a Table Dictionary get the name of it followed by a dot <kbd>.</kbd> character with the name of the key to be used. Or used the bracket method as an
+                                             alternative or if it has a special key name.
+                                        </p>
+                                        <div class="code-border">
+                                             <div class="code-tagbg">
+                                                  <div>Example:</div>
+                                             </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">local</span> <span class="code-var">tableDict1</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-tabkey">isFatherless</span> <span class="code-kyw">&equals;</span> <span class="code-boo">false</span>, <span class="code-tabkey">hasTouchGrass</span> <span class="code-kyw">&equals;</span> <span class="code-boo">true</span><span class="code-nest1">}</span>
+<span class="code-kyw">local</span> <span class="code-var">tableDict2</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-nest2">[</span><span class="code-str">'air'</span><span class="code-nest2">]</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Oxygen'</span>, <span class="code-nest2">[</span><span class="code-str">"food"</span><span class="code-nest2">]</span> <span class="code-kyw">&equals;</span> <span class="code-str">'potato'</span>, <span class="code-nest2">[</span><span class="code-str">"love"</span><span class="code-nest2">]</span> <span class="code-kyw">&equals;</span> <span class="code-str">'carbon monoxide'</span><span class="code-nest1">}</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableDict1</span><span class="code-nest1">)</span>                   <span class="code-print">{isFatherless => false, hasTouchGrass => true}</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableDict1</span>.<span class="code-tabkey">isFatherless</span><span class="code-nest1">)</span>      <span class="code-print">false</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableDict1</span><span class="code-nest2">[</span><span class="code-str">'hasTouchGrass'</span><span class="code-nest2">]</span><span class="code-nest1">)</span>  <span class="code-print">true</span>
+
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableDict1</span>.<span class="code-tabkey">air</span><span class="code-nest1">)</span>               <span class="code-print">'Oxygen'</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableDict2</span><span class="code-nest2">[</span><span class="code-str">'food'</span><span class="code-nest2">]</span><span class="code-nest1">)</span>           <span class="code-print">'potato'</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableDict2</span><span class="code-nest2">[</span><span class="code-str">"love"</span><span class="code-nest2">]</span><span class="code-nest1">)</span>           <span class="code-print">'carbon monoxide'</span>
+<span class="code-kyw">end</span>
+</pre>
+                                        </div>
+                                   </section>
                               </section>
                          </section>
                          <hr>
@@ -369,7 +495,9 @@
                          <h1> Operators </h1>
                          <section>
                               <h2> Arithmetic </h2>
-                              <section></section>
+                              <span class="code-str">
+                                   <section></section>
+                              </span>
                               <h2> Relational </h2>
                               <section></section>
                               <h2> Logical </h2>
