@@ -234,7 +234,7 @@
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
-                                   <h3> Naming Rules </h3>
+                                   <h3> Naming Conventions </h3>
                                    <section>
                                         <ul>
                                              <li> Variable names can only have alphanumeric <code>Ab12</code> and underscore <kbd>_</kbd> characters. </li>
@@ -424,7 +424,7 @@
                                    <h3> Array </h3>
                                    <section>
                                         <p>
-                                             Array are the most common way to declare a Table, they're are always listed in ordered. To declare a Table Array add a pair of curcly-brackets 
+                                             Array are the most common way to declare a Table, they're are always listed in ordered. To declare a Table Array add a pair of curly-braces
                                              <kbd>{}</kbd> characters with the elements each separated by a comma <kbd>,</kbd> character. 
                                         </p>
                                         <p>
@@ -483,10 +483,59 @@
                               </section>
                          </section>
                          <hr>
-                         <h1> Function </h1>
+                         <h1> Functions </h1>
                          <section>
+                              <p>
+                                   Functions are a collection of code that is designed perform a specific task. They can enable reusable code across the Lua
+                                   program and reduces the duplication of code. functions are defined with the <code>function</code> keyword followed by the
+                                   name of the function with the pair of parentheses <kbd>()</kbd> characters.
+                              </p>
+                              <p>
+                                   To call a function get the function name followed by the parentheses <kbd>()</kbd> characters. If the parentheses are not 
+                                   present it will return the function id; Example: <code>function: 0x5616d89c0770</code>.
+                              </p>
+                              <div class="code-border">
+                                   <div class="code-tagbg">
+                                        <div>Example:</div>
+                                   </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">function</span> <span class="code-funcD">hello</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'Hello Function'</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">hello</span><span class="code-nest1">()</span> <span class="code-print">'Hello Function'</span>
+<span class="code-kyw">end</span>
+</pre>
+                              </div>
                               <h2> Parameters </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Parameters are special type of variables inside the functions parentheses <kbd>()</kbd> characters. If there are two or
+                                        more parameters they must be separated by a comma <kbd>,</kbd> character. Their main purpose is to add more functionality 
+                                        to the function. If you're calling a function you must values or "arguements" which in each parameters, this is a requirement.
+                                   </p>
+                                   <div class="code-border">
+                                        <div class="code-tagbg">
+                                             <div>Example:</div>
+                                        </div>
+<pre data-prolanguage="lua">
+<span class="code-com">-- function created by Mayo78</span>
+<span class="code-kyw">function</span> <span class="code-funcD">setPos</span><span class="code-nest1">(</span><span class="code-paraS">obj</span>, <span class="code-paraS">pos</span><span class="code-nest1">)</span>  <span class="code-com">-- concatenates setProperty x and y</span>
+     <span class="code-kyw">if</span> <span class="code-paraS">pos</span><span class="code-nest2">[</span><span class="code-num">1</span><span class="code-nest2">]</span> <span class="code-ope">~&equals;</span> <span class="code-nil">nil</span> <span class="code-kyw">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
+          <span class="code-funcC">setProperty</span><span class="code-nest1">(</span><span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.x'</span>, <span class="code-paraS">pos</span><span class="code-nest2">[</span><span class="code-num">1</span><span class="code-nest2">]</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">if</span> <span class="code-paraS">pos</span><span class="code-nest2">[</span><span class="code-num">2</span><span class="code-nest2">]</span> <span class="code-ope">~&equals;</span> <span class="code-nil">nil</span> <span class="code-kyw">then</span>
+          <span class="code-funcC">setProperty</span><span class="code-nest1">(</span><span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.y'</span>, <span class="code-paraS">pos</span><span class="code-nest2">[</span><span class="code-num">2</span><span class="code-nest2">]</span><span class="code-nest1">)</span> 
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+          
+<span class="code-kyw">function</span> <span class="code-funcD">onCreatePost</span><span class="code-nest1">()</span>
+     <span class="code-funcC">setPos</span><span class="code-nest1">(</span><span class="code-str">'boyfriend'</span>, <span class="code-nest2">{</span><span class="code-num">100</span>, <span class="code-num">500</span><span class="code-nest2">}</span><span class="code-nest1">)</span> <span class="code-com">-- Changes the position to x = 100 and y = 500</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
+                              </section>
                          </section>
                          <hr>
                          <h1> Comments </h1>
