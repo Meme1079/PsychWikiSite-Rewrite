@@ -185,6 +185,51 @@
                               </section>
                          </section>
                          <hr>
+                         <h1> Comments </h1>
+                         <section>
+                              <p>
+                                   Comments are used to explain the context of code and prevent the execution on a specific code; Lua will just ignore them.
+                                   Comments starts with a double minus <kbd>--</kbd> characters as the syntax for single-line comment. For multi-line comments 
+                                   should have double brackets <kbd>[[]]</kbd> characters with the double minus <kbd>--</kbd> characters before it.
+                              </p>
+                              <div class="code-border">
+                                   <div class="code-tagbg">
+                                        <div>Example:</div>
+                                   </div>
+<pre data-prolanguage="lua">
+<span class="code-com">-- NOTE: This is an example, please do not over-comment your code it's a bad pratice!!!</span>
+
+<span class="code-com">-- Triggered at the start of the Lua script</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+<span class="code-kyw">end</span>
+
+<span class="code-com">--[[ Desc: Triggered at every frame inside the game.</span>
+     <span class="code-com">Para: 'elapsed' - Every frame display in milliseconds ]]</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onUpdate</span><span class="code-nest1">(</span><span class="code-paraS">elapsed</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+                              </div>
+                              <p>
+                                   You can also nest multi-line comments just add an equal <kbd>&equals;</kbd> character between the double brackets <kbd>[[]]</kbd> 
+                                   characters of the comment; Example: <kbd>--[&equals;[]&equals;]</kbd>. The amount of equal <kbd>=</kbd> character determines how many levels of 
+                                   nesting will be created.
+                              </p>
+                              <div class="code-border">
+                                   <div class="code-tagbg">
+                                        <div>Example:</div>
+                                   </div>
+<pre data-prolanguage="lua">
+<span class="code-com">--[=[</span>
+     <span class="code-com">Here's a multi-line comment with the equal</span>
+     <span class="code-com">sign to prevent the double bracket strings [] </span>
+     <span class="code-com">inside the comment to break</span>
+
+     <span class="code-com">debugPrint([[ hi ]])</span>
+<span class="code-com">]=]</span>
+</pre>
+                              </div>
+                         </section>
+                         <hr>
                          <h1> Variables </h1>
                          <section>
                               <p>
@@ -535,18 +580,39 @@
 <span class="code-kyw">end</span>
 </pre>
                                    </div>
+                                   <p>
+                                        Parameters can be defined as an infinite parameter with the ellepsis <kbd>...</kbd> character. It enables an indefinite number 
+                                        of arguments to pass. If there are non parameters present, it must be the last parameters from the list.
+                                   </p>
+                                   <div class="code-border">
+                                        <div class="code-tagbg">
+                                             <div>Example:</div>
+                                        </div>
+<pre data-prolanguage="lua">
+<span class="code-kyw">function</span> <span class="code-funcD">weirdMath</span><span class="code-nest1">(</span><span class="code-paraS">formula</span>, <span class="code-paraI">...</span><span class="code-nest1">)</span>
+     <span class="code-kyw">local</span> <span class="code-var">results</span> <span class="code-kyw">&equals;</span> <span class="code-num">0</span>      <span class="code-com">-- the results</span>
+     <span class="code-kyw">local</span> <span class="code-var">convert</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-paraI">...</span><span class="code-nest1">}</span>  <span class="code-com">-- converts the infinite parameter into a table</span>
+     <span class="code-kyw">for</span> <span class="code-var">i</span> <span class="code-kyw">&equals;</span> <span class="code-num">1</span>, <span class="code-ope">#</span><span class="code-var">convert</span> <span class="code-kyw">do</span> <span class="code-com">-- alternative for loop through a table</span>
+         <span class="code-var">results</span> <span class="code-kyw">&equals;</span> <span class="code-var">results</span> <span class="code-ope">+</span> <span class="code-paraS">formula</span> <span class="code-ope">+</span> <span class="code-var">convert</span><span class="code-nest1">[</span><span class="code-var">i</span><span class="code-nest1">]</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">return</span> <span class="code-var">results</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">local</span> <span class="code-var">formulaMath1</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-num">5</span> <span class="code-ope">%</span> <span class="code-num">6</span><span class="code-ope">^</span><span class="code-num">2</span><span class="code-nest2">)</span> <span class="code-ope">/</span> <span class="code-num">2</span><span class="code-nest1">)</span> <span class="code-ope">*</span> <span class="code-nest1">(</span><span class="code-num">5</span> <span class="code-ope">%</span> <span class="code-num">23</span><span class="code-nest1">)</span>
+     <span class="code-kyw">local</span> <span class="code-var">formulaMath2</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">(</span><span class="code-num">3</span> <span class="code-ope">*</span> <span class="code-num">2</span> <span class="code-ope">-</span> <span class="code-nest2">(</span><span class="code-num">2</span> <span class="code-ope">%</span> <span class="code-num">6</span><span class="code-nest2">)</span><span class="code-nest1">)</span> <span class="code-ope">+</span> <span class="code-num">10</span><span class="code-ope">^</span><span class="code-num">2</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-funcC">weirdMath</span><span class="code-nest2">(</span><span class="code-var">formulaMath1</span>, <span class="code-num">3</span>, <span class="code-num">54</span>, <span class="code-num">64</span>, <span class="code-num">12</span>, <span class="code-num">94</span>, <span class="code-num">23</span>, <span class="code-num">56</span><span class="code-nest2">)</span><span class="code-nest1">)</span> <span class="code-print">393.5</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-funcC">weirdMath</span><span class="code-nest2">(</span><span class="code-var">formulaMath2</span>, <span class="code-num">3</span>, <span class="code-num">54</span>, <span class="code-num">64</span>, <span class="code-num">12</span>, <span class="code-num">94</span>, <span class="code-num">23</span>, <span class="code-num">56</span><span class="code-nest2">)</span><span class="code-nest1">)</span> <span class="code-print">1048.0</span>
+<span class="code-kyw">end</span>
+</pre>
+                                   </div>
                               </section>
                          </section>
-                         <hr>
-                         <h1> Comments </h1>
-                         <section></section>
                          <hr>
                          <h1> Operators </h1>
                          <section>
                               <h2> Arithmetic </h2>
-                              <span class="code-str">
-                                   <section></section>
-                              </span>
+                              <section></section>
                               <h2> Relational </h2>
                               <section></section>
                               <h2> Logical </h2>
