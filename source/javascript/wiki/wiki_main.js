@@ -32,5 +32,5 @@ function toFirstUpperWord(str) {
      return results.substring(0, results.length - 1)
 }
 
-shortCut('main header wiki-docs').textContent = toFirstUpperWord(psychwikiDocs)
-shortCut('main header wiki-name').textContent = toFirstUpperWord(psychwikiPath)
+shortCut('main header header-location').textContent = toFirstUpperWord(psychwikiDocs)
+shortCut('main header header-name').textContent = toFirstUpperWord(psychwikiPath)

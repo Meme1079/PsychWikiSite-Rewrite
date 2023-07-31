@@ -1,0 +1,181 @@
+/* Colors Globals */
+/* :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+     --global-color-lightblue: hsl(210, 100%, 72%);
+     --global-color-gold:      hsl(42, 87%, 56%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+}
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --global-color-lightblue: hsl(210, 100%, 52%);
+     --global-color-gold:      hsl(42, 87%, 36%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+} */
+/* Mixins */
+/* Functions */
+/* Goofy aaaahhhhh code */
+center-element {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+#wiki-search {
+     border: 1.5px solid hsl(216deg, 8%, 52%);
+     border-radius: 10px;
+     position: fixed;
+     bottom: 4.55cm;
+}
+#wiki-search #search-search {
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     border: 1.5px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
+     background-color: black;
+     width: 15cm;
+     padding: 5px 8px;
+     margin: 0.1cm 0 0 0;
+     box-sizing: border-box;
+     align-items: stretch;
+     margin: 0;
+}
+#wiki-search #search-search:hover {
+     border-color: hsl(210deg, 100%, 72%);
+}
+#wiki-search #search-search:focus-within {
+     border-color: hsl(42deg, 87%, 56%);
+}
+#wiki-search #search-search input[type=text] {
+     cursor: pointer;
+     text-align: left;
+     font-size: 1em;
+     font-weight: 500;
+     outline: none !important;
+     border: none !important;
+     background: none !important;
+     width: 14cm;
+     height: -moz-fit-content;
+     height: fit-content;
+     margin: 0cm 5px;
+}
+#wiki-search #search-search i {
+     font-size: 1.1em;
+     transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+     padding: 0;
+}
+#wiki-search #search-search i.uil-search {
+     position: relative;
+     bottom: 1px;
+}
+#wiki-search #search-search i.uil-times-circle:hover {
+     color: hsl(210deg, 100%, 72%);
+}
+#wiki-search #search-search i.uil-times-circle:active {
+     color: hsl(42deg, 87%, 56%);
+     transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+     transform: scaleX(0.9) scaleY(0.9);
+}
+#wiki-search #search-goober-facts {
+     display: flex;
+     font-size: 0.8em;
+     margin-top: 10px;
+}
+#wiki-search #search-goober-facts kbd {
+     font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
+     font-size: 0.8em;
+     border: 1px solid hsl(0deg, 0%, 20%);
+     border-radius: 3px;
+     background-color: hsl(0deg, 0%, 15%);
+     position: relative;
+     bottom: 2px;
+     padding: 1px 3px;
+     border-color: hsl(216deg, 8%, 52%);
+     background-color: black;
+     position: relative;
+     top: 0px;
+     margin-right: 1.5px;
+}
+#wiki-search #search-goober-facts kbd:nth-last-child(1) {
+     margin-right: 0px;
+}
+#wiki-search #search-goober-facts a {
+     cursor: pointer;
+     color: hsl(210deg, 100%, 72%);
+}
+#wiki-search #search-goober-facts a:hover {
+     text-decoration: underline;
+}
+#wiki-search #search-goober-facts strong {
+     font-weight: 550;
+}
+#wiki-search #search-lists {
+     overflow-x: hidden;
+     overflow-y: auto;
+     height: 8cm;
+}
+#wiki-search #search-lists ul {
+     padding: 0 5px;
+}
+#wiki-search #search-lists ul a {
+     text-decoration: none;
+     font-weight: 450;
+     color: white;
+}
+#wiki-search #search-lists ul a li {
+     cursor: pointer;
+     list-style-type: none;
+     box-sizing: border-box;
+     border-radius: 5px;
+     width: 14.5cm;
+     height: -moz-fit-content;
+     height: fit-content;
+     padding: 8px;
+}
+#wiki-search #search-lists ul a li span {
+     user-select: none;
+     -moz-user-select: none;
+     -webkit-user-select: none;
+     float: right;
+     font-size: 0.85em;
+     font-weight: 400 !important;
+     color: hsl(216deg, 8%, 52%);
+}
+#wiki-search #search-lists ul a li[data-disable-searchlist] {
+     cursor: not-allowed;
+     color: hsl(0deg, 0%, 70%);
+}
+#wiki-search #search-lists ul a li:hover {
+     background-color: hsl(0deg, 0%, 15%);
+}
+#wiki-search #search-lists ul a li:active {
+     outline: 1px solid hsl(42deg, 87%, 56%);
+     background-color: black;
+}
+#wiki-search #search-lists ul a:hover {
+     border-color: hsl(210deg, 100%, 72%);
+}
+#wiki-search #search-lists ul a:active {
+     border-color: hsl(42deg, 87%, 56%);
+}
+#wiki-search #search-lists::-webkit-scrollbar {
+     width: 9px;
+     height: 10px;
+}
+#wiki-search #search-lists::-webkit-scrollbar-thumb {
+     margin-left: 50px;
+     border-radius: 5px;
+     background: #6b6b6b;
+}
+#wiki-search #search-lists::-webkit-scrollbar-track {
+     background: hsla(0deg, 0%, 0%, 0);
+}
+#wiki-search hr {
+     border: none;
+     background-color: hsl(210deg, 5%, 30%);
+     width: 15cm;
+     height: 1.5px;
+     padding: 0;
+     margin-top: 0.35cm;
+}
+#wiki-search::backdrop {
+     background-color: hsla(0deg, 0%, 0%, 0.3);
+}

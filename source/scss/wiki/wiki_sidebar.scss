@@ -1,0 +1,167 @@
+@use "../modules/global_stuff" as gs;
+@use "../modules/element_stuff" as es;
+
+/* Goofy aaaahhhhh code */
+
+#wiki-sidebar {
+     z-index: 2;
+     display: block;
+     outline: 1px solid hsl(216, 8%, 52%);
+     background-color: hsl(0deg, 0%, 5%);
+     width: 8.465cm; height: 100%;
+     position: fixed; top: 1.5cm; // 2.25cm
+
+     @media only screen and (max-width: 1000px) {
+          display: none;
+     }
+     @at-root {
+          :root[data-sidebar-hidden=true] & {
+               display: none;
+          }
+          :root[data-sidebar-media=true] & {
+               display: block;
+          }
+     }
+
+     #sidebar-header {
+          display: flex;
+          margin-top: 0.5cm; margin-left: 0.5cm;
+
+          button {
+               @include es.button_format(black, (3px 5px), (0 0.3cm 0 0), false);
+               @include gs.button_hover;
+          }
+
+          h3 {
+               display: block;
+               font-weight: 500;
+               position: relative; bottom: 0.35cm;
+          }
+
+          i.uil-cube {
+               font-size: 1.6em;
+               margin-left: 0.2cm;
+               position: relative; top: 1px;
+          }
+     }
+
+     #sidebar-search {
+          @include gs.center-element;
+
+          #sidebar-search-main {
+               @include es.input_formatBG(black, 7.5cm, (5px 8px), (0.1cm 0 0 0));
+               @include gs.button_hover('focus-within');
+               box-sizing: border-box;
+               align-items: stretch;
+               margin-bottom: 0.2cm;
+     
+               input[type=text] {
+                    @include es.input_formatMain(7.5cm);
+                    margin: 0cm 5px;
+               }
+               
+               i {
+                    font-size: 1.1em;
+                    transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+                    padding: 0;
+     
+                    &.uil-search {
+                         position: relative; bottom: 1px;
+                    }
+                    &.uil-times-circle {
+                         &:hover {
+                              color: gs.$global-color-lightblue;
+                         }
+                         &:active {               
+                              color: gs.$global-color-gold;
+                              transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+                              transform: scaleX(0.9) scaleY(0.9) ;
+                         }
+                    }
+               }
+          }
+     }
+
+     #sidebar-lists {
+          overflow-x: hidden; overflow-y: auto;
+          height: 13.5cm;
+          position: relative; right: 0.5cm;
+
+          a {
+               text-decoration: none;
+               color: white;
+
+               li {
+                    cursor: pointer;
+                    list-style-type: none;
+                    box-sizing: border-box;
+                    border-radius: gs.$global-border-radius;
+                    width: 7cm; height: fit-content;
+                    padding: 8px;
+
+                    span {
+                         &.list-h1 { 
+                              font-weight: 600;
+                         }
+                         &.list-h6 {
+                              font-size: 0.95em;
+                         }
+     
+                         @for $i from 2 to 7 {
+                              &.list-h#{$i} { margin-left: calc((10px * $i) - 10px); }
+                         }
+                    }
+                    
+                    &:hover {
+                         background-color: hsl(0deg, 0%, gs.median(12%, 18%));
+                    }
+                    &:active {
+                         outline: 1px solid gs.$global-color-gold;
+                         background-color: black;
+                    }
+               }
+
+               @include gs.button_hover;
+          }
+
+          &::-webkit-scrollbar {
+               width: 9px; height: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+               margin-left: 50px;
+               border-radius: gs.$global-border-radius;
+               background: #6b6b6b;
+          }
+          &::-webkit-scrollbar-track {
+               background: hsla(0deg, 0%, 0%, 0);
+          }
+     }
+
+     hr {
+          border: none;
+          background-color: hsl(210, 5%, 30%);
+          width: 7.8cm; height: 1.5px;
+          padding: 0; margin: 0.35cm 0;
+     }
+}
+
+#wiki-sidebar-buttons {
+     z-index: 3;
+
+     button {
+          @include es.button_format(black, (3px 5px), (0 0.3cm 0 0), false);
+          @include gs.button_hover;     
+          display: none;
+          position: fixed;
+          top: 2cm; left: 0.5cm;
+
+          @at-root {
+               :root[data-sidebar-hidden=true] &:nth-child(1) {
+                    display: block;
+               }
+               :root[data-sidebar-hidden=false] &:nth-child(2) {
+                    display: block;
+               }
+          }
+     }
+}

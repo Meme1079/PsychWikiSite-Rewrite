@@ -1,4 +1,5 @@
 @use "../modules/global_stuff" as gs;
+@use "../modules/element_stuff" as es;
 @use "sass:list";
 
 /* Local Club :cool: */
@@ -12,7 +13,7 @@
 
 /* Some check theming weby stuff */
 
-:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+:root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
      --color-wiki-main-top-bg: hsl(220deg, 13%, 18%);
      --color-wiki-main-outline: hsl(216deg, 8%, 52%);
      --color-wiki-main-bg: hsl(0deg, 0%, 10%);
@@ -36,6 +37,14 @@ $local-color-wiki-main-bg: var(--color-wiki-main-bg);
 
 /* Goofy aaaahhhhh code */
 
+:root[data-sidebar-hidden=true] :is(header, #wiki-header) {
+     margin-left: 4.6cm; margin-right: 4.6cm;
+
+     @media only screen and (max-width: 1000px) {
+          margin-left: 0.4cm; margin-right: 0.4cm;
+     }
+}
+
 html {
      font-family: gs.$global-font-family;
      scroll-behavior: smooth;
@@ -49,15 +58,7 @@ html {
           width: minmax(10cm, 28.3cm);
           padding: 15px; margin: 0.5cm 0.4cm 25px 8.85cm;
 
-          &[data-sidebar-hidden=true] {
-               margin-left: 4.6cm; margin-right: 4.6cm;
-     
-               @media only screen and (max-width: 1100px) {
-                    margin-left: 0.4cm; margin-right: 0.4cm;
-               }
-          }
-
-          @media only screen and (max-width: 1100px) {
+          @media only screen and (max-width: 1000px) {
                margin-left: 0.4cm;
           }
 
@@ -69,7 +70,7 @@ html {
                     font-size: 1.1em;
                }
 
-               wiki-name {
+               header-name {
                     font-weight: 550;
                }
           }
@@ -84,7 +85,7 @@ html {
      }
 }
 
-#wiki-bg {
+#wiki-header {
      outline: 1px solid $local-color-wiki-main-outline;
      border-radius: gs.$global-border-radius;
      background-color: $local-color-wiki-main-top-bg;
@@ -92,15 +93,7 @@ html {
      padding-top: 1.1cm;
      margin: 0.5cm 0.4cm 25px 8.85cm;
 
-     &[data-sidebar-hidden=true] {
-          margin-left: 4.6cm; margin-right: 4.6cm;
-
-          @media only screen and (max-width: 1100px) {
-               margin-left: 0.4cm; margin-right: 0.4cm;
-          }
-     }
-
-     @media only screen and (max-width: 1100px) {
+     @media only screen and (max-width: 1000px) {
           margin-left: 0.4cm;
      }
 
@@ -216,7 +209,7 @@ html {
           /* HighLights */
 
           @at-root {
-               :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+               :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
                     --color-wiki-highlight-note-outline: hsl(210deg, 100%, 63%);
                     --color-wiki-highlight-note-bg: hsla(210deg, 100%, 63%, 0.1);
                     --color-wiki-highlight-note-title: hsl(210deg, 100%, 73%);
@@ -289,10 +282,89 @@ html {
 
           /* Tables */      // TODO: Finish this
 
+          table-bg {     
+               overflow-x: auto;
+
+               table {
+                    border-collapse: collapse;
+                    width: 100%;
+
+                    :is(td, th) {
+                         text-align: left;
+                         border: 1px solid gs.$global-color-grey;
+                         padding: 0.5rem;
+                    }
+
+                    thead tr {
+                         background-color: hsl(0, 0%, 20%);
+                    }
+
+                    thead tr th { 
+                         font-weight: 500;
+                    }
+
+                    tbody tr:nth-child(even) {
+                         background-color: hsl(0, 0%, 15%);
+                    }
+               }
+          }
+
+          /* #taby {
+               overflow-x: auto;
+          }
+
+          #customers {
+               font-family: Arial, Helvetica, sans-serif;
+               border-collapse: separate;
+               border-spacing: 0cm 0.25cm;
+               width: 100%;
+
+               td, th {
+                    text-align: left;
+                    padding: 0.5rem;
+               }
+
+               thead {
+                    font-size: 0.9rem;
+               }
+
+               tbody tr {
+                    border-radius: 5px;
+                    background-color: #292929;
+               }
+
+               tr:nth-child(even) {
+                    background-color: #292929;
+               }
+          } */
+
+          /* #customers {
+               font-family: Arial, Helvetica, sans-serif;
+               border-collapse: collapse;
+               width: 100%;
+             }
+             
+             #customers td, #customers th {
+               border: 1px solid #ddd;
+               padding: 8px;
+             }
+             
+             #customers tr:nth-child(even){background-color: #292929;}
+             
+             #customers tr:hover {background-color: rgb(32, 32, 32);}
+             
+             #customers th {
+               padding-top: 12px;
+               padding-bottom: 12px;
+               text-align: left;
+               background-color: #04AA6D;
+               color: rgb(0, 0, 0);
+             } */
+
           /* Code Blocks */
 
           @at-root {
-               :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+               :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
                     --color-wiki-codeblock-all-bg: hsl(216deg, 8%, 52%);
                     --color-wiki-codeblock-all-outline: hsl(216deg, 8%, 52%);
                     --color-wiki-codeblock-all-border: hsla(214deg, 12%, 66%, 0.4);
@@ -361,7 +433,7 @@ html {
                     overflow-x: auto;
                     outline: 1px solid $local-color-wiki-codeblock-code-bg;
                     line-height: 20px !important;
-                    border-radius: 0px 0px gs.$global-border-radius gs.$global-border-radius;
+                    border-radius: gs.$global-border-radius;
                     background-color: $local-color-wiki-codeblock-pre-bg;
                     padding: 16px; margin-top: 12px;
 
@@ -413,7 +485,7 @@ html {
           /* Code Colors */
 
           @at-root {
-               :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+               :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
                     pre[data-prolanguage=lua] {
                          --color-code-variables:          hsl(0, 0%, 100%);
                          --color-code-variables-data:     hsl(34, 100%, 65%);
@@ -499,11 +571,6 @@ html {
                &.code-paraS  { color: var(--color-code-parameter-single);   }
                &.code-paraI  { color: var(--color-code-parameter-infinite); }
                &.code-print  { color: var(--color-code-print); @include gs.no_selector; }
-               &.code-error  { 
-                    text-decoration: underline; 
-                    text-decoration-style: wavy; 
-                    text-decoration-color: red !important; 
-               }
 
                &.code-nest1 { color: var(--color-code-nestLevel1); }
                &.code-nest2 { color: var(--color-code-nestLevel2); }
@@ -511,8 +578,6 @@ html {
                &.code-nest4 { color: var(--color-code-nestLevel4); }
                &.code-nest5 { color: var(--color-code-nestLevel5); }
                &.code-nest6 { color: var(--color-code-nestLevel6); }
-
-               /* Other Stuff */
 
                :is(&.code-print, &.code-com) {
                     font-style: italic;

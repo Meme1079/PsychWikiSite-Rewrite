@@ -1,6 +1,6 @@
 @use "./global_stuff" as gs;
 
-@mixin kbd($font: gs.$global-font-family) {
+@mixin kbd_format($font: gs.$global-font-family) {
      font-family: $font;
      font-size: 0.8em;
      border: 1px solid hsl(0deg, 0%, 20%);
@@ -10,7 +10,7 @@
      padding: 1px 3px;
 }
 
-@mixin square_button($color, $pad, $mar, $withShadow: true) {
+@mixin button_format($color, $pad, $mar, $withShadow: true) {
      @if $withShadow == true {
           box-shadow: 3px 3px 5px 0px hsl(0, 0%, 15%);
      }
@@ -23,4 +23,25 @@
      width: fit-content; height: fit-content;
      position: relative; top: 0px;
      padding: $pad; margin: $mar;
+}
+
+@mixin input_formatBG($color, $width, $pad, $mar) {
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     border: 1.5px solid gs.$global-color-grey;
+     border-radius: gs.$global-border-radius;
+     background-color: $color;
+     width: $width;
+     padding: $pad; margin: $mar;
+}
+
+@mixin input_formatMain($width, $widthMinus: 1cm, $fontAttr: (1em 500)) {
+     cursor: pointer;
+     text-align: left;
+     font-size: nth($fontAttr, 1); font-weight: nth($fontAttr, 2);
+     outline:    none !important;
+     border:     none !important;
+     background: none !important;
+     width: calc($width - $widthMinus); height: fit-content;
 }
