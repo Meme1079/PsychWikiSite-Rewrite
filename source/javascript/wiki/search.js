@@ -68,8 +68,10 @@ function toFirstUpperWord(str) {
 }
 
 const dataLCD = searchData.datas.lua_coding_docs
+const listIcons = '<i class="uil uil-search"></i>'
+const listType  = '<i class="uil uil-folder"></i>'
 for (let dataInd in searchData.datas.lua_coding_docs) {
-     let listInnerContent = `<li>${toFirstUpperWord(dataLCD[dataInd])} <span>Lua Coding Docs</span><li>`
+     let listInnerContent = `<li>${listIcons}${toFirstUpperWord(dataLCD[dataInd])}<br><span>${listType}Lua Coding Docs</span><li>`
      let listOuterContent = `<a href="html/lua_coding_docs/${dataLCD[dataInd]}.html">${listInnerContent}</a>`
      shortCut('#search-lists ul').innerHTML += listOuterContent
 

@@ -16,7 +16,7 @@
 :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
      --color-wiki-main-top-bg: hsl(220deg, 13%, 18%);
      --color-wiki-main-outline: hsl(216deg, 8%, 52%);
-     --color-wiki-main-bg: hsl(0deg, 0%, 10%);
+     --color-wiki-main-bg: hsl(0deg, 0%, 6%);
      --color-wiki-main-hr: hsl(214deg, 12%, 66%);
      --color-wiki-head-all-border-bottom: hsl(216deg, 8%, 52%);
      --color-wiki-header-bg: black;
@@ -124,6 +124,10 @@ html {
                }
           }
 
+          p {
+               font-size: 1.05em;
+          }
+
           dfn {
                font-style: normal;
           }
@@ -164,6 +168,16 @@ html {
                          animation: rgb-bg 8s infinite;
                     }
                }
+
+               ul li {
+                    padding: 0px !important;
+                    margin-bottom: 0.25rem;
+
+                    &::before {
+                         display: none !important;
+                         margin: 0 !important;
+                    }
+               }
           }
                    
           $local-color-wiki-main-hr: var(--color-wiki-main-hr);
@@ -181,17 +195,17 @@ html {
           }
 
           $local-color-wiki-header-all-border-bottom: var(--color-wiki-head-all-border-bottom);
-          h1 {
+          :is(h1, h2) {
                border-bottom: 1px solid $local-color-wiki-header-all-border-bottom;
                padding-bottom: 10px;
           }
 
-          $tag-h1-margin-values: 15px 0px 25px 0px;
-          $tag-h2-margin-values: 15px 0px 20px 0px;
-          $tag-h3-margin-values: 15px 0px 15px 0px;
-          $tag-h4-margin-values: 15px 0px 10px 0px;
-          $tag-h5-margin-values: 15px 0px 5px 0px;
-          $tag-h6-margin-values: 15px 0px 0px 0px;
+          $tag-h1-margin-values: 15px 0px 16px 0px;
+          $tag-h2-margin-values: 15px 0px 16px 0px;
+          $tag-h3-margin-values: 15px 0px 16px 0px;
+          $tag-h4-margin-values: 15px 0px 16px 0px;
+          $tag-h5-margin-values: 15px 0px 16px 0px;
+          $tag-h6-margin-values: 15px 0px 16px 0px;
 
           @mixin headerAttributes($fontSize, $fontWeight, $marginVal) {
                font-size: $fontSize;
@@ -200,11 +214,11 @@ html {
           }
 
           h1 { @include headerAttributes(2em, 600, $tag-h1-margin-values);    }
-          h2 { @include headerAttributes(1.5em, 580, $tag-h2-margin-values);  }
+          h2 { @include headerAttributes(1.5em, 600, $tag-h2-margin-values);  }
           h3 { @include headerAttributes(1.25em, 550, $tag-h3-margin-values); }
-          h4 { @include headerAttributes(1em, 530, $tag-h4-margin-values);    }
-          h5 { @include headerAttributes(0.95em, 500, $tag-h5-margin-values); }
-          h6 { @include headerAttributes(0.9em, 500, $tag-h6-margin-values);  }
+          h4 { @include headerAttributes(1em, 550, $tag-h4-margin-values);    }
+          h5 { @include headerAttributes(0.95em, 550, $tag-h5-margin-values); }
+          h6 { @include headerAttributes(0.9em, 550, $tag-h6-margin-values);  }
 
           /* HighLights */
 
@@ -392,6 +406,18 @@ html {
                }
           }
 
+          .code-boxes {
+               display: flex;
+
+               .box-tag {
+                    font-weight: 550;
+                    outline: 1px solid hsl(216deg, 8%, 52%);
+                    border-radius: gs.$global-border-radius;
+                    width: fit-content;
+                    margin: 5px 10px 5px 0px; padding: 8px 10px;
+               }
+          }
+
           $local-wiki-codeblock-all-font-family: "Fira Code", Menlo, "Lucida Console", "Monaco", "monospace";
           $local-color-wiki-codeblock-all-bg: var(--color-wiki-codeblock-all-bg);
           $local-color-wiki-codeblock-all-outline: var(--color-wiki-codeblock-all-outline);
@@ -415,7 +441,7 @@ html {
                border: 1px solid $local-color-wiki-codeblock-all-border;
                border-bottom: 2px solid $local-color-wiki-codeblock-all-border;
                background-color: $local-color-wiki-codeblock-kbd-bg;
-               padding: 2px 5px;
+               padding: 1.5px 5px 0px;
           }
 
           $local-color-wiki-codeblock-pre-bg: var(--color-wiki-codeblock-pre-bg);
@@ -486,7 +512,7 @@ html {
 
           @at-root {
                :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
-                    pre[data-prolanguage=lua] {
+                    pre {
                          --color-code-variables:          hsl(0, 0%, 100%);
                          --color-code-variables-data:     hsl(34, 100%, 65%);
                          --color-code-keywords:           hsl(1, 100%, 79%);
@@ -518,7 +544,7 @@ html {
                }
 
                :root[data-color-theme=light], meta[name=color-scheme][content=light] {
-                    pre[data-prolanguage=lua] {
+                    pre {
                          --color-code-variables:          hsl(0, 0%, 0%);
                          --color-code-variables-data:     hsl(34, 100%, 39%);
                          --color-code-keywords:           hsl(355, 85%, 34%);

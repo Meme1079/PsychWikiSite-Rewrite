@@ -39,12 +39,16 @@
           "fnf is not for kids go outside",
           "SHUT THE HELL UP I hate women (cool guy hate wemen)",
           "HELLO EVERYBODY, THIS IS MY FRIEND TAILS! I'M GONNA LET HIM SAY HI",
-          "PDF file"
+          "PDF file",
+          "I'm not gay greg",
+          "so treated with love and kindness? or you abuse your animals?",
+          "<span contenteditable=\"true\" style=\"outline: none; cursor: pointer\">This text is editable! go crazy!</span>"
      ],
      "datas": {
           "lua_coding_docs": [
                "basics_of_coding",
-               "standard_libraries",
+               "built-in_functions_&_variables",
+               "standard_library_functions",
                "string_patterns",
                "metatables"
           ],

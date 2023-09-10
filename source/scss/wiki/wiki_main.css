@@ -20,7 +20,7 @@
 :root {
      --color-wiki-main-top-bg: hsl(220deg, 13%, 18%);
      --color-wiki-main-outline: hsl(216deg, 8%, 52%);
-     --color-wiki-main-bg: hsl(0deg, 0%, 10%);
+     --color-wiki-main-bg: hsl(0deg, 0%, 6%);
      --color-wiki-main-hr: hsl(214deg, 12%, 66%);
      --color-wiki-head-all-border-bottom: hsl(216deg, 8%, 52%);
      --color-wiki-header-bg: black;
@@ -181,6 +181,9 @@ html ::selection {
 #wiki-header #wiki-main a::selection {
      color: #FFB770;
 }
+#wiki-header #wiki-main p {
+     font-size: 1.05em;
+}
 #wiki-header #wiki-main dfn {
      font-style: normal;
 }
@@ -220,6 +223,14 @@ html ::selection {
 #wiki-header #wiki-main ol li[data-enable-rgb-orgli]::before {
      animation: rgb-bg 8s infinite;
 }
+#wiki-header #wiki-main ol ul li {
+     padding: 0px !important;
+     margin-bottom: 0.25rem;
+}
+#wiki-header #wiki-main ol ul li::before {
+     display: none !important;
+     margin: 0 !important;
+}
 #wiki-header #wiki-main hr {
      border: none;
      background-color: var(--color-wiki-main-hr);
@@ -229,39 +240,39 @@ html ::selection {
 #wiki-header #wiki-main :is(h1, h2, h3, h4, h5, h6) {
      scroll-margin-top: 2.5cm;
 }
-#wiki-header #wiki-main h1 {
+#wiki-header #wiki-main :is(h1, h2) {
      border-bottom: 1px solid var(--color-wiki-head-all-border-bottom);
      padding-bottom: 10px;
 }
 #wiki-header #wiki-main h1 {
      font-size: 2em;
      font-weight: 600;
-     margin: 15px 0px 25px 0px;
+     margin: 15px 0px 16px 0px;
 }
 #wiki-header #wiki-main h2 {
      font-size: 1.5em;
-     font-weight: 580;
-     margin: 15px 0px 20px 0px;
+     font-weight: 600;
+     margin: 15px 0px 16px 0px;
 }
 #wiki-header #wiki-main h3 {
      font-size: 1.25em;
      font-weight: 550;
-     margin: 15px 0px 15px 0px;
+     margin: 15px 0px 16px 0px;
 }
 #wiki-header #wiki-main h4 {
      font-size: 1em;
-     font-weight: 530;
-     margin: 15px 0px 10px 0px;
+     font-weight: 550;
+     margin: 15px 0px 16px 0px;
 }
 #wiki-header #wiki-main h5 {
      font-size: 0.95em;
-     font-weight: 500;
-     margin: 15px 0px 5px 0px;
+     font-weight: 550;
+     margin: 15px 0px 16px 0px;
 }
 #wiki-header #wiki-main h6 {
      font-size: 0.9em;
-     font-weight: 500;
-     margin: 15px 0px 0px 0px;
+     font-weight: 550;
+     margin: 15px 0px 16px 0px;
 }
 :root {
      --color-wiki-highlight-note-outline: hsl(210deg, 100%, 63%);
@@ -385,6 +396,18 @@ html ::selection {
      --color-wiki-codeblock-class-tagbg-bg: white;
 }
 
+#wiki-header #wiki-main .code-boxes {
+     display: flex;
+}
+#wiki-header #wiki-main .code-boxes .box-tag {
+     font-weight: 550;
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
+     width: -moz-fit-content;
+     width: fit-content;
+     margin: 5px 10px 5px 0px;
+     padding: 8px 10px;
+}
 #wiki-header #wiki-main :is(code, kbd, pre) {
      font-size: calc(1em - 3px);
      font-family: "Fira Code", Menlo, "Lucida Console", "Monaco", "monospace";
@@ -399,7 +422,7 @@ html ::selection {
      border: 1px solid var(--color-wiki-codeblock-all-border);
      border-bottom: 2px solid var(--color-wiki-codeblock-all-border);
      background-color: var(--color-wiki-codeblock-kbd-bg);
-     padding: 2px 5px;
+     padding: 1.5px 5px 0px;
 }
 #wiki-header #wiki-main .code-border {
      outline: 1px solid var(--color-wiki-codeblock-all-bg);
@@ -461,7 +484,7 @@ html ::selection {
           display: none;
      }
 }
-:root pre[data-prolanguage=lua] {
+:root pre {
      --color-code-variables: hsl(0, 0%, 100%);
      --color-code-variables-data: hsl(34, 100%, 65%);
      --color-code-keywords: hsl(1, 100%, 79%);
@@ -490,7 +513,7 @@ html ::selection {
      --color-code-nestLevel6: hsl(271, 88%, 84%);
 }
 
-:root[data-color-theme=light] pre[data-prolanguage=lua], meta[name=color-scheme][content=light] pre[data-prolanguage=lua] {
+:root[data-color-theme=light] pre, meta[name=color-scheme][content=light] pre {
      --color-code-variables: hsl(0, 0%, 0%);
      --color-code-variables-data: hsl(34, 100%, 39%);
      --color-code-keywords: hsl(355, 85%, 34%);

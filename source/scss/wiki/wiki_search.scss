@@ -19,7 +19,7 @@ center-element {
           box-sizing: border-box;
           align-items: stretch;
           margin: 0;
-     
+
           input[type=text] {
                @include es.input_formatMain($search-window-width);
                margin: 0cm 5px;
@@ -80,7 +80,7 @@ center-element {
      #search-lists {
           overflow-x: hidden; overflow-y: auto;
           height: 8cm;
-         
+
           ul {
                padding: 0 5px;
 
@@ -88,7 +88,7 @@ center-element {
                     text-decoration: none;
                     font-weight: 450;
                     color: white;
-     
+
                     li {
                          cursor: pointer;
                          list-style-type: none;
@@ -100,15 +100,24 @@ center-element {
                          span {
                               @include gs.no_selector;
 
-                              float: right;
+                              //float: right;
                               font-size: 0.85em;
                               font-weight: 400 !important;
                               color: gs.$global-color-grey;
+                              position: relative; left: 1.5px;
+                         }
+
+                         i {
+                              margin-right: 5px;
                          }
 
                          &[data-disable-searchlist] {
                               cursor: not-allowed;
                               color: hsl(0deg, 0%, 70%);
+
+                              &:active {
+                                   outline: 1px solid rgb(240, 45, 45);
+                              }
                          }
                          &:hover {
                               background-color: hsl(0deg, 0%, gs.median(12%, 18%));

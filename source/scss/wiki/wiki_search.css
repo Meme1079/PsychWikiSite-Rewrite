@@ -134,14 +134,21 @@ center-element {
      user-select: none;
      -moz-user-select: none;
      -webkit-user-select: none;
-     float: right;
      font-size: 0.85em;
      font-weight: 400 !important;
      color: hsl(216deg, 8%, 52%);
+     position: relative;
+     left: 1.5px;
+}
+#wiki-search #search-lists ul a li i {
+     margin-right: 5px;
 }
 #wiki-search #search-lists ul a li[data-disable-searchlist] {
      cursor: not-allowed;
      color: hsl(0deg, 0%, 70%);
+}
+#wiki-search #search-lists ul a li[data-disable-searchlist]:active {
+     outline: 1px solid rgb(240, 45, 45);
 }
 #wiki-search #search-lists ul a li:hover {
      background-color: hsl(0deg, 0%, 15%);

@@ -40,7 +40,7 @@ for (let getHeads = 0; getHeads < shortCutAll('#wiki-main .header').length; getH
      let HeadIdValue = shortCutAll('#wiki-main .header')[getHeads].textContent
      let HeadIdValueFilter = HeadIdValue.split('(')[0].trim() + (HeadNumIncre++).toString()
      shortCutAll('#wiki-main .header')[getHeads].setAttribute('id', HeadIdValueFilter)
-     shortCutAll(`${HeaderMainPath} a`)[getHeads].setAttribute('href', '#' + HeadIdValueFilter)
+     shortCutAll(`${HeaderMainPath} a`)[getHeads].setAttribute('href', window.location.pathname + '#' + HeadIdValueFilter)
 }
 
 const inputPath = '#wiki-sidebar #sidebar-search #sidebar-search-main '

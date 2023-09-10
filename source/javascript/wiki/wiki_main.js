@@ -13,7 +13,7 @@ for (let codePrintInd = 0; codePrintInd < shortCutAll('pre span.code-print').len
 }
 
 const pathName = window.location.pathname
-const psychwikiPath = (window.location.origin + window.location.pathname).match(/(\w+)(?=\.html)/g)[0]
+const psychwikiPath = window.location.href.match(/([-&\w]+)(?=\.html)/g)[0]
 const psychwikiDocs = pathName.match('lua_coding_docs')[0] || pathName.match('lua_script_api')[0]
 function toFirstUpperWord(str) {
      const capitalizeFirstLetter = (str) => {
