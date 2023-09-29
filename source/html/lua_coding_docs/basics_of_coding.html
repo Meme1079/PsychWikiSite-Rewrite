@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-sidebar-hidden="false" data-sidebar-media="false">
+<html lang="en" data-color-theme="dark" data-sidebar-hidden="false" data-sidebar-media="false">
      <head>
           <title>PsychWikiSite • Lua Coding Docs: Basics Of Coding</title>
           <base href="../../">
@@ -87,99 +87,120 @@
                          <h1> Introduction </h1>
                          <section>
                               <p>
-                                   Lua is a lightweight, high-level, dynamically typed, multi-paradigm scripting language that originated in 1993. It was designed to improve its speed, 
-                                   portability, extensibility, and ease of use in development. Which is why it is used in Psych Engine; this allows you to execute Lua code without compiling 
-                                   the game over and over again, unlike doing source code in Haxe.
+                                   Lua is a lightweight, high-level, dynamically typed, multi-paradigm scripting language, originated in 1993. It was designed to improve its speed, portability, extensibility, 
+                                   and ease of use in development. Which is why it is used in Psych Engine; this allows you to execute Lua code without compiling the game over and over again, unlike doing source 
+                                   code in Haxe.
                               </p>
                               <h2> Source-Code Editors </h2>
                               <section>
                                    <p>
-                                        You don't know they're basically a text editor program designed specifically for editing source code of computer programs. They usually add such as syntax 
-                                        highlighting, indentation, autocomplete and brace matching. To make your programming experience more easier to code, the most popular source-code editors are 
-                                        <a href="https://code.visualstudio.com/">Visual Studio Code</a>, <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a>, 
-                                        <a href="https://www.vim.org/download.php">Vim</a>, <a href="https://www.sublimetext.com/">Sublime Text</a>, etc. You can use any source-code editors that 
-                                        you're comfortable to use.
+                                        You don't know they're basically a text editor program designed specifically for editing source code of computer programs. They usually add such as syntax highlighting, 
+                                        indentation, autocomplete and brace matching. To make your programming experience more easier to code, the most popular source-code editors are 
+                                        <a href="https://code.visualstudio.com/">Visual Studio Code</a>, <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a>, <a href="https://www.vim.org/download.php">Vim</a>, 
+                                        <a href="https://www.sublimetext.com/">Sublime Text</a>, etc. You can use any source-code editors that you're comfortable to use.
                                    </p>
-                                   <p>
-                                        If you install Visual Studio Code there are extensions which makes your coding experience even more better. Like supporting a new programming language, 
-                                        adding custom snippets, etc.
-                                   </p>
+                                   <p> If you install Visual Studio Code there are extensions which makes your coding experience even more better. Like supporting a new programming language, adding custom snippets, etc. </p>
                                    <ul>
-                                        <li><a href="https://marketplace.visualstudio.com/items?itemName=sumneko.lua">Lua snippets</a> - Adds lua snippets when coding in Lua.</li>
-                                        <li><a href="https://marketplace.visualstudio.com/items?itemName=Snirozu.funkin-script-autocompleter">Funkin Script AutoCompleter</a> - Adds every Psych engine functions when coding in Lua.</li>
+                                        <li><a href="https://marketplace.visualstudio.com/items?itemName=sumneko.lua">Lua Snippets</a> - Adds lua snippets when coding in Lua. </li>
+                                        <li><a href="https://github.com/Meme1079/PsychWiki/wiki/Lua-Coding-Docs:-Basics-of-Coding#:~:text=Funkin%20Script%20AutoCompleter">Funkin Script AutoCompleter</a> - Adds the Psych engine functions when coding in Lua. </li>
                                    </ul>
                               </section>
                               <h2> Differences </h2>
                               <section>
-                                   <p>
-                                        They are some minor differences when coding in Psych Engine Lua. This is due to HaxeFlixel, the main engine used by Psych Engine. Anyways uuuuhhhhh here's 
-                                        a list of minor differences that you should 100% totally know about:
-                                   </p>
+                                   <p> They are some minor differences when coding in Psych Engine Lua. This is due to HaxeFlixel, the main engine used by Psych Engine. Anyways uuuuhhhhh here's a list of minor differences that you should 100% totally know about: </p>
                                    <ol>
-                                        <li>
-                                             The code should be located inside any of the Callback Templates which are special functions. That uses the games mechanics like note types, custom events, countdowns, 
-                                             etc to execute the code; Examples: <code>onCreate()</code>, <code>onUpdate()</code>, <code>onEvent()</code> just to name a few of them. Note that variables, functions, 
-                                             and built-in Lua functions can be declared outside of any Callback Templates.
+                                        <li> The code should be located inside any of the Callback Templates which are special functions. That uses the games mechanics like note types, custom events, countdowns, etc to execute the code; Examples: <code>onCreate()</code>, 
+                                             <code>onUpdate()</code>, <code>onEvent()</code> just to name a few of them. Note that variables, functions, and built-in Lua functions can be declared outside of any Callback Templates.
                                              <ul>
-                                                  <li>
-                                                       In update 0.7.1h of Psych Engine you can now put code outside of any Callback Templates, which is the best feature to be ever be implemeted in years, but this 
-                                                       will only execute once tho.
-                                                  </li>
+                                                  <li> In update <code>0.7.1h</code> of Psych Engine you can now put code outside of any Callback Templates, which is the best feature to be ever be implemeted in years, but this will only execute once tho. </li>
                                              </ul>
                                         </li>
                                         <li>
-                                             Printing is also different instead of using the <code>print()</code> function it's replaced by the <code>debugPrint()</code> function. The arguments passed on the 
-                                             <code>debugPrint()</code> function will appear at the top-left of the screen. And will fade out in a couple of seconds.
+                                             Printing is also different instead of using the <code>print()</code> function it's replaced by the <code>debugPrint()</code> function. The arguments passed on the <code>debugPrint()</code> function will appear at the top-left 
+                                             of the screen. And will fade out in a couple of seconds.
                                         </li>
                                         <li>
-                                             Psych Engine uses Lua version <kbd>5.1</kbd>, and there are some missing features that Lua <kbd>5.1</kbd> doesn't have. Examples: include floor division, bitwise operators, 
-                                             a basic UTF-8 library, support for both 64-bit and 32-bit platforms, and other new functions.
+                                             Psych Engine uses Lua version <kbd>5.1</kbd>, and there are some missing features that Lua <kbd>5.1</kbd> doesn't have. Examples: include floor division, bitwise operators, a basic UTF-8 library, support for both 64-bit and 
+                                             32-bit platforms, and other new functions.
                                         </li>
                                    </ol>
-                                   <div class="code-boxes">
-                                        <div class="box-tag"> Example: </div>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
                                    </div>
                                    <div class="code-border">
-<pre>
-<span class="code-kyw">local</span> <span class="code-var">vary1</span> <span class="code-kyw">&equals;</span> <span class="code-str">'hamburgers are cool'</span>
-<span class="code-kyw">local</span> <span class="code-var">vary2</span> <span class="code-kyw">&equals;</span> <span class="code-str">'potatoes are also cool, i think'</span>
-          
-<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">vary1</span><span class="code-nest1">)</span> <span class="code-print">hamburgers are cool</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">vary2</span><span class="code-nest1">)</span> <span class="code-print">potatoes are also cool, i think</span>
-<span class="code-kyw">end</span>
+<pre class="code-example-code">
+local vary1 = 'hamburgers are cool'
+local vary2 = 'potatoes are also cool, i think'
+     
+function onCreate()
+     debugPrint(vary1)
+     debugPrint(vary2)
+end
+</pre>
+<pre class="code-example-output">
+hamburgers are cool
+potatoes are also cool, i think
 </pre>
                                    </div>
+
                               </section>
                          </section>
                          <hr/>
                          <h1> Comments </h1>
                          <section>
-                              <p>
-                                   Comments are used to explain the context of code and what its purpose is, or to disable the execution of code. This won't affect anything inside the Lua program because it will be ignored. 
-                                   Comments start with a double minus <kbd>--</kbd> character as the syntax for a single-line comment. For multi-line comments, they should have double brackets <kbd>[[]]</kbd> characters with the 
-                                   double minus <kbd>--</kbd> characters before them.
-                              </p>
-                              <div class="code-boxes">
-                                   <div class="box-tag"> Example: </div>
+                              <p> Comments are used to explain the context of code and what its purpose is, or to disable the execution of code. This won't affect anything inside the Lua program because it will be ignored. </p>
+                              <p> Comments start with a double minus <kbd>--</kbd> character as the syntax for a single-line comment. For multi-line comments, they should have double brackets <kbd>[[]]</kbd> characters with the double minus <kbd>--</kbd> characters before them. </p>
+                              <div class="code-header">
+                                   <div class="code-header-buttons">
+                                        <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                        <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                   </div>
+                                   <div class="code-header-display-buttons">
+                                        <button class="active-button"><span> Code </span></button>
+                                        <button class="inactive-button"><span> Output </span></button>
+                                   </div>
                               </div>
                               <div class="code-border">
-<pre>
-<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span> <span class="code-com">-- Triggered at the start of the Lua script</span>
-     <span class="code-funcC">makeLuaSprite</span><span class="code-nest1">(</span><span class="code-str">'tag'</span>, <span class="code-str">'imagePath'</span>, <span class="code-num">0</span>, <span class="code-num">0</span><span class="code-nest1">)</span> <span class="code-com">-- initializes the lua sprite</span>
-     <span class="code-funcC">addLuaSprite</span><span class="code-nest1">(</span><span class="code-str">'tag'</span>, <span class="code-boo">true</span><span class="code-nest1">)</span>               <span class="code-com">-- Adds the lua sprite</span>
-<span class="code-kyw">end</span>
+<pre class="code-example-code">
+function onCreate() -- Triggered at the start of the Lua script
+     makeLuaSprite('tag', 'imagePath', 0, 0) -- initializes the lua sprite
+     addLuaSprite('tag', true)               -- Adds the lua sprite
+end
+</pre>
+<pre class="code-example-output">
+<em>Output printed nothing!</em>
 </pre>
                               </div>
+
+                              <div class="code-header">
+                                   <div class="code-header-buttons">
+                                        <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                        <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                   </div>
+                                   <div class="code-header-display-buttons">
+                                        <button class="active-button"><span> Code </span></button>
+                                        <button class="inactive-button"><span> Output </span></button>
+                                   </div>
+                              </div>
                               <div class="code-border">
-<pre>
+<pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'colon'</span><span class="code-nest1">)</span> <span class="code-print">colon</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'colon'</span><span class="code-nest1">)</span>
 <span class="code-kyw">end</span>
 
 <span class="code-com">--[[ function onUpdate(elapsed)</span>
      <span class="code-com">debugPrint('lag')</span>
 <span class="code-com">end ]]</span>
+</pre>
+<pre class="code-example-output">
+colon
 </pre>
                               </div>
                          </section>
@@ -187,153 +208,27 @@
                          <h1> Variables </h1>
                          <section>
                               <p>
-                                   Variables are abstract manipulable containers for storing data values; they can be used throughout the Lua program. They're paired with an associated name, which contains the data value of the 
-                                   variable to be used. The data from the variable can be updated when you assign a new value to it.
+                                   Variables are abstract manipulable containers for storing data values; they can be used throughout the Lua program. They're paired with an associated name, 
+                                   which contains the data value of the variable to be used. The data from the variable can be updated when you assign a new value to it.
                               </p>
                               <h2> Declaring & Reassigning </h2>
                               <section>
                                    <p>
-                                        To declare a variable, you must specify the variable's <code>scope</code>, <code>identifier</code>, and <code>data</code> values. The scope determines what scope the variable should have. 
-                                        It could be <code>global</code> type by default in Lua or <code>local</code> type by using the <code>local</code> keyword.
+                                        To declare a variable, you must specify the variable's <code>scope</code>, <code>identifier</code>, and <code>data</code> values. The <code>scope</code> 
+                                        determines what scope the variable should have. It could be <code>global</code> type by default in Lua or <code>local</code> type by using the <code>local</code> 
+                                        keyword.
                                    </p>
-                                   <p>
-                                        This is followed by the variable's <code>identifier</code>, or in layman's terms, the "name", for the variable to be referenced and used later. Assigning the <code>data</code> value for the 
-                                        variable to store by using an equal <kbd>&equals;</kbd> character. If you want to reassign a variable, it's basically the same as declaring a variable, but the <code>data</code> value should 
-                                        be a different value or data type.
-                                   </p>
-                                   <div class="code-boxes">
-                                        <div class="box-tag"> Example: </div>
-                                   </div>
-                                   <div class="code-border">
-<pre>
-<span class="code-kyw">local</span> <span class="code-var">object_cost1</span> <span class="code-kyw">&equals;</span> <span class="code-num">20</span>
-<span class="code-kyw">local</span> <span class="code-var">object_cost2</span> <span class="code-kyw">&equals;</span> <span class="code-num">12</span>
-<span class="code-kyw">local</span> <span class="code-var">object_price</span> <span class="code-kyw">&equals;</span> <span class="code-var">object_cost1</span> <span class="code-ope">+</span> <span class="code-var">object_cost2</span> <span class="code-com">-- adds to two object values</span>
-
-<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">object_price</span><span class="code-nest1">)</span> <span class="code-print">32</span>
-<span class="code-kyw">end</span>
-</pre>
-                                   </div>
-                                   <div class="code-border">
-<pre>
-<span class="code-kyw">local</span> <span class="code-var">object_cost</span> <span class="code-kyw">&equals;</span> <span class="code-num">30</span> <span class="code-com">-- too expensive</span>
-<span class="code-var">object_cost</span> <span class="code-kyw">&equals;</span> <span class="code-num">15</span>       <span class="code-com">-- changes the costs value, cuz its black friday</span>
-
-<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">object_cost</span><span class="code-nest1">)</span> <span class="code-print">15</span>
-<span class="code-kyw">end</span>
-</pre>
-                                   </div>
-                                   <p>
-                                        Variables can be assigned with multiple variables in one line if you want to reduce the lines of code for some reason. To do this, each variable's <code>identifier</code> and <code>data</code> 
-                                        values should be separated by a comma. Each comma <kbd>,</kbd> character of them should be equal.
-                                   </p>
-                                   <div class="code-boxes">
-                                        <div class="box-tag"> Example: </div>
-                                   </div>
-                                   <div class="code-border">
-<pre>
-<span class="code-kyw">local</span> <span class="code-var">foo</span>, <span class="code-var">bar</span>, <span class="code-var">baz</span> <span class="code-kyw">&equals;</span> <span class="code-num">134</span>, <span class="code-num">72</span>, <span class="code-num">722</span>   <span class="code-com">-- 'name and value lists' are equal</span>
-<span class="code-kyw">local</span> <span class="code-var">plu</span>, <span class="code-var">clu</span>, <span class="code-var">zur</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Hello'</span>, <span class="code-str">'Bye'</span> <span class="code-com">-- 'value list' is greater than 'name list'</span>
-<span class="code-kyw">local</span> <span class="code-var">qux</span>, <span class="code-var">quy</span> <span class="code-kyw">&equals;</span> <span class="code-boo">true</span>, <span class="code-boo">true</span>, <span class="code-boo">false</span>   <span class="code-com">-- 'name list' is greater than 'value list'</span>
-
-<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">foo</span>, <span class="code-var">bar</span>, <span class="code-var">baz</span><span class="code-nest1">)</span> <span class="code-print">134, 72, 722</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">plu</span>, <span class="code-var">clu</span>, <span class="code-var">zur</span><span class="code-nest1">)</span> <span class="code-print">Hello, Bye, nil</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">qux</span>, <span class="code-var">quy</span><span class="code-nest1">)</span>      <span class="code-print">true, true</span>
-<span class="code-kyw">end</span>
-</pre>
-                                   </div>
                               </section>
                               <h2> Naming Conventions </h2>
-                              <section>
-                                   <ul>
-                                        <li> Variable names can only have alphanumeric <code>Ab12</code> and underscore <kbd>_</kbd> characters. </li>
-                                        <li> Variable names cannot have numbers at the start of the name. </li>
-                                        <li> Variable names are case-sensitive so variable <code>a</code> and <code>A</code> are completely different to each-other. </li>
-                                        <li> Variable names are recommended to have descriptive name like (<code>health</code>, <code>misses</code>, <code>alpha</code>) to make the code more readable. </li>
-                                        <li> Variable names cannot be named after <a href="https://www.lua.org/manual/5.1/manual.html#:~:text=2.1%20%E2%80%93-,Lexical%20Conventions,-Names%20(also%20called">Lua keywords</a>. </li>
-                                   </ul>
-                                   <div class="code-boxes">
-                                        <div class="box-tag"> Example: </div>
-                                        <div class="box-tag"> Valid: </div>
-                                   </div>
-                                   <div class="code-border">
-<pre>
-<span class="code-var">varname</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable (lower case)</span>
-<span class="code-var">varName</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable with a capitalize letter (camel case)</span>
-<span class="code-var">var_name</span>  <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable with an underscore '_' character (snake case)</span>
-<span class="code-var">_var_name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable with an underscore '_' character at the start</span>
-<span class="code-var">VARNAME</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable that is all capitalize letters (upper case)</span>
-<span class="code-var">varname2</span>  <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable with a number</span>
-<span class="code-var">_______</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- what the hell is this variable???</span>
-</pre>
-                                   </div>
-                                   <div class="code-boxes">
-                                        <div class="box-tag"> Example: </div>
-                                        <div class="box-tag"> Invalid: </div>
-                                   </div>
-                                   <div class="code-border">
-<pre>
-<span class="code-var"><span class="code-num">1</span>varName</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a number at the start</span>
-<span class="code-var">var<span class="code-ope">-</span>name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a minus '-' character (kebab case)</span>
-<span class="code-var">var name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a space ' ' character</span>
-<span class="code-var">var$name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a special '$' character</span>
-</pre>
-                                   </div>
-                              </section>
+                              <section></section>
                          </section>
                          <hr/>
                          <h1> Scope </h1>
                          <section>
-                              <p> 
-                                   Scope, in programming, refers to the variables or functions accessibility in certain parts of the code. This can be determined by either declaring them as having a <code>global</code> or <code>local</code> 
-                                   scope. Scoping helps prevent name collisions by using the same variables or functions <code>names</code> for different things. By allowing the same <code>name</code> to be used in different scopes of the program, 
-                                   which is cool, I guess.
-                              </p>
-                              <h2> Global Scope </h2>
-                              <section>
-                                   <p>
-                                        Global variables allows you to call variables outside the scope of block, at any time throughout the program. This is only recommended if you're getting a variable on another Callback Templates or using to 
-                                        export/import a variable to another Lua script.
-                                   </p>
-                                   <div class="code-boxes">
-                                        <div class="box-tag"> Example: </div>
-                                   </div>
-                                   <div class="code-border">
-<pre>
-<span class="code-kyw">do</span> <span class="code-com">-- do block</span>
-     <span class="code-var">stupidVar</span> <span class="code-kyw">&equals;</span> <span class="code-num">24</span> <span class="code-com">-- a global scope</span>
-<span class="code-kyw">end</span>
-
-<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">stupidVar</span><span class="code-nest1">)</span> <span class="code-print">24</span>
-<span class="code-kyw">end</span>
-</pre>
-                                   </div>
-                              </section>
-                              <h2> Local Scope </h2>
-                              <section>
-                                   <p>
-                                        Local variables are declared with the <code>local</code> statement, unlike global variables their scope is limited to the block where they are declared. If you attempted to call them it will only return a <code>nil</code> 
-                                        value. This is a relativly good programming style becuase they avoid cluttering the global environment with unnecessary names. And are more faster to call than to global ones.
-                                   </p>
-                                   <div class="code-boxes">
-                                        <div class="box-tag"> Example: </div>
-                                   </div>
-                                   <div class="code-border">
-<pre>
-<span class="code-kyw">do</span> <span class="code-com">-- do block</span>
-     <span class="code-kyw">local</span> <span class="code-var">stupidVar</span> <span class="code-kyw">&equals;</span> <span class="code-num">24</span> <span class="code-com">-- a local scope</span>
-<span class="code-kyw">end</span>
-
-<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">stupidVar</span><span class="code-nest1">)</span> <span class="code-print">nil</span>
-<span class="code-kyw">end</span>
-</pre>
-                                   </div>
-                              </section>
+                              <h2> Global scope </h2>
+                              <section></section>
+                              <h2> Local scope </h2>
+                              <section></section>
                          </section>
                          <hr/>
                          <h1> Data Types </h1>
@@ -341,7 +236,6 @@
                               <h2> Strings </h2>
                               <section>
                                    <h3> Escape Characters </h3>
-                                   <section></section>
                               </section>
                               <h2> Numbers </h2>
                               <section></section>
@@ -355,7 +249,7 @@
                                    <section></section>
                                    <h3> Dictionary </h3>
                                    <section></section>
-                                   <h3> Manipulating Elements </h3>
+                                   <h3> Element Manipulation </h3>
                                    <section></section>
                               </section>
                          </section>
@@ -365,15 +259,53 @@
                               <h2> Parameters </h2>
                               <section>
                                    <h3> Infinite Parameters </h3>
+                                   <section></section>
                               </section>
                               <h2> Anonymity </h2>
+                              <section></section>
                          </section>
                          <hr/>
                          <h1> Operators </h1>
+                         <section>
+                              <h2> Arithmetic </h2>
+                              <section></section>
+                              <h2> Relational </h2>
+                              <section></section>
+                              <h2> Logical </h2>
+                              <section></section>
+                              <h2> Miscellaneous </h2>
+                              <section></section>
+                         </section>
                          <hr/>
                          <h1> Control Statements </h1>
+                         <section>
+                              <h2> Conditional Statements </h2>
+                              <section>
+                                   <h3> If Statement </h3>
+                                   <section></section>
+                                   <h3> Else Statement </h3>
+                                   <section></section>
+                                   <h3> ElseIf Statement </h3>
+                                   <section></section>
+                              </section>
+                              <h2> For Loop Statement </h2>
+                              <section>
+                                   <h3> Numeric </h3>
+                                   <section></section>
+                                   <h3> Generic </h3>
+                                   <section></section>
+                              </section>
+                              <h2> While Loop Statement </h2>
+                              <section></section>
+                              <h2> Return Statement </h2>
+                              <section></section>
+                              <h2> Break Statement </h2>
+                              <section></section>
+                         </section>
                          <hr/>
                          <h1> Modules </h1>
+                         <section></section>
+                         <hr/>
                     </article>
                </article>
           </main>

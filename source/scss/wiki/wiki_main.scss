@@ -11,6 +11,13 @@
           url(../../fonts/Fira_Code/FiraCode-Regular.ttf)  format("truetype");
 }
 
+@font-face {
+     font-family: "VCR";
+     src: url(../../fonts/VCR/VCR_OSD_MONO.woff) format("woff"),
+          url(../../fonts/VCR/VCR_OSD_MONO.otf)  format("opentype"),
+          url(../../fonts/VCR/VCR_OSD_MONO.ttf)  format("truetype");
+}
+
 /* Some check theming weby stuff */
 
 :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
@@ -63,7 +70,7 @@ html {
           }
 
           p {
-               font-size: 1.05em;
+               font-size: 1em;
                padding: 0; margin: 0;
 
                i {
@@ -74,6 +81,10 @@ html {
                     font-weight: 550;
                }
           }
+     }
+
+     body {
+          display: none;
      }
 
      main {
@@ -185,7 +196,7 @@ html {
                border: none;
                background-color: $local-color-wiki-main-hr;
                height: 3px;
-               margin-top: 20px;
+               margin-top: 0.5cm;
           }
 
           /* Headers */
@@ -294,86 +305,67 @@ html {
                &[class$=erro] { @include highlight-types(list.nth($local-erro-attrs, 1), list.nth($local-erro-attrs, 2), list.nth($local-erro-attrs, 3)) }
           }
 
-          /* Tables */      // TODO: Finish this
+          /* Tables */
 
-          table-bg {     
-               overflow-x: auto;
+          table-bg, div.table-bg {    
+               overflow-x: auto; overflow-y: hidden; 
+               width: 100%;
+               padding: 0px 1px;
 
                table {
+                    display: table;
                     border-collapse: collapse;
-                    width: 100%;
-
-                    :is(td, th) {
-                         text-align: left;
-                         border: 1px solid gs.$global-color-grey;
-                         padding: 0.5rem;
+                    width: 100%; // < broken
+                    min-width: 15cm;
+                    margin: 0.5cm 0cm;
+                    
+                    thead {
+                         margin-bottom: 10px;
+                         
+                         tr {
+                              outline: 1px solid gs.$global-color-grey;
+                              border-radius: calc(gs.$global-border-radius - 2px);
+ 
+                              th {
+                                   text-align: left;
+                                   font-weight: 500;  
+                                   padding: 10px 8px;  
+                              }
+                         }
                     }
 
-                    thead tr {
-                         background-color: hsl(0, 0%, 20%);
-                    }
+                    tbody tr {
+                         border-bottom: 1px solid gs.$global-color-grey;
 
-                    thead tr th { 
-                         font-weight: 500;
-                    }
+                         td {
+                              padding: 10px 8px;
 
-                    tbody tr:nth-child(even) {
-                         background-color: hsl(0, 0%, 15%);
+                              &:nth-child(2) {
+                                   max-width: 9cm;
+                              }
+                         }
+
+                         &:nth-child(even) {
+                              background-color: hsl(0, 0%, 11%);
+                         }
+                         &:nth-last-child(1) {
+                              border-bottom: 0px;
+                         }
                     }
+               }
+
+               &::-webkit-scrollbar {
+                    width: 9px; height: 10px;
+               }
+               &::-webkit-scrollbar-thumb {
+                    margin-left: 50px;
+                    border-radius: gs.$global-border-radius;
+                    background: #6b6b6b;
+               }
+               &::-webkit-scrollbar-track {
+                    background: hsla(0deg, 0%, 0%, 0);
                }
           }
-
-          /* #taby {
-               overflow-x: auto;
-          }
-
-          #customers {
-               font-family: Arial, Helvetica, sans-serif;
-               border-collapse: separate;
-               border-spacing: 0cm 0.25cm;
-               width: 100%;
-
-               td, th {
-                    text-align: left;
-                    padding: 0.5rem;
-               }
-
-               thead {
-                    font-size: 0.9rem;
-               }
-
-               tbody tr {
-                    border-radius: 5px;
-                    background-color: #292929;
-               }
-
-               tr:nth-child(even) {
-                    background-color: #292929;
-               }
-          } */
-
-          /* #customers {
-               font-family: Arial, Helvetica, sans-serif;
-               border-collapse: collapse;
-               width: 100%;
-             }
-             
-             #customers td, #customers th {
-               border: 1px solid #ddd;
-               padding: 8px;
-             }
-             
-             #customers tr:nth-child(even){background-color: #292929;}
-             
-             #customers tr:hover {background-color: rgb(32, 32, 32);}
-             
-             #customers th {
-               padding-top: 12px;
-               padding-bottom: 12px;
-               text-align: left;
-               background-color: #04AA6D;
-               color: rgb(0, 0, 0);
-             } */
 
           /* Code Blocks */
 
@@ -406,18 +398,6 @@ html {
                }
           }
 
-          .code-boxes {
-               display: flex;
-
-               .box-tag {
-                    font-weight: 550;
-                    outline: 1px solid hsl(216deg, 8%, 52%);
-                    border-radius: gs.$global-border-radius;
-                    width: fit-content;
-                    margin: 5px 10px 5px 0px; padding: 8px 10px;
-               }
-          }
-
           $local-wiki-codeblock-all-font-family: "Fira Code", Menlo, "Lucida Console", "Monaco", "monospace";
           $local-color-wiki-codeblock-all-bg: var(--color-wiki-codeblock-all-bg);
           $local-color-wiki-codeblock-all-outline: var(--color-wiki-codeblock-all-outline);
@@ -447,29 +427,114 @@ html {
           $local-color-wiki-codeblock-pre-bg: var(--color-wiki-codeblock-pre-bg);
           $local-color-wiki-codeblock-class-code-border: var(--color-wiki-codeblock-class-code-border);
           $local-color-wiki-codeblock-class-code-location-text: var(--color-wiki-codeblock-class-code-location-text);
-          .code-border {
+          .code-header {
                outline: 1px solid $local-color-wiki-codeblock-all-bg;
-               border-radius: gs.$global-border-radius;
+               border-radius: gs.$global-border-radius gs.$global-border-radius 0 0;
                background-color: $local-color-wiki-codeblock-class-code-border;
-               margin: 20px 0px;
+               position: relative; top: 12px;
+               padding: 10px;
 
-               pre {
-                    tab-size: 8;
-                    white-space: pre;
-                    overflow-x: auto;
-                    outline: 1px solid $local-color-wiki-codeblock-code-bg;
-                    line-height: 20px !important;
+               &[data-hidden] {
                     border-radius: gs.$global-border-radius;
-                    background-color: $local-color-wiki-codeblock-pre-bg;
-                    padding: 16px; margin-top: 12px;
+                    margin-bottom: 0.9cm;
+               }
 
-                    &::before {
-                         counter-reset: listing;
+               .code-header-buttons {
+                    float: right;
+                    display: flex;
+
+                    button {
+                         @include es.button_format(black, (3px 5px), (0 0.1cm 0 0), false);
+                         @include gs.button_hover;
+
+                         &[data-copy-copied] {
+                              border-color: lime;
+                         }
+                         &[data-copy-denied] {
+                              border-color: red;
+                         }
+
+                         i.uil-check-circle {
+                              color: lime;
+                         }
+                         i.uil-times-circle {
+                              color: red;
+                         }
                     }
-                    
+               }
+
+               .code-header-display-buttons {
+                    display: flex;
+                    border-radius: gs.$global-border-radius;
+                    background-color: rgba(158, 167, 179, 0.1);
+                    width: fit-content;
+                    position: relative; top: 2px;
+
+                    button {
+                         font-size: 0.95em;
+                         padding: 6px 12px;
+
+                         &.active-button {
+                              font-weight: 600;
+                              outline: 1px solid hsl(216, 8%, 65%);
+                              border: none;
+                              border-radius: gs.$global-border-radius;
+                              background: none black;
+                         }
+
+                         &.inactive-button {
+                              cursor: pointer;
+                              border: none;
+                              background: none;
+
+                              &:hover span {
+                                   border-radius: calc(gs.$global-border-radius - 2px);
+                                   background-color: hsl(216, 8%, 40%);
+                                   padding: 2px 6px;
+                                   margin: -2px -6px;
+                              }
+
+                              &:active span {
+                                   background-color: hsl(216, 8%, 15%);
+                              }
+                         }
+                    }
+               }
+               
+               &::after {
+                    content: "";
+                    clear: both;
+                    display: table;
+               }
+          }
+
+          pre {
+               tab-size: 8;
+               white-space: pre;
+               overflow-x: auto;
+               outline: 1px solid hsl(216deg, 8%, 52%);
+               line-height: 20px !important;
+               border-radius: 0 0 gs.$global-border-radius gs.$global-border-radius;
+               background-color: $local-color-wiki-codeblock-pre-bg;
+               padding: 16px;
+
+               &.code-example-output {
+                    display: none;
+                    font-family: "VCR" !important;
+               }
+
+               &::before {
+                    counter-reset: listing;
+               }
+               
+               &.code-example-code {
+                    &[data-code-invisible] {
+                         display: none;
+                    }
+
                     span.code-line {
                          counter-increment: listing;
-
+     
                          &::before {
                               content: counter(listing) "  ";
                               display: inline-block;
@@ -481,40 +546,26 @@ html {
                     }
                }
 
-               $local-color-wiki-codeblock-pre-selection-bg: var(--color-wiki-codeblock-pre-selection-bg);
-               $local-color-wiki-codeblock-pre-selection-text: var(--color-wiki-codeblock-pre-selection-text);
-               :is(pre, pre span)::selection {
-                    color: $local-color-wiki-codeblock-pre-selection-text;
-                    background-color: $local-color-wiki-codeblock-pre-selection-bg;
-               }
-          }
+               &.code-example-output {
+                    &[data-code-visible] {
+                         display: block;
+                    }
 
-          $local-color-wiki-codeblock-class-tagbg-bg: var(--color-wiki-codeblock-class-tagbg-bg);
-          .code-tagbg {
-               font-family: gs.$global-font-family !important;
-               font-size: 15px;
-               font-weight: 630;
-               outline: 1px solid $local-color-wiki-codeblock-all-outline;
-               border-radius: calc(gs.$global-border-radius * 1.2);
-               background-color: $local-color-wiki-codeblock-class-tagbg-bg;
-               transform: translateX(5px) translateY(5px);
-               width: fit-content;
-               padding: 7px 10px; margin-right: 13px;
-
-               @media only screen and (max-width: 290px) {
-                    i {
-                         display: none;
+                    span.code-line::before {
+                         content: '>  ';
+                         display: inline-block;
+                         text-align: center;
+                         color: hsl(0deg, 0%, 67%);
+                         width: 3em;
+                         padding-left: auto; margin-left: auto;
                     }
                }
-          }
-
-          /* Code Colors */
+          } 
 
           @at-root {
-               :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
-                    pre {
+               :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+                    pre.code-example-code {
                          --color-code-variables:          hsl(0, 0%, 100%);
-                         --color-code-variables-data:     hsl(34, 100%, 65%);
                          --color-code-keywords:           hsl(1, 100%, 79%);
                          --color-code-operators:          hsl(1, 100%, 79%);
                          --color-code-string:             hsl(208, 100%, 78%);
@@ -527,12 +578,10 @@ html {
                          --color-code-function-modules:   hsl(168, 55%, 54%);
                          --color-code-parameter-single:   hsl(34, 100%, 65%);
                          --color-code-parameter-infinite: hsl(208, 100%, 78%);
-                         --color-code-data:               hsl(168, 55%, 54%);
+                         --color-code-modules:            hsl(168, 55%, 54%);
                          --color-code-escape-characters:  hsl(1, 100%, 79%);
                          --color-code-pattern-characters: hsl(168, 55%, 54%);
                          --color-code-table-keys:         hsl(34, 100%, 65%);
-                         --color-code-modules:            hsl(168, 55%, 54%);
-                         --color-code-print:              hsl(212, 64%, 55%);
      
                          --color-code-nestLevel1: hsl(208, 100%, 78%);
                          --color-code-nestLevel2: hsl(132, 73%, 57%);
@@ -540,13 +589,12 @@ html {
                          --color-code-nestLevel4: hsl(2, 62%, 76%);
                          --color-code-nestLevel5: hsl(331, 80%, 80%);
                          --color-code-nestLevel6: hsl(271, 88%, 84%);
-                    }
+                    }                         
                }
 
                :root[data-color-theme=light], meta[name=color-scheme][content=light] {
-                    pre {
+                    pre.code-example-code {
                          --color-code-variables:          hsl(0, 0%, 0%);
-                         --color-code-variables-data:     hsl(34, 100%, 39%);
                          --color-code-keywords:           hsl(355, 85%, 34%);
                          --color-code-operators:          hsl(355, 85%, 34%);
                          --color-code-string:             hsl(220, 98%, 20%);
@@ -559,12 +607,11 @@ html {
                          --color-code-function-modules:   hsl(168, 100%, 33%);
                          --color-code-parameter-single:   hsl(34, 100%, 39%);
                          --color-code-parameter-infinite: hsl(220, 98%, 20%);
-                         --color-code-data:               hsl(168, 100%, 33%);
+                         --color-code-modules:            hsl(168, 100%, 33%);
                          --color-code-escape-characters:  hsl(355, 85%, 34%);
                          --color-code-pattern-characters: hsl(168, 100%, 33%);
                          --color-code-table-keys:         hsl(0, 0%, 0%);
-                         --color-code-modules:            hsl(168, 100%, 33%);
-                         --color-code-print:              hsl(212, 64%, 45%);
+
      
                          --color-code-nestLevel1: hsl(217, 97%, 37%);
                          --color-code-nestLevel2: hsl(138, 98%, 19%);
@@ -576,9 +623,8 @@ html {
                }
           }
 
-          pre span {
+          .code-example-code span {
                &.code-var    { color: var(--color-code-variables);          }
-               &.code-varD   { color: var(--color-code-variables-data);     }
                &.code-kyw    { color: var(--color-code-keywords);           }
                &.code-ope    { color: var(--color-code-operators);          }
                &.code-str    { color: var(--color-code-string);             }
@@ -586,31 +632,22 @@ html {
                &.code-boo    { color: var(--color-code-boolean);            }
                &.code-nil    { color: var(--color-code-nil);                }
                &.code-com    { color: var(--color-code-comments);           }
-               &.code-esc    { color: var(--color-code-escape-characters);  }
-               &.code-ptr    { color: var(--color-code-pattern-characters); }
-               &.code-data   { color: var(--color-code-data);               }
-               &.code-tabkey { color: var(--color-code-table-keys);         }
-               &.code-modul  { color: var(--color-code-modules);            }
                &.code-funcD  { color: var(--color-code-function-declared);  }
                &.code-funcC  { color: var(--color-code-function-called);    }
                &.code-funcM  { color: var(--color-code-function-modules);   }
                &.code-paraS  { color: var(--color-code-parameter-single);   }
                &.code-paraI  { color: var(--color-code-parameter-infinite); }
-               &.code-print  { color: var(--color-code-print); @include gs.no_selector; }
+               &.code-modul  { color: var(--color-code-modules);            }
+               &.code-esc    { color: var(--color-code-escape-characters);  }
+               &.code-ptr    { color: var(--color-code-pattern-characters); }
+               &.code-tabkey { color: var(--color-code-table-keys);         }
 
-               &.code-nest1 { color: var(--color-code-nestLevel1); }
-               &.code-nest2 { color: var(--color-code-nestLevel2); }
-               &.code-nest3 { color: var(--color-code-nestLevel3); }
-               &.code-nest4 { color: var(--color-code-nestLevel4); }
-               &.code-nest5 { color: var(--color-code-nestLevel5); }
-               &.code-nest6 { color: var(--color-code-nestLevel6); }
-
-               :is(&.code-print, &.code-com) {
-                    font-style: italic;
-               }
-               &.code-print::before  {
-                    content: '> ';
-               }
+               &.code-nest1  { color: var(--color-code-nestLevel1); }
+               &.code-nest2  { color: var(--color-code-nestLevel2); }
+               &.code-nest3  { color: var(--color-code-nestLevel3); }
+               &.code-nest4  { color: var(--color-code-nestLevel4); }
+               &.code-nest5  { color: var(--color-code-nestLevel5); }
+               &.code-nest6  { color: var(--color-code-nestLevel6); }
           }
      }
 }

@@ -66,14 +66,18 @@ shortCut(inputPath + '.uil-times-circle').addEventListener('click', () => {
 
 // Hiding & Media Support
 
+shortCut('html').setAttribute('data-sidebar-hidden', localStorage.getItem('local-data-sidebar-hidden'))
+
 let mediaSidebar = false
 shortCut('button[title="Hide Sidebar"]').addEventListener('click', () => {
+     localStorage.setItem('local-data-sidebar-hidden', true)
      shortCut('html').setAttribute('data-sidebar-hidden', true)
      shortCut('html').setAttribute('data-sidebar-media', false)
      mediaSidebar = false
 })
 
 shortCut('button[title="Show Sidebar"]').addEventListener('click', () => {
+     localStorage.setItem('local-data-sidebar-hidden', false)
      shortCut('html').setAttribute('data-sidebar-hidden', false)
 })
 

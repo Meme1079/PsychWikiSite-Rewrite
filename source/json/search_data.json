@@ -1,48 +1,33 @@
 {
      "fun_facts": [
-          "Press <kbd>⌘</kbd><kbd>W</kbd> for a silly trick!",
-          "-[------->+<]>+++.++[-->+++<]>.[->+++<]>++.",
-          "Pointers aren't that hard <em>- Experienced C++ Developers</em>",
-          "Sunky is love, Sunky is life",
-          "Why the hell are reading these shittys facts???",
-          "Metatables's are kinda cool, you should try it!",
-          "Lua doesn't have built-in concept of classes",
-          "Cropped porn isn't funny, this is becuase you have a porn addiction",
-          "SScript is just HScript but better",
-          "I could not give less of a shit if you thought it was rude <em>- White Impostor</em>",
+          "Why use stringTrim(), when you could just use (string):gsub('%s*', '')",
+          "<kbd>_G</kbd> doesn't work? try using setVar()!",
+          "Tired of using Lua? In Psych Engine 0.7.1h you could Haxe files now!",
+          "Using local are better to use becuase their more faster to call",
+          "Ternary operator exists in Lua by using logical operators",
+          "Metatables makes tables better!!!",
           "Lua supports closures!",
-          "They are alternative to <kbd>_G</kbd> Variable such as <kbd>setVar()</kbd> function",
-          "Bogosort is the best sorting algorithm to ever exist!",
-          "I'm ranning out of fact's to put here",
-          "GDColon is a furry",
-          "I've come to make an announcement",
-          "I hate Javascript",
-          "I love SCSS",
-          "console.log(`You are a ${!hetero}sexual`)",
-          "I miss being happy",
-          "You should love yourself now!",
-          "I heard your a pedophile, you like little boys and girls, degenerate",
-          "<span style=\"color: red\">A̵̞̼͈̅ ̵̡̡̛̼̺̇͐̃̂Ḟ̷̼͈̼̇͌͑A̶͙̼̅͝T̴̢̩̯̗̈́̓̃̀A̸̡̺̗̾̂L̶̘̥͐ ̷̖̖̚Ë̵̲R̸͓̩̹̿̏͑̔͗R̴̢̨̘͈̹͐̈́́Ò̸͇̭͈͍͒̎R̸͓͚͕̯̀̄̔͘ ̴̢̩̱̭̃̎̂̂͊͜O̶̡͚͙͍̘̾C̷̬͍̝͂͝C̵̨̞͂͗Û̸̇͜R̷͇̲̦͊͛͌̇̚͜Ŗ̸̛̰͂͊͆̔E̶̲̩͌D̸͇͔̩̎̅̊̄̿!̶̧͓̲̉̌͐̇!</span>",
-          "print(('FNAF'):gsub('A', '')",
-          "<strong><em>Technoblade Never Dies!</em></strong>",
-          "No Way! No Way! No Way! No Way! No Way! No Way! No Way! No Way!",
-          "Why use stringTrim(), when you could use (string):gsub('%s*', '')",
-          "Press <kbd>RGB</kbd> to enable rainbow borders!",
-          "I'm so mad. im gonna have sex with my girlfriend so i wont be so mad",
-          "HAI 1.2; CAN HAS STDIO?; VISIBLE \"HAI WORLD!\"; KTHXBYE",
+          "Lua is more easier than Python <em>(i think)</em>",
+          "Press <kbd>⌘</kbd><kbd>W</kbd> for a silly trick!",
           "Press <kbd>Ctr</kbd><kbd>R</kbd> to generate a random useless fact!",
+          "I could not give less of a shit if you thought it was rude <em>- White Impostor</em>",
+          "I'm so mad. im gonna have sex with my girlfriend so i wont be so mad <em>- Sonic, TGT</em>",
+          "INSERT SONIC QUOTE THAT BECAME AN OUTDATED MEME HERE <em>- Sunky.MPEG</em>",
           "Grimbo my love",
           "I've spent hours to code javascript, so you better give me a star on github",
           "simp this, simp that, i simply just wanna die",
           "You love open world games huh? then why don't you go outside",
           "what da dog doin",
           "fnf is not for kids go outside",
-          "SHUT THE HELL UP I hate women (cool guy hate wemen)",
-          "HELLO EVERYBODY, THIS IS MY FRIEND TAILS! I'M GONNA LET HIM SAY HI",
-          "PDF file",
-          "I'm not gay greg",
-          "so treated with love and kindness? or you abuse your animals?",
-          "<span contenteditable=\"true\" style=\"outline: none; cursor: pointer\">This text is editable! go crazy!</span>"
+          "I hate Javascript",
+          "I love SCSS",
+          "Bogosort is the best sorting algorithm to ever exist!",
+          "I'm ranning out of fact's to put here",
+          "Cropped porn isn't funny, this is becuase you have a porn addiction",
+          "I'm ranning out of fact's to put here",
+          "I've spent hours to code javascript, so you better give me a star on github",
+          "simp this, simp that, i simply just wanna die",
+          "holy hell"
      ],
      "datas": {
           "lua_coding_docs": [
@@ -53,7 +38,8 @@
                "metatables"
           ],
           "lua_script_api": [
-
+               "callback_templates",
+               "custom_sprites_&_texts_functions"
           ]
      }
 }

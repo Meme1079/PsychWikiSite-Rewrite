@@ -15,12 +15,10 @@ function generateFacts() {
      } else if (stupidDate.getMonth() == 3 && stupidDate.getDate() == 1) {
           gooberTexts = `<span ${funiiTroll}>New Feature Added, Try it!</span>`;
      } else if (stupidDate.getMonth() == 5 && stupidDate.getDate() == 1) {
-          gooberTexts = "Pride Month, nothing else";
+          gooberTexts = "It's Pride Month, nothing else";
      } else if (stupidDate.getMonth() == 9 && stupidDate.getDate() == 31) {
           gooberTexts = "It's Spooky Month!";
-     } else if (stupidDate.getMonth() == 10 && stupidDate.getDate() == 1) {
-          gooberTexts = "It's No Nut November! Stay strong my borthers!";
-     } else if (stupidDate.getHours() >= 0 && stupidDate.getHours() <= 6) {
+     } else if (stupidDate.getHours() >= 0 && stupidDate.getHours() < 6) {
           gooberTexts = "Go to sleep, idiot!";
      } else if (stupidDate.getMonth() == 9 && stupidDate.getDate() == 5) {
           const births = (stupidDate.getFullYear() - 2020).toString();
@@ -29,7 +27,7 @@ function generateFacts() {
           if (births.match(/1$/g)) dateSuffix = "st";
           if (births.match(/2$/g)) dateSuffix = "nd";
           if (births.match(/3$/g)) dateSuffix = "rd";
-          gooberTexts = `Happy ${births + dateSuffix} Birthday Friday Night Funkin'`;
+          gooberTexts = `Happy ${births + dateSuffix} Birthday Friday Night Funkin!!!'`;
      }
 
      shortCut('#wiki-search goober-facts').innerHTML = gooberTexts;
@@ -67,18 +65,25 @@ function toFirstUpperWord(str) {
      return results.substring(0, results.length - 1)
 }
 
-const dataLCD = searchData.datas.lua_coding_docs
-const listIcons = '<i class="uil uil-search"></i>'
-const listType  = '<i class="uil uil-folder"></i>'
-for (let dataInd in searchData.datas.lua_coding_docs) {
-     let listInnerContent = `<li>${listIcons}${toFirstUpperWord(dataLCD[dataInd])}<br><span>${listType}Lua Coding Docs</span><li>`
-     let listOuterContent = `<a href="html/lua_coding_docs/${dataLCD[dataInd]}.html">${listInnerContent}</a>`
-     shortCut('#search-lists ul').innerHTML += listOuterContent
-
-     if (window.location.href.match(dataLCD[dataInd])) {
-          shortCutAll('#search-lists ul a li')[dataInd].setAttribute('data-disable-searchlist', '')
+function createSearchLists(path, pathName) {
+     const data = path
+     const listIcons = '<i class="uil uil-search"></i>'
+     const listType  = '<i class="uil uil-folder"></i>'
+     for (let dataInd in data) {
+          let listInnerContent = `<li>${listIcons}${toFirstUpperWord(data[dataInd])}<br><span>${listType}${pathName}</span><li>`
+          let listOuterContent = `<a href="html/lua_coding_docs/${data[dataInd]}.html">${listInnerContent}</a>`
+          shortCut('#search-lists ul').innerHTML += listOuterContent
+     
+          if (window.location.href.match(data[dataInd])) {
+               shortCutAll('#search-lists ul a li')[dataInd].setAttribute('data-disable-searchlist', '')
+               shortCutAll('#search-lists ul a li')[dataInd].setAttribute('onclick', `alert('You are already here silly!')`)
+               shortCutAll('#search-lists ul a li')[dataInd].setAttribute('title', 'You are already here silly!')
+          }
      }
 }
+
+createSearchLists(searchData.datas.lua_coding_docs, 'Lua Coding Docs')
+createSearchLists(searchData.datas.lua_script_api, 'Lua Script API')
 
 // Window List WebURL Checker
 for (let dataAnchor of shortCutAll('#search-lists ul a')) {
@@ -95,6 +100,7 @@ for (let dataEven = 1; dataEven < shortCutAll('#search-lists ul li').length; dat
 for (let dataInvalid of shortCutAll('*[data-search-invalid]')) {
      dataInvalid.remove()
 }
+
 
 // Searchin Input Stuff
 const searchInput = shortCut('#wiki-search #search-search input')
@@ -120,6 +126,13 @@ searchInput.addEventListener('keyup', (event) => {
                if (filterInputValue === page) {
                     shortCut('#wiki-search #search-search input').value = ''
                     window.location.href = `html/lua_coding_docs/${page}.html`
+               }
+          }
+
+          for (let page of searchData.datas.lua_script_api) {
+               if (filterInputValue === page) {
+                    shortCut('#wiki-search #search-search input').value = ''
+                    window.location.href = `html/lua_script_api/${page}.html`
                }
           }
      }
