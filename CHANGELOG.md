@@ -1,5 +1,22 @@
 ### Version 2.0.0-Beta
-
+- Added Hide/Show Sidebar button
+- Added a new logo on the topbar
+- Added header indicating the page locations
+- Revamp Code examples
+     - Added Switch to Code/Output buttons
+     - Added Copy and paste button
+     - Added Hide Code Example
+- Revamp the Search Window
+     - Added a silly fun fact at the bottom of the search input
+     - Added if you try to click the current page, it will simply denied it
+     - Removed sections
+- Revamp the Topbar
+     - Removed text-based buttons and replaced by icon-based buttons
+     - Removed Scroll-to-top button
+     - Removed Light/Dark theme button
+- Revamp the Sidebar
+     - Renamed "Headings" to "Headers"
+- Removed the Home page and directs you to the first page of the wiki
 
 ### Version 1.1.2-Beta
 - Fixed a bug where pressing the random button doesn't go to any random page
