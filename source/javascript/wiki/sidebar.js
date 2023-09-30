@@ -1,4 +1,4 @@
-import { shortCut, shortCutAll } from "../Main.js";
+import { shortCut, shortCutAll } from "../main.js";
 
 // Inserts the header classes in each header tags
 for (let headIncre = 0; headIncre <= 6; headIncre++) {

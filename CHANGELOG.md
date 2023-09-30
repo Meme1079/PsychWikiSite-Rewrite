@@ -1,3 +1,6 @@
+### Version 2.0.1-Beta
+- Fixed the Error 404
+
 ### Version 2.0.0-Beta
 - Added Hide/Show Sidebar button
 - Added a new logo on the topbar

@@ -1,4 +1,4 @@
-import { shortCut, shortCutAll } from "../Main.js";
+import { shortCut, shortCutAll } from "../main.js";
 
 // Inser Code Lines
 for (let preInd = 0; preInd < shortCutAll('pre.code-example-code').length; preInd++) {
