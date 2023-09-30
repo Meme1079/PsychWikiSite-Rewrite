@@ -3,7 +3,7 @@ $global-border-radius: 5px;
 
 /* Colors Globals */
 
-/* :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
      --global-color-lightblue: hsl(210, 100%, 72%);
      --global-color-gold:      hsl(42, 87%, 56%);
      --global-color-grey:      hsl(216, 8%, 52%);
@@ -12,11 +12,11 @@ $global-border-radius: 5px;
      --global-color-lightblue: hsl(210, 100%, 52%);
      --global-color-gold:      hsl(42, 87%, 36%);
      --global-color-grey:      hsl(216, 8%, 52%);
-} */
+}
 
-$global-color-lightblue: hsl(210, 100%, 72%);
-$global-color-gold:      hsl(42, 87%, 56%);
-$global-color-grey:      hsl(216, 8%, 52%);
+$global-color-lightblue: var(--global-color-lightblue);
+$global-color-gold:      var(--global-color-gold);
+$global-color-grey:      var(--global-color-grey);
 
 /* Mixins */
 

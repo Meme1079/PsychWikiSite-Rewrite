@@ -12,7 +12,7 @@ center-element {
      border-radius: calc(gs.$global-border-radius * 2);
      position: fixed; bottom: 4.55cm;
 
-     $search-window-width: 15cm;
+     $search-window-width: 16cm;
      #search-search {
           @include es.input_formatBG(black, $search-window-width, (5px 8px), (0.1cm 0 0 0));
           @include gs.button_hover('focus-within');
@@ -79,7 +79,7 @@ center-element {
 
      #search-lists {
           overflow-x: hidden; overflow-y: auto;
-          height: 8cm;
+          height: 7.8cm;
 
           ul {
                padding: 0 5px;

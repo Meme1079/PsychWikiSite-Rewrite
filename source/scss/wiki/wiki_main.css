@@ -1,14 +1,16 @@
 /* Colors Globals */
-/* :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
      --global-color-lightblue: hsl(210, 100%, 72%);
-     --global-color-gold:      hsl(42, 87%, 56%);
-     --global-color-grey:      hsl(216, 8%, 52%);
+     --global-color-gold: hsl(42, 87%, 56%);
+     --global-color-grey: hsl(216, 8%, 52%);
 }
+
 :root[data-color-theme=light], meta[name=color-scheme][content=light] {
      --global-color-lightblue: hsl(210, 100%, 52%);
-     --global-color-gold:      hsl(42, 87%, 36%);
-     --global-color-grey:      hsl(216, 8%, 52%);
-} */
+     --global-color-gold: hsl(42, 87%, 36%);
+     --global-color-grey: hsl(216, 8%, 52%);
+}
+
 /* Mixins */
 /* Functions */
 /* Local Club :cool: */
@@ -21,13 +23,15 @@
      src: url(../../fonts/VCR/VCR_OSD_MONO.woff) format("woff"), url(../../fonts/VCR/VCR_OSD_MONO.otf) format("opentype"), url(../../fonts/VCR/VCR_OSD_MONO.ttf) format("truetype");
 }
 /* Some check theming weby stuff */
-:root {
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
      --color-wiki-main-top-bg: hsl(220deg, 13%, 18%);
      --color-wiki-main-outline: hsl(216deg, 8%, 52%);
      --color-wiki-main-bg: hsl(0deg, 0%, 6%);
      --color-wiki-main-hr: hsl(214deg, 12%, 66%);
-     --color-wiki-head-all-border-bottom: hsl(216deg, 8%, 52%);
-     --color-wiki-header-bg: black;
+     --color-wiki-main-ol-dots: white;
+     --color-wiki-main-ol-text: black;
+     --color-wiki-main-headings-bord-bottom: hsl(216deg, 8%, 52%);
+     --color-wiki-main-header-bg: black;
 }
 
 :root[data-color-theme=light], meta[name=color-scheme][content=light] {
@@ -35,8 +39,10 @@
      --color-wiki-main-outline: black;
      --color-wiki-main-bg: white;
      --color-wiki-main-hr: black;
-     --color-wiki-head-all-border-bottom: hsl(211, 10%, 57%);
-     --color-wiki-header-bg: white;
+     --color-wiki-main-ol-dots: black;
+     --color-wiki-main-ol-text: white;
+     --color-wiki-main-headings-bord-bottom: hsl(211, 10%, 57%);
+     --color-wiki-main-header-bg: white;
 }
 
 /* Goofy aaaahhhhh code */
@@ -60,7 +66,7 @@ html header {
      word-wrap: break-word;
      outline: 1px solid var(--color-wiki-main-outline);
      border-radius: 5px;
-     background-color: var(--color-wiki-header-bg);
+     background-color: var(--color-wiki-main-header-bg);
      width: minmax(10cm, 28.3cm);
      padding: 15px;
      margin: 0.5cm 0.4cm 25px 8.85cm;
@@ -125,7 +131,7 @@ html ::selection {
      margin-top: 0px 0px 10px 0px;
 }
 #wiki-header #wiki-main a {
-     color: hsl(210deg, 100%, 72%);
+     color: var(--global-color-lightblue);
      text-decoration: none;
 }
 #wiki-header #wiki-main a:hover {
@@ -168,8 +174,8 @@ html ::selection {
      font-size: calc(1rem - 2px);
      font-weight: 500;
      border-radius: 50%;
-     background-color: white;
-     color: black;
+     background-color: var(--color-wiki-main-ol-dots);
+     color: var(--color-wiki-main-ol-text);
      width: calc(1.5rem - 2px);
      height: calc(1.5rem - 2px);
      position: absolute;
@@ -197,7 +203,7 @@ html ::selection {
      scroll-margin-top: 2.5cm;
 }
 #wiki-header #wiki-main :is(h1, h2) {
-     border-bottom: 1px solid var(--color-wiki-head-all-border-bottom);
+     border-bottom: 1px solid var(--color-wiki-main-headings-bord-bottom);
      padding-bottom: 10px;
 }
 #wiki-header #wiki-main h1 {
@@ -321,7 +327,7 @@ html ::selection {
      margin-bottom: 10px;
 }
 #wiki-header #wiki-main table-bg table thead tr, #wiki-header #wiki-main div.table-bg table thead tr {
-     outline: 1px solid hsl(216deg, 8%, 52%);
+     outline: 1px solid var(--global-color-grey);
      border-radius: 3px;
 }
 #wiki-header #wiki-main table-bg table thead tr th, #wiki-header #wiki-main div.table-bg table thead tr th {
@@ -330,7 +336,7 @@ html ::selection {
      padding: 10px 8px;
 }
 #wiki-header #wiki-main table-bg table tbody tr, #wiki-header #wiki-main div.table-bg table tbody tr {
-     border-bottom: 1px solid hsl(216deg, 8%, 52%);
+     border-bottom: 1px solid var(--global-color-grey);
 }
 #wiki-header #wiki-main table-bg table tbody tr td, #wiki-header #wiki-main div.table-bg table tbody tr td {
      padding: 10px 8px;
@@ -356,7 +362,7 @@ html ::selection {
 #wiki-header #wiki-main table-bg::-webkit-scrollbar-track, #wiki-header #wiki-main div.table-bg::-webkit-scrollbar-track {
      background: hsla(0deg, 0%, 0%, 0);
 }
-:root {
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
      --color-wiki-codeblock-all-bg: hsl(216deg, 8%, 52%);
      --color-wiki-codeblock-all-outline: hsl(216deg, 8%, 52%);
      --color-wiki-codeblock-all-border: hsla(214deg, 12%, 66%, 0.4);
@@ -366,21 +372,34 @@ html ::selection {
      --color-wiki-codeblock-pre-selection-bg: white;
      --color-wiki-codeblock-pre-selection-text: black;
      --color-wiki-codeblock-class-code-border: hsl(220deg, 13%, 18%);
-     --color-wiki-codeblock-class-tagbg-bg: black;
-     --color-wiki-codeblock-class-code-location-text: hsl(1deg, 100%, 79%);
+     --color-wiki-codeblock-header-button-bg: black;
+     --color-wiki-codeblock-header-button-border-valid: lime;
+     --color-wiki-codeblock-header-button-border-invalid: red;
+     --color-wiki-codeblock-header-button-display-bg: rgba(158, 167, 179, 0.1);
+     --color-wiki-codeblock-header-button-display-active-bg: black;
+     --color-wiki-codeblock-header-button-display-inactive-hover-bg: hsl(216, 8%, 40%);
+     --color-wiki-codeblock-header-button-display-inactive-active-bg: hsl(216, 8%, 15%);
+     --color-wiki-codeblock-header-button-display-outline: hsl(216, 8%, 65%);
 }
 
 :root[data-color-theme=light], meta[name=color-scheme][content=light] {
      --color-wiki-codeblock-all-bg: black;
      --color-wiki-codeblock-all-outline: black;
      --color-wiki-codeblock-all-border: hsla(214deg, 12%, 66%, 0.4);
-     --color-wiki-codeblock-code-bg: hsla(210, 14%, 71%, 0.2);
-     --color-wiki-codeblock-kbd-bg: hsla(210, 14%, 71%, 0.2);
+     --color-wiki-codeblock-code-bg: hsla(210, 14%, 11%, 0.2);
+     --color-wiki-codeblock-kbd-bg: hsla(210, 14%, 11%, 0.2);
      --color-wiki-codeblock-pre-bg: white;
      --color-wiki-codeblock-pre-selection-bg: black;
      --color-wiki-codeblock-pre-selection-text: white;
      --color-wiki-codeblock-class-code-border: hsl(220, 13%, 82%);
-     --color-wiki-codeblock-class-tagbg-bg: white;
+     --color-wiki-codeblock-header-button-bg: white;
+     --color-wiki-codeblock-header-button-border-valid: hsl(120, 100%, 40%);
+     --color-wiki-codeblock-header-button-border-invalid: hsl(0, 100%, 40%);
+     --color-wiki-codeblock-header-button-display-bg: rgba(158, 167, 179, 0.5);
+     --color-wiki-codeblock-header-button-display-active-bg: white;
+     --color-wiki-codeblock-header-button-display-inactive-hover-bg: hsl(216, 8%, 50%);
+     --color-wiki-codeblock-header-button-display-inactive-active-bg: hsl(216, 8%, 90%);
+     --color-wiki-codeblock-header-button-display-outline: hsl(216, 8%, 35%);
 }
 
 #wiki-header #wiki-main :is(code, kbd, pre) {
@@ -418,9 +437,9 @@ html ::selection {
 #wiki-header #wiki-main .code-header .code-header-buttons button {
      cursor: pointer;
      font-size: 1.35em;
-     border: 1.5px solid hsl(216deg, 8%, 52%);
+     border: 1.5px solid var(--global-color-grey);
      border-radius: 5px;
-     background-color: black;
+     background-color: var(--color-wiki-codeblock-header-button-bg);
      width: -moz-fit-content;
      width: fit-content;
      height: -moz-fit-content;
@@ -431,27 +450,27 @@ html ::selection {
      margin: 0 0.1cm 0 0;
 }
 #wiki-header #wiki-main .code-header .code-header-buttons button:hover {
-     border-color: hsl(210deg, 100%, 72%);
+     border-color: var(--global-color-lightblue);
 }
 #wiki-header #wiki-main .code-header .code-header-buttons button:active {
-     border-color: hsl(42deg, 87%, 56%);
+     border-color: var(--global-color-gold);
 }
 #wiki-header #wiki-main .code-header .code-header-buttons button[data-copy-copied] {
-     border-color: lime;
+     border-color: var(--color-wiki-codeblock-header-button-border-valid);
 }
 #wiki-header #wiki-main .code-header .code-header-buttons button[data-copy-denied] {
-     border-color: red;
+     border-color: var(--color-wiki-codeblock-header-button-border-invalid);
 }
 #wiki-header #wiki-main .code-header .code-header-buttons button i.uil-check-circle {
-     color: lime;
+     color: var(--color-wiki-codeblock-header-button-border-valid);
 }
 #wiki-header #wiki-main .code-header .code-header-buttons button i.uil-times-circle {
-     color: red;
+     color: var(--color-wiki-codeblock-header-button-border-invalid);
 }
 #wiki-header #wiki-main .code-header .code-header-display-buttons {
      display: flex;
      border-radius: 5px;
-     background-color: rgba(158, 167, 179, 0.1);
+     background-color: var(--color-wiki-codeblock-header-button-display-bg);
      width: -moz-fit-content;
      width: fit-content;
      position: relative;
@@ -463,10 +482,10 @@ html ::selection {
 }
 #wiki-header #wiki-main .code-header .code-header-display-buttons button.active-button {
      font-weight: 600;
-     outline: 1px solid hsl(216deg, 8%, 65%);
+     outline: 1px solid var(--color-wiki-codeblock-header-button-display-outline);
      border: none;
      border-radius: 5px;
-     background: none black;
+     background: none var(--color-wiki-codeblock-header-button-display-active-bg);
 }
 #wiki-header #wiki-main .code-header .code-header-display-buttons button.inactive-button {
      cursor: pointer;
@@ -475,12 +494,12 @@ html ::selection {
 }
 #wiki-header #wiki-main .code-header .code-header-display-buttons button.inactive-button:hover span {
      border-radius: 3px;
-     background-color: hsl(216deg, 8%, 40%);
+     background-color: var(--color-wiki-codeblock-header-button-display-inactive-hover-bg);
      padding: 2px 6px;
      margin: -2px -6px;
 }
 #wiki-header #wiki-main .code-header .code-header-display-buttons button.inactive-button:active span {
-     background-color: hsl(216deg, 8%, 15%);
+     background-color: var(--color-wiki-codeblock-header-button-display-inactive-active-bg);
 }
 #wiki-header #wiki-main .code-header::after {
      content: "";
@@ -493,7 +512,7 @@ html ::selection {
           tab-size: 8;
      white-space: pre;
      overflow-x: auto;
-     outline: 1px solid hsl(216deg, 8%, 52%);
+     outline: 1px solid var(--color-wiki-codeblock-all-bg);
      line-height: 20px !important;
      border-radius: 0 0 5px 5px;
      background-color: var(--color-wiki-codeblock-pre-bg);

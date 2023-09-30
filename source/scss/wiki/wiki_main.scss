@@ -20,13 +20,15 @@
 
 /* Some check theming weby stuff */
 
-:root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
      --color-wiki-main-top-bg: hsl(220deg, 13%, 18%);
      --color-wiki-main-outline: hsl(216deg, 8%, 52%);
      --color-wiki-main-bg: hsl(0deg, 0%, 6%);
      --color-wiki-main-hr: hsl(214deg, 12%, 66%);
-     --color-wiki-head-all-border-bottom: hsl(216deg, 8%, 52%);
-     --color-wiki-header-bg: black;
+     --color-wiki-main-ol-dots: white;
+     --color-wiki-main-ol-text: black;
+     --color-wiki-main-headings-bord-bottom: hsl(216deg, 8%, 52%);
+     --color-wiki-main-header-bg: black;
 }
 
 :root[data-color-theme=light], meta[name=color-scheme][content=light] {
@@ -34,13 +36,17 @@
      --color-wiki-main-outline: black;
      --color-wiki-main-bg: white;
      --color-wiki-main-hr: black;
-     --color-wiki-head-all-border-bottom: hsl(211, 10%, 57%);
-     --color-wiki-header-bg: white;
+     --color-wiki-main-ol-dots: black;
+     --color-wiki-main-ol-text: white;
+     --color-wiki-main-headings-bord-bottom: hsl(211, 10%, 57%);
+     --color-wiki-main-header-bg: white;
 }
 
-$local-color-wiki-main-outline: var(--color-wiki-main-outline);
-$local-color-wiki-main-top-bg: var(--color-wiki-main-top-bg);
-$local-color-wiki-main-bg: var(--color-wiki-main-bg);
+$color-wiki-main-outline: var(--color-wiki-main-outline);
+$color-wiki-main-top-bg: var(--color-wiki-main-top-bg);
+$color-wiki-main-bg: var(--color-wiki-main-bg);
+$color-wiki-main-hr: var(--color-wiki-main-hr);
+$color-wiki-main-headings-bord-bottom: var(--color-wiki-main-header-bg);
 
 /* Goofy aaaahhhhh code */
 
@@ -59,9 +65,9 @@ html {
      header {
           font-size: 1em;
           word-wrap: break-word;
-          outline: 1px solid $local-color-wiki-main-outline;
+          outline: 1px solid $color-wiki-main-outline;
           border-radius: gs.$global-border-radius;
-          background-color: var(--color-wiki-header-bg);
+          background-color: $color-wiki-main-headings-bord-bottom;
           width: minmax(10cm, 28.3cm);
           padding: 15px; margin: 0.5cm 0.4cm 25px 8.85cm;
 
@@ -97,9 +103,9 @@ html {
 }
 
 #wiki-header {
-     outline: 1px solid $local-color-wiki-main-outline;
+     outline: 1px solid $color-wiki-main-outline;
      border-radius: gs.$global-border-radius;
-     background-color: $local-color-wiki-main-top-bg;
+     background-color: $color-wiki-main-top-bg;
      width: minmax(10cm, 28.3cm);
      padding-top: 1.1cm;
      margin: 0.5cm 0.4cm 25px 8.85cm;
@@ -109,11 +115,11 @@ html {
      }
 
      #wiki-main {
-          outline: 1px solid $local-color-wiki-main-outline;
+          outline: 1px solid $color-wiki-main-outline;
           font-size: 1em;
           word-wrap: break-word;
           border-radius: 0px 0px gs.$global-border-radius gs.$global-border-radius;
-          background-color: $local-color-wiki-main-bg;
+          background-color: $color-wiki-main-bg;
           padding: 20px 25px;
 
           :is(p, a, ul, td, th, blockquote) {
@@ -160,7 +166,9 @@ html {
                     position: relative;
                     padding: 0.35rem 0 0.35rem 2.5rem;
                     margin-bottom: 0.25rem;
-          
+
+                    $color-wiki-main-ol-dots: var(--color-wiki-main-ol-dots);
+                    $color-wiki-main-ol-text: var(--color-wiki-main-ol-text);
                     &::before {
                          counter-increment: ol-list;
                          content: counter(ol-list);
@@ -168,8 +176,8 @@ html {
                          font-size: calc(1rem - 2px);
                          font-weight: 500;
                          border-radius: 50%;
-                         background-color: white;
-                         color: black;
+                         background-color: $color-wiki-main-ol-dots;
+                         color: $color-wiki-main-ol-text;
                          width: calc(1.5rem - 2px); height: calc(1.5rem - 2px);
                          position: absolute; left: 0;
                          margin: 1px 0 0px 0.5rem;
@@ -191,10 +199,9 @@ html {
                }
           }
                    
-          $local-color-wiki-main-hr: var(--color-wiki-main-hr);
           hr {
                border: none;
-               background-color: $local-color-wiki-main-hr;
+               background-color: $color-wiki-main-hr;
                height: 3px;
                margin-top: 0.5cm;
           }
@@ -205,9 +212,9 @@ html {
                scroll-margin-top: 2.5cm;
           }
 
-          $local-color-wiki-header-all-border-bottom: var(--color-wiki-head-all-border-bottom);
+          $color-wiki-main-headings-bord-bottom: var(--color-wiki-main-headings-bord-bottom);
           :is(h1, h2) {
-               border-bottom: 1px solid $local-color-wiki-header-all-border-bottom;
+               border-bottom: 1px solid $color-wiki-main-headings-bord-bottom;
                padding-bottom: 10px;
           }
 
@@ -294,15 +301,15 @@ html {
                     span :is(i, strong) { color: $color; }
                }
 
-               $local-note-attrs: var(--color-wiki-highlight-note-outline), var(--color-wiki-highlight-note-bg), var(--color-wiki-highlight-note-title);
-               $local-warn-attrs: var(--color-wiki-highlight-warn-outline), var(--color-wiki-highlight-warn-bg), var(--color-wiki-highlight-warn-title);
-               $local-vald-attrs: var(--color-wiki-highlight-vald-outline), var(--color-wiki-highlight-vald-bg), var(--color-wiki-highlight-vald-title);
-               $local-erro-attrs: var(--color-wiki-highlight-erro-outline), var(--color-wiki-highlight-erro-bg), var(--color-wiki-highlight-erro-title);
+               $note-attrs: var(--color-wiki-highlight-note-outline), var(--color-wiki-highlight-note-bg), var(--color-wiki-highlight-note-title);
+               $warn-attrs: var(--color-wiki-highlight-warn-outline), var(--color-wiki-highlight-warn-bg), var(--color-wiki-highlight-warn-title);
+               $vald-attrs: var(--color-wiki-highlight-vald-outline), var(--color-wiki-highlight-vald-bg), var(--color-wiki-highlight-vald-title);
+               $erro-attrs: var(--color-wiki-highlight-erro-outline), var(--color-wiki-highlight-erro-bg), var(--color-wiki-highlight-erro-title);
 
-               &[class$=note] { @include highlight-types(list.nth($local-note-attrs, 1), list.nth($local-note-attrs, 2), list.nth($local-note-attrs, 3)) }
-               &[class$=warn] { @include highlight-types(list.nth($local-warn-attrs, 1), list.nth($local-warn-attrs, 2), list.nth($local-warn-attrs, 3)) }
-               &[class$=vald] { @include highlight-types(list.nth($local-vald-attrs, 1), list.nth($local-vald-attrs, 2), list.nth($local-vald-attrs, 3)) }
-               &[class$=erro] { @include highlight-types(list.nth($local-erro-attrs, 1), list.nth($local-erro-attrs, 2), list.nth($local-erro-attrs, 3)) }
+               &[class$=note] { @include highlight-types(list.nth($note-attrs, 1), list.nth($note-attrs, 2), list.nth($note-attrs, 3)) }
+               &[class$=warn] { @include highlight-types(list.nth($warn-attrs, 1), list.nth($warn-attrs, 2), list.nth($warn-attrs, 3)) }
+               &[class$=vald] { @include highlight-types(list.nth($vald-attrs, 1), list.nth($vald-attrs, 2), list.nth($vald-attrs, 3)) }
+               &[class$=erro] { @include highlight-types(list.nth($erro-attrs, 1), list.nth($erro-attrs, 2), list.nth($erro-attrs, 3)) }
           }
 
           /* Tables */
@@ -370,7 +377,7 @@ html {
           /* Code Blocks */
 
           @at-root {
-               :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
+               :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
                     --color-wiki-codeblock-all-bg: hsl(216deg, 8%, 52%);
                     --color-wiki-codeblock-all-outline: hsl(216deg, 8%, 52%);
                     --color-wiki-codeblock-all-border: hsla(214deg, 12%, 66%, 0.4);
@@ -380,57 +387,70 @@ html {
                     --color-wiki-codeblock-pre-selection-bg: white;
                     --color-wiki-codeblock-pre-selection-text: black;
                     --color-wiki-codeblock-class-code-border: hsl(220deg, 13%, 18%);
-                    --color-wiki-codeblock-class-tagbg-bg: black;
-                    --color-wiki-codeblock-class-code-location-text: hsl(1deg, 100%, 79%);
+                    --color-wiki-codeblock-header-button-bg: black;
+                    --color-wiki-codeblock-header-button-border-valid: lime;
+                    --color-wiki-codeblock-header-button-border-invalid: red;
+                    --color-wiki-codeblock-header-button-display-bg: rgba(158, 167, 179, 0.1);
+                    --color-wiki-codeblock-header-button-display-active-bg: black;
+                    --color-wiki-codeblock-header-button-display-inactive-hover-bg: hsl(216, 8%, 40%);
+                    --color-wiki-codeblock-header-button-display-inactive-active-bg: hsl(216, 8%, 15%);
+                    --color-wiki-codeblock-header-button-display-outline: hsl(216, 8%, 65%);
                }
 
                :root[data-color-theme=light], meta[name=color-scheme][content=light] {
                     --color-wiki-codeblock-all-bg: black;
                     --color-wiki-codeblock-all-outline: black;
                     --color-wiki-codeblock-all-border: hsla(214deg, 12%, 66%, 0.4);
-                    --color-wiki-codeblock-code-bg: hsla(210, 14%, 71%, 0.2);
-                    --color-wiki-codeblock-kbd-bg: hsla(210, 14%, 71%, 0.2);
+                    --color-wiki-codeblock-code-bg: hsla(210, 14%, 11%, 0.2);
+                    --color-wiki-codeblock-kbd-bg: hsla(210, 14%, 11%, 0.2);
                     --color-wiki-codeblock-pre-bg: white;
                     --color-wiki-codeblock-pre-selection-bg: black;
                     --color-wiki-codeblock-pre-selection-text: white;
                     --color-wiki-codeblock-class-code-border: hsl(220, 13%, 82%);
-                    --color-wiki-codeblock-class-tagbg-bg: white;
+                    --color-wiki-codeblock-header-button-bg: white;
+                    --color-wiki-codeblock-header-button-border-valid: hsl(120, 100%, 40%);
+                    --color-wiki-codeblock-header-button-border-invalid: hsl(0, 100%, 40%);
+                    --color-wiki-codeblock-header-button-display-bg: rgba(158, 167, 179, 0.5);
+                    --color-wiki-codeblock-header-button-display-active-bg: white;
+                    --color-wiki-codeblock-header-button-display-inactive-hover-bg: hsl(216, 8%, 50%);
+                    --color-wiki-codeblock-header-button-display-inactive-active-bg: hsl(216, 8%, 90%);
+                    --color-wiki-codeblock-header-button-display-outline: hsl(216, 8%, 35%);
                }
           }
 
-          $local-wiki-codeblock-all-font-family: "Fira Code", Menlo, "Lucida Console", "Monaco", "monospace";
-          $local-color-wiki-codeblock-all-bg: var(--color-wiki-codeblock-all-bg);
-          $local-color-wiki-codeblock-all-outline: var(--color-wiki-codeblock-all-outline);
-          $local-color-wiki-codeblock-all-border: var(--color-wiki-codeblock-all-border);
+          $wiki-codeblock-all-font-family: "Fira Code", Menlo, "Lucida Console", "Monaco", "monospace";
+          $color-wiki-codeblock-all-bg: var(--color-wiki-codeblock-all-bg);
+          $color-wiki-codeblock-all-outline: var(--color-wiki-codeblock-all-outline);
+          $color-wiki-codeblock-all-border: var(--color-wiki-codeblock-all-border);
           :is(code, kbd, pre) {
                font-size: calc(1em - 3px);
-               font-family: $local-wiki-codeblock-all-font-family;
+               font-family: $wiki-codeblock-all-font-family;
                border-radius: gs.$global-border-radius;
           }
 
-          $local-color-wiki-codeblock-code-bg: var(--color-wiki-codeblock-code-bg);
-          $local-color-wiki-codeblock-kbd-bg: var(--color-wiki-codeblock-kbd-bg);
+          $color-wiki-codeblock-code-bg: var(--color-wiki-codeblock-code-bg);
+          $color-wiki-codeblock-kbd-bg: var(--color-wiki-codeblock-kbd-bg);
 
           code {
-               background-color: $local-color-wiki-codeblock-code-bg;
+               background-color: $color-wiki-codeblock-code-bg;
                padding: 0.2em 0.4em;
           }
 
           kbd {
                font-size: calc(1em - 4px) !important;
-               border: 1px solid $local-color-wiki-codeblock-all-border;
-               border-bottom: 2px solid $local-color-wiki-codeblock-all-border;
-               background-color: $local-color-wiki-codeblock-kbd-bg;
+               border: 1px solid $color-wiki-codeblock-all-border;
+               border-bottom: 2px solid $color-wiki-codeblock-all-border;
+               background-color: $color-wiki-codeblock-kbd-bg;
                padding: 1.5px 5px 0px;
           }
 
-          $local-color-wiki-codeblock-pre-bg: var(--color-wiki-codeblock-pre-bg);
-          $local-color-wiki-codeblock-class-code-border: var(--color-wiki-codeblock-class-code-border);
-          $local-color-wiki-codeblock-class-code-location-text: var(--color-wiki-codeblock-class-code-location-text);
+          $color-wiki-codeblock-pre-bg: var(--color-wiki-codeblock-pre-bg);
+          $color-wiki-codeblock-class-code-border: var(--color-wiki-codeblock-class-code-border);
+          $color-wiki-codeblock-header-button-bg: var(--color-wiki-codeblock-header-button-bg);
           .code-header {
-               outline: 1px solid $local-color-wiki-codeblock-all-bg;
+               outline: 1px solid $color-wiki-codeblock-all-bg;
                border-radius: gs.$global-border-radius gs.$global-border-radius 0 0;
-               background-color: $local-color-wiki-codeblock-class-code-border;
+               background-color: $color-wiki-codeblock-class-code-border;
                position: relative; top: 12px;
                padding: 10px;
 
@@ -443,30 +463,35 @@ html {
                     float: right;
                     display: flex;
 
+                    $color-wiki-codeblock-header-button-border-valid: var(--color-wiki-codeblock-header-button-border-valid);
+                    $color-wiki-codeblock-header-button-border-invalid: var(--color-wiki-codeblock-header-button-border-invalid);
                     button {
-                         @include es.button_format(black, (3px 5px), (0 0.1cm 0 0), false);
+                         @include es.button_format($color-wiki-codeblock-header-button-bg, (3px 5px), (0 0.1cm 0 0), false);
                          @include gs.button_hover;
 
                          &[data-copy-copied] {
-                              border-color: lime;
+                              border-color: $color-wiki-codeblock-header-button-border-valid;
                          }
                          &[data-copy-denied] {
-                              border-color: red;
+                              border-color: $color-wiki-codeblock-header-button-border-invalid;
                          }
 
                          i.uil-check-circle {
-                              color: lime;
+                              color: $color-wiki-codeblock-header-button-border-valid;
                          }
                          i.uil-times-circle {
-                              color: red;
+                              color: $color-wiki-codeblock-header-button-border-invalid;
                          }
                     }
                }
 
+               $color-wiki-codeblock-header-button-display-bg: var(--color-wiki-codeblock-header-button-display-bg);
+               $color-wiki-codeblock-header-button-display-active-bg: var(--color-wiki-codeblock-header-button-display-active-bg);
+               $color-wiki-codeblock-header-button-display-outline: var(--color-wiki-codeblock-header-button-display-outline);
                .code-header-display-buttons {
                     display: flex;
                     border-radius: gs.$global-border-radius;
-                    background-color: rgba(158, 167, 179, 0.1);
+                    background-color: $color-wiki-codeblock-header-button-display-bg;
                     width: fit-content;
                     position: relative; top: 2px;
 
@@ -476,12 +501,14 @@ html {
 
                          &.active-button {
                               font-weight: 600;
-                              outline: 1px solid hsl(216, 8%, 65%);
+                              outline: 1px solid $color-wiki-codeblock-header-button-display-outline;
                               border: none;
                               border-radius: gs.$global-border-radius;
-                              background: none black;
+                              background: none $color-wiki-codeblock-header-button-display-active-bg;
                          }
 
+                         $color-wiki-codeblock-header-button-display-inactive-hover-bg: var(--color-wiki-codeblock-header-button-display-inactive-hover-bg);
+                         $color-wiki-codeblock-header-button-display-inactive-active-bg: var(--color-wiki-codeblock-header-button-display-inactive-active-bg);
                          &.inactive-button {
                               cursor: pointer;
                               border: none;
@@ -489,13 +516,13 @@ html {
 
                               &:hover span {
                                    border-radius: calc(gs.$global-border-radius - 2px);
-                                   background-color: hsl(216, 8%, 40%);
+                                   background-color: $color-wiki-codeblock-header-button-display-inactive-hover-bg;
                                    padding: 2px 6px;
                                    margin: -2px -6px;
                               }
 
                               &:active span {
-                                   background-color: hsl(216, 8%, 15%);
+                                   background-color: $color-wiki-codeblock-header-button-display-inactive-active-bg;
                               }
                          }
                     }
@@ -512,10 +539,10 @@ html {
                tab-size: 8;
                white-space: pre;
                overflow-x: auto;
-               outline: 1px solid hsl(216deg, 8%, 52%);
+               outline: 1px solid $color-wiki-codeblock-all-bg;
                line-height: 20px !important;
                border-radius: 0 0 gs.$global-border-radius gs.$global-border-radius;
-               background-color: $local-color-wiki-codeblock-pre-bg;
+               background-color: $color-wiki-codeblock-pre-bg;
                padding: 16px;
 
                &.code-example-output {

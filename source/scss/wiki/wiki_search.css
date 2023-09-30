@@ -31,7 +31,7 @@ center-element {
      border: 1.5px solid hsl(216deg, 8%, 52%);
      border-radius: 5px;
      background-color: black;
-     width: 15cm;
+     width: 16cm;
      padding: 5px 8px;
      margin: 0.1cm 0 0 0;
      box-sizing: border-box;
@@ -52,7 +52,7 @@ center-element {
      outline: none !important;
      border: none !important;
      background: none !important;
-     width: 14cm;
+     width: 15cm;
      height: -moz-fit-content;
      height: fit-content;
      margin: 0cm 5px;
@@ -110,7 +110,7 @@ center-element {
 #wiki-search #search-lists {
      overflow-x: hidden;
      overflow-y: auto;
-     height: 8cm;
+     height: 7.8cm;
 }
 #wiki-search #search-lists ul {
      padding: 0 5px;
@@ -125,7 +125,7 @@ center-element {
      list-style-type: none;
      box-sizing: border-box;
      border-radius: 5px;
-     width: 14.5cm;
+     width: 15.5cm;
      height: -moz-fit-content;
      height: fit-content;
      padding: 8px;
@@ -178,7 +178,7 @@ center-element {
 #wiki-search hr {
      border: none;
      background-color: hsl(210deg, 5%, 30%);
-     width: 15cm;
+     width: 16cm;
      height: 1.5px;
      padding: 0;
      margin-top: 0.35cm;
