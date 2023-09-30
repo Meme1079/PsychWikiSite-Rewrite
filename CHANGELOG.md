@@ -1,3 +1,6 @@
+### Version 2.0.2-Beta
+- Fixed a bug when copying the code
+
 ### Version 2.0.1-Beta
 - Fixed the Error 404
 

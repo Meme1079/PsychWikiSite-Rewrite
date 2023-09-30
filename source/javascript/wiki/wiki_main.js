@@ -20,7 +20,9 @@ for (let preInd = 0; preInd < shortCutAll('pre.code-example-output').length; pre
 // Copy Code, Hide Code, & Switch to Ouput
 async function codeCopyToClipboard(preInd) {
      const codeContent = shortCutAll('pre.code-example-code')[preInd].innerText
-     await navigator.clipboard.writeText(codeContent);
+     await navigator.clipboard.writeText(codeContent).then(() => {
+          alert('Hey! Code copied to clipboard')
+     });
 }
 
 function toSeconds(mili) {
@@ -29,11 +31,10 @@ function toSeconds(mili) {
 
 const getCopyCodeButton = shortCutAll('.code-header .code-header-buttons button[title="Copy Code"]')
 const getCopyCodeButtonIcon = shortCutAll('.code-header .code-header-buttons button[title="Copy Code"] i')
-function executeCopyCode(copyId, codeAttr, codeClass, codeMessage) {
+function executeCopyCode(copyId, codeAttr, codeClass) {
      getCopyCodeButton[copyId].setAttribute(codeAttr, '')
      getCopyCodeButton[copyId].setAttribute('disabled', '')
      getCopyCodeButtonIcon[copyId].setAttribute('class', codeClass)
-     alert(codeMessage)
      setTimeout(() => {
           getCopyCodeButton[copyId].removeAttribute(codeAttr)
           getCopyCodeButton[copyId].removeAttribute('disabled')
@@ -45,17 +46,17 @@ for (let codeCopyButton in getCopyCodeButton) {
      if (codeCopyButton == 'entries') break; //! DO NOT DELETE
 
      const getCodeExampleCodeAll = shortCutAll('pre.code-example-code')[codeCopyButton]
-     const finalMessage = 'Hey! Code copied to clipboard'
-     const errorMessage = 'Woah! Tried to attempt to copy a non-code'
      getCopyCodeButton[codeCopyButton].addEventListener('click', () => {
-          try {
+          try { 
                if (getCodeExampleCodeAll.getAttribute('data-code-invisible').match('true')) {
-                    executeCopyCode(codeCopyButton, 'data-copy-denied', 'uil-times-circle', errorMessage)
+                    alert('Woah! Tried to attempt to copy a non-code')
+                    executeCopyCode(codeCopyButton, 'data-copy-denied', 'uil-times-circle')
                     return;
-               }
-          } catch (error) {}
-          executeCopyCode(codeCopyButton, 'data-copy-copied', 'uil uil-check-circle', finalMessage)
+               } 
+          } catch(error) {}
+
           codeCopyToClipboard(codeCopyButton)
+          executeCopyCode(codeCopyButton, 'data-copy-copied', 'uil uil-check-circle')
      })
 }
 
