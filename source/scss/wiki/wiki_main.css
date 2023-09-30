@@ -1,0 +1,675 @@
+/* Colors Globals */
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+     --global-color-lightblue: hsl(210, 100%, 72%);
+     --global-color-gold: hsl(42, 87%, 56%);
+     --global-color-grey: hsl(216, 8%, 52%);
+}
+
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --global-color-lightblue: hsl(210, 100%, 52%);
+     --global-color-gold: hsl(42, 87%, 36%);
+     --global-color-grey: hsl(216, 8%, 52%);
+}
+
+/* Mixins */
+/* Functions */
+/* Local Club :cool: */
+@font-face {
+     font-family: "Fira Code";
+     src: url(../../fonts/Fira_Code/FiraCode-Regular.woff) format("woff"), url(../../fonts/Fira_Code/FiraCode-Regular.otf) format("opentype"), url(../../fonts/Fira_Code/FiraCode-Regular.ttf) format("truetype");
+}
+@font-face {
+     font-family: "VCR";
+     src: url(../../fonts/VCR/VCR_OSD_MONO.woff) format("woff"), url(../../fonts/VCR/VCR_OSD_MONO.otf) format("opentype"), url(../../fonts/VCR/VCR_OSD_MONO.ttf) format("truetype");
+}
+/* Some check theming weby stuff */
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+     --color-wiki-main-top-bg: hsl(220deg, 13%, 18%);
+     --color-wiki-main-outline: hsl(216deg, 8%, 52%);
+     --color-wiki-main-bg: hsl(0deg, 0%, 6%);
+     --color-wiki-main-hr: hsl(214deg, 12%, 66%);
+     --color-wiki-main-ol-dots: white;
+     --color-wiki-main-ol-text: black;
+     --color-wiki-main-headings-bord-bottom: hsl(216deg, 8%, 52%);
+     --color-wiki-main-header-bg: black;
+}
+
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --color-wiki-main-top-bg: hsl(220, 13%, 82%);
+     --color-wiki-main-outline: black;
+     --color-wiki-main-bg: white;
+     --color-wiki-main-hr: black;
+     --color-wiki-main-ol-dots: black;
+     --color-wiki-main-ol-text: white;
+     --color-wiki-main-headings-bord-bottom: hsl(211, 10%, 57%);
+     --color-wiki-main-header-bg: white;
+}
+
+/* Goofy aaaahhhhh code */
+:root[data-sidebar-hidden=true] :is(header, #wiki-header) {
+     margin-left: 4.6cm;
+     margin-right: 4.6cm;
+}
+@media only screen and (max-width: 1000px) {
+     :root[data-sidebar-hidden=true] :is(header, #wiki-header) {
+          margin-left: 0.4cm;
+          margin-right: 0.4cm;
+     }
+}
+
+html {
+     font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
+     scroll-behavior: smooth;
+}
+html header {
+     font-size: 1em;
+     word-wrap: break-word;
+     outline: 1px solid var(--color-wiki-main-outline);
+     border-radius: 5px;
+     background-color: var(--color-wiki-main-header-bg);
+     width: minmax(10cm, 28.3cm);
+     padding: 15px;
+     margin: 0.5cm 0.4cm 25px 8.85cm;
+}
+@media only screen and (max-width: 1000px) {
+     html header {
+          margin-left: 0.4cm;
+     }
+}
+html header p {
+     font-size: 1em;
+     padding: 0;
+     margin: 0;
+}
+html header p i {
+     font-size: 1.1em;
+}
+html header p header-name {
+     font-weight: 550;
+}
+html body {
+     display: none;
+}
+html main {
+     margin-top: 2.3cm;
+}
+html ::-moz-selection {
+     background-color: hsl(210deg, 100%, 56%);
+}
+html ::selection {
+     background-color: hsl(210deg, 100%, 56%);
+}
+
+#wiki-header {
+     outline: 1px solid var(--color-wiki-main-outline);
+     border-radius: 5px;
+     background-color: var(--color-wiki-main-top-bg);
+     width: minmax(10cm, 28.3cm);
+     padding-top: 1.1cm;
+     margin: 0.5cm 0.4cm 25px 8.85cm;
+}
+@media only screen and (max-width: 1000px) {
+     #wiki-header {
+          margin-left: 0.4cm;
+     }
+}
+#wiki-header #wiki-main {
+     outline: 1px solid var(--color-wiki-main-outline);
+     font-size: 1em;
+     word-wrap: break-word;
+     border-radius: 0px 0px 5px 5px;
+     background-color: var(--color-wiki-main-bg);
+     padding: 20px 25px;
+     /* Headers */
+     /* HighLights */
+     /* Tables */
+     /* Code Blocks */
+}
+#wiki-header #wiki-main :is(p, a, ul, td, th, blockquote) {
+     font-size: 1em;
+     line-height: 1.5;
+     margin-top: 0px 0px 10px 0px;
+}
+#wiki-header #wiki-main a {
+     color: var(--global-color-lightblue);
+     text-decoration: none;
+}
+#wiki-header #wiki-main a:hover {
+     text-decoration: underline;
+}
+#wiki-header #wiki-main a::-moz-selection {
+     color: #FFB770;
+}
+#wiki-header #wiki-main a::selection {
+     color: #FFB770;
+}
+#wiki-header #wiki-main p {
+     font-size: 1.05em;
+}
+#wiki-header #wiki-main dfn {
+     font-style: normal;
+}
+#wiki-header #wiki-main li {
+     margin-top: 5px;
+     margin-bottom: 5px;
+}
+#wiki-header #wiki-main ol {
+     counter-reset: ol-list;
+     box-sizing: border-box;
+     list-style: none;
+     position: relative;
+     padding-left: 0.25cm;
+}
+#wiki-header #wiki-main ol li {
+     box-sizing: border-box;
+     line-height: 1.5;
+     position: relative;
+     padding: 0.35rem 0 0.35rem 2.5rem;
+     margin-bottom: 0.25rem;
+}
+#wiki-header #wiki-main ol li::before {
+     counter-increment: ol-list;
+     content: counter(ol-list);
+     text-align: center;
+     font-size: calc(1rem - 2px);
+     font-weight: 500;
+     border-radius: 50%;
+     background-color: var(--color-wiki-main-ol-dots);
+     color: var(--color-wiki-main-ol-text);
+     width: calc(1.5rem - 2px);
+     height: calc(1.5rem - 2px);
+     position: absolute;
+     left: 0;
+     margin: 1px 0 0px 0.5rem;
+}
+#wiki-header #wiki-main ol li[data-enable-rgb-orgli]::before {
+     animation: rgb-bg 8s infinite;
+}
+#wiki-header #wiki-main ol ul li {
+     padding: 0px !important;
+     margin-bottom: 0.25rem;
+}
+#wiki-header #wiki-main ol ul li::before {
+     display: none !important;
+     margin: 0 !important;
+}
+#wiki-header #wiki-main hr {
+     border: none;
+     background-color: var(--color-wiki-main-hr);
+     height: 3px;
+     margin-top: 0.5cm;
+}
+#wiki-header #wiki-main :is(h1, h2, h3, h4, h5, h6) {
+     scroll-margin-top: 2.5cm;
+}
+#wiki-header #wiki-main :is(h1, h2) {
+     border-bottom: 1px solid var(--color-wiki-main-headings-bord-bottom);
+     padding-bottom: 10px;
+}
+#wiki-header #wiki-main h1 {
+     font-size: 2em;
+     font-weight: 600;
+     margin: 15px 0px 16px 0px;
+}
+#wiki-header #wiki-main h2 {
+     font-size: 1.5em;
+     font-weight: 600;
+     margin: 15px 0px 16px 0px;
+}
+#wiki-header #wiki-main h3 {
+     font-size: 1.25em;
+     font-weight: 550;
+     margin: 15px 0px 16px 0px;
+}
+#wiki-header #wiki-main h4 {
+     font-size: 1em;
+     font-weight: 550;
+     margin: 15px 0px 16px 0px;
+}
+#wiki-header #wiki-main h5 {
+     font-size: 0.95em;
+     font-weight: 550;
+     margin: 15px 0px 16px 0px;
+}
+#wiki-header #wiki-main h6 {
+     font-size: 0.9em;
+     font-weight: 550;
+     margin: 15px 0px 16px 0px;
+}
+:root {
+     --color-wiki-highlight-note-outline: hsl(210deg, 100%, 63%);
+     --color-wiki-highlight-note-bg: hsla(210deg, 100%, 63%, 0.1);
+     --color-wiki-highlight-note-title: hsl(210deg, 100%, 73%);
+     --color-wiki-highlight-warn-outline: hsl(42deg, 87%, 56%);
+     --color-wiki-highlight-warn-bg: hsla(42deg, 87%, 56%, 0.1);
+     --color-wiki-highlight-warn-title: hsl(42deg, 87%, 66%);
+     --color-wiki-highlight-vald-outline: hsl(125deg, 100%, 63%);
+     --color-wiki-highlight-vald-bg: hsla(125deg, 100%, 63%, 0.1);
+     --color-wiki-highlight-vald-title: hsl(125deg, 100%, 60%);
+     --color-wiki-highlight-erro-outline: hsl(0deg, 100%, 63%);
+     --color-wiki-highlight-erro-bg: hsla(0deg, 100%, 63%, 0.1);
+     --color-wiki-highlight-erro-title: hsl(0deg, 100%, 60%);
+}
+
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --color-wiki-highlight-note-outline: hsl(210deg, 100%, 50%);
+     --color-wiki-highlight-note-bg: hsla(210deg, 100%, 50%, 0.15);
+     --color-wiki-highlight-note-title: hsl(210deg, 100%, 60%);
+     --color-wiki-highlight-warn-outline: hsl(42deg, 100%, 45%);
+     --color-wiki-highlight-warn-bg: hsla(42deg, 100%, 45%, 0.15);
+     --color-wiki-highlight-warn-title: hsl(42deg, 100%, 55%);
+}
+
+#wiki-header #wiki-main blockquote[class^=highlight-] {
+     border-radius: 5px;
+     padding: 3px 10px 10px 10px;
+     margin: 10px 0px;
+}
+#wiki-header #wiki-main blockquote[class^=highlight-] span :is(i, p) {
+     line-height: 1.3;
+     padding: 0;
+     margin: 0;
+}
+#wiki-header #wiki-main blockquote[class^=highlight-] span i {
+     font-size: 1.5em;
+     position: relative;
+     top: 2.5px;
+     margin-right: 5px;
+}
+#wiki-header #wiki-main blockquote[class^=highlight-] span p {
+     margin-top: 8px;
+}
+#wiki-header #wiki-main blockquote .code-border {
+     margin: 15px 0px 0px 0px;
+}
+#wiki-header #wiki-main blockquote[class$=note] {
+     border: 1px solid var(--color-wiki-highlight-note-outline) !important;
+     background-color: var(--color-wiki-highlight-note-bg);
+}
+#wiki-header #wiki-main blockquote[class$=note] span :is(i, strong) {
+     color: var(--color-wiki-highlight-note-title);
+}
+#wiki-header #wiki-main blockquote[class$=warn] {
+     border: 1px solid var(--color-wiki-highlight-warn-outline) !important;
+     background-color: var(--color-wiki-highlight-warn-bg);
+}
+#wiki-header #wiki-main blockquote[class$=warn] span :is(i, strong) {
+     color: var(--color-wiki-highlight-warn-title);
+}
+#wiki-header #wiki-main blockquote[class$=vald] {
+     border: 1px solid var(--color-wiki-highlight-vald-outline) !important;
+     background-color: var(--color-wiki-highlight-vald-bg);
+}
+#wiki-header #wiki-main blockquote[class$=vald] span :is(i, strong) {
+     color: var(--color-wiki-highlight-vald-title);
+}
+#wiki-header #wiki-main blockquote[class$=erro] {
+     border: 1px solid var(--color-wiki-highlight-erro-outline) !important;
+     background-color: var(--color-wiki-highlight-erro-bg);
+}
+#wiki-header #wiki-main blockquote[class$=erro] span :is(i, strong) {
+     color: var(--color-wiki-highlight-erro-title);
+}
+#wiki-header #wiki-main table-bg, #wiki-header #wiki-main div.table-bg {
+     overflow-x: auto;
+     overflow-y: hidden;
+     width: 100%;
+     padding: 0px 1px;
+}
+#wiki-header #wiki-main table-bg table, #wiki-header #wiki-main div.table-bg table {
+     display: table;
+     border-collapse: collapse;
+     width: 100%;
+     min-width: 15cm;
+     margin: 0.5cm 0cm;
+}
+#wiki-header #wiki-main table-bg table thead, #wiki-header #wiki-main div.table-bg table thead {
+     margin-bottom: 10px;
+}
+#wiki-header #wiki-main table-bg table thead tr, #wiki-header #wiki-main div.table-bg table thead tr {
+     outline: 1px solid var(--global-color-grey);
+     border-radius: 3px;
+}
+#wiki-header #wiki-main table-bg table thead tr th, #wiki-header #wiki-main div.table-bg table thead tr th {
+     text-align: left;
+     font-weight: 500;
+     padding: 10px 8px;
+}
+#wiki-header #wiki-main table-bg table tbody tr, #wiki-header #wiki-main div.table-bg table tbody tr {
+     border-bottom: 1px solid var(--global-color-grey);
+}
+#wiki-header #wiki-main table-bg table tbody tr td, #wiki-header #wiki-main div.table-bg table tbody tr td {
+     padding: 10px 8px;
+}
+#wiki-header #wiki-main table-bg table tbody tr td:nth-child(2), #wiki-header #wiki-main div.table-bg table tbody tr td:nth-child(2) {
+     max-width: 9cm;
+}
+#wiki-header #wiki-main table-bg table tbody tr:nth-child(even), #wiki-header #wiki-main div.table-bg table tbody tr:nth-child(even) {
+     background-color: hsl(0deg, 0%, 11%);
+}
+#wiki-header #wiki-main table-bg table tbody tr:nth-last-child(1), #wiki-header #wiki-main div.table-bg table tbody tr:nth-last-child(1) {
+     border-bottom: 0px;
+}
+#wiki-header #wiki-main table-bg::-webkit-scrollbar, #wiki-header #wiki-main div.table-bg::-webkit-scrollbar {
+     width: 9px;
+     height: 10px;
+}
+#wiki-header #wiki-main table-bg::-webkit-scrollbar-thumb, #wiki-header #wiki-main div.table-bg::-webkit-scrollbar-thumb {
+     margin-left: 50px;
+     border-radius: 5px;
+     background: #6b6b6b;
+}
+#wiki-header #wiki-main table-bg::-webkit-scrollbar-track, #wiki-header #wiki-main div.table-bg::-webkit-scrollbar-track {
+     background: hsla(0deg, 0%, 0%, 0);
+}
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+     --color-wiki-codeblock-all-bg: hsl(216deg, 8%, 52%);
+     --color-wiki-codeblock-all-outline: hsl(216deg, 8%, 52%);
+     --color-wiki-codeblock-all-border: hsla(214deg, 12%, 66%, 0.4);
+     --color-wiki-codeblock-code-bg: hsla(214deg, 12%, 66%, 0.4);
+     --color-wiki-codeblock-kbd-bg: hsl(0deg, 0%, 16%);
+     --color-wiki-codeblock-pre-bg: black;
+     --color-wiki-codeblock-pre-selection-bg: white;
+     --color-wiki-codeblock-pre-selection-text: black;
+     --color-wiki-codeblock-class-code-border: hsl(220deg, 13%, 18%);
+     --color-wiki-codeblock-header-button-bg: black;
+     --color-wiki-codeblock-header-button-border-valid: lime;
+     --color-wiki-codeblock-header-button-border-invalid: red;
+     --color-wiki-codeblock-header-button-display-bg: rgba(158, 167, 179, 0.1);
+     --color-wiki-codeblock-header-button-display-active-bg: black;
+     --color-wiki-codeblock-header-button-display-inactive-hover-bg: hsl(216, 8%, 40%);
+     --color-wiki-codeblock-header-button-display-inactive-active-bg: hsl(216, 8%, 15%);
+     --color-wiki-codeblock-header-button-display-outline: hsl(216, 8%, 65%);
+}
+
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --color-wiki-codeblock-all-bg: black;
+     --color-wiki-codeblock-all-outline: black;
+     --color-wiki-codeblock-all-border: hsla(214deg, 12%, 66%, 0.4);
+     --color-wiki-codeblock-code-bg: hsla(210, 14%, 11%, 0.2);
+     --color-wiki-codeblock-kbd-bg: hsla(210, 14%, 11%, 0.2);
+     --color-wiki-codeblock-pre-bg: white;
+     --color-wiki-codeblock-pre-selection-bg: black;
+     --color-wiki-codeblock-pre-selection-text: white;
+     --color-wiki-codeblock-class-code-border: hsl(220, 13%, 82%);
+     --color-wiki-codeblock-header-button-bg: white;
+     --color-wiki-codeblock-header-button-border-valid: hsl(120, 100%, 40%);
+     --color-wiki-codeblock-header-button-border-invalid: hsl(0, 100%, 40%);
+     --color-wiki-codeblock-header-button-display-bg: rgba(158, 167, 179, 0.5);
+     --color-wiki-codeblock-header-button-display-active-bg: white;
+     --color-wiki-codeblock-header-button-display-inactive-hover-bg: hsl(216, 8%, 50%);
+     --color-wiki-codeblock-header-button-display-inactive-active-bg: hsl(216, 8%, 90%);
+     --color-wiki-codeblock-header-button-display-outline: hsl(216, 8%, 35%);
+}
+
+#wiki-header #wiki-main :is(code, kbd, pre) {
+     font-size: calc(1em - 3px);
+     font-family: "Fira Code", Menlo, "Lucida Console", "Monaco", "monospace";
+     border-radius: 5px;
+}
+#wiki-header #wiki-main code {
+     background-color: var(--color-wiki-codeblock-code-bg);
+     padding: 0.2em 0.4em;
+}
+#wiki-header #wiki-main kbd {
+     font-size: calc(1em - 4px) !important;
+     border: 1px solid var(--color-wiki-codeblock-all-border);
+     border-bottom: 2px solid var(--color-wiki-codeblock-all-border);
+     background-color: var(--color-wiki-codeblock-kbd-bg);
+     padding: 1.5px 5px 0px;
+}
+#wiki-header #wiki-main .code-header {
+     outline: 1px solid var(--color-wiki-codeblock-all-bg);
+     border-radius: 5px 5px 0 0;
+     background-color: var(--color-wiki-codeblock-class-code-border);
+     position: relative;
+     top: 12px;
+     padding: 10px;
+}
+#wiki-header #wiki-main .code-header[data-hidden] {
+     border-radius: 5px;
+     margin-bottom: 0.9cm;
+}
+#wiki-header #wiki-main .code-header .code-header-buttons {
+     float: right;
+     display: flex;
+}
+#wiki-header #wiki-main .code-header .code-header-buttons button {
+     cursor: pointer;
+     font-size: 1.35em;
+     border: 1.5px solid var(--global-color-grey);
+     border-radius: 5px;
+     background-color: var(--color-wiki-codeblock-header-button-bg);
+     width: -moz-fit-content;
+     width: fit-content;
+     height: -moz-fit-content;
+     height: fit-content;
+     position: relative;
+     top: 0px;
+     padding: 3px 5px;
+     margin: 0 0.1cm 0 0;
+}
+#wiki-header #wiki-main .code-header .code-header-buttons button:hover {
+     border-color: var(--global-color-lightblue);
+}
+#wiki-header #wiki-main .code-header .code-header-buttons button:active {
+     border-color: var(--global-color-gold);
+}
+#wiki-header #wiki-main .code-header .code-header-buttons button[data-copy-copied] {
+     border-color: var(--color-wiki-codeblock-header-button-border-valid);
+}
+#wiki-header #wiki-main .code-header .code-header-buttons button[data-copy-denied] {
+     border-color: var(--color-wiki-codeblock-header-button-border-invalid);
+}
+#wiki-header #wiki-main .code-header .code-header-buttons button i.uil-check-circle {
+     color: var(--color-wiki-codeblock-header-button-border-valid);
+}
+#wiki-header #wiki-main .code-header .code-header-buttons button i.uil-times-circle {
+     color: var(--color-wiki-codeblock-header-button-border-invalid);
+}
+#wiki-header #wiki-main .code-header .code-header-display-buttons {
+     display: flex;
+     border-radius: 5px;
+     background-color: var(--color-wiki-codeblock-header-button-display-bg);
+     width: -moz-fit-content;
+     width: fit-content;
+     position: relative;
+     top: 2px;
+}
+#wiki-header #wiki-main .code-header .code-header-display-buttons button {
+     font-size: 0.95em;
+     padding: 6px 12px;
+}
+#wiki-header #wiki-main .code-header .code-header-display-buttons button.active-button {
+     font-weight: 600;
+     outline: 1px solid var(--color-wiki-codeblock-header-button-display-outline);
+     border: none;
+     border-radius: 5px;
+     background: none var(--color-wiki-codeblock-header-button-display-active-bg);
+}
+#wiki-header #wiki-main .code-header .code-header-display-buttons button.inactive-button {
+     cursor: pointer;
+     border: none;
+     background: none;
+}
+#wiki-header #wiki-main .code-header .code-header-display-buttons button.inactive-button:hover span {
+     border-radius: 3px;
+     background-color: var(--color-wiki-codeblock-header-button-display-inactive-hover-bg);
+     padding: 2px 6px;
+     margin: -2px -6px;
+}
+#wiki-header #wiki-main .code-header .code-header-display-buttons button.inactive-button:active span {
+     background-color: var(--color-wiki-codeblock-header-button-display-inactive-active-bg);
+}
+#wiki-header #wiki-main .code-header::after {
+     content: "";
+     clear: both;
+     display: table;
+}
+#wiki-header #wiki-main pre {
+     -moz-tab-size: 8;
+       -o-tab-size: 8;
+          tab-size: 8;
+     white-space: pre;
+     overflow-x: auto;
+     outline: 1px solid var(--color-wiki-codeblock-all-bg);
+     line-height: 20px !important;
+     border-radius: 0 0 5px 5px;
+     background-color: var(--color-wiki-codeblock-pre-bg);
+     padding: 16px;
+}
+#wiki-header #wiki-main pre.code-example-output {
+     display: none;
+     font-family: "VCR" !important;
+}
+#wiki-header #wiki-main pre::before {
+     counter-reset: listing;
+}
+#wiki-header #wiki-main pre.code-example-code[data-code-invisible] {
+     display: none;
+}
+#wiki-header #wiki-main pre.code-example-code span.code-line {
+     counter-increment: listing;
+}
+#wiki-header #wiki-main pre.code-example-code span.code-line::before {
+     content: counter(listing) "  ";
+     display: inline-block;
+     text-align: center;
+     color: hsl(0deg, 0%, 67%);
+     width: 3em;
+     padding-left: auto;
+     margin-left: auto;
+}
+#wiki-header #wiki-main pre.code-example-output[data-code-visible] {
+     display: block;
+}
+#wiki-header #wiki-main pre.code-example-output span.code-line::before {
+     content: ">  ";
+     display: inline-block;
+     text-align: center;
+     color: hsl(0deg, 0%, 67%);
+     width: 3em;
+     padding-left: auto;
+     margin-left: auto;
+}
+:root[data-color-theme=dark] pre.code-example-code, meta[name=color-scheme][content=dark] pre.code-example-code {
+     --color-code-variables: hsl(0, 0%, 100%);
+     --color-code-keywords: hsl(1, 100%, 79%);
+     --color-code-operators: hsl(1, 100%, 79%);
+     --color-code-string: hsl(208, 100%, 78%);
+     --color-code-number: hsl(118, 100%, 78%);
+     --color-code-boolean: hsl(208, 100%, 78%);
+     --color-code-nil: hsl(1, 100%, 79%);
+     --color-code-comments: hsl(212, 13%, 77%);
+     --color-code-function-declared: hsl(270, 100%, 86%);
+     --color-code-function-called: hsl(270, 100%, 86%);
+     --color-code-function-modules: hsl(168, 55%, 54%);
+     --color-code-parameter-single: hsl(34, 100%, 65%);
+     --color-code-parameter-infinite: hsl(208, 100%, 78%);
+     --color-code-modules: hsl(168, 55%, 54%);
+     --color-code-escape-characters: hsl(1, 100%, 79%);
+     --color-code-pattern-characters: hsl(168, 55%, 54%);
+     --color-code-table-keys: hsl(34, 100%, 65%);
+     --color-code-nestLevel1: hsl(208, 100%, 78%);
+     --color-code-nestLevel2: hsl(132, 73%, 57%);
+     --color-code-nestLevel3: hsl(46, 93%, 58%);
+     --color-code-nestLevel4: hsl(2, 62%, 76%);
+     --color-code-nestLevel5: hsl(331, 80%, 80%);
+     --color-code-nestLevel6: hsl(271, 88%, 84%);
+}
+
+:root[data-color-theme=light] pre.code-example-code, meta[name=color-scheme][content=light] pre.code-example-code {
+     --color-code-variables: hsl(0, 0%, 0%);
+     --color-code-keywords: hsl(355, 85%, 34%);
+     --color-code-operators: hsl(355, 85%, 34%);
+     --color-code-string: hsl(220, 98%, 20%);
+     --color-code-number: hsl(118, 100%, 23%);
+     --color-code-boolean: hsl(220, 98%, 20%);
+     --color-code-nil: hsl(355, 85%, 34%);
+     --color-code-comments: hsl(210, 7%, 56%);
+     --color-code-function-declared: hsl(264, 66%, 45%);
+     --color-code-function-called: hsl(264, 66%, 45%);
+     --color-code-function-modules: hsl(168, 100%, 33%);
+     --color-code-parameter-single: hsl(34, 100%, 39%);
+     --color-code-parameter-infinite: hsl(220, 98%, 20%);
+     --color-code-modules: hsl(168, 100%, 33%);
+     --color-code-escape-characters: hsl(355, 85%, 34%);
+     --color-code-pattern-characters: hsl(168, 100%, 33%);
+     --color-code-table-keys: hsl(0, 0%, 0%);
+     --color-code-nestLevel1: hsl(217, 97%, 37%);
+     --color-code-nestLevel2: hsl(138, 98%, 19%);
+     --color-code-nestLevel3: hsl(35, 100%, 23%);
+     --color-code-nestLevel4: hsl(355, 67%, 40%);
+     --color-code-nestLevel5: hsl(320, 73%, 36%);
+     --color-code-nestLevel6: hsl(271, 88%, 84%);
+}
+
+#wiki-header #wiki-main .code-example-code span.code-var {
+     color: var(--color-code-variables);
+}
+#wiki-header #wiki-main .code-example-code span.code-kyw {
+     color: var(--color-code-keywords);
+}
+#wiki-header #wiki-main .code-example-code span.code-ope {
+     color: var(--color-code-operators);
+}
+#wiki-header #wiki-main .code-example-code span.code-str {
+     color: var(--color-code-string);
+}
+#wiki-header #wiki-main .code-example-code span.code-num {
+     color: var(--color-code-number);
+}
+#wiki-header #wiki-main .code-example-code span.code-boo {
+     color: var(--color-code-boolean);
+}
+#wiki-header #wiki-main .code-example-code span.code-nil {
+     color: var(--color-code-nil);
+}
+#wiki-header #wiki-main .code-example-code span.code-com {
+     color: var(--color-code-comments);
+}
+#wiki-header #wiki-main .code-example-code span.code-funcD {
+     color: var(--color-code-function-declared);
+}
+#wiki-header #wiki-main .code-example-code span.code-funcC {
+     color: var(--color-code-function-called);
+}
+#wiki-header #wiki-main .code-example-code span.code-funcM {
+     color: var(--color-code-function-modules);
+}
+#wiki-header #wiki-main .code-example-code span.code-paraS {
+     color: var(--color-code-parameter-single);
+}
+#wiki-header #wiki-main .code-example-code span.code-paraI {
+     color: var(--color-code-parameter-infinite);
+}
+#wiki-header #wiki-main .code-example-code span.code-modul {
+     color: var(--color-code-modules);
+}
+#wiki-header #wiki-main .code-example-code span.code-esc {
+     color: var(--color-code-escape-characters);
+}
+#wiki-header #wiki-main .code-example-code span.code-ptr {
+     color: var(--color-code-pattern-characters);
+}
+#wiki-header #wiki-main .code-example-code span.code-tabkey {
+     color: var(--color-code-table-keys);
+}
+#wiki-header #wiki-main .code-example-code span.code-nest1 {
+     color: var(--color-code-nestLevel1);
+}
+#wiki-header #wiki-main .code-example-code span.code-nest2 {
+     color: var(--color-code-nestLevel2);
+}
+#wiki-header #wiki-main .code-example-code span.code-nest3 {
+     color: var(--color-code-nestLevel3);
+}
+#wiki-header #wiki-main .code-example-code span.code-nest4 {
+     color: var(--color-code-nestLevel4);
+}
+#wiki-header #wiki-main .code-example-code span.code-nest5 {
+     color: var(--color-code-nestLevel5);
+}
+#wiki-header #wiki-main .code-example-code span.code-nest6 {
+     color: var(--color-code-nestLevel6);
+}

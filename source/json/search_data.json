@@ -1,0 +1,45 @@
+{
+     "fun_facts": [
+          "Why use stringTrim(), when you could just use (string):gsub('%s*', '')",
+          "<kbd>_G</kbd> doesn't work? try using setVar()!",
+          "Tired of using Lua? In Psych Engine 0.7.1h you could Haxe files now!",
+          "Using local are better to use becuase their more faster to call",
+          "Ternary operator exists in Lua by using logical operators",
+          "Metatables makes tables better!!!",
+          "Lua supports closures!",
+          "Lua is more easier than Python <em>(i think)</em>",
+          "Press <kbd>⌘</kbd><kbd>W</kbd> for a silly trick!",
+          "Press <kbd>Ctr</kbd><kbd>R</kbd> to generate a random useless fact!",
+          "I could not give less of a shit if you thought it was rude <em>- White Impostor</em>",
+          "I'm so mad. im gonna have sex with my girlfriend so i wont be so mad <em>- Sonic, TGT</em>",
+          "INSERT SONIC QUOTE THAT BECAME AN OUTDATED MEME HERE <em>- Sunky.MPEG</em>",
+          "Grimbo my love",
+          "I've spent hours to code javascript, so you better give me a star on github",
+          "simp this, simp that, i simply just wanna die",
+          "You love open world games huh? then why don't you go outside",
+          "what da dog doin",
+          "fnf is not for kids go outside",
+          "I hate Javascript",
+          "I love SCSS",
+          "Bogosort is the best sorting algorithm to ever exist!",
+          "I'm ranning out of fact's to put here",
+          "Cropped porn isn't funny, this is becuase you have a porn addiction",
+          "I'm ranning out of fact's to put here",
+          "I've spent hours to code javascript, so you better give me a star on github",
+          "simp this, simp that, i simply just wanna die",
+          "holy hell"
+     ],
+     "datas": {
+          "lua_coding_docs": [
+               "basics_of_coding",
+               "built-in_functions_&_variables",
+               "standard_library_functions",
+               "string_patterns",
+               "metatables"
+          ],
+          "lua_script_api": [
+               "callback_templates",
+               "custom_sprites_&_texts_functions"
+          ]
+     }
+}

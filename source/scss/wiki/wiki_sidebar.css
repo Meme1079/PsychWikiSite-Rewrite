@@ -1,0 +1,241 @@
+/* Colors Globals */
+/* :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+     --global-color-lightblue: hsl(210, 100%, 72%);
+     --global-color-gold:      hsl(42, 87%, 56%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+}
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --global-color-lightblue: hsl(210, 100%, 52%);
+     --global-color-gold:      hsl(42, 87%, 36%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+} */
+/* Mixins */
+/* Functions */
+/* Goofy aaaahhhhh code */
+#wiki-sidebar {
+     z-index: 2;
+     display: block;
+     outline: 1px solid hsl(216deg, 8%, 52%);
+     background-color: hsl(0deg, 0%, 5%);
+     width: 8.465cm;
+     height: 100%;
+     position: fixed;
+     top: 1.5cm;
+}
+@media only screen and (max-width: 1000px) {
+     #wiki-sidebar {
+          display: none;
+     }
+}
+:root[data-sidebar-hidden=true] #wiki-sidebar {
+     display: none;
+}
+
+:root[data-sidebar-media=true] #wiki-sidebar {
+     display: block;
+}
+
+#wiki-sidebar #sidebar-header {
+     display: flex;
+     margin-top: 0.5cm;
+     margin-left: 0.5cm;
+}
+#wiki-sidebar #sidebar-header button {
+     cursor: pointer;
+     font-size: 1.35em;
+     border: 1.5px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
+     background-color: black;
+     width: -moz-fit-content;
+     width: fit-content;
+     height: -moz-fit-content;
+     height: fit-content;
+     position: relative;
+     top: 0px;
+     padding: 3px 5px;
+     margin: 0 0.3cm 0 0;
+}
+#wiki-sidebar #sidebar-header button:hover {
+     border-color: hsl(210deg, 100%, 72%);
+}
+#wiki-sidebar #sidebar-header button:active {
+     border-color: hsl(42deg, 87%, 56%);
+}
+#wiki-sidebar #sidebar-header h3 {
+     display: block;
+     font-weight: 500;
+     position: relative;
+     bottom: 0.35cm;
+}
+#wiki-sidebar #sidebar-header i.uil-cube {
+     font-size: 1.6em;
+     margin-left: 0.2cm;
+     position: relative;
+     top: 1px;
+}
+#wiki-sidebar #sidebar-search {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+#wiki-sidebar #sidebar-search #sidebar-search-main {
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     border: 1.5px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
+     background-color: black;
+     width: 7.5cm;
+     padding: 5px 8px;
+     margin: 0.1cm 0 0 0;
+     box-sizing: border-box;
+     align-items: stretch;
+     margin-bottom: 0.2cm;
+}
+#wiki-sidebar #sidebar-search #sidebar-search-main:hover {
+     border-color: hsl(210deg, 100%, 72%);
+}
+#wiki-sidebar #sidebar-search #sidebar-search-main:focus-within {
+     border-color: hsl(42deg, 87%, 56%);
+}
+#wiki-sidebar #sidebar-search #sidebar-search-main input[type=text] {
+     cursor: pointer;
+     text-align: left;
+     font-size: 1em;
+     font-weight: 500;
+     outline: none !important;
+     border: none !important;
+     background: none !important;
+     width: 6.5cm;
+     height: -moz-fit-content;
+     height: fit-content;
+     margin: 0cm 5px;
+}
+#wiki-sidebar #sidebar-search #sidebar-search-main i {
+     font-size: 1.1em;
+     transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+     padding: 0;
+}
+#wiki-sidebar #sidebar-search #sidebar-search-main i.uil-search {
+     position: relative;
+     bottom: 1px;
+}
+#wiki-sidebar #sidebar-search #sidebar-search-main i.uil-times-circle:hover {
+     color: hsl(210deg, 100%, 72%);
+}
+#wiki-sidebar #sidebar-search #sidebar-search-main i.uil-times-circle:active {
+     color: hsl(42deg, 87%, 56%);
+     transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+     transform: scaleX(0.9) scaleY(0.9);
+}
+#wiki-sidebar #sidebar-lists {
+     overflow-x: hidden;
+     overflow-y: auto;
+     height: 14.1cm;
+     position: relative;
+     right: 0.5cm;
+}
+#wiki-sidebar #sidebar-lists a {
+     text-decoration: none;
+     color: white;
+}
+#wiki-sidebar #sidebar-lists a li {
+     cursor: pointer;
+     list-style-type: none;
+     box-sizing: border-box;
+     border-radius: 5px;
+     width: 7cm;
+     height: -moz-fit-content;
+     height: fit-content;
+     padding: 8px;
+}
+#wiki-sidebar #sidebar-lists a li span.list-h1 {
+     font-weight: 600;
+}
+#wiki-sidebar #sidebar-lists a li span.list-h6 {
+     font-size: 0.95em;
+}
+#wiki-sidebar #sidebar-lists a li span.list-h2 {
+     margin-left: 10px;
+}
+#wiki-sidebar #sidebar-lists a li span.list-h3 {
+     margin-left: 20px;
+}
+#wiki-sidebar #sidebar-lists a li span.list-h4 {
+     margin-left: 30px;
+}
+#wiki-sidebar #sidebar-lists a li span.list-h5 {
+     margin-left: 40px;
+}
+#wiki-sidebar #sidebar-lists a li span.list-h6 {
+     margin-left: 50px;
+}
+#wiki-sidebar #sidebar-lists a li:hover {
+     background-color: hsl(0deg, 0%, 15%);
+}
+#wiki-sidebar #sidebar-lists a li:active {
+     outline: 1px solid hsl(42deg, 87%, 56%);
+     background-color: black;
+}
+#wiki-sidebar #sidebar-lists a:hover {
+     border-color: hsl(210deg, 100%, 72%);
+}
+#wiki-sidebar #sidebar-lists a:active {
+     border-color: hsl(42deg, 87%, 56%);
+}
+#wiki-sidebar #sidebar-lists::-webkit-scrollbar {
+     width: 9px;
+     height: 10px;
+}
+#wiki-sidebar #sidebar-lists::-webkit-scrollbar-thumb {
+     margin-left: 50px;
+     border-radius: 5px;
+     background: #6b6b6b;
+}
+#wiki-sidebar #sidebar-lists::-webkit-scrollbar-track {
+     background: hsla(0deg, 0%, 0%, 0);
+}
+#wiki-sidebar hr {
+     border: none;
+     background-color: hsl(210deg, 5%, 30%);
+     width: 7.8cm;
+     height: 1.5px;
+     padding: 0;
+     margin: 0.35cm 0;
+}
+
+#wiki-sidebar-buttons {
+     z-index: 3;
+}
+#wiki-sidebar-buttons button {
+     cursor: pointer;
+     font-size: 1.35em;
+     border: 1.5px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
+     background-color: black;
+     width: -moz-fit-content;
+     width: fit-content;
+     height: -moz-fit-content;
+     height: fit-content;
+     position: relative;
+     top: 0px;
+     padding: 3px 5px;
+     margin: 0 0.3cm 0 0;
+     display: none;
+     position: fixed;
+     top: 2cm;
+     left: 0.5cm;
+}
+#wiki-sidebar-buttons button:hover {
+     border-color: hsl(210deg, 100%, 72%);
+}
+#wiki-sidebar-buttons button:active {
+     border-color: hsl(42deg, 87%, 56%);
+}
+:root[data-sidebar-hidden=true] #wiki-sidebar-buttons button:nth-child(1) {
+     display: block;
+}
+
+:root[data-sidebar-hidden=false] #wiki-sidebar-buttons button:nth-child(2) {
+     display: block;
+}

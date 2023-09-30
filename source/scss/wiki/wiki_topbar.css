@@ -1,0 +1,174 @@
+/* Colors Globals */
+/* :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+     --global-color-lightblue: hsl(210, 100%, 72%);
+     --global-color-gold:      hsl(42, 87%, 56%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+}
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --global-color-lightblue: hsl(210, 100%, 52%);
+     --global-color-gold:      hsl(42, 87%, 36%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+} */
+/* Mixins */
+/* Functions */
+/* Goofy aaaahhhhh code */
+body { /* Delete this or you'll get neutered */
+     font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman" !important;
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+}
+
+#wiki-topbar {
+     z-index: 3;
+     border-bottom: 1px solid hsl(216deg, 8%, 52%);
+     background-color: hsl(0deg, 0%, 7%);
+     width: 100%;
+     height: 60px;
+     position: fixed;
+     top: 0;
+}
+#wiki-topbar #topbar-logo {
+     display: flex;
+     position: relative;
+     top: 5px;
+     width: -moz-fit-content;
+     width: fit-content;
+     margin-left: 5px;
+}
+#wiki-topbar #topbar-logo img {
+     width: 50px;
+     height: 50px;
+     position: relative;
+     bottom: 0px;
+     margin-right: 5px;
+}
+#wiki-topbar #topbar-logo p {
+     font-size: 1.35em;
+     font-weight: 550;
+     position: relative;
+     top: 12px;
+     margin: 0;
+}
+#wiki-topbar #topbar-logo p special-bg {
+     border-radius: 5px;
+     background-color: white;
+     padding: 2px 4px;
+}
+#wiki-topbar #topbar-logo p special-bg special-main {
+     background: linear-gradient(90deg, hsl(289deg, 100%, 50%) 0%, hsl(263deg, 100%, 50%) 100%);
+     -webkit-background-clip: text;
+             background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-width: 500px) {
+     #wiki-topbar #topbar-logo p special-bg {
+          display: none;
+     }
+}
+@media only screen and (max-width: 400px) {
+     #wiki-topbar #topbar-logo p {
+          display: none;
+     }
+}
+#wiki-topbar #topbar-list {
+     float: right;
+     display: flex;
+     position: relative;
+     bottom: 40px;
+     margin-right: 10px;
+}
+#wiki-topbar #topbar-list #list-search {
+     cursor: pointer;
+     display: block;
+     border: 1.5px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
+     background-color: black;
+     box-shadow: 3px 3px 5px 0px hsl(0deg, 0%, 15%);
+     width: 8cm;
+     height: -moz-fit-content;
+     height: fit-content;
+     top: 12.5px;
+     padding: 5px 7px;
+}
+#wiki-topbar #topbar-list #list-search i {
+     font-size: 1.1em;
+}
+#wiki-topbar #topbar-list #list-search button {
+     cursor: pointer;
+     text-align: left;
+     font-size: 1em;
+     color: grey;
+     border: none;
+     background: none;
+     width: 6.14cm;
+     padding: 0;
+     margin: 0 0 0 3px;
+}
+#wiki-topbar #topbar-list #list-search kbd {
+     font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
+     font-size: 0.8em;
+     border: 1px solid hsl(0deg, 0%, 20%);
+     border-radius: 3px;
+     background-color: hsl(0deg, 0%, 15%);
+     position: relative;
+     bottom: 2px;
+     padding: 1px 3px;
+}
+#wiki-topbar #topbar-list #list-search kbd:nth-last-child(1) {
+     padding: 1px 4px !important;
+     margin-left: 3px;
+}
+@media only screen and (max-width: 820px) {
+     #wiki-topbar #topbar-list #list-search {
+          width: -moz-fit-content;
+          width: fit-content;
+     }
+     #wiki-topbar #topbar-list #list-search :is(button, kbd) {
+          display: none;
+     }
+}
+#wiki-topbar #topbar-list #list-search:hover {
+     border-color: hsl(210deg, 100%, 72%);
+}
+#wiki-topbar #topbar-list #list-search:active {
+     border-color: hsl(42deg, 87%, 56%);
+}
+#wiki-topbar #topbar-list #list-divider {
+     display: block;
+     background-color: hsl(216deg, 8%, 52%);
+     width: 1.5px;
+     height: 0.6cm;
+     position: relative;
+     top: 5px;
+     margin: 0px 10px;
+}
+#wiki-topbar #topbar-list #list-sublist {
+     display: flex;
+}
+#wiki-topbar #topbar-list #list-sublist button {
+     box-shadow: 3px 3px 5px 0px hsl(0deg, 0%, 15%);
+     cursor: pointer;
+     font-size: 1.35em;
+     border: 1.5px solid hsl(216deg, 8%, 52%);
+     border-radius: 5px;
+     background-color: black;
+     width: -moz-fit-content;
+     width: fit-content;
+     height: -moz-fit-content;
+     height: fit-content;
+     position: relative;
+     top: 0px;
+     padding: 3px 5px;
+     margin: 0;
+     margin-left: 5px;
+}
+#wiki-topbar #topbar-list #list-sublist button:hover {
+     border-color: hsl(210deg, 100%, 72%);
+}
+#wiki-topbar #topbar-list #list-sublist button:active {
+     border-color: hsl(42deg, 87%, 56%);
+}
+#wiki-topbar #topbar-list #list-sublist button:nth-child(1) {
+     margin-left: 0;
+}

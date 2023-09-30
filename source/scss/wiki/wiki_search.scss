@@ -1,0 +1,158 @@
+@use "../modules/global_stuff" as gs;
+@use "../modules/element_stuff" as es;
+
+/* Goofy aaaahhhhh code */
+
+center-element {
+     @include gs.center-element;
+}
+
+#wiki-search {
+     border: 1.5px solid gs.$global-color-grey;
+     border-radius: calc(gs.$global-border-radius * 2);
+     position: fixed; bottom: 4.55cm;
+
+     $search-window-width: 16cm;
+     #search-search {
+          @include es.input_formatBG(black, $search-window-width, (5px 8px), (0.1cm 0 0 0));
+          @include gs.button_hover('focus-within');
+          box-sizing: border-box;
+          align-items: stretch;
+          margin: 0;
+
+          input[type=text] {
+               @include es.input_formatMain($search-window-width);
+               margin: 0cm 5px;
+          }
+               
+          i {
+               font-size: 1.1em;
+               transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+               padding: 0;
+     
+               &.uil-search {
+                    position: relative; bottom: 1px;
+               }
+               &.uil-times-circle {
+                    &:hover {
+                         color: gs.$global-color-lightblue;
+                    }
+                    &:active {               
+                         color: gs.$global-color-gold;
+                         transition: transform 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+                         transform: scaleX(0.9) scaleY(0.9) ;
+                    }
+               }
+          }
+     }
+
+     #search-goober-facts {
+          display: flex;
+          font-size: 0.8em;
+          margin-top: 10px;
+
+          kbd {
+               @include es.kbd_format;
+               border-color: gs.$global-color-grey;
+               background-color: black;
+               position: relative; top: 0px;
+               margin-right: 1.5px;
+               
+               &:nth-last-child(1) {
+                    margin-right: 0px;
+               }
+          }
+
+          a {
+               cursor: pointer;
+               color: gs.$global-color-lightblue;
+
+               &:hover {
+                    text-decoration: underline;
+               }
+          }
+
+          strong {
+               font-weight: 550;
+          }
+     }
+
+     #search-lists {
+          overflow-x: hidden; overflow-y: auto;
+          height: 7.8cm;
+
+          ul {
+               padding: 0 5px;
+
+               a {
+                    text-decoration: none;
+                    font-weight: 450;
+                    color: white;
+
+                    li {
+                         cursor: pointer;
+                         list-style-type: none;
+                         box-sizing: border-box;
+                         border-radius: gs.$global-border-radius;
+                         width: calc($search-window-width - 0.5cm); height: fit-content;
+                         padding: 8px;
+     
+                         span {
+                              @include gs.no_selector;
+
+                              //float: right;
+                              font-size: 0.85em;
+                              font-weight: 400 !important;
+                              color: gs.$global-color-grey;
+                              position: relative; left: 1.5px;
+                         }
+
+                         i {
+                              margin-right: 5px;
+                         }
+
+                         &[data-disable-searchlist] {
+                              cursor: not-allowed;
+                              color: hsl(0deg, 0%, 70%);
+
+                              &:active {
+                                   outline: 1px solid rgb(240, 45, 45);
+                              }
+                         }
+                         &:hover {
+                              background-color: hsl(0deg, 0%, gs.median(12%, 18%));
+                         }
+                         &:active {
+                              outline: 1px solid gs.$global-color-gold;
+                              background-color: black;
+                         }
+                    }
+     
+                    @include gs.button_hover;
+               }
+          }
+
+          &::-webkit-scrollbar {
+               width: 9px; height: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+               margin-left: 50px;
+               border-radius: gs.$global-border-radius;
+               background: #6b6b6b;
+          }
+          &::-webkit-scrollbar-track {
+               background: hsla(0deg, 0%, 0%, 0);
+          }
+     }
+
+     hr {
+          border: none;
+          background-color: hsl(210, 5%, 30%);
+          width: $search-window-width; height: 1.5px;
+          padding: 0; margin-top: 0.35cm;
+     }
+
+     &::backdrop {
+          background-color: hsl(0deg, 0%, 0%, 0.3);
+     }
+}

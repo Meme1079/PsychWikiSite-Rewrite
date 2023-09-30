@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-color-theme="dark" data-sidebar-hidden="false" data-sidebar-media="false">
+     <head>
+          <title>PsychWikiSite • Lua Coding Docs: Standard Library Functions</title>
+          <base href="../../">
+          <meta charset="utf-8"/>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+          <meta http-equiv="Content-Type"    content="text/html;charset=UTF-8"/>
+          <meta name="subject"      content="A wiki for PsychEngine"/>
+          <meta name="description"  content="A rewrite of the old PsychWikiSite; to improve the code duh!"/>
+          <meta name="keywords"     content="PsychEngine, PsychEngine Wiki, PsychWiki, PsychWikiSite-Rewrite"/>
+          <meta name="author"       content="Meme1079"/>
+          <meta name="language"     content="EN"/>
+          <meta name="viewport"     content="width=device-width, initial-scale=1"/>
+          <meta name="color-scheme" content="dark"/>
+          <link rel="icon" href="images/icon/Psych.ico"/>
+          <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+          <link rel="stylesheet" type="text/css" href="scss/wiki/wiki_topbar.css">
+          <link rel="stylesheet" type="text/css" href="scss/wiki/wiki_sidebar.css">
+          <link rel="stylesheet" type="text/css" href="scss/wiki/wiki_search.css">
+          <link rel="stylesheet" type="text/css" href="scss/wiki/wiki_main.css">
+          <script defer type="module" src="javascript/main.js"></script>
+          <script defer type="module" src="javascript/wiki/sidebar.js"></script>
+          <script defer type="module" src="javascript/wiki/search.js"></script>
+          <script defer type="module" src="javascript/wiki/wiki_main.js"></script>
+     </head>
+     <body>
+          <aside id="wiki-topbar">
+               <section id="topbar-logo">
+                    <a href="https://github.com/ShadowMario/FNF-PsychEngine"><img src="images/icon/Psych.ico" alt="Psych Engine Logo"></a>
+                    <p> PsychWikiSite <special-bg><special-main>Rewrite</special-main></special-bg> </p>
+               </section>
+               <section id="topbar-list">
+                    <div id="list-search">
+                         <i class="uil uil-search"></i>
+                         <button>Search PsychWikiSite</button>
+                         <kbd>⌘</kbd><kbd>K</kbd>
+                    </div>
+                    <div id="list-divider"></div>
+                    <div id="list-sublist">
+                         <button title="Home"><i class="uil uil-location-point"></i></button>
+                         <button title="Settings"><i class="uil uil-setting"></i></button>
+                         <button title="Github"><i class="uil uil-github"></i></button>
+                    </div>
+               </section>
+          </aside>
+          <aside id="wiki-sidebar">
+               <section id="sidebar-header">
+                    <button title="Hide Sidebar"><i class="uil uil-minus-circle"></i></button>
+                    <h3> Headers </h3>
+                    <i class="uil uil-cube"></i>
+               </section>
+               <section id="sidebar-search">
+                    <div id="sidebar-search-main">
+                         <i class="uil uil-search"></i>
+                         <input type="text" placeholder="Search Header" spellcheck="true" maxlength="35">
+                         <i class="uil uil-times-circle"></i>
+                    </div>
+                    <hr>
+               </section>
+               <section id="sidebar-lists">
+                    <ul></ul>
+               </section>
+          </aside>
+          <aside id="wiki-sidebar-buttons">
+               <button title="Show Sidebar"><i class="uil uil-plus-circle"></i></button>
+               <button title="Sidebar"><i class="uil uil-cube"></i></button>
+          </aside>
+          <dialog id="wiki-search">
+               <div id="search-search"> <!-- Yes -->
+                    <i class="uil uil-search"></i>
+                    <input type="text" placeholder="Search PsychWikiSite" spellcheck="true" maxlength="35">
+                    <i class="uil uil-times-circle"></i>
+               </div>
+               <div id="search-goober-facts"><strong>Fun Fact:</strong>&nbsp;<goober-facts></goober-facts></div>
+               <center-element><hr></center-element>
+               <div id="search-lists">
+                    <ul></ul>
+               </div>
+          </dialog>
+          <main>
+               <header>
+                    <p> <i class="uil uil-code-branch"></i> PsychWikiSite / <header-location>undefined</header-location> / <header-name>undefined</header-name> </p>
+               </header>
+               <article id="wiki-header">
+                    <article id="wiki-main">
+                    </article>
+               </article>
+          </main>
+     </body>
+</html>

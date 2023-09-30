@@ -1,0 +1,680 @@
+@use "../modules/global_stuff" as gs;
+@use "../modules/element_stuff" as es;
+@use "sass:list";
+
+/* Local Club :cool: */
+
+@font-face {
+     font-family: "Fira Code";
+     src: url(../../fonts/Fira_Code/FiraCode-Regular.woff) format("woff"),
+          url(../../fonts/Fira_Code/FiraCode-Regular.otf)  format("opentype"),
+          url(../../fonts/Fira_Code/FiraCode-Regular.ttf)  format("truetype");
+}
+
+@font-face {
+     font-family: "VCR";
+     src: url(../../fonts/VCR/VCR_OSD_MONO.woff) format("woff"),
+          url(../../fonts/VCR/VCR_OSD_MONO.otf)  format("opentype"),
+          url(../../fonts/VCR/VCR_OSD_MONO.ttf)  format("truetype");
+}
+
+/* Some check theming weby stuff */
+
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+     --color-wiki-main-top-bg: hsl(220deg, 13%, 18%);
+     --color-wiki-main-outline: hsl(216deg, 8%, 52%);
+     --color-wiki-main-bg: hsl(0deg, 0%, 6%);
+     --color-wiki-main-hr: hsl(214deg, 12%, 66%);
+     --color-wiki-main-ol-dots: white;
+     --color-wiki-main-ol-text: black;
+     --color-wiki-main-headings-bord-bottom: hsl(216deg, 8%, 52%);
+     --color-wiki-main-header-bg: black;
+}
+
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --color-wiki-main-top-bg: hsl(220, 13%, 82%);
+     --color-wiki-main-outline: black;
+     --color-wiki-main-bg: white;
+     --color-wiki-main-hr: black;
+     --color-wiki-main-ol-dots: black;
+     --color-wiki-main-ol-text: white;
+     --color-wiki-main-headings-bord-bottom: hsl(211, 10%, 57%);
+     --color-wiki-main-header-bg: white;
+}
+
+$color-wiki-main-outline: var(--color-wiki-main-outline);
+$color-wiki-main-top-bg: var(--color-wiki-main-top-bg);
+$color-wiki-main-bg: var(--color-wiki-main-bg);
+$color-wiki-main-hr: var(--color-wiki-main-hr);
+$color-wiki-main-headings-bord-bottom: var(--color-wiki-main-header-bg);
+
+/* Goofy aaaahhhhh code */
+
+:root[data-sidebar-hidden=true] :is(header, #wiki-header) {
+     margin-left: 4.6cm; margin-right: 4.6cm;
+
+     @media only screen and (max-width: 1000px) {
+          margin-left: 0.4cm; margin-right: 0.4cm;
+     }
+}
+
+html {
+     font-family: gs.$global-font-family;
+     scroll-behavior: smooth;
+
+     header {
+          font-size: 1em;
+          word-wrap: break-word;
+          outline: 1px solid $color-wiki-main-outline;
+          border-radius: gs.$global-border-radius;
+          background-color: $color-wiki-main-headings-bord-bottom;
+          width: minmax(10cm, 28.3cm);
+          padding: 15px; margin: 0.5cm 0.4cm 25px 8.85cm;
+
+          @media only screen and (max-width: 1000px) {
+               margin-left: 0.4cm;
+          }
+
+          p {
+               font-size: 1em;
+               padding: 0; margin: 0;
+
+               i {
+                    font-size: 1.1em;
+               }
+
+               header-name {
+                    font-weight: 550;
+               }
+          }
+     }
+
+     body {
+          display: none;
+     }
+
+     main {
+          margin-top: 2.3cm;
+     }
+
+     ::selection {
+          background-color: hsl(210, 100%, 56%);
+     }
+}
+
+#wiki-header {
+     outline: 1px solid $color-wiki-main-outline;
+     border-radius: gs.$global-border-radius;
+     background-color: $color-wiki-main-top-bg;
+     width: minmax(10cm, 28.3cm);
+     padding-top: 1.1cm;
+     margin: 0.5cm 0.4cm 25px 8.85cm;
+
+     @media only screen and (max-width: 1000px) {
+          margin-left: 0.4cm;
+     }
+
+     #wiki-main {
+          outline: 1px solid $color-wiki-main-outline;
+          font-size: 1em;
+          word-wrap: break-word;
+          border-radius: 0px 0px gs.$global-border-radius gs.$global-border-radius;
+          background-color: $color-wiki-main-bg;
+          padding: 20px 25px;
+
+          :is(p, a, ul, td, th, blockquote) {
+               font-size: 1em;
+               line-height: 1.5;
+               margin-top: 0px 0px 10px 0px;
+          }
+
+          a {
+               color: gs.$global-color-lightblue;
+               text-decoration: none;
+               
+               &:hover {
+                    text-decoration: underline;
+               }
+
+               &::selection {
+                    color: #FFB770;
+               }
+          }
+
+          p {
+               font-size: 1.05em;
+          }
+
+          dfn {
+               font-style: normal;
+          }
+
+          li {
+               margin: { top: 5px; bottom: 5px; }
+          }
+
+          ol {
+               counter-reset: ol-list;
+               box-sizing: border-box;
+               list-style: none;
+               position: relative;
+               padding-left: 0.25cm;
+          
+               li {
+                    box-sizing: border-box;
+                    line-height: 1.5;
+                    position: relative;
+                    padding: 0.35rem 0 0.35rem 2.5rem;
+                    margin-bottom: 0.25rem;
+
+                    $color-wiki-main-ol-dots: var(--color-wiki-main-ol-dots);
+                    $color-wiki-main-ol-text: var(--color-wiki-main-ol-text);
+                    &::before {
+                         counter-increment: ol-list;
+                         content: counter(ol-list);
+                         text-align: center;
+                         font-size: calc(1rem - 2px);
+                         font-weight: 500;
+                         border-radius: 50%;
+                         background-color: $color-wiki-main-ol-dots;
+                         color: $color-wiki-main-ol-text;
+                         width: calc(1.5rem - 2px); height: calc(1.5rem - 2px);
+                         position: absolute; left: 0;
+                         margin: 1px 0 0px 0.5rem;
+                    }
+
+                    &[data-enable-rgb-orgli]::before {
+                         animation: rgb-bg 8s infinite;
+                    }
+               }
+
+               ul li {
+                    padding: 0px !important;
+                    margin-bottom: 0.25rem;
+
+                    &::before {
+                         display: none !important;
+                         margin: 0 !important;
+                    }
+               }
+          }
+                   
+          hr {
+               border: none;
+               background-color: $color-wiki-main-hr;
+               height: 3px;
+               margin-top: 0.5cm;
+          }
+
+          /* Headers */
+
+          :is(h1, h2, h3, h4, h5, h6) {
+               scroll-margin-top: 2.5cm;
+          }
+
+          $color-wiki-main-headings-bord-bottom: var(--color-wiki-main-headings-bord-bottom);
+          :is(h1, h2) {
+               border-bottom: 1px solid $color-wiki-main-headings-bord-bottom;
+               padding-bottom: 10px;
+          }
+
+          $tag-h1-margin-values: 15px 0px 16px 0px;
+          $tag-h2-margin-values: 15px 0px 16px 0px;
+          $tag-h3-margin-values: 15px 0px 16px 0px;
+          $tag-h4-margin-values: 15px 0px 16px 0px;
+          $tag-h5-margin-values: 15px 0px 16px 0px;
+          $tag-h6-margin-values: 15px 0px 16px 0px;
+
+          @mixin headerAttributes($fontSize, $fontWeight, $marginVal) {
+               font-size: $fontSize;
+               font-weight: $fontWeight;
+               margin: $marginVal;
+          }
+
+          h1 { @include headerAttributes(2em, 600, $tag-h1-margin-values);    }
+          h2 { @include headerAttributes(1.5em, 600, $tag-h2-margin-values);  }
+          h3 { @include headerAttributes(1.25em, 550, $tag-h3-margin-values); }
+          h4 { @include headerAttributes(1em, 550, $tag-h4-margin-values);    }
+          h5 { @include headerAttributes(0.95em, 550, $tag-h5-margin-values); }
+          h6 { @include headerAttributes(0.9em, 550, $tag-h6-margin-values);  }
+
+          /* HighLights */
+
+          @at-root {
+               :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
+                    --color-wiki-highlight-note-outline: hsl(210deg, 100%, 63%);
+                    --color-wiki-highlight-note-bg: hsla(210deg, 100%, 63%, 0.1);
+                    --color-wiki-highlight-note-title: hsl(210deg, 100%, 73%);
+                    --color-wiki-highlight-warn-outline: hsl(42deg, 87%, 56%);
+                    --color-wiki-highlight-warn-bg: hsla(42deg, 87%, 56%, 0.1);
+                    --color-wiki-highlight-warn-title: hsl(42deg, 87%, 66%);
+                    --color-wiki-highlight-vald-outline: hsl(125deg, 100%, 63%);
+                    --color-wiki-highlight-vald-bg: hsla(125deg, 100%, 63%, 0.1);
+                    --color-wiki-highlight-vald-title: hsl(125deg, 100%, 60%);
+                    --color-wiki-highlight-erro-outline: hsl(0deg, 100%, 63%);
+                    --color-wiki-highlight-erro-bg: hsla(0deg, 100%, 63%, 0.1);
+                    --color-wiki-highlight-erro-title: hsl(0deg, 100%, 60%);
+               }
+               
+               :root[data-color-theme=light], meta[name=color-scheme][content=light] {
+                    --color-wiki-highlight-note-outline: hsl(210deg, 100%, 50%);
+                    --color-wiki-highlight-note-bg: hsla(210deg, 100%, 50%, 0.15);
+                    --color-wiki-highlight-note-title: hsl(210deg, 100%, 60%);
+                    --color-wiki-highlight-warn-outline: hsl(42deg, 100%, 45%);
+                    --color-wiki-highlight-warn-bg: hsla(42deg, 100%, 45%, 0.15);
+                    --color-wiki-highlight-warn-title: hsl(42deg, 100%, 55%);
+               }
+          }
+
+          blockquote {
+               &[class^=highlight-] {
+                    border-radius: gs.$global-border-radius;
+                    padding: 3px 10px 10px 10px;
+                    margin: 10px 0px;
+
+                    span {
+                         :is(i, p) {
+                              line-height: 1.3;
+                              padding: 0; margin: 0;
+                         }
+
+                         i {
+                              font-size: 1.5em;
+                              position: relative; top: 2.5px;
+                              margin-right: 5px;
+                         }
+
+                         p {
+                              margin-top: 8px;
+                         }
+                    }
+               }
+
+               .code-border {
+                    margin: 15px 0px 0px 0px;
+               }
+
+               @mixin highlight-types($border, $background, $color) {
+                    border: 1px solid $border !important;
+                    background-color: $background;
+               
+                    span :is(i, strong) { color: $color; }
+               }
+
+               $note-attrs: var(--color-wiki-highlight-note-outline), var(--color-wiki-highlight-note-bg), var(--color-wiki-highlight-note-title);
+               $warn-attrs: var(--color-wiki-highlight-warn-outline), var(--color-wiki-highlight-warn-bg), var(--color-wiki-highlight-warn-title);
+               $vald-attrs: var(--color-wiki-highlight-vald-outline), var(--color-wiki-highlight-vald-bg), var(--color-wiki-highlight-vald-title);
+               $erro-attrs: var(--color-wiki-highlight-erro-outline), var(--color-wiki-highlight-erro-bg), var(--color-wiki-highlight-erro-title);
+
+               &[class$=note] { @include highlight-types(list.nth($note-attrs, 1), list.nth($note-attrs, 2), list.nth($note-attrs, 3)) }
+               &[class$=warn] { @include highlight-types(list.nth($warn-attrs, 1), list.nth($warn-attrs, 2), list.nth($warn-attrs, 3)) }
+               &[class$=vald] { @include highlight-types(list.nth($vald-attrs, 1), list.nth($vald-attrs, 2), list.nth($vald-attrs, 3)) }
+               &[class$=erro] { @include highlight-types(list.nth($erro-attrs, 1), list.nth($erro-attrs, 2), list.nth($erro-attrs, 3)) }
+          }
+
+          /* Tables */
+
+          table-bg, div.table-bg {    
+               overflow-x: auto; overflow-y: hidden; 
+               width: 100%;
+               padding: 0px 1px;
+
+               table {
+                    display: table;
+                    border-collapse: collapse;
+                    width: 100%; // < broken
+                    min-width: 15cm;
+                    margin: 0.5cm 0cm;
+                    
+                    thead {
+                         margin-bottom: 10px;
+                         
+                         tr {
+                              outline: 1px solid gs.$global-color-grey;
+                              border-radius: calc(gs.$global-border-radius - 2px);
+ 
+                              th {
+                                   text-align: left;
+                                   font-weight: 500;  
+                                   padding: 10px 8px;  
+                              }
+                         }
+                    }
+
+                    tbody tr {
+                         border-bottom: 1px solid gs.$global-color-grey;
+
+                         td {
+                              padding: 10px 8px;
+
+                              &:nth-child(2) {
+                                   max-width: 9cm;
+                              }
+                         }
+
+                         &:nth-child(even) {
+                              background-color: hsl(0, 0%, 11%);
+                         }
+                         &:nth-last-child(1) {
+                              border-bottom: 0px;
+                         }
+                    }
+               }
+
+               &::-webkit-scrollbar {
+                    width: 9px; height: 10px;
+               }
+               &::-webkit-scrollbar-thumb {
+                    margin-left: 50px;
+                    border-radius: gs.$global-border-radius;
+                    background: #6b6b6b;
+               }
+               &::-webkit-scrollbar-track {
+                    background: hsla(0deg, 0%, 0%, 0);
+               }
+          }
+
+          /* Code Blocks */
+
+          @at-root {
+               :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+                    --color-wiki-codeblock-all-bg: hsl(216deg, 8%, 52%);
+                    --color-wiki-codeblock-all-outline: hsl(216deg, 8%, 52%);
+                    --color-wiki-codeblock-all-border: hsla(214deg, 12%, 66%, 0.4);
+                    --color-wiki-codeblock-code-bg: hsla(214deg, 12%, 66%, 0.4);
+                    --color-wiki-codeblock-kbd-bg: hsl(0deg, 0%, 16%);
+                    --color-wiki-codeblock-pre-bg: black;
+                    --color-wiki-codeblock-pre-selection-bg: white;
+                    --color-wiki-codeblock-pre-selection-text: black;
+                    --color-wiki-codeblock-class-code-border: hsl(220deg, 13%, 18%);
+                    --color-wiki-codeblock-header-button-bg: black;
+                    --color-wiki-codeblock-header-button-border-valid: lime;
+                    --color-wiki-codeblock-header-button-border-invalid: red;
+                    --color-wiki-codeblock-header-button-display-bg: rgba(158, 167, 179, 0.1);
+                    --color-wiki-codeblock-header-button-display-active-bg: black;
+                    --color-wiki-codeblock-header-button-display-inactive-hover-bg: hsl(216, 8%, 40%);
+                    --color-wiki-codeblock-header-button-display-inactive-active-bg: hsl(216, 8%, 15%);
+                    --color-wiki-codeblock-header-button-display-outline: hsl(216, 8%, 65%);
+               }
+
+               :root[data-color-theme=light], meta[name=color-scheme][content=light] {
+                    --color-wiki-codeblock-all-bg: black;
+                    --color-wiki-codeblock-all-outline: black;
+                    --color-wiki-codeblock-all-border: hsla(214deg, 12%, 66%, 0.4);
+                    --color-wiki-codeblock-code-bg: hsla(210, 14%, 11%, 0.2);
+                    --color-wiki-codeblock-kbd-bg: hsla(210, 14%, 11%, 0.2);
+                    --color-wiki-codeblock-pre-bg: white;
+                    --color-wiki-codeblock-pre-selection-bg: black;
+                    --color-wiki-codeblock-pre-selection-text: white;
+                    --color-wiki-codeblock-class-code-border: hsl(220, 13%, 82%);
+                    --color-wiki-codeblock-header-button-bg: white;
+                    --color-wiki-codeblock-header-button-border-valid: hsl(120, 100%, 40%);
+                    --color-wiki-codeblock-header-button-border-invalid: hsl(0, 100%, 40%);
+                    --color-wiki-codeblock-header-button-display-bg: rgba(158, 167, 179, 0.5);
+                    --color-wiki-codeblock-header-button-display-active-bg: white;
+                    --color-wiki-codeblock-header-button-display-inactive-hover-bg: hsl(216, 8%, 50%);
+                    --color-wiki-codeblock-header-button-display-inactive-active-bg: hsl(216, 8%, 90%);
+                    --color-wiki-codeblock-header-button-display-outline: hsl(216, 8%, 35%);
+               }
+          }
+
+          $wiki-codeblock-all-font-family: "Fira Code", Menlo, "Lucida Console", "Monaco", "monospace";
+          $color-wiki-codeblock-all-bg: var(--color-wiki-codeblock-all-bg);
+          $color-wiki-codeblock-all-outline: var(--color-wiki-codeblock-all-outline);
+          $color-wiki-codeblock-all-border: var(--color-wiki-codeblock-all-border);
+          :is(code, kbd, pre) {
+               font-size: calc(1em - 3px);
+               font-family: $wiki-codeblock-all-font-family;
+               border-radius: gs.$global-border-radius;
+          }
+
+          $color-wiki-codeblock-code-bg: var(--color-wiki-codeblock-code-bg);
+          $color-wiki-codeblock-kbd-bg: var(--color-wiki-codeblock-kbd-bg);
+
+          code {
+               background-color: $color-wiki-codeblock-code-bg;
+               padding: 0.2em 0.4em;
+          }
+
+          kbd {
+               font-size: calc(1em - 4px) !important;
+               border: 1px solid $color-wiki-codeblock-all-border;
+               border-bottom: 2px solid $color-wiki-codeblock-all-border;
+               background-color: $color-wiki-codeblock-kbd-bg;
+               padding: 1.5px 5px 0px;
+          }
+
+          $color-wiki-codeblock-pre-bg: var(--color-wiki-codeblock-pre-bg);
+          $color-wiki-codeblock-class-code-border: var(--color-wiki-codeblock-class-code-border);
+          $color-wiki-codeblock-header-button-bg: var(--color-wiki-codeblock-header-button-bg);
+          .code-header {
+               outline: 1px solid $color-wiki-codeblock-all-bg;
+               border-radius: gs.$global-border-radius gs.$global-border-radius 0 0;
+               background-color: $color-wiki-codeblock-class-code-border;
+               position: relative; top: 12px;
+               padding: 10px;
+
+               &[data-hidden] {
+                    border-radius: gs.$global-border-radius;
+                    margin-bottom: 0.9cm;
+               }
+
+               .code-header-buttons {
+                    float: right;
+                    display: flex;
+
+                    $color-wiki-codeblock-header-button-border-valid: var(--color-wiki-codeblock-header-button-border-valid);
+                    $color-wiki-codeblock-header-button-border-invalid: var(--color-wiki-codeblock-header-button-border-invalid);
+                    button {
+                         @include es.button_format($color-wiki-codeblock-header-button-bg, (3px 5px), (0 0.1cm 0 0), false);
+                         @include gs.button_hover;
+
+                         &[data-copy-copied] {
+                              border-color: $color-wiki-codeblock-header-button-border-valid;
+                         }
+                         &[data-copy-denied] {
+                              border-color: $color-wiki-codeblock-header-button-border-invalid;
+                         }
+
+                         i.uil-check-circle {
+                              color: $color-wiki-codeblock-header-button-border-valid;
+                         }
+                         i.uil-times-circle {
+                              color: $color-wiki-codeblock-header-button-border-invalid;
+                         }
+                    }
+               }
+
+               $color-wiki-codeblock-header-button-display-bg: var(--color-wiki-codeblock-header-button-display-bg);
+               $color-wiki-codeblock-header-button-display-active-bg: var(--color-wiki-codeblock-header-button-display-active-bg);
+               $color-wiki-codeblock-header-button-display-outline: var(--color-wiki-codeblock-header-button-display-outline);
+               .code-header-display-buttons {
+                    display: flex;
+                    border-radius: gs.$global-border-radius;
+                    background-color: $color-wiki-codeblock-header-button-display-bg;
+                    width: fit-content;
+                    position: relative; top: 2px;
+
+                    button {
+                         font-size: 0.95em;
+                         padding: 6px 12px;
+
+                         &.active-button {
+                              font-weight: 600;
+                              outline: 1px solid $color-wiki-codeblock-header-button-display-outline;
+                              border: none;
+                              border-radius: gs.$global-border-radius;
+                              background: none $color-wiki-codeblock-header-button-display-active-bg;
+                         }
+
+                         $color-wiki-codeblock-header-button-display-inactive-hover-bg: var(--color-wiki-codeblock-header-button-display-inactive-hover-bg);
+                         $color-wiki-codeblock-header-button-display-inactive-active-bg: var(--color-wiki-codeblock-header-button-display-inactive-active-bg);
+                         &.inactive-button {
+                              cursor: pointer;
+                              border: none;
+                              background: none;
+
+                              &:hover span {
+                                   border-radius: calc(gs.$global-border-radius - 2px);
+                                   background-color: $color-wiki-codeblock-header-button-display-inactive-hover-bg;
+                                   padding: 2px 6px;
+                                   margin: -2px -6px;
+                              }
+
+                              &:active span {
+                                   background-color: $color-wiki-codeblock-header-button-display-inactive-active-bg;
+                              }
+                         }
+                    }
+               }
+               
+               &::after {
+                    content: "";
+                    clear: both;
+                    display: table;
+               }
+          }
+
+          pre {
+               tab-size: 8;
+               white-space: pre;
+               overflow-x: auto;
+               outline: 1px solid $color-wiki-codeblock-all-bg;
+               line-height: 20px !important;
+               border-radius: 0 0 gs.$global-border-radius gs.$global-border-radius;
+               background-color: $color-wiki-codeblock-pre-bg;
+               padding: 16px;
+
+               &.code-example-output {
+                    display: none;
+                    font-family: "VCR" !important;
+               }
+
+               &::before {
+                    counter-reset: listing;
+               }
+               
+               &.code-example-code {
+                    &[data-code-invisible] {
+                         display: none;
+                    }
+
+                    span.code-line {
+                         counter-increment: listing;
+     
+                         &::before {
+                              content: counter(listing) "  ";
+                              display: inline-block;
+                              text-align: center;
+                              color: hsl(0deg, 0%, 67%);
+                              width: 3em;
+                              padding-left: auto; margin-left: auto;
+                         }
+                    }
+               }
+
+               &.code-example-output {
+                    &[data-code-visible] {
+                         display: block;
+                    }
+
+                    span.code-line::before {
+                         content: '>  ';
+                         display: inline-block;
+                         text-align: center;
+                         color: hsl(0deg, 0%, 67%);
+                         width: 3em;
+                         padding-left: auto; margin-left: auto;
+                    }
+               }
+          } 
+
+          @at-root {
+               :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+                    pre.code-example-code {
+                         --color-code-variables:          hsl(0, 0%, 100%);
+                         --color-code-keywords:           hsl(1, 100%, 79%);
+                         --color-code-operators:          hsl(1, 100%, 79%);
+                         --color-code-string:             hsl(208, 100%, 78%);
+                         --color-code-number:             hsl(118, 100%, 78%);
+                         --color-code-boolean:            hsl(208, 100%, 78%);
+                         --color-code-nil:                hsl(1, 100%, 79%);
+                         --color-code-comments:           hsl(212, 13%, 77%);
+                         --color-code-function-declared:  hsl(270, 100%, 86%);
+                         --color-code-function-called:    hsl(270, 100%, 86%);
+                         --color-code-function-modules:   hsl(168, 55%, 54%);
+                         --color-code-parameter-single:   hsl(34, 100%, 65%);
+                         --color-code-parameter-infinite: hsl(208, 100%, 78%);
+                         --color-code-modules:            hsl(168, 55%, 54%);
+                         --color-code-escape-characters:  hsl(1, 100%, 79%);
+                         --color-code-pattern-characters: hsl(168, 55%, 54%);
+                         --color-code-table-keys:         hsl(34, 100%, 65%);
+     
+                         --color-code-nestLevel1: hsl(208, 100%, 78%);
+                         --color-code-nestLevel2: hsl(132, 73%, 57%);
+                         --color-code-nestLevel3: hsl(46, 93%, 58%);
+                         --color-code-nestLevel4: hsl(2, 62%, 76%);
+                         --color-code-nestLevel5: hsl(331, 80%, 80%);
+                         --color-code-nestLevel6: hsl(271, 88%, 84%);
+                    }                         
+               }
+
+               :root[data-color-theme=light], meta[name=color-scheme][content=light] {
+                    pre.code-example-code {
+                         --color-code-variables:          hsl(0, 0%, 0%);
+                         --color-code-keywords:           hsl(355, 85%, 34%);
+                         --color-code-operators:          hsl(355, 85%, 34%);
+                         --color-code-string:             hsl(220, 98%, 20%);
+                         --color-code-number:             hsl(118, 100%, 23%);
+                         --color-code-boolean:            hsl(220, 98%, 20%);
+                         --color-code-nil:                hsl(355, 85%, 34%);
+                         --color-code-comments:           hsl(210, 7%, 56%);
+                         --color-code-function-declared:  hsl(264, 66%, 45%);
+                         --color-code-function-called:    hsl(264, 66%, 45%);
+                         --color-code-function-modules:   hsl(168, 100%, 33%);
+                         --color-code-parameter-single:   hsl(34, 100%, 39%);
+                         --color-code-parameter-infinite: hsl(220, 98%, 20%);
+                         --color-code-modules:            hsl(168, 100%, 33%);
+                         --color-code-escape-characters:  hsl(355, 85%, 34%);
+                         --color-code-pattern-characters: hsl(168, 100%, 33%);
+                         --color-code-table-keys:         hsl(0, 0%, 0%);
+
+     
+                         --color-code-nestLevel1: hsl(217, 97%, 37%);
+                         --color-code-nestLevel2: hsl(138, 98%, 19%);
+                         --color-code-nestLevel3: hsl(35, 100%, 23%);
+                         --color-code-nestLevel4: hsl(355, 67%, 40%);
+                         --color-code-nestLevel5: hsl(320, 73%, 36%);
+                         --color-code-nestLevel6: hsl(271, 88%, 84%);
+                    }
+               }
+          }
+
+          .code-example-code span {
+               &.code-var    { color: var(--color-code-variables);          }
+               &.code-kyw    { color: var(--color-code-keywords);           }
+               &.code-ope    { color: var(--color-code-operators);          }
+               &.code-str    { color: var(--color-code-string);             }
+               &.code-num    { color: var(--color-code-number);             }
+               &.code-boo    { color: var(--color-code-boolean);            }
+               &.code-nil    { color: var(--color-code-nil);                }
+               &.code-com    { color: var(--color-code-comments);           }
+               &.code-funcD  { color: var(--color-code-function-declared);  }
+               &.code-funcC  { color: var(--color-code-function-called);    }
+               &.code-funcM  { color: var(--color-code-function-modules);   }
+               &.code-paraS  { color: var(--color-code-parameter-single);   }
+               &.code-paraI  { color: var(--color-code-parameter-infinite); }
+               &.code-modul  { color: var(--color-code-modules);            }
+               &.code-esc    { color: var(--color-code-escape-characters);  }
+               &.code-ptr    { color: var(--color-code-pattern-characters); }
+               &.code-tabkey { color: var(--color-code-table-keys);         }
+
+               &.code-nest1  { color: var(--color-code-nestLevel1); }
+               &.code-nest2  { color: var(--color-code-nestLevel2); }
+               &.code-nest3  { color: var(--color-code-nestLevel3); }
+               &.code-nest4  { color: var(--color-code-nestLevel4); }
+               &.code-nest5  { color: var(--color-code-nestLevel5); }
+               &.code-nest6  { color: var(--color-code-nestLevel6); }
+          }
+     }
+}

@@ -1,0 +1,17 @@
+/* Colors Globals */
+/* :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
+     --global-color-lightblue: hsl(210, 100%, 72%);
+     --global-color-gold:      hsl(42, 87%, 56%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+}
+:root[data-color-theme=light], meta[name=color-scheme][content=light] {
+     --global-color-lightblue: hsl(210, 100%, 52%);
+     --global-color-gold:      hsl(42, 87%, 36%);
+     --global-color-grey:      hsl(216, 8%, 52%);
+} */
+/* Mixins */
+/* Functions */
+/* Goofy aaaahhhhh code */
+html {
+     font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
+}
