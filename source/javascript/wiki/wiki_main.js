@@ -129,7 +129,7 @@ function toFirstUpperWord(str) {
      return results.substring(0, results.length - 1)
 }
 
-const getWindowPathNameFilter =  window.location.pathname.replace('/source/html/', '').replace(/\//g, ' / ').replace('.html', '').split(' / ')
+const getWindowPathNameFilter = window.location.href.match(/lua_coding_docs\/.*/s)[0].replace(/\//g, ' / ').replace('.html', '').split(' / ')
 const getMainHeaderPath = shortCut('main header p')
 let incrementByOne = 0
 for (let windowPathNameSplit of getWindowPathNameFilter) {

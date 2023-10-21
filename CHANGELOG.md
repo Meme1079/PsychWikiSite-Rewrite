@@ -1,3 +1,6 @@
+### Version 3.0.1-Beta
+- Fixed a bug from the text header from the header wiki
+
 ### Version 3.0.0-Beta
 - Added a new page "Object Oriented Programming" to the wiki _(WIP)_
 - Added media support to the sidebar and search bar
