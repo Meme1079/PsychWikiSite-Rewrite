@@ -1,0 +1,149 @@
+/* Local Club :cool: */
+/* Goofy aaaahhhhh code */
+@font-face {
+     font-family: "Dina";
+     src: url(../../fonts/Dina/dina10px.woff) format("woff"), url(../../fonts/Dina/dina10px.otf) format("opentype"), url(../../fonts/Dina/dina10px.ttf) format("truetype");
+}
+noscript {
+     z-index: 20;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-family: "Dina";
+     background: hsl(249deg, 100%, 50%);
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     top: 0;
+}
+noscript #windows-error-javascript {
+     outline: 2px solid black;
+     border: 3px solid white;
+     border-style: outset;
+     color: black;
+     background-color: silver;
+     width: 14cm;
+     height: 6cm;
+}
+@media only screen and (max-width: 580px) {
+     noscript #windows-error-javascript {
+          width: 12cm;
+          height: 5cm;
+     }
+}
+@media only screen and (max-width: 490px) {
+     noscript #windows-error-javascript {
+          width: 10cm;
+          height: 4cm;
+     }
+}
+noscript #windows-error-javascript #windows-error-javascript-topbar {
+     color: white !important;
+     background-color: hsl(249deg, 100%, 50%);
+     height: 1cm;
+}
+@media only screen and (max-width: 490px) {
+     noscript #windows-error-javascript #windows-error-javascript-topbar {
+          height: 0.8cm;
+     }
+}
+noscript #windows-error-javascript #windows-error-javascript-topbar #windows-error-javascript-topbar-title {
+     font-size: 2em;
+     font-weight: 660;
+     position: relative;
+     bottom: 0.85cm;
+     left: 5px;
+}
+@media only screen and (max-width: 490px) {
+     noscript #windows-error-javascript #windows-error-javascript-topbar #windows-error-javascript-topbar-title {
+          font-size: 1.5em;
+          bottom: 1cm;
+     }
+}
+@media only screen and (max-width: 490px) {
+     noscript #windows-error-javascript #windows-error-javascript-topbar #windows-error-javascript-topbar-title {
+          bottom: 0.75cm;
+     }
+}
+noscript #windows-error-javascript #windows-error-javascript-topbar img {
+     cursor: not-allowed;
+     width: 60px;
+     height: 60px;
+     position: relative;
+     bottom: 11.5px;
+     left: 3.1cm;
+     -webkit-font-smoothing: antialiased;
+}
+@media only screen and (max-width: 580px) {
+     noscript #windows-error-javascript #windows-error-javascript-topbar img {
+          left: 1.1cm;
+     }
+}
+@media only screen and (max-width: 490px) {
+     noscript #windows-error-javascript #windows-error-javascript-topbar img {
+          width: 50px;
+          height: 50px;
+          bottom: 11px;
+          left: 1.65cm;
+     }
+}
+noscript #windows-error-javascript #windows-error-icon-warning {
+     width: 120px;
+     height: 120px;
+     position: relative;
+}
+@media only screen and (max-width: 580px) {
+     noscript #windows-error-javascript #windows-error-icon-warning {
+          width: 100px;
+          height: 100px;
+          bottom: 0.3cm;
+          right: 0.3cm;
+     }
+}
+@media only screen and (max-width: 490px) {
+     noscript #windows-error-javascript #windows-error-icon-warning {
+          width: 80px;
+          height: 80px;
+     }
+}
+noscript #windows-error-javascript #windows-error-javascript-text {
+     font-size: 1.2em;
+     color: black;
+     position: relative;
+     bottom: 2.8cm;
+     left: 2.8cm;
+}
+@media only screen and (max-width: 580px) {
+     noscript #windows-error-javascript #windows-error-javascript-text {
+          font-size: 1em;
+          bottom: 2.7cm;
+          left: 2.3cm;
+     }
+}
+@media only screen and (max-width: 490px) {
+     noscript #windows-error-javascript #windows-error-javascript-text {
+          font-size: 0.9em;
+          bottom: 2.3cm;
+          left: 1.6cm;
+     }
+}
+noscript #windows-error-javascript #windows-error-button-ok {
+     cursor: not-allowed;
+     width: 140px;
+     height: 60px;
+     position: relative;
+     bottom: 2.1cm;
+     left: 5.1cm;
+}
+@media only screen and (max-width: 580px) {
+     noscript #windows-error-javascript #windows-error-button-ok {
+          left: 4.3cm;
+     }
+}
+@media only screen and (max-width: 490px) {
+     noscript #windows-error-javascript #windows-error-button-ok {
+          width: 120px;
+          height: 50px;
+          left: 3.55cm;
+     }
+}

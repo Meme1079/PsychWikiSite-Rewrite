@@ -12,6 +12,15 @@ center-element {
      border-radius: calc(gs.$global-border-radius * 2);
      position: fixed; bottom: 4.55cm;
 
+     @media only screen and (max-width: 750px) {
+          border: none;
+          border-radius: 0;
+          width: auto; height: auto;
+          max-width: 100%; max-height: 100%;
+          inset: 0;
+          margin: 0;
+     }
+
      $search-window-width: 16cm;
      #search-search {
           @include es.input_formatBG(black, $search-window-width, (5px 8px), (0.1cm 0 0 0));
@@ -20,9 +29,17 @@ center-element {
           align-items: stretch;
           margin: 0;
 
+          @media only screen and (max-width: 750px) {
+               width: auto;
+          }
+
           input[type=text] {
                @include es.input_formatMain($search-window-width);
                margin: 0cm 5px;
+
+               @media only screen and (max-width: 750px) {
+                    width: 100%;
+               }
           }
                
           i {
@@ -73,13 +90,18 @@ center-element {
           }
 
           strong {
+               white-space: nowrap;
                font-weight: 550;
           }
      }
 
      #search-lists {
           overflow-x: hidden; overflow-y: auto;
-          height: 7.8cm;
+          height: 8cm;
+
+          @media only screen and (max-width: 750px) {
+               height: auto;
+          }
 
           ul {
                padding: 0 5px;
@@ -90,12 +112,17 @@ center-element {
                     color: white;
 
                     li {
+                         display: block;
                          cursor: pointer;
                          list-style-type: none;
                          box-sizing: border-box;
                          border-radius: gs.$global-border-radius;
                          width: calc($search-window-width - 0.5cm); height: fit-content;
                          padding: 8px;
+
+                         @media only screen and (max-width: 750px) {
+                              width: auto;
+                         }
      
                          span {
                               @include gs.no_selector;
@@ -148,8 +175,8 @@ center-element {
      hr {
           border: none;
           background-color: hsl(210, 5%, 30%);
-          width: $search-window-width; height: 1.5px;
-          padding: 0; margin-top: 0.35cm;
+          width: auto; height: 1.5px;
+          padding: 0; margin-top: 0.35cm; margin-bottom: 0;
      }
 
      &::backdrop {

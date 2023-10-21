@@ -16,10 +16,12 @@
 /* Local Club :cool: */
 @font-face {
      font-family: "Fira Code";
+     font-display: swap;
      src: url(../../fonts/Fira_Code/FiraCode-Regular.woff) format("woff"), url(../../fonts/Fira_Code/FiraCode-Regular.otf) format("opentype"), url(../../fonts/Fira_Code/FiraCode-Regular.ttf) format("truetype");
 }
 @font-face {
      font-family: "VCR";
+     font-display: swap;
      src: url(../../fonts/VCR/VCR_OSD_MONO.woff) format("woff"), url(../../fonts/VCR/VCR_OSD_MONO.otf) format("opentype"), url(../../fonts/VCR/VCR_OSD_MONO.ttf) format("truetype");
 }
 /* Some check theming weby stuff */
@@ -46,14 +48,14 @@
 }
 
 /* Goofy aaaahhhhh code */
-:root[data-sidebar-hidden=true] :is(header, #wiki-header) {
-     margin-left: 4.6cm;
-     margin-right: 4.6cm;
+:root[data-sidebar-hidden=true] :is(header, footer, #wiki-header) {
+     margin-left: 4.7cm;
+     margin-right: 4.7cm;
 }
 @media only screen and (max-width: 1000px) {
-     :root[data-sidebar-hidden=true] :is(header, #wiki-header) {
-          margin-left: 0.4cm;
-          margin-right: 0.4cm;
+     :root[data-sidebar-hidden=true] :is(header, footer, #wiki-header) {
+          margin-left: 0.5cm;
+          margin-right: 0.5cm;
      }
 }
 
@@ -61,31 +63,127 @@ html {
      font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
      scroll-behavior: smooth;
 }
-html header {
+html :is(header, footer) {
      font-size: 1em;
-     word-wrap: break-word;
+     overflow-wrap: break-word;
      outline: 1px solid var(--color-wiki-main-outline);
      border-radius: 5px;
      background-color: var(--color-wiki-main-header-bg);
      width: minmax(10cm, 28.3cm);
      padding: 15px;
-     margin: 0.5cm 0.4cm 25px 8.85cm;
+     margin: 0.5cm 0.5cm 25px 8.9cm;
 }
 @media only screen and (max-width: 1000px) {
-     html header {
-          margin-left: 0.4cm;
+     html :is(header, footer) {
+          margin-left: 0.5cm;
      }
 }
-html header p {
+html header #header-path {
      font-size: 1em;
      padding: 0;
      margin: 0;
 }
-html header p i {
+html header #header-path i {
      font-size: 1.1em;
 }
-html header p header-name {
+html header #header-path header-tag[higlighted-page] {
      font-weight: 550;
+     color: var(--global-color-lightblue);
+}
+html footer #footer-goto-buttons {
+     cursor: pointer;
+     display: flex;
+     margin-top: 0.2cm;
+}
+@media only screen and (max-width: 830px) {
+     html footer #footer-goto-buttons {
+          flex-direction: column;
+     }
+}
+html footer #footer-goto-buttons :is(h3, p) {
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     padding: 0;
+     margin: 0;
+}
+html footer #footer-goto-buttons h3 {
+     font-size: 1em;
+     font-weight: 500;
+}
+html footer #footer-goto-buttons p {
+     color: #858585;
+     font-size: 0.9em;
+}
+html footer #footer-goto-buttons :is(#footer-goto-buttons-prev, #footer-goto-buttons-next) {
+     box-sizing: border-box;
+     color: white;
+     text-decoration: none;
+     border: 1.3px solid var(--global-color-grey);
+     border-radius: 5px;
+     width: 15cm;
+     height: auto;
+     padding: 16px 13px;
+     transition: transform 0.2s;
+}
+html footer #footer-goto-buttons :is(#footer-goto-buttons-prev, #footer-goto-buttons-next):hover {
+     color: var(--global-color-lightblue);
+     border-color: var(--global-color-lightblue);
+     transform: translateY(-2px);
+}
+html footer #footer-goto-buttons :is(#footer-goto-buttons-prev, #footer-goto-buttons-next):active {
+     color: var(--global-color-gold);
+     border-color: var(--global-color-gold);
+}
+html footer #footer-goto-buttons #footer-goto-buttons-prev {
+     text-align: right;
+     margin-right: 15px;
+}
+@media only screen and (max-width: 830px) {
+     html footer #footer-goto-buttons #footer-goto-buttons-prev {
+          width: auto;
+          margin-right: 0 !important;
+          margin-bottom: 10px;
+     }
+}
+html footer #footer-goto-buttons #footer-goto-buttons-prev #footer-goto-buttons-icons-left {
+     float: left;
+     font-size: 2em;
+     margin-right: 0.5cm;
+}
+html footer #footer-goto-buttons #footer-goto-buttons-next {
+     text-align: left;
+     margin-left: auto;
+}
+@media only screen and (max-width: 830px) {
+     html footer #footer-goto-buttons #footer-goto-buttons-next {
+          width: auto;
+          margin-left: 0 !important;
+          margin-top: 7px;
+     }
+}
+html footer #footer-goto-buttons #footer-goto-buttons-next #footer-goto-buttons-icons-right {
+     float: right;
+     font-size: 2em;
+     margin-left: 0.5cm;
+}
+html footer #footer-important-message {
+     font-size: 0.8em;
+     line-height: 1.3em;
+     border: 1px solid var(--global-color-grey);
+     border-radius: 5px;
+     background-color: #272b33;
+     padding: 10px 15px;
+     margin-top: 0.6cm;
+}
+html footer #footer-important-message p {
+     margin: 0;
+}
+html footer hr {
+     border: none;
+     background-color: var(--global-color-grey);
+     height: 1px;
+     margin: 0.6cm 0cm;
 }
 html body {
      display: none;
@@ -104,13 +202,13 @@ html ::selection {
      outline: 1px solid var(--color-wiki-main-outline);
      border-radius: 5px;
      background-color: var(--color-wiki-main-top-bg);
-     width: minmax(10cm, 28.3cm);
+     width: auto;
      padding-top: 1.1cm;
-     margin: 0.5cm 0.4cm 25px 8.85cm;
+     margin: 0.5cm 0.5cm 25px 8.9cm;
 }
 @media only screen and (max-width: 1000px) {
      #wiki-header {
-          margin-left: 0.4cm;
+          margin-left: 0.5cm;
      }
 }
 #wiki-header #wiki-main {
@@ -145,9 +243,6 @@ html ::selection {
 }
 #wiki-header #wiki-main p {
      font-size: 1.05em;
-}
-#wiki-header #wiki-main dfn {
-     font-style: normal;
 }
 #wiki-header #wiki-main li {
      margin-top: 5px;
@@ -236,7 +331,7 @@ html ::selection {
      font-weight: 550;
      margin: 15px 0px 16px 0px;
 }
-:root {
+:root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
      --color-wiki-highlight-note-outline: hsl(210deg, 100%, 63%);
      --color-wiki-highlight-note-bg: hsla(210deg, 100%, 63%, 0.1);
      --color-wiki-highlight-note-title: hsl(210deg, 100%, 73%);
@@ -260,8 +355,11 @@ html ::selection {
      --color-wiki-highlight-warn-title: hsl(42deg, 100%, 55%);
 }
 
+#wiki-header #wiki-main blockquote .code-header {
+     margin: 5px 0px 0px 0px;
+}
 #wiki-header #wiki-main blockquote[class^=highlight-] {
-     border-radius: 5px;
+     border-radius: 8px;
      padding: 3px 10px 10px 10px;
      margin: 10px 0px;
 }
@@ -279,87 +377,97 @@ html ::selection {
 #wiki-header #wiki-main blockquote[class^=highlight-] span p {
      margin-top: 8px;
 }
-#wiki-header #wiki-main blockquote .code-border {
-     margin: 15px 0px 0px 0px;
-}
 #wiki-header #wiki-main blockquote[class$=note] {
-     border: 1px solid var(--color-wiki-highlight-note-outline) !important;
+     border: 1.3px solid var(--color-wiki-highlight-note-outline) !important;
      background-color: var(--color-wiki-highlight-note-bg);
 }
 #wiki-header #wiki-main blockquote[class$=note] span :is(i, strong) {
      color: var(--color-wiki-highlight-note-title);
 }
 #wiki-header #wiki-main blockquote[class$=warn] {
-     border: 1px solid var(--color-wiki-highlight-warn-outline) !important;
+     border: 1.3px solid var(--color-wiki-highlight-warn-outline) !important;
      background-color: var(--color-wiki-highlight-warn-bg);
 }
 #wiki-header #wiki-main blockquote[class$=warn] span :is(i, strong) {
      color: var(--color-wiki-highlight-warn-title);
 }
 #wiki-header #wiki-main blockquote[class$=vald] {
-     border: 1px solid var(--color-wiki-highlight-vald-outline) !important;
+     border: 1.3px solid var(--color-wiki-highlight-vald-outline) !important;
      background-color: var(--color-wiki-highlight-vald-bg);
 }
 #wiki-header #wiki-main blockquote[class$=vald] span :is(i, strong) {
      color: var(--color-wiki-highlight-vald-title);
 }
 #wiki-header #wiki-main blockquote[class$=erro] {
-     border: 1px solid var(--color-wiki-highlight-erro-outline) !important;
+     border: 1.3px solid var(--color-wiki-highlight-erro-outline) !important;
      background-color: var(--color-wiki-highlight-erro-bg);
 }
 #wiki-header #wiki-main blockquote[class$=erro] span :is(i, strong) {
      color: var(--color-wiki-highlight-erro-title);
 }
-#wiki-header #wiki-main table-bg, #wiki-header #wiki-main div.table-bg {
+#wiki-header #wiki-main table-bg {
      overflow-x: auto;
      overflow-y: hidden;
-     width: 100%;
-     padding: 0px 1px;
+     display: block;
+     width: 101%;
+     padding: 1px 1px 1px 1px;
 }
-#wiki-header #wiki-main table-bg table, #wiki-header #wiki-main div.table-bg table {
+#wiki-header #wiki-main table-bg table {
      display: table;
      border-collapse: collapse;
-     width: 100%;
-     min-width: 15cm;
-     margin: 0.5cm 0cm;
+     width: 98.95%;
 }
-#wiki-header #wiki-main table-bg table thead, #wiki-header #wiki-main div.table-bg table thead {
+#wiki-header #wiki-main table-bg table thead {
      margin-bottom: 10px;
 }
-#wiki-header #wiki-main table-bg table thead tr, #wiki-header #wiki-main div.table-bg table thead tr {
+#wiki-header #wiki-main table-bg table thead tr {
      outline: 1px solid var(--global-color-grey);
      border-radius: 3px;
 }
-#wiki-header #wiki-main table-bg table thead tr th, #wiki-header #wiki-main div.table-bg table thead tr th {
+#wiki-header #wiki-main table-bg table thead tr th {
      text-align: left;
      font-weight: 500;
      padding: 10px 8px;
 }
-#wiki-header #wiki-main table-bg table tbody tr, #wiki-header #wiki-main div.table-bg table tbody tr {
-     border-bottom: 1px solid var(--global-color-grey);
+#wiki-header #wiki-main table-bg table tfoot tr {
+     outline: 1px solid var(--global-color-grey);
+     border-radius: 3px;
 }
-#wiki-header #wiki-main table-bg table tbody tr td, #wiki-header #wiki-main div.table-bg table tbody tr td {
+#wiki-header #wiki-main table-bg table tfoot tr td {
+     text-align: left;
+     font-weight: 500;
      padding: 10px 8px;
 }
-#wiki-header #wiki-main table-bg table tbody tr td:nth-child(2), #wiki-header #wiki-main div.table-bg table tbody tr td:nth-child(2) {
+#wiki-header #wiki-main table-bg table tbody tr {
+     border-bottom: 1px solid var(--global-color-grey);
+}
+#wiki-header #wiki-main table-bg table tbody tr td {
+     padding: 10px 8px;
+}
+#wiki-header #wiki-main table-bg table tbody tr td:nth-child(2) {
      max-width: 9cm;
 }
-#wiki-header #wiki-main table-bg table tbody tr:nth-child(even), #wiki-header #wiki-main div.table-bg table tbody tr:nth-child(even) {
+#wiki-header #wiki-main table-bg table tbody tr:nth-child(even) {
      background-color: hsl(0deg, 0%, 11%);
 }
-#wiki-header #wiki-main table-bg table tbody tr:nth-last-child(1), #wiki-header #wiki-main div.table-bg table tbody tr:nth-last-child(1) {
+#wiki-header #wiki-main table-bg table tbody tr:nth-last-child(1) {
      border-bottom: 0px;
 }
-#wiki-header #wiki-main table-bg::-webkit-scrollbar, #wiki-header #wiki-main div.table-bg::-webkit-scrollbar {
+#wiki-header #wiki-main table-bg table tbody::before {
+     content: "";
+     display: block;
+     height: 0.35cm;
+}
+#wiki-header #wiki-main table-bg::-webkit-scrollbar {
      width: 9px;
      height: 10px;
 }
-#wiki-header #wiki-main table-bg::-webkit-scrollbar-thumb, #wiki-header #wiki-main div.table-bg::-webkit-scrollbar-thumb {
+#wiki-header #wiki-main table-bg::-webkit-scrollbar-thumb {
      margin-left: 50px;
      border-radius: 5px;
      background: #6b6b6b;
 }
-#wiki-header #wiki-main table-bg::-webkit-scrollbar-track, #wiki-header #wiki-main div.table-bg::-webkit-scrollbar-track {
+#wiki-header #wiki-main table-bg::-webkit-scrollbar-track {
      background: hsla(0deg, 0%, 0%, 0);
 }
 :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
@@ -444,8 +552,6 @@ html ::selection {
      width: fit-content;
      height: -moz-fit-content;
      height: fit-content;
-     position: relative;
-     top: 0px;
      padding: 3px 5px;
      margin: 0 0.1cm 0 0;
 }
@@ -455,17 +561,22 @@ html ::selection {
 #wiki-header #wiki-main .code-header .code-header-buttons button:active {
      border-color: var(--global-color-gold);
 }
+#wiki-header #wiki-main .code-header .code-header-buttons button:disabled {
+     cursor: not-allowed;
+     color: var(--global-color-grey) !important;
+     border-color: var(--global-color-grey) !important;
+}
 #wiki-header #wiki-main .code-header .code-header-buttons button[data-copy-copied] {
-     border-color: var(--color-wiki-codeblock-header-button-border-valid);
+     border-color: var(--color-wiki-codeblock-header-button-border-valid) !important;
 }
 #wiki-header #wiki-main .code-header .code-header-buttons button[data-copy-denied] {
-     border-color: var(--color-wiki-codeblock-header-button-border-invalid);
+     border-color: var(--color-wiki-codeblock-header-button-border-invalid) !important;
 }
 #wiki-header #wiki-main .code-header .code-header-buttons button i.uil-check-circle {
-     color: var(--color-wiki-codeblock-header-button-border-valid);
+     color: var(--color-wiki-codeblock-header-button-border-valid) !important;
 }
 #wiki-header #wiki-main .code-header .code-header-buttons button i.uil-times-circle {
-     color: var(--color-wiki-codeblock-header-button-border-invalid);
+     color: var(--color-wiki-codeblock-header-button-border-invalid) !important;
 }
 #wiki-header #wiki-main .code-header .code-header-display-buttons {
      display: flex;
@@ -501,10 +612,18 @@ html ::selection {
 #wiki-header #wiki-main .code-header .code-header-display-buttons button.inactive-button:active span {
      background-color: var(--color-wiki-codeblock-header-button-display-inactive-active-bg);
 }
+#wiki-header #wiki-main .code-header .code-header-display-buttons button.inactive-button:disabled span {
+     cursor: not-allowed;
+     text-decoration: line-through;
+     background: none !important;
+}
 #wiki-header #wiki-main .code-header::after {
      content: "";
      clear: both;
      display: table;
+}
+#wiki-header #wiki-main .code-border pre {
+     border-radius: 0 0 5px 5px;
 }
 #wiki-header #wiki-main pre {
      -moz-tab-size: 8;
@@ -514,13 +633,13 @@ html ::selection {
      overflow-x: auto;
      outline: 1px solid var(--color-wiki-codeblock-all-bg);
      line-height: 20px !important;
-     border-radius: 0 0 5px 5px;
+     border-radius: 5px;
      background-color: var(--color-wiki-codeblock-pre-bg);
      padding: 16px;
 }
 #wiki-header #wiki-main pre.code-example-output {
      display: none;
-     font-family: "VCR" !important;
+     font-family: "VCR", Menlo, "Lucida Console", "Monaco", "monospace" !important;
 }
 #wiki-header #wiki-main pre::before {
      counter-reset: listing;
@@ -552,7 +671,7 @@ html ::selection {
      padding-left: auto;
      margin-left: auto;
 }
-:root[data-color-theme=dark] pre.code-example-code, meta[name=color-scheme][content=dark] pre.code-example-code {
+:root[data-color-theme=dark] :is(pre.code-example-code, pre.code-example-syntax), meta[name=color-scheme][content=dark] :is(pre.code-example-code, pre.code-example-syntax) {
      --color-code-variables: hsl(0, 0%, 100%);
      --color-code-keywords: hsl(1, 100%, 79%);
      --color-code-operators: hsl(1, 100%, 79%);
@@ -578,7 +697,7 @@ html ::selection {
      --color-code-nestLevel6: hsl(271, 88%, 84%);
 }
 
-:root[data-color-theme=light] pre.code-example-code, meta[name=color-scheme][content=light] pre.code-example-code {
+:root[data-color-theme=light] :is(pre.code-example-code, pre.code-example-syntax), meta[name=color-scheme][content=light] :is(pre.code-example-code, pre.code-example-syntax) {
      --color-code-variables: hsl(0, 0%, 0%);
      --color-code-keywords: hsl(355, 85%, 34%);
      --color-code-operators: hsl(355, 85%, 34%);
@@ -604,72 +723,72 @@ html ::selection {
      --color-code-nestLevel6: hsl(271, 88%, 84%);
 }
 
-#wiki-header #wiki-main .code-example-code span.code-var {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-var {
      color: var(--color-code-variables);
 }
-#wiki-header #wiki-main .code-example-code span.code-kyw {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-kyw {
      color: var(--color-code-keywords);
 }
-#wiki-header #wiki-main .code-example-code span.code-ope {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-ope {
      color: var(--color-code-operators);
 }
-#wiki-header #wiki-main .code-example-code span.code-str {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-str {
      color: var(--color-code-string);
 }
-#wiki-header #wiki-main .code-example-code span.code-num {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-num {
      color: var(--color-code-number);
 }
-#wiki-header #wiki-main .code-example-code span.code-boo {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-boo {
      color: var(--color-code-boolean);
 }
-#wiki-header #wiki-main .code-example-code span.code-nil {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-nil {
      color: var(--color-code-nil);
 }
-#wiki-header #wiki-main .code-example-code span.code-com {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-com {
      color: var(--color-code-comments);
 }
-#wiki-header #wiki-main .code-example-code span.code-funcD {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-funcD {
      color: var(--color-code-function-declared);
 }
-#wiki-header #wiki-main .code-example-code span.code-funcC {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-funcC {
      color: var(--color-code-function-called);
 }
-#wiki-header #wiki-main .code-example-code span.code-funcM {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-funcM {
      color: var(--color-code-function-modules);
 }
-#wiki-header #wiki-main .code-example-code span.code-paraS {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-paraS {
      color: var(--color-code-parameter-single);
 }
-#wiki-header #wiki-main .code-example-code span.code-paraI {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-paraI {
      color: var(--color-code-parameter-infinite);
 }
-#wiki-header #wiki-main .code-example-code span.code-modul {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-modul {
      color: var(--color-code-modules);
 }
-#wiki-header #wiki-main .code-example-code span.code-esc {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-esc {
      color: var(--color-code-escape-characters);
 }
-#wiki-header #wiki-main .code-example-code span.code-ptr {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-ptr {
      color: var(--color-code-pattern-characters);
 }
-#wiki-header #wiki-main .code-example-code span.code-tabkey {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-tabkey {
      color: var(--color-code-table-keys);
 }
-#wiki-header #wiki-main .code-example-code span.code-nest1 {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-nest1 {
      color: var(--color-code-nestLevel1);
 }
-#wiki-header #wiki-main .code-example-code span.code-nest2 {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-nest2 {
      color: var(--color-code-nestLevel2);
 }
-#wiki-header #wiki-main .code-example-code span.code-nest3 {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-nest3 {
      color: var(--color-code-nestLevel3);
 }
-#wiki-header #wiki-main .code-example-code span.code-nest4 {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-nest4 {
      color: var(--color-code-nestLevel4);
 }
-#wiki-header #wiki-main .code-example-code span.code-nest5 {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-nest5 {
      color: var(--color-code-nestLevel5);
 }
-#wiki-header #wiki-main .code-example-code span.code-nest6 {
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-nest6 {
      color: var(--color-code-nestLevel6);
 }

@@ -35,11 +35,11 @@
                "built-in_functions_&_variables",
                "standard_library_functions",
                "string_patterns",
-               "metatables"
+               "metatables",
+               "object_oriented_programming"
           ],
           "lua_script_api": [
-               "callback_templates",
-               "custom_sprites_&_texts_functions"
+
           ]
      }
 }

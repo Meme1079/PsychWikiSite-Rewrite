@@ -1,0 +1,150 @@
+/* Local Club :cool: */
+
+$local-defualt-width-solid: 2px solid;
+$local-color-noJavascript-bg: hsl(249deg, 100%, 50%);
+
+$local-window-image-size-xButton:  60px;
+$local-window-image-size-okButton: 60px;
+$local-window-image-size-warning:  120px;
+
+$local-media-query-max1: 580px;
+$local-media-query-max2: 490px;
+
+/* Goofy aaaahhhhh code */
+
+@font-face {
+     font-family: "Dina";
+     src: url(../../fonts/Dina/dina10px.woff) format("woff"), 
+          url(../../fonts/Dina/dina10px.otf)  format("opentype"), 
+          url(../../fonts/Dina/dina10px.ttf)  format("truetype");
+}
+
+noscript {
+     z-index: 20;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-family: "Dina";
+     background: $local-color-noJavascript-bg;
+     width: 100%; height: 100%;
+     position: fixed;
+     top: 0;
+
+     #windows-error-javascript {
+          outline: $local-defualt-width-solid black;
+          border: 3px solid white;
+          border-style: outset;
+          color: black;
+          background-color: silver;
+          width: 14cm; height: 6cm;
+
+          @mixin mediaSupportJS-mainSize($width, $height) {
+               width: $width; height: $height;
+          }
+
+          @media only screen and (max-width: $local-media-query-max1) {
+               @include mediaSupportJS-mainSize(12cm, 5cm);
+          }
+          @media only screen and (max-width: $local-media-query-max2) {
+               @include mediaSupportJS-mainSize(10cm, 4cm);
+          }
+
+          #windows-error-javascript-topbar {
+               color: white !important;
+               background-color: $local-color-noJavascript-bg;
+               height: 1cm;
+     
+               @media only screen and (max-width: $local-media-query-max2) {
+                    height: 0.8cm;
+               }
+               
+               #windows-error-javascript-topbar-title {
+                    font-size: 2em;
+                    font-weight: 660;
+                    position: relative;
+                    bottom: 0.85cm; left: 5px;
+     
+                    @media only screen and (max-width: $local-media-query-max2) {
+                         font-size: 1.5em;
+                         bottom: 1cm;
+                    }
+                    @media only screen and (max-width: $local-media-query-max2) {
+                         bottom: 0.75cm;
+                    }
+               }
+     
+               img {
+                    cursor: not-allowed;
+                    width: $local-window-image-size-xButton; 
+                    height: $local-window-image-size-xButton;
+                    position: relative;
+                    bottom: 11.5px; left: 3.1cm;
+                    -webkit-font-smoothing: antialiased;
+     
+                    @media only screen and (max-width: $local-media-query-max1) {
+                         left: 1.1cm;
+                    }
+                    @media only screen and (max-width: $local-media-query-max2) {
+                         width: calc($local-window-image-size-xButton - 10px); 
+                         height: calc($local-window-image-size-xButton - 10px);
+                         bottom: 11px; left: 1.65cm;
+                    }
+               }
+          }
+
+          #windows-error-icon-warning {
+               width: $local-window-image-size-warning; 
+               height: $local-window-image-size-warning;
+               position: relative;
+
+               @mixin mediaSupportJS-iconWarn($width, $height) {
+                    width: calc($local-window-image-size-warning - $width); 
+                    height: calc($local-window-image-size-warning - $height);
+               }
+
+               @media only screen and (max-width: $local-media-query-max1) {
+                    @include mediaSupportJS-iconWarn(20px, 20px);
+                    bottom: 0.3cm; right: 0.3cm;
+               }
+               @media only screen and (max-width: $local-media-query-max2) {
+                    @include mediaSupportJS-iconWarn(40px, 40px);
+               }
+          }
+     
+          #windows-error-javascript-text {
+               font-size: 1.2em;
+               color: black;
+               position: relative;
+               bottom: 2.8cm; left: 2.8cm;
+
+               @mixin mediaSupportJS-text($fontSize, $bottom, $left) {
+                    font-size: $fontSize;
+                    bottom: $bottom; left: $left;
+               }
+
+               @media only screen and (max-width: $local-media-query-max1) {
+                    @include mediaSupportJS-text(1em, 2.7cm, 2.3cm);
+               }
+               @media only screen and (max-width: $local-media-query-max2) {
+                    @include mediaSupportJS-text(0.9em, 2.3cm, 1.6cm);
+               }
+          }
+     
+          #windows-error-button-ok {
+               cursor: not-allowed;
+               width: calc($local-window-image-size-okButton * 2 + 20px); 
+               height: $local-window-image-size-okButton;
+               position: relative;
+               bottom: 2.1cm; left: 5.1cm;
+
+               @media only screen and (max-width: $local-media-query-max1) {
+                    left: 4.3cm;
+               }
+               @media only screen and (max-width: $local-media-query-max2) {
+                    width: calc(calc($local-window-image-size-okButton * 2 + 20px) - 20px); 
+                    height: calc($local-window-image-size-okButton - 10px);
+                    left: 3.55cm;
+               }
+          }
+     }
+}

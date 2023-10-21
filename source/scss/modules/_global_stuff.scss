@@ -39,6 +39,12 @@ $global-color-grey:      var(--global-color-grey);
      &:#{$second} {
           border-color: $global-color-gold;
      }
+
+     &:disabled {
+          cursor: not-allowed;
+          color: $global-color-grey !important;
+          border-color: $global-color-grey !important;
+     }
 }
 
 /* Functions */

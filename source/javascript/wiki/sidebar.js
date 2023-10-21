@@ -9,45 +9,58 @@ for (let headIncre = 0; headIncre <= 6; headIncre++) {
 }
 
 // Inserts the header inside the Sidebar List
-const HeaderMainPath = '#wiki-sidebar #sidebar-lists ul'
+const HeaderMainPath = '#wiki-sidebar #sidebar-lists ul:not([data-disabled])'
 for (let i = 0; i < shortCutAll('#wiki-main .header').length; i++) {
      let HeaderGetClass   = shortCutAll('#wiki-main .header')[i].getAttribute('class')
      let HeaderSliceNum   = HeaderGetClass.slice(HeaderGetClass.length - 1, HeaderGetClass.length)
      let HeaderTextFilter = shortCutAll('#wiki-main .header')[i].innerText.replaceAll(/\(.+\)/g, '()')
      let HeaderTextTitle  = shortCutAll('#wiki-main .header')[i].getAttribute('class').replace(/header/g, '').trim()
 
-     const HeaderNestEleStart = `<a title="H${HeaderTextTitle}"><li class="list-h${HeaderSliceNum}">`
+     const HeaderNestEleStart = `<a title="H${HeaderTextTitle} [${HeaderTextFilter.trim()}]"><li class="list-h${HeaderSliceNum}">`
      const HeaderNestEleEnd   = '</li></a>'
      const HeaderNestEle      = `<span class="list-h${HeaderSliceNum}">${HeaderTextFilter}</span>`
-     let HeaderTextDisplay = `${HeaderNestEleStart}${HeaderNestEle}${HeaderNestEleEnd}`
+     let HeaderTextDisplay = `${HeaderNestEleStart}${HeaderNestEle.trimEnd().trimStart()}${HeaderNestEleEnd}`
 
-     shortCut(HeaderMainPath).innerHTML += HeaderTextDisplay
-}
-
-// Slices Header Texts
-const HeadMaxLength = [29, 28, 27, 26, 25, 24]
-for (let headInd = 0; headInd <= 6; headInd++) {
-     for (const headList of shortCutAll(`${HeaderMainPath} a li .list-h${headInd}`)) {
-          if (headList.textContent.length >= HeadMaxLength[headInd - 1]) {
-               headList.textContent = headList.textContent.slice(0, HeadMaxLength[headInd - 1]) + '...'
-          }
-     }
+     try {
+          shortCut(HeaderMainPath).innerHTML += HeaderTextDisplay
+     } catch (error) {}
 }
 
 // Implements the header link in each list
 let HeadNumIncre = 1
 for (let getHeads = 0; getHeads < shortCutAll('#wiki-main .header').length; getHeads++) {
      let HeadIdValue = shortCutAll('#wiki-main .header')[getHeads].textContent
-     let HeadIdValueFilter = HeadIdValue.split('(')[0].trim() + (HeadNumIncre++).toString()
-     shortCutAll('#wiki-main .header')[getHeads].setAttribute('id', HeadIdValueFilter)
-     shortCutAll(`${HeaderMainPath} a`)[getHeads].setAttribute('href', window.location.pathname + '#' + HeadIdValueFilter)
+     let HeadIdValueFilter = HeadIdValue.split('(')[0].trim() + '@' + (HeadNumIncre++).toString()
+
+     try {
+          shortCutAll('#wiki-main .header')[getHeads].setAttribute('id', HeadIdValueFilter)
+          shortCutAll(`${HeaderMainPath} a`)[getHeads].setAttribute('data-sections', HeadIdValueFilter)
+          shortCutAll(`${HeaderMainPath} a`)[getHeads].setAttribute('href', window.location.pathname + '#' + HeadIdValueFilter)
+     } catch(error) {}
+}
+
+// Implements the special "Top" button
+const specialTopButtonStart = '<a title="Top" id="special-top" onclick=" window.scrollTo(0, 0) ">'
+const specialTopButtonEnd   = '<li class="list-h1"><span class="list-h1">(Top)</span></li></a>'
+let insertHeaderLists = []
+for (const themListies of shortCutAll(`${HeaderMainPath} a`)) {
+     insertHeaderLists.push(themListies.outerHTML)
+}
+
+shortCut(HeaderMainPath).innerHTML = ''
+insertHeaderLists.reverse()
+insertHeaderLists.push(specialTopButtonStart + specialTopButtonEnd)
+insertHeaderLists.reverse()
+
+for (const themListies of insertHeaderLists) {
+     shortCut(HeaderMainPath).innerHTML += themListies
 }
 
 const inputPath = '#wiki-sidebar #sidebar-search #sidebar-search-main '
 function searchInputHeading() {
      const inputStuff = shortCut(inputPath + 'input');
      const listStuff  = shortCutAll(`${HeaderMainPath} li`);
-     for (let i = 0; i < listStuff.length; i++) {
+     for (let i = 1; i < listStuff.length; i++) {
           let spanNestStuff = listStuff[i].getElementsByTagName("span")[0];
           let spanNestValue = spanNestStuff.textContent.trim() || spanNestStuff.innerText.trim();
           if (spanNestValue.toUpperCase().indexOf(inputStuff.value.toUpperCase().trim()) >= 0) {
@@ -64,8 +77,25 @@ shortCut(inputPath + '.uil-times-circle').addEventListener('click', () => {
      searchInputHeading()
 })
 
-// Hiding & Media Support
+// Select Highlighted Lists
+const sideBarListsPath = shortCutAll('#wiki-sidebar #sidebar-lists ul a')
+for (let sideBarList = 1; sideBarList < sideBarListsPath.length; sideBarList++) {     
+     sideBarListsPath[sideBarList].addEventListener('click', () => {
+          Array.prototype.slice.call(sideBarListsPath).forEach((element) => {
+               element.removeAttribute('data-selected');
+          });
+          sideBarListsPath[sideBarList].setAttribute('data-selected', '');
+     })
+}
 
+for (const iterator of sideBarListsPath) {
+     let hi = iterator.getAttribute('data-sections') == window.location.hash.replace('#', '').replace(/%20/g, ' ')
+     if (hi == true) {
+          iterator.setAttribute('data-selected', '');
+     }
+}
+
+// Hiding & Media Support
 shortCut('html').setAttribute('data-sidebar-hidden', localStorage.getItem('local-data-sidebar-hidden'))
 
 let mediaSidebar = false
@@ -91,7 +121,21 @@ shortCut('button[title="Sidebar"]').addEventListener('click', () => {
      }
 })
 
-window.addEventListener('resize', () => {
-     shortCut('html').setAttribute('data-sidebar-media', false)
-     mediaSidebar = false
-})
+const e = () => {
+     for (const iterator of shortCutAll('#wiki-sidebar > :not(#sidebar-search)')) {
+          iterator.addEventListener('click', () => {
+               shortCut('html').setAttribute('data-sidebar-media', false)
+               mediaSidebar = false
+          })
+     } 
+
+     if (window.innerWidth <= 1000) {
+          shortCut('main').addEventListener('click', () => {
+               shortCut('html').setAttribute('data-sidebar-media', false)
+               mediaSidebar = false
+          })
+     }
+}
+
+e()
+window.addEventListener('resize', e)
