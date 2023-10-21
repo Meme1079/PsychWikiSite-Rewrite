@@ -1,6 +1,6 @@
 import { shortCut, shortCutAll } from "../main.js";
 
-// Inser Code Lines
+// Insert Code Lines
 for (let preInd = 0; preInd < shortCutAll('pre.code-example-code').length; preInd++) {
      let result = ``
      for (let dumbyLines of shortCutAll('pre.code-example-code')[preInd].innerHTML.split('\n')) {
@@ -17,16 +17,18 @@ for (let preInd = 0; preInd < shortCutAll('pre.code-example-output').length; pre
      shortCutAll('pre.code-example-output')[preInd].innerHTML = result.slice(0, result.length - 10)
 }
 
+// Adding the "Blocked" to the title
+for (let disButton of shortCutAll('button[disabled]')) {
+     let withAttr = disButton.getAttribute('title') != null ? disButton.getAttribute('title') + ' (Blocked)' : '(Blocked)'
+     disButton.setAttribute('title', withAttr)
+}
+
 // Copy Code, Hide Code, & Switch to Ouput
 async function codeCopyToClipboard(preInd) {
      const codeContent = shortCutAll('pre.code-example-code')[preInd].innerText
      await navigator.clipboard.writeText(codeContent).then(() => {
           alert('Hey! Code copied to clipboard')
      });
-}
-
-function toSeconds(mili) {
-     return mili * 1000
 }
 
 const getCopyCodeButton = shortCutAll('.code-header .code-header-buttons button[title="Copy Code"]')
@@ -39,7 +41,7 @@ function executeCopyCode(copyId, codeAttr, codeClass) {
           getCopyCodeButton[copyId].removeAttribute(codeAttr)
           getCopyCodeButton[copyId].removeAttribute('disabled')
           getCopyCodeButtonIcon[copyId].setAttribute('class', 'uil uil-copy-alt')
-     }, toSeconds(1))
+     }, 1000)
 }
 
 for (let codeCopyButton in getCopyCodeButton) {
@@ -61,8 +63,9 @@ for (let codeCopyButton in getCopyCodeButton) {
 }
 
 function hideCode(codeExampleId) {
-     let isShown = true
      const folderButtonPath = '.code-header .code-header-buttons button[title="Hide Code"]'
+
+     let isShown = true
      shortCutAll(folderButtonPath)[codeExampleId].addEventListener('click', () => {
           if (isShown == true) {
                shortCutAll(`${folderButtonPath} i`)[codeExampleId].setAttribute('class', 'uil uil-folder-open')
@@ -109,9 +112,6 @@ for (let iterator in shortCutAll('.code-border')) {
 }
 
 // Location Format
-const pathName = window.location.pathname
-const psychwikiPath = window.location.href.match(/([-&\w]+)(?=\.html)/g)[0]
-const psychwikiDocs = pathName.match('lua_coding_docs')[0] || pathName.match('lua_script_api')[0]
 function toFirstUpperWord(str) {
      const capitalizeFirstLetter = (str) => {
           return str.charAt(0).toUpperCase() + str.slice(1);
@@ -129,5 +129,33 @@ function toFirstUpperWord(str) {
      return results.substring(0, results.length - 1)
 }
 
-shortCut('main header header-location').textContent = toFirstUpperWord(psychwikiDocs)
-shortCut('main header header-name').textContent = toFirstUpperWord(psychwikiPath)
+const getWindowPathNameFilter =  window.location.pathname.replace('/source/html/', '').replace(/\//g, ' / ').replace('.html', '').split(' / ')
+const getMainHeaderPath = shortCut('main header p')
+let incrementByOne = 0
+for (let windowPathNameSplit of getWindowPathNameFilter) {
+     let headerTagByEachPathName = `<header-tag>${toFirstUpperWord(windowPathNameSplit)}</header-tag> / `
+     getMainHeaderPath.innerHTML += headerTagByEachPathName
+
+     incrementByOne += 1
+     if (incrementByOne == getWindowPathNameFilter.length) {
+          let removeThatOneStupidGoddamnLastSlashChar = getMainHeaderPath.innerHTML.length - (' / ').length
+          getMainHeaderPath.innerHTML = getMainHeaderPath.innerHTML.substring(1, removeThatOneStupidGoddamnLastSlashChar)
+          break
+     }
+}
+
+shortCutAll('header-tag')[shortCutAll('header-tag').length - 1].setAttribute('higlighted-page', '')
+
+// Footer Shits
+
+try {
+     const footerPrevH3 = shortCut('main footer #footer-goto-buttons #footer-goto-buttons-prev h3')
+     const footerNextH3 = shortCut('main footer #footer-goto-buttons #footer-goto-buttons-next h3')
+     const footerPrevH3Trimmed = footerPrevH3.textContent.trimStart().trimEnd()
+     const footerNextH3Trimmed = footerNextH3.textContent.trimStart().trimEnd()
+
+     footerPrevH3.setAttribute('data-goto-title', footerPrevH3Trimmed)
+     footerNextH3.setAttribute('data-goto-title', footerNextH3Trimmed)
+     shortCut('main footer #footer-goto-buttons #footer-goto-buttons-prev').setAttribute('title', footerPrevH3Trimmed)
+     shortCut('main footer #footer-goto-buttons #footer-goto-buttons-next').setAttribute('title', footerNextH3Trimmed)
+} catch (error) {}

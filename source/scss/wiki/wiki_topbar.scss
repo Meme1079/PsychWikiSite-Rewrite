@@ -131,6 +131,10 @@ body { /* Delete this or you'll get neutered */
                     @include gs.button_hover;
                     margin-left: 5px;
 
+                    a {
+                         color: white;
+                    }
+
                     &:nth-child(1) {
                          margin-left: 0;
                     }

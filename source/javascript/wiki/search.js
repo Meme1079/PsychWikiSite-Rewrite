@@ -9,6 +9,16 @@ function generateFacts() {
      const funiiLink = "'https://www.youtube.com/watch?v=dQw4w9WgXcQ'";
      const funiiTroll = `onclick="window.location.href = ${funiiLink}"`;
 
+     const stupidBirthdays = (birtYear, nameOfSomething) => {
+          const births = (stupidDate.getFullYear() - birtYear).toString();
+          
+          let dateSuffix = "th";
+          if (births.match(/1$/g)) dateSuffix = "st";
+          if (births.match(/2$/g)) dateSuffix = "nd";
+          if (births.match(/3$/g)) dateSuffix = "rd";
+          gooberTexts = `Happy ${births + dateSuffix} Birthday ${nameOfSomething}!!!`;
+     }
+
      let gooberTexts = searchData.fun_facts[rand(searchData.fun_facts.length)];
      if (stupidDate.getMonth() == 2 && stupidDate.getDate() == 14) {
           gooberTexts = "Happy Pi Day!";
@@ -21,13 +31,9 @@ function generateFacts() {
      } else if (stupidDate.getHours() >= 0 && stupidDate.getHours() < 6) {
           gooberTexts = "Go to sleep, idiot!";
      } else if (stupidDate.getMonth() == 9 && stupidDate.getDate() == 5) {
-          const births = (stupidDate.getFullYear() - 2020).toString();
-          
-          let dateSuffix = "th";
-          if (births.match(/1$/g)) dateSuffix = "st";
-          if (births.match(/2$/g)) dateSuffix = "nd";
-          if (births.match(/3$/g)) dateSuffix = "rd";
-          gooberTexts = `Happy ${births + dateSuffix} Birthday Friday Night Funkin!!!'`;
+          stupidBirthdays(2020, 'Friday Night Funkin\'')
+     } else if (stupidDate.getMonth() == 7 && stupidDate.getDate() == 4) {
+          stupidBirthdays(2022, 'PsychWiki')
      }
 
      shortCut('#wiki-search goober-facts').innerHTML = gooberTexts;
@@ -70,7 +76,7 @@ function createSearchLists(path, pathName) {
      const listIcons = '<i class="uil uil-search"></i>'
      const listType  = '<i class="uil uil-folder"></i>'
      for (let dataInd in data) {
-          let listInnerContent = `<li>${listIcons}${toFirstUpperWord(data[dataInd])}<br><span>${listType}${pathName}</span><li>`
+          let listInnerContent = `<li>${listIcons}${toFirstUpperWord(data[dataInd])}<br/><span>${listType}${pathName}</span><li>`
           let listOuterContent = `<a href="html/lua_coding_docs/${data[dataInd]}.html">${listInnerContent}</a>`
           shortCut('#search-lists ul').innerHTML += listOuterContent
      
@@ -83,7 +89,7 @@ function createSearchLists(path, pathName) {
 }
 
 createSearchLists(searchData.datas.lua_coding_docs, 'Lua Coding Docs')
-createSearchLists(searchData.datas.lua_script_api, 'Lua Script API')
+//createSearchLists(searchData.datas.lua_script_api, 'Lua Script API')
 
 // Window List WebURL Checker
 for (let dataAnchor of shortCutAll('#search-lists ul a')) {
@@ -93,6 +99,7 @@ for (let dataAnchor of shortCutAll('#search-lists ul a')) {
      }
 }
 
+//! Deleting this is a big no no
 // Window List Bug Remover :smart:
 for (let dataEven = 1; dataEven < shortCutAll('#search-lists ul li').length; dataEven += 2) {
     shortCutAll('#search-lists ul li')[dataEven].setAttribute('data-search-invalid', '')

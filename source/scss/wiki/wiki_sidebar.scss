@@ -11,9 +11,6 @@
      width: 8.465cm; height: 100%;
      position: fixed; top: 1.5cm; // 2.25cm
 
-     @media only screen and (max-width: 1000px) {
-          display: none;
-     }
      @at-root {
           :root[data-sidebar-hidden=true] & {
                display: none;
@@ -21,6 +18,13 @@
           :root[data-sidebar-media=true] & {
                display: block;
           }
+     }
+
+     @media only screen and (max-width: 1000px) {
+          display: none;
+     }
+     @media only screen and (max-width: 620px) {
+          width: 100%;
      }
 
      #sidebar-header {
@@ -47,6 +51,12 @@
 
      #sidebar-search {
           @include gs.center-element;
+          box-sizing: border-box;
+
+          @media only screen and (max-width: 620px) {
+               width: auto;
+               margin: 0cm 0.5cm;
+          }
 
           #sidebar-search-main {
                @include es.input_formatBG(black, 7.5cm, (5px 8px), (0.1cm 0 0 0));
@@ -54,10 +64,21 @@
                box-sizing: border-box;
                align-items: stretch;
                margin-bottom: 0.2cm;
+
+               @media only screen and (min-width: 620px) {
+                    position: relative; left: 1px;
+               }
+               @media only screen and (max-width: 620px) {
+                    width: 100%;
+               }
      
                input[type=text] {
                     @include es.input_formatMain(7.5cm);
                     margin: 0cm 5px;
+
+                    @media only screen and (max-width: 620px) {
+                         width: 100%;
+                    }
                }
                
                i {
@@ -87,17 +108,45 @@
           height: 14.1cm;
           position: relative; right: 0.5cm;
 
+          @media only screen and (max-width: 620px) {
+               padding-right: 5px;
+          }
+
+          h1 {
+               font-weight: 550;
+               padding-bottom: 10px;
+               margin: 0.1cm 0cm 0.1cm 0cm;
+
+               &:nth-of-type(n+2) {
+                    margin-top: 0.5cm;
+               }
+          }
+
           a {
                text-decoration: none;
                color: white;
 
+               &[data-selected] {
+                    color: gs.$global-color-lightblue;
+               }
+               &#special-top {
+                    color: gs.$global-color-gold;
+               }
+
                li {
                     cursor: pointer;
                     list-style-type: none;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis; 
                     box-sizing: border-box;
                     border-radius: gs.$global-border-radius;
                     width: 7cm; height: fit-content;
                     padding: 8px;
+
+                    @media only screen and (max-width: 620px) {
+                         width: 100%;
+                    }
 
                     span {
                          &.list-h1 { 
@@ -137,11 +186,26 @@
           }
      }
 
-     hr {
-          border: none;
-          background-color: hsl(210, 5%, 30%);
-          width: 7.8cm; height: 1.5px;
-          padding: 0; margin: 0.35cm 0;
+     #sidebar-search-hr-surrounder {
+          @media only screen and (min-width: 620px) {
+               position: relative; left: 1px;
+          }
+          @media only screen and (max-width: 620px) {
+               width: 100%;
+               margin: 0cm 0.5cm;
+          }
+
+          hr {
+               border: none;
+               box-sizing: border-box;
+               background-color: hsl(210, 5%, 30%);
+               width: 7.5cm; height: 1.5px;
+               padding: 0; margin: 0.35cm 0;
+     
+               @media only screen and (max-width: 620px) {
+                    width: 100%;
+               }
+          }
      }
 }
 

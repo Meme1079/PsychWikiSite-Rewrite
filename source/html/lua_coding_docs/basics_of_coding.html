@@ -2,19 +2,23 @@
 <html lang="en" data-color-theme="dark" data-sidebar-hidden="false" data-sidebar-media="false">
      <head>
           <title>PsychWikiSite • Lua Coding Docs: Basics Of Coding</title>
-          <base href="../..">
+          <base href="../../">
           <meta charset="utf-8"/>
           <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-          <meta http-equiv="Content-Type"    content="text/html;charset=UTF-8"/>
+          <meta http-equiv="content-type"    content="text/html; charset=UTF-8">
           <meta name="subject"      content="A wiki for PsychEngine"/>
           <meta name="description"  content="A rewrite of the old PsychWikiSite; to improve the code duh!"/>
           <meta name="keywords"     content="PsychEngine, PsychEngine Wiki, PsychWiki, PsychWikiSite-Rewrite"/>
+          <meta name="viewport"     content="width=device-width, initial-scale=1"/>
           <meta name="author"       content="Meme1079"/>
           <meta name="language"     content="EN"/>
-          <meta name="viewport"     content="width=device-width, initial-scale=1"/>
           <meta name="color-scheme" content="dark"/>
-          <link rel="icon" href="images/icon/Psych.ico"/>
-          <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+          <link rel="icon"    href="images/icon/Psych.ico"/>
+          <link rel="author"  href="https://github.com/Meme1079">
+          <link rel="license" href="https://github.com/Meme1079/PsychWikiSite-Rewrite/blob/main/LICENSE">
+          <link rel="next"    href="html/lua_coding_docs/built-in_functions_&_variables.html">
+          <link rel="stylesheet" type="text/css" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"/>
+          <link rel="stylesheet" type="text/css" href="scss/global/no_javascript_format.css">
           <link rel="stylesheet" type="text/css" href="scss/wiki/wiki_topbar.css">
           <link rel="stylesheet" type="text/css" href="scss/wiki/wiki_sidebar.css">
           <link rel="stylesheet" type="text/css" href="scss/wiki/wiki_search.css">
@@ -25,6 +29,20 @@
           <script defer type="module" src="javascript/wiki/wiki_main.js"></script>
      </head>
      <body>
+          <noscript> <!-- Better -->
+               <div id="windows-error-javascript">
+                    <div id="windows-error-javascript-topbar">
+                         <span id="windows-error-javascript-topbar-title">Sorry! [Website Error]</span>
+                         <img src="images/error/popup_close_icon.png" alt="Window Close Icon">
+                    </div>
+                    <img id="windows-error-icon-warning" src="images/error/popup_warning.png" alt="Window Error Icon">
+                    <div id="windows-error-javascript-text">
+                         <p style="margin-bottom: 0px;">Oh no! You've disable Javascript you idiot</p>
+                         <p style="margin-top: 10px;">Enable it Javascript to remove this error!</p>
+                    </div>
+                    <img id="windows-error-button-ok" src="images/error/popup_ok_button.png" alt="Window Ok Button">
+               </div>
+          </noscript>
           <aside id="wiki-topbar">
                <section id="topbar-logo">
                     <a href="https://github.com/ShadowMario/FNF-PsychEngine"><img src="images/icon/Psych.ico" alt="Psych Engine Logo"></a>
@@ -56,7 +74,7 @@
                          <input type="text" placeholder="Search Header" spellcheck="true" maxlength="35">
                          <i class="uil uil-times-circle"></i>
                     </div>
-                    <hr>
+                    <span id="sidebar-search-hr-surrounder"><hr/></span>
                </section>
                <section id="sidebar-lists">
                     <ul></ul>
@@ -73,14 +91,15 @@
                     <i class="uil uil-times-circle"></i>
                </div>
                <div id="search-goober-facts"><strong>Fun Fact:</strong>&nbsp;<goober-facts></goober-facts></div>
-               <center-element><hr></center-element>
+               <hr/>
                <div id="search-lists">
                     <ul></ul>
                </div>
           </dialog>
           <main>
+               <!-- <button id="homo" onclick=" window.scrollTo(0, 0) "><i class="uil uil-arrow-up"></i></button> -->
                <header>
-                    <p> <i class="uil uil-code-branch"></i> PsychWikiSite / <header-location>undefined</header-location> / <header-name>undefined</header-name> </p>
+                    <p id="header-path"> <i class="uil uil-code-branch"></i> PsychWikiSite / </p>
                </header>
                <article id="wiki-header">
                     <article id="wiki-main">
@@ -102,7 +121,7 @@
                                    <p> If you install Visual Studio Code there are extensions which makes your coding experience even more better. Like supporting a new programming language, adding custom snippets, etc. </p>
                                    <ul>
                                         <li><a href="https://marketplace.visualstudio.com/items?itemName=sumneko.lua">Lua Snippets</a> - Adds lua snippets when coding in Lua. </li>
-                                        <li><a href="https://github.com/Meme1079/PsychWiki/wiki/Lua-Coding-Docs:-Basics-of-Coding#:~:text=Funkin%20Script%20AutoCompleter">Funkin Script AutoCompleter</a> - Adds the Psych engine functions when coding in Lua. </li>
+                                        <li><a href="https://marketplace.visualstudio.com/items?itemName=Snirozu.funkin-script-autocompleter">Funkin Script AutoCompleter</a> - Adds the Psych engine functions when coding in Lua. </li>
                                    </ul>
                               </section>
                               <h2> Differences </h2>
@@ -149,14 +168,13 @@ hamburgers are cool
 potatoes are also cool, i think
 </pre>
                                    </div>
-
                               </section>
                          </section>
                          <hr/>
                          <h1> Comments </h1>
                          <section>
                               <p> Comments are used to explain the context of code and what its purpose is, or to disable the execution of code. This won't affect anything inside the Lua program because it will be ignored. </p>
-                              <p> Comments start with a double minus <kbd>--</kbd> character as the syntax for a single-line comment. For multi-line comments, they should have double brackets <kbd>[[]]</kbd> characters with the double minus <kbd>--</kbd> characters before them. </p>
+                              <p> In Lua, comments starts with a double dash <kbd>--</kbd> character as the syntax for a single-line comment. You can place them at the start or end of any line of code, and Lua will ignored them as usually. </p>
                               <div class="code-header">
                                    <div class="code-header-buttons">
                                         <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
@@ -164,21 +182,25 @@ potatoes are also cool, i think
                                    </div>
                                    <div class="code-header-display-buttons">
                                         <button class="active-button"><span> Code </span></button>
-                                        <button class="inactive-button"><span> Output </span></button>
+                                        <button class="inactive-button" disabled><span> Output </span></button>
                                    </div>
                               </div>
                               <div class="code-border">
 <pre class="code-example-code">
-function onCreate() -- Triggered at the start of the Lua script
-     makeLuaSprite('tag', 'imagePath', 0, 0) -- initializes the lua sprite
-     addLuaSprite('tag', true)               -- Adds the lua sprite
-end
+<span class="code-com">-- Creating a sprite</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span> <span class="code-com">-- Triggered at the start of the Lua script</span>
+     <span class="code-funcC">makeLuaSprite</span><span class="code-nest1">(</span><span class="code-str">'tag'</span>, <span class="code-str">'imagePath'</span>, <span class="code-num">0</span>, <span class="code-num">0</span><span class="code-nest1">)</span> <span class="code-com">-- initializes the lua sprite</span>
+     <span class="code-funcC">addLuaSprite</span><span class="code-nest1">(</span><span class="code-str">'tag'</span>, <span class="code-boo">true</span><span class="code-nest1">)</span>               <span class="code-com">-- Adds the lua sprite</span>
+<span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
 <em>Output printed nothing!</em>
 </pre>
                               </div>
-
+                              <p> 
+                                   For multi-line comments, it's the same as declaring the syntax for single-line comments but add double bracket <kbd>[[]]</kbd> characters, two open brackets <kbd>[[</kbd> at the start and two close brackets 
+                                   <kbd>]]</kbd> at the end after the dashes; Example: <code>--[[]]</code>. 
+                              </p>
                               <div class="code-header">
                                    <div class="code-header-buttons">
                                         <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
@@ -203,6 +225,34 @@ end
 colon
 </pre>
                               </div>
+                              <!-- <p>
+                                   You can also nest multi-comments, between the double bracket <kbd>[[]]</kbd> characters add any amount of equal <kbd>&equals;</kbd> characters; Example <code>--[=[]=]</code>. This only used for commenting on multi-line comments to prevent any code from executing.
+                              </p> -->
+                              <p>
+                                   You can also nest comments, this is only avaialable for multi-comments. To do this, between the double bracket <kbd>[[]]</kbd> characters there must be a equal <kbd>&equals;</kbd> character, the amount of
+                                   them determins the nesting level for the comment to have; Example: <code>--[=[]=]</code>.
+
+                              </p>
+                              <div class="code-header">
+                                   <div class="code-header-buttons">
+                                        <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                        <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                   </div>
+                                   <div class="code-header-display-buttons">
+                                        <button class="active-button"><span> Code </span></button>
+                                        <button class="inactive-button" disabled><span> Output </span></button>
+                                   </div>
+                              </div>
+                              <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-com">--[=[ runHaxeCode([[ debugPrint('Hi'); ]]) ]=]</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+
+</pre>
+                              </div>
                          </section>
                          <hr/>
                          <h1> Variables </h1>
@@ -211,24 +261,267 @@ colon
                                    Variables are abstract manipulable containers for storing data values; they can be used throughout the Lua program. They're paired with an associated name, 
                                    which contains the data value of the variable to be used. The data from the variable can be updated when you assign a new value to it.
                               </p>
-                              <h2> Declaring & Reassigning </h2>
+                              <h2> Declaring & Initializing </h2>
                               <section>
                                    <p>
-                                        To declare a variable, you must specify the variable's <code>scope</code>, <code>identifier</code>, and <code>data</code> values. The <code>scope</code> 
-                                        determines what scope the variable should have. It could be <code>global</code> type by default in Lua or <code>local</code> type by using the <code>local</code> 
-                                        keyword.
+                                        To declare a variable, you must specify the variable's <code>scope</code> type, <code>identifier</code>, and data <code>values</code>. The <code>scope</code>
+                                        determines what scope the variable should have. It could be <code>global</code> type by defualt or <code>local</code> type by using the <code>local</code> keyword
+                                        placed before the variable's <code>identifier</code>. This is followed by the variable's <code>identifier</code> which is the name of variable, for the variable 
+                                        to be referenced and used later.
                                    </p>
+                                   <p>
+                                        Then initializing the variable by using the assignment <kbd>&equals;</kbd> operator to specify the data <code>value</code> to hold. If the initializing isn't present 
+                                        the variable will just have a <code>nil</code> value as a replacement. But you could later initialize the variable later on another line of code somewhere.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">object_cost1</span> <span class="code-kyw">&equals;</span> <span class="code-num">20</span>
+<span class="code-kyw">local</span> <span class="code-var">object_cost2</span> <span class="code-kyw">&equals;</span> <span class="code-num">12</span>
+<span class="code-kyw">local</span> <span class="code-var">object_price</span> <span class="code-kyw">&equals;</span> <span class="code-var">object_cost1</span> <span class="code-ope">+</span> <span class="code-var">object_cost2</span> <span class="code-com">-- adds to two object values</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">object_price</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+32
+</pre>
+                                   </div>
+                                   <p>
+                                        If you want to change variable's data <code>value</code> to an existing variable, just reinitialize the variable by just changing the data <code>value</code>, shown below 
+                                        in this example.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">object_cost</span> <span class="code-kyw">&equals;</span> <span class="code-num">30</span> <span class="code-com">-- too expensive</span>
+<span class="code-var">object_cost</span> <span class="code-kyw">&equals;</span> <span class="code-num">15</span>       <span class="code-com">-- changes the costs value, cuz its black friday</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">object_cost</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+15
+</pre>
+                                   </div>
+                                   <p>
+                                        Variables can be assigned with multiple variables in one line if you want to reduce the lines of code for some reason. To do this, each variable's <code>identifier</code> 
+                                        and data <code>values</code> should be separated by a comma. Each comma <kbd>,</kbd> character of them should be equal.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">foo</span>, <span class="code-var">bar</span>, <span class="code-var">baz</span> <span class="code-kyw">&equals;</span> <span class="code-num">134</span>, <span class="code-num">72</span>, <span class="code-num">722</span>   <span class="code-com">-- 'name and value lists' are equal</span>
+<span class="code-kyw">local</span> <span class="code-var">plu</span>, <span class="code-var">clu</span>, <span class="code-var">zur</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Hello'</span>, <span class="code-str">'Bye'</span> <span class="code-com">-- 'value list' is greater than 'name list'</span>
+<span class="code-kyw">local</span> <span class="code-var">qux</span>, <span class="code-var">quy</span> <span class="code-kyw">&equals;</span> <span class="code-boo">true</span>, <span class="code-boo">true</span>, <span class="code-boo">false</span>   <span class="code-com">-- 'name list' is greater than 'value list'</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">foo</span>, <span class="code-var">bar</span>, <span class="code-var">baz</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">plu</span>, <span class="code-var">clu</span>, <span class="code-var">zur</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">qux</span>, <span class="code-var">quy</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+134, 72, 722
+'Hello', 'Bye', nil
+true, true
+</pre>
+                                   </div>
                               </section>
                               <h2> Naming Conventions </h2>
-                              <section></section>
+                              <section>
+                                   <ul>
+                                        <li> Variable names can have a combinations of characters e.g. <code>digit</code>, <code>alphabetical</code>, or <code>undescore</code> characters. </li>
+                                        <li> Variable names cannot have <code>digit</code> characters at the start of the name. </li>
+                                        <li> Variable names cannot have <code>special</code> characters e.g. <kbd>$</kbd>, <kbd>,</kbd>, <kbd>&equals;</kbd>, etc. </li>
+                                        <li> Variable names are case-sensitive so variable <code>a</code> and <code>A</code> are completely different to each-other. </li>
+                                        <li> Variable names are recommended to have descriptive name like (<code>health</code>, <code>misses</code>, <code>alpha</code>) to make the code more readable. </li>
+                                        <li> Variable names cannot be named after Lua keywords. </li>
+                                   </ul>
+                                   <table-bg style="margin-bottom: 0.8cm">
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Keywords </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>and</code></td>
+                                                       <td><code>if</code></td>
+                                                       <td><code>for</code></td>
+                                                       <td><code>local</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>or</code></td>
+                                                       <td><code>else</code></td>
+                                                       <td><code>in</code></td>
+                                                       <td><code>true</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>not</code></td>
+                                                       <td><code>elseif</code></td>
+                                                       <td><code>do</code></td>
+                                                       <td><code>false</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>nil</code></td>
+                                                       <td><code>end</code></td>
+                                                       <td><code>break</code></td>
+                                                       <td><code>function</code></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   <blockquote class="highlight-vald">
+                                        <span><i class="uil uil-check-circle"></i> <strong>Valid:</strong></span>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button" disabled><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-var">varname</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable (lower case)</span>
+<span class="code-var">varName</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable with a capitalize letter (camel case)</span>
+<span class="code-var">var_name</span>  <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable with an underscore '_' character (snake case)</span>
+<span class="code-var">_var_name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable with an underscore '_' character at the start</span>
+<span class="code-var">VARNAME</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable that is all capitalize letters (upper case)</span>
+<span class="code-var">varname2</span>  <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- a variable with a number</span>
+<span class="code-var">_______</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'Hi'</span> <span class="code-com">-- what the hell is this variable???</span>
+</pre>
+<pre class="code-example-output">
+</pre>
+                                        </div>
+                                   </blockquote>
+                                   <blockquote class="highlight-erro">
+                                        <span><i class="uil uil-times-circle"></i> <strong>Invalid:</strong></span>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button" disabled><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-num">1</span><span class="code-var">varName</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a number at the start</span>
+<span class="code-var">var</span><span class="code-ope">-</span><span class="code-var">name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a minus '-' character (kebab case)</span>
+<span class="code-var">var</span> <span class="code-var">name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a space ' ' character</span>
+<span class="code-var">var$name</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Error'</span> <span class="code-com">-- a variable with a special '$' character</span>
+</pre>
+<pre class="code-example-output">
+</pre>
+                                        </div>
+                                   </blockquote>
+                              </section>
                          </section>
                          <hr/>
                          <h1> Scope </h1>
                          <section>
+                              <p>
+                                   Scope, in programming, refers to the variables or functions accessibility in certain parts of the code. This can be determined by either declaring them as having a <code>global</code> or <code>local</code> scope. 
+                                   Scoping helps prevent name collisions by using the same variables or functions names for different things. By allowing the same name to be used in different scopes of the program, which is cool, I guess.
+                              </p>
                               <h2> Global scope </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Global variables allows you to call variables outside the scope of block, at any time throughout the program. This is only recommended if you're getting a variable on another Callback Templates or using to 
+                                        export/import a variable to another Lua script.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">do</span> <span class="code-com">-- do block</span>
+     <span class="code-var">stupidVar</span> <span class="code-kyw">&equals;</span> <span class="code-num">24</span> <span class="code-com">-- a global scope</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">stupidVar</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+24
+</pre>
+                                   </div>
+                              </section>
                               <h2> Local scope </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Local variables are declared with the <code>local</code> statement, unlike <code>global</code> variables their scope is limited to the block where they are declared. If you attempted to call them it will only 
+                                        return a <code>nil</code> value. This is a relatively good programming style because they avoid cluttering the global environment with unnecessary names. And are more faster to call than to global ones.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">do</span> <span class="code-com">-- do block</span>
+     <span class="code-kyw">local</span> <span class="code-var">stupidVar</span> <span class="code-kyw">&equals;</span> <span class="code-num">24</span> <span class="code-com">-- a global scope</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">stupidVar</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+nil
+</pre>
+                                   </div>
+                              </section>
                          </section>
                          <hr/>
                          <h1> Data Types </h1>
@@ -303,11 +596,26 @@ colon
                               <section></section>
                          </section>
                          <hr/>
-                         <h1> Modules </h1>
+                         <h1> Module System </h1>
                          <section></section>
-                         <hr/>
                     </article>
                </article>
+               <footer>
+                    <div id="footer-goto-buttons">
+                         <a id="footer-goto-buttons-next" style="width: 100%" href="html/lua_coding_docs/built-in_functions_&_variables.html">
+                              <i id="footer-goto-buttons-icons-right" class="uil uil-arrow-right"></i>
+                              <h3> Built-In Functions & Variables </h3>
+                              <p> Next - <i class="uil uil-folder"></i> Lua Coding Docs </p>
+                         </a>
+                    </div>
+                    <div id="footer-important-message">
+                         <p>
+                              Is the page in some way inaccurate? an error, a typo, or outdated data? To report it, use the "Issue Tab". 
+                              Or do you wish to include a new function or add new information? use the "Pull Request Tab". Help is always 
+                              appreciated!
+                         </p>
+                    </div>
+               </footer>
           </main>
      </body>
 </html>

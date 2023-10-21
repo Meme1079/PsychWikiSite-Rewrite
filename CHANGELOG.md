@@ -1,3 +1,18 @@
+### Version 3.0.0-Beta
+- Added a new page "Object Oriented Programming" to the wiki _(WIP)_
+- Added media support to the sidebar and search bar
+- Added footer to the wiki
+     - Next and Previous buttons
+     - Info about something wrong about the wiki page
+- Added keyboard shortcuts 
+     - <kbd>1</kbd> for "teleport to top" 
+     - <kbd>2</kbd> for "teleport to bottom"
+- Added highlighted header to the sidebar
+- Added highlighted main page text to the header of the main wiki content
+- Added "to top" button to the sidebar
+- Added the noscript back event thingy
+- Adjust the left and right margin values of the main wiki content
+
 ### Version 2.0.2-Beta
 - Fixed a bug when copying the code
 

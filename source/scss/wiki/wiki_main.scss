@@ -6,6 +6,7 @@
 
 @font-face {
      font-family: "Fira Code";
+     font-display: swap;
      src: url(../../fonts/Fira_Code/FiraCode-Regular.woff) format("woff"),
           url(../../fonts/Fira_Code/FiraCode-Regular.otf)  format("opentype"),
           url(../../fonts/Fira_Code/FiraCode-Regular.ttf)  format("truetype");
@@ -13,6 +14,7 @@
 
 @font-face {
      font-family: "VCR";
+     font-display: swap;
      src: url(../../fonts/VCR/VCR_OSD_MONO.woff) format("woff"),
           url(../../fonts/VCR/VCR_OSD_MONO.otf)  format("opentype"),
           url(../../fonts/VCR/VCR_OSD_MONO.ttf)  format("truetype");
@@ -50,11 +52,13 @@ $color-wiki-main-headings-bord-bottom: var(--color-wiki-main-header-bg);
 
 /* Goofy aaaahhhhh code */
 
-:root[data-sidebar-hidden=true] :is(header, #wiki-header) {
-     margin-left: 4.6cm; margin-right: 4.6cm;
+$main-wiki-margins: 0.5cm 0.5cm 25px 8.9cm !global; // 0.5cm 0.4cm 25px 8.85cm
+$main-wiki-margX: list.nth($main-wiki-margins, 2);
+:root[data-sidebar-hidden=true] :is(header, footer, #wiki-header) {
+     margin-left: 4.7cm; margin-right: 4.7cm;
 
      @media only screen and (max-width: 1000px) {
-          margin-left: 0.4cm; margin-right: 0.4cm;
+          margin-left: $main-wiki-margX; margin-right: $main-wiki-margX;
      }
 }
 
@@ -62,20 +66,22 @@ html {
      font-family: gs.$global-font-family;
      scroll-behavior: smooth;
 
-     header {
+     :is(header, footer) {
           font-size: 1em;
-          word-wrap: break-word;
+          overflow-wrap: break-word;
           outline: 1px solid $color-wiki-main-outline;
           border-radius: gs.$global-border-radius;
           background-color: $color-wiki-main-headings-bord-bottom;
           width: minmax(10cm, 28.3cm);
-          padding: 15px; margin: 0.5cm 0.4cm 25px 8.85cm;
+          padding: 15px; margin: $main-wiki-margins;
 
           @media only screen and (max-width: 1000px) {
-               margin-left: 0.4cm;
+               margin-left: $main-wiki-margX;
           }
+     }
 
-          p {
+     header {
+          #header-path {
                font-size: 1em;
                padding: 0; margin: 0;
 
@@ -83,9 +89,112 @@ html {
                     font-size: 1.1em;
                }
 
-               header-name {
+               header-tag[higlighted-page] {
                     font-weight: 550;
+                    color: gs.$global-color-lightblue;
                }
+          }
+     }
+
+     footer {
+          #footer-goto-buttons {
+               cursor: pointer;
+               display: flex;
+               margin-top: 0.2cm;
+
+               @media only screen and (max-width: 830px) {
+                    flex-direction: column;
+               }
+
+               :is(h3, p) {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis; 
+                    padding: 0; margin: 0;
+               }
+
+               h3 {
+                    font-size: 1em;
+                    font-weight: 500;
+               }
+
+               p {
+                    color: #858585;
+                    font-size: 0.9em;
+               }
+               
+               :is(#footer-goto-buttons-prev, #footer-goto-buttons-next) {
+                    box-sizing: border-box;
+                    color: white;
+                    text-decoration: none;
+                    border: 1.3px solid gs.$global-color-grey;
+                    border-radius: gs.$global-border-radius;
+                    width: 15cm; height: auto;
+                    padding: 16px 13px;
+                    transition: transform 0.2s;
+
+                    &:hover {
+                         color: gs.$global-color-lightblue;
+                         border-color: gs.$global-color-lightblue;
+                         transform: translateY(-2px);
+                    }
+                    &:active {
+                         color: gs.$global-color-gold;
+                         border-color: gs.$global-color-gold;
+                    }
+               }
+
+               #footer-goto-buttons-prev {
+                    text-align: right;
+                    margin-right: 15px;
+
+                    @media only screen and (max-width: 830px) {
+                         width: auto;
+                         margin-right: 0 !important; margin-bottom: 10px;
+                    }
+
+                    #footer-goto-buttons-icons-left { 
+                         float: left; 
+                         font-size: 2em;
+                         margin-right: 0.5cm;
+                    }
+               }
+               #footer-goto-buttons-next {
+                    text-align: left;
+                    margin-left: auto;
+
+                    @media only screen and (max-width: 830px) {
+                         width: auto;
+                         margin-left: 0 !important; margin-top: 7px;
+                    }
+
+                    #footer-goto-buttons-icons-right { 
+                         float: right;
+                         font-size: 2em;
+                         margin-left: 0.5cm;
+                    }
+               }
+          }
+
+          #footer-important-message {
+               font-size: 0.8em;
+               line-height: 1.3em;
+               border: 1px solid gs.$global-color-grey;
+               border-radius: gs.$global-border-radius;
+               background-color: #272b33;
+               padding: 10px 15px;
+               margin-top: 0.6cm;
+
+               p {
+                    margin: 0;
+               }
+          }
+
+          hr {
+               border: none;
+               background-color: gs.$global-color-grey;
+               height: 1px;
+               margin: 0.6cm 0cm;
           }
      }
 
@@ -106,12 +215,12 @@ html {
      outline: 1px solid $color-wiki-main-outline;
      border-radius: gs.$global-border-radius;
      background-color: $color-wiki-main-top-bg;
-     width: minmax(10cm, 28.3cm);
+     width: auto; // max: 28.3cm
      padding-top: 1.1cm;
-     margin: 0.5cm 0.4cm 25px 8.85cm;
+     margin: $main-wiki-margins; //0.5cm 0.4cm
 
      @media only screen and (max-width: 1000px) {
-          margin-left: 0.4cm;
+          margin-left: $main-wiki-margX;
      }
 
      #wiki-main {
@@ -121,6 +230,7 @@ html {
           border-radius: 0px 0px gs.$global-border-radius gs.$global-border-radius;
           background-color: $color-wiki-main-bg;
           padding: 20px 25px;
+          
 
           :is(p, a, ul, td, th, blockquote) {
                font-size: 1em;
@@ -143,10 +253,6 @@ html {
 
           p {
                font-size: 1.05em;
-          }
-
-          dfn {
-               font-style: normal;
           }
 
           li {
@@ -241,7 +347,7 @@ html {
           /* HighLights */
 
           @at-root {
-               :root/* [data-color-theme=dark], meta[name=color-scheme][content=dark] */ {
+               :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
                     --color-wiki-highlight-note-outline: hsl(210deg, 100%, 63%);
                     --color-wiki-highlight-note-bg: hsla(210deg, 100%, 63%, 0.1);
                     --color-wiki-highlight-note-title: hsl(210deg, 100%, 73%);
@@ -267,8 +373,19 @@ html {
           }
 
           blockquote {
+               .code-header {
+                    margin: 5px 0px 0px 0px;
+               }
+
+               @mixin highlight-types($border, $background, $color) {
+                    border: 1.3px solid $border !important;
+                    background-color: $background;
+               
+                    span :is(i, strong) { color: $color; }
+               }
+
                &[class^=highlight-] {
-                    border-radius: gs.$global-border-radius;
+                    border-radius: gs.$global-border-radius + 3;
                     padding: 3px 10px 10px 10px;
                     margin: 10px 0px;
 
@@ -290,17 +407,6 @@ html {
                     }
                }
 
-               .code-border {
-                    margin: 15px 0px 0px 0px;
-               }
-
-               @mixin highlight-types($border, $background, $color) {
-                    border: 1px solid $border !important;
-                    background-color: $background;
-               
-                    span :is(i, strong) { color: $color; }
-               }
-
                $note-attrs: var(--color-wiki-highlight-note-outline), var(--color-wiki-highlight-note-bg), var(--color-wiki-highlight-note-title);
                $warn-attrs: var(--color-wiki-highlight-warn-outline), var(--color-wiki-highlight-warn-bg), var(--color-wiki-highlight-warn-title);
                $vald-attrs: var(--color-wiki-highlight-vald-outline), var(--color-wiki-highlight-vald-bg), var(--color-wiki-highlight-vald-title);
@@ -314,25 +420,24 @@ html {
 
           /* Tables */
 
-          table-bg, div.table-bg {    
+          table-bg {    
                overflow-x: auto; overflow-y: hidden; 
-               width: 100%;
-               padding: 0px 1px;
+               display: block;
+               width: 101%;
+               padding: 1px 1px 1px 1px;
 
                table {
                     display: table;
                     border-collapse: collapse;
-                    width: 100%; // < broken
-                    min-width: 15cm;
-                    margin: 0.5cm 0cm;
-                    
+                    width: 98.95%; // < broken
+
                     thead {
                          margin-bottom: 10px;
                          
                          tr {
                               outline: 1px solid gs.$global-color-grey;
                               border-radius: calc(gs.$global-border-radius - 2px);
- 
+     
                               th {
                                    text-align: left;
                                    font-weight: 500;  
@@ -341,22 +446,41 @@ html {
                          }
                     }
 
-                    tbody tr {
-                         border-bottom: 1px solid gs.$global-color-grey;
+                    tfoot tr {
+                         outline: 1px solid gs.$global-color-grey;
+                         border-radius: calc(gs.$global-border-radius - 2px);
 
                          td {
-                              padding: 10px 8px;
+                              text-align: left;
+                              font-weight: 500;  
+                              padding: 10px 8px;  
+                         }
+                    }
+     
+                    tbody {
+                         tr {
+                              border-bottom: 1px solid gs.$global-color-grey;
 
-                              &:nth-child(2) {
-                                   max-width: 9cm;
+                              td {
+                                   padding: 10px 8px;
+     
+                                   &:nth-child(2) {
+                                        max-width: 9cm;
+                                   }
+                              }
+     
+                              &:nth-child(even) {
+                                   background-color: hsl(0, 0%, 11%);
+                              }
+                              &:nth-last-child(1) {
+                                   border-bottom: 0px;
                               }
                          }
 
-                         &:nth-child(even) {
-                              background-color: hsl(0, 0%, 11%);
-                         }
-                         &:nth-last-child(1) {
-                              border-bottom: 0px;
+                         &::before {
+                              content: '';
+                              display: block;
+                              height: 0.35cm;
                          }
                     }
                }
@@ -470,17 +594,17 @@ html {
                          @include gs.button_hover;
 
                          &[data-copy-copied] {
-                              border-color: $color-wiki-codeblock-header-button-border-valid;
+                              border-color: $color-wiki-codeblock-header-button-border-valid !important;
                          }
                          &[data-copy-denied] {
-                              border-color: $color-wiki-codeblock-header-button-border-invalid;
+                              border-color: $color-wiki-codeblock-header-button-border-invalid !important;
                          }
 
                          i.uil-check-circle {
-                              color: $color-wiki-codeblock-header-button-border-valid;
+                              color: $color-wiki-codeblock-header-button-border-valid !important;
                          }
                          i.uil-times-circle {
-                              color: $color-wiki-codeblock-header-button-border-invalid;
+                              color: $color-wiki-codeblock-header-button-border-invalid !important;
                          }
                     }
                }
@@ -524,6 +648,12 @@ html {
                               &:active span {
                                    background-color: $color-wiki-codeblock-header-button-display-inactive-active-bg;
                               }
+
+                              &:disabled span {
+                                   cursor: not-allowed;
+                                   text-decoration: line-through;
+                                   background: none !important;
+                              }
                          }
                     }
                }
@@ -535,19 +665,23 @@ html {
                }
           }
 
+          .code-border pre {
+               border-radius: 0 0 gs.$global-border-radius gs.$global-border-radius;
+          }
+
           pre {
                tab-size: 8;
                white-space: pre;
                overflow-x: auto;
                outline: 1px solid $color-wiki-codeblock-all-bg;
                line-height: 20px !important;
-               border-radius: 0 0 gs.$global-border-radius gs.$global-border-radius;
+               border-radius: gs.$global-border-radius;
                background-color: $color-wiki-codeblock-pre-bg;
                padding: 16px;
 
                &.code-example-output {
                     display: none;
-                    font-family: "VCR" !important;
+                    font-family: "VCR", Menlo, "Lucida Console", "Monaco", "monospace" !important;
                }
 
                &::before {
@@ -591,7 +725,7 @@ html {
 
           @at-root {
                :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
-                    pre.code-example-code {
+                    :is(pre.code-example-code, pre.code-example-syntax) {
                          --color-code-variables:          hsl(0, 0%, 100%);
                          --color-code-keywords:           hsl(1, 100%, 79%);
                          --color-code-operators:          hsl(1, 100%, 79%);
@@ -620,7 +754,7 @@ html {
                }
 
                :root[data-color-theme=light], meta[name=color-scheme][content=light] {
-                    pre.code-example-code {
+                    :is(pre.code-example-code, pre.code-example-syntax) {
                          --color-code-variables:          hsl(0, 0%, 0%);
                          --color-code-keywords:           hsl(355, 85%, 34%);
                          --color-code-operators:          hsl(355, 85%, 34%);
@@ -650,7 +784,7 @@ html {
                }
           }
 
-          .code-example-code span {
+          :is(.code-example-code, .code-example-syntax) span {
                &.code-var    { color: var(--color-code-variables);          }
                &.code-kyw    { color: var(--color-code-keywords);           }
                &.code-ope    { color: var(--color-code-operators);          }
