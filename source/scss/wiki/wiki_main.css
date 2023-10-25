@@ -297,6 +297,9 @@ html ::selection {
 #wiki-header #wiki-main :is(h1, h2, h3, h4, h5, h6) {
      scroll-margin-top: 2.5cm;
 }
+#wiki-header #wiki-main :is(h1, h2, h3, h4, h5, h6)[data-selected] {
+     color: var(--global-color-lightblue);
+}
 #wiki-header #wiki-main :is(h1, h2) {
      border-bottom: 1px solid var(--color-wiki-main-headings-bord-bottom);
      padding-bottom: 10px;

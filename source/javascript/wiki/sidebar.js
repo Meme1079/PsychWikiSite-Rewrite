@@ -88,11 +88,9 @@ for (let sideBarList = 1; sideBarList < sideBarListsPath.length; sideBarList++) 
      })
 }
 
-for (const iterator of sideBarListsPath) {
-     let hi = iterator.getAttribute('data-sections') == window.location.hash.replace('#', '').replace(/%20/g, ' ')
-     if (hi == true) {
-          iterator.setAttribute('data-selected', '');
-     }
+for (const sideBarList of sideBarListsPath) {
+     let checkURL = sideBarList.getAttribute('data-sections') == window.location.hash.replace('#', '').replace(/%20/g, ' ')
+     if (checkURL == true) sideBarList.setAttribute('data-selected', '');
 }
 
 // Hiding & Media Support

@@ -15,6 +15,20 @@ for (let disButton of shortCutAll('button[disabled]')) {
      disButton.setAttribute('title', withAttr)
 }
 
+// Set Selected Header
+const setSelectedMainHeader = () => {
+     for (const headerList of shortCutAll('main #wiki-header #wiki-main .header')) {
+          if (headerList.getAttribute('id') == window.location.hash.replace('#', '').replace(/%20/g, ' ')) {
+               headerList.setAttribute('data-selected', '')
+          } else {
+               headerList.removeAttribute('data-selected')
+          }
+     }
+}
+
+setSelectedMainHeader()
+window.addEventListener('hashchange', setSelectedMainHeader)
+
 // Copy Code, Hide Code, & Switch to Ouput
 async function codeCopyToClipboard(preInd) {
      const codeContent = shortCutAll('pre.code-example-code')[preInd].innerText

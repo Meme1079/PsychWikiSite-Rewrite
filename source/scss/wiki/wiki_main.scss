@@ -316,6 +316,10 @@ html {
 
           :is(h1, h2, h3, h4, h5, h6) {
                scroll-margin-top: 2.5cm;
+
+               &[data-selected] {
+                    color: gs.$global-color-lightblue;
+               }
           }
 
           $color-wiki-main-headings-bord-bottom: var(--color-wiki-main-headings-bord-bottom);
@@ -682,7 +686,7 @@ html {
 
                &.code-example-output {
                     @include gs.no_selector;
-                    
+
                     display: none;
                     font-family: "VCR", Menlo, "Lucida Console", "Monaco", "monospace" !important;
                }
