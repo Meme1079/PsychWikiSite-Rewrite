@@ -27,6 +27,7 @@
           <script defer type="module" src="javascript/wiki/sidebar.js"></script>
           <script defer type="module" src="javascript/wiki/search.js"></script>
           <script defer type="module" src="javascript/wiki/wiki_main.js"></script>
+          <script defer type="module" src="javascript/wiki/local/basics_of_coding.js"></script>
      </head>
      <body>
           <noscript> <!-- Better -->
@@ -97,7 +98,6 @@
                </div>
           </dialog>
           <main>
-               <!-- <button id="homo" onclick=" window.scrollTo(0, 0) "><i class="uil uil-arrow-up"></i></button> -->
                <header>
                     <p id="header-path"> <i class="uil uil-code-branch"></i> PsychWikiSite / </p>
                </header>
@@ -164,8 +164,8 @@
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-hamburgers are cool
-potatoes are also cool, i think
+<span class="code-line">&gt; main.lua L-5:</span> hamburgers are cool
+<span class="code-line">&gt; main.lua L-6:</span> potatoes are also cool, i think
 </pre>
                                    </div>
                               </section>
@@ -194,7 +194,6 @@ potatoes are also cool, i think
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-<em>Output printed nothing!</em>
 </pre>
                               </div>
                               <p> 
@@ -222,7 +221,7 @@ potatoes are also cool, i think
 <span class="code-com">end ]]</span>
 </pre>
 <pre class="code-example-output">
-colon
+<span class="code-line">&gt; main.lua L-2:</span> colon
 </pre>
                               </div>
                               <!-- <p>
@@ -294,7 +293,7 @@ colon
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-32
+<span class="code-line">&gt; main.lua L-5:</span> 32
 </pre>
                                    </div>
                                    <p>
@@ -321,7 +320,7 @@ colon
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-15
+<span class="code-line">&gt; main.lua L-5:</span> 15
 </pre>
                                    </div>
                                    <p>
@@ -351,9 +350,9 @@ colon
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-134, 72, 722
-'Hello', 'Bye', nil
-true, true
+<span class="code-line">&gt; main.lua L-6:</span> 134, 72, 722
+<span class="code-line">&gt; main.lua L-7:</span> Hello, Bye, nil
+<span class="code-line">&gt; main.lua L-8:</span> true, true
 </pre>
                                    </div>
                               </section>
@@ -487,7 +486,7 @@ true, true
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-24
+<span class="code-line">&gt; main.lua L-5:</span> 24
 </pre>
                                    </div>
                               </section>
@@ -518,7 +517,7 @@ true, true
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-nil
+<span class="code-line">&gt; main.lua L-5:</span> nil
 </pre>
                                    </div>
                               </section>
@@ -528,76 +527,1095 @@ nil
                          <section>
                               <h2> Strings </h2>
                               <section>
+                                   <p>
+                                        Strings are a sequence of characters containing any characters; they could be either alphabetical, digital, punctuation, etc. Their main purpose is to store human-readable text, like words and sentences. 
+                                        They're commonly surrounded by either single-quotes <kbd>''</kbd>, double-quotes <kbd>""</kbd>, or double-brackets <kbd>[[]]</kbd> for multi-line strings.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">textString1</span> <span class="code-kyw">&equals;</span> <span class="code-str">'Hello'</span> <span class="code-com">-- a single quote</span>
+<span class="code-kyw">local</span> <span class="code-var">textString2</span> <span class="code-kyw">&equals;</span> <span class="code-str">"World"</span> <span class="code-com">-- a double quote, this is optional to use</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">textString1</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">textString2</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-4:</span> Hello
+<span class="code-line">&gt; main.lua L-5:</span> World
+</pre>
+                                   </div>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">textString3</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">[[</span>
+     <span class="code-nest1">Culturae organicae te capiet ad loca quae numquam </span>
+     <span class="code-nest1">expectata non visere!</span>
+<span class="code-nest1">]]</span>                          <span class="code-com">-- a double bracket, used this for longer texts</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">textString3</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-6:</span> Culturae organicae te capiet ad loca quae numquam 
+<span class="code-line">&gt; main.lua L-6:</span> expectata non visere!
+</pre>
+                                   </div>
                                    <h3> Escape Characters </h3>
+                                   <section>
+                                        <p>
+                                             Escape characters are special characters used within a string. They are an alternate interpretation of the characters in the following character sequence. It allows you to insert illegal characters inside a string, 
+                                             for instance, a single-quote <kbd>'</kbd> that is surrounded by single-quotes. Each escape character starts with a backslash <kbd>\</kbd> character, followed by the character to use after that.
+                                        </p>
+                                        <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'Don<span class="code-esc">\'</span>t press <span class="code-esc">\'</span>Alt + F4<span class="code-esc">\'</span>'</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">"dead <span class="code-esc">\"</span>(in a cool way)<span class="code-esc">\"</span>"</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'C:<span class="code-esc">\</span>Windows<span class="code-esc">\</span>System32'</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-2:</span> Don't press 'Alt + F4'
+<span class="code-line">&gt; main.lua L-3:</span> dead "(in a cool way)"
+<span class="code-line">&gt; main.lua L-4:</span> C:\Windows\System32
+</pre>
+                                   </div>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Escape Characters </th>
+                                                       <th> Description </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><kbd>\'</kbd></td>
+                                                       <td>Single-quote Character</td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>\"</kbd></td>
+                                                       <td>Double-quote Character</td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>\\</kbd></td>
+                                                       <td>Backslash Character</td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>\n</kbd></td>
+                                                       <td>New Line</td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>\r</kbd></td>
+                                                       <td>Carriage Return</td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>\t</kbd></td>
+                                                       <td>Horizontal Tab</td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>\v</kbd></td>
+                                                       <td>Vertical tab</td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   </section>
                               </section>
                               <h2> Numbers </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Numbers are arithmetic values that represent the quantity or amount of something. It can have positive or negative values, and numbers can be expressed as integers (Int) or floating-points (Float). 
+                                        Int only uses whole numbers, while Float uses decimal numbers.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">myNumInt</span> <span class="code-kyw">&equals;</span> <span class="code-num">32</span>  <span class="code-com">-- integer number</span>
+<span class="code-kyw">local</span> <span class="code-var">myNumFlt</span> <span class="code-kyw">&equals;</span> <span class="code-num">2.1</span> <span class="code-com">-- floating-point number</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">myNumInt</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">myNumFlt</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-5:</span> 32
+<span class="code-line">&gt; main.lua L-6:</span> 2.1
+</pre>
+                                   </div>
+                                   <p>
+                                        Numbers can also be represented in scientific (exponential) notation. They are a way of expressing numbers that are too large or too small to be conveniently written in float form. You could also 
+                                        represent it as a hexadecimal number system for colors, just to let you know.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">foo</span> <span class="code-kyw">&equals;</span> <span class="code-num">263e+4</span>   <span class="code-com">-- positive</span>
+<span class="code-kyw">local</span> <span class="code-var">bar</span> <span class="code-kyw">&equals;</span> <span class="code-num">326e-5</span>   <span class="code-com">-- negative</span>
+<span class="code-kyw">local</span> <span class="code-var">baz</span> <span class="code-kyw">&equals;</span> <span class="code-num">0xFF0000</span> <span class="code-com">-- hexadecimal</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">foo</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">bar</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">baz</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-6:</span> 2630000.0
+<span class="code-line">&gt; main.lua L-7:</span> 0.00326
+<span class="code-line">&gt; main.lua L-8:</span> 16711680
+</pre>
+                                   </div>
+                              </section>
                               <h2> Booleans </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Booleans, often shortened to "Bools", are data types that can have two possible values: <code>true</code> or <code>false</code>. This is commonly used for conditional statements, which allow for 
+                                        different actions by modifying control flow based on whether the condition is true or false.
+                                   </p>
+                              </section>
                               <h2> Nil </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Nil represents the nothingness or non-existence of a value. This can be used to destroy a variable or table element if it is not used anymore. Or use conditional statements to check if the value is a 
+                                        <code>nil</code> or not.
+                                   </p>
+                              </section>
                               <h2> Tables </h2>
                               <section>
+                                   <p>
+                                        Tables are the only data structuring mechanism in Lua. They can store multiple types of values, like strings, numbers, booleans, and even themselves. This is a better alternative than listing them in 
+                                        each variable and makes it easier to access each element of the table. And for making modules, metatables, and classes, which is useful in some cases, tables can be represented as an Array or Dictionary.
+                                   </p>
+                                   <p>
+                                        If you try to attempt to call a table it will return the table's memory address; Example: <code>table: 0x55557885d670</code>. But in PsychLua it will return the table elements with brackets surrounding it. 
+                                        The only way to read the table's element is to use indexing access operation which only gets a single element. Or to iterate a table from a numeric or generic for loop.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">{}</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-2:</span> table: 0x55b55a287670
+</pre>
+                                   </div>
                                    <h3> Array </h3>
-                                   <section></section>
+                                   <section>
+                                        <p> Arrays is an ordered list of elements and the most common type of table to define. Each elements are separated by a comma <kbd>,</kbd> character with a pair of curly-braces <kbd>{}</kbd> characters surrounding it. </p>
+                                        <p>
+                                             To read the table's array element, add a indexing access operation which is a pair of bracket <kbd>[]</kbd> characters. With the given index number inside, if the index isn't present or just invalid it returns a 
+                                             <code>nil</code> value as a result of it.
+                                        </p>
+                                        <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">tableGroup1</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-str">'string'</span>, <span class="code-boo">true</span>, <span class="code-nil">nil</span><span class="code-nest1">}</span> <span class="code-com">-- a table with string, boolean, and nil values</span>
+<span class="code-kyw">local</span> <span class="code-var">tableGroup2</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-nest2">{</span><span class="code-num">45</span>, <span class="code-num">13</span><span class="code-nest2">}</span>, <span class="code-nest2">{</span><span class="code-num">34</span>, <span class="code-num">76</span><span class="code-nest2">}</span><span class="code-nest1">}</span>  <span class="code-com">-- a table with nested tables</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableGroup1</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableGroup1</span><span class="code-nest2">[</span><span class="code-num">1</span><span class="code-nest2">]</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">tableGroup2</span><span class="code-nest2">[</span><span class="code-num">1</span><span class="code-nest2">][</span><span class="code-num">2</span><span class="code-nest2">]</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-4:</span> ['string', true, nil]
+<span class="code-line">&gt; main.lua L-5:</span> string
+<span class="code-line">&gt; main.lua L-6:</span> 13
+</pre>
+                                   </div>
+                                   </section>
                                    <h3> Dictionary </h3>
-                                   <section></section>
+                                   <section>
+                                        <p>
+                                             Dictionaries use key-value pairs for storing elements instead of the index-value pairs that a table array uses. It basically uses names or keys to reference the elements 
+                                             inside a table dictionary. The keys from the dictionary could be either surrounded by a pair of brackets <kbd>[]</kbd> characters with the name to be given; Example: 
+                                             <code>['name']</code>. If the name has a special character inside of it or not.
+                                        </p>
+                                        <p>
+                                             To read the table's dictionary element, add a dot <kbd>.</kbd> character with the given name of the key. Or add a pair of brackets <kbd>[]</kbd> characters with the given 
+                                             name. Really just depends what your comfortable to use when coding; Example: <code>table.name</code> or <code>table.['name']</code>.
+                                        </p>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">stupidData</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-tabkey">FM</span> <span class="code-kyw">&equals;</span> <span class="code-num">46</span>, <span class="code-tabkey">PCM</span> <span class="code-kyw">&equals;</span> <span class="code-num">12</span>, <span class="code-tabkey">DA</span> <span class="code-kyw">&equals;</span> <span class="code-num">25</span><span class="code-nest1">}</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'FM: '</span> <span class="code-ope">..</span><span class="code-var">stupidData</span>.<span class="code-tabkey">FM</span><span class="code-ope">..</span><span class="code-str">', PCM: '</span><span class="code-ope">..</span><span class="code-var">stupidData</span>.<span class="code-tabkey">PCM</span><span class="code-ope">..</span><span class="code-str">', DA: '</span> <span class="code-ope">..</span><span class="code-var">stupidData</span>.<span class="code-tabkey">DA</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-3:</span> FM: 46, PCM: 12, DA: 25
+</pre>
+                                        </div>
+                                   </section>
                                    <h3> Element Manipulation </h3>
-                                   <section></section>
+                                   <section>
+                                        <table-bg>
+                                             <table>
+                                                  <thead>
+                                                       <tr>
+                                                            <th> Methods </th>
+                                                            <th> Description </th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td> Setting element values </td>
+                                                            <td> Get the given existing element inside a table, followed by a equal <kbd>&equals;</kbd> character with a new value. </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td> Inserting element values </td>
+                                                            <td> Get the given table with a new element that isn't present inside the table with the specified value to hold. </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td> Removing element values </td>
+                                                            <td> Get the given table element and replace the value with a <code>nil</code> value. </td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </table-bg>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">myStupidNums</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-num">24</span>, <span class="code-num">81</span>, <span class="code-num">42</span><span class="code-nest1">}</span>
+<span class="code-var">myStupidNums</span><span class="code-nest1">[</span><span class="code-num">3</span><span class="code-nest1">]</span> <span class="code-kyw">&equals;</span> <span class="code-num">34</span>  <span class="code-com">-- setting elements</span>
+<span class="code-var">myStupidNums</span><span class="code-nest1">[</span><span class="code-num">4</span><span class="code-nest1">]</span> <span class="code-kyw">&equals;</span> <span class="code-num">95</span>  <span class="code-com">-- inserting elements</span>
+<span class="code-var">myStupidNums</span><span class="code-nest1">[</span><span class="code-num">2</span><span class="code-nest1">]</span> <span class="code-kyw">&equals;</span> <span class="code-nil">nil</span> <span class="code-com">-- removing elements</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">myStupidNums</span><span class="code-nest1">)</span> 
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-7:</span> [23, 34, 95]
+</pre>
+                                        </div>
+                                   </section>
                               </section>
                          </section>
                          <hr/>
                          <h1> Functions </h1>
                          <section>
+                              <p>
+                                   Functions are collections of code that are designed to perform a specific task. They can enable reusable code across the Lua program, which reduces the duplication of code. Functions are defined with the 
+                                   function <code>keyword</code> followed by the identifier. Or the name of the function with the calling operation <kbd>()</kbd> to declare parameters.
+                              </p>
+                              <p>
+                                   To call a function, get the function's identifier, followed by the calling operation <kbd>()</kbd> for the arguments to be passed, if the function has parameters. If the calling operation is not present, 
+                                   it will return the memory address of the given function; Example: <code>function: 0x5616d89c0770</code>.
+                              </p>
+                              <blockquote class="highlight-note">
+                                   <span><i class="uil uil-info-circle"></i> <strong>Note:</strong></span>
+                                   Functions are hoisted; once declared, the function is moved to the top of the scope before code execution. This means that you can call a function before it has been declared.
+                              </blockquote>
+                              <div class="code-header">
+                                   <div class="code-header-buttons">
+                                        <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                        <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                   </div>
+                                   <div class="code-header-display-buttons">
+                                        <button class="active-button"><span> Code </span></button>
+                                        <button class="inactive-button"><span> Output </span></button>
+                                   </div>
+                              </div>
+                              <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-funcD">hello</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'Hello Function'</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">hello</span><span class="code-nest1">()</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-2:</span> Hello Function
+</pre>
+                              </div>
                               <h2> Parameters </h2>
                               <section>
+                                   <p>
+                                        Parameters are special types of variables that are located inside the calling operation <kbd>()</kbd> of the given function. Each parameter must be separated by a comma <kbd>,</kbd> 
+                                        character if there are two or more of them. Their main purpose is to add more functionality to the given function for the arguments to be passed.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button" disabled><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-funcD">setPos</span><span class="code-nest1">(</span><span class="code-paraS">obj</span>, <span class="code-paraS">pos</span><span class="code-nest1">)</span>  <span class="code-com">-- concatenates setProperty x and y</span>
+     <span class="code-kyw">if</span> <span class="code-paraS">pos</span><span class="code-nest1">[</span><span class="code-num">1</span><span class="code-nest1">]</span> <span class="code-ope">~&equals;</span> <span class="code-nil">nil</span> <span class="code-kyw">then</span> <span class="code-com">-- makes pos parameter acts like a table</span>
+          <span class="code-funcC">setProperty</span><span class="code-nest1">(</span><span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.x'</span>, <span class="code-paraS">pos</span><span class="code-nest2">[</span><span class="code-num">1</span><span class="code-nest2">]</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">if</span> <span class="code-paraS">pos</span><span class="code-nest1">[</span><span class="code-num">2</span><span class="code-nest1">]</span> <span class="code-ope">~&equals;</span> <span class="code-nil">nil</span> <span class="code-kyw">then</span>
+          <span class="code-funcC">setProperty</span><span class="code-nest1">(</span><span class="code-paraS">obj</span><span class="code-ope">..</span><span class="code-str">'.y'</span>, <span class="code-paraS">pos</span><span class="code-nest2">[</span><span class="code-num">2</span><span class="code-nest2">]</span><span class="code-nest1">)</span> 
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreatePost</span><span class="code-nest1">()</span>
+     <span class="code-funcC">setPos</span><span class="code-nest1">(</span><span class="code-str">'boyfriend'</span>, <span class="code-nest2">{</span><span class="code-num">100</span>, <span class="code-num">500</span><span class="code-nest2">}</span><span class="code-nest1">)</span> <span class="code-com">-- Changes the position to x = 100 and y = 500</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+</pre>
+                                   </div>
                                    <h3> Infinite Parameters </h3>
-                                   <section></section>
+                                   <section>
+                                        <p>
+                                             Parameters can be defined as an infinite parameter with the ellipsis <kbd>...</kbd> character. It enables an indefinite number of arguments to pass. If there are no parameters present, 
+                                             they must be the last parameters on the list.
+                                        </p>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-modul">table</span>.<span class="code-funcD">pack</span><span class="code-nest1">(</span><span class="code-paraI">...</span><span class="code-nest1">)</span>
+     <span class="code-kyw">return</span> <span class="code-nest1">{</span><span class="code-paraI">...</span><span class="code-nest1">}</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-modul">table</span>.<span class="code-funcC">pack</span><span class="code-nest1">(</span><span class="code-num">34</span>, <span class="code-num">23</span>, <span class="code-num">12</span>, <span class="code-num">343</span><span class="code-nest1">)[</span><span class="code-num">1</span><span class="code-nest1">]</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-modul">table</span>.<span class="code-funcC">pack</span><span class="code-nest1">(</span><span class="code-boo">true</span>, <span class="code-boo">false</span>, <span class="code-boo">true</span>, <span class="code-boo">true</span><span class="code-nest1">)[</span><span class="code-num">4</span><span class="code-nest1">]</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-6:</span> 34
+<span class="code-line">&gt; main.lua L-7:</span> true
+</pre>
+                                        </div>
+                                   </section>
                               </section>
                               <h2> Anonymity </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        Anonymous functions that are defined are not bound to an identifier. So it only uses the <code>function</code> keyword and calling operation <kbd>()</kbd>. They're pretty often used in arguments 
+                                        being passed to functions like the <code>table.sort()</code> function or being used for closures in some cases.
+                                   </p>
+                                   <p>
+                                        This can only be called once or more if the anonymous function is declared inside a variable. The use case of anonymous functions is that they could reduce the Lua file size. But the downside is 
+                                        that they are not hosted like regular functions.
+                                   </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">grades</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-num">93</span>, <span class="code-num">72</span>, <span class="code-num">100</span>, <span class="code-num">84</span>, <span class="code-num">76</span>, <span class="code-num">81</span>, <span class="code-num">74</span><span class="code-nest1">}</span>
+<span class="code-modul">table</span>.<span class="code-funcC">sort</span><span class="code-nest1">(</span><span class="code-var">grades</span>, <span class="code-kyw">function</span><span class="code-nest1">(</span><span class="code-paraS">a</span>,<span class="code-paraS">b</span><span class="code-nest1">)</span> <span class="code-com">-- anon function</span>
+     <span class="code-kyw">return</span> <span class="code-paraS">a</span> <span class="code-ope">&gt;</span> <span class="code-paraS">b</span>
+<span class="code-kyw">end</span><span class="code-nest1">)</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1"><span class="code-nest1">()</span></span>
+     <span class="code-kyw">for</span> <span class="code-var">_</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span><span class="code-nest1">(</span><span class="code-var">grades</span><span class="code-nest1">)</span> <span class="code-kyw">do</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">v</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-8:</span> 100
+<span class="code-line">&gt; main.lua L-8:</span> 93
+<span class="code-line">&gt; main.lua L-8:</span> 84
+<span class="code-line">&gt; main.lua L-8:</span> 81
+<span class="code-line">&gt; main.lua L-8:</span> 76
+<span class="code-line">&gt; main.lua L-8:</span> 74
+<span class="code-line">&gt; main.lua L-8:</span> 72
+</pre>
+                                   </div>
+                              </section>
                          </section>
                          <hr/>
                          <h1> Operators </h1>
                          <section>
+                              <p>
+                                   Operators are unique symbols that are used to carry out operations on operands. For the conditional statements to use to determine if the value is <code>true</code> or <code>false</code> before executing the 
+                                   code block. They can be represented as Arithmetic, Relational, Logical, and Miscellaneous operators.
+                              </p>
                               <h2> Arithmetic </h2>
-                              <section></section>
+                              <section>
+                                   <p> Arithmetic operators are mathematical operators used to perform calculations for numeric values. </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Operators </th>
+                                                       <th> Name </th>
+                                                       <th> Examples </th>
+                                                       <th> Returns </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><kbd>+</kbd></td>
+                                                       <td> Addition </td>
+                                                       <td><code>5 + 5</code></td>
+                                                       <td><code>10</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>-</kbd></td>
+                                                       <td> Subtraction </td>
+                                                       <td><code>8 - 3</code></td>
+                                                       <td><code>5</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>*</kbd></td>
+                                                       <td> Multiplication </td>
+                                                       <td><code>5 * 3</code></td>
+                                                       <td><code>13</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>/</kbd></td>
+                                                       <td> Division </td>
+                                                       <td><code>9 / 2</code></td>
+                                                       <td><code>4.5</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>%</kbd></td>
+                                                       <td> <a href="https://www.calculatorsoup.com/calculators/math/modulo-calculator.php">Modulus</a> </td>
+                                                       <td><code>8 % 4</code></td>
+                                                       <td><code>0</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>^</kbd></td>
+                                                       <td> Exponentiation </td>
+                                                       <td><code>2^4</code></td>
+                                                       <td><code>16</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>-</kbd></td>
+                                                       <td> Unary Negation	 </td>
+                                                       <td><code>-8</code></td>
+                                                       <td><code>-8</code></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                              </section>
                               <h2> Relational </h2>
-                              <section></section>
+                              <section>
+                                   <p> Relational operators are used to compare multiple operands inside a condition in order for the code block to execute. </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Operators </th>
+                                                       <th> Description </th>
+                                                       <th> Examples </th>
+                                                       <th> Returns </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>&equals;&equals;</code></td>
+                                                       <td> Checks if the condition is <ins>equal to</ins> the right. </td>
+                                                       <td><code>a &equals;&equals; b</code></td>
+                                                       <td><code>false</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>~&equals;</code></td>
+                                                       <td> Checks if the condition is <ins>not equal to</ins> the right. </td>
+                                                       <td><code>a ~&equals; b</code></td>
+                                                       <td><code>true</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>&lt;</code></td>
+                                                       <td> Checks if the condition is <ins>greater than</ins> the right. </td>
+                                                       <td><code>4 &lt; 5</code></td>
+                                                       <td><code>false</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>&gt;</code></td>
+                                                       <td> Checks if the condition is <ins>lesser than</ins> the right. </td>
+                                                       <td><code>4 &gt; 5</code></td>
+                                                       <td><code>true</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>&gt;&equals;</code></td>
+                                                       <td> Checks if the condition is <ins>greater or equal to</ins> the right. </td>
+                                                       <td><code>7 &gt;&equals; 7</code></td>
+                                                       <td><code>true</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>&lt;&equals;</code></td>
+                                                       <td> Checks if the condition is <ins>lesser or equal to</ins> the right. </td>
+                                                       <td><code>2 &lt;&equals; 5</code></td>
+                                                       <td><code>true</code></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                              </section>
                               <h2> Logical </h2>
-                              <section></section>
+                              <section>
+                                   <p> Logical operators are used to combine multiple conditions and to specify on what conditions needs to be <code>true</code>. </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Operators </th>
+                                                       <th> Description </th>
+                                                       <th> Example </th>
+                                                       <th> Returns </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>and</code></td>
+                                                       <td>Returns <code>true</code> if both statements are <code>true</code>; combines multiple conditions together.</td>
+                                                       <td><code>a &equals;&equals; false and b &equals;&equals; true</code></td>
+                                                       <td><code>false</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>or</code></td>
+                                                       <td>Returns <code>true</code> if one of the statements are <code>true</code>; Combines multiple conditions together.</td>
+                                                       <td><code>a &equals;&equals; false and b &equals;&equals; true</code></td>
+                                                       <td><code>true</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>not</code></td>
+                                                       <td>Reverses the condition; If the condition is <code>false</code> it will return <code>true</code> and vice versa.</td>
+                                                       <td><code>not false</code></td>
+                                                       <td><code>true</code></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                              </section>
                               <h2> Miscellaneous </h2>
-                              <section></section>
+                              <section>
+                                   <p> Miscellaneous operators only features two operators the Length and Concatenate operators. </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Operators </th>
+                                                       <th> Description </th>
+                                                       <th> Example </th>
+                                                       <th> Returns </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><kbd>#</kbd></td>
+                                                       <td> Length operator, Checks the maximum length size of a <code>string</code> or <code>table</code>. </td>
+                                                       <td><code>#'sussy'</code></td>
+                                                       <td><code>5</code></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><kbd>..</kbd></td>
+                                                       <td> Concatenate operator, Merges multiple <code>string</code> or <code>numbers</code> together. </td>
+                                                       <td><code>'snow'..'ball'</code></td>
+                                                       <td><code>snowball</code></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                              </section>
                          </section>
                          <hr/>
                          <h1> Control Statements </h1>
                          <section>
+                              <p> Control Statements allow you to control the execution of other statements. Which analyzes the statement's condition and decides whether to execute the code if it's <code>true</code> or not. </p>
                               <h2> Conditional Statements </h2>
                               <section>
+                                   <p> 
+                                        These are a type of control structure that specifies whether or not to execute the block code. They are the most common control structures to use. There are only 3 if-else statements: the 
+                                        <code>if</code>, <code>else</code>, <code>elseif</code> statements. 
+                                   </p>
                                    <h3> If Statement </h3>
-                                   <section></section>
+                                   <section>
+                                        <p> 
+                                             The If statement checks the condition if it's <code>true</code> or not. They are define with the <code>if</code> keyword followed by the specified condition to execute the statement 
+                                             with the <code>then</code> keyword. 
+                                        </p>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button" data-detail-output><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">getWeekDay</span> <span class="code-kyw">&equals;</span> <span class="code-modul">os</span>.<span class="code-funcC">date</span><span class="code-nest1">(</span><span class="code-str">'*t'</span><span class="code-nest1">)</span>.<span class="code-tabkey">wday</span> <span class="code-com">-- checks the current day of week</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">if</span> <span class="code-var">getWeekDay</span> <span class="code-ope">&equals;&equals;</span> <span class="code-num">6</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the current day is 'Friday'</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'Day: Friday'</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-4:</span> Friday
+</pre>
+                                        </div>
+                                   </section>
                                    <h3> Else Statement </h3>
-                                   <section></section>
+                                   <section>
+                                        <p>
+                                             The Else statement checks if the condition fails, then this statement will be executed. They are defined with the <code>else</code> keyword at the bottom of the <code>if</code> or 
+                                             <code>elseif</code> statement. That's it, nothing else to say about it.
+                                        </p>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">getWeekDay</span> <span class="code-kyw">&equals;</span> <span class="code-modul">os</span>.<span class="code-funcC">date</span><span class="code-nest1">(</span><span class="code-str">'*t'</span><span class="code-nest1">)</span>.<span class="code-tabkey">wday</span> <span class="code-com">-- checks the current day of week</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">if</span> <span class="code-var">getWeekDay</span> <span class="code-ope">&equals;&equals;</span> <span class="code-num">6</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the current day is 'Friday'</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'Day: Friday'</span><span class="code-nest1">)</span>
+     <span class="code-kyw">else</span>                    <span class="code-com">-- if the condition returns 'false'</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'Not Friday'</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output" data-detail-output>
+<span class="code-line">&gt; main.lua L-4:</span> Friday
+</pre>
+                                        </div>
+                                   </section>
                                    <h3> ElseIf Statement </h3>
-                                   <section></section>
+                                   <section>
+                                        <p>
+                                             The Elseif statement is an alternative condition if the other condition returns <code>false</code>. They are define with the <code>elseif</code> keyword with the new condition to 
+                                             execute a new condition followed by the <code>then</code> keyword.
+                                        </p>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">getWeekDay</span> <span class="code-kyw">&equals;</span> <span class="code-modul">os</span>.<span class="code-funcC">date</span><span class="code-nest1">(</span><span class="code-str">'*t'</span><span class="code-nest1">)</span>.<span class="code-tabkey">wday</span> <span class="code-com">-- checks the current day of week</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">if</span> <span class="code-var">getWeekDay</span> <span class="code-ope">&equals;&equals;</span> <span class="code-num">7</span> <span class="code-kyw">then</span>     <span class="code-com">-- checks if the day is 'Saturday'</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'Day: Saturday'</span><span class="code-nest1">)</span>
+     <span class="code-kyw">elseif</span> <span class="code-var">getWeekDay</span> <span class="code-ope">&equals;&equals;</span> <span class="code-num">1</span> <span class="code-kyw">then</span> <span class="code-com">-- checks if the day is 'Sunday'</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'Day: Sunday'</span><span class="code-nest1">)</span>
+     <span class="code-kyw">else</span>                        <span class="code-com">-- checks if both of the condition fails</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-str">'Day: Weekdays'</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output" data-detail-output>
+<span class="code-line">&gt; main.lua L-4:</span> Saturday
+</pre>
+                                        </div>
+                                   </section>
                               </section>
                               <h2> For Loop Statement </h2>
                               <section>
+                                   <p>
+                                        For loop statement allows you to loop a specific number of times. This loop is commonly used for <code>setPropertyFromGroup()</code> and <code>getPropertyFromGroup()</code> functions for note modification, modcharts, or something. And used for 
+                                        reading a table values or performing on numeric values. There are 2 types of loops Generic loop or Numeric Loop.
+                                   </p>
                                    <h3> Numeric </h3>
-                                   <section></section>
+                                   <section>
+                                        <p>
+                                             Numeric Loop uses numeric values to increment or to decrement a value. This loop is usually the most common loop to use for <code>setPropertyFromGroup()</code> and <code>getPropertyFromGroup()</code> functions. There are 3 expressions when 
+                                             declaring a Numeric loop these are <code>initializer</code>, <code>condition</code>, and <code>iteration</code>.
+                                        </p>
+                                        <table-bg>
+                                             <table>
+                                                  <thead>
+                                                       <tr>
+                                                            <th> Expression </th>
+                                                            <th> Description </th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td><code>initializer</code></td>
+                                                            <td> The initial variable for the loop to use. </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td><code>condition</code></td>
+                                                            <td> The condition of the loop to execute the code block. </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td><code>iteration</code></td>
+                                                            <td> An optional expression; The iterator for the loop to use you can either increment <kbd>+</kbd> or decrement <kbd>-</kbd> the value; Default value: <code>incremented</code>. </td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </table-bg>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">&equals;</span> <span class="code-num">0</span>, <span class="code-num">5</span>, <span class="code-num">1</span> <span class="code-kyw">do</span>  <span class="code-com">-- Increment loop</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">index</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+     <span class="code-kyw">for</span> <span class="code-var">index</span> <span class="code-kyw">&equals;</span> <span class="code-num">5</span>, <span class="code-num">0</span>, <span class="code-num">-1</span> <span class="code-kyw">do</span> <span class="code-com">-- Decrement loop</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">index</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-3:</span> 0
+<span class="code-line">&gt; main.lua L-3:</span> 1
+<span class="code-line">&gt; main.lua L-3:</span> 2
+<span class="code-line">&gt; main.lua L-3:</span> 3
+<span class="code-line">&gt; main.lua L-3:</span> 4
+<span class="code-line">&gt; main.lua L-3:</span> 5
+<span class="code-line">&gt; main.lua L-6:</span> 5
+<span class="code-line">&gt; main.lua L-6:</span> 4
+<span class="code-line">&gt; main.lua L-6:</span> 3
+<span class="code-line">&gt; main.lua L-6:</span> 2
+<span class="code-line">&gt; main.lua L-6:</span> 1
+<span class="code-line">&gt; main.lua L-6:</span> 0
+</pre>
+                                        </div>
+                                   </section>
                                    <h3> Generic </h3>
-                                   <section></section>
+                                   <section>
+                                        <p>
+                                             Generic Loop are another type of loop that allows you to traverse all values from a table; return from a iterator function from the <code>in</code> keyword. This is just an alternative loop for iterating every table elements. There are 2 
+                                             expressions when declaring a Generic Loop these are <code>initializer</code> and <code>iterator</code>.
+                                        </p>
+                                        <table-bg>
+                                             <table>
+                                                  <thead>
+                                                       <tr>
+                                                            <th> Expression </th>
+                                                            <th> Description </th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td><code>initializer</code></td>
+                                                            <td> 
+                                                                 The initial variable for the loop to use. The amount of variables depends on the iterator function; <code>pairs()</code>, <code>ipairs()</code>, and <code>next()</code> function only uses <code>1</code> or <code>2</code> 
+                                                                 variables. But the <code>gmatch()</code> function really depends of the captures from the string. </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td><code>iterator</code></td>
+                                                            <td> The iterator for the loop to use, already listed from the <code>initializer</code> description. </td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </table-bg>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
+                                        </div>
+                                        <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">local</span> <span class="code-var">tableThingy</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-tabkey">num1</span> <span class="code-kyw">&equals;</span> <span class="code-num">231</span>, <span class="code-tabkey">num2</span> <span class="code-kyw">&equals;</span> <span class="code-num">345</span>, <span class="code-tabkey">num3</span> <span class="code-kyw">&equals;</span> <span class="code-num">234</span><span class="code-nest1">}</span>
+     <span class="code-kyw">for</span> <span class="code-var">key</span>, <span class="code-var">value</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span><span class="code-nest1">(</span><span class="code-var">tableThingy</span><span class="code-nest1">)</span> <span class="code-kyw">do</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">key</span>, <span class="code-var">value</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-4:</span> num1 &equals; 231
+<span class="code-line">&gt; main.lua L-4:</span> num2 &equals; 345
+<span class="code-line">&gt; main.lua L-4:</span> num3 &equals; 234
+</pre>
+                                        </div>
+                                   </section>
                               </section>
                               <h2> While Loop Statement </h2>
-                              <section></section>
+                              <section>
+                                   <p>
+                                        While Loop statement will loop through a block of code infinitely until the specified condition returns <code>false</code>. To declare a while loop, they are defined with the <code>with</code> keyword followed by the specified condition to execute the 
+                                        statement with the <code>do</code> keyword.
+                                   </p>
+                                   <blockquote class="highlight-warn">
+                                        <span><i class="uil uil-exclamation-triangle"></i> <strong>Warning:</strong></span>
+                                        Check the condition when making a while loop statement. Because it might loop infinitely and crash your game! I'd suggest you test it <a href="https://www.mycompiler.io/new/lua">here</a> before implementing into the Lua script.
+                                   </blockquote>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">counter</span>   <span class="code-kyw">&equals;</span> <span class="code-num">5</span>
+<span class="code-kyw">local</span> <span class="code-var">factorial</span> <span class="code-kyw">&equals;</span> <span class="code-num">1</span>
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">while</span> <span class="code-var">counter</span> <span class="code-ope">&gt;</span> <span class="code-num">0</span> <span class="code-kyw">do</span>
+          <span class="code-var">factorial</span> <span class="code-kyw">&equals;</span> <span class="code-var">factorial</span> <span class="code-ope">*</span> <span class="code-var">counter</span>
+          <span class="code-var">counter</span>   <span class="code-kyw">&equals;</span> <span class="code-var">counter</span> <span class="code-ope">-</span> <span class="code-num">1</span>
+     <span class="code-kyw">end</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">factorial</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-8:</span> 120
+</pre>
+                                   </div>
+                              </section>
                               <h2> Return Statement </h2>
-                              <section></section>
+                              <section>
+                                   <p> Return statement as the name suggests returns the results from the function. And stops the execution of the function. It must be relative at the end of the function or conditional statement. </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-funcD">getMidpointNum</span><span class="code-nest1">(</span><span class="code-paraS">ope1</span>, <span class="code-paraS">ope2</span><span class="code-nest1">)</span>
+     <span class="code-kyw">return</span> <span class="code-nest1">(</span><span class="code-paraS">ope1</span> <span class="code-ope">+</span> <span class="code-paraS">ope2</span><span class="code-nest1">)</span> <span class="code-ope">/</span> <span class="code-num">2</span> <span class="code-com">-- returns the middle value between 'ope1' and 'ope2'</span>
+<span class="code-kyw">end</span> 
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-funcC">getMidpointNum</span><span class="code-nest2">(</span><span class="code-num">9</span> <span class="code-ope">+</span> <span class="code-num">10</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-6:</span> 9.5
+</pre>
+                                   </div>
+                              </section>
                               <h2> Break Statement </h2>
-                              <section></section>
+                              <section>
+                                   <p> Break statement stops the loop statements from looping. You can use this for specific conditions for the loop to end. It must be relative at the end of the function or conditional statement. </p>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">for</span> <span class="code-var">i</span> <span class="code-kyw">&equals;</span> <span class="code-num">1</span>, <span class="code-num">10</span> <span class="code-kyw">do</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">i</span><span class="code-nest1">)</span>
+          <span class="code-kyw">if</span> <span class="code-var">i</span> <span class="code-ope">&gt;&equals;</span> <span class="code-num">5</span> <span class="code-kyw">then</span> <span class="code-kyw">break</span> <span class="code-kyw">end</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-3:</span> 1
+<span class="code-line">&gt; main.lua L-3:</span> 2
+<span class="code-line">&gt; main.lua L-3:</span> 3
+<span class="code-line">&gt; main.lua L-3:</span> 4
+<span class="code-line">&gt; main.lua L-3:</span> 5
+</pre>
+                                   </div>
+                              </section>
                          </section>
                          <hr/>
                          <h1> Module System </h1>
-                         <section></section>
+                         <section>
+                              <p>
+                                   Modules are collections of code that is mostly contain functions, classes, variables, and other types of code. These can be reused in different parts of your Lua scripts and help you maintain a code base. 
+                                   They are commonly used to organize code to make it easy to share and reuse code across different Lua scripts.
+                              </p>
+                              <p>
+                                   Most programming languages use <code>import</code> and <code>export</code> statements; Lua uses table dictionaries for their modular system. To contain code and where the module's shared functions and variables 
+                                   or classes can be stored. With the <code>return</code> statement—returning the value of the table for the <code>require()</code> function to use.
+                              </p>
+                              <div class="code-header">
+                                   <div class="code-header-buttons">
+                                        <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                        <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                   </div>
+                                   <div class="code-header-display-buttons">
+                                        <button class="active-button"><span> Code </span></button>
+                                        <button class="inactive-button" disabled><span> Output </span></button>
+                                   </div>
+                              </div>
+                              <div class="code-border">
+<pre class="code-example-code" style="margin-bottom: 0.5cm !important;">
+<span class="code-kyw">local</span> <span class="code-var">myModule</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{}</span> <span class="code-com">-- table to contain code, important</span>
+
+<span class="code-var">myModule</span>.<span class="code-tabkey">red</span>   <span class="code-kyw">&equals;</span> <span class="code-str">'ff0000'</span> <span class="code-com">-- variables</span>
+<span class="code-var">myModule</span>.<span class="code-tabkey">green</span> <span class="code-kyw">&equals;</span> <span class="code-str">'00ff00'</span>
+<span class="code-var">myModule</span>.<span class="code-tabkey">blue</span>  <span class="code-kyw">&equals;</span> <span class="code-str">'0000ff'</span>
+
+<span class="code-kyw">function</span> <span class="code-var">myModule</span>.<span class="code-funcD">isEven</span><span class="code-nest1">(</span><span class="code-paraS">num</span><span class="code-nest1">)</span> <span class="code-com">-- function</span>
+     <span class="code-kyw">return</span> <span class="code-paraS">num</span> <span class="code-ope">%</span> <span class="code-num">2</span> <span class="code-ope">&equals;&equals;</span> <span class="code-num">0</span>
+<span class="code-kyw">end</span>
+
+<span class="code-kyw">return</span> <span class="code-var">myModule</span> <span class="code-com">-- returning the table, important</span>
+</pre>
+<pre class="code-example-output">
+</pre>
+                              </div>
+                              <div class="code-header">
+                                   <div class="code-header-buttons">
+                                        <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                        <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                   </div>
+                                   <div class="code-header-display-buttons">
+                                        <button class="active-button"><span> Code </span></button>
+                                        <button class="inactive-button"><span> Output </span></button>
+                                   </div>
+                              </div>
+                              <div class="code-border">
+<pre class="code-example-code" style="margin-bottom: 0cm !important;">
+<span class="code-kyw">local</span> <span class="code-modul">mod</span> <span class="code-kyw">&equals;</span> <span class="code-funcC">require</span><span class="code-nest1">(</span><span class="code-str">'mods/scripts/modules/test_modules'</span><span class="code-nest1">)</span> <span class="code-com">-- imports the module</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-modul">mod</span>.<span class="code-var">red</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-modul">mod</span>.<span class="code-funcC">isEven</span><span class="code-nest2">(</span><span class="code-num">23</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output" style="margin-bottom: 0cm !important;">
+<span class="code-line">&gt; main.lua L-4:</span> ff0000
+<span class="code-line">&gt; main.lua L-5:</span> false
+</pre>
+                              </div>
+                         </section>
                     </article>
                </article>
                <footer>

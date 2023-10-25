@@ -109,7 +109,7 @@ for (let dataInvalid of shortCutAll('*[data-search-invalid]')) {
 }
 
 
-// Searchin Input Stuff
+// Search Input Stuff
 const searchInput = shortCut('#wiki-search #search-search input')
 function filterInputPages() {
      const searchInputFilter = searchInput.value.toUpperCase().replace(/_/g, '')

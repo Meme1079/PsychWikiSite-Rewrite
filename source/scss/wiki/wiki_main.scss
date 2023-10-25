@@ -678,8 +678,11 @@ html {
                border-radius: gs.$global-border-radius;
                background-color: $color-wiki-codeblock-pre-bg;
                padding: 16px;
+               margin-bottom: 0.8cm;
 
                &.code-example-output {
+                    @include gs.no_selector;
+                    
                     display: none;
                     font-family: "VCR", Menlo, "Lucida Console", "Monaco", "monospace" !important;
                }
@@ -712,13 +715,8 @@ html {
                          display: block;
                     }
 
-                    span.code-line::before {
-                         content: '>  ';
-                         display: inline-block;
-                         text-align: center;
-                         color: hsl(0deg, 0%, 67%);
-                         width: 3em;
-                         padding-left: auto; margin-left: auto;
+                    span.code-line {
+                         color: hsl(0deg, 0%, 67%); 
                     }
                }
           } 

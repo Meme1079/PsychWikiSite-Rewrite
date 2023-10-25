@@ -636,8 +636,12 @@ html ::selection {
      border-radius: 5px;
      background-color: var(--color-wiki-codeblock-pre-bg);
      padding: 16px;
+     margin-bottom: 0.8cm;
 }
 #wiki-header #wiki-main pre.code-example-output {
+     user-select: none;
+     -moz-user-select: none;
+     -webkit-user-select: none;
      display: none;
      font-family: "VCR", Menlo, "Lucida Console", "Monaco", "monospace" !important;
 }
@@ -662,14 +666,8 @@ html ::selection {
 #wiki-header #wiki-main pre.code-example-output[data-code-visible] {
      display: block;
 }
-#wiki-header #wiki-main pre.code-example-output span.code-line::before {
-     content: ">  ";
-     display: inline-block;
-     text-align: center;
+#wiki-header #wiki-main pre.code-example-output span.code-line {
      color: hsl(0deg, 0%, 67%);
-     width: 3em;
-     padding-left: auto;
-     margin-left: auto;
 }
 :root[data-color-theme=dark] :is(pre.code-example-code, pre.code-example-syntax), meta[name=color-scheme][content=dark] :is(pre.code-example-code, pre.code-example-syntax) {
      --color-code-variables: hsl(0, 0%, 100%);

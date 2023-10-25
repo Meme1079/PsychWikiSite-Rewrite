@@ -103,12 +103,66 @@
                </header>
                <article id="wiki-header">
                     <article id="wiki-main">
-                         <h1>6969696969696969969696969696996969696969699</h1>
-                         <h2>6969696969696969969696969696996969696969699</h2>
-                         <h3>6969696969696969969696969696996969696969699</h3>
-                         <h4>6969696969696969969696969696996969696969699</h4>
-                         <h5>6969696969696969969696969696996969696969699</h5>
-                         <h6>6969696969696969969696969696996969696969699</h6>
+                         <h1> String Methods </h1>
+                         <section>  
+                              <h3> upper(str:String) </h3>
+                              <h3> lower(str:String) </h3>
+                              <h3> byte(str:String, ?startPos:Int = 1, ?endPos:Int = 1) </h3>
+                              <h3> char(...byte:Int) </h3>
+                              <h3> rep(str:String, repeat:Int) </h3>
+                              <h3> reverse(str:String) </h3>
+                              <h2> Patterns </h2>
+                              <section>
+                                   <h3> format(pattern:String, #str:String) </h3>
+                                   <h3> find(str:String, pattern:String, ?startPos:Int = 1) </h3>
+                                   <h3> sub(str:String, startPos:Int, ?endPos:Int = #str) </h3>
+                                   <h3> gsub(str:String, pattern:String, replace:String, ?repeat:Int = 1) </h3>
+                                   <h3> match(str:String, pattern:String, ?startPos:Int = 1) </h3>
+                                   <h3> gmatch(str:String, pattern:String) </h3> 
+                              </section>   
+                         </section>
+                         <hr/>
+                         <h1> Table Methods </h1>
+                         <section>
+                              <h3> insert(tab:Table, ?pos:Int, value:Dynamic) </h3>
+                              <h3> remove(tab:Table, ?pos:Int) </h3>
+                              <h3> concat(tab:Table, sep:String, ?minPos:Int, ?maxPos:Int) </h3>
+                              <h3> sort(tab:Table, ?comp:Function) </h3>
+                         </section>
+                         <hr/>
+                         <h1> Mathematical Methods </h1>
+                         <section>
+                              <h3> min(#num:Float) </h3>
+                              <h3> max(#num:Float) </h3>
+                              <h3> floor(num:Float) </h3>
+                              <h3> ceil(num:Float) </h3>
+                              <h3> abs(num:Float) </h3>
+                              <h3> sqrt(num:Float) </h3>
+                              <h3> deg(rad:Float) </h3>
+                              <h3> rad(deg:Float) </h3>
+                              <h3> modf(num:Float) </h3>
+                              <h3> log(exp:Float, base:Float) </h3>
+                              <h3> random(?min:Int, ?max:Int) </h3>
+                              <h3> randomseed(seed:Int) </h3>
+                              <h2> Trigonometry </h2>
+                              <section>
+                                   <h3> sin(num:Float) </h3>
+                                   <h3> cos(num:Float) </h3>
+                                   <h3> tan(num:Float) </h3>
+                                   <h3> asin(num:Float) </h3>
+                                   <h3> acos(num:Float) </h3>
+                                   <h3> atan(num1:Float) </h3>
+                                   <h3> atan2(num:Float, num2:Float) </h3>
+                                   <h3> sinh(num:Float) </h3>
+                                   <h3> cosh(num:Float) </h3>
+                                   <h3> tanh(num:Float) </h3>
+                              </section>
+                              <h2> Constants </h2>
+                              <section>
+                                   <h3> pi </h3>
+                                   <h3> huge </h3>
+                              </section>
+                         </section>
                     </article>
                </article>
                <footer>
@@ -134,7 +188,4 @@
                </footer>
           </main>
      </body>
-     <script>
-          //document.querySelectorAll('span.list-h1')[0].textContent
-     </script>
 </html>

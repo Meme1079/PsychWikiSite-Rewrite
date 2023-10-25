@@ -9,14 +9,6 @@ for (let preInd = 0; preInd < shortCutAll('pre.code-example-code').length; preIn
      shortCutAll('pre.code-example-code')[preInd].innerHTML = result.slice(0, result.length - 10)
 }
 
-for (let preInd = 0; preInd < shortCutAll('pre.code-example-output').length; preInd++) {
-     let result = ``
-     for (let dumbyLines of shortCutAll('pre.code-example-output')[preInd].innerHTML.split('\n')) {
-          result += `<span class="code-line">${dumbyLines}</span>\n`
-     }
-     shortCutAll('pre.code-example-output')[preInd].innerHTML = result.slice(0, result.length - 10)
-}
-
 // Adding the "Blocked" to the title
 for (let disButton of shortCutAll('button[disabled]')) {
      let withAttr = disButton.getAttribute('title') != null ? disButton.getAttribute('title') + ' (Blocked)' : '(Blocked)'
@@ -129,7 +121,7 @@ function toFirstUpperWord(str) {
      return results.substring(0, results.length - 1)
 }
 
-const getWindowPathNameFilter = window.location.href.match(/lua_coding_docs\/.*/s)[0].replace(/\//g, ' / ').replace('.html', '').split(' / ')
+const getWindowPathNameFilter = window.location.pathname.match(/lua_coding_docs\/.*/s)[0].replace(/\//g, ' / ').replace('.html', '').split(' / ')
 const getMainHeaderPath = shortCut('main header p')
 let incrementByOne = 0
 for (let windowPathNameSplit of getWindowPathNameFilter) {
@@ -147,7 +139,6 @@ for (let windowPathNameSplit of getWindowPathNameFilter) {
 shortCutAll('header-tag')[shortCutAll('header-tag').length - 1].setAttribute('higlighted-page', '')
 
 // Footer Shits
-
 try {
      const footerPrevH3 = shortCut('main footer #footer-goto-buttons #footer-goto-buttons-prev h3')
      const footerNextH3 = shortCut('main footer #footer-goto-buttons #footer-goto-buttons-next h3')

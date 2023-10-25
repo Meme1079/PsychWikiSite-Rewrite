@@ -121,7 +121,7 @@ shortCut('button[title="Sidebar"]').addEventListener('click', () => {
      }
 })
 
-const e = () => {
+function sidebarResizeThingy() {
      for (const iterator of shortCutAll('#wiki-sidebar > :not(#sidebar-search)')) {
           iterator.addEventListener('click', () => {
                shortCut('html').setAttribute('data-sidebar-media', false)
@@ -137,5 +137,12 @@ const e = () => {
      }
 }
 
-e()
-window.addEventListener('resize', e)
+sidebarResizeThingy()
+window.addEventListener('resize', sidebarResizeThingy)
+
+// Window Sidebar Shortcuts
+window.addEventListener('keydown', (event) => {
+     if (event.ctrlKey && event.key == 'h') {
+          shortCut('#wiki-sidebar #sidebar-search-main input').focus();
+     }
+})
