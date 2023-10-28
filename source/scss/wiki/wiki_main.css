@@ -300,6 +300,9 @@ html ::selection {
 #wiki-header #wiki-main :is(h1, h2, h3, h4, h5, h6)[data-selected] {
      color: var(--global-color-lightblue);
 }
+#wiki-header #wiki-main :is(h1, h2, h3, h4, h5, h6)[data-disabled] {
+     font-style: italic;
+}
 #wiki-header #wiki-main :is(h1, h2) {
      border-bottom: 1px solid var(--color-wiki-main-headings-bord-bottom);
      padding-bottom: 10px;
@@ -333,6 +336,12 @@ html ::selection {
      font-size: 0.9em;
      font-weight: 550;
      margin: 15px 0px 16px 0px;
+}
+#wiki-header #wiki-main h-section {
+     display: block;
+     font-style: italic;
+     font-size: 1.1em;
+     font-weight: 550;
 }
 :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
      --color-wiki-highlight-note-outline: hsl(210deg, 100%, 63%);
@@ -414,6 +423,7 @@ html ::selection {
      display: block;
      width: 101%;
      padding: 1px 1px 1px 1px;
+     margin-bottom: 0.5cm;
 }
 #wiki-header #wiki-main table-bg table {
      display: table;
@@ -448,7 +458,8 @@ html ::selection {
      padding: 10px 8px;
 }
 #wiki-header #wiki-main table-bg table tbody tr td:nth-child(2) {
-     max-width: 9cm;
+     min-width: 7cm;
+     max-width: 10cm;
 }
 #wiki-header #wiki-main table-bg table tbody tr:nth-child(even) {
      background-color: hsl(0deg, 0%, 11%);
@@ -533,13 +544,11 @@ html ::selection {
      outline: 1px solid var(--color-wiki-codeblock-all-bg);
      border-radius: 5px 5px 0 0;
      background-color: var(--color-wiki-codeblock-class-code-border);
-     position: relative;
-     top: 12px;
      padding: 10px;
+     margin-bottom: 1px;
 }
 #wiki-header #wiki-main .code-header[data-hidden] {
      border-radius: 5px;
-     margin-bottom: 0.9cm;
 }
 #wiki-header #wiki-main .code-header .code-header-buttons {
      float: right;
@@ -627,6 +636,7 @@ html ::selection {
 }
 #wiki-header #wiki-main .code-border pre {
      border-radius: 0 0 5px 5px;
+     margin-top: 0;
 }
 #wiki-header #wiki-main pre {
      -moz-tab-size: 8;
@@ -639,7 +649,6 @@ html ::selection {
      border-radius: 5px;
      background-color: var(--color-wiki-codeblock-pre-bg);
      padding: 16px;
-     margin-bottom: 0.8cm;
 }
 #wiki-header #wiki-main pre.code-example-output {
      user-select: none;

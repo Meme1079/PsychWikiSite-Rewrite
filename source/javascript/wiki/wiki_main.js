@@ -15,19 +15,28 @@ for (let disButton of shortCutAll('button[disabled]')) {
      disButton.setAttribute('title', withAttr)
 }
 
-// Set Selected Header
-const setSelectedMainHeader = () => {
-     for (const headerList of shortCutAll('main #wiki-header #wiki-main .header')) {
-          if (headerList.getAttribute('id') == window.location.hash.replace('#', '').replace(/%20/g, ' ')) {
-               headerList.setAttribute('data-selected', '')
-          } else {
-               headerList.removeAttribute('data-selected')
+// Missing Anchor Index Support
+try {
+     const getHashName = window.location.hash.match(/#.+@?\d*?/s)[0]
+     const getHashNameFilter = getHashName.replace(/@\d*/s, '').replace('#', '').replace(/%20/g, ' ')
+     function setWindowLocation(headerInd) {
+          let index = 0
+          while (true) { // first time using this
+               index += 1
+               if (headerInd.getAttribute('id') == `${getHashNameFilter}@${index}`) {
+                    window.location.href = `${window.location.pathname}#${getHashNameFilter}@${index}`
+                    break
+               }
           }
      }
-}
 
-setSelectedMainHeader()
-window.addEventListener('hashchange', setSelectedMainHeader)
+     for (let headerElement of shortCutAll('.header')) {
+          if (headerElement.getAttribute('id').match(getHashNameFilter)) {
+               setWindowLocation(headerElement)
+               break
+          }
+     }
+} catch (error) {}
 
 // Copy Code, Hide Code, & Switch to Ouput
 async function codeCopyToClipboard(preInd) {
@@ -135,7 +144,7 @@ function toFirstUpperWord(str) {
      return results.substring(0, results.length - 1)
 }
 
-const getWindowPathNameFilter = window.location.pathname.match(/lua_coding_docs\/.*/s)[0].replace(/\//g, ' / ').replace('.html', '').split(' / ')
+const getWindowPathNameFilter = window.location.pathname.replace('/source/html/', '').replace(/\//g, ' / ').replace('.html', '').split(' / ')
 const getMainHeaderPath = shortCut('main header p')
 let incrementByOne = 0
 for (let windowPathNameSplit of getWindowPathNameFilter) {

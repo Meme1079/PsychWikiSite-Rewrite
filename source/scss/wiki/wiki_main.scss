@@ -320,6 +320,9 @@ html {
                &[data-selected] {
                     color: gs.$global-color-lightblue;
                }
+               &[data-disabled] {
+                    font-style: italic;
+               }
           }
 
           $color-wiki-main-headings-bord-bottom: var(--color-wiki-main-headings-bord-bottom);
@@ -347,6 +350,13 @@ html {
           h4 { @include headerAttributes(1em, 550, $tag-h4-margin-values);    }
           h5 { @include headerAttributes(0.95em, 550, $tag-h5-margin-values); }
           h6 { @include headerAttributes(0.9em, 550, $tag-h6-margin-values);  }
+
+          h-section {
+               display: block;
+               font-style: italic;
+               font-size: 1.1em;
+               font-weight: 550;
+          }
 
           /* HighLights */
 
@@ -429,6 +439,7 @@ html {
                display: block;
                width: 101%;
                padding: 1px 1px 1px 1px;
+               margin-bottom: 0.5cm;
 
                table {
                     display: table;
@@ -444,8 +455,8 @@ html {
      
                               th {
                                    text-align: left;
-                                   font-weight: 500;  
-                                   padding: 10px 8px;  
+                                   font-weight: 500;
+                                   padding: 10px 8px;
                               }
                          }
                     }
@@ -456,8 +467,8 @@ html {
 
                          td {
                               text-align: left;
-                              font-weight: 500;  
-                              padding: 10px 8px;  
+                              font-weight: 500;
+                              padding: 10px 8px;
                          }
                     }
      
@@ -469,7 +480,8 @@ html {
                                    padding: 10px 8px;
      
                                    &:nth-child(2) {
-                                        max-width: 9cm;
+                                        min-width: 7cm;
+                                        max-width: 10cm;
                                    }
                               }
      
@@ -579,12 +591,11 @@ html {
                outline: 1px solid $color-wiki-codeblock-all-bg;
                border-radius: gs.$global-border-radius gs.$global-border-radius 0 0;
                background-color: $color-wiki-codeblock-class-code-border;
-               position: relative; top: 12px;
                padding: 10px;
+               margin-bottom: 1px;
 
                &[data-hidden] {
                     border-radius: gs.$global-border-radius;
-                    margin-bottom: 0.9cm;
                }
 
                .code-header-buttons {
@@ -671,6 +682,7 @@ html {
 
           .code-border pre {
                border-radius: 0 0 gs.$global-border-radius gs.$global-border-radius;
+               margin-top: 0;
           }
 
           pre {
@@ -682,7 +694,6 @@ html {
                border-radius: gs.$global-border-radius;
                background-color: $color-wiki-codeblock-pre-bg;
                padding: 16px;
-               margin-bottom: 0.8cm;
 
                &.code-example-output {
                     @include gs.no_selector;
