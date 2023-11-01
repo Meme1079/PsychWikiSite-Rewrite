@@ -26,38 +26,55 @@ for (let i = 0; i < shortCutAll('#wiki-main .header').length; i++) {
      } catch (error) {}
 }
 
-// TODO Sonic
+// Anti-Duplicate Header Hash
+const getContentTrim = (element) => { return element.textContent.trimStart().trimEnd() }
 
-let y = []
-for (const iterator of shortCutAll('#wiki-main .header')) {
-     y.push(iterator.textContent.trimStart().trimEnd())
+const allHeaderElemContent = []
+for (const headerElems of shortCutAll('#wiki-main .header')) {
+     allHeaderElemContent.push(getContentTrim(headerElems))
 }
 
-const counts = {};
-const sampleArray = y;
-sampleArray.forEach((x) => { counts[x] = (counts[x] || 0) + 1; });
+function getElementByCount(arr) {
+     const counts = {};
+     arr.forEach((x) => { counts[x] = (counts[x] || 0) + 1; });
 
-let q = []
-for (const [k,_] of Object.entries(counts)) {
-     for (const iterator of shortCutAll('#wiki-main .header')) {
-          if (iterator.textContent.trimStart().trimEnd() == k) {
-               q.push(iterator.textContent.trimStart().trimEnd())
+     return counts
+}
+
+function pushSelectedElems(checkIteration) {
+     for (const headerElems of shortCutAll('#wiki-main .header')) {
+          if (getContentTrim(headerElems) == checkIteration) {
+               headerElemSelected.push(getContentTrim(headerElems))
+               headerElemSelectedContent.push(headerElems)
+          } else {
+               continue
           }
      }
 }
 
-let index = 0
-for (let iterator = 1; iterator < shortCutAll('#wiki-main .header').length; iterator++) {
-     let d = q[iterator]
-     let m = q[iterator - 1]
+const headerElemSelected = []
+const headerElemSelectedContent = []
+for (const [content, counts] of Object.entries(getElementByCount(allHeaderElemContent))) {
+     if (counts > 1) {
+          pushSelectedElems(content)
+     } else {
+          continue
+     }
+}
 
-     if (shortCutAll('#wiki-main .header')[iterator].textContent.trimStart().trimEnd() == q[iterator]) {
-          index += 1
-          if (m != d) {
-               index = 0
-               shortCutAll('#wiki-main .header')[iterator].removeAttribute('data-althash')
+let hashIndex = 0
+for (let headSelectInd = 1; headSelectInd < headerElemSelectedContent.length; headSelectInd++) {
+     let mainHeaderElemContent   = headerElemSelectedContent[headSelectInd]
+     let mainHeaderElemPreSelect = headerElemSelected[headSelectInd - 1]
+     let mainHeaderElemSelect    = headerElemSelected[headSelectInd]
+     
+     if (getContentTrim(mainHeaderElemContent) == mainHeaderElemSelect) {
+          hashIndex += 1
+          if (mainHeaderElemPreSelect != mainHeaderElemSelect) {
+               hashIndex = 0
+               mainHeaderElemContent.removeAttribute('data-althash')
           } else {
-               shortCutAll('#wiki-main .header')[iterator].setAttribute('data-althash', `:alt-${index}`)
+               mainHeaderElemContent.setAttribute('data-althash', `:alt-${hashIndex}`)
           }
      }
 }
@@ -178,12 +195,14 @@ shortCut('button[title="Sidebar"]').addEventListener('click', () => {
 })
 
 function sidebarResizeThingy() {
-     for (const iterator of shortCutAll('#wiki-sidebar > :not(#sidebar-search)')) {
-          iterator.addEventListener('click', () => {
-               shortCut('html').setAttribute('data-sidebar-media', false)
-               mediaSidebar = false
-          })
-     } 
+     shortCut('#wiki-sidebar #sidebar-lists').addEventListener('click', () => {
+          shortCut('html').setAttribute('data-sidebar-media', false)
+          mediaSidebar = false
+     })
+     shortCut('#wiki-sidebar #sidebar-header').addEventListener('click', () => {
+          shortCut('html').setAttribute('data-sidebar-media', false)
+          mediaSidebar = false
+     })
 
      if (window.innerWidth <= 1000) {
           shortCut('main').addEventListener('click', () => {

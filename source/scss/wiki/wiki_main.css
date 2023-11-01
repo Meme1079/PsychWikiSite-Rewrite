@@ -185,9 +185,6 @@ html footer hr {
      height: 1px;
      margin: 0.6cm 0cm;
 }
-html body {
-     display: none;
-}
 html main {
      margin-top: 2.3cm;
 }
@@ -219,6 +216,7 @@ html ::selection {
      background-color: var(--color-wiki-main-bg);
      padding: 20px 25px;
      /* Headers */
+     /* Sections */
      /* HighLights */
      /* Tables */
      /* Code Blocks */
@@ -342,6 +340,27 @@ html ::selection {
      font-style: italic;
      font-size: 1.1em;
      font-weight: 550;
+}
+#wiki-header #wiki-main section.type-main {
+     margin-bottom: 0.8cm;
+}
+#wiki-header #wiki-main section.type-main .type-about {
+     margin-bottom: 0.6cm;
+}
+#wiki-header #wiki-main section.type-main :is(.syntax-header, .return-header) i {
+     cursor: pointer;
+     padding: 1px 2.5px;
+     margin-right: 4px;
+}
+#wiki-header #wiki-main section.type-main :is(.syntax-header, .return-header) i:hover {
+     border-radius: 360px;
+     background-color: #525252;
+}
+#wiki-header #wiki-main section.type-main [data-syntax-visibility=false] {
+     display: none;
+}
+#wiki-header #wiki-main section.type-main [data-return-visibility=false] {
+     display: none;
 }
 :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
      --color-wiki-highlight-note-outline: hsl(210deg, 100%, 63%);

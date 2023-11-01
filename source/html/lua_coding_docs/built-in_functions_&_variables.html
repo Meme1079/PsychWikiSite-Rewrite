@@ -34,14 +34,14 @@
                <div id="windows-error-javascript">
                     <div id="windows-error-javascript-topbar">
                          <span id="windows-error-javascript-topbar-title">Sorry! [Website Error]</span>
-                         <img src="images/error/popup_close_icon.png" alt="Window Close Icon">
+                         <img src="images/no_javascript_error/popup_close_icon.png" alt="Window Close Icon">
                     </div>
-                    <img id="windows-error-icon-warning" src="images/error/popup_warning.png" alt="Window Error Icon">
+                    <img id="windows-error-icon-warning" src="images/no_javascript_error/popup_warning.png" alt="Window Error Icon">
                     <div id="windows-error-javascript-text">
                          <p style="margin-bottom: 0px;">Oh no! You've disable Javascript you idiot</p>
                          <p style="margin-top: 10px;">Enable it Javascript to remove this error!</p>
                     </div>
-                    <img id="windows-error-button-ok" src="images/error/popup_ok_button.png" alt="Window Ok Button">
+                    <img id="windows-error-button-ok" src="images/no_javascript_error/popup_ok_button.png" alt="Window Ok Button">
                </div>
           </noscript>
           <aside id="wiki-topbar">
@@ -106,41 +106,42 @@
                          <h1> String Methods </h1>
                          <section>  
                               <h3> string.upper() </h3>
-                              <section style="margin-bottom: 0.8cm;">
-                                   <p> Converts any <ins>upper-case characters</ins> into lower-case characters. </p>
-                                   <table-bg>
-                                        <table>
-                                             <thead>
-                                                  <tr>
-                                                       <th> Parameters </th>
-                                                       <th> Description </th>
-                                                       <th> Data Type </th>
-                                                       <th> Defualt Value </th>
-                                                       <th> Speciality </th>
-                                                  </tr>
-                                             </thead>
-                                             <tbody>
-                                                  <tr>
-                                                       <td><code>str</code></td>
-                                                       <td> The lower-case characters from the string to be converted. </td>
-                                                       <td><code>String</code></td>
-                                                       <td><em>None</em></td>
-                                                       <td><em>None</em></td>
-                                                  </tr>
-                                             </tbody>
-                                        </table>
-                                   </table-bg>
-                                   <div class="code-header">
-                                        <div class="code-header-buttons">
-                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                              <section class="type-main">
+                                   <section class="type-about">
+                                        <p> Converts any <ins>upper-case characters</ins> into lower-case characters. </p>
+                                        <table-bg>
+                                             <table>
+                                                  <thead>
+                                                       <tr>
+                                                            <th> Parameters </th>
+                                                            <th> Description </th>
+                                                            <th> Data Type </th>
+                                                            <th> Defualt Value </th>
+                                                            <th> Speciality </th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td><code>str</code></td>
+                                                            <td> The lower-case characters from the string to be converted. </td>
+                                                            <td><code>String</code></td>
+                                                            <td><em>None</em></td>
+                                                            <td><em>None</em></td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </table-bg>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
                                         </div>
-                                        <div class="code-header-display-buttons">
-                                             <button class="active-button"><span> Code </span></button>
-                                             <button class="inactive-button"><span> Output </span></button>
-                                        </div>
-                                   </div>
-                                   <div class="code-border">
+                                        <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
      <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'CHEeeEeEEEeeSe'</span><span class="code-nest2">)</span>:<span class="code-funcC">upper</span><span class="code-nest2">()</span><span class="code-nest1">)</span>
@@ -149,18 +150,19 @@
 <pre class="code-example-output">
 <span class="code-line">&gt; main.lua L-2:</span> CHEEEEEEEEEESE
 </pre>
-                                   </div>
-                                   <h3 data-disabled> Syntax </h3>
-                                   <sub-section>
+                                        </div>
+                                   </section>
+                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
+                                   <section data-syntax-visibility="false">
 <pre class="code-example-syntax">
 <span class="code-modul">string</span>.<span class="code-funcC">upper</span><span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>
 </pre>
 <pre class="code-example-syntax">
 <span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">upper</span><span class="code-nest1">()</span>
 </pre>
-                                   </sub-section>
-                                   <h3 data-disabled> Return Values </h3>
-                                   <sub-section>
+                                   </section>
+                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
+                                   <section data-return-visibility="false">
                                         <table-bg>
                                              <table>
                                                   <thead>
@@ -177,64 +179,66 @@
                                                   </tbody>
                                              </table>
                                         </table-bg>
-                                   </sub-section>
+                                   </section>
                               </section>
                               <h3> string.lower() </h3>
-                              <section style="margin-bottom: 0.8cm;">
-                                   <p> Converts any <ins>lower-case characters</ins> into upper-case characters. </p>
-                                   <table-bg>
-                                        <table>
-                                             <thead>
-                                                  <tr>
-                                                       <th> Parameters </th>
-                                                       <th> Description </th>
-                                                       <th> Data Type </th>
-                                                       <th> Defualt Value </th>
-                                                       <th> Speciality </th>
-                                                  </tr>
-                                             </thead>
-                                             <tbody>
-                                                  <tr>
-                                                       <td><code>str</code></td>
-                                                       <td> The upper-case characters from the string to be converted. </td>
-                                                       <td><code>String</code></td>
-                                                       <td><em>None</em></td>
-                                                       <td><em>None</em></td>
-                                                  </tr>
-                                             </tbody>
-                                        </table>
-                                   </table-bg>
-                                   <div class="code-header">
-                                        <div class="code-header-buttons">
-                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                              <section class="type-main">
+                                   <section class="type-about">
+                                        <p> Converts any <ins>lower-case characters</ins> into upper-case characters. </p>
+                                        <table-bg>
+                                             <table>
+                                                  <thead>
+                                                       <tr>
+                                                            <th> Parameters </th>
+                                                            <th> Description </th>
+                                                            <th> Data Type </th>
+                                                            <th> Defualt Value </th>
+                                                            <th> Speciality </th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td><code>str</code></td>
+                                                            <td> The upper-case characters from the string to be converted. </td>
+                                                            <td><code>String</code></td>
+                                                            <td><em>None</em></td>
+                                                            <td><em>None</em></td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </table-bg>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
                                         </div>
-                                        <div class="code-header-display-buttons">
-                                             <button class="active-button"><span> Code </span></button>
-                                             <button class="inactive-button"><span> Output </span></button>
-                                        </div>
-                                   </div>
-                                   <div class="code-border">
+                                        <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'CHEeeEeEEEeeSe'</span><span class="code-nest2">)</span>:<span class="code-funcC">lower</span><span class="code-nest2">()</span><span class="code-nest1">)</span>
+<span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'CHEeeEeEEEeeSe'</span><span class="code-nest2">)</span>:<span class="code-funcC">lower</span><span class="code-nest2">()</span><span class="code-nest1">)</span>
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
 <span class="code-line">&gt; main.lua L-2:</span> cheeeeeeeeeese
 </pre>
-                                   </div>
-                                   <h3 data-disabled> Syntax </h3>
-                                   <sub-section>
+                                        </div>
+                                   </section>
+                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
+                                   <section data-syntax-visibility="false">
 <pre class="code-example-syntax">
 <span class="code-modul">string</span>.<span class="code-funcC">lower</span><span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>
 </pre>
 <pre class="code-example-syntax">
 <span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">lower</span><span class="code-nest1">()</span>
 </pre>
-                                   </sub-section>
-                                   <h3 data-disabled> Return Values </h3>
-                                   <sub-section>
+                                   </section>
+                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
+                                   <section data-return-visibility="false">
                                         <table-bg>
                                              <table>
                                                   <thead>
@@ -251,58 +255,59 @@
                                                   </tbody>
                                              </table>
                                         </table-bg>
-                                   </sub-section>
+                                   </section>
                               </section>
                               <h3> string.byte() </h3>
-                              <section style="margin-bottom: 0.8cm;">
-                                   <p> Converts any <ins>alphabetical characters</ins> into <abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters. </p>
-                                   <table-bg>
-                                        <table>
-                                             <thead>
-                                                  <tr>
-                                                       <th> Parameters </th>
-                                                       <th> Description </th>
-                                                       <th> Data Type </th>
-                                                       <th> Defualt Value </th>
-                                                       <th> Speciality </th>
-                                                  </tr>
-                                             </thead>
-                                             <tbody>
-                                                  <tr>
-                                                       <td><code>str</code></td>
-                                                       <td> The characters from the string to be converted. </td>
-                                                       <td><code>String</code></td>
-                                                       <td><em>None</em></td>
-                                                       <td><em>None</em></td>
-                                                  </tr>
-                                                  <tr>
-                                                       <td><code>startPos</code></td>
-                                                       <td> The specified starting position from the string to convert. </td>
-                                                       <td><code>Int</code></td>
-                                                       <td><code>1</code></td>
-                                                       <td><em>Optional</em></td>
-                                                  </tr>
-                                                  <tr>
-                                                       <td><code>endPos</code></td>
-                                                       <td> The specified ending position from the string to convert. </td>
-                                                       <td><code>Int</code></td>
-                                                       <td><code>1</code></td>
-                                                       <td><em>Optional</em></td>
-                                                  </tr>
-                                             </tbody>
-                                        </table>
-                                   </table-bg>
-                                   <div class="code-header">
-                                        <div class="code-header-buttons">
-                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                              <section class="type-main">
+                                   <section class="type-about">
+                                        <p> Converts any <ins>alphabetical characters</ins> into <abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters. </p>
+                                        <table-bg>
+                                             <table>
+                                                  <thead>
+                                                       <tr>
+                                                            <th> Parameters </th>
+                                                            <th> Description </th>
+                                                            <th> Data Type </th>
+                                                            <th> Defualt Value </th>
+                                                            <th> Speciality </th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td><code>str</code></td>
+                                                            <td> The characters from the string to be converted. </td>
+                                                            <td><code>String</code></td>
+                                                            <td><em>None</em></td>
+                                                            <td><em>None</em></td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td><code>startPos</code></td>
+                                                            <td> The specified starting position from the string to convert. </td>
+                                                            <td><code>Int</code></td>
+                                                            <td><code>1</code></td>
+                                                            <td><em>Optional</em></td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td><code>endPos</code></td>
+                                                            <td> The specified ending position from the string to convert. </td>
+                                                            <td><code>Int</code></td>
+                                                            <td><code>1</code></td>
+                                                            <td><em>Optional</em></td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </table-bg>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
                                         </div>
-                                        <div class="code-header-display-buttons">
-                                             <button class="active-button"><span> Code </span></button>
-                                             <button class="inactive-button"><span> Output </span></button>
-                                        </div>
-                                   </div>
-                                   <div class="code-border">
+                                        <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
      <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'a'</span><span class="code-nest2">)</span>:<span class="code-funcC">byte</span><span class="code-nest2">()</span><span class="code-nest1">)</span>
@@ -311,18 +316,19 @@
 <pre class="code-example-output">
 <span class="code-line">&gt; main.lua L-2:</span> 97
 </pre>
-                                   </div>
-                                   <h3 data-disabled> Syntax </h3>
-                                   <sub-section>
+                                        </div>
+                                   </section>
+                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
+                                   <section data-syntax-visibility="false">
 <pre class="code-example-syntax">
 <span class="code-modul">string</span>.<span class="code-funcC">byte</span><span class="code-nest1">(</span><span class="code-str">str</span>, <span class="code-num">startPos</span>, <span class="code-num">endPos</span><span class="code-nest1">)</span>
 </pre>
 <pre class="code-example-syntax">
 <span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">byte</span><span class="code-nest1">(</span><span class="code-num">startPos</span>, <span class="code-num">endPos</span><span class="code-nest1">)</span>
 </pre>
-                                   </sub-section>
-                                   <h3 data-disabled> Returns </h3>
-                                   <sub-section>
+                                   </section>
+                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
+                                   <section data-return-visibility="false">
                                         <table-bg>
                                              <table>
                                                   <thead>
@@ -342,48 +348,49 @@
                                                   </tbody>
                                              </table>
                                         </table-bg>
-                                   </sub-section>
+                                   </section>
                               </section>
                               <h3> string.char() </h3>
-                              <section style="margin-bottom: 0.8cm;">
-                                   <p> Converts any <ins><abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters</ins> into alphabetical characters. </p>
-                                   <blockquote class="highlight-note">
-                                        <span><i class="uil uil-info-circle"></i> <strong>Note:</strong></span>
-                                        This function doesn't support the string shortcut!
-                                   </blockquote>
-                                   <table-bg>
-                                        <table>
-                                             <thead>
-                                                  <tr>
-                                                       <th> Parameters </th>
-                                                       <th> Description </th>
-                                                       <th> Data Type </th>
-                                                       <th> Defualt Value </th>
-                                                       <th> Speciality </th>
-                                                  </tr>
-                                             </thead>
-                                             <tbody>
-                                                  <tr>
-                                                       <td><code>byte</code></td>
-                                                       <td> The ASCII character from the string to be converted. </td>
-                                                       <td><code>Int</code></td>
-                                                       <td><em>None</em></td>
-                                                       <td><em>Infinite</em></td>
-                                                  </tr>
-                                             </tbody>
-                                        </table>
-                                   </table-bg>
-                                   <div class="code-header">
-                                        <div class="code-header-buttons">
-                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                              <section class="type-main">
+                                   <section class="type-about">
+                                        <p> Converts any <ins><abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters</ins> into alphabetical characters. </p>
+                                        <blockquote class="highlight-note">
+                                             <span><i class="uil uil-info-circle"></i> <strong>Note:</strong></span>
+                                             This function doesn't support the colon operator shortcut!
+                                        </blockquote>
+                                        <table-bg>
+                                             <table>
+                                                  <thead>
+                                                       <tr>
+                                                            <th> Parameters </th>
+                                                            <th> Description </th>
+                                                            <th> Data Type </th>
+                                                            <th> Defualt Value </th>
+                                                            <th> Speciality </th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td><code>byte</code></td>
+                                                            <td> The ASCII character from the string to be converted. </td>
+                                                            <td><code>Int</code></td>
+                                                            <td><em>None</em></td>
+                                                            <td><em>Infinite</em></td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </table-bg>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
                                         </div>
-                                        <div class="code-header-display-buttons">
-                                             <button class="active-button"><span> Code </span></button>
-                                             <button class="inactive-button"><span> Output </span></button>
-                                        </div>
-                                   </div>
-                                   <div class="code-border">
+                                        <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
      <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-modul">string</span>.<span class="code-funcC">char</span><span class="code-nest2">(</span><span class="code-num">97</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
@@ -392,15 +399,16 @@
 <pre class="code-example-output">
 <span class="code-line">&gt; main.lua L-2:</span> a
 </pre>
-                                   </div>
-                                   <h3 data-disabled> Syntax </h3>
-                                   <sub-section>
+                                        </div>
+                                   </section>
+                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
+                                   <section data-syntax-visibility="false">
 <pre class="code-example-syntax">
-<span class="code-modul">string</span>.<span class="code-funcC">byte</span><span class="code-nest1">(</span><span class="code-num">byte</span><span class="code-nest1">)</span>
+<span class="code-modul">string</span>.<span class="code-funcC">char</span><span class="code-nest1">(</span><span class="code-num">byte</span><span class="code-nest1">)</span>
 </pre>
-                                   </sub-section>
-                                   <h3 data-disabled> Returns </h3>
-                                   <sub-section>
+                                   </section>
+                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
+                                   <section data-return-visibility="false">
                                         <table-bg>
                                              <table>
                                                   <thead>
@@ -414,57 +422,58 @@
                                                             <td><code>String</code></td>
                                                             <td> 
                                                                  The <abbr title="American Standard Code for Information Interchange">ASCII</abbr> character representing to its corresponding character. If two or more arguments are passed
-                                                                 then it will concatenate <abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters into a <code>string</code>.
+                                                                 then it will concatenate the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters into a <code>string</code>.
                                                             </td>
                                                        </tr>
                                                   </tbody>
                                              </table>
                                         </table-bg>
-                                   </sub-section>
+                                   </section>
                               </section>
                               <h3> string.rep() </h3>
-                              <section style="margin-bottom: 0.8cm;">
-                                   <p> <ins>Repeats the string's content</ins> and concatenated them together—determined by <ins>how many times it will repeat itself</ins>. </p>
-                                   <table-bg>
-                                        <table>
-                                             <thead>
-                                                  <tr>
-                                                       <th> Parameters </th>
-                                                       <th> Description </th>
-                                                       <th> Data Type </th>
-                                                       <th> Defualt Value </th>
-                                                       <th> Speciality </th>
-                                                  </tr>
-                                             </thead>
-                                             <tbody>
-                                                  <tr>
-                                                       <td><code>str</code></td>
-                                                       <td> The string's content to be repeated. </td>
-                                                       <td><code>String</code></td>
-                                                       <td><em>None</em></td>
-                                                       <td><em>None</em></td>
-                                                  </tr>
-                                                  <tr>
-                                                       <td><code>repeat</code></td>
-                                                       <td> How many times it will be repeated. </td>
-                                                       <td><code>Int</code></td>
-                                                       <td><em>None</em></td>
-                                                       <td><em>None</em></td>
-                                                  </tr>
-                                             </tbody>
-                                        </table>
-                                   </table-bg>
-                                   <div class="code-header">
-                                        <div class="code-header-buttons">
-                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                              <section class="type-main">
+                                   <section class="type-about">
+                                        <p> <ins>Repeats the string's content</ins> and concatenated them together—determined by <ins>how many times it will repeat itself</ins>. </p>
+                                        <table-bg>
+                                             <table>
+                                                  <thead>
+                                                       <tr>
+                                                            <th> Parameters </th>
+                                                            <th> Description </th>
+                                                            <th> Data Type </th>
+                                                            <th> Defualt Value </th>
+                                                            <th> Speciality </th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td><code>str</code></td>
+                                                            <td> The string's content to be repeated. </td>
+                                                            <td><code>String</code></td>
+                                                            <td><em>None</em></td>
+                                                            <td><em>None</em></td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td><code>repeat</code></td>
+                                                            <td> How many times it will be repeated. </td>
+                                                            <td><code>Int</code></td>
+                                                            <td><em>None</em></td>
+                                                            <td><em>None</em></td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </table-bg>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
                                         </div>
-                                        <div class="code-header-display-buttons">
-                                             <button class="active-button"><span> Code </span></button>
-                                             <button class="inactive-button"><span> Output </span></button>
-                                        </div>
-                                   </div>
-                                   <div class="code-border">
+                                        <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
      <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'repeated-'</span><span class="code-nest2">)</span>:<span class="code-funcC">rep</span><span class="code-nest2">(</span><span class="code-num">3</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
@@ -473,18 +482,19 @@
 <pre class="code-example-output">
 <span class="code-line">&gt; main.lua L-2:</span> repeated-repeated-repeated-
 </pre>
-                                   </div>
-                                   <h3 data-disabled> Syntax </h3>
-                                   <sub-section>
+                                        </div>
+                                   </section>
+                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
+                                   <section data-syntax-visibility="false">
 <pre class="code-example-syntax">
 <span class="code-modul">string</span>.<span class="code-funcC">rep</span><span class="code-nest1">(</span><span class="code-str">str</span>, <span class="code-num">repeat</span><span class="code-nest1">)</span>
 </pre>
 <pre class="code-example-syntax">
 <span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">rep</span><span class="code-nest1">(</span><span class="code-num">repeat</span><span class="code-nest1">)</span>
 </pre>
-                                   </sub-section>
-                                   <h3 data-disabled> Returns </h3>
-                                   <sub-section>
+                                   </section>
+                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
+                                   <section data-return-visibility="false">
                                         <table-bg>
                                              <table>
                                                   <thead>
@@ -501,44 +511,45 @@
                                                   </tbody>
                                              </table>
                                         </table-bg>
-                                   </sub-section>
+                                   </section>
                               </section>
                               <h3> string.reverse() </h3>
-                              <section style="margin-bottom: 0.8cm;">
-                                   <p> <ins>Reverses the string</ins>, that's it nothing else. </p>
-                                   <table-bg>
-                                        <table>
-                                             <thead>
-                                                  <tr>
-                                                       <th> Parameters </th>
-                                                       <th> Description </th>
-                                                       <th> Data Type </th>
-                                                       <th> Defualt Value </th>
-                                                       <th> Speciality </th>
-                                                  </tr>
-                                             </thead>
-                                             <tbody>
-                                                  <tr>
-                                                       <td><code>str</code></td>
-                                                       <td> The string's content to be reverse. </td>
-                                                       <td><code>String</code></td>
-                                                       <td><em>None</em></td>
-                                                       <td><em>None</em></td>
-                                                  </tr>
-                                             </tbody>
-                                        </table>
-                                   </table-bg>
-                                   <div class="code-header">
-                                        <div class="code-header-buttons">
-                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                              <section class="type-main">
+                                   <section class="type-about">
+                                        <p> <ins>Reverses the string</ins>, that's it nothing else. </p>
+                                        <table-bg>
+                                             <table>
+                                                  <thead>
+                                                       <tr>
+                                                            <th> Parameters </th>
+                                                            <th> Description </th>
+                                                            <th> Data Type </th>
+                                                            <th> Defualt Value </th>
+                                                            <th> Speciality </th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td><code>str</code></td>
+                                                            <td> The string's content to be reverse. </td>
+                                                            <td><code>String</code></td>
+                                                            <td><em>None</em></td>
+                                                            <td><em>None</em></td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </table-bg>
+                                        <div class="code-header">
+                                             <div class="code-header-buttons">
+                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                             </div>
+                                             <div class="code-header-display-buttons">
+                                                  <button class="active-button"><span> Code </span></button>
+                                                  <button class="inactive-button"><span> Output </span></button>
+                                             </div>
                                         </div>
-                                        <div class="code-header-display-buttons">
-                                             <button class="active-button"><span> Code </span></button>
-                                             <button class="inactive-button"><span> Output </span></button>
-                                        </div>
-                                   </div>
-                                   <div class="code-border">
+                                        <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
      <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'based'</span><span class="code-nest2">)</span>:<span class="code-funcC">reverse</span><span class="code-nest2">()</span><span class="code-nest1">)</span>
@@ -547,18 +558,19 @@
 <pre class="code-example-output">
 <span class="code-line">&gt; main.lua L-2:</span> desab
 </pre>
-                                   </div>
-                                   <h3 data-disabled> Syntax </h3>
-                                   <sub-section>
+                                        </div>
+                                   </section>
+                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
+                                   <section data-syntax-visibility="false">
 <pre class="code-example-syntax">
 <span class="code-modul">string</span>.<span class="code-funcC">reverse</span><span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>
 </pre>
 <pre class="code-example-syntax">
 <span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">reverse</span><span class="code-nest1">(</span><span class="code-nest1">)</span>
 </pre>
-                                   </sub-section>
-                                   <h3 data-disabled> Returns </h3>
-                                   <sub-section>
+                                   </section>
+                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
+                                   <section data-syntax-visibility="false">
                                         <table-bg>
                                              <table>
                                                   <thead>
@@ -575,7 +587,7 @@
                                                   </tbody>
                                              </table>
                                         </table-bg>
-                                   </sub-section>
+                                   </section>
                               </section>
                               <h2> Patterns </h2>
                               <section>

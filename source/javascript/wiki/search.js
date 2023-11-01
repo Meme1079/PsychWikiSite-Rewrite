@@ -49,8 +49,14 @@ document.body.addEventListener('keydown', (event) => {
      if (event.metaKey && event.key == 'k') showSearchWindow();
      if (event.ctrlKey && event.key == 'r') generateFacts();
 })
+
+shortCut('#wiki-search #search-lists').addEventListener('click', () => {
+     shortCut('#wiki-search').close();
+})
 window.addEventListener('click', (event) => {
-     if (event.target == shortCut('#wiki-search')) shortCut('#wiki-search').close();
+     if (window.innerWidth > 750) {
+          if (event.target == shortCut('#wiki-search')) shortCut('#wiki-search').close();
+     }
 })
 
 // Search Window Lists
@@ -107,7 +113,6 @@ for (let dataEven = 1; dataEven < shortCutAll('#search-lists ul li').length; dat
 for (let dataInvalid of shortCutAll('*[data-search-invalid]')) {
      dataInvalid.remove()
 }
-
 
 // Search Input Stuff
 const searchInput = shortCut('#wiki-search #search-search input')

@@ -37,6 +37,12 @@ noscript #windows-error-javascript {
           height: 4cm;
      }
 }
+@media only screen and (max-width: 430px) {
+     noscript #windows-error-javascript {
+          width: 8cm;
+          height: 4cm;
+     }
+}
 noscript #windows-error-javascript #windows-error-javascript-topbar {
      color: white !important;
      background-color: hsl(249deg, 100%, 50%);
@@ -48,10 +54,10 @@ noscript #windows-error-javascript #windows-error-javascript-topbar {
      }
 }
 noscript #windows-error-javascript #windows-error-javascript-topbar #windows-error-javascript-topbar-title {
-     font-size: 2em;
+     font-size: 1.9em;
      font-weight: 660;
      position: relative;
-     bottom: 0.85cm;
+     bottom: 0.88cm;
      left: 5px;
 }
 @media only screen and (max-width: 490px) {
@@ -65,18 +71,24 @@ noscript #windows-error-javascript #windows-error-javascript-topbar #windows-err
           bottom: 0.75cm;
      }
 }
+@media only screen and (max-width: 430px) {
+     noscript #windows-error-javascript #windows-error-javascript-topbar #windows-error-javascript-topbar-title {
+          font-size: 1.2em;
+          bottom: 0.67cm;
+     }
+}
 noscript #windows-error-javascript #windows-error-javascript-topbar img {
      cursor: not-allowed;
      width: 60px;
      height: 60px;
      position: relative;
      bottom: 11.5px;
-     left: 3.1cm;
+     left: 3.6cm;
      -webkit-font-smoothing: antialiased;
 }
 @media only screen and (max-width: 580px) {
      noscript #windows-error-javascript #windows-error-javascript-topbar img {
-          left: 1.1cm;
+          left: 1.6cm;
      }
 }
 @media only screen and (max-width: 490px) {
@@ -85,6 +97,14 @@ noscript #windows-error-javascript #windows-error-javascript-topbar img {
           height: 50px;
           bottom: 11px;
           left: 1.65cm;
+     }
+}
+@media only screen and (max-width: 430px) {
+     noscript #windows-error-javascript #windows-error-javascript-topbar img {
+          width: 45px;
+          height: 45px;
+          bottom: 8px;
+          left: 1.15cm;
      }
 }
 noscript #windows-error-javascript #windows-error-icon-warning {
@@ -104,6 +124,11 @@ noscript #windows-error-javascript #windows-error-icon-warning {
      noscript #windows-error-javascript #windows-error-icon-warning {
           width: 80px;
           height: 80px;
+     }
+}
+@media only screen and (max-width: 430px) {
+     noscript #windows-error-javascript #windows-error-icon-warning {
+          bottom: 0cm;
      }
 }
 noscript #windows-error-javascript #windows-error-javascript-text {
@@ -127,6 +152,14 @@ noscript #windows-error-javascript #windows-error-javascript-text {
           left: 1.6cm;
      }
 }
+@media only screen and (max-width: 430px) {
+     noscript #windows-error-javascript #windows-error-javascript-text {
+          font-size: 0.85em;
+          bottom: 2.3cm;
+          left: 1.6cm;
+          width: 6cm;
+     }
+}
 noscript #windows-error-javascript #windows-error-button-ok {
      cursor: not-allowed;
      width: 140px;
@@ -145,5 +178,11 @@ noscript #windows-error-javascript #windows-error-button-ok {
           width: 120px;
           height: 50px;
           left: 3.55cm;
+     }
+}
+@media only screen and (max-width: 430px) {
+     noscript #windows-error-javascript #windows-error-button-ok {
+          bottom: 2.55cm;
+          left: 2.4cm;
      }
 }

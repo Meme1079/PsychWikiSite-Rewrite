@@ -38,6 +38,32 @@ try {
      }
 } catch (error) {}
 
+// Section Visibility
+function showSection(sectType, sectInd) {
+     let shown = true
+     shortCutAll(`.${sectType}-header i`)[sectInd].addEventListener('click', () => {
+          if (shown == true) {
+               shortCutAll(`.${sectType}-header i`)[sectInd].setAttribute('class', 'uil uil-angle-up')
+               shortCutAll(`section[data-${sectType}-visibility]`)[sectInd].setAttribute(`data-${sectType}-visibility`, 'true')
+               shown = false
+          } else {
+               shortCutAll(`.${sectType}-header i`)[sectInd].setAttribute('class', 'uil uil-angle-down')
+               shortCutAll(`section[data-${sectType}-visibility]`)[sectInd].setAttribute(`data-${sectType}-visibility`, 'false')
+               shown = true
+          }
+     })
+}
+
+function implementSectionVisibility(sectType) {
+     for (const head in shortCutAll(`h3.${sectType}-header`)) {
+          if (head == 'entries') break;
+          showSection(sectType, head)
+     }
+}
+
+implementSectionVisibility('syntax')
+implementSectionVisibility('return')
+
 // Copy Code, Hide Code, & Switch to Ouput
 async function codeCopyToClipboard(preInd) {
      const codeContent = shortCutAll('pre.code-example-code')[preInd].innerText

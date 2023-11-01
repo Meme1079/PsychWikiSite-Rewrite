@@ -1,7 +1,7 @@
 const shortCutAll = (tag) => { return document.querySelectorAll(tag) }
 const shortCut = (tag) => { return document.querySelector(tag) }
 
-window.onload = () => { shortCut('body').style.display = 'block' } //! Don't delete this
+//window.onload = () => { shortCut('body').style.display = 'block' } //! Don't delete this
 window.addEventListener('keydown', (event) => {
      if (event.key == '1') window.scrollTo(0, 0);
      if (event.key == '2') window.scrollTo(0, Number.MAX_SAFE_INTEGER);

@@ -9,6 +9,7 @@ $local-window-image-size-warning:  120px;
 
 $local-media-query-max1: 580px;
 $local-media-query-max2: 490px;
+$local-media-query-max3: 430px;
 
 /* Goofy aaaahhhhh code */
 
@@ -48,6 +49,9 @@ noscript {
           @media only screen and (max-width: $local-media-query-max2) {
                @include mediaSupportJS-mainSize(10cm, 4cm);
           }
+          @media only screen and (max-width: $local-media-query-max3) {
+               @include mediaSupportJS-mainSize(8cm, 4cm);
+          }
 
           #windows-error-javascript-topbar {
                color: white !important;
@@ -59,10 +63,10 @@ noscript {
                }
                
                #windows-error-javascript-topbar-title {
-                    font-size: 2em;
+                    font-size: 1.9em;
                     font-weight: 660;
                     position: relative;
-                    bottom: 0.85cm; left: 5px;
+                    bottom: 0.88cm; left: 5px;
      
                     @media only screen and (max-width: $local-media-query-max2) {
                          font-size: 1.5em;
@@ -71,6 +75,10 @@ noscript {
                     @media only screen and (max-width: $local-media-query-max2) {
                          bottom: 0.75cm;
                     }
+                    @media only screen and (max-width: $local-media-query-max3) {
+                         font-size: 1.2em;
+                         bottom: 0.67cm;
+                    }
                }
      
                img {
@@ -78,16 +86,21 @@ noscript {
                     width: $local-window-image-size-xButton; 
                     height: $local-window-image-size-xButton;
                     position: relative;
-                    bottom: 11.5px; left: 3.1cm;
+                    bottom: 11.5px; left: 3.6cm;
                     -webkit-font-smoothing: antialiased;
      
                     @media only screen and (max-width: $local-media-query-max1) {
-                         left: 1.1cm;
+                         left: 1.6cm;
                     }
                     @media only screen and (max-width: $local-media-query-max2) {
                          width: calc($local-window-image-size-xButton - 10px); 
                          height: calc($local-window-image-size-xButton - 10px);
                          bottom: 11px; left: 1.65cm;
+                    }
+                    @media only screen and (max-width: $local-media-query-max3) {
+                         width: calc($local-window-image-size-xButton - 15px); 
+                         height: calc($local-window-image-size-xButton - 15px);
+                         bottom: 8px; left: 1.15cm;
                     }
                }
           }
@@ -109,6 +122,9 @@ noscript {
                @media only screen and (max-width: $local-media-query-max2) {
                     @include mediaSupportJS-iconWarn(40px, 40px);
                }
+               @media only screen and (max-width: $local-media-query-max3) {
+                    bottom: 0cm;
+               }
           }
      
           #windows-error-javascript-text {
@@ -128,6 +144,10 @@ noscript {
                @media only screen and (max-width: $local-media-query-max2) {
                     @include mediaSupportJS-text(0.9em, 2.3cm, 1.6cm);
                }
+               @media only screen and (max-width: $local-media-query-max3) {
+                    @include mediaSupportJS-text(0.85em, 2.3cm, 1.6cm);
+                    width: 6cm;
+               }
           }
      
           #windows-error-button-ok {
@@ -144,6 +164,9 @@ noscript {
                     width: calc(calc($local-window-image-size-okButton * 2 + 20px) - 20px); 
                     height: calc($local-window-image-size-okButton - 10px);
                     left: 3.55cm;
+               }
+               @media only screen and (max-width: $local-media-query-max3) {
+                    bottom: 2.55cm; left: 2.4cm;
                }
           }
      }

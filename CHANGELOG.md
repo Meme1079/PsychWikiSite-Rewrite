@@ -1,3 +1,11 @@
+### Version 4.0.0-Beta _(Still in Development!)_
+- Added an anti-duplicate header hash system to the wiki
+- Improve the code for the location format in the header
+- Fixed some stuff on the "No Javascript Screen"
+     - Re-added the Dina fonts _(How the hell did forgot about this????)_
+     - Added a third layer to the "No Javascript Screen" for really small phones
+     - Fixed a bug where the "No Javascript Screen" didn't loaded the images
+
 ### Version 3.0.1-Beta
 - Fixed a bug from the text header from the header wiki
 
