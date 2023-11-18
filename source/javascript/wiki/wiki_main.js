@@ -41,28 +41,25 @@ try {
 // Section Visibility
 function showSection(sectType, sectInd) {
      let shown = true
-     shortCutAll(`.${sectType}-header i`)[sectInd].addEventListener('click', () => {
+     shortCutAll(`.${sectType}-sub-headers i`)[sectInd].addEventListener('click', () => {
           if (shown == true) {
-               shortCutAll(`.${sectType}-header i`)[sectInd].setAttribute('class', 'uil uil-angle-up')
-               shortCutAll(`section[data-${sectType}-visibility]`)[sectInd].setAttribute(`data-${sectType}-visibility`, 'true')
+               shortCutAll(`.${sectType}-sub-headers i`)[sectInd].setAttribute('class', 'uil uil-angle-up')
+               shortCutAll(`section[data-visibility-type=${sectType}]`)[sectInd].setAttribute(`data-isVisible`, true)
                shown = false
           } else {
-               shortCutAll(`.${sectType}-header i`)[sectInd].setAttribute('class', 'uil uil-angle-down')
-               shortCutAll(`section[data-${sectType}-visibility]`)[sectInd].setAttribute(`data-${sectType}-visibility`, 'false')
+               shortCutAll(`.${sectType}-sub-headers i`)[sectInd].setAttribute('class', 'uil uil-angle-down')
+               shortCutAll(`section[data-visibility-type=${sectType}]`)[sectInd].setAttribute(`data-isVisible`, false)
                shown = true
           }
      })
 }
 
-function implementSectionVisibility(sectType) {
-     for (const head in shortCutAll(`h3.${sectType}-header`)) {
+export function implementSectionVisibility(sectType) {
+     for (const head in shortCutAll(`h3.${sectType}-sub-headers`)) {
           if (head == 'entries') break;
           showSection(sectType, head)
      }
 }
-
-implementSectionVisibility('syntax')
-implementSectionVisibility('return')
 
 // Copy Code, Hide Code, & Switch to Ouput
 async function codeCopyToClipboard(preInd) {

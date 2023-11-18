@@ -64,7 +64,7 @@ $main-wiki-margX: list.nth($main-wiki-margins, 2);
 
 html {
      font-family: gs.$global-font-family;
-     scroll-behavior: smooth;
+     //scroll-behavior: smooth;
 
      :is(header, footer) {
           font-size: 1em;
@@ -247,6 +247,11 @@ html {
                }
           }
 
+          abbr {
+               text-decoration: underline dashed;
+               font-weight: bold;
+          }
+
           p {
                font-size: 1.05em;
           }
@@ -356,30 +361,22 @@ html {
 
           /* Sections */
 
-          section.type-main {
+          section.main-headers {
                margin-bottom: 0.8cm;
+          }
 
-               .type-about {
-                    margin-bottom: 0.6cm;
-               }
+          h3.sub-headers i {
+               border-radius: 360px;
+               padding: 1px 2px;
+               margin-right: 0.2cm;
 
-               :is(.syntax-header, .return-header) i {
-                    cursor: pointer;
-                    padding: 1px 2.5px;
-                    margin-right: 4px;
+               &:hover {
+                    background-color: hsla(216, 8%, 52%, 0.5);
+               }
+          }
 
-                    &:hover {
-                         border-radius: 360px;
-                         background-color: #525252;
-                    }
-               }
-
-               [data-syntax-visibility="false"] {
-                    display: none;
-               }
-               [data-return-visibility="false"] {
-                    display: none;
-               }
+          section[data-visibility-type][data-isVisible=false] {
+               display: none;
           }
 
           /* HighLights */
@@ -502,10 +499,9 @@ html {
 
                               td {
                                    padding: 10px 8px;
-     
+
                                    &:nth-child(2) {
-                                        min-width: 7cm;
-                                        max-width: 10cm;
+                                        min-width: 7cm; max-width: 10cm;
                                    }
                               }
      
@@ -777,8 +773,9 @@ html {
                          --color-code-parameter-single:   hsl(34, 100%, 65%);
                          --color-code-parameter-infinite: hsl(208, 100%, 78%);
                          --color-code-modules:            hsl(168, 55%, 54%);
+                         --color-code-modules-variables:  hsl(208, 100%, 78%);
                          --color-code-escape-characters:  hsl(1, 100%, 79%);
-                         --color-code-pattern-characters: hsl(168, 55%, 54%);
+                         --color-code-pattern-characters: hsl(118, 100%, 78%);
                          --color-code-table-keys:         hsl(34, 100%, 65%);
      
                          --color-code-nestLevel1: hsl(208, 100%, 78%);
@@ -806,11 +803,11 @@ html {
                          --color-code-parameter-single:   hsl(34, 100%, 39%);
                          --color-code-parameter-infinite: hsl(220, 98%, 20%);
                          --color-code-modules:            hsl(168, 100%, 33%);
+                         --color-code-modules-variables:  hsl(220, 98%, 20%);
                          --color-code-escape-characters:  hsl(355, 85%, 34%);
-                         --color-code-pattern-characters: hsl(168, 100%, 33%);
+                         --color-code-pattern-characters: hsl(118, 100%, 23%);
                          --color-code-table-keys:         hsl(0, 0%, 0%);
 
-     
                          --color-code-nestLevel1: hsl(217, 97%, 37%);
                          --color-code-nestLevel2: hsl(138, 98%, 19%);
                          --color-code-nestLevel3: hsl(35, 100%, 23%);
@@ -836,6 +833,7 @@ html {
                &.code-paraS  { color: var(--color-code-parameter-single);   }
                &.code-paraI  { color: var(--color-code-parameter-infinite); }
                &.code-modul  { color: var(--color-code-modules);            }
+               &.code-varM   { color: var(--color-code-modules-variables);  }
                &.code-esc    { color: var(--color-code-escape-characters);  }
                &.code-ptr    { color: var(--color-code-pattern-characters); }
                &.code-tabkey { color: var(--color-code-table-keys);         }

@@ -61,7 +61,6 @@
 
 html {
      font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
-     scroll-behavior: smooth;
 }
 html :is(header, footer) {
      font-size: 1em;
@@ -239,6 +238,11 @@ html ::selection {
 #wiki-header #wiki-main a::selection {
      color: #FFB770;
 }
+#wiki-header #wiki-main abbr {
+     -webkit-text-decoration: underline dashed;
+             text-decoration: underline dashed;
+     font-weight: bold;
+}
 #wiki-header #wiki-main p {
      font-size: 1.05em;
 }
@@ -341,25 +345,18 @@ html ::selection {
      font-size: 1.1em;
      font-weight: 550;
 }
-#wiki-header #wiki-main section.type-main {
+#wiki-header #wiki-main section.main-headers {
      margin-bottom: 0.8cm;
 }
-#wiki-header #wiki-main section.type-main .type-about {
-     margin-bottom: 0.6cm;
-}
-#wiki-header #wiki-main section.type-main :is(.syntax-header, .return-header) i {
-     cursor: pointer;
-     padding: 1px 2.5px;
-     margin-right: 4px;
-}
-#wiki-header #wiki-main section.type-main :is(.syntax-header, .return-header) i:hover {
+#wiki-header #wiki-main h3.sub-headers i {
      border-radius: 360px;
-     background-color: #525252;
+     padding: 1px 2px;
+     margin-right: 0.2cm;
 }
-#wiki-header #wiki-main section.type-main [data-syntax-visibility=false] {
-     display: none;
+#wiki-header #wiki-main h3.sub-headers i:hover {
+     background-color: hsla(216deg, 8%, 52%, 0.5);
 }
-#wiki-header #wiki-main section.type-main [data-return-visibility=false] {
+#wiki-header #wiki-main section[data-visibility-type][data-isVisible=false] {
      display: none;
 }
 :root[data-color-theme=dark], meta[name=color-scheme][content=dark] {
@@ -715,8 +712,9 @@ html ::selection {
      --color-code-parameter-single: hsl(34, 100%, 65%);
      --color-code-parameter-infinite: hsl(208, 100%, 78%);
      --color-code-modules: hsl(168, 55%, 54%);
+     --color-code-modules-variables: hsl(208, 100%, 78%);
      --color-code-escape-characters: hsl(1, 100%, 79%);
-     --color-code-pattern-characters: hsl(168, 55%, 54%);
+     --color-code-pattern-characters: hsl(118, 100%, 78%);
      --color-code-table-keys: hsl(34, 100%, 65%);
      --color-code-nestLevel1: hsl(208, 100%, 78%);
      --color-code-nestLevel2: hsl(132, 73%, 57%);
@@ -741,8 +739,9 @@ html ::selection {
      --color-code-parameter-single: hsl(34, 100%, 39%);
      --color-code-parameter-infinite: hsl(220, 98%, 20%);
      --color-code-modules: hsl(168, 100%, 33%);
+     --color-code-modules-variables: hsl(220, 98%, 20%);
      --color-code-escape-characters: hsl(355, 85%, 34%);
-     --color-code-pattern-characters: hsl(168, 100%, 33%);
+     --color-code-pattern-characters: hsl(118, 100%, 23%);
      --color-code-table-keys: hsl(0, 0%, 0%);
      --color-code-nestLevel1: hsl(217, 97%, 37%);
      --color-code-nestLevel2: hsl(138, 98%, 19%);
@@ -793,6 +792,9 @@ html ::selection {
 }
 #wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-modul {
      color: var(--color-code-modules);
+}
+#wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-varM {
+     color: var(--color-code-modules-variables);
 }
 #wiki-header #wiki-main :is(.code-example-code, .code-example-syntax) span.code-esc {
      color: var(--color-code-escape-characters);

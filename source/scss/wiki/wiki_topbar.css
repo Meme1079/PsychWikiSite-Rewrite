@@ -104,11 +104,17 @@ body { /* Delete this or you'll get neutered */
      outline: none;
      border: none;
      background: none;
-     width: 6.14cm;
+     width: auto;
      padding: 0;
      margin: 0 0 0 3px;
 }
-#wiki-topbar #topbar-list #list-search kbd {
+#wiki-topbar #topbar-list #list-search #command-buttons-hint {
+     display: inline;
+     float: right;
+     position: relative;
+     top: 2px;
+}
+#wiki-topbar #topbar-list #list-search #command-buttons-hint kbd {
      font-family: BlinkMacSystemFont, "Arial", "Verdana", "Helvetica", "Times New Roman";
      font-size: 0.8em;
      border: 1px solid hsl(0deg, 0%, 20%);
@@ -118,7 +124,7 @@ body { /* Delete this or you'll get neutered */
      bottom: 2px;
      padding: 1px 3px;
 }
-#wiki-topbar #topbar-list #list-search kbd:nth-last-child(1) {
+#wiki-topbar #topbar-list #list-search #command-buttons-hint kbd:nth-last-child(1) {
      padding: 1px 4px !important;
      margin-left: 3px;
 }

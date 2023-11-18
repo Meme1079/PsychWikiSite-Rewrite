@@ -1,5 +1,3 @@
-import { shortCutAll } from "../../main.js";
-
 const codeLine = (line) => { return `<span class="code-line">&gt; main.lua L-${line}:</span> ` }
 switch (new Date().getDay()) {
      case 5:
@@ -7,8 +5,10 @@ switch (new Date().getDay()) {
           shortCutAll('*[data-detail-output]')[1].innerHTML = codeLine(4) + 'Day: Friday'
           break;
      default:
-          shortCutAll('*[data-detail-output]')[0].setAttribute('disabled', '')
-          shortCutAll('*[data-detail-output]')[1].innerHTML = codeLine(6) + 'Not Friday'
+          try {
+               shortCutAll('*[data-detail-output]')[0].setAttribute('disabled', '')
+               shortCutAll('*[data-detail-output]')[1].innerHTML = codeLine(6) + 'Not Friday'
+          } catch (error) {}
           break;
 }
 

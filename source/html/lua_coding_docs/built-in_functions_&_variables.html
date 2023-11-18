@@ -53,7 +53,7 @@
                     <div id="list-search">
                          <i class="uil uil-search"></i>
                          <button>Search PsychWikiSite</button>
-                         <kbd>⌘</kbd><kbd>K</kbd>
+                         <div id="command-buttons-hint"><kbd>⌘</kbd><kbd>K</kbd></div>
                     </div>
                     <div id="list-divider"></div>
                     <div id="list-sublist">
@@ -103,543 +103,504 @@
                </header>
                <article id="wiki-header">
                     <article id="wiki-main">
-                         <h1> String Methods </h1>
-                         <section>  
-                              <h3> string.upper() </h3>
-                              <section class="type-main">
-                                   <section class="type-about">
-                                        <p> Converts any <ins>upper-case characters</ins> into lower-case characters. </p>
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Parameters </th>
-                                                            <th> Description </th>
-                                                            <th> Data Type </th>
-                                                            <th> Defualt Value </th>
-                                                            <th> Speciality </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>str</code></td>
-                                                            <td> The lower-case characters from the string to be converted. </td>
-                                                            <td><code>String</code></td>
-                                                            <td><em>None</em></td>
-                                                            <td><em>None</em></td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                        <div class="code-header">
-                                             <div class="code-header-buttons">
-                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
-                                             </div>
-                                             <div class="code-header-display-buttons">
-                                                  <button class="active-button"><span> Code </span></button>
-                                                  <button class="inactive-button"><span> Output </span></button>
-                                             </div>
+                         <h1> Functions </h1>
+                         <section>
+                              <h3> type() </h3>
+                              <section class="main-headers">
+                                   <p> 
+                                        Returns the corresponding type of its only argument, coded as a string; Possibly returns: <code>string</code>, <code>number</code>, <code>boolean</code>, 
+                                        <code>table</code>, <code>function</code>, <code>thread</code>, or <code>userdata</code>.
+                                   </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Parameters </th>
+                                                       <th> Description </th>
+                                                       <th> Data Type </th>
+                                                       <th> Defualt Value </th>
+                                                       <th> Speciality </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>data</code></td>
+                                                       <td> The given value to check the corresponding type. </td>
+                                                       <td><code>Any</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>None</em></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
                                         </div>
-                                        <div class="code-border">
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'CHEeeEeEEEeeSe'</span><span class="code-nest2">)</span>:<span class="code-funcC">upper</span><span class="code-nest2">()</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">type</span><span class="code-nest2">(</span><span class="code-str">''</span><span class="code-nest3">)</span> <span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">type</span><span class="code-nest2">(</span><span class="code-num">42</span><span class="code-nest3">)</span> <span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">type</span><span class="code-nest2">(</span><span class="code-nest3">{}</span><span class="code-nest3">)</span> <span class="code-nest1">)</span>
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-<span class="code-line">&gt; main.lua L-2:</span> CHEEEEEEEEEESE
+<span class="code-line">&gt; main.lua L-2:</span> string
+<span class="code-line">&gt; main.lua L-3:</span> number
+<span class="code-line">&gt; main.lua L-4:</span> table
 </pre>
-                                        </div>
-                                   </section>
-                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
-                                   <section data-syntax-visibility="false">
-<pre class="code-example-syntax">
-<span class="code-modul">string</span>.<span class="code-funcC">upper</span><span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>
-</pre>
-<pre class="code-example-syntax">
-<span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">upper</span><span class="code-nest1">()</span>
-</pre>
-                                   </section>
-                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
-                                   <section data-return-visibility="false">
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Data Type </th>
-                                                            <th> Description </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>String</code></td>
-                                                            <td> The upper-case to lower-case characters converted from the string. </td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                   </section>
+                                   </div>
                               </section>
-                              <h3> string.lower() </h3>
-                              <section class="type-main">
-                                   <section class="type-about">
-                                        <p> Converts any <ins>lower-case characters</ins> into upper-case characters. </p>
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Parameters </th>
-                                                            <th> Description </th>
-                                                            <th> Data Type </th>
-                                                            <th> Defualt Value </th>
-                                                            <th> Speciality </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>str</code></td>
-                                                            <td> The upper-case characters from the string to be converted. </td>
-                                                            <td><code>String</code></td>
-                                                            <td><em>None</em></td>
-                                                            <td><em>None</em></td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                        <div class="code-header">
-                                             <div class="code-header-buttons">
-                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
-                                             </div>
-                                             <div class="code-header-display-buttons">
-                                                  <button class="active-button"><span> Code </span></button>
-                                                  <button class="inactive-button"><span> Output </span></button>
-                                             </div>
+                              <h3> tostring() </h3>
+                              <section class="main-headers">
+                                   <p>
+                                        Converts the given <code>number</code> or <code>boolean</code> value into a real <code>string</code> value for a human-readable format; Returns a <code>nil</code> value 
+                                        if it is trying convert a non-number or non-boolean to convert.
+                                   </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Parameters </th>
+                                                       <th> Description </th>
+                                                       <th> Data Type </th>
+                                                       <th> Defualt Value </th>
+                                                       <th> Speciality </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>arg</code></td>
+                                                       <td> The given number or boolean to convert. </td>
+                                                       <td><code>Float</code> | <code>Bool</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>None</em></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
                                         </div>
-                                        <div class="code-border">
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-<span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'CHEeeEeEEEeeSe'</span><span class="code-nest2">)</span>:<span class="code-funcC">lower</span><span class="code-nest2">()</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">type</span><span class="code-nest2">(</span><span class="code-funcC">tostring</span><span class="code-nest3">(</span><span class="code-num">4425</span><span class="code-nest3">)</span><span class="code-nest2">)</span> <span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">type</span><span class="code-nest2">(</span><span class="code-funcC">tostring</span><span class="code-nest3">(</span><span class="code-boo">true</span><span class="code-nest3">)</span><span class="code-nest2">)</span> <span class="code-nest1">)</span>
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-<span class="code-line">&gt; main.lua L-2:</span> cheeeeeeeeeese
+<span class="code-line">&gt; main.lua L-2:</span> string
+<span class="code-line">&gt; main.lua L-3:</span> string
 </pre>
-                                        </div>
-                                   </section>
-                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
-                                   <section data-syntax-visibility="false">
-<pre class="code-example-syntax">
-<span class="code-modul">string</span>.<span class="code-funcC">lower</span><span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>
-</pre>
-<pre class="code-example-syntax">
-<span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">lower</span><span class="code-nest1">()</span>
-</pre>
-                                   </section>
-                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
-                                   <section data-return-visibility="false">
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Data Type </th>
-                                                            <th> Description </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>String</code></td>
-                                                            <td> The lower-case to upper-case characters converted from the string. </td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                   </section>
+                                   </div>
                               </section>
-                              <h3> string.byte() </h3>
-                              <section class="type-main">
-                                   <section class="type-about">
-                                        <p> Converts any <ins>alphabetical characters</ins> into <abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters. </p>
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Parameters </th>
-                                                            <th> Description </th>
-                                                            <th> Data Type </th>
-                                                            <th> Defualt Value </th>
-                                                            <th> Speciality </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>str</code></td>
-                                                            <td> The characters from the string to be converted. </td>
-                                                            <td><code>String</code></td>
-                                                            <td><em>None</em></td>
-                                                            <td><em>None</em></td>
-                                                       </tr>
-                                                       <tr>
-                                                            <td><code>startPos</code></td>
-                                                            <td> The specified starting position from the string to convert. </td>
-                                                            <td><code>Int</code></td>
-                                                            <td><code>1</code></td>
-                                                            <td><em>Optional</em></td>
-                                                       </tr>
-                                                       <tr>
-                                                            <td><code>endPos</code></td>
-                                                            <td> The specified ending position from the string to convert. </td>
-                                                            <td><code>Int</code></td>
-                                                            <td><code>1</code></td>
-                                                            <td><em>Optional</em></td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                        <div class="code-header">
-                                             <div class="code-header-buttons">
-                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
-                                             </div>
-                                             <div class="code-header-display-buttons">
-                                                  <button class="active-button"><span> Code </span></button>
-                                                  <button class="inactive-button"><span> Output </span></button>
-                                             </div>
+                              <h3> tonumber() </h3>
+                              <section class="main-headers">
+                                   <p>
+                                        Converts the given <code>string</code> value into a real <code>number</code> value, this will only work if there is no non-numeric characters present. Returns a 
+                                        <code>nil</code> value if it is trying convert a non-string to convert.
+                                   </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Parameters </th>
+                                                       <th> Description </th>
+                                                       <th> Data Type </th>
+                                                       <th> Defualt Value </th>
+                                                       <th> Speciality </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>arg</code></td>
+                                                       <td> The given string to convert. </td>
+                                                       <td><code>String</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>None</em></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
                                         </div>
-                                        <div class="code-border">
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'a'</span><span class="code-nest2">)</span>:<span class="code-funcC">byte</span><span class="code-nest2">()</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-funcC">type</span><span class="code-nest2">(</span><span class="code-funcC">tonumber</span><span class="code-nest3">(</span><span class="code-str">'5323'</span><span class="code-nest3">)</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-funcC">type</span><span class="code-nest2">(</span><span class="code-funcC">tonumber</span><span class="code-nest3">(</span><span class="code-str">'1.25'</span><span class="code-nest3">)</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
+
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-funcC">tonumber</span><span class="code-nest2">(</span><span class="code-str">'11'</span>, <span class="code-num">8</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-funcC">tonumber</span><span class="code-nest2">(</span><span class="code-str">'ff0000'</span>, <span class="code-num">16</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-<span class="code-line">&gt; main.lua L-2:</span> 97
+<span class="code-line">&gt; main.lua L-2:</span> number
+<span class="code-line">&gt; main.lua L-3:</span> number
+<span class="code-line">&gt; main.lua L-5:</span> 9
+<span class="code-line">&gt; main.lua L-6:</span> 16711680
 </pre>
-                                        </div>
-                                   </section>
-                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
-                                   <section data-syntax-visibility="false">
-<pre class="code-example-syntax">
-<span class="code-modul">string</span>.<span class="code-funcC">byte</span><span class="code-nest1">(</span><span class="code-str">str</span>, <span class="code-num">startPos</span>, <span class="code-num">endPos</span><span class="code-nest1">)</span>
-</pre>
-<pre class="code-example-syntax">
-<span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">byte</span><span class="code-nest1">(</span><span class="code-num">startPos</span>, <span class="code-num">endPos</span><span class="code-nest1">)</span>
-</pre>
-                                   </section>
-                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
-                                   <section data-return-visibility="false">
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Data Type </th>
-                                                            <th> Description </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>Int</code></td>
-                                                            <td> 
-                                                                 The character representing to its corresponding <abbr title="American Standard Code for Information Interchange">ASCII</abbr> character. If the <code>startPos</code> and
-                                                                 <code>endPos</code> arguments are used, it will return mutiple values. If you want to get the other values convert it into a <code>table</code>.
-                                                            </td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                   </section>
+                                   </div>
                               </section>
-                              <h3> string.char() </h3>
-                              <section class="type-main">
-                                   <section class="type-about">
-                                        <p> Converts any <ins><abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters</ins> into alphabetical characters. </p>
-                                        <blockquote class="highlight-note">
-                                             <span><i class="uil uil-info-circle"></i> <strong>Note:</strong></span>
-                                             This function doesn't support the colon operator shortcut!
-                                        </blockquote>
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Parameters </th>
-                                                            <th> Description </th>
-                                                            <th> Data Type </th>
-                                                            <th> Defualt Value </th>
-                                                            <th> Speciality </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>byte</code></td>
-                                                            <td> The ASCII character from the string to be converted. </td>
-                                                            <td><code>Int</code></td>
-                                                            <td><em>None</em></td>
-                                                            <td><em>Infinite</em></td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                        <div class="code-header">
-                                             <div class="code-header-buttons">
-                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
-                                             </div>
-                                             <div class="code-header-display-buttons">
-                                                  <button class="active-button"><span> Code </span></button>
-                                                  <button class="inactive-button"><span> Output </span></button>
-                                             </div>
+                              <h3> require() </h3>
+                              <section class="main-headers">
+                                   <p> Searches the location of the module and loads the given module. And controls if the Lua file has previously been executed in order to avoid duplicating the work. </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Parameters </th>
+                                                       <th> Description </th>
+                                                       <th> Data Type </th>
+                                                       <th> Defualt Value </th>
+                                                       <th> Speciality </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>module</code></td>
+                                                       <td> The given module to load; Starts outside the <code>mods</code> folder directory. </td>
+                                                       <td><code>String</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>None</em></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                              </section>
+                              <h3> load() </h3>
+                              <section class="main-headers">
+                                   <p> 
+                                        Receives the Lua code from the argument and parses it into a real Lua code. The given code will be loaded inside a function, so if you want to return a value just use 
+                                        the goddamn <code>return</code> statement. 
+                                   </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Parameters </th>
+                                                       <th> Description </th>
+                                                       <th> Data Type </th>
+                                                       <th> Defualt Value </th>
+                                                       <th> Speciality </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>code</code></td>
+                                                       <td> The code from the string to parse into real Lua code. </td>
+                                                       <td><code>String</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>None</em></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
                                         </div>
-                                        <div class="code-border">
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
 <pre class="code-example-code">
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-modul">string</span>.<span class="code-funcC">char</span><span class="code-nest2">(</span><span class="code-num">97</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">load</span><span class="code-nest2">(</span><span class="code-str">'return 23 % 5'</span><span class="code-nest2">)()</span> <span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">load</span><span class="code-nest2">(</span><span class="code-str">'return <span class="code-esc">\'</span>Hi<span class="code-esc">\'</span>'</span><span class="code-nest2">)()</span> <span class="code-nest1">)</span>
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-<span class="code-line">&gt; main.lua L-2:</span> a
+<span class="code-line">&gt; main.lua L-2:</span> 3
+<span class="code-line">&gt; main.lua L-3:</span> 'Hi'
 </pre>
-                                        </div>
-                                   </section>
-                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
-                                   <section data-syntax-visibility="false">
-<pre class="code-example-syntax">
-<span class="code-modul">string</span>.<span class="code-funcC">char</span><span class="code-nest1">(</span><span class="code-num">byte</span><span class="code-nest1">)</span>
-</pre>
-                                   </section>
-                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
-                                   <section data-return-visibility="false">
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Data Type </th>
-                                                            <th> Description </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>String</code></td>
-                                                            <td> 
-                                                                 The <abbr title="American Standard Code for Information Interchange">ASCII</abbr> character representing to its corresponding character. If two or more arguments are passed
-                                                                 then it will concatenate the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters into a <code>string</code>.
-                                                            </td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                   </section>
+                                   </div>
                               </section>
-                              <h3> string.rep() </h3>
-                              <section class="type-main">
-                                   <section class="type-about">
-                                        <p> <ins>Repeats the string's content</ins> and concatenated them together—determined by <ins>how many times it will repeat itself</ins>. </p>
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Parameters </th>
-                                                            <th> Description </th>
-                                                            <th> Data Type </th>
-                                                            <th> Defualt Value </th>
-                                                            <th> Speciality </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>str</code></td>
-                                                            <td> The string's content to be repeated. </td>
-                                                            <td><code>String</code></td>
-                                                            <td><em>None</em></td>
-                                                            <td><em>None</em></td>
-                                                       </tr>
-                                                       <tr>
-                                                            <td><code>repeat</code></td>
-                                                            <td> How many times it will be repeated. </td>
-                                                            <td><code>Int</code></td>
-                                                            <td><em>None</em></td>
-                                                            <td><em>None</em></td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                        <div class="code-header">
-                                             <div class="code-header-buttons">
-                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
-                                             </div>
-                                             <div class="code-header-display-buttons">
-                                                  <button class="active-button"><span> Code </span></button>
-                                                  <button class="inactive-button"><span> Output </span></button>
-                                             </div>
+                              <h3> unpack() </h3>
+                              <section class="main-headers">
+                                   <p> Returns the elements from the given table each separated. The range is determined from the <code>min</code> and <code>max</code> parameters. </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Parameters </th>
+                                                       <th> Description </th>
+                                                       <th> Data Type </th>
+                                                       <th> Defualt Value </th>
+                                                       <th> Speciality </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>list</code></td>
+                                                       <td> The given table to unpack the elements. </td>
+                                                       <td><code>Table</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>None</em></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>min</code></td>
+                                                       <td> The minimum index position value to select the range. </td>
+                                                       <td><code>Int</code></td>
+                                                       <td><code>1</code></td>
+                                                       <td><em>Optional</em></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>max</code></td>
+                                                       <td> The maximum index position value to select the range. </td>
+                                                       <td><code>Int</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>Optional</em></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
                                         </div>
-                                        <div class="code-border">
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
 <pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">array</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-num">23</span>, <span class="code-num">72</span>, <span class="code-num">12</span>, <span class="code-num">83</span>, <span class="code-num">91</span><span class="code-nest1">}</span>
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'repeated-'</span><span class="code-nest2">)</span>:<span class="code-funcC">rep</span><span class="code-nest2">(</span><span class="code-num">3</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">unpack</span><span class="code-nest2">(</span><span class="code-var">array</span><span class="code-nest2">)</span> <span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">unpack</span><span class="code-nest2">(</span><span class="code-var">array</span>, <span class="code-num">3</span><span class="code-nest2">)</span> <span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">unpack</span><span class="code-nest2">(</span><span class="code-var">array</span>, <span class="code-num">2</span>, <span class="code-num">4</span><span class="code-nest2">)</span> <span class="code-nest1">)</span>
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-<span class="code-line">&gt; main.lua L-2:</span> repeated-repeated-repeated-
+<span class="code-line">&gt; main.lua L-3:</span> 23, 72, 12, 83, 91
+<span class="code-line">&gt; main.lua L-4:</span> 12, 83, 91
+<span class="code-line">&gt; main.lua L-5:</span> 72, 12, 83
 </pre>
-                                        </div>
-                                   </section>
-                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
-                                   <section data-syntax-visibility="false">
-<pre class="code-example-syntax">
-<span class="code-modul">string</span>.<span class="code-funcC">rep</span><span class="code-nest1">(</span><span class="code-str">str</span>, <span class="code-num">repeat</span><span class="code-nest1">)</span>
-</pre>
-<pre class="code-example-syntax">
-<span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">rep</span><span class="code-nest1">(</span><span class="code-num">repeat</span><span class="code-nest1">)</span>
-</pre>
-                                   </section>
-                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
-                                   <section data-return-visibility="false">
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Data Type </th>
-                                                            <th> Description </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>String</code></td>
-                                                            <td> The repeated copies of the original string. </td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                   </section>
+                                   </div>
                               </section>
-                              <h3> string.reverse() </h3>
-                              <section class="type-main">
-                                   <section class="type-about">
-                                        <p> <ins>Reverses the string</ins>, that's it nothing else. </p>
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Parameters </th>
-                                                            <th> Description </th>
-                                                            <th> Data Type </th>
-                                                            <th> Defualt Value </th>
-                                                            <th> Speciality </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>str</code></td>
-                                                            <td> The string's content to be reverse. </td>
-                                                            <td><code>String</code></td>
-                                                            <td><em>None</em></td>
-                                                            <td><em>None</em></td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                        <div class="code-header">
-                                             <div class="code-header-buttons">
-                                                  <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
-                                                  <button title="Hide Code"><i class="uil uil-folder"></i></button>
-                                             </div>
-                                             <div class="code-header-display-buttons">
-                                                  <button class="active-button"><span> Code </span></button>
-                                                  <button class="inactive-button"><span> Output </span></button>
-                                             </div>
+                              <h3> select() </h3>
+                              <section class="main-headers">
+                                   <p> Returns the number of selected from the arguments, the selection range is determined by the <code>index</code> parameter.</p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Parameters </th>
+                                                       <th> Description </th>
+                                                       <th> Data Type </th>
+                                                       <th> Defualt Value </th>
+                                                       <th> Speciality </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>index</code></td>
+                                                       <td> 
+                                                            The index range for the arguments to be selected. If the argument is a negative number, it will return to the end of the argument list. You can also get the full 
+                                                            range by using the hastag <kbd>#</kbd> character. 
+                                                       </td>
+                                                       <td><code>Int</code> | <code>String</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>None</em></td>
+                                                  </tr>
+                                                  <tr>
+                                                       <td><code>args</code></td>
+                                                       <td> 
+                                                            The argument(s) to be passed and selected; this parameter is infinite. Meaning you can add an infinite amount of arguments, each separated by a comma <kbd>,</kbd> 
+                                                            character; Example: <code>23, 13, 66</code>. 
+                                                       </td>
+                                                       <td><code>Any</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>Infinite</em></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
                                         </div>
-                                        <div class="code-border">
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
 <pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">charys</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{}</span>
+<span class="code-kyw">for</span> <span class="code-var">char</span> <span class="code-kyw">&equals;</span> <span class="code-num">65</span>, <span class="code-num">70</span> <span class="code-kyw">do</span>
+     <span class="code-modul">table</span>.<span class="code-funcC">insert</span><span class="code-nest1">(</span><span class="code-var">charys</span>, <span class="code-modul">string</span>.<span class="code-funcC">char</span><span class="code-nest2">(</span><span class="code-var">char</span><span class="code-nest2">)</span><span class="code-nest1">)</span>
+<span class="code-kyw">end</span>
+
 <span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
-     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-nest2">(</span><span class="code-str">'based'</span><span class="code-nest2">)</span>:<span class="code-funcC">reverse</span><span class="code-nest2">()</span><span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">select</span><span class="code-nest2">(</span><span class="code-num">3</span>,   <span class="code-funcC">unpack</span><span class="code-nest3">(</span><span class="code-var">charys</span><span class="code-nest3">)</span><span class="code-nest2">)</span> <span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">select</span><span class="code-nest2">(</span><span class="code-num">-2</span>,  <span class="code-funcC">unpack</span><span class="code-nest3">(</span><span class="code-var">charys</span><span class="code-nest3">)</span><span class="code-nest2">)</span> <span class="code-nest1">)</span>
+     <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span> <span class="code-funcC">select</span><span class="code-nest2">(</span><span class="code-str">'#'</span>, <span class="code-funcC">unpack</span><span class="code-nest3">(</span><span class="code-var">charys</span><span class="code-nest3">)</span><span class="code-nest2">)</span> <span class="code-nest1">)</span>
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-<span class="code-line">&gt; main.lua L-2:</span> desab
+<span class="code-line">&gt; main.lua L-7:</span> C, D, E, F
+<span class="code-line">&gt; main.lua L-8:</span> E, F
+<span class="code-line">&gt; main.lua L-9:</span> 6
 </pre>
-                                        </div>
-                                   </section>
-                                   <h3 class="syntax-header" data-disabled><i class="uil uil-angle-down"></i> Syntax </h3>
-                                   <section data-syntax-visibility="false">
-<pre class="code-example-syntax">
-<span class="code-modul">string</span>.<span class="code-funcC">reverse</span><span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>
-</pre>
-<pre class="code-example-syntax">
-<span class="code-nest1">(</span><span class="code-str">str</span><span class="code-nest1">)</span>:<span class="code-funcC">reverse</span><span class="code-nest1">(</span><span class="code-nest1">)</span>
-</pre>
-                                   </section>
-                                   <h3 class="return-header" data-disabled><i class="uil uil-angle-down"></i> Return Values </h3>
-                                   <section data-syntax-visibility="false">
-                                        <table-bg>
-                                             <table>
-                                                  <thead>
-                                                       <tr>
-                                                            <th> Data Type </th>
-                                                            <th> Description </th>
-                                                       </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                       <tr>
-                                                            <td><code>String</code></td>
-                                                            <td> The reverse content of the string. </td>
-                                                       </tr>
-                                                  </tbody>
-                                             </table>
-                                        </table-bg>
-                                   </section>
+                                   </div>
                               </section>
-                              <h2> Patterns </h2>
+                              <h3> pairs() </h3>
+                              <section class="main-headers">
+                                   <p> 
+                                        Returns a key-value pairs and it's commonly used for dictionaries; keys are all preserved but returns as an unorganized sort; Not to be confused with <code>ipairs()</code> 
+                                        function. 
+                                   </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Parameters </th>
+                                                       <th> Description </th>
+                                                       <th> Data Type </th>
+                                                       <th> Defualt Value </th>
+                                                       <th> Speciality </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>iterate</code></td>
+                                                       <td> The given table to iterate over. </td>
+                                                       <td><code>Table</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>None</em></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">array</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-nest2">[</span><span class="code-num">-1</span><span class="code-nest2">]</span> <span class="code-kyw">&equals;</span> <span class="code-str">'E'</span>, <span class="code-nest2">[</span><span class="code-num">3</span><span class="code-nest2">]</span> <span class="code-kyw">&equals;</span> <span class="code-str">'R'</span>, <span class="code-nest2">[</span><span class="code-num">1</span><span class="code-nest2">]</span> <span class="code-kyw">&equals;</span> <span class="code-str">'O'</span><span class="code-nest1">}</span>
+<span class="code-var">array</span><span class="code-nest1">[</span><span class="code-str">'hello'</span><span class="code-nest1">]</span> <span class="code-kyw">&equals;</span> <span class="code-boo">true</span>
+<span class="code-var">array</span><span class="code-nest1">[</span><span class="code-str">'bye'</span><span class="code-nest1">]</span>   <span class="code-kyw">&equals;</span> <span class="code-boo">false</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">for</span> <span class="code-var">_</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">pairs</span><span class="code-nest1">(</span><span class="code-var">array</span><span class="code-nest1">)</span> <span class="code-kyw">do</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">v</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-7:</span> O
+<span class="code-line">&gt; main.lua L-7:</span> E
+<span class="code-line">&gt; main.lua L-7:</span> R
+<span class="code-line">&gt; main.lua L-7:</span> false
+<span class="code-line">&gt; main.lua L-7:</span> true
+</pre>
+                                   </div>
+                              </section>
+                              <h3> ipairs() </h3>
+                              <section class="main-headers">
+                                   <p>
+                                        Returns a index-value pairs and it's only used for arrays. Non-numeric keys are ignored as a whole, equivalent to numeric indices less than <code>1</code>; <code>nil</code> 
+                                        values will also be ignored.
+                                   </p>
+                                   <table-bg>
+                                        <table>
+                                             <thead>
+                                                  <tr>
+                                                       <th> Parameters </th>
+                                                       <th> Description </th>
+                                                       <th> Data Type </th>
+                                                       <th> Defualt Value </th>
+                                                       <th> Speciality </th>
+                                                  </tr>
+                                             </thead>
+                                             <tbody>
+                                                  <tr>
+                                                       <td><code>iterate</code></td>
+                                                       <td> The given table to iterate over. </td>
+                                                       <td><code>Table</code></td>
+                                                       <td><em>None</em></td>
+                                                       <td><em>None</em></td>
+                                                  </tr>
+                                             </tbody>
+                                        </table>
+                                   </table-bg>
+                                   <div class="code-header">
+                                        <div class="code-header-buttons">
+                                             <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>
+                                             <button title="Hide Code"><i class="uil uil-folder"></i></button>
+                                        </div>
+                                        <div class="code-header-display-buttons">
+                                             <button class="active-button"><span> Code </span></button>
+                                             <button class="inactive-button"><span> Output </span></button>
+                                        </div>
+                                   </div>
+                                   <div class="code-border">
+<pre class="code-example-code">
+<span class="code-kyw">local</span> <span class="code-var">array</span> <span class="code-kyw">&equals;</span> <span class="code-nest1">{</span><span class="code-nest2">[</span><span class="code-num">-1</span><span class="code-nest2">]</span> <span class="code-kyw">&equals;</span> <span class="code-str">'E'</span>, <span class="code-nest2">[</span><span class="code-num">3</span><span class="code-nest2">]</span> <span class="code-kyw">&equals;</span> <span class="code-str">'R'</span>, <span class="code-nest2">[</span><span class="code-num">1</span><span class="code-nest2">]</span> <span class="code-kyw">&equals;</span> <span class="code-str">'O'</span><span class="code-nest1">}</span>
+<span class="code-var">array</span><span class="code-nest1">[</span><span class="code-str">'hello'</span><span class="code-nest1">]</span> <span class="code-kyw">&equals;</span> <span class="code-boo">true</span>
+<span class="code-var">array</span><span class="code-nest1">[</span><span class="code-str">'bye'</span><span class="code-nest1">]</span>   <span class="code-kyw">&equals;</span> <span class="code-boo">false</span>
+
+<span class="code-kyw">function</span> <span class="code-funcD">onCreate</span><span class="code-nest1">()</span>
+     <span class="code-kyw">for</span> <span class="code-var">_</span>,<span class="code-var">v</span> <span class="code-kyw">in</span> <span class="code-funcC">ipairs</span><span class="code-nest1">(</span><span class="code-var">array</span><span class="code-nest1">)</span> <span class="code-kyw">do</span>
+          <span class="code-funcC">debugPrint</span><span class="code-nest1">(</span><span class="code-var">v</span><span class="code-nest1">)</span>
+     <span class="code-kyw">end</span>
+<span class="code-kyw">end</span>
+</pre>
+<pre class="code-example-output">
+<span class="code-line">&gt; main.lua L-7:</span> O
+</pre>
+                                   </div>
+                              </section>
+                              <h2> Handling Errors </h2>
                               <section>
-                                   <h3> string.format(pattern:String, ...str:String) </h3>
-                                   <h3> string.find(str:String, pattern:String, ?startPos:Int = 1) </h3>
-                                   <h3> string.sub(str:String, startPos:Int, ?endPos:Int = #str) </h3>
-                                   <h3> string.gsub(str:String, pattern:String, replace:String, ?repeat:Int = 1) </h3>
-                                   <h3> string.match(str:String, pattern:String, ?startPos:Int = 1) </h3>
-                                   <h3> string.gmatch(str:String, pattern:String) </h3>
-                              </section>   
+                                   <h3> error() </h3>
+                                   <h3> assert() </h3>
+                                   <h3> pcall() </h3>
+                                   <h3> xpcall() </h3>
+                              </section>
                          </section>
                          <hr/>
-                         <h1> Table Methods </h1>
+                         <h1> Constants </h1>
                          <section>
-                              <h3> insert(tab:Table, ?pos:Int, value:Dynamic) </h3>
-                              <h3> remove(tab:Table, ?pos:Int) </h3>
-                              <h3> concat(tab:Table, sep:String, ?minPos:Int, ?maxPos:Int) </h3>
-                              <h3> sort(tab:Table, ?comp:Function) </h3>
-                         </section>
-                         <hr/>
-                         <h1> Mathematical Methods </h1>
-                         <section>
-                              <h3> min(#num:Float) </h3>
-                              <h3> max(#num:Float) </h3>
-                              <h3> floor(num:Float) </h3>
-                              <h3> ceil(num:Float) </h3>
-                              <h3> abs(num:Float) </h3>
-                              <h3> sqrt(num:Float) </h3>
-                              <h3> deg(rad:Float) </h3>
-                              <h3> rad(deg:Float) </h3>
-                              <h3> modf(num:Float) </h3>
-                              <h3> log(exp:Float, base:Float) </h3>
-                              <h3> random(?min:Int, ?max:Int) </h3>
-                              <h3> randomseed(seed:Int) </h3>
-                              <h2> Trigonometry </h2>
-                              <section>
-                                   <h3> sin(num:Float) </h3>
-                                   <h3> cos(num:Float) </h3>
-                                   <h3> tan(num:Float) </h3>
-                                   <h3> asin(num:Float) </h3>
-                                   <h3> acos(num:Float) </h3>
-                                   <h3> atan(num1:Float) </h3>
-                                   <h3> atan2(num:Float, num2:Float) </h3>
-                                   <h3> sinh(num:Float) </h3>
-                                   <h3> cosh(num:Float) </h3>
-                                   <h3> tanh(num:Float) </h3>
-                              </section>
-                              <h2> Constants </h2>
-                              <section>
-                                   <h3> pi </h3>
-                                   <h3> huge </h3>
-                              </section>
+                              <h3> _G </h3>
                          </section>
                     </article>
                </article>
@@ -650,9 +611,9 @@
                               <h3> Basics of Coding </h3>
                               <p> <i class="uil uil-folder"></i> Lua Coding Docs - Prev </p>
                          </a>
-                         <a id="footer-goto-buttons-next" href="html/lua_coding_docs/string_patterns.html">
+                         <a id="footer-goto-buttons-next" href="html/lua_coding_docs/standard_library_functions.html">
                               <i id="footer-goto-buttons-icons-right" class="uil uil-arrow-right"></i>
-                              <h3> String Patterns </h3>
+                              <h3> Standard Library Functions </h3>
                               <p> Next - <i class="uil uil-folder"></i> Lua Coding Docs </p>
                          </a>
                     </div>

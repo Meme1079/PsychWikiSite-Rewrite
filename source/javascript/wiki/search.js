@@ -2,7 +2,7 @@ import searchData from "../../json/search_data.json" assert { type: "json" };
 import { shortCut, shortCutAll } from "../main.js";
 
 // Window Fun Fact's and Opening or Closing
-const rand = (num) => { return Math.floor(Math.random() * num); };
+export const rand = (num) => { return Math.floor(Math.random() * num); };
 
 function generateFacts() {
      const stupidDate = new Date();

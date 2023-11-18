@@ -53,7 +53,7 @@
                     <div id="list-search">
                          <i class="uil uil-search"></i>
                          <button>Search PsychWikiSite</button>
-                         <kbd>⌘</kbd><kbd>K</kbd>
+                         <div id="command-buttons-hint"><kbd>⌘</kbd><kbd>K</kbd></div>
                     </div>
                     <div id="list-divider"></div>
                     <div id="list-sublist">
@@ -1103,7 +1103,7 @@
                               <h2> Relational </h2>
                               <section>
                                    <p> Relational operators are used to compare multiple operands inside a condition in order for the code block to execute. </p>
-                                   <table-bg>
+                                   <table-bg id="relational-operators">
                                         <table>
                                              <thead>
                                                   <tr>
@@ -1157,7 +1157,7 @@
                               <h2> Logical </h2>
                               <section>
                                    <p> Logical operators are used to combine multiple conditions and to specify on what conditions needs to be <code>true</code>. </p>
-                                   <table-bg>
+                                   <table-bg id="logical-operators">
                                         <table>
                                              <thead>
                                                   <tr>
@@ -1193,7 +1193,7 @@
                               <h2> Miscellaneous </h2>
                               <section>
                                    <p> Miscellaneous operators only features two operators the Length and Concatenate operators. </p>
-                                   <table-bg>
+                                   <table-bg id="miscellaneous-operators">
                                         <table>
                                              <thead>
                                                   <tr>
@@ -1257,7 +1257,7 @@
 <span class="code-kyw">end</span>
 </pre>
 <pre class="code-example-output">
-<span class="code-line">&gt; main.lua L-4:</span> Friday
+<span class="code-line">&gt; main.lua L-4:</span> Day: Friday
 </pre>
                                         </div>
                                    </section>
@@ -1495,7 +1495,10 @@
                               </section>
                               <h2> Return Statement </h2>
                               <section>
-                                   <p> Return statement as the name suggests returns the results from the function. And stops the execution of the function. It must be relative at the end of the function or conditional statement. </p>
+                                   <p> 
+                                        Return statement as the name suggests returns the results from the function. And stops the execution of the function. It must be relative at the end of the function or conditional statement. It can also
+                                        return multiple values each separated by a <kbd>,</kbd> character; Example: <code>return 1, 2, 3, 4</code>. If you want to get these multiple values, just convert it into a <code>table</code>. 
+                                   </p>
                                    <div class="code-header">
                                         <div class="code-header-buttons">
                                              <button title="Copy Code"><i class="uil uil-copy-alt"></i></button>

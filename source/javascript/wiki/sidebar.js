@@ -67,7 +67,7 @@ for (let headSelectInd = 1; headSelectInd < headerElemSelectedContent.length; he
      let mainHeaderElemContent   = headerElemSelectedContent[headSelectInd]
      let mainHeaderElemPreSelect = headerElemSelected[headSelectInd - 1]
      let mainHeaderElemSelect    = headerElemSelected[headSelectInd]
-     
+
      if (getContentTrim(mainHeaderElemContent) == mainHeaderElemSelect) {
           hashIndex += 1
           if (mainHeaderElemPreSelect != mainHeaderElemSelect) {
@@ -78,6 +78,8 @@ for (let headSelectInd = 1; headSelectInd < headerElemSelectedContent.length; he
           }
      }
 }
+
+console.log(headerElemSelectedContent)
 
 // Implements the header link in each list
 let HeadNumIncre = 1
